@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{no title found}</title>
+    <title>GeoSPARQL CRS Ontology Draft</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -193,9 +193,14 @@
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>This ontology models coordinate reference systems</p>"
+      }
+    ],
     "https://schema.org/name": [
       {
-        "@value": "{no title found}"
+        "@value": "GeoSPARQL CRS Ontology Draft"
       }
     ]
   }
@@ -207,15 +212,24 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.8.5</span>
   </div>
-  <h1>{no title found}</h1>
+  <h1>GeoSPARQL CRS Ontology Draft</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
         <dt>URI</dt>
         <dd><code>http://www.opengis.net/ont/geosparql#GeoSPARQLCRS</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    None<br/>
+        </dd>
         <dt>Ontology RDF</dt>
         <dd><a href="ontology.ttl">RDF (turtle)</a></dd>
     </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>This ontology models coordinate reference systems</p>
+    </div>
 </section>
 <section id="toc">
     <h2>Table of Contents</h2>
@@ -279,17 +293,17 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#CompoundCRS">geo:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#TemporalCRS">geo:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeocentricCRS">geo:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#ParametricCRS">geo:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeographicCRS">geo:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCRS">geo:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#DerivedGeographicCRS">geo:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCRS">geo:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#BoundCRS">geo:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeocentricCRS">geo:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#TemporalCRS">geo:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#CompoundCRS">geo:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeographicCRS">geo:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -633,6 +647,8 @@
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
         <dt>geo</dt>
         <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
         <dt>geoepsg</dt>
@@ -651,6 +667,8 @@
         <dd><code>https://schema.org/</code></dd>
         <dt>skos</dt>
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>wd</dt>
+        <dd><code>http://www.wikidata.org/entity/</code></dd>
         <dt>xsd</dt>
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>
