@@ -155,6 +155,7 @@ for line in f:
 			ttl.add("geoepsg:"+epsgcode+" rdf:type geo:GeographicCRS .\n")
 		else:
 			ttl.add("geoepsg:"+epsgcode+" rdf:type geo:CRS .\n")
+		ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 		ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curname.strip()+"\"@en .\n")
 		ttl.add("geoepsg:"+epsgcode+" geo:type \""+str(curcrs.type_name)+"\"^^xsd:boolean . \n")
 		if curcrs.area_of_use!=None:
