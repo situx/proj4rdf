@@ -42,8 +42,14 @@ ttlhead+="@prefix owl:<http://www.w3.org/2002/07/owl#> .\n"
 ttlhead+="@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo:<http://www.opengis.net/ont/geosparql#> .\n"
+ttlhead+="@prefix dc:<http://purl.org/dc/elements/1.1/> .\n"
+ttlhead+="@prefix wd:<http://www.wikidata.org/entity/> .\n"
 ttlhead+="@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
 ttl.add("geo:GeoSPARQLCRS rdf:type owl:Ontology .\n")
+ttl.add("geo:GeoSPARQLCRS dc:creator wd:Q67624599 .\n")
+ttl.add("geo:GeoSPARQLCRS dc:description \"This ontology models coordinate reference systems\"@en .\n")
+ttl.add("geo:GeoSPARQLCRS rdfs:label \"GeoSPARQL CRS Ontology Draft\"@en .\n")
+ttl.add("owl:versionInfo rdfs:label \"0.1\"^^xsd:double .\n")
 ttl.add("geo:CRS rdf:type owl:Class .\n")
 ttl.add("geo:CRS rdfs:label \"Coordinate reference system\"@en .\n")
 ttl.add("geo:GeographicCRS rdfs:subClassOf geo:CRS .\n")
