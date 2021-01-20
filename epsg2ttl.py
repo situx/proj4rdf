@@ -43,6 +43,7 @@ ttlhead+="@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo:<http://www.opengis.net/ont/geosparql#> .\n"
 ttlhead+="@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
+ttl.add("geo:GeoSPARQLCRS rdf:type owl:Ontology .\n")
 ttl.add("geo:CRS rdf:type owl:Class .\n")
 ttl.add("geo:CRS rdfs:label \"Coordinate reference system\"@en .\n")
 ttl.add("geo:GeographicCRS rdfs:subClassOf geo:CRS .\n")
