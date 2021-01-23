@@ -224,7 +224,7 @@ ttl.add("geo:envelope rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:envelope rdfs:label \"envelope\"@en .\n")
 ttl.add("geo:utm_zone rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:utm_zone rdfs:label \"utm zone\"@en .\n")
-f = open("ontology.ttl", "w")
+f = open("ontology.ttl", "w","utf-8")
 f.write(ttlhead)
 for line in ttl:
 	f.write(line)
@@ -306,7 +306,7 @@ for line in f:
 				else:
 					ttl.add("geoepsg:"+epsgcode+" geo:unit \""+param[1].strip()+"\" . \n")				
 	i+=1
-f = open("result.ttl", "w")
+f = open("result.ttl", "w", "utf-8")
 f.write(ttlhead)
 for line in ttl:
 	f.write(line)
