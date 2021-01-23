@@ -119,6 +119,8 @@ ttl.add("geo:epsgCode rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:epsgCode rdfs:label \"epsgCode\"@en .\n")
 ttl.add("geo:envelope rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:envelope rdfs:label \"envelope\"@en .\n")
+ttl.add("geo:utm_zone rdf:type owl:DatatypeProperty .\n")
+ttl.add("geo:utm_zone rdfs:label \"utm zone\"@en .\n")
 f = open("ontology.ttl", "w")
 f.write(ttlhead)
 for line in ttl:
@@ -161,11 +163,19 @@ for line in f:
 		if curcrs.area_of_use!=None:
 			ttl.add("geoepsg:"+epsgcode+" geo:envelope \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isBound \""+str(curcrs.is_bound)+"\"^^xsd:boolean . \n")
+		if curcrs.coordinate_system!=None:
+			ttl.add("geoepsg:"+epsgcode+" geo:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
+		if curcrs.coordinate_operation!=None:
+			ttl.add("geoepsg:"+epsgcode+" geo:coordinateOperation \""+str(curcrs.coordinate_operation)+"\"^^xsd:string . \n")
+		if curcrs.prime_meridian!=None:
+			ttl.add("geoepsg:"+epsgcode+" geo:primeMeridian \""+str(curcrs.prime_meridian)+"\"^^xsd:string . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:axis_info \""+str(curcrs.datum)+"\"^^xsd:string . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isVertical \""+str(curcrs.is_vertical)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isProjected \""+str(curcrs.is_projected)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isGeocentric \""+str(curcrs.is_geocentric)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isGeographic \""+str(curcrs.is_geographic)+"\"^^xsd:boolean . \n")
+		if curcrs.utm_zone!=None:
+			ttl.add("geoepsg:"+epsgcode+" geo:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:asProj4 \""+proj4string.strip()+"\"^^xsd:string . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
 		if wkt!="":
