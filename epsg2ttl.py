@@ -6,19 +6,42 @@ from pyproj import CRS
 
 units={}
 units["m"]="om:meter"
+units["metre"]="om:metre"
+units["degree"]="om:degree"
 units["ft"]="om:foot"
 units["us-ft"]="om:usfoot"
+coordinatesystem={}
+coordinatesystem["ellipsoidal"]="geo:EllipsoidalCoordinateSystem"
+coordinatesystem["cartesian"]="geo:CartesianCoordinateSystem"
+coordinatesystem["ft"]="om:foot"
+coordinatesystem["us-ft"]="om:usfoot"
 spheroids={}
 spheroids["GRS80"]="geo:GRS80"
+spheroids["GRS 80"]="geo:GRS80"
 spheroids["GRS67"]="geo:GRS67"
+spheroids["GRS 67"]="geo:GRS67"
+spheroids["GRS1980"]="geo:GRS1980"
+spheroids["GRS 1980"]="geo:GRS1980"
 spheroids["intl"]="geo:International1924"
+spheroids["aust_SA"]="geo:AustralianNationalSpheroid"
+spheroids["Australian National Spheroid"]="geo:AustralianNationalSpheroid"
+spheroids["International 1924"]="geo:International1924"
 spheroids["clrk"]="geo:Clarke1866"
+spheroids["evrst30"]="geo:Everest1930"
 spheroids["clrk66"]="geo:Clarke1866"
+spheroids["Clarke 1866"]="geo:Clarke1866"
+spheroids["Clarke 1858"]="geo:Clarke1858"
 spheroids["clrk80"]="geo:Clarke1880RGS"
+spheroids["Clarke 1880 (RGS)"]="geo:Clarke1880RGS"
 spheroids["WGS66"]="geo:WGS66"
+spheroids["WGS 66"]="geo:WGS66"
 spheroids["WGS72"]="geo:WGS72"
+spheroids["WGS 72"]="geo:WGS72"
 spheroids["WGS84"]="geo:WGS84"
+spheroids["WGS 84"]="geo:WGS84"
+spheroids["Krassovsky 1940"]="geo:Krassovsky1940"
 spheroids["krass"]="geo:Krassovsky1940"
+spheroids["Bessel 1841"]="geo:Bessel1841"
 spheroids["bessel"]="geo:Bessel1841"
 projections={}
 projections["latlong"]="geo:LatLonProjection"
@@ -148,6 +171,10 @@ ttl.add("geo:ParametricCRS rdfs:subClassOf geo:CRS .\n")
 ttl.add("geo:ParametricCRS rdf:type owl:Class .\n")
 ttl.add("geo:ParametricCRS rdfs:label \"Parametric coordinate reference system\"@en .\n")
 ttl.add("geo:ParametricCRS skos:definition \"one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial\"@en .\n")
+ttl.add("geo:SpatioParametricCRS rdfs:subClassOf geo:CRS .\n")
+ttl.add("geo:SpatioParametricCRS rdf:type owl:Class .\n")
+ttl.add("geo:SpatioParametricCRS rdfs:label \"Spatio-Parametric coordinate reference system\"@en .\n")
+ttl.add("geo:SpatioParametricCRS skos:definition \"compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system\"@en .\n")
 ttl.add("geo:DerivedGeographicCRS rdfs:subClassOf geo:GeodeticCRS .\n")
 ttl.add("geo:DerivedGeographicCRS rdf:type owl:Class .\n")
 ttl.add("geo:DerivedGeographicCRS rdfs:label \"Derived geographic coordinate reference system\"@en .\n")
@@ -165,6 +192,10 @@ ttl.add("geo:SphericCRS skos:definition \"three-dimensional coordinate system in
 ttl.add("geo:GeocentricCRS rdfs:subClassOf geo:CRS .\n")
 ttl.add("geo:GeocentricCRS rdf:type owl:Class .\n")
 ttl.add("geo:GeocentricCRS rdfs:label \"Geocentric coordinate reference system\"@en .\n")
+ttl.add("geo:GeodeticReferenceFrame rdfs:subClassOf geo:Datum .\n")
+ttl.add("geo:GeodeticReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geo:GeodeticReferenceFrame rdfs:label \"Geodetic reference frame\"@en .\n")
+ttl.add("geo:GeodeticReferenceFrame skos:definition \"reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth\"@en .\n")
 ttl.add("geo:StaticCRS rdfs:subClassOf geo:CRS .\n")
 ttl.add("geo:StaticCRS rdf:type owl:Class .\n")
 ttl.add("geo:StaticCRS rdfs:label \"Static coordinate reference system\"@en .\n")
@@ -196,6 +227,12 @@ ttl.add("geo:PrimeMeridian rdfs:label \"prime meridian\"@en .\n")
 ttl.add("geo:PrimeMeridian skos:definition \"meridian from which the longitudes of other meridians are quantified\"@en .\n")
 ttl.add("geo:Projection rdf:type owl:Class .\n")
 ttl.add("geo:Projection rdfs:label \"projection\"@en .\n")
+ttl.add("geo:Axis rdf:type owl:Class .\n")
+ttl.add("geo:Axis rdfs:label \"axis\"@en .\n")
+ttl.add("geo:CoordinateOperation rdf:type owl:Class .\n")
+ttl.add("geo:CoordinateOperation rdfs:label \"coordinate operation\"@en .\n")
+ttl.add("geo:CardinalDirection rdf:type owl:Class .\n")
+ttl.add("geo:CardinalDirection rdfs:label \"cardinal direction\"@en .\n")
 ttl.add("geo:asProj4 rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:asProj4 rdfs:label \"asProj4\"@en .\n")
 ttl.add("geo:asProjJSON rdf:type owl:DatatypeProperty .\n")
@@ -216,15 +253,36 @@ ttl.add("geo:unit rdf:type owl:ObjectProperty .\n")
 ttl.add("geo:unit rdfs:label \"unit\"@en .\n")
 ttl.add("geo:ellipse rdf:type owl:ObjectProperty .\n")
 ttl.add("geo:ellipse rdfs:label \"ellipse\"@en .\n")
+ttl.add("geo:primeMeridian rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:primeMeridian rdfs:label \"prime meridian\"@en .\n")
 ttl.add("geo:projection rdf:type owl:ObjectProperty .\n")
 ttl.add("geo:projection rdfs:label \"projection\"@en .\n")
+ttl.add("geo:coordinateSystem rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:coordinateSystem rdfs:label \"coordinate system\"@en .\n")
+ttl.add("geo:datum rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:datum rdfs:label \"datum\"@en .\n")
+ttl.add("geo:datum rdfs:domain geo:CRS .\n")
+ttl.add("geo:datum rdfs:range geo:Datum .\n")
+ttl.add("geo:axis rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:axis rdfs:label \"axis\"@en .\n")
+ttl.add("geo:coordinateOperation rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:coordinateOperation rdfs:label \"coordinate operation\"@en .\n")
+ttl.add("geo:direction rdf:type owl:ObjectProperty .\n")
+ttl.add("geo:direction rdfs:label \"cardinal direction\"@en .\n")
+ttl.add("geo:direction rdfs:domain geo:Datum .\n")
 ttl.add("geo:epsgCode rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:epsgCode rdfs:label \"epsgCode\"@en .\n")
+ttl.add("geo:epsgCode rdfs:domain geo:CRS .\n")
+ttl.add("geo:epsgCode rdfs:range xsd:string .\n")
+ttl.add("geo:accuracy rdf:type owl:DatatypeProperty .\n")
+ttl.add("geo:accuracy rdfs:label \"accuracy\"@en .\n")
+ttl.add("geo:accuracy rdfs:domain geo:CoordinateOperation .\n")
+ttl.add("geo:accuracy rdfs:range xsd:double .\n")
 ttl.add("geo:envelope rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:envelope rdfs:label \"envelope\"@en .\n")
 ttl.add("geo:utm_zone rdf:type owl:DatatypeProperty .\n")
 ttl.add("geo:utm_zone rdfs:label \"utm zone\"@en .\n")
-f = open("ontology.ttl", "w","utf-8")
+f = open("ontology.ttl", "w", encoding="utf-8")
 f.write(ttlhead)
 for line in ttl:
 	f.write(line)
@@ -266,19 +324,51 @@ for line in f:
 		if curcrs.area_of_use!=None:
 			ttl.add("geoepsg:"+epsgcode+" geo:envelope \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isBound \""+str(curcrs.is_bound)+"\"^^xsd:boolean . \n")
-		if curcrs.coordinate_system!=None:
+		if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
+			ttl.add("geoepsg:"+epsgcode+" geo:coordinateSystem "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")		
+		else:
 			ttl.add("geoepsg:"+epsgcode+" geo:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
 		if curcrs.coordinate_operation!=None:
-			ttl.add("geoepsg:"+epsgcode+" geo:coordinateOperation \""+str(curcrs.coordinate_operation)+"\"^^xsd:string . \n")
+			coordoperationid=curcrs.coordinate_operation.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace(",","_").replace("&","and").strip()
+			ttl.add("geoepsg:"+epsgcode+" geo:coordinateOperation geoepsg:"+str(coordoperationid)+" . \n")
+			ttl.add("geoepsg:"+str(coordoperationid)+" geo:accuracy \""+str(curcrs.coordinate_operation.accuracy)+"\"^^xsd:double . \n")
+			ttl.add("geoepsg:"+str(coordoperationid)+" rdf:type geo:CoordinateOperation . \n")
+			ttl.add("geoepsg:"+str(coordoperationid)+" rdfs:label \""+curcrs.coordinate_operation.name+"\"@en . \n")
 		if curcrs.prime_meridian!=None:
-			ttl.add("geoepsg:"+epsgcode+" geo:primeMeridian \""+str(curcrs.prime_meridian)+"\"^^xsd:string . \n")
-		ttl.add("geoepsg:"+epsgcode+" geo:axis_info \""+str(curcrs.datum)+"\"^^xsd:string . \n")
+			ttl.add("geoepsg:"+epsgcode+" geo:primeMeridian geoepsg:"+curcrs.prime_meridian.name.replace(" ","")+" . \n")
+			ttl.add("geoepsg:"+curcrs.prime_meridian.name.replace(" ","")+" rdf:type geo:PrimeMeridian . \n")
+		if curcrs.datum!=None:
+			datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus"))
+			ttl.add("geoepsg:"+epsgcode+" geo:datum geoepsg:"+str(datumid)+" . \n")
+			ttl.add("geoepsg:"+str(datumid)+" rdf:type geo:Datum . \n")
+			ttl.add("geoepsg:"+str(datumid)+" rdfs:label \""+curcrs.datum.name+"\"@en . \n")
+			if curcrs.datum.ellipsoid.name in spheroids:
+				ttl.add("geoepsg:"+str(datumid)+" geo:ellipse "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
+				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
+				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdf:type geo:Ellipsoid .\n")	
+			else:	
+				ttl.add("geoepsg:"+str(datumid)+" geo:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n")
+			ttl.add("geoepsg:"+str(datumid)+" geo:primeMeridian geoepsg:"+curcrs.datum.prime_meridian.name.replace(" ","")+" . \n")
+			ttl.add("geoepsg:"+curcrs.datum.prime_meridian.name.replace(" ","")+" rdf:type geo:PrimeMeridian . \n")				
 		ttl.add("geoepsg:"+epsgcode+" geo:isVertical \""+str(curcrs.is_vertical)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isProjected \""+str(curcrs.is_projected)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isGeocentric \""+str(curcrs.is_geocentric)+"\"^^xsd:boolean . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:isGeographic \""+str(curcrs.is_geographic)+"\"^^xsd:boolean . \n")
 		if curcrs.utm_zone!=None:
 			ttl.add("geoepsg:"+epsgcode+" geo:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")
+		if curcrs.axis_info!=None:
+			for axis in curcrs.axis_info:
+				axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
+				ttl.add("geoepsg:"+epsgcode+" geo:axis geoepsg:"+axisid+" . \n")
+				ttl.add("geoepsg:"+axisid+" rdf:type geo:Axis . \n")
+				ttl.add("geoepsg:"+axisid+" geo:direction geoepsg:"+axis.direction+" . \n")	
+				ttl.add("geoepsg:"+axis.direction+" rdf:type geo:CardinalDirection . \n")
+				ttl.add("geoepsg:"+axis.direction+" rdfs:label \""+axis.direction+"\"@en . \n")					
+				ttl.add("geoepsg:"+axisid+" rdfs:label \""+axis.name+"\"@en . \n")
+				if axis.unit_name in units:
+					ttl.add("geoepsg:"+axisid+" geo:unit "+units[axis.unit_name]+" . \n")	
+				else:
+					ttl.add("geoepsg:"+axisid+" geo:unit \""+axis.unit_name+"\"@en . \n")					
 		ttl.add("geoepsg:"+epsgcode+" geo:asProj4 \""+proj4string.strip()+"\"^^xsd:string . \n")
 		ttl.add("geoepsg:"+epsgcode+" geo:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
 		if wkt!="":
@@ -290,13 +380,15 @@ for line in f:
 				if param[1].strip() in projections:
 					ttl.add("geoepsg:"+epsgcode+" geo:projection "+projections[param[1].strip()]+" . \n")
 					ttl.add(projections[param[1].strip()]+" rdf:type geo:Projection .\n")
+					ttl.add(projections[param[1].strip()]+" rdfs:label \""+param[1].strip()+"\"@en .\n")
 				else:
 					ttl.add("geoepsg:"+epsgcode+" geo:projection \""+param[1].strip()+"\" . \n")
 			elif param[0]=="ellps":
 				if param[1].strip() in spheroids:
 					ttl.add("geoepsg:"+epsgcode+" geo:ellipse "+spheroids[param[1].strip()]+" . \n")
 					ttl.add(spheroids[param[1].strip()]+" rdfs:label \""+str(curcrs.ellipsoid)+"\"@en . \n")
-					ttl.add(spheroids[param[1].strip()]+" rdf:type geo:Ellipsoid .\n")	
+					ttl.add(spheroids[param[1].strip()]+" rdf:type geo:Ellipsoid .\n")
+					ttl.add(spheroids[param[1].strip()]+" rdfs:label \""+param[1].strip()+"\"@en .\n")						
 				else:	
 					ttl.add("geoepsg:"+epsgcode+" geo:ellipse \""+param[1].strip()+"\" . \n")
 			elif param[0]=="units":
@@ -306,7 +398,7 @@ for line in f:
 				else:
 					ttl.add("geoepsg:"+epsgcode+" geo:unit \""+param[1].strip()+"\" . \n")				
 	i+=1
-f = open("result.ttl", "w", "utf-8")
+f = open("result.ttl", "w", encoding="utf-8")
 f.write(ttlhead)
 for line in ttl:
 	f.write(line)
