@@ -161,7 +161,7 @@ ttl.add("geo:GeodeticCRS skos:definition \"three-dimensional coordinate referenc
 ttl.add("geo:GeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geo:CompoundCRS rdfs:subClassOf geo:CRS .\n")
 ttl.add("geo:CompoundCRS rdf:type owl:Class .\n")
-ttl.add("geo:CompoandCRS skos:definition \"coordinate reference system using at least two independent coordinate reference systems\"@en .\n")
+ttl.add("geo:CompoundCRS skos:definition \"coordinate reference system using at least two independent coordinate reference systems\"@en .\n")
 ttl.add("geo:CompoundCRS rdfs:label \"Compound coordinate reference system\"@en .\n")
 ttl.add("geo:CompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geo:CoordinateTransformation rdfs:subClassOf geo:CRS .\n")
