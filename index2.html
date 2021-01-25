@@ -256,7 +256,6 @@
         <li><a href="#Boundcoordinatereferencesystem">Bound coordinate reference system</a></li>
         <li><a href="#Cartesiancoordinatesystem">Cartesian coordinate system</a></li>
         <li><a href="#Compoundcoordinatereferencesystem">Compound coordinate reference system</a></li>
-        <li><a href="#CoordinateConversion">Compound coordinate reference system</a></li>
         <li><a href="#Coordinatereferencesystem">Coordinate reference system</a></li>
         <li><a href="#Coordinatesystem">Coordinate system</a></li>
         <li><a href="#Cylindricalcoordinatesystem">Cylindrical coordinate system</a></li>
@@ -285,9 +284,11 @@
         <li><a href="#Verticalcoordinatereferencesystem">Vertical coordinate reference system</a></li>
         <li><a href="#Verticalcoordinatesystem">Vertical coordinate system</a></li>
         <li><a href="#Verticalreferenceframe">Vertical reference frame</a></li>
+        <li><a href="#AreaOfUse">area of use</a></li>
         <li><a href="#Axis">axis</a></li>
         <li><a href="#CardinalDirection">cardinal direction</a></li>
         <li><a href="#CoordinateOperation">coordinate operation</a></li>
+        <li><a href="#coordinatetransformation">coordinate transformation</a></li>
         <li><a href="#Datum">datum</a></li>
         <li><a href="#ellipsoid">ellipsoid</a></li>
         <li><a href="#engineeringdatum">engineering datum</a></li>
@@ -320,6 +321,15 @@
                 <td>
                     <a href="http://www.opengis.net/ont/geosparql#CoordinateSystem">geo:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AreaOfUse">
+        <h3>area of use<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#AreaOfUse</code></td>
             </tr>
         </table>
     </div>
@@ -381,43 +391,43 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#SphericCRS">geo:SphericCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#CoordinateConversion">geo:CoordinateConversion</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#ParametricCRS">geo:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#StaticCRS">geo:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeographicCRS">geo:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCRS">geo:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#TemporalCRS">geo:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#BoundCRS">geo:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#SpatioParametricCRS">geo:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#StaticCRS">geo:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ParametricCRS">geo:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#CompoundCRS">geo:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCRS">geo:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#GeocentricCRS">geo:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#TemporalCRS">geo:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeographicCRS">geo:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#CoordinateTransformation">geo:CoordinateTransformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#SphericCRS">geo:SphericCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#BoundCRS">geo:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#ellipse">geo:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#axis">geo:axis</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#isGeocentric">geo:isGeocentric</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#datum">geo:datum</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#coordinateSystem">geo:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#epsgCode">geo:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#envelope">geo:envelope</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#projection">geo:projection</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#isBound">geo:isBound</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#isGeographic">geo:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#coordinateOperation">geo:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#asProjJSON">geo:asProjJSON</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#isVertical">geo:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#unit">geo:unit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#epsgCode">geo:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#projection">geo:projection</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#isVertical">geo:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#coordinateSystem">geo:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#asWKT">geo:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#datum">geo:datum</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#isProjected">geo:isProjected</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#asProj4">geo:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#isGeographic">geo:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#asProjJSON">geo:asProjJSON</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#coordinateOperation">geo:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#primeMeridian">geo:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ellipse">geo:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#isBound">geo:isBound</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#isGeocentric">geo:isGeocentric</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#envelope">geo:envelope</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#axis">geo:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#asProj4">geo:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -485,21 +495,6 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="CoordinateConversion">
-        <h3>Compound coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/geosparql#CoordinateConversion</code></td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/geosparql#CRS">geo:CRS</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div class="entity class" id="CoordinateOperation">
         <h3>coordinate operation<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -510,30 +505,30 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_pseudo_standard_parallel">geo:Latitude_of_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_at_natural_origin">geo:Scale_factor_at_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_projection_centre">geo:Longitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Longitude_of_natural_origin">geo:Longitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Latitude_of_projection_centre">geo:Latitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Angle_from_Rectified_to_Skew_Grid">geo:Angle_from_Rectified_to_Skew_Grid</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_projection_centre">geo:Longitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Easting_at_false_origin">geo:Easting_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Latitude_of_standard_parallel">geo:Latitude_of_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_at_natural_origin">geo:Scale_factor_at_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#False_easting">geo:False_easting</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_on_initial_line">geo:Scale_factor_on_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_natural_origin">geo:Latitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#accuracy">geo:accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_2nd_standard_parallel">geo:Latitude_of_2nd_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Northing_at_projection_centre">geo:Northing_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_origin">geo:Longitude_of_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_on_pseudo_standard_parallel">geo:Scale_factor_on_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Easting_at_false_origin">geo:Easting_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Latitude_of_false_origin">geo:Latitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Northing_at_false_origin">geo:Northing_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Easting_at_projection_centre">geo:Easting_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Co-latitude_of_cone_axis">geo:Co-latitude_of_cone_axis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Azimuth_of_initial_line">geo:Azimuth_of_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Easting_at_projection_centre">geo:Easting_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_on_initial_line">geo:Scale_factor_on_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_false_origin">geo:Longitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Northing_at_false_origin">geo:Northing_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_2nd_standard_parallel">geo:Latitude_of_2nd_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#False_easting">geo:False_easting</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_origin">geo:Longitude_of_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_pseudo_standard_parallel">geo:Latitude_of_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Scale_factor_on_pseudo_standard_parallel">geo:Scale_factor_on_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Northing_at_projection_centre">geo:Northing_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#accuracy">geo:accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Latitude_of_natural_origin">geo:Latitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#False_northing">geo:False_northing</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Latitude_of_1st_standard_parallel">geo:Latitude_of_1st_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Longitude_of_false_origin">geo:Longitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Azimuth_of_initial_line">geo:Azimuth_of_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -554,25 +549,46 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#VerticalCoordinateSystem">geo:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#LinearCoordinateSystem">geo:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCoordinateSystem">geo:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#EllipsoidalCoordinateSystem">geo:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#SphericalCoordinateSystem">geo:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#CartesianCoordinateSystem">geo:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#OrdinalCoordinateSystem">geo:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCoordinateSystem">geo:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#CylindricalCoordinateSystem">geo:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#AffineCoordinateSystem">geo:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#ParametricCoordinateSystem">geo:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#TemporalCoordinateSystem">geo:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#OrdinalCoordinateSystem">geo:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalCoordinateSystem">geo:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#AffineCoordinateSystem">geo:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#LinearCoordinateSystem">geo:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#CylindricalCoordinateSystem">geo:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#PolarCoordinateSystem">geo:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#SphericalCoordinateSystem">geo:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ParametricCoordinateSystem">geo:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EllipsoidalCoordinateSystem">geo:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCoordinateSystem">geo:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCoordinateSystem">geo:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
                     <a href="http://www.opengis.net/ont/geosparql#coordinateSystem">geo:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="coordinatetransformation">
+        <h3>coordinate transformation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#CoordinateTransformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate operation that changes coordinates in a source coordinate reference system to coordinates in a target coordinate reference system in which the source and target coordinate reference systems are based on different datums</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#CRS">geo:CRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -626,12 +642,12 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#DynamicReferenceFrame">geo:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#TemporalDatum">geo:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticReferenceFrame">geo:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#VerticalDatum">geo:VerticalDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#VerticalReferenceFrame">geo:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#DynamicReferenceFrame">geo:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#EngineeringDatum">geo:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#TemporalDatum">geo:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticReferenceFrame">geo:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1473,6 +1489,7 @@
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
+        <li><a href="#areaofuse">area of use</a></li>
         <li><a href="#axis">axis</a></li>
         <li><a href="#coordinateoperation">coordinate operation</a></li>
         <li><a href="#coordinatesystem">coordinate system</a></li>
@@ -1483,6 +1500,15 @@
         <li><a href="#projection">projection</a></li>
         <li><a href="#unit">unit</a></li>
     </ul>
+    <div class="entity property" id="areaofuse">
+        <h3>area of use<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#area_of_use</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="axis">
         <h3>axis<sup title="object property" class="sup-op">op</sup></h3>
         <table>
@@ -1702,6 +1728,7 @@
         <li><a href="#asWKT">asWKT</a></li>
         <li><a href="#envelope">envelope</a></li>
         <li><a href="#epsgCode">epsgCode</a></li>
+        <li><a href="#hasballparktransformation">has ballpark transformation</a></li>
         <li><a href="#inverseflattening">inverse flattening</a></li>
         <li><a href="#isBound">isBound</a></li>
         <li><a href="#isGeocentric">isGeocentric</a></li>
@@ -2341,6 +2368,21 @@
             </tr>
         </table>
     </div>
+    <div class="entity property" id="hasballparktransformation">
+        <h3>has ballpark transformation<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#has_ballpark_transformation</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="inverseflattening">
         <h3>inverse flattening<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
@@ -2536,7 +2578,7 @@
   <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#<4538>+proj=tmerc+lat_0=0+lon_0=87+k=1+x_0=500000+y_0=0+ellps=GRS80+units=m+no_defs<>"><4538> +proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  <></a></li>
+        <li><a href="#<6050>+proj=lcc+lat_1=87+lat_2=83.66666666666667+lat_0=85.43711833333333+lon_0=-30+x_0=25500000+y_0=1500000+ellps=GRS80+towgs84=0,0,0,0,0,0,0+units=m+no_defs<>"><6050> +proj=lcc +lat_1=87 +lat_2=83.66666666666667 +lat_0=85.43711833333333 +lon_0=-30 +x_0=25500000 +y_0=1500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  <></a></li>
         <li><a href="#AGD66">AGD66</a></li>
         <li><a href="#AGD66/AMGzone48(deprecated)">AGD66 / AMG zone 48 (deprecated)</a></li>
         <li><a href="#AGD66/AMGzone49">AGD66 / AMG zone 49</a></li>
@@ -6936,8 +6978,8 @@
         <li><a href="#Zanderij/UTMzone21N">Zanderij / UTM zone 21N</a></li>
         <li><a href="#fk89">fk89</a></li>
     </ul>
-    <div class="entity named_individual" id="<4538>+proj=tmerc+lat_0=0+lon_0=87+k=1+x_0=500000+y_0=0+ellps=GRS80+units=m+no_defs<>">
-        <h3><4538> +proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  <><sup title="named individual" class="sup-ni">ni</sup></h3>
+    <div class="entity named_individual" id="<6050>+proj=lcc+lat_1=87+lat_2=83.66666666666667+lat_0=85.43711833333333+lon_0=-30+x_0=25500000+y_0=1500000+ellps=GRS80+towgs84=0,0,0,0,0,0,0+units=m+no_defs<>">
+        <h3><6050> +proj=lcc +lat_1=87 +lat_2=83.66666666666667 +lat_0=85.43711833333333 +lon_0=-30 +x_0=25500000 +y_0=1500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  <><sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
