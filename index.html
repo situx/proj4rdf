@@ -260,6 +260,7 @@
         <li><a href="#Coordinatesystem">Coordinate system</a></li>
         <li><a href="#Cylindricalcoordinatesystem">Cylindrical coordinate system</a></li>
         <li><a href="#Derivedgeographiccoordinatereferencesystem">Derived geographic coordinate reference system</a></li>
+        <li><a href="#Dynamicreferenceframe">Dynamic reference frame</a></li>
         <li><a href="#Ellipsoidalcoordinatesystem">Ellipsoidal coordinate system</a></li>
         <li><a href="#Engineeringcoordinatereferencesystem">Engineering coordinate reference system</a></li>
         <li><a href="#Engineeringcoordinatesystem">Engineering coordinate system</a></li>
@@ -282,6 +283,7 @@
         <li><a href="#Temporalcoordinatesystem">Temporal coordinate system</a></li>
         <li><a href="#Verticalcoordinatereferencesystem">Vertical coordinate reference system</a></li>
         <li><a href="#Verticalcoordinatesystem">Vertical coordinate system</a></li>
+        <li><a href="#Verticalreferenceframe">Vertical reference frame</a></li>
         <li><a href="#Axis">axis</a></li>
         <li><a href="#CardinalDirection">cardinal direction</a></li>
         <li><a href="#CoordinateOperation">coordinate operation</a></li>
@@ -378,36 +380,36 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#SphericCRS">geo:SphericCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#GeographicCRS">geo:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#StaticCRS">geo:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#CoordinateConversion">geo:CoordinateConversion</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#BoundCRS">geo:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeocentricCRS">geo:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#ParametricCRS">geo:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#EngineeringCRS">geo:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#CompoundCRS">geo:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#SpatioParametricCRS">geo:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ProjectedCRS">geo:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#TemporalCRS">geo:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeocentricCRS">geo:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#CoordinateConversion">geo:CoordinateConversion</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ParametricCRS">geo:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatioParametricCRS">geo:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#BoundCRS">geo:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalCRS">geo:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#SphericCRS">geo:SphericCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#coordinateSystem">geo:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#unit">geo:unit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#axis">geo:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#primeMeridian">geo:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#ellipse">geo:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#epsgCode">geo:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#projection">geo:projection</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#coordinateOperation">geo:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#datum">geo:datum</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#asWKT">geo:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#isVertical">geo:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#epsgCode">geo:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#unit">geo:unit</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#datum">geo:datum</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#ellipse">geo:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#primeMeridian">geo:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#axis">geo:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#coordinateSystem">geo:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#coordinateOperation">geo:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -521,19 +523,19 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#CartesianCoordinateSystem">geo:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCoordinateSystem">geo:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#ParametricCoordinateSystem">geo:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCoordinateSystem">geo:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#TemporalCoordinateSystem">geo:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#EllipsoidalCoordinateSystem">geo:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#OrdinalCoordinateSystem">geo:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalCoordinateSystem">geo:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#CartesianCoordinateSystem">geo:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#CylindricalCoordinateSystem">geo:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#AffineCoordinateSystem">geo:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#SphericalCoordinateSystem">geo:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#TemporalCoordinateSystem">geo:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#PolarCoordinateSystem">geo:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#VerticalCoordinateSystem">geo:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#GeodeticCoordinateSystem">geo:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#LinearCoordinateSystem">geo:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#EngineeringCoordinateSystem">geo:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#SphericalCoordinateSystem">geo:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#OrdinalCoordinateSystem">geo:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -587,18 +589,20 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#EngineeringDatum">geo:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#VerticalReferenceFrame">geo:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#TemporalDatum">geo:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#GeodeticReferenceFrame">geo:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#VerticalDatum">geo:VerticalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#EngineeringDatum">geo:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#DynamicReferenceFrame">geo:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#primeMeridian">geo:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#direction">geo:direction</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#ellipse">geo:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#primeMeridian">geo:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -632,6 +636,33 @@
                 <th>Super-classes</th>
                 <td>
                     <a href="http://www.opengis.net/ont/geosparql#GeodeticCRS">geo:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dynamicreferenceframe">
+        <h3>Dynamic reference frame<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#DynamicReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference frame in which the defining parameters include time evolution</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Datum">geo:Datum</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -846,6 +877,12 @@
             <tr>
                 <th>URI</th>
                 <td><code>http://www.opengis.net/ont/geosparql#GeodeticReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
             </tr>
             <tr>
                 <th>Description</th>
@@ -1332,6 +1369,33 @@
             </tr>
         </table>
     </div>
+    <div class="entity class" id="Verticalreferenceframe">
+        <h3>Vertical reference frame<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#VerticalReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference frame describing the relation of gravity-related heights or depths to the Earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Datum">geo:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
 </section>
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -1461,8 +1525,8 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#CRS">geo:CRS</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.opengis.net/ont/geosparql#Datum">geo:Datum</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/geosparql#CRS">geo:CRS</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
