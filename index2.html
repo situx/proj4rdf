@@ -285,7 +285,6 @@
         <li><a href="#Polarcoordinatesystem">Polar coordinate system</a></li>
         <li><a href="#Projectedcoordinatereferencesystem">Projected coordinate reference system</a></li>
         <li><a href="#Spatio-Parametriccoordinatereferencesystem">Spatio-Parametric coordinate reference system</a></li>
-        <li><a href="#Sphericcoordinatereferencesystem">Spheric coordinate reference system</a></li>
         <li><a href="#Sphericalcoordinatesystem">Spherical coordinate system</a></li>
         <li><a href="#Staticcoordinatereferencesystem">Static coordinate reference system</a></li>
         <li><a href="#Temporalcoordinatereferencesystem">Temporal coordinate reference system</a></li>
@@ -343,6 +342,12 @@
                 <th>Super-classes</th>
                 <td>
                     <a href="http://www.opengis.net/ont/crs#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs#CartesianCoordinateSystem">geocrs:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -434,39 +439,36 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SphericCRS">geocrs:SphericCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#BoundCRS">geocrs:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#StaticCRS">geocrs:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateTransformation">geocrs:CoordinateTransformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#SpatioParametricCRS">geocrs:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#GeocentricCRS">geocrs:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#projection">geocrs:projection</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ellipse">geocrs:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#epsgCode">geocrs:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#isProjected">geocrs:isProjected</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#asWKT">geocrs:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#asProj4">geocrs:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#axis">geocrs:axis</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#isVertical">geocrs:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#isBound">geocrs:isBound</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#projection">geocrs:projection</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#isProjected">geocrs:isProjected</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#asProj4">geocrs:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#primeMeridian">geocrs:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#isGeographic">geocrs:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#unit">geocrs:unit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#epsgCode">geocrs:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#asProjJSON">geocrs:asProjJSON</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#envelope">geocrs:envelope</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#asWKT">geocrs:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#isGeocentric">geocrs:isGeocentric</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#isGeographic">geocrs:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#primeMeridian">geocrs:primeMeridian</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#unit">geocrs:unit</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#envelope">geocrs:envelope</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#isVertical">geocrs:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ellipse">geocrs:ellipse</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -508,7 +510,7 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -592,40 +594,40 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#Longitude_of_natural_origin">geocrs:Longitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Easting_at_projection_centre">geocrs:Easting_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#False_easting">geocrs:False_easting</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_pseudo_standard_parallel">geocrs:Latitude_of_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#False_northing">geocrs:False_northing</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Angle_from_Rectified_to_Skew_Grid">geocrs:Angle_from_Rectified_to_Skew_Grid</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#accuracy">geocrs:accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Longitude_of_origin">geocrs:Longitude_of_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_standard_parallel">geocrs:Latitude_of_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_projection_centre">geocrs:Latitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_natural_origin">geocrs:Latitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Scale_factor_at_natural_origin">geocrs:Scale_factor_at_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#False_easting">geocrs:False_easting</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Scale_factor_on_pseudo_standard_parallel">geocrs:Scale_factor_on_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Azimuth_of_initial_line">geocrs:Azimuth_of_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#area_of_use">geocrs:area_of_use</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Longitude_of_origin">geocrs:Longitude_of_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#accuracy">geocrs:accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Latitude_of_1st_standard_parallel">geocrs:Latitude_of_1st_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Longitude_of_projection_centre">geocrs:Longitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Northing_at_projection_centre">geocrs:Northing_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Scale_factor_on_initial_line">geocrs:Scale_factor_on_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_false_origin">geocrs:Latitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Northing_at_false_origin">geocrs:Northing_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Longitude_of_false_origin">geocrs:Longitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_2nd_standard_parallel">geocrs:Latitude_of_2nd_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#Latitude_of_pseudo_standard_parallel">geocrs:Latitude_of_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Co-latitude_of_cone_axis">geocrs:Co-latitude_of_cone_axis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Azimuth_of_initial_line">geocrs:Azimuth_of_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_natural_origin">geocrs:Latitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_projection_centre">geocrs:Latitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#area_of_use">geocrs:area_of_use</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Easting_at_projection_centre">geocrs:Easting_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_standard_parallel">geocrs:Latitude_of_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_2nd_standard_parallel">geocrs:Latitude_of_2nd_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Longitude_of_projection_centre">geocrs:Longitude_of_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#Easting_at_false_origin">geocrs:Easting_at_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Latitude_of_false_origin">geocrs:Latitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Northing_at_projection_centre">geocrs:Northing_at_projection_centre</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Longitude_of_false_origin">geocrs:Longitude_of_false_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Scale_factor_on_initial_line">geocrs:Scale_factor_on_initial_line</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Longitude_of_natural_origin">geocrs:Longitude_of_natural_origin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#Scale_factor_on_pseudo_standard_parallel">geocrs:Scale_factor_on_pseudo_standard_parallel</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -658,20 +660,19 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#LinearCoordinateSystem">geocrs:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#EngineeringCoordinateSystem">geocrs:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticCoordinateSystem">geocrs:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#CartesianCoordinateSystem">geocrs:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#OrdinalCoordinateSystem">geocrs:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#EngineeringCoordinateSystem">geocrs:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#EllipsoidalCoordinateSystem">geocrs:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticCoordinateSystem">geocrs:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#LinearCoordinateSystem">geocrs:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -693,12 +694,6 @@
                 <th>Description</th>
                 <td>
                     <p>coordinate operation that changes coordinates in a source coordinate reference system to coordinates in a target coordinate reference system in which the source and target coordinate reference systems are based on different datums</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -800,12 +795,12 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#EngineeringDatum">geocrs:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#TemporalDatum">geocrs:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#VerticalDatum">geocrs:VerticalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#EngineeringDatum">geocrs:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalDatum">geocrs:VerticalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -852,11 +847,11 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -884,8 +879,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -940,7 +935,7 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -968,8 +963,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -996,8 +991,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1051,8 +1046,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1329,7 +1324,7 @@
                 <th>Sub-classes</th>
                 <td>
                     <a href="http://www.opengis.net/ont/crs#DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1416,7 +1411,13 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1735,12 +1736,12 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#TemporalCRS">geocrs:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1783,33 +1784,6 @@
                 <th>Description</th>
                 <td>
                     <p>compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Sphericcoordinatereferencesystem">
-        <h3>Spheric coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#SphericCRS</code></td>
-            </tr>
-            <tr>
-                <th>Is Defined By</th>
-                <td>
-                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
-                </td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    <p>three-dimensional coordinate system in Euclidean space in which position is specified by one distance coordinate and two angular coordinates</p>
                 </td>
             </tr>
             <tr>
@@ -1929,9 +1903,9 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2177,11 +2151,11 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.opengis.net/ont/crs#CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/crs#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.opengis.net/ont/crs#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.opengis.net/ont/crs#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup>
-                    <a href="http://www.opengis.net/ont/crs#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/crs#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3306,7 +3280,7 @@
   <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#<2987>+proj=utm+zone=21+ellps=clrk66+towgs84=11.363,424.148,373.13,0,0,0,0+units=m+no_defs<>"><2987> +proj=utm +zone=21 +ellps=clrk66 +towgs84=11.363,424.148,373.13,0,0,0,0 +units=m +no_defs  <></a></li>
+        <li><a href="#<32667>+proj=tmerc+lat_0=0+lon_0=-81+k=0.9996+x_0=500000.001016002+y_0=0+datum=WGS84+units=us-ft+no_defs<>"><32667> +proj=tmerc +lat_0=0 +lon_0=-81 +k=0.9996 +x_0=500000.001016002 +y_0=0 +datum=WGS84 +units=us-ft +no_defs  <></a></li>
         <li><a href="#AGD66">AGD66</a></li>
         <li><a href="#AGD66/AMGzone48(deprecated)">AGD66 / AMG zone 48 (deprecated)</a></li>
         <li><a href="#AGD66/AMGzone49">AGD66 / AMG zone 49</a></li>
@@ -7706,8 +7680,8 @@
         <li><a href="#Zanderij/UTMzone21N">Zanderij / UTM zone 21N</a></li>
         <li><a href="#fk89">fk89</a></li>
     </ul>
-    <div class="entity named_individual" id="<2987>+proj=utm+zone=21+ellps=clrk66+towgs84=11.363,424.148,373.13,0,0,0,0+units=m+no_defs<>">
-        <h3><2987> +proj=utm +zone=21 +ellps=clrk66 +towgs84=11.363,424.148,373.13,0,0,0,0 +units=m +no_defs  <><sup title="named individual" class="sup-ni">ni</sup></h3>
+    <div class="entity named_individual" id="<32667>+proj=tmerc+lat_0=0+lon_0=-81+k=0.9996+x_0=500000.001016002+y_0=0+datum=WGS84+units=us-ft+no_defs<>">
+        <h3><32667> +proj=tmerc +lat_0=0 +lon_0=-81 +k=0.9996 +x_0=500000.001016002 +y_0=0 +datum=WGS84 +units=us-ft +no_defs  <><sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
