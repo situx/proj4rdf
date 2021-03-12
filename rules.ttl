@@ -11,6 +11,10 @@
 @prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 @prefix sh:<http://www.w3.org/ns/shacl#> .
 
+geocrs:GeoSPARQLCRSRules 
+    a owl:Ontology ;
+	rdfs:label "GeoSPARQLCRS SHACL Rules" .
+
 geocrs:DatumEnsembleShape rdf:type sh:NodeShape ;
 sh:targetNode geocrs:DatumEnsemble ;
        sh:property [
