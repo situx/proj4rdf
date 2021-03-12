@@ -1,0 +1,220 @@
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:<http://www.w3.org/2002/07/owl#> .
+@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:<http://www.w3.org/2004/02/skos/core#> .
+@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .
+@prefix geo:<http://www.opengis.net/ont/geosparql#> .
+@prefix geocrs:<http://www.opengis.net/ont/crs#> .
+@prefix dc:<http://purl.org/dc/elements/1.1/> .
+@prefix wd:<http://www.wikidata.org/entity/> .
+@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sh:<http://www.w3.org/ns/shacl#> .
+
+geocrs:DatumEnsembleShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:DatumEnsemble ;
+       sh:property [
+           sh:path geocrs:datum ;
+           sh:minCount 2 ;
+       ] .
+	   
+geocrs:GeodeticReferenceFrameShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:GeodeticReferenceFrame ;
+       sh:property [
+           sh:path geocrs:primeMeridian ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ];       
+	   sh:property [
+           sh:path geocrs:ellipsoid ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] .
+	   
+geocrs:DynamicGeodeticReferenceFrameShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:GeodeticReferenceFrame ;
+rdfs:subClassOf geocrs:GeodeticReferenceFrameShape ;
+       sh:property [
+           sh:path geocrs:frameReferenceEpoch ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+	   
+geocrs:TemporalDatumShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:TemporalDatum ;
+       sh:property [
+           sh:path geocrs:origin ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:calendar ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:VerticalReferenceFrameShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:VerticalReferenceFrame ;
+       sh:property [
+           sh:path geocrs:realizationMethod ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] .
+	   
+geocrs:DynamicVerticalReferenceFrameShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:DynamicVerticalReferenceFrame ;
+rdfs:subClassOf geocrs:VerticalReferenceFrameShape ;
+       sh:property [
+           sh:path geocrs:frameReferenceEpoch ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:SingleCRSShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:SingleCRS ;
+       sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:Datum, geocrs:DatumEnsemble ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] .
+	   
+geocrs:CompoundCRSShape rdf:type sh:NodeShape .
+sh:targetNode geocrs:CompoundCRS ;
+       sh:property [
+           sh:path geocrs:componentReferenceSystem  ;
+		   sh:class geocrs:SingleCRS ;
+           sh:minCount 2 ;
+       ] .
+
+geocrs:DerivedCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:DerivedCRS ;
+       sh:property [
+           sh:path geocrs:baseCRS  ;
+		   sh:class geocrs:SingleCRS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:derivingConversion  ;
+		   sh:class geocrs:CoordinateConversionOperation ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]  .  
+
+geocrs:ProjectedCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:DerivedCRSShape ;
+sh:targetNode geocrs:ProjectedCRS ;
+       sh:property [
+           sh:path geocrs:baseCRS  ;
+		   sh:class geocrs:GeodeticCRS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:CartesianCoordinateSystem ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]  .
+	   
+geocrs:DerivedProjectedCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:DerivedCRSShape ;
+sh:targetNode geocrs:DerivedProjectedCRS ;
+       sh:property [
+           sh:path geocrs:baseCRS  ;
+		   sh:class geocrs:ProjectedCRS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:DerivedProjectedCoordinateSystem ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]  .
+
+geocrs:EngineeringCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:EngineeringCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:EngineeringCS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:EngineeringDatum ;
+           sh:minCount 0 ;
+		   sh:maxCount 1 ;
+       ]  .
+	   
+geocrs:GeodeticCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:GeodeticCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:GeodeticCS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] .
+	   
+geocrs:GeographicCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:GeodeticCRSShape ;
+sh:targetNode geocrs:GeographicCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:EllipsoidalCoordinateSystem ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] .
+
+geocrs:ParametricCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:ParametricCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:ParametricCS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:ParametricDatum ;
+           sh:minCount 0 ;
+		   sh:maxCount 1 ;
+       ]  .
+
+geocrs:TemporalCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:TemporalCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:TemporalCS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ]; 
+	   sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:TemporalDatum ;
+           sh:minCount 0 ;
+		   sh:maxCount 1 ;
+       ]  .
+	   
+geocrs:VerticalCRSShape rdf:type sh:NodeShape .
+rdfs:subClassOf geocrs:SingleCRSShape ;
+sh:targetNode geocrs:VerticalCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:GeodeticCS ;
+           sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] ;
+	   sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:GeodeticReferenceFrame ;
+           sh:minCount 0 ;
+		   sh:maxCount 1 ;
+       ].
