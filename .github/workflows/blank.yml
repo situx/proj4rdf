@@ -20,6 +20,7 @@ jobs:
          cd docs
          pylode -i ../ontology.ttl -o index
          pylode -i ../result.ttl -o index2
+         pylode -i ../rules.ttl -o rules -vocpub
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
