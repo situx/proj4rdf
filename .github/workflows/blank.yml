@@ -19,7 +19,7 @@ jobs:
          mkdir docs
          cd docs
          pylode -i ../ontology.ttl -o index
-         pylode -i ../rules.ttl -vocpub -o rules
+         pylode -i ../rules.ttl -o rules
          pylode -i ../result.ttl -o index2
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
