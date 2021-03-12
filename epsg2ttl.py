@@ -557,6 +557,10 @@ for line in f:
 			ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:ProjectedCRS .\n")
 		elif "Geographic 2D CRS" in curcrs.type_name:
 			ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+		elif "Bound CRS" in curcrs.type_name:
+			ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:BoundCRS .\n")
+		elif "Vertical CRS" in curcrs.type_name:
+			ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:VerticalCRS .\n")
 		elif "Geocentric CRS" in curcrs.type_name:
 			ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeocentricCRS .\n")
 		elif "Compound CRS" in curcrs.type_name:
@@ -572,6 +576,12 @@ for line in f:
 			ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")		
 		elif curcrs.coordinate_system!=None:
 			ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
+		if curcrs.source_crs!=None:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS geoepsg:"+str(curcrs.source_crs.to_epsg())+" . \n")
+		if curcrs.target_crs!=None:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS "+str(curcrs.target_crs.to_epsg())+" . \n")
+		if curcrs.get_geod()!=None:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid \""+str(curcrs.get_geod())+"\" . \n")
 		if curcrs.coordinate_operation!=None:
 			coordoperationid=curcrs.coordinate_operation.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace(",","_").replace("&","and").strip()
 			ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateOperation geoepsg:"+str(coordoperationid)+" . \n")
