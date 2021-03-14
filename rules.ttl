@@ -15,14 +15,14 @@ geocrs:GeoSPARQLCRSRules
     a owl:Ontology ;
 	rdfs:label "GeoSPARQLCRS SHACL Rules" .
 
-geocrs:DatumEnsembleShape rdf:type sh:NodeShape ;
+geocrs:DatumEnsembleShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:DatumEnsemble ;
        sh:property [
            sh:path geocrs:datum ;
            sh:minCount 2 ;
        ] .
 	   
-geocrs:GeodeticReferenceFrameShape rdf:type sh:NodeShape ;
+geocrs:GeodeticReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:GeodeticReferenceFrame ;
        sh:property [
            sh:path geocrs:primeMeridian ;
@@ -35,7 +35,7 @@ sh:targetNode geocrs:GeodeticReferenceFrame ;
            sh:maxCount 1 ;
        ] .
 	   
-geocrs:DynamicGeodeticReferenceFrameShape rdf:type sh:NodeShape ;
+geocrs:DynamicGeodeticReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:GeodeticReferenceFrame ;
 rdfs:subClassOf geocrs:GeodeticReferenceFrameShape ;
        sh:property [
@@ -44,7 +44,7 @@ rdfs:subClassOf geocrs:GeodeticReferenceFrameShape ;
            sh:maxCount 1 ;
        ] .
 	   
-geocrs:TemporalDatumShape rdf:type sh:NodeShape ;
+geocrs:TemporalDatumShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:TemporalDatum ;
        sh:property [
            sh:path geocrs:origin ;
@@ -57,7 +57,7 @@ sh:targetNode geocrs:TemporalDatum ;
            sh:maxCount 1 ;
        ] .
 
-geocrs:VerticalReferenceFrameShape rdf:type sh:NodeShape ;
+geocrs:VerticalReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:VerticalReferenceFrame ;
        sh:property [
            sh:path geocrs:realizationMethod ;
@@ -65,7 +65,7 @@ sh:targetNode geocrs:VerticalReferenceFrame ;
            sh:maxCount 1 ;
        ] .
 	   
-geocrs:DynamicVerticalReferenceFrameShape rdf:type sh:NodeShape ;
+geocrs:DynamicVerticalReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:DynamicVerticalReferenceFrame ;
 rdfs:subClassOf geocrs:VerticalReferenceFrameShape ;
        sh:property [
@@ -74,7 +74,7 @@ rdfs:subClassOf geocrs:VerticalReferenceFrameShape ;
            sh:maxCount 1 ;
        ] .
 
-geocrs:SingleCRSShape rdf:type sh:NodeShape ;
+geocrs:SingleCRSShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:SingleCRS ;
        sh:property [
            sh:path geocrs:datum  ;
@@ -83,7 +83,7 @@ sh:targetNode geocrs:SingleCRS ;
 		   sh:maxCount 1 ;
        ] .
 	   
-geocrs:CompoundCRSShape rdf:type sh:NodeShape ;
+geocrs:CompoundCRSShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:CompoundCRS ;
        sh:property [
            sh:path geocrs:componentReferenceSystem  ;
@@ -91,7 +91,7 @@ sh:targetNode geocrs:CompoundCRS ;
            sh:minCount 2 ;
        ] .
 
-geocrs:DerivedCRSShape rdf:type sh:NodeShape ;
+geocrs:DerivedCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:DerivedCRS ;
        sh:property [
@@ -107,7 +107,7 @@ sh:targetNode geocrs:DerivedCRS ;
 		   sh:maxCount 1 ;
        ]  .  
 
-geocrs:ProjectedCRSShape rdf:type sh:NodeShape ;
+geocrs:ProjectedCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:DerivedCRSShape ;
 sh:targetNode geocrs:ProjectedCRS ;
        sh:property [
@@ -123,7 +123,7 @@ sh:targetNode geocrs:ProjectedCRS ;
 		   sh:maxCount 1 ;
        ]  .
 	   
-geocrs:DerivedProjectedCRSShape rdf:type sh:NodeShape ;
+geocrs:DerivedProjectedCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:DerivedCRSShape ;
 sh:targetNode geocrs:DerivedProjectedCRS ;
        sh:property [
@@ -139,7 +139,7 @@ sh:targetNode geocrs:DerivedProjectedCRS ;
 		   sh:maxCount 1 ;
        ]  .
 
-geocrs:EngineeringCRSShape rdf:type sh:NodeShape ;
+geocrs:EngineeringCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:EngineeringCRS ;
        sh:property [
@@ -155,7 +155,7 @@ sh:targetNode geocrs:EngineeringCRS ;
 		   sh:maxCount 1 ;
        ]  .
 	   
-geocrs:GeodeticCRSShape rdf:type sh:NodeShape ;
+geocrs:GeodeticCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:GeodeticCRS ;
        sh:property [
@@ -165,7 +165,7 @@ sh:targetNode geocrs:GeodeticCRS ;
 		   sh:maxCount 1 ;
        ] .
 	   
-geocrs:GeographicCRSShape rdf:type sh:NodeShape ;
+geocrs:GeographicCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:GeodeticCRSShape ;
 sh:targetNode geocrs:GeographicCRS ;
        sh:property [
@@ -175,7 +175,7 @@ sh:targetNode geocrs:GeographicCRS ;
 		   sh:maxCount 1 ;
        ] .
 
-geocrs:ParametricCRSShape rdf:type sh:NodeShape ;
+geocrs:ParametricCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:ParametricCRS ;
        sh:property [
@@ -191,7 +191,7 @@ sh:targetNode geocrs:ParametricCRS ;
 		   sh:maxCount 1 ;
        ]  .
 
-geocrs:TemporalCRSShape rdf:type sh:NodeShape ;
+geocrs:TemporalCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:TemporalCRS ;
        sh:property [
@@ -207,7 +207,7 @@ sh:targetNode geocrs:TemporalCRS ;
 		   sh:maxCount 1 ;
        ]  .
 	   
-geocrs:VerticalCRSShape rdf:type sh:NodeShape ;
+geocrs:VerticalCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:subClassOf geocrs:SingleCRSShape ;
 sh:targetNode geocrs:VerticalCRS ;
        sh:property [
