@@ -629,7 +629,7 @@ ttl.add("geocrs:isSphere skos:definition \"Indicates whether the ellipsoid is a 
 ttl.add("geocrs:isSphere rdfs:domain geocrs:Geoid .\n")
 ttl.add("geocrs:isSphere rdfs:range xsd:double .\n")
 ttl.add("geocrs:extent rdf:type owl:DatatypeProperty .\n")
-ttl.add("geocrs:extent rdfs:label \"envelope\"@en .\n")
+ttl.add("geocrs:extent rdfs:label \"extent\"@en .\n")
 ttl.add("geocrs:extent rdfs:domain geocrs:CRS .\n")
 ttl.add("geocrs:extent rdfs:range geocrs:wktLiteral .\n")
 ttl.add("geocrs:utm_zone rdf:type owl:DatatypeProperty .\n")
