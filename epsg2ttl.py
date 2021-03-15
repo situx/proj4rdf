@@ -583,6 +583,14 @@ ttl.add("geocrs:abbreviation rdfs:range xsd:string .\n")
 ttl.add("geocrs:unit rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:unit rdfs:label \"unit\"@en .\n")
 ttl.add("geocrs:unit rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:unit_auth_code rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:unit_auth_code rdfs:label \"unit auth code\"@en .\n")
+ttl.add("geocrs:unit_auth_code rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:unit_auth_code rdfs:range xsd:string .\n")
+ttl.add("geocrs:unit_code rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:unit_code rdfs:label \"unit code\"@en .\n")
+ttl.add("geocrs:unit_code rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:unit_code rdfs:range xsd:string .\n")
 ttl.add("geocrs:epsgCode rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:epsgCode rdfs:label \"epsgCode\"@en .\n")
 ttl.add("geocrs:epsgCode rdfs:domain geocrs:CRS .\n")
@@ -676,7 +684,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
 		if curcrs.coordinate_system.remarks!=None:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:scope \""+str(curcrs.coordinate_system.scope)+"\" . \n")
+		if curcrs.coordinate_system.scope!=None:
+			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:scope \""+str(curcrs.coordinate_system.scope)+"\" . \n")
 		for axis in curcrs.coordinate_system.axis_list:
 			axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
 			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:axis geocrsaxis:"+axisid+" . \n")
@@ -693,7 +702,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			else:
 				ttl.add("geocrsaxis:"+axisid+" geocrs:unit \""+axis.unit_name+"\" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
 		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem geoepsg:"+epsgcode+"_cs . \n")		
 	elif curcrs.coordinate_system!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
