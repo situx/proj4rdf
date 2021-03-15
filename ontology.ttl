@@ -18,520 +18,535 @@
 @prefix dc:<http://purl.org/dc/elements/1.1/> .
 @prefix wd:<http://www.wikidata.org/entity/> .
 @prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-geocrs:CoordinateConversionOperation rdfs:label "coordinate conversion operation"@en .
-geocrs:DynamicVerticalReferenceFrame skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
+geocrs:CartesianCoordinateSystem rdf:type owl:Class .
+geocrs:EngineeringDatum skos:definition "datum describing the relationship of a coordinate system to a local reference"@en .
+geocrs:SpatioParametricCRS rdfs:subClassOf geocrs:CRS .
+geocrs:DynamicVerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:GeocentricCRS rdfs:label "Geocentric coordinate reference system"@en .
+geocrs:TemporalMeasureCoordinateSystem rdfs:label "Temporal measure coordinate system"@en .
+geocrs:EllipsoidalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DerivedProjectedCoordinateSystem  rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:OtherCoordinateOperation rdfs:label "other coordinate operation"@en .
+geocrs:targetCRS rdf:type owl:ObjectProperty .
+geocrs:semiMajorAxis rdfs:label "semi major axis"@en .
+geocrs:VerticalCoordinateSystem rdf:type owl:Class .
+geocrs:EngineeringDatum rdfs:label "engineering datum"@en .
+geocrs:PolarCoordinateSystem rdf:type owl:Class .
+geocrs:isBound rdfs:range xsd:boolean .
+geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:GeographicCRS .
+geocrs:datum rdfs:domain geocrs:DatumEnsemble .
+geocrs:datum rdfs:domain geocrs:CRS .
+geocrs:DerivedGeodeticCRS rdf:type owl:Class .
+geocrs:TemporalDatum rdfs:subClassOf geocrs:Datum .
+geocrs:ellipse rdfs:domain geocrs:Datum .
+geocrs:extent rdf:type owl:DatatypeProperty .
+geocrs:CoordinateConcatenatedOperation rdfs:subClassOf geocrs:CoordinateOperation .
+geocrs:Datum rdfs:label "datum"@en .
+geocrs:targetCRS rdfs:range geocrs:CRS .
+geocrs:CoordinateTransformationOperation rdfs:subClassOf geocrs:SingleOperation .
+geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:epsgCode rdfs:label "epsgCode"@en .
+geocrs:asProj4 skos:definition "proj4 representation of the CRS"@en .
+geocrs:inverse_flattening skos:definition "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)"@en .
+geocrs:StaticCRS rdfs:subClassOf geocrs:CRS .
+geocrs:DerivedProjectedCRS rdfs:label "Derived projected coordinate reference system"@en .
+geocrs:targetCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:coordinateOperation rdfs:range geocrs:CoordinateOperation .
+geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:isDeprecated rdfs:label "isDeprecated"@en .
 geocrs:DerivedParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
 geocrs:CRS rdfs:label "Coordinate reference system"@en .
-geocrs:SpatialCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
-geocrs:TemporalCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:GeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:coordinateSystem rdfs:domain geocrs:CRS .
-geocrs:OrdinalCoordinateSystem skos:definition "n-dimensional coordinate system in which every axis uses integers"@en .
-geocrs:EngineeringCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:LinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:GeodeticReferenceFrame rdfs:label "Geodetic reference frame"@en .
-geocrs:BoundCRS rdfs:label "Bound coordinate reference system"@en .
-geocrs:asProj4 skos:definition "proj4 representation of the CRS"@en .
-geocrs:DerivedCRS rdfs:label "Derived coordinate reference system"@en .
-geocrs:TemporalCountCoordinateSystem rdfs:label "Temporal count coordinate system"@en .
-geocrs:EngineeringDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:ParametricCRS rdfs:label "Parametric coordinate reference system"@en .
-geocrs:EllipsoidalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DynamicCRS rdfs:subClassOf geocrs:CRS .
-geocrs:SpatioTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:semiMajorAxis rdf:type owl:DatatypeProperty .
-geocrs:ParametricCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:OrdinalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:extent rdfs:label "envelope"@en .
-geocrs:scope rdfs:label "scope"@en .
-geocrs:isGeographic rdfs:domain geocrs:CRS .
-geocrs:CylindricalCoordinateSystem rdf:type owl:Class .
-geocrs:TemporalMeasureCoordinateSystem rdfs:label "Temporal measure coordinate system"@en .
-geocrs:CoordinateTransformationOperation rdfs:label "coordinate transformation operation"@en .
-geocrs:DynamicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedGeographicCRS rdfs:label "Derived geographic coordinate reference system"@en .
-geocrs:asProjJSON rdfs:domain geocrs:CRS .
-geocrs:VerticalCoordinateSystem rdfs:label "Vertical coordinate system"@en .
-geocrs:OrdinalCoordinateSystem rdf:type owl:Class .
-geocrs:SpatioTemporalCompoundCRS skos:definition "coordinate reference system combining a spatial reference system with at least one temporal reference system"@en .
-geocrs:CartesianCoordinateSystem rdfs:label "Cartesian coordinate system"@en .
-geocrs:CoordinateTransformation skos:definition "coordinate operation that changes coordinates in a source coordinate reference system to coordinates in a target coordinate reference system in which the source and target coordinate reference systems are based on different datums"@en .
-geocrs:GeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateSystem skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space"@en .
-geocrs:semiMajorAxis rdfs:domain geocrs:Geoid .
-geocrs:VerticalCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:VerticalReferenceFrame rdfs:subClassOf geocrs:Datum .
-geocrs:DerivedGeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:LinearCoordinateSystem rdfs:label "Linear coordinate system"@en .
-geocrs:abbreviation rdfs:label "axis abbreviation"@en .
-geocrs:PrimeMeridian skos:definition "meridian from which the longitudes of other meridians are quantified"@en .
-geocrs:coordinateOperation rdfs:domain geocrs:CRS .
-geocrs:DerivedVerticalCRS rdfs:label "Derived vertical coordinate reference system"@en .
-geocrs:axis rdf:type owl:ObjectProperty .
-geocrs:isGeocentric rdf:type owl:DatatypeProperty .
-geocrs:axis skos:definition "An axis used by some ellipsoidal or cartesian coordinate system"@en .
-geocrs:isDeprecated rdf:type owl:DatatypeProperty .
-geocrs:CompoundCRS skos:definition "coordinate reference system using at least two independent coordinate reference systems"@en .
-geocrs:CRS rdf:type owl:Class .
-geocrs:StaticCRS rdfs:label "Static coordinate reference system"@en .
-geocrs:primeMeridian rdfs:domain geocrs:Datum .
-geocrs:area_of_use rdfs:domain geocrs:CoordinateConcatenatedOperation, geocrs:CoordinateConversionOperation, geocrs:CoordinateTransformationOperation, geocrs:OtherCoordinateOperation, geocrs:CoordinateOperation .
-geocrs:CartesianCoordinateSystem skos:definition "coordinate system in Euclidean space which gives the position of points relative to n mutually perpendicular straight axes all having the same unit of measure"@en .
-geocrs:EngineeringCRS skos:definition "coordinate reference system based on an engineering datum"@en .
-geocrs:Projection rdfs:label "projection"@en .
-geocrs:SphericalCoordinateSystem rdfs:label "Spherical coordinate system"@en .
-geocrs:semiMinorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedParametricCRS skos:definition "derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system"@en .
-geocrs:coordinateSystem rdfs:range geocrs:CoordinateSystem .
-geocrs:datum rdfs:label "datum"@en .
-geocrs:BoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:VerticalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:DynamicGeodeticReferenceFrame skos:definition "geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates"@en .
-geocrs:OtherCoordinateOperation rdfs:subClassOf geocrs:CoordinateOperation .
-geocrs:VerticalCRS rdfs:label "Vertical coordinate reference system"@en .
-geocrs:Datum owl:equivalentClass wd:Q1502887 .
-geocrs:TemporalDatum rdfs:label "temporal datum"@en .
-geocrs:primeMeridian rdf:type owl:ObjectProperty .
-geocrs:TemporalCoordinateSystemAxis rdf:type owl:Class .
-geocrs:extent rdfs:domain geocrs:CRS .
-geocrs:TemporalMeasureCoordinateSystem rdf:type owl:Class .
-geocrs:DynamicReferenceFrame rdfs:label "Dynamic reference frame"@en .
-geocrs:ParametricCRS skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
-geocrs:targetCRS rdf:type owl:ObjectProperty .
-geocrs:SpatialReferenceSystem rdf:type owl:Class .
-geocrs:SpatioParametricCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:targetCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:isVertical rdfs:label "isVertical"@en .
-geocrs:DerivedProjectedCoordinateSystem  skos:definition "coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system"@en .
-geocrs:SphericalCoordinateSystem rdf:type owl:Class .
-geocrs:GeodeticCRS owl:disjointWith geocrs:CartesianCoordinateSystem, geocrs:CompoundCRS, geocrs:EllipsoidalCoordinateSystem .
-geocrs:DynamicGeodeticReferenceFrame rdf:type owl:Class .
-geocrs:DerivedVerticalCRS skos:definition "derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system"@en .
-geocrs:PrimeMeridian rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:SpatialCompoundCRS rdf:type owl:Class .
-geocrs:CylindricalCoordinateSystem skos:definition "three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate"@en .
-geocrs:asProjJSON skos:definition "ProjJSON representation of the CRS"@en .
-geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .
-geocrs:ReferenceSystem rdf:type owl:Class .
-geocrs:DynamicCRS rdf:type owl:Class .
-geocrs:CoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateSystem rdf:type owl:Class .
-geocrs:DateTimeTemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedGeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:VerticalReferenceFrame skos:definition "reference frame describing the relation of gravity-related heights or depths to the Earth"@en .
-geocrs:primeMeridian rdfs:label "prime meridian"@en .
-geocrs:GeocentricCRS rdfs:subClassOf geocrs:CRS .
-geocrs:EngineeringDatum rdfs:subClassOf geocrs:Datum .
-geocrs:SingleOperation rdfs:label "single operation"@en .
-geocrs:PolarCoordinateSystem rdf:type owl:Class .
-geocrs:DerivedVerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:ParametricCRS rdf:type owl:Class .
-geocrs:OrdinalCoordinateSystem rdfs:label "Ordinal coordinate system"@en .
-geocrs:isProjected rdfs:range xsd:boolean .
-geocrs:DynamicCRS rdfs:label "Dynamic coordinate reference system"@en .
-geocrs:projection rdf:type owl:ObjectProperty .
-geocrs:isSphere rdfs:label "is sphere"@en .
-geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:GeodeticCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:CoordinateTransformation rdf:type owl:Class .
-geocrs:SpatioParametricCRS rdfs:subClassOf geocrs:CRS .
-geocrs:eccentricity rdfs:range xsd:double .
-geocrs:DerivedParametricCRS rdf:type owl:Class .
-geocrs:DynamicCRS skos:definition "coordinate reference system that has a dynamic reference frame"@en .
-geocrs:asProjJSON rdfs:label "asProjJSON"@en .
-geocrs:GeographicCRS skos:definition "coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system"@en .
-geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:EllipsoidalCoordinateSystem skos:definition "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height"@en .
-geocrs:SpatialCompoundCRS rdfs:label "spatial compound coordinate reference system"@en .
-geocrs:SingleCRS skos:definition "coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble"@en .
-geocrs:accuracy rdfs:label "accuracy"@en .
-geocrs:AffineCoordinateSystem rdfs:label "Affine coordinate system"@en .
-geocrs:EngineeringDatum rdf:type owl:Class .
-geocrs:EngineeringCoordinateSystem rdfs:label "Engineering coordinate system"@en .
-geocrs:CompoundCRS rdf:type owl:Class .
-geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:CartesianCoordinateSystem rdf:type owl:Class .
-geocrs:targetCRS rdfs:domain geocrs:CoordinateConversionOperation .
-geocrs:DerivedVerticalCRS rdf:type owl:Class .
-geocrs:SpatioParametricTemporalCompoundCRS rdf:type owl:Class .
-geocrs:has_ballpark_transformation rdfs:range xsd:boolean .
-geocrs:unit rdfs:domain geocrs:CRS .
-geocrs:EngineeringCoordinateSystem skos:definition "coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system"@en .
-geocrs:isBound rdfs:domain geocrs:CRS .
-geocrs:direction rdfs:label "cardinal direction"@en .
-geocrs:includesSRS rdfs:label "includes srs"@en .
-geocrs:unit rdfs:domain geocrs:CoordinateSystemAxis .
-geocrs:SpatioParametricCRS skos:definition "compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system"@en .
-geocrs:DerivedCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:DateTimeTemporalCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
-owl:versionInfo rdfs:label "0.1"^^xsd:double .
-geocrs:DynamicVerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DatumEnsemble rdfs:label "datum ensemble"@en .
-geocrs:DerivedProjectedCoordinateSystem  rdfs:label "derived projected coordinate system"@en .
-geocrs:inverse_flattening skos:definition "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)"@en .
-geocrs:includesSRS skos:definition "Indicates spatial reference systems used by a compound reference system"@en .
-geocrs:ellipse skos:definition "The ellipsoid used by a geodetic datum"@en .
-geocrs:SphericalCoordinateSystem skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates"@en .
-geocrs:OperationParameter rdf:type owl:Class .
-geocrs:ellipse rdfs:label "ellipse"@en .
-geocrs:SphericalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:EngineeringDatum skos:definition "datum describing the relationship of a coordinate system to a local reference"@en .
-geocrs:isGeographic rdf:type owl:DatatypeProperty .
-geocrs:DynamicGeodeticReferenceFrame rdfs:label "Dynamic geodetic reference frame"@en .
-geocrs:AffineCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:semiMinorAxis rdfs:label "semi minor axis"@en .
-geocrs:SpatioParametricCompoundCRS rdfs:label "spatio-parametric compound coordinate reference system"@en .
-geocrs:ParametricCoordinateSystem skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
-geocrs:unit_conversion_factor rdfs:label "unit conversion factor"@en .
-geocrs:CylindricalCoordinateSystem rdfs:label "Cylindrical coordinate system"@en .
-geocrs:DatumEnsemble rdf:type owl:Class .
-geocrs:epsgCode rdfs:domain geocrs:CRS .
-geocrs:flatteningParameter rdf:type owl:DatatypeProperty .
-geocrs:isGeographic rdfs:label "isGeographic"@en .
-geocrs:datum rdfs:domain geocrs:CRS .
-geocrs:ParametricDatum skos:definition "textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth"@en .
-geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DynamicReferenceFrame skos:definition "reference frame in which the defining parameters include time evolution"@en .
-geocrs:DerivedProjectedCRS skos:definition "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS"@en .
-geocrs:DerivedProjectedCoordinateSystem  rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateTransformationOperation rdf:type owl:Class .
-geocrs:SpatioParametricCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
-geocrs:AffineCoordinateSystem owl:equivalentClass wd:Q382510 .
-geocrs:SpatioParametricCompoundCRS rdf:type owl:Class .
-geocrs:DateTimeTemporalCoordinateSystem rdf:type owl:Class .
-geocrs:GeographicCRS rdfs:label "Geographic coordinate reference system"@en .
-geocrs:Ellipsoid rdfs:label "ellipsoid"@en .
-geocrs:TemporalCRS rdfs:label "Temporal coordinate reference system"@en .
-geocrs:SphericalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:SpatioParametricTemporalCompoundCRS rdfs:label "spatio-parametric-temporal compound coordinate reference system"@en .
-geocrs:CompoundCRS rdfs:subClassOf geocrs:CRS .
-geocrs:ParametricCoordinateSystem rdfs:label "Parametric coordinate system"@en .
-geocrs:DynamicVerticalReferenceFrame rdf:type owl:Class .
-geocrs:VerticalReferenceFrame rdf:type owl:Class .
-geocrs:datum rdf:type owl:ObjectProperty .
-geocrs:ParametricCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:scope rdf:type owl:DatatypeProperty .
-geocrs:eccentricity rdfs:domain geocrs:Geoid .
-geocrs:projection rdfs:range geocrs:Projection .
-geocrs:SpatialReferenceSystem rdfs:label "spatial reference system"@en .
-geocrs:TemporalCountCoordinateSystem skos:definition "one-dimensional coordinate system used to record time as an integer count"@en .
-geocrs:sourceCRS rdfs:label "source CRS"@en .
-geocrs:isProjected rdfs:label "isProjected"@en .
-geocrs:Datum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:asWKT rdfs:label "asWKT"@en .
-geocrs:TemporalDatum skos:definition "coordinate reference system based on a temporal datum"@en .
-geocrs:semiMinorAxis rdf:type owl:DatatypeProperty .
-geocrs:isDeprecated rdfs:label "isDeprecated"@en .
-geocrs:TemporalCoordinateSystem rdfs:label "Temporal coordinate system"@en .
-geocrs:AreaOfUse rdfs:label "area of use"@en .
-geocrs:CoordinateSystemAxis rdf:type owl:Class .
-geocrs:TemporalCoordinateSystem skos:definition "one-dimensionalcoordinate system where the axis is time"@en .
-geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:BoundCRS rdfs:subClassOf geocrs:CRS .
-geocrs:GeoSPARQLCRS dc:description "This ontology models coordinate reference systems"@en .
-geocrs:DynamicReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:GeoSPARQLCRS rdfs:label "GeoSPARQL CRS Ontology Draft"@en .
-geocrs:GeodeticCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:Geoid rdfs:label "geoid"@en .
-geocrs:LinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:semiMajorAxis rdfs:range xsd:double .
-geocrs:semiMajorAxis skos:definition "Indicates the length of the semi major axis of an ellipsoid"@en .
-geocrs:DerivedEngineeringCRS rdfs:label "Derived engineering coordinate reference system"@en .
-geocrs:EllipsoidalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:SpatioParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:EngineeringCRS rdf:type owl:Class .
-geocrs:coordinateOperation rdf:type owl:ObjectProperty .
-geocrs:Datum skos:definition "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system"@en .
-geocrs:TemporalCoordinateSystem rdf:type owl:Class .
-geocrs:inverse_flattening rdfs:range xsd:double .
-geocrs:StaticCRS rdfs:subClassOf geocrs:CRS .
-geocrs:GeoSPARQLCRS rdf:type owl:Ontology .
-geocrs:DerivedProjectedCRS rdf:type owl:Class .
-geocrs:EngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:flatteningParameter rdfs:range xsd:double .
-geocrs:SpatioTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
-geocrs:sourceCRS rdfs:domain geocrs:CoordinateConversionOperation .
-geocrs:isVertical rdf:type owl:DatatypeProperty .
-geocrs:DerivedProjectedCRS rdfs:label "Derived projected coordinate reference system"@en .
-geocrs:CardinalDirection rdfs:label "cardinal direction"@en .
-geocrs:includesSRS rdfs:range geocrs:CRS .
-geocrs:ReferenceSystem rdfs:label "reference system"@en .
-geocrs:Projection rdf:type owl:Class .
-geocrs:OtherCoordinateOperation rdf:type owl:Class .
-geocrs:GeodeticReferenceFrame rdfs:subClassOf geocrs:Datum .
-geocrs:semiMajorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:datum rdfs:domain geocrs:DatumEnsemble .
-geocrs:VerticalCRS rdf:type owl:Class .
-geocrs:CoordinateOperation rdfs:label "coordinate operation"@en .
-geocrs:area_of_use rdfs:label "area of use"@en .
-geocrs:targetCRS skos:definition "The dimension of the coordinate reference system associated with the data obtained as output of an operation"@en .
-geocrs:isGeocentric rdfs:range xsd:boolean .
-geocrs:Ellipsoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:datum rdfs:range geocrs:Datum .
-geocrs:SingleCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:ParametricDatum rdf:type owl:Class .
-geocrs:sourceCRS skos:definition "The dimension of the coordinate reference system associated with the data used as input of an operation"@en .
-geocrs:isGeographic rdfs:range xsd:boolean .
-geocrs:semiMinorAxis rdfs:range xsd:double .
-geocrs:ProjectedCRS rdfs:label "Projected coordinate reference system"@en .
-geocrs:EllipsoidalCoordinateSystem rdf:type owl:Class .
-geocrs:CoordinateConcatenatedOperation rdfs:label "coordinate concatenated operation"@en .
-geocrs:coordinateSystem rdf:type owl:ObjectProperty .
-geocrs:AreaOfUse rdf:type owl:Class .
-geocrs:AffineCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:CardinalDirection rdf:type owl:Class .
-geocrs:axis rdfs:range geocrs:CoordinateSystemAxis .
-geocrs:isSphere rdfs:domain geocrs:Geoid .
-geocrs:CoordinateOperation rdf:type owl:Class .
-geocrs:CoordinateConversionOperation rdf:type owl:Class .
-geocrs:TemporalReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .
-geocrs:EngineeringCoordinateSystem rdf:type owl:Class .
-geocrs:GeodeticReferenceFrame skos:definition "reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth"@en .
-geocrs:ProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:CompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:coordinateSystem rdfs:label "coordinate system"@en .
-geocrs:VerticalCoordinateSystem skos:definition "one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth's gravity field"@en .
-geocrs:TemporalReferenceSystem rdf:type owl:Class .
-geocrs:area_of_use rdfs:range geocrs:AreaOfUse .
-geocrs:Datum rdfs:label "datum"@en .
-geocrs:AffineCoordinateSystem skos:definition "coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular"@en .
-geocrs:SingleOperation skos:definition "single (not concatenated) coordinate operation"@en .
-geocrs:includesSRS rdf:type owl:ObjectProperty .
-geocrs:Ellipsoid skos:definition "reference ellipsoid"@en .
-geocrs:flatteningParameter rdfs:label "flattening parameter"@en .
-geocrs:ProjectedCRS rdf:type owl:Class .
-geocrs:direction rdfs:domain geocrs:Datum .
-geocrs:ellipse rdf:type owl:ObjectProperty .
-geocrs:GeographicCRS rdf:type owl:Class .
-geocrs:GeodeticCRS skos:definition "three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system"@en .
-geocrs:LinearCoordinateSystem rdf:type owl:Class .
-geocrs:PassThroughOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CRS skos:definition "coordinate system that is related to an object by a datum"@en .
-geocrs:unit_conversion_factor rdf:type owl:DatatypeProperty .
-geocrs:DerivedGeodeticCRS skos:definition "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system"@en .
-geocrs:DerivedCRS skos:definition "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS"@en .
-geocrs:SpatioParametricTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
-geocrs:DerivedProjectedCoordinateSystem  rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:CoordinateTransformationOperation rdfs:subClassOf geocrs:SingleOperation .
-geocrs:ParametricDatum rdfs:subClassOf geocrs:Datum .
-geocrs:TemporalMeasureCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:GeocentricCRS rdf:type owl:Class .
-geocrs:semiMinorAxis skos:definition "Indicates the length of the semi minor axis of an ellipsoid"@en .
-geocrs:eccentricity rdfs:label "eccentricity"@en .
-geocrs:VerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:PolarCoordinateSystem rdfs:label "Polar coordinate system"@en .
-geocrs:primeMeridian skos:definition "The prime meridian used by a geodetic datum"@en .
-geocrs:SpatioParametricCRS rdfs:label "Spatio-Parametric coordinate reference system"@en .
-geocrs:SpatialReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .
-geocrs:targetCRS rdfs:label "target CRS"@en .
-geocrs:EngineeringCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:asProj4 rdfs:domain geocrs:CRS .
-geocrs:DynamicGeodeticReferenceFrame rdfs:subClassOf geocrs:GeodeticReferenceFrame .
-geocrs:direction rdf:type owl:ObjectProperty .
-geocrs:asProj4 rdfs:label "asProj4"@en .
-geocrs:sourceCRS rdf:type owl:ObjectProperty .
-geocrs:sourceCRS rdfs:range geocrs:CRS .
-geocrs:TemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateConcatenatedOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CoordinateTransformationOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DatumEnsemble skos:definition "collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other"@en .
-geocrs:CoordinateSystem rdfs:label "Coordinate system"@en .
-geocrs:CRS rdfs:subClassOf geocrs:SpatialReferenceSystem .
-geocrs:CoordinateConversionOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedProjectedCoordinateSystem rdf:type owl:Class .
-geocrs:epsgCode rdfs:range xsd:string .
-geocrs:DatumEnsemble rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:isProjected rdf:type owl:DatatypeProperty .
-geocrs:isDeprecated rdfs:domain geocrs:CRS .
-geocrs:CoordinateConcatenatedOperation skos:definition "ordered sequence of two or more single coordinate operations"@en .
-geocrs:abbreviation skos:definition "The abbreviation used to identify an axis"@en .
-geocrs:isSphere rdf:type owl:DatatypeProperty .
-geocrs:DateTimeTemporalCoordinateSystem skos:definition "one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601."@en .
-geocrs:ellipse rdfs:domain geocrs:CRS .
-geocrs:VerticalCoordinateSystem rdf:type owl:Class .
-geocrs:asProj4 rdfs:range xsd:string .
-geocrs:EngineeringCRS rdfs:label "Engineering coordinate reference system"@en .
-geocrs:CartesianCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:isVertical rdfs:range xsd:boolean .
-geocrs:DateTimeTemporalCoordinateSystem rdfs:label "Date time temporal coordinate system"@en .
-geocrs:Geoid skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
-geocrs:ellipse rdfs:range geocrs:Ellipsoid .
-geocrs:EngineeringCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:VerticalCRS .
-geocrs:DerivedEngineeringCRS skos:definition "derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class"@en .
-geocrs:DerivedProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:VerticalReferenceFrame rdfs:label "Vertical reference frame"@en .
-geocrs:axis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:unit_conversion_factor rdfs:domain geocrs:CoordinateSystemAxis .
-geocrs:asWKT rdfs:domain geocrs:CRS .
-geocrs:DynamicVerticalReferenceFrame rdfs:label "Dynamic vertical reference frame"@en .
-geocrs:asWKT rdfs:range geocrs:wktLiteral .
-geocrs:extent rdfs:range geocrs:wktLiteral .
-geocrs:DerivedCRS rdf:type owl:Class .
-geocrs:GeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:semiMinorAxis rdfs:domain geocrs:Geoid .
-geocrs:area_of_use rdf:type owl:ObjectProperty .
-geocrs:GeoSPARQLCRS dc:creator wd:Q67624599 .
-geocrs:has_ballpark_transformation rdf:type owl:DatatypeProperty .
-geocrs:CompoundCRS rdfs:label "Compound coordinate reference system"@en .
-geocrs:Ellipsoid owl:disjointWith geocrs:PrimeMeridian .
-geocrs:epsgCode rdfs:label "epsgCode"@en .
-geocrs:PrimeMeridian rdfs:label "prime meridian"@en .
-geocrs:Ellipsoid rdfs:subClassOf geocrs:Geoid .
-geocrs:CoordinateConversionOperation rdfs:subClassOf geocrs:SingleOperation .
-geocrs:abbreviation rdfs:range xsd:string .
-geocrs:coordinateOperation rdfs:range geocrs:CoordinateOperation .
-geocrs:SpatialCompoundCRS skos:definition "coordinate reference system using a combination of two compatible spatial reference systems"@en .
-geocrs:StaticCRS skos:definition "coordinate reference system that has a static reference frame"@en .
-geocrs:CoordinateOperation skos:definition "mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch"@en .
-geocrs:unit rdf:type owl:ObjectProperty .
-geocrs:GeodeticCRS rdf:type owl:Class .
-geocrs:CoordinateTransformation rdfs:label "coordinate transformation"@en .
-geocrs:GeocentricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:PolarCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:CartesianCoordinateSystem rdfs:subClassOf geocrs:AffineCoordinateSystem .
-geocrs:Geoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:asWKT rdf:type owl:DatatypeProperty .
-geocrs:inverse_flattening rdfs:label "inverse flattening"@en .
-geocrs:GeodeticCRS rdfs:label "Geodetic coordinate reference system"@en .
-geocrs:GeographicCRS rdfs:subClassOf geocrs:GeodeticCRS .
-geocrs:SingleOperation rdf:type owl:Class .
-geocrs:TemporalCoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DynamicGeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:is_semi_minor_computed rdfs:range xsd:double .
-geocrs:utm_zone rdfs:label "utm zone"@en .
-geocrs:eccentricity rdf:type owl:DatatypeProperty .
-geocrs:scope skos:definition "the scope of the referring object"@en .
-geocrs:TemporalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:GeodeticCoordinateSystem rdfs:label "Geodetic coordinate system"@en .
-geocrs:isSphere rdfs:range xsd:double .
-geocrs:asProjJSON rdfs:range xsd:string .
-geocrs:has_ballpark_transformation rdfs:label "has ballpark transformation"@en .
-geocrs:DerivedGeographicCRS skos:definition "coordinate reference system that is defined through the application of a specified coordinate conversion to the coordinates within a previously established coordinate reference system"@en .
-geocrs:abbreviation rdf:type owl:DatatypeProperty .
-geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:EngineeringCRS .
-geocrs:StaticCRS rdf:type owl:Class .
-geocrs:PassThroughOperation rdf:type owl:Class .
-geocrs:projection rdfs:label "projection"@en .
-geocrs:ProjectedCRS skos:definition "coordinate reference system derived from a geographic coordinate reference system by applying a map projection"@en .
-geocrs:TemporalCountCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
-geocrs:DerivedEngineeringCRS rdf:type owl:Class .
-geocrs:axis rdfs:label "axis"@en .
-geocrs:CoordinateSystemAxis rdfs:label "Coordinate system axis"@en .
-geocrs:projection rdfs:domain geocrs:CRS .
-geocrs:ParametricCoordinateSystem rdf:type owl:Class .
-geocrs:Datum rdf:type owl:Class .
-geocrs:OperationParameter rdfs:label "operation parameter"@en .
-geocrs:DerivedGeodeticCRS rdf:type owl:Class .
 geocrs:SpatioTemporalCompoundCRS rdfs:label "spatio-temporal compound coordinate reference system"@en .
-geocrs:CoordinateConcatenatedOperation rdfs:subClassOf geocrs:CoordinateOperation .
-geocrs:GeodeticCoordinateSystem rdf:type owl:Class .
-geocrs:LinearCoordinateSystem skos:definition "one-dimensional coordinate system in which a linear feature forms the axis"@en .
 geocrs:SpatioParametricCRS rdf:type owl:Class .
-geocrs:isGeocentric rdfs:label "isGeocentric"@en .
-geocrs:isDeprecated rdfs:range xsd:boolean .
-geocrs:Ellipsoid rdf:type owl:Class .
-geocrs:TemporalCRS skos:definition "coordinate reference system based on a temporal datum"@en .
-geocrs:OperationValue rdf:type owl:Class .
-geocrs:targetCRS rdfs:range geocrs:CRS .
-geocrs:asProj4 rdf:type owl:DatatypeProperty .
-geocrs:DerivedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:GeodeticCRS .
-geocrs:unit rdf:type owl:DatatypeProperty .
-geocrs:OperationValue rdfs:label "operation value"@en .
-geocrs:GeodeticCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:PrimeMeridian rdf:type owl:Class .
-geocrs:TemporalCRS rdf:type owl:Class .
-geocrs:TemporalReferenceSystem rdfs:label "temporal reference system"@en .
-geocrs:coordinateOperation rdfs:label "coordinate operation"@en .
-geocrs:accuracy rdfs:range xsd:double .
-geocrs:SpatioParametricCompoundCRS skos:definition "A spatio-parametric coordinate reference system is a compound CRS in which one component is a geographic 2D, projected 2D or engineering 2D CRS, supplemented by a parametric CRS to create a three-dimensional CRS"@en .
-geocrs:axis rdfs:domain geocrs:CRS .
-geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:GeographicCRS .
-geocrs:TemporalCoordinateSystemAxis rdfs:label "Temporal coordinate system axis"@en .
-geocrs:ParametricDatum rdfs:label "parametric datum"@en .
-geocrs:EngineeringDatum rdfs:label "engineering datum"@en .
-geocrs:primeMeridian rdfs:domain geocrs:CRS .
-geocrs:EllipsoidalCoordinateSystem rdfs:label "Ellipsoidal coordinate system"@en .
-geocrs:OrdinalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DerivedParametricCRS rdfs:label "Derived parametric coordinate reference system"@en .
-geocrs:ParametricCRS rdfs:subClassOf geocrs:SingleCRS .
-geocrs:inverse_flattening rdf:type owl:DatatypeProperty .
-geocrs:TemporalCountCoordinateSystem rdf:type owl:Class .
-geocrs:isVertical rdfs:domain geocrs:CRS .
-geocrs:accuracy rdf:type owl:DatatypeProperty .
-geocrs:abbreviation rdfs:domain geocrs:CoordinateSystemAxis .
-geocrs:OtherCoordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:unit rdfs:label "unit"@en .
-geocrs:is_semi_minor_computed rdfs:label "is semi minor computed"@en .
-geocrs:direction rdfs:range geocrs:CardinalDirection .
-geocrs:includesSRS rdfs:domain geocrs:CompoundCRS .
-geocrs:SpatialCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:PolarCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
-geocrs:DynamicVerticalReferenceFrame rdfs:subClassOf geocrs:VerticalReferenceFrame .
-geocrs:utm_zone rdf:type owl:DatatypeProperty .
-geocrs:DerivedGeodeticCRS rdfs:label "Derived geodetic coordinate reference system"@en .
-geocrs:SingleCRS rdf:type owl:Class .
-geocrs:ellipse rdfs:domain geocrs:Datum .
-geocrs:DerivedGeographicCRS rdf:type owl:Class .
-geocrs:asProjJSON rdf:type owl:DatatypeProperty .
-geocrs:DynamicReferenceFrame rdf:type owl:Class .
-geocrs:TemporalDatum rdf:type owl:Class .
-geocrs:sourceCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:SingleOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:TemporalMeasureCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
-geocrs:DerivedEngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:AffineCoordinateSystem rdf:type owl:Class .
-geocrs:PolarCoordinateSystem skos:definition "two-dimensional coordinate system in Euclidean space in which position is specified by one distance coordinate and one angular coordinate"@en .
-geocrs:VerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:SingleOperation rdfs:subClassOf geocrs:CoordinateOperation .
-geocrs:CoordinateConcatenatedOperation rdf:type owl:Class .
-geocrs:isBound rdf:type owl:DatatypeProperty .
-geocrs:unit rdfs:range om:Unit .
-geocrs:unit_conversion_factor rdfs:range xsd:string .
-geocrs:TemporalCountCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:semiMajorAxis rdfs:label "semi major axis"@en .
-geocrs:SingleCRS rdfs:subClassOf geocrs:CRS .
-geocrs:ParametricDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:ParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:ProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:isSphere skos:definition "Indicates whether the ellipsoid is a sphere"@en .
-geocrs:GeodeticCoordinateSystem owl:disjointWith geocrs:CompoundCRS .
-geocrs:asWKT skos:definition "WKT representation of the CRS"@en .
-geocrs:VerticalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:ParametricCRS .
-geocrs:PassThroughOperation skos:definition "specification of a subset of coordinate tuples that is subject to a coordinate operation"@en .
-geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:GeocentricCRS rdfs:label "Geocentric coordinate reference system"@en .
-geocrs:TemporalDatum rdfs:subClassOf geocrs:Datum .
-geocrs:PassThroughOperation rdfs:label "passthrough operation"@en .
-geocrs:isBound rdfs:label "isBound"@en .
-geocrs:GeodeticReferenceFrame rdf:type owl:Class .
-geocrs:StaticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:DerivedCRS .
-geocrs:SpatioTemporalCompoundCRS rdf:type owl:Class .
-geocrs:TemporalMeasureCoordinateSystem skos:definition "one-dimensional coordinate system used to record a time as a real number"@en .
-geocrs:scope rdfs:range xsd:string .
-geocrs:flatteningParameter rdfs:domain geocrs:Geoid .
-geocrs:OtherCoordinateOperation rdfs:label "other coordinate operation"@en .
-geocrs:TemporalDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:GeodeticCoordinateSystem skos:definition "coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system"@en .
-geocrs:TemporalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-geocrs:epsgCode rdf:type owl:DatatypeProperty .
-geocrs:TemporalCoordinateSystemAxis rdfs:subClassOf geocrs:CoordinateSystemAxis .
-geocrs:isBound rdfs:range xsd:boolean .
-geocrs:isGeocentric rdfs:domain geocrs:CRS .
-geocrs:accuracy rdfs:domain geocrs:CoordinateOperation .
-geocrs:isProjected rdfs:domain geocrs:CRS .
-geocrs:SingleCRS rdfs:label "single coordinate reference system"@en .
-geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:ProjectedCRS .
-geocrs:BoundCRS rdf:type owl:Class .
-geocrs:extent rdf:type owl:DatatypeProperty .
-geocrs:Geoid rdf:type owl:Class .
-geocrs:VerticalCRS skos:definition "one-dimensional coordinate reference system based on a vertical reference frame"@en .
-geocrs:SpatioParametricTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SpatioParametricCRS skos:definition "compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system"@en .
 geocrs:DynamicReferenceFrame rdfs:subClassOf geocrs:Datum .
+geocrs:SingleCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:datum rdfs:range geocrs:Datum .
+geocrs:VerticalCRS skos:definition "one-dimensional coordinate reference system based on a vertical reference frame"@en .
+geocrs:DerivedGeodeticCRS rdfs:label "Derived geodetic coordinate reference system"@en .
+geocrs:DynamicGeodeticReferenceFrame rdfs:label "Dynamic geodetic reference frame"@en .
+geocrs:PolarCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CRS rdf:type owl:Class .
+geocrs:DerivedEngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:unit_conversion_factor rdfs:domain geocrs:CoordinateSystemAxis .
+geocrs:TemporalDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:GeocentricCRS rdfs:subClassOf geocrs:CRS .
+geocrs:isGeocentric skos:definition "Indicates if the spatial reference system is geocentric"@en .
+geocrs:DynamicGeodeticReferenceFrame skos:definition "geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates"@en .
+geocrs:coordinateOperation rdfs:domain geocrs:CRS .
+geocrs:SingleCRS skos:definition "coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble"@en .
+geocrs:EngineeringCRS rdf:type owl:Class .
+geocrs:semiMinorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DynamicReferenceFrame skos:definition "reference frame in which the defining parameters include time evolution"@en .
+geocrs:CompoundCRS skos:definition "coordinate reference system using at least two independent coordinate reference systems"@en .
+geocrs:DerivedProjectedCoordinateSystem  rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:TemporalCountCoordinateSystem rdf:type owl:Class .
+geocrs:PrimeMeridian rdf:type owl:Class .
+geocrs:projection rdfs:range geocrs:Projection .
+geocrs:scope rdfs:label "scope"@en .
+geocrs:ParametricCRS skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
+geocrs:isSphere rdfs:domain geocrs:Geoid .
+geocrs:SpatioParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:OrdinalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:semiMajorAxis rdf:type owl:DatatypeProperty .
+geocrs:coordinateSystem rdfs:domain geocrs:CRS .
+geocrs:eccentricity rdfs:range xsd:double .
+geocrs:CylindricalCoordinateSystem rdfs:label "Cylindrical coordinate system"@en .
+geocrs:GeodeticReferenceFrame rdf:type owl:Class .
+geocrs:DynamicCRS rdfs:label "Dynamic coordinate reference system"@en .
+geocrs:unit_conversion_factor rdfs:label "unit conversion factor"@en .
+geocrs:ellipse rdfs:range geocrs:Ellipsoid .
+geocrs:axis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:inverse_flattening rdfs:range xsd:double .
+geocrs:DerivedVerticalCRS skos:definition "derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system"@en .
+geocrs:asWKT rdfs:range geocrs:wktLiteral .
+geocrs:VerticalCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:CartesianCoordinateSystem rdfs:subClassOf geocrs:AffineCoordinateSystem .
+geocrs:EngineeringCRS rdfs:label "Engineering coordinate reference system"@en .
+geocrs:TemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:OrdinalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CoordinateTransformationOperation skos:definition "Coordinate operation in which the two coordinate reference systems are based on different datums"@en .
+geocrs:flatteningParameter rdfs:domain geocrs:Geoid .
+geocrs:abbreviation rdfs:range xsd:string .
+geocrs:SphericalCoordinateSystem rdfs:label "Spherical coordinate system"@en .
+geocrs:datum rdf:type owl:ObjectProperty .
+geocrs:SpatialCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
+geocrs:CoordinateOperation rdfs:label "coordinate operation"@en .
+geocrs:TemporalCoordinateSystemAxis rdfs:label "Temporal coordinate system axis"@en .
+geocrs:SpatioTemporalCompoundCRS skos:definition "coordinate reference system combining a spatial reference system with at least one temporal reference system"@en .
+geocrs:EngineeringCoordinateSystem rdfs:label "Engineering coordinate system"@en .
+geocrs:CoordinateTransformationOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:targetCRS rdfs:label "target CRS"@en .
+geocrs:AffineCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:unit_conversion_factor rdf:type owl:DatatypeProperty .
+geocrs:EngineeringCRS skos:definition "coordinate reference system based on an engineering datum"@en .
+geocrs:DatumEnsemble skos:definition "collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other"@en .
+geocrs:Projection rdfs:label "projection"@en .
+geocrs:ParametricCRS rdf:type owl:Class .
+geocrs:GeographicCRS skos:definition "coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system"@en .
+geocrs:CoordinateConversionOperation rdfs:label "coordinate conversion operation"@en .
+geocrs:includesSRS rdfs:range geocrs:CRS .
+geocrs:DerivedParametricCRS rdfs:label "Derived parametric coordinate reference system"@en .
+geocrs:VerticalReferenceFrame rdf:type owl:Class .
+geocrs:DerivedProjectedCoordinateSystem rdf:type owl:Class .
+geocrs:OtherCoordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:asProj4 rdfs:range xsd:string .
+geocrs:EllipsoidalCoordinateSystem skos:definition "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height"@en .
+geocrs:CartesianCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:PassThroughOperation rdf:type owl:Class .
+geocrs:EllipsoidalCoordinateSystem rdfs:label "Ellipsoidal coordinate system"@en .
+geocrs:SpatioParametricCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
+geocrs:SpatialCompoundCRS rdfs:label "spatial compound coordinate reference system"@en .
+geocrs:Geoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CoordinateConcatenatedOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:ParametricCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:Geoid rdfs:label "geoid"@en .
+geocrs:isVertical rdf:type owl:DatatypeProperty .
+geocrs:semiMinorAxis skos:definition "Indicates the length of the semi minor axis of an ellipsoid"@en .
+geocrs:isGeographic rdf:type owl:DatatypeProperty .
+geocrs:Ellipsoid owl:disjointWith geocrs:PrimeMeridian .
+geocrs:unit rdfs:label "unit"@en .
+geocrs:coordinateSystem rdf:type owl:ObjectProperty .
+geocrs:AffineCoordinateSystem skos:definition "coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular"@en .
+geocrs:SpatioParametricTemporalCompoundCRS rdf:type owl:Class .
+geocrs:direction rdfs:range geocrs:CardinalDirection .
+geocrs:CoordinateTransformationOperation rdfs:label "coordinate transformation operation"@en .
+geocrs:ParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:isProjected rdfs:range xsd:boolean .
+geocrs:isVertical rdfs:range xsd:boolean .
+geocrs:TemporalCountCoordinateSystem rdfs:label "Temporal count coordinate system"@en .
+geocrs:utm_zone rdf:type owl:DatatypeProperty .
+geocrs:projection rdfs:label "projection"@en .
+geocrs:primeMeridian rdfs:label "prime meridian"@en .
+geocrs:accuracy rdfs:domain geocrs:CoordinateOperation .
+geocrs:semiMajorAxis skos:definition "Indicates the length of the semi major axis of an ellipsoid"@en .
+geocrs:semiMinorAxis rdfs:label "semi minor axis"@en .
+geocrs:CoordinateSystemAxis rdf:type owl:Class .
+geocrs:EngineeringDatum rdf:type owl:Class .
+geocrs:CompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:direction skos:definition "Associates a direction with a datum"@en .
+geocrs:CoordinateSystem rdfs:label "Coordinate system"@en .
+geocrs:sourceCRS rdfs:range geocrs:CRS .
+geocrs:GeodeticCoordinateSystem rdf:type owl:Class .
+geocrs:TemporalReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .
+geocrs:CRS skos:definition "coordinate system that is related to an object by a datum"@en .
+geocrs:ProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:GeodeticCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:accuracy rdf:type owl:DatatypeProperty .
+geocrs:DerivedCRS rdfs:label "Derived coordinate reference system"@en .
+geocrs:semiMajorAxis rdfs:domain geocrs:Geoid .
+geocrs:CompoundCRS rdfs:subClassOf geocrs:CRS .
+geocrs:Datum skos:definition "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system"@en .
+geocrs:CoordinateConcatenatedOperation rdf:type owl:Class .
+geocrs:DerivedEngineeringCRS rdfs:label "Derived engineering coordinate reference system"@en .
+geocrs:OtherCoordinateOperation rdf:type owl:Class .
+geocrs:ParametricDatum rdfs:subClassOf geocrs:Datum .
+geocrs:SingleOperation rdfs:label "single operation"@en .
+geocrs:StaticCRS skos:definition "coordinate reference system that has a static reference frame"@en .
+geocrs:ReferenceSystem rdf:type owl:Class .
+geocrs:PolarCoordinateSystem rdfs:label "Polar coordinate system"@en .
+geocrs:TemporalCountCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:axis rdfs:domain geocrs:CRS .
+geocrs:TemporalCRS rdfs:label "Temporal coordinate reference system"@en .
+geocrs:DerivedCRS skos:definition "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS"@en .
+geocrs:isGeocentric rdfs:label "isGeocentric"@en .
+geocrs:GeocentricCRS rdf:type owl:Class .
+geocrs:EngineeringCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:isGeocentric rdf:type owl:DatatypeProperty .
+geocrs:EllipsoidalCoordinateSystem rdf:type owl:Class .
+geocrs:SingleOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SingleOperation rdfs:subClassOf geocrs:CoordinateOperation .
+geocrs:ProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:coordinateOperation rdfs:label "coordinate operation"@en .
+geocrs:abbreviation rdfs:domain geocrs:CoordinateSystemAxis .
+geocrs:CylindricalCoordinateSystem skos:definition "three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate"@en .
+geocrs:TemporalCRS rdf:type owl:Class .
+geocrs:datum rdfs:label "datum"@en .
+geocrs:accuracy rdfs:label "accuracy"@en .
+geocrs:CardinalDirection rdf:type owl:Class .
+geocrs:CRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SpatioParametricCRS rdfs:label "Spatio-Parametric coordinate reference system"@en .
+geocrs:scope rdf:type owl:DatatypeProperty .
+geocrs:GeoSPARQLCRS dc:creator wd:Q67624599 .
+geocrs:CoordinateTransformation rdf:type owl:Class .
+geocrs:GeodeticCRS skos:definition "three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system"@en .
+geocrs:TemporalMeasureCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
+geocrs:ParametricCRS rdfs:label "Parametric coordinate reference system"@en .
+geocrs:SingleOperation skos:definition "single (not concatenated) coordinate operation"@en .
+geocrs:asProj4 rdf:type owl:DatatypeProperty .
+geocrs:GeodeticCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:isDeprecated skos:definition "Indicates if the spatial reference system is deprecated"@en .
+geocrs:ellipse rdfs:label "ellipse"@en .
+geocrs:SingleCRS rdf:type owl:Class .
+geocrs:AreaOfUse rdf:type owl:Class .
+geocrs:TemporalCoordinateSystem rdf:type owl:Class .
+geocrs:isGeographic rdfs:range xsd:boolean .
+geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:EngineeringCRS .
+geocrs:DynamicVerticalReferenceFrame rdf:type owl:Class .
+geocrs:includesSRS skos:definition "Indicates spatial reference systems used by a compound reference system"@en .
+geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .
+geocrs:PrimeMeridian rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CylindricalCoordinateSystem rdf:type owl:Class .
+geocrs:DynamicVerticalReferenceFrame skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
+geocrs:DerivedGeographicCRS rdf:type owl:Class .
+geocrs:projection rdf:type owl:ObjectProperty .
+geocrs:flatteningParameter rdfs:range xsd:double .
+geocrs:SpatioTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:semiMinorAxis rdf:type owl:DatatypeProperty .
+geocrs:CRS rdfs:subClassOf geocrs:SpatialReferenceSystem .
+geocrs:ParametricDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:TemporalReferenceSystem rdfs:label "temporal reference system"@en .
+geocrs:ellipse skos:definition "The ellipsoid used by a geodetic datum"@en .
+geocrs:VerticalReferenceFrame rdfs:subClassOf geocrs:Datum .
+geocrs:unit rdfs:domain geocrs:CoordinateSystemAxis .
+geocrs:targetCRS rdfs:domain geocrs:CoordinateConversionOperation .
+geocrs:AffineCoordinateSystem rdfs:label "Affine coordinate system"@en .
+geocrs:DateTimeTemporalCoordinateSystem skos:definition "one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601."@en .
+geocrs:SpatialCompoundCRS rdf:type owl:Class .
+geocrs:DynamicCRS rdf:type owl:Class .
+geocrs:semiMajorAxis rdfs:range xsd:double .
+geocrs:Ellipsoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SphericalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:DerivedProjectedCoordinateSystem  skos:definition "coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system"@en .
+geocrs:SpatioParametricTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:coordinateSystem rdfs:range geocrs:CoordinateSystem .
+geocrs:isBound skos:definition "Indicates if the spatial reference system is bound"@en .
+geocrs:eccentricity rdfs:domain geocrs:Geoid .
+geocrs:utm_zone rdfs:label "utm zone"@en .
+geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:DerivedProjectedCRS rdf:type owl:Class .
+geocrs:isGeocentric rdfs:domain geocrs:CRS .
+geocrs:TemporalDatum skos:definition "coordinate reference system based on a temporal datum"@en .
+geocrs:DateTimeTemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:AffineCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:TemporalCoordinateSystemAxis rdfs:subClassOf geocrs:CoordinateSystemAxis .
+geocrs:Datum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:area_of_use rdf:type owl:ObjectProperty .
+geocrs:DerivedEngineeringCRS skos:definition "derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class"@en .
+geocrs:DynamicGeodeticReferenceFrame rdf:type owl:Class .
+geocrs:DerivedEngineeringCRS rdf:type owl:Class .
+geocrs:TemporalCountCoordinateSystem skos:definition "one-dimensional coordinate system used to record time as an integer count"@en .
+geocrs:DerivedVerticalCRS rdfs:label "Derived vertical coordinate reference system"@en .
+geocrs:ParametricDatum skos:definition "textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth"@en .
+geocrs:flatteningParameter rdfs:label "flattening parameter"@en .
+geocrs:coordinateOperation rdf:type owl:ObjectProperty .
+geocrs:DerivedVerticalCRS rdf:type owl:Class .
+geocrs:TemporalDatum rdfs:label "temporal datum"@en .
+geocrs:CoordinateTransformationOperation rdf:type owl:Class .
+geocrs:extent rdfs:label "envelope"@en .
+geocrs:BoundCRS rdfs:label "Bound coordinate reference system"@en .
+geocrs:EngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:VerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DatumEnsemble rdf:type owl:Class .
+geocrs:GeographicCRS rdfs:label "Geographic coordinate reference system"@en .
+geocrs:asProjJSON rdf:type owl:DatatypeProperty .
+geocrs:DerivedGeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:AreaOfUse rdfs:label "area of use"@en .
+geocrs:area_of_use rdfs:range geocrs:AreaOfUse .
+geocrs:axis rdf:type owl:ObjectProperty .
+geocrs:isSphere rdfs:range xsd:double .
+geocrs:eccentricity rdf:type owl:DatatypeProperty .
+geocrs:area_of_use skos:definition "Defines an area of use of an operation"@en .
+geocrs:semiMinorAxis rdfs:range xsd:double .
+geocrs:TemporalReferenceSystem skos:definition "Reference system against which time is measured"@en .
+geocrs:asProjJSON rdfs:label "asProjJSON"@en .
+geocrs:CoordinateSystemAxis rdfs:label "Coordinate system axis"@en .
+geocrs:DynamicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DateTimeTemporalCoordinateSystem rdf:type owl:Class .
+geocrs:EngineeringDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:VerticalCoordinateSystem rdfs:label "Vertical coordinate system"@en .
+geocrs:Geoid rdf:type owl:Class .
+geocrs:SingleCRS rdfs:label "single coordinate reference system"@en .
+geocrs:DynamicGeodeticReferenceFrame rdfs:subClassOf geocrs:GeodeticReferenceFrame .
+geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:GeodeticCRS .
+geocrs:GeodeticCRS rdfs:label "Geodetic coordinate reference system"@en .
+geocrs:accuracy rdfs:range xsd:double .
+geocrs:isVertical rdfs:domain geocrs:CRS .
+geocrs:VerticalCRS rdfs:label "Vertical coordinate reference system"@en .
+geocrs:GeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:datum skos:definition "Associates a datum with a coordinate reference system"@en .
+geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:TemporalCoordinateSystem rdfs:label "Temporal coordinate system"@en .
+geocrs:asWKT rdfs:domain geocrs:CRS .
+geocrs:AffineCoordinateSystem rdf:type owl:Class .
+geocrs:epsgCode rdf:type owl:DatatypeProperty .
+geocrs:asProj4 rdfs:label "asProj4"@en .
+geocrs:PolarCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DerivedParametricCRS skos:definition "derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system"@en .
+geocrs:SpatioParametricTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
+geocrs:DerivedCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:DynamicReferenceFrame rdfs:label "Dynamic reference frame"@en .
+geocrs:CoordinateConversionOperation skos:definition "Coordinate operation in which both coordinate reference systems are based on the same datum"@en .
+geocrs:has_ballpark_transformation rdfs:label "has ballpark transformation"@en .
+geocrs:CoordinateConcatenatedOperation skos:definition "ordered sequence of two or more single coordinate operations"@en .
+geocrs:CoordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:inverse_flattening rdf:type owl:DatatypeProperty .
+geocrs:OrdinalCoordinateSystem skos:definition "n-dimensional coordinate system in which every axis uses integers"@en .
+geocrs:GeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:Ellipsoid skos:definition "reference ellipsoid"@en .
+geocrs:EngineeringDatum rdfs:subClassOf geocrs:Datum .
+geocrs:VerticalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:epsgCode rdfs:domain geocrs:CRS .
+geocrs:asWKT rdf:type owl:DatatypeProperty .
+geocrs:scope rdfs:range xsd:string .
+geocrs:VerticalCRS rdf:type owl:Class .
+geocrs:GeodeticReferenceFrame rdfs:subClassOf geocrs:Datum .
+geocrs:ReferenceSystem rdfs:label "reference system"@en .
+geocrs:primeMeridian rdf:type owl:ObjectProperty .
+geocrs:asProjJSON rdfs:domain geocrs:CRS .
+geocrs:SpatialReferenceSystem rdf:type owl:Class .
+geocrs:abbreviation skos:definition "The abbreviation used to identify an axis"@en .
+geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:ParametricCRS .
+geocrs:VerticalReferenceFrame skos:definition "reference frame describing the relation of gravity-related heights or depths to the Earth"@en .
+geocrs:TemporalReferenceSystem rdf:type owl:Class .
+geocrs:coordinateSystem skos:definition "Associates a coordinate system with a coordinate reference system"@en .
+geocrs:ProjectedCRS rdf:type owl:Class .
+geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:isDeprecated rdfs:range xsd:boolean .
+geocrs:sourceCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:ProjectedCRS .
+geocrs:unit rdf:type owl:DatatypeProperty .
+geocrs:ParametricDatum rdfs:label "parametric datum"@en .
+geocrs:isProjected skos:definition "Indicates if the spatial reference system is projected"@en .
+geocrs:TemporalCoordinateSystem skos:definition "one-dimensionalcoordinate system where the axis is time"@en .
+geocrs:SpatialReferenceSystem rdfs:label "spatial reference system"@en .
+geocrs:CoordinateSystem skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space"@en .
+geocrs:VerticalReferenceFrame rdfs:label "Vertical reference frame"@en .
+geocrs:OperationParameter rdf:type owl:Class .
+geocrs:eccentricity rdfs:label "eccentricity"@en .
+geocrs:SpatioParametricCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:has_ballpark_transformation rdf:type owl:DatatypeProperty .
+geocrs:extent rdfs:range geocrs:wktLiteral .
+geocrs:CoordinateSystem rdf:type owl:Class .
+geocrs:primeMeridian rdfs:domain geocrs:CRS .
+geocrs:GeodeticReferenceFrame rdfs:label "Geodetic reference frame"@en .
+geocrs:GeodeticCoordinateSystem rdfs:label "Geodetic coordinate system"@en .
+geocrs:OperationValue rdf:type owl:Class .
+geocrs:ProjectedCRS rdfs:label "Projected coordinate reference system"@en .
+geocrs:isProjected rdf:type owl:DatatypeProperty .
+geocrs:DerivedProjectedCRS skos:definition "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS"@en .
+geocrs:BoundCRS rdfs:subClassOf geocrs:CRS .
+geocrs:SpatioParametricCompoundCRS rdfs:label "spatio-parametric compound coordinate reference system"@en .
+geocrs:asWKT rdfs:label "asWKT"@en .
+geocrs:includesSRS rdfs:label "includes srs"@en .
+geocrs:isGeographic rdfs:domain geocrs:CRS .
+geocrs:EngineeringCoordinateSystem skos:definition "coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system"@en .
+geocrs:LinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:SpatioTemporalCompoundCRS rdf:type owl:Class .
+geocrs:primeMeridian skos:definition "The prime meridian used by a geodetic datum"@en .
+geocrs:DateTimeTemporalCoordinateSystem rdfs:label "Date time temporal coordinate system"@en .
+geocrs:SpatialCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SpatioParametricTemporalCompoundCRS rdfs:label "spatio-parametric-temporal compound coordinate reference system"@en .
+geocrs:DynamicGeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:VerticalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:isGeocentric rdfs:range xsd:boolean .
+geocrs:Projection rdf:type owl:Class .
+geocrs:LinearCoordinateSystem rdfs:label "Linear coordinate system"@en .
+geocrs:DateTimeTemporalCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
+geocrs:TemporalDatum rdf:type owl:Class .
+geocrs:direction rdfs:domain geocrs:Datum .
+geocrs:DynamicReferenceFrame rdf:type owl:Class .
+geocrs:GeodeticCoordinateSystem owl:disjointWith geocrs:CompoundCRS .
+geocrs:isSphere rdfs:label "is sphere"@en .
+geocrs:TemporalCoordinateSystemAxis rdf:type owl:Class .
+geocrs:isDeprecated rdfs:domain geocrs:CRS .
+geocrs:OperationValue rdfs:label "operation value"@en .
+geocrs:Datum owl:equivalentClass wd:Q1502887 .
+geocrs:isSphere rdf:type owl:DatatypeProperty .
+geocrs:LinearCoordinateSystem rdf:type owl:Class .
+geocrs:DynamicReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:VerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:PassThroughOperation rdfs:label "passthrough operation"@en .
+geocrs:SpatioTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .
+geocrs:scope skos:definition "the scope of the referring object"@en .
+geocrs:PrimeMeridian rdfs:label "prime meridian"@en .
+geocrs:Ellipsoid rdfs:label "ellipsoid"@en .
+geocrs:sourceCRS rdf:type owl:ObjectProperty .
+geocrs:asProjJSON rdfs:range xsd:string .
+geocrs:LinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:TemporalCoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:SingleCRS rdfs:subClassOf geocrs:CRS .
+geocrs:asProj4 rdfs:domain geocrs:CRS .
+geocrs:OrdinalCoordinateSystem rdf:type owl:Class .
+geocrs:sourceCRS rdfs:domain geocrs:CoordinateConversionOperation .
+geocrs:GeodeticCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:is_semi_minor_computed rdfs:label "is semi minor computed"@en .
+geocrs:GeoSPARQLCRS rdf:type owl:Ontology .
+geocrs:GeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:direction rdfs:label "cardinal direction"@en .
+geocrs:GeodeticReferenceFrame skos:definition "reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth"@en .
+geocrs:PrimeMeridian skos:definition "meridian from which the longitudes of other meridians are quantified"@en .
+geocrs:CompoundCRS rdfs:label "Compound coordinate reference system"@en .
+geocrs:isVertical rdfs:label "isVertical"@en .
+geocrs:CoordinateOperation rdf:type owl:Class .
+geocrs:SpatialCompoundCRS skos:definition "coordinate reference system using a combination of two compatible spatial reference systems"@en .
+geocrs:DerivedVerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:GeodeticCRS rdf:type owl:Class .
+geocrs:SphericalCoordinateSystem skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates"@en .
+geocrs:area_of_use rdfs:domain geocrs:CoordinateConcatenatedOperation, geocrs:CoordinateConversionOperation, geocrs:CoordinateTransformationOperation, geocrs:OtherCoordinateOperation, geocrs:CoordinateOperation .
+geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:area_of_use rdfs:label "area of use"@en .
+geocrs:DatumEnsemble rdfs:label "datum ensemble"@en .
+geocrs:LinearCoordinateSystem skos:definition "one-dimensional coordinate system in which a linear feature forms the axis"@en .
+geocrs:axis skos:definition "An axis used by some ellipsoidal or cartesian coordinate system"@en .
+geocrs:GeodeticCoordinateSystem skos:definition "coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system"@en .
+geocrs:unit rdfs:domain geocrs:CRS .
+geocrs:PassThroughOperation skos:definition "specification of a subset of coordinate tuples that is subject to a coordinate operation"@en .
+owl:versionInfo rdfs:label "0.1"^^xsd:double .
+geocrs:ParametricCoordinateSystem rdf:type owl:Class .
+geocrs:DerivedGeographicCRS rdfs:label "Derived geographic coordinate reference system"@en .
+geocrs:DynamicVerticalReferenceFrame rdfs:label "Dynamic vertical reference frame"@en .
+geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:DerivedCRS .
+geocrs:primeMeridian rdfs:domain geocrs:Datum .
+geocrs:ParametricDatum rdf:type owl:Class .
+geocrs:flatteningParameter rdf:type owl:DatatypeProperty .
+geocrs:ParametricCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:unit rdfs:range om:Unit .
+geocrs:abbreviation rdfs:label "axis abbreviation"@en .
+geocrs:OtherCoordinateOperation rdfs:subClassOf geocrs:CoordinateOperation .
+geocrs:TemporalMeasureCoordinateSystem rdf:type owl:Class .
+geocrs:Datum rdf:type owl:Class .
+geocrs:axis rdfs:label "axis"@en .
+geocrs:StaticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:GeographicCRS rdf:type owl:Class .
+geocrs:CoordinateConcatenatedOperation rdfs:label "coordinate concatenated operation"@en .
+geocrs:is_semi_minor_computed rdfs:range xsd:double .
+geocrs:ParametricCoordinateSystem rdfs:label "Parametric coordinate system"@en .
+geocrs:ParametricCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:EllipsoidalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:unit_conversion_factor rdfs:range xsd:string .
+geocrs:projection rdfs:domain geocrs:CRS .
+geocrs:Ellipsoid rdfs:subClassOf geocrs:Geoid .
+geocrs:DatumEnsemble rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:CompoundCRS rdf:type owl:Class .
+geocrs:epsgCode rdfs:range xsd:string .
+geocrs:CardinalDirection rdfs:label "cardinal direction"@en .
+geocrs:GeoSPARQLCRS rdfs:label "GeoSPARQL CRS Ontology Draft"@en .
+geocrs:DynamicCRS skos:definition "coordinate reference system that has a dynamic reference frame"@en .
+geocrs:CoordinateTransformation skos:definition "coordinate operation that changes coordinates in a source coordinate reference system to coordinates in a target coordinate reference system in which the source and target coordinate reference systems are based on different datums"@en .
+geocrs:direction rdf:type owl:ObjectProperty .
+geocrs:DerivedParametricCRS rdf:type owl:Class .
+geocrs:TemporalCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:SpatialReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .
+geocrs:targetCRS skos:definition "The dimension of the coordinate reference system associated with the data obtained as output of an operation"@en .
+geocrs:GeodeticCRS owl:disjointWith geocrs:CartesianCoordinateSystem, geocrs:CompoundCRS, geocrs:EllipsoidalCoordinateSystem .
+geocrs:StaticCRS rdf:type owl:Class .
+geocrs:has_ballpark_transformation rdfs:range xsd:boolean .
+geocrs:isBound rdfs:label "isBound"@en .
+geocrs:TemporalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:coordinateOperation skos:definition "Associates a coordinate operation with a CRS"@en .
+geocrs:BoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:isBound rdfs:domain geocrs:CRS .
+geocrs:DerivedProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:BoundCRS rdf:type owl:Class .
+geocrs:SpatioParametricCompoundCRS rdf:type owl:Class .
+geocrs:DerivedGeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:StaticCRS rdfs:label "Static coordinate reference system"@en .
+geocrs:DynamicCRS rdfs:subClassOf geocrs:CRS .
+geocrs:OrdinalCoordinateSystem rdfs:label "Ordinal coordinate system"@en .
+geocrs:asProjJSON skos:definition "ProjJSON representation of the CRS"@en .
+geocrs:isProjected rdfs:domain geocrs:CRS .
+geocrs:TemporalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:CoordinateOperation skos:definition "mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch"@en .
+geocrs:AffineCoordinateSystem owl:equivalentClass wd:Q382510 .
+geocrs:CoordinateConversionOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:EngineeringCoordinateSystem rdf:type owl:Class .
+geocrs:EngineeringCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
+geocrs:EngineeringCRS rdfs:subClassOf geocrs:SingleCRS .
+geocrs:PassThroughOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:semiMajorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:axis rdfs:range geocrs:CoordinateSystemAxis .
+geocrs:OperationParameter rdfs:label "operation parameter"@en .
+geocrs:asWKT skos:definition "WKT representation of the CRS"@en .
+geocrs:unit rdf:type owl:ObjectProperty .
+geocrs:isSphere skos:definition "Indicates whether the ellipsoid is a sphere"@en .
+geocrs:ellipse rdf:type owl:ObjectProperty .
+geocrs:GeoSPARQLCRS dc:description "This ontology models coordinate reference systems"@en .
+geocrs:SphericalCoordinateSystem rdf:type owl:Class .
+geocrs:ellipse rdfs:domain geocrs:CRS .
+geocrs:Geoid skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
+geocrs:CoordinateConversionOperation rdf:type owl:Class .
+geocrs:DerivedGeodeticCRS skos:definition "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system"@en .
+geocrs:isGeographic rdfs:label "isGeographic"@en .
+geocrs:isGeographic skos:definition "Indicates if the spatial reference system is geographic"@en .
+geocrs:CoordinateConversionOperation rdfs:subClassOf geocrs:SingleOperation .
+geocrs:includesSRS rdf:type owl:ObjectProperty .
+geocrs:TemporalMeasureCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:inverse_flattening rdfs:label "inverse flattening"@en .
+geocrs:GeocentricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:GeographicCRS rdfs:subClassOf geocrs:GeodeticCRS .
+geocrs:SpatioParametricCompoundCRS skos:definition "A spatio-parametric coordinate reference system is a compound CRS in which one component is a geographic 2D, projected 2D or engineering 2D CRS, supplemented by a parametric CRS to create a three-dimensional CRS"@en .
+geocrs:TemporalCountCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .
+geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:VerticalCRS .
+geocrs:TemporalMeasureCoordinateSystem skos:definition "one-dimensional coordinate system used to record a time as a real number"@en .
+geocrs:DerivedGeographicCRS skos:definition "coordinate reference system that is defined through the application of a specified coordinate conversion to the coordinates within a previously established coordinate reference system"@en .
+geocrs:DerivedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:ProjectedCRS skos:definition "coordinate reference system derived from a geographic coordinate reference system by applying a map projection"@en .
+geocrs:includesSRS rdfs:domain geocrs:CompoundCRS .
+geocrs:CartesianCoordinateSystem skos:definition "coordinate system in Euclidean space which gives the position of points relative to n mutually perpendicular straight axes all having the same unit of measure"@en .
+geocrs:ParametricCoordinateSystem skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
+geocrs:semiMinorAxis rdfs:domain geocrs:Geoid .
+geocrs:SphericalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+geocrs:coordinateSystem rdfs:label "coordinate system"@en .
+geocrs:isVertical skos:definition "Indicates if the spatial reference system is vertical"@en .
+geocrs:CoordinateTransformation rdfs:label "coordinate transformation"@en .
+geocrs:abbreviation rdf:type owl:DatatypeProperty .
+geocrs:VerticalCoordinateSystem skos:definition "one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth's gravity field"@en .
+geocrs:DerivedCRS rdf:type owl:Class .
+geocrs:isDeprecated rdf:type owl:DatatypeProperty .
+geocrs:isProjected rdfs:label "isProjected"@en .
+geocrs:Ellipsoid rdf:type owl:Class .
+geocrs:sourceCRS rdfs:label "source CRS"@en .
+geocrs:TemporalCRS skos:definition "coordinate reference system based on a temporal datum"@en .
+geocrs:isBound rdf:type owl:DatatypeProperty .
+geocrs:SingleOperation rdf:type owl:Class .
+geocrs:DynamicVerticalReferenceFrame rdfs:subClassOf geocrs:VerticalReferenceFrame .
+geocrs:CartesianCoordinateSystem rdfs:label "Cartesian coordinate system"@en .
+geocrs:PolarCoordinateSystem skos:definition "two-dimensional coordinate system in Euclidean space in which position is specified by one distance coordinate and one angular coordinate"@en .
+geocrs:SpatialReferenceSystem skos:definition "System for identifying position in the real world"@en .
+geocrs:extent rdfs:domain geocrs:CRS .
+geocrs:sourceCRS skos:definition "The dimension of the coordinate reference system associated with the data used as input of an operation"@en .
+geocrs:DerivedProjectedCoordinateSystem  rdfs:label "derived projected coordinate system"@en .
