@@ -90,7 +90,7 @@ ttlhead+="@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix skos:<http://www.w3.org/2004/02/skos/core#> .\n"
 ttlhead+="@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo:<http://www.opengis.net/ont/geosparql#> .\n"
-ttlhead+="@prefix geocrs:<http://www.opengis.net/ont/crs#> .\n"
+ttlhead+="@prefix geocrs:<http://situx.github.io/proj4rdf#> .\n"
 ttlhead+="@prefix geocrsdata:<http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdatum:<http://www.opengis.net/ont/crs/datum/> .\n"
 ttlhead+="@prefix geocrsgrid:<http://www.opengis.net/ont/crs/grid/> .\n"
@@ -153,6 +153,10 @@ ttl.add("geocrs:LinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
 ttl.add("geocrs:LinearCoordinateSystem rdfs:label \"Linear coordinate system\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem skos:definition \"one-dimensional coordinate system in which a linear feature forms the axis\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdfs:subClassOf geocrs:AffineCoordinateSystem .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdfs:label \"oblique coordinate system\"@en .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem skos:definition \"A plane coordinate system whose axes are not perpendicular\"@en .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:label \"celestial coordinate system\"@en .\n")
@@ -194,6 +198,19 @@ ttl.add("geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSys
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:label \"Cylindrical coordinate system\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem skos:definition \"three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:label \"Curvilinear coordinate system\"@en .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:label \"Homogeneous coordinate system\"@en .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:label \"barycentric coordinate system\"@en .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem skos:definition \"a coordinate system in which the location of a point is specified by reference to a simplex \"@en .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdfs:label \"Polar coordinate system\"@en .\n")
