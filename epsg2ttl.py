@@ -1,6 +1,7 @@
 import os
 import re
 import pyproj
+from rdflib import Graph
 from pyproj import CRS
 
 
@@ -727,11 +728,14 @@ ttl.add("geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:label \"is semi minor computed\"@en .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
 geodcounter=1
-f = open("ontology.ttl", "w", encoding="utf-8")
-f.write(ttlhead)
-for line in ttl:
-	f.write(line)
-f.close()
+graph = Graph()
+graph.parse(data = ttlhead+"".join(ttl), format='turtle')
+graph.serialize(destination='ontology.ttl', format='turtle')
+#f = open("ontology.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
 i=0
 curname=""
 for oper in pyproj.list.get_proj_operations_map():
@@ -913,8 +917,11 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
 	i+=1
-f = open("result.ttl", "w", encoding="utf-8")
-f.write(ttlhead)
-for line in ttl:
-	f.write(line)
-f.close()
+graph2 = Graph()
+graph2.parse(data = ttlhead+"".join(ttl), format='n3')
+graph2.serialize(destination='result.ttl', format='turtle')
+#f = open("result.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
