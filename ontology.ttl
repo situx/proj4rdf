@@ -1,23 +1,23 @@
-@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:<http://www.w3.org/2002/07/owl#> .
-@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .
-@prefix skos:<http://www.w3.org/2004/02/skos/core#> .
-@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .
-@prefix geo:<http://www.opengis.net/ont/geosparql#> .
-@prefix geocrs:<http://situx.github.io/proj4rdf#> .
-@prefix geocrsdata:<http://www.opengis.net/ont/crs/> .
-@prefix geocrsdatum:<http://www.opengis.net/ont/crs/datum/> .
-@prefix geocrsgrid:<http://www.opengis.net/ont/crs/grid/> .
-@prefix geocrsaxis:<http://www.opengis.net/ont/crs/cs/axis/> .
-@prefix geocrsgeod:<http://www.opengis.net/ont/crs/geod/> .
-@prefix geocrsaou:<http://www.opengis.net/ont/crs/areaofuse/> .
-@prefix geocrsmeridian:<http://www.opengis.net/ont/crs/primeMeridian/> .
-@prefix geocrsoperation:<http://www.opengis.net/ont/crs/operation/> .
-@prefix geocs:<http://www.opengis.net/ont/crs/cs/> .
-@prefix dc:<http://purl.org/dc/elements/1.1/> .
-@prefix wd:<http://www.wikidata.org/entity/> .
-@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geocrs: <http://situx.github.io/proj4rdf#> .
+@prefix geocrsdata: <http://www.opengis.net/ont/crs/> .
+@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .
+@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .
+@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .
+@prefix geocrsgeod: <http://www.opengis.net/ont/crs/geod/> .
+@prefix geocrsaou: <http://www.opengis.net/ont/crs/areaofuse/> .
+@prefix geocrsmeridian: <http://www.opengis.net/ont/crs/primeMeridian/> .
+@prefix geocrsoperation: <http://www.opengis.net/ont/crs/operation/> .
+@prefix geocs: <http://www.opengis.net/ont/crs/cs/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 geocrs:falseNorthing rdfs:range xsd:string .
 geocrs:CoordinateConcatenatedOperation rdfs:subClassOf geocrs:CoordinateOperation .
 geocrs:DynamicGeodeticReferenceFrame rdfs:label "Dynamic geodetic reference frame"@en .
