@@ -156,7 +156,7 @@ geocrs:GlobalGridReferenceSystem a owl:Class ;
     skos:definition "a grid that divides space with precise positions relative to a datum and is valid on the whole earth"@en .
 
 geocrs:HierarchicalGridReferenceSystem a owl:Class ;
-    rdfs:label "grid reference system"@en ;
+    rdfs:label "hierarchical grid reference system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:GeocodeSystem ;
     skos:definition "a grid that divides space with precise positions relative to a datum"@en .
