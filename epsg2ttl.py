@@ -1,6 +1,7 @@
 import os
 import re
 import pyproj
+from rdflib import Graph
 from pyproj import CRS
 
 
@@ -83,26 +84,26 @@ projections["krovak"]="geocrs:Krovak"
 projections["lcc"]="geocrs:LambertConformalConic"
 projections["geocent"]="geocrs:Geocentric"
 ttl=set()
-ttlhead="@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
-ttlhead+="@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .\n"
-ttlhead+="@prefix owl:<http://www.w3.org/2002/07/owl#> .\n"
-ttlhead+="@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .\n"
-ttlhead+="@prefix skos:<http://www.w3.org/2004/02/skos/core#> .\n"
-ttlhead+="@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .\n"
-ttlhead+="@prefix geo:<http://www.opengis.net/ont/geosparql#> .\n"
-ttlhead+="@prefix geocrs:<http://www.opengis.net/ont/crs#> .\n"
-ttlhead+="@prefix geocrsdata:<http://www.opengis.net/ont/crs/> .\n"
-ttlhead+="@prefix geocrsdatum:<http://www.opengis.net/ont/crs/datum/> .\n"
-ttlhead+="@prefix geocrsgrid:<http://www.opengis.net/ont/crs/grid/> .\n"
-ttlhead+="@prefix geocrsaxis:<http://www.opengis.net/ont/crs/cs/axis/> .\n"
-ttlhead+="@prefix geocrsgeod:<http://www.opengis.net/ont/crs/geod/> .\n"
-ttlhead+="@prefix geocrsaou:<http://www.opengis.net/ont/crs/areaofuse/> .\n"
-ttlhead+="@prefix geocrsmeridian:<http://www.opengis.net/ont/crs/primeMeridian/> .\n"
-ttlhead+="@prefix geocrsoperation:<http://www.opengis.net/ont/crs/operation/> .\n"
-ttlhead+="@prefix geocs:<http://www.opengis.net/ont/crs/cs/> .\n"
-ttlhead+="@prefix dc:<http://purl.org/dc/elements/1.1/> .\n"
-ttlhead+="@prefix wd:<http://www.wikidata.org/entity/> .\n"
-ttlhead+="@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
+ttlhead="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
+ttlhead+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
+ttlhead+="@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
+ttlhead+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
+ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
+ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
+ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
+ttlhead+="@prefix geocrs: <http://situx.github.io/proj4rdf/#> .\n"
+ttlhead+="@prefix geocrsdata: <http://www.opengis.net/ont/crs/> .\n"
+ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
+ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
+ttlhead+="@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .\n"
+ttlhead+="@prefix geocrsgeod: <http://www.opengis.net/ont/crs/geod/> .\n"
+ttlhead+="@prefix geocrsaou: <http://www.opengis.net/ont/crs/areaofuse/> .\n"
+ttlhead+="@prefix geocrsmeridian: <http://www.opengis.net/ont/crs/primeMeridian/> .\n"
+ttlhead+="@prefix geocrsoperation: <http://www.opengis.net/ont/crs/operation/> .\n"
+ttlhead+="@prefix geocs: <http://www.opengis.net/ont/crs/cs/> .\n"
+ttlhead+="@prefix dc: <http://purl.org/dc/elements/1.1/> .\n"
+ttlhead+="@prefix wd: <http://www.wikidata.org/entity/> .\n"
+ttlhead+="@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
 ttl.add("geocrs:GeoSPARQLCRS rdf:type owl:Ontology .\n")
 ttl.add("geocrs:GeoSPARQLCRS dc:creator wd:Q67624599 .\n")
 ttl.add("geocrs:GeoSPARQLCRS dc:description \"This ontology models coordinate reference systems\"@en .\n")
@@ -153,6 +154,10 @@ ttl.add("geocrs:LinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .
 ttl.add("geocrs:LinearCoordinateSystem rdfs:label \"Linear coordinate system\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem skos:definition \"one-dimensional coordinate system in which a linear feature forms the axis\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdfs:subClassOf geocrs:AffineCoordinateSystem .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem rdfs:label \"oblique coordinate system\"@en .\n")
+ttl.add("geocrs:ObliqueCoordinateSystem skos:definition \"A plane coordinate system whose axes are not perpendicular\"@en .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:label \"celestial coordinate system\"@en .\n")
@@ -194,6 +199,19 @@ ttl.add("geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSys
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:label \"Cylindrical coordinate system\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem skos:definition \"three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:label \"Curvilinear coordinate system\"@en .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:label \"Homogeneous coordinate system\"@en .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:label \"barycentric coordinate system\"@en .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem skos:definition \"a coordinate system in which the location of a point is specified by reference to a simplex \"@en .\n")
+ttl.add("geocrs:BarycentricCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:PolarCoordinateSystem rdfs:label \"Polar coordinate system\"@en .\n")
@@ -252,7 +270,7 @@ ttl.add("geocrs:GridReferenceSystem rdfs:subClassOf geocrs:GeocodeSystem .\n")
 ttl.add("geocrs:GridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum\"@en .\n")
 ttl.add("geocrs:GridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:HierarchicalGridReferenceSystem rdf:type owl:Class .\n")
-ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:label \"grid reference system\"@en .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:label \"hierarchical grid reference system\"@en .\n")
 ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:subClassOf geocrs:GeocodeSystem .\n")
 ttl.add("geocrs:HierarchicalGridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum\"@en .\n")
 ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
@@ -516,6 +534,71 @@ ttl.add("geocrs:SingleOperation skos:definition \"single (not concatenated) coor
 ttl.add("geocrs:SingleOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:CardinalDirection rdf:type owl:Class .\n")
 ttl.add("geocrs:CardinalDirection rdfs:label \"cardinal direction\"@en .\n")
+ttl.add("geocrs:AxisDirection rdf:type owl:Class .\n")
+ttl.add("geocrs:AxisDirection rdfs:label \"cardinal direction\"@en .\n")
+ttl.add("geocrs:north rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:north rdfs:label \"north\"@en .\n")
+ttl.add("geocrs:north skos:definition \"axis positive direction is north\"@en .\n")
+ttl.add("geocrs:north_north_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:north_north_east rdfs:label \"north-north-east\"@en .\n")
+ttl.add("geocrs:north_north_east skos:definition \"axis positive direction is approximately north-north-east\"@en .\n")
+ttl.add("geocrs:north_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:north_east rdfs:label \"north-east\"@en .\n")
+ttl.add("geocrs:north_east skos:definition \"axis positive direction is approximately north-east\"@en .\n")
+ttl.add("geocrs:east_north_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:east_north_east rdfs:label \"east-north-east\"@en .\n")
+ttl.add("geocrs:east_north_east skos:definition \"axis positive direction is approximately east-north-east\"@en .\n")
+ttl.add("geocrs:east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:east rdfs:label \"east\"@en .\n")
+ttl.add("geocrs:east skos:definition \"axis positive direction is p/2 radians clockwise from north\"@en .\n")
+ttl.add("geocrs:east_south_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:east_south_east rdfs:label \"east-south-east\"@en .\n")
+ttl.add("geocrs:east_south_east skos:definition \"axis positive direction is approximately east-south-east\"@en .\n")
+ttl.add("geocrs:south_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:south_east rdfs:label \"south-east\"@en .\n")
+ttl.add("geocrs:south_east skos:definition \"axis positive direction is approximately south-east\"@en .\n")
+ttl.add("geocrs:south_south_east rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:south_south_east rdfs:label \"south-south-east\"@en .\n")
+ttl.add("geocrs:south_south_east skos:definition \"axis positive direction is approximately south-south-east\"@en .\n")
+ttl.add("geocrs:south rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:south rdfs:label \"south\"@en .\n")
+ttl.add("geocrs:south skos:definition \"axis positive direction is p radians clockwise from north\"@en .\n")
+ttl.add("geocrs:south_south_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:south_south_west rdfs:label \"south-south-west\"@en .\n")
+ttl.add("geocrs:south_south_west skos:definition \"axis positive direction is approximately south-south-west\"@en .\n")
+ttl.add("geocrs:south_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:south_west rdfs:label \"south-west\"@en .\n")
+ttl.add("geocrs:south_west skos:definition \"axis positive direction is approximately south-west\"@en .\n")
+ttl.add("geocrs:west_south_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:west_south_west rdfs:label \"west-south-west\"@en .\n")
+ttl.add("geocrs:west_south_west skos:definition \"axis positive direction is approximately west-south-west\"@en .\n")
+ttl.add("geocrs:west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:west rdfs:label \"west\"@en .\n")
+ttl.add("geocrs:west skos:definition \"axis positive direction is 3p/2 radians clockwise from north\"@en .\n")
+ttl.add("geocrs:west_north_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:west_north_west rdfs:label \"west-north-west\"@en .\n")
+ttl.add("geocrs:west_north_west skos:definition \"axis positive direction is approximately west-north-west\"@en .\n")
+ttl.add("geocrs:north_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:north_west rdfs:label \"north-west\"@en .\n")
+ttl.add("geocrs:north_west skos:definition \"axis positive direction is approximately north-west\"@en .\n")
+ttl.add("geocrs:north_north_west rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:north_north_west rdfs:label \"north-north-west\"@en .\n")
+ttl.add("geocrs:north_north_west skos:definition \"axis positive direction is approximately north-north-west\"@en .\n")
+ttl.add("geocrs:up rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:up rdfs:label \"up\"@en .\n")
+ttl.add("geocrs:up skos:definition \"axis positive direction is up relative to gravity\"@en .\n")
+ttl.add("geocrs:down rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:down rdfs:label \"down\"@en .\n")
+ttl.add("geocrs:down skos:definition \"axis positive direction is down relative to gravity\"@en .\n")
+ttl.add("geocrs:geocentricX rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:geocentricX rdfs:label \"geocentric X\"@en .\n")
+ttl.add("geocrs:geocentricX skos:definition \"axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator with the prime meridian\"@en .\n")
+ttl.add("geocrs:geocentricY rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:geocentricY rdfs:label \"geocentric Y\"@en .\n")
+ttl.add("geocrs:geocentricY skos:definition \"axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator and the meridian p/2 radians eastwards from the prime meridian\"@en .\n")
+ttl.add("geocrs:geocentricZ rdf:type geocrs:AxisDirection .\n")
+ttl.add("geocrs:geocentricZ rdfs:label \"geocentric Z\"@en .\n")
+ttl.add("geocrs:geocentricZ skos:definition \"axis positive direction is from the centre of the modelled Earth parallel to its rotation axis and towards its north pole\"@en .\n")
 ttl.add("geocrs:asProj4 rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:asProj4 rdfs:label \"asProj4\"@en .\n")
 ttl.add("geocrs:asProj4 skos:definition \"proj4 representation of the CRS\"@en .\n")
@@ -664,6 +747,10 @@ ttl.add("geocrs:eccentricity rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:eccentricity rdfs:label \"eccentricity\"@en .\n")
 ttl.add("geocrs:eccentricity rdfs:domain geocrs:Geoid .\n")
 ttl.add("geocrs:eccentricity rdfs:range xsd:double .\n")
+ttl.add("geocrs:coordinateEpoch rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:label \"coordinate epoch\"@en .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:domain geocrs:DynamicCRS .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:range xsd:double .\n")
 ttl.add("geocrs:flatteningParameter rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:flatteningParameter rdfs:label \"flattening parameter\"@en .\n")
 ttl.add("geocrs:flatteningParameter rdfs:domain geocrs:Geoid .\n")
@@ -714,11 +801,14 @@ ttl.add("geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:label \"is semi minor computed\"@en .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
 geodcounter=1
-f = open("ontology.ttl", "w", encoding="utf-8")
-f.write(ttlhead)
-for line in ttl:
-	f.write(line)
-f.close()
+graph = Graph()
+graph.parse(data = ttlhead+"".join(ttl), format='turtle')
+graph.serialize(destination='ontology.ttl', format='turtle')
+#f = open("ontology.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
 i=0
 curname=""
 for oper in pyproj.list.get_proj_operations_map():
@@ -900,8 +990,11 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
 	i+=1
-f = open("result.ttl", "w", encoding="utf-8")
-f.write(ttlhead)
-for line in ttl:
-	f.write(line)
-f.close()
+graph2 = Graph()
+graph2.parse(data = ttlhead+"".join(ttl), format='n3')
+graph2.serialize(destination='result.ttl', format='turtle')
+#f = open("result.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
