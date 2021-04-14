@@ -355,6 +355,14 @@ geocrs:axis a owl:ObjectProperty ;
     rdfs:range geocrs:CoordinateSystemAxis ;
     skos:definition "An axis used by some ellipsoidal or cartesian coordinate system"@en .
 
+geocrs:column-negative a geocrs:AxisDirection ;
+    rdfs:label "column negative"@en ;
+    skos:definition "axis positive direction is towards lower pixel column"@en .
+
+geocrs:column-positive a geocrs:AxisDirection ;
+    rdfs:label "column positive"@en ;
+    skos:definition "axis positive direction is towards higher pixel column"@en .
+
 geocrs:coordinateEpoch a owl:DatatypeProperty ;
     rdfs:label "coordinate epoch"@en ;
     rdfs:domain geocrs:DynamicCRS ;
@@ -387,6 +395,26 @@ geocrs:direction a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:range geocrs:CardinalDirection ;
     skos:definition "Associates a direction with a datum"@en .
+
+geocrs:display_down a geocrs:AxisDirection ;
+    rdfs:label "display down"@en ;
+    skos:definition "axis positive direction is towards bottom of approximately vertical display surface"@en .
+
+geocrs:display_left a geocrs:AxisDirection ;
+    rdfs:label "display left"@en ;
+    skos:definition "axis positive direction is left in display"@en .
+
+geocrs:display_right a geocrs:AxisDirection ;
+    rdfs:label "display right"@en ;
+    skos:definition "axis positive direction is right in display"@en .
+
+geocrs:display_up a geocrs:AxisDirection ;
+    rdfs:label "display up"@en ;
+    skos:definition "axis positive direction is towards top of approximately vertical display surface"@en .
+
+geocrs:down a geocrs:AxisDirection ;
+    rdfs:label "down"@en ;
+    skos:definition "axis positive direction is down relative to gravity"@en .
 
 geocrs:east a geocrs:AxisDirection ;
     rdfs:label "east"@en ;
@@ -436,6 +464,18 @@ geocrs:flatteningParameter a owl:DatatypeProperty ;
     rdfs:label "flattening parameter"@en ;
     rdfs:domain geocrs:Geoid ;
     rdfs:range xsd:double .
+
+geocrs:geocentricX a geocrs:AxisDirection ;
+    rdfs:label "geocentric X"@en ;
+    skos:definition "axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator with the prime meridian"@en .
+
+geocrs:geocentricY a geocrs:AxisDirection ;
+    rdfs:label "geocentric Y"@en ;
+    skos:definition "axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator and the meridian p/2 radians eastwards from the prime meridian"@en .
+
+geocrs:geocentricZ a geocrs:AxisDirection ;
+    rdfs:label "geocentric Z"@en ;
+    skos:definition "axis positive direction is from the centre of the modelled Earth parallel to its rotation axis and towards its north pole"@en .
 
 geocrs:has_ballpark_transformation a owl:DatatypeProperty ;
     rdfs:label "has ballpark transformation"@en ;
@@ -500,14 +540,17 @@ geocrs:is_semi_minor_computed a owl:DatatypeProperty ;
 
 geocrs:north a geocrs:AxisDirection ;
     rdfs:label "north"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is north"@en .
 
 geocrs:north_east a geocrs:AxisDirection ;
     rdfs:label "north-east"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is approximately north-east"@en .
 
 geocrs:north_north_east a geocrs:AxisDirection ;
     rdfs:label "north-north-east"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is approximately north-north-east"@en .
 
 geocrs:north_north_west a geocrs:AxisDirection ;
@@ -528,6 +571,14 @@ geocrs:projection a owl:ObjectProperty ;
     rdfs:label "projection"@en ;
     rdfs:domain geocrs:CRS ;
     rdfs:range geocrs:Projection .
+
+geocrs:row-negative a geocrs:AxisDirection ;
+    rdfs:label "row negative"@en ;
+    skos:definition "axis positive direction is towards lower pixel row"@en .
+
+geocrs:row-positive a geocrs:AxisDirection ;
+    rdfs:label "row positive"@en ;
+    skos:definition "axis positive direction is towards higher pixel row"@en .
 
 geocrs:scope a owl:DatatypeProperty ;
     rdfs:label "scope"@en ;
@@ -840,9 +891,6 @@ geocrs:Datum a owl:Class ;
     owl:equivalentClass wd:Q1502887 ;
     skos:definition "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system"@en .
 
-geocrs:AxisDirection a owl:Class ;
-    rdfs:label "cardinal direction"@en .
-
 geocrs:CoordinateSystem a owl:Class ;
     rdfs:label "Coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -853,4 +901,7 @@ geocrs:CRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:SpatialReferenceSystem ;
     skos:definition "coordinate system that is related to an object by a datum"@en .
+
+geocrs:AxisDirection a owl:Class ;
+    rdfs:label "cardinal direction"@en .
 
