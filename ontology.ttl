@@ -99,19 +99,15 @@ geocrs:DerivedVerticalCRS a owl:Class ;
 geocrs:DynamicGeodeticReferenceFrame a owl:Class ;
     rdfs:label "Dynamic geodetic reference frame"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    rdfs:subClassOf geocrs:GeodeticReferenceFrame ;
+    rdfs:subClassOf geocrs:DynamicReferenceFrame,
+        geocrs:GeodeticReferenceFrame ;
     skos:definition "geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates"@en .
-
-geocrs:DynamicReferenceFrame a owl:Class ;
-    rdfs:label "Dynamic reference frame"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    rdfs:subClassOf geocrs:Datum ;
-    skos:definition "reference frame in which the defining parameters include time evolution"@en .
 
 geocrs:DynamicVerticalReferenceFrame a owl:Class ;
     rdfs:label "Dynamic vertical reference frame"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    rdfs:subClassOf geocrs:VerticalReferenceFrame ;
+    rdfs:subClassOf geocrs:DynamicReferenceFrame,
+        geocrs:VerticalReferenceFrame ;
     skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
 
 geocrs:EngineeringCoordinateSystem a owl:Class ;
@@ -373,13 +369,13 @@ geocrs:clockwise a geocrs:AxisDirection,
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is clockwise from a specified direction"@en .
 
-geocrs:column-negative a geocrs:AxisDirection,
+geocrs:column_negative a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "column negative"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is towards lower pixel column"@en .
 
-geocrs:column-positive a geocrs:AxisDirection,
+geocrs:column_positive a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "column positive"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -507,7 +503,8 @@ geocrs:falseNorthing a owl:DatatypeProperty ;
 geocrs:flatteningParameter a owl:DatatypeProperty ;
     rdfs:label "flattening parameter"@en ;
     rdfs:domain geocrs:Geoid ;
-    rdfs:range xsd:double .
+    rdfs:range xsd:double,
+        xsd:string .
 
 geocrs:forward a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -653,13 +650,13 @@ geocrs:projection a owl:ObjectProperty ;
     rdfs:domain geocrs:CRS ;
     rdfs:range geocrs:Projection .
 
-geocrs:row-negative a geocrs:AxisDirection,
+geocrs:row_negative a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "row negative"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is towards lower pixel row"@en .
 
-geocrs:row-positive a geocrs:AxisDirection,
+geocrs:row_positive a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "row positive"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -926,6 +923,12 @@ geocrs:AffineCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     owl:equivalentClass wd:Q382510 ;
     skos:definition "coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular"@en .
+
+geocrs:DynamicReferenceFrame a owl:Class ;
+    rdfs:label "Dynamic reference frame"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:Datum ;
+    skos:definition "reference frame in which the defining parameters include time evolution"@en .
 
 geocrs:GeodeticCRS a owl:Class ;
     rdfs:label "Geodetic coordinate reference system"@en ;
