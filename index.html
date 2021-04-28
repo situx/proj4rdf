@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <title>GeoSPARQL CRS Ontology Draft</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -132,8 +135,8 @@
         .sup-ap,
         .sup-p,
         .sup-ni,
-        .sup-cp,
-        .sup-cl {
+        .sup-con,
+        .sup-col {
             cursor:help;
             margin-left: 3px;
         }
@@ -166,11 +169,11 @@
             color:brown;
         }
 
-        .sup-cp {
+        .sup-con {
             color:orange;
         }
 
-        .sup-cl {
+        .sup-col {
             color:darkred;
         }
 
@@ -210,7 +213,7 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.8.6</span>
+    <span style="font-size:smaller;">2.9.1</span>
   </div>
   <h1>GeoSPARQL CRS Ontology Draft</h1>
 <section id="metadata">
@@ -252,97 +255,173 @@
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#Affinecoordinatesystem">Affine coordinate system</a></li>
-        <li><a href="#Boundcoordinatereferencesystem">Bound coordinate reference system</a></li>
-        <li><a href="#Cartesiancoordinatesystem">Cartesian coordinate system</a></li>
-        <li><a href="#Compoundcoordinatereferencesystem">Compound coordinate reference system</a></li>
-        <li><a href="#Coordinatereferencesystem">Coordinate reference system</a></li>
-        <li><a href="#Coordinatesystem">Coordinate system</a></li>
-        <li><a href="#Coordinatesystemaxis">Coordinate system axis</a></li>
-        <li><a href="#Curvilinearcoordinatesystem">Curvilinear coordinate system</a></li>
-        <li><a href="#Cylindricalcoordinatesystem">Cylindrical coordinate system</a></li>
-        <li><a href="#Datetimetemporalcoordinatesystem">Date time temporal coordinate system</a></li>
-        <li><a href="#Derivedcoordinatereferencesystem">Derived coordinate reference system</a></li>
-        <li><a href="#Derivedengineeringcoordinatereferencesystem">Derived engineering coordinate reference system</a></li>
-        <li><a href="#Derivedgeodeticcoordinatereferencesystem">Derived geodetic coordinate reference system</a></li>
-        <li><a href="#Derivedgeographiccoordinatereferencesystem">Derived geographic coordinate reference system</a></li>
-        <li><a href="#Derivedparametriccoordinatereferencesystem">Derived parametric coordinate reference system</a></li>
-        <li><a href="#Derivedprojectedcoordinatereferencesystem">Derived projected coordinate reference system</a></li>
-        <li><a href="#Derivedverticalcoordinatereferencesystem">Derived vertical coordinate reference system</a></li>
-        <li><a href="#Dynamiccoordinatereferencesystem">Dynamic coordinate reference system</a></li>
-        <li><a href="#Dynamicgeodeticreferenceframe">Dynamic geodetic reference frame</a></li>
-        <li><a href="#Dynamicreferenceframe">Dynamic reference frame</a></li>
-        <li><a href="#Dynamicverticalreferenceframe">Dynamic vertical reference frame</a></li>
-        <li><a href="#Ellipsoidalcoordinatesystem">Ellipsoidal coordinate system</a></li>
-        <li><a href="#Engineeringcoordinatereferencesystem">Engineering coordinate reference system</a></li>
-        <li><a href="#Engineeringcoordinatesystem">Engineering coordinate system</a></li>
-        <li><a href="#Geocentriccoordinatereferencesystem">Geocentric coordinate reference system</a></li>
-        <li><a href="#Geodeticcoordinatereferencesystem">Geodetic coordinate reference system</a></li>
-        <li><a href="#Geodeticcoordinatesystem">Geodetic coordinate system</a></li>
-        <li><a href="#Geodeticreferenceframe">Geodetic reference frame</a></li>
-        <li><a href="#Geographiccoordinatereferencesystem">Geographic coordinate reference system</a></li>
-        <li><a href="#Homogeneouscoordinatesystem">Homogeneous coordinate system</a></li>
-        <li><a href="#Linearcoordinatesystem">Linear coordinate system</a></li>
-        <li><a href="#Ordinalcoordinatesystem">Ordinal coordinate system</a></li>
-        <li><a href="#Parametriccoordinatereferencesystem">Parametric coordinate reference system</a></li>
-        <li><a href="#Parametriccoordinatesystem">Parametric coordinate system</a></li>
-        <li><a href="#Polarcoordinatesystem">Polar coordinate system</a></li>
-        <li><a href="#Projectedcoordinatereferencesystem">Projected coordinate reference system</a></li>
-        <li><a href="#Spatio-Parametriccoordinatereferencesystem">Spatio-Parametric coordinate reference system</a></li>
-        <li><a href="#Sphericalcoordinatesystem">Spherical coordinate system</a></li>
-        <li><a href="#Staticcoordinatereferencesystem">Static coordinate reference system</a></li>
-        <li><a href="#Temporalcoordinatereferencesystem">Temporal coordinate reference system</a></li>
-        <li><a href="#Temporalcoordinatesystem">Temporal coordinate system</a></li>
-        <li><a href="#Temporalcoordinatesystemaxis">Temporal coordinate system axis</a></li>
-        <li><a href="#Temporalcountcoordinatesystem">Temporal count coordinate system</a></li>
-        <li><a href="#Temporalmeasurecoordinatesystem">Temporal measure coordinate system</a></li>
-        <li><a href="#Verticalcoordinatereferencesystem">Vertical coordinate reference system</a></li>
-        <li><a href="#Verticalcoordinatesystem">Vertical coordinate system</a></li>
-        <li><a href="#Verticalreferenceframe">Vertical reference frame</a></li>
-        <li><a href="#administrativecode">administrative code</a></li>
-        <li><a href="#areacode">area code</a></li>
-        <li><a href="#AreaOfUse">area of use</a></li>
-        <li><a href="#barycentriccoordinatesystem">barycentric coordinate system</a></li>
-        <li><a href="#AxisDirection">cardinal direction</a></li>
-        <li><a href="#CardinalDirection">cardinal direction</a></li>
-        <li><a href="#celestialcoordinatesystem">celestial coordinate system</a></li>
-        <li><a href="#coordinateconcatenatedoperation">coordinate concatenated operation</a></li>
-        <li><a href="#coordinateconversionoperation">coordinate conversion operation</a></li>
-        <li><a href="#CoordinateOperation">coordinate operation</a></li>
-        <li><a href="#coordinatetransformationoperation">coordinate transformation operation</a></li>
-        <li><a href="#Datum">datum</a></li>
-        <li><a href="#datumensemble">datum ensemble</a></li>
-        <li><a href="#derivedprojectedcoordinatesystem">derived projected coordinate system</a></li>
-        <li><a href="#ellipsoid">ellipsoid</a></li>
-        <li><a href="#engineeringdatum">engineering datum</a></li>
-        <li><a href="#geocodesystem">geocode system</a></li>
-        <li><a href="#geoid">geoid</a></li>
-        <li><a href="#globalgridreferencesystem">global grid reference system</a></li>
-        <li><a href="#gridreferencesystem">grid reference system</a></li>
-        <li><a href="#hierarchicalgridreferencesystem">hierarchical grid reference system</a></li>
-        <li><a href="#horizontaldatum">horizontal datum</a></li>
-        <li><a href="#linearreferencesystem">linear reference system</a></li>
-        <li><a href="#localgridreferencesystem">local grid reference system</a></li>
-        <li><a href="#obliquecoordinatesystem">oblique coordinate system</a></li>
-        <li><a href="#operationparameter">operation parameter</a></li>
-        <li><a href="#operationvalue">operation value</a></li>
-        <li><a href="#othercoordinateoperation">other coordinate operation</a></li>
-        <li><a href="#parametricdatum">parametric datum</a></li>
-        <li><a href="#passthroughoperation">passthrough operation</a></li>
-        <li><a href="#PrimeMeridian">prime meridian</a></li>
-        <li><a href="#Projection">projection</a></li>
-        <li><a href="#referencesystem">reference system</a></li>
-        <li><a href="#singlecoordinatereferencesystem">single coordinate reference system</a></li>
-        <li><a href="#singleoperation">single operation</a></li>
-        <li><a href="#spatialcompoundcoordinatereferencesystem">spatial compound coordinate reference system</a></li>
-        <li><a href="#spatialindex">spatial index</a></li>
-        <li><a href="#spatialreferencesystem">spatial reference system</a></li>
-        <li><a href="#spatio-parametriccompoundcoordinatereferencesystem">spatio-parametric compound coordinate reference system</a></li>
-        <li><a href="#spatio-parametric-temporalcompoundcoordinatereferencesystem">spatio-parametric-temporal compound coordinate reference system</a></li>
-        <li><a href="#spatio-temporalcompoundcoordinatereferencesystem">spatio-temporal compound coordinate reference system</a></li>
-        <li><a href="#temporaldatum">temporal datum</a></li>
-        <li><a href="#temporalreferencesystem">temporal reference system</a></li>
+      <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#AdministrativeCode">geocrs:AdministrativeCode</a>
+      <a href="http://situx.github.io/proj4rdf/#AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#AreaCode">geocrs:AreaCode</a>
+      <a href="http://situx.github.io/proj4rdf/#AreaOfUse">geocrs:AreaOfUse</a>
+      <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a>
+      <a href="http://situx.github.io/proj4rdf/#BarycentricCoordinateSystem">geocrs:BarycentricCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#BoundCRS">geocrs:BoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a>
+      <a href="http://situx.github.io/proj4rdf/#CartesianCoordinateSystem">geocrs:CartesianCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#CompoundCRS">geocrs:CompoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#ConformalProjection">geocrs:ConformalProjection</a>
+      <a href="http://situx.github.io/proj4rdf/#ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateOperation">geocrs:CoordinateOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a>
+      <a href="http://situx.github.io/proj4rdf/#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#Datum">geocrs:Datum</a>
+      <a href="http://situx.github.io/proj4rdf/#DatumEnsemble">geocrs:DatumEnsemble</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedParametricCRS">geocrs:DerivedParametricCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DynamicCRS">geocrs:DynamicCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a>
+      <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a>
+      <a href="http://situx.github.io/proj4rdf/#DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a>
+      <a href="http://situx.github.io/proj4rdf/#Ellipsoid">geocrs:Ellipsoid</a>
+      <a href="http://situx.github.io/proj4rdf/#EllipsoidalCoordinateSystem">geocrs:EllipsoidalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#EngineeringCRS">geocrs:EngineeringCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#EngineeringCoordinateSystem">geocrs:EngineeringCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#EngineeringDatum">geocrs:EngineeringDatum</a>
+      <a href="http://situx.github.io/proj4rdf/#EqualAreaProjection">geocrs:EqualAreaProjection</a>
+      <a href="http://situx.github.io/proj4rdf/#EquatorialCoordinateSystem">geocrs:EquatorialCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#EquidistantProjection">geocrs:EquidistantProjection</a>
+      <a href="http://situx.github.io/proj4rdf/#GalacticCoordinateSystem">geocrs:GalacticCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#GeocentricCRS">geocrs:GeocentricCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#GeocodeSystem">geocrs:GeocodeSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#GeodeticCRS">geocrs:GeodeticCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#GeodeticCoordinateSystem">geocrs:GeodeticCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a>
+      <a href="http://situx.github.io/proj4rdf/#GeographicCRS">geocrs:GeographicCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#GeographicCoordinateSystem">geocrs:GeographicCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#Geoid">geocrs:Geoid</a>
+      <a href="http://situx.github.io/proj4rdf/#GlobalGridReferenceSystem">geocrs:GlobalGridReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#GridReferenceSystem">geocrs:GridReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#HexagonalCoordinateSystem">geocrs:HexagonalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#HierarchicalGridReferenceSystem">geocrs:HierarchicalGridReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#HomogeneousCoordinateSystem">geocrs:HomogeneousCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#HorizontalCoordinateSystem">geocrs:HorizontalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#HorizontalDatum">geocrs:HorizontalDatum</a>
+      <a href="http://situx.github.io/proj4rdf/#LinearCoordinateSystem">geocrs:LinearCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#LinearReferenceSystem">geocrs:LinearReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#ObliqueCoordinateSystem">geocrs:ObliqueCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#OperationParameter">geocrs:OperationParameter</a>
+      <a href="http://situx.github.io/proj4rdf/#OperationValue">geocrs:OperationValue</a>
+      <a href="http://situx.github.io/proj4rdf/#OrdinalCoordinateSystem">geocrs:OrdinalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#ParametricCRS">geocrs:ParametricCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#ParametricDatum">geocrs:ParametricDatum</a>
+      <a href="http://situx.github.io/proj4rdf/#PassThroughOperation">geocrs:PassThroughOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#PerifocalCoordinateSystem">geocrs:PerifocalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#PrimeMeridian">geocrs:PrimeMeridian</a>
+      <a href="http://situx.github.io/proj4rdf/#ProjectedCRS">geocrs:ProjectedCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#ProjectedCoordinateSystem">geocrs:ProjectedCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#Projection">geocrs:Projection</a>
+      <a href="http://situx.github.io/proj4rdf/#ReferenceSystem">geocrs:ReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#SingleCRS">geocrs:SingleCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SingleOperation">geocrs:SingleOperation</a>
+      <a href="http://situx.github.io/proj4rdf/#SkewCoordinateSystem">geocrs:SkewCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatialCompoundCRS">geocrs:SpatialCompoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatialIndex">geocrs:SpatialIndex</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatioParametricCRS">geocrs:SpatioParametricCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatioParametricCompoundCRS">geocrs:SpatioParametricCompoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatioParametricTemporalCompoundCRS">geocrs:SpatioParametricTemporalCompoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SpatioTemporalCompoundCRS">geocrs:SpatioTemporalCompoundCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#StaticCRS">geocrs:StaticCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#StereographicCoordinateSystem">geocrs:StereographicCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalCRS">geocrs:TemporalCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalCoordinateSystemAxis">geocrs:TemporalCoordinateSystemAxis</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalDatum">geocrs:TemporalDatum</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#TemporalReferenceSystem">geocrs:TemporalReferenceSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#VerticalCRS">geocrs:VerticalCRS</a>
+      <a href="http://situx.github.io/proj4rdf/#VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a>
+      <a href="http://situx.github.io/proj4rdf/#VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a>
     </ul>
+    <div class="entity class" id="1Dcoordinatesystem">
+        <h3>1D coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#1DCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#LinearCoordinateSystem">geocrs:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="3Dcoordinatesystem">
+        <h3>3D coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#3DCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#GalacticCoordinateSystem">geocrs:GalacticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="administrativecode">
         <h3>administrative code<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -365,8 +444,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#AreaCode">geocrs:AreaCode</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#AreaCode">geocrs:AreaCode</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -399,8 +478,8 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#ObliqueCoordinateSystem">geocrs:ObliqueCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#CartesianCoordinateSystem">geocrs:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#ObliqueCoordinateSystem">geocrs:ObliqueCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -467,12 +546,69 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="AxisDirection">
-        <h3>cardinal direction<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="axisdirectoin">
+        <h3>axis directoin<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
                 <td><code>http://situx.github.io/proj4rdf/#AxisDirection</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>direction of positive increase in the coordinate value for a coordinate system axis</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#south_west">geocrs:south_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#towards">geocrs:towards</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#forward">geocrs:forward</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#west">geocrs:west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#aft">geocrs:aft</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#counterclockwise">geocrs:counterclockwise</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#south_south_east">geocrs:south_south_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#north_north_west">geocrs:north_north_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#row_negative">geocrs:row_negative</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#starboard">geocrs:starboard</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#future">geocrs:future</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#display_down">geocrs:display_down</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#north">geocrs:north</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#row_positive">geocrs:row_positive</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#down">geocrs:down</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#east">geocrs:east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#away_from">geocrs:away_from</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#west_north_west">geocrs:west_north_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#geocentricX">geocrs:geocentricX</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#unspecified">geocrs:unspecified</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#up">geocrs:up</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#south_south_west">geocrs:south_south_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#past">geocrs:past</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#north_west">geocrs:north_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#north_east">geocrs:north_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#clockwise">geocrs:clockwise</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#geocentricY">geocrs:geocentricY</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#column_negative">geocrs:column_negative</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#east_south_east">geocrs:east_south_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#south_east">geocrs:south_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#display_up">geocrs:display_up</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#display_right">geocrs:display_right</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#port">geocrs:port</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#geocentricZ">geocrs:geocentricZ</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#west_south_west">geocrs:west_south_west</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#column_positive">geocrs:column_positive</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#display_left">geocrs:display_left</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#north_north_east">geocrs:north_north_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#east_north_east">geocrs:east_north_east</a><br/>
+                    <a href="http://situx.github.io/proj4rdf/#south">geocrs:south</a><br/>
+                </td>
             </tr>
         </table>
     </div>
@@ -552,58 +688,43 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="http://situx.github.io/proj4rdf/#BoundCRS">geocrs:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#StaticCRS">geocrs:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeocentricCRS">geocrs:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DynamicCRS">geocrs:DynamicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SpatioParametricCRS">geocrs:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DynamicCRS">geocrs:DynamicCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#BoundCRS">geocrs:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#GeocentricCRS">geocrs:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#unit">geocrs:unit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#axis">geocrs:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#isVertical">geocrs:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#projection">geocrs:projection</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#isDeprecated">geocrs:isDeprecated</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#isGeocentric">geocrs:isGeocentric</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#asProj4">geocrs:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#asProjJSON">geocrs:asProjJSON</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#axis">geocrs:axis</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#asWKT">geocrs:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#isVertical">geocrs:isVertical</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#isProjected">geocrs:isProjected</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#isBound">geocrs:isBound</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#extent">geocrs:extent</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#isGeographic">geocrs:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#epsgCode">geocrs:epsgCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#extent">geocrs:extent</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#asWKT">geocrs:asWKT</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#unit">geocrs:unit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#asProj4">geocrs:asProj4</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#isGeographic">geocrs:isGeographic</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#isBound">geocrs:isBound</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#isProjected">geocrs:isProjected</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#isGeocentric">geocrs:isGeocentric</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#targetCRS">geocrs:targetCRS</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#includesSRS">geocrs:includesSRS</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#sourceCRS">geocrs:sourceCRS</a><sup class="sup-op" title="object property">op</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="CardinalDirection">
-        <h3>cardinal direction<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://situx.github.io/proj4rdf/#CardinalDirection</code></td>
-            </tr>
-            <tr>
-                <th>In range of</th>
-                <td>
-                    <a href="http://situx.github.io/proj4rdf/#direction">geocrs:direction</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#includesSRS">geocrs:includesSRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#targetCRS">geocrs:targetCRS</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -631,6 +752,7 @@ ISO country code
                 <th>Super-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -658,6 +780,14 @@ ISO country code
                 <th>Super-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#GalacticCoordinateSystem">geocrs:GalacticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#EquatorialCoordinateSystem">geocrs:EquatorialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#HorizontalCoordinateSystem">geocrs:HorizontalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -690,16 +820,53 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="http://situx.github.io/proj4rdf/#SpatioTemporalCompoundCRS">geocrs:SpatioTemporalCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SpatioParametricTemporalCompoundCRS">geocrs:SpatioParametricTemporalCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SpatioParametricCompoundCRS">geocrs:SpatioParametricCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SpatialCompoundCRS">geocrs:SpatialCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#SpatioTemporalCompoundCRS">geocrs:SpatioTemporalCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#includesSRS">geocrs:includesSRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="conformalprojection">
+        <h3>conformal projection<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#ConformalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="conicalcoordinatesystem">
+        <h3>conical coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#ConicalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -792,19 +959,19 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#SingleOperation">geocrs:SingleOperation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#PassThroughOperation">geocrs:PassThroughOperation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#PassThroughOperation">geocrs:PassThroughOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#SingleOperation">geocrs:SingleOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#area_of_use">geocrs:area_of_use</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#targetCRS">geocrs:targetCRS</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#sourceCRS">geocrs:sourceCRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#area_of_use">geocrs:area_of_use</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#accuracy">geocrs:accuracy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#sourceCRS">geocrs:sourceCRS</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -837,23 +1004,22 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#EngineeringCoordinateSystem">geocrs:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#EllipsoidalCoordinateSystem">geocrs:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#GeodeticCoordinateSystem">geocrs:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#HomogeneousCoordinateSystem">geocrs:HomogeneousCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#HexagonalCoordinateSystem">geocrs:HexagonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#OrdinalCoordinateSystem">geocrs:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#StereographicCoordinateSystem">geocrs:StereographicCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#PerifocalCoordinateSystem">geocrs:PerifocalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#EngineeringCoordinateSystem">geocrs:EngineeringCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeodeticCoordinateSystem">geocrs:GeodeticCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeographicCoordinateSystem">geocrs:GeographicCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#HomogeneousCoordinateSystem">geocrs:HomogeneousCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#BarycentricCoordinateSystem">geocrs:BarycentricCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#LinearCoordinateSystem">geocrs:LinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OrdinalCoordinateSystem">geocrs:OrdinalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -894,12 +1060,12 @@ ISO country code
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#unit_auth_code">geocrs:unit_auth_code</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#direction">geocrs:direction</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#unit_conversion_factor">geocrs:unit_conversion_factor</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#unit">geocrs:unit</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#unit_code">geocrs:unit_code</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#unit_conversion_factor">geocrs:unit_conversion_factor</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#abbreviation">geocrs:abbreviation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#unit_auth_code">geocrs:unit_auth_code</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#unit_code">geocrs:unit_code</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#direction">geocrs:direction</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -962,6 +1128,13 @@ ISO country code
                     <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#SkewCoordinateSystem">geocrs:SkewCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="entity class" id="Cylindricalcoordinatesystem">
@@ -986,7 +1159,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1040,10 +1213,10 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#EngineeringDatum">geocrs:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#TemporalDatum">geocrs:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#HorizontalDatum">geocrs:HorizontalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#TemporalDatum">geocrs:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#ParametricDatum">geocrs:ParametricDatum</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
@@ -1118,13 +1291,13 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1179,8 +1352,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1207,8 +1380,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1318,8 +1491,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1379,8 +1552,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1413,8 +1586,8 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1441,8 +1614,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1502,7 +1675,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1594,6 +1767,73 @@ ISO country code
             </tr>
         </table>
     </div>
+    <div class="entity class" id="equal-areaprojection">
+        <h3>equal-area projection<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#EqualAreaProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equatorialcoordinatesystem">
+        <h3>equatorial coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#EquatorialCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equidistantprojection">
+        <h3>equidistant projection<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#EquidistantProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="galacticcoordinatesystem">
+        <h3>galactic coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#GalacticCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="Geocentriccoordinatereferencesystem">
         <h3>Geocentric coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -1637,15 +1877,15 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="http://situx.github.io/proj4rdf/#AdministrativeCode">geocrs:AdministrativeCode</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#GridReferenceSystem">geocrs:GridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#HierarchicalGridReferenceSystem">geocrs:HierarchicalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#AdministrativeCode">geocrs:AdministrativeCode</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Geodeticcoordinatereferencesystem">
-        <h3>Geodetic coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="geodeticcoordinatereferencesystem">
+        <h3>geodetic coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1672,8 +1912,8 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1738,8 +1978,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Geographiccoordinatereferencesystem">
-        <h3>Geographic coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="geographiccoordinatereferencesystem">
+        <h3>geographic coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1767,6 +2007,21 @@ ISO country code
                 <th>Sub-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="GeographicCoordinateSystem">
+        <h3>GeographicCoordinateSystem<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#GeographicCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1799,11 +2054,11 @@ ISO country code
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="http://situx.github.io/proj4rdf/#eccentricity">geocrs:eccentricity</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#semiMinorAxis">geocrs:semiMinorAxis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#flatteningParameter">geocrs:flatteningParameter</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#semiMajorAxis">geocrs:semiMajorAxis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#isSphere">geocrs:isSphere</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#eccentricity">geocrs:eccentricity</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1870,8 +2125,29 @@ ISO country code
                 <th>Sub-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#GlobalGridReferenceSystem">geocrs:GlobalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#SpatialIndex">geocrs:SpatialIndex</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="hexagonalcoordinatesystem">
+        <h3>hexagonal coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#HexagonalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A hexagonal coordinate system describes areas with a hexagonal lattice</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1920,6 +2196,27 @@ ISO country code
                 <th>Super-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="horizontalcoordinatesystem">
+        <h3>horizontal coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#HorizontalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1973,7 +2270,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2110,6 +2407,36 @@ ISO country code
             </tr>
         </table>
     </div>
+    <div class="entity class" id="orthogonalcoordinatesystem">
+        <h3>orthogonal coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#CartesianCoordinateSystem">geocrs:CartesianCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#EllipsoidalCoordinateSystem">geocrs:EllipsoidalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="othercoordinateoperation">
         <h3>other coordinate operation<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -2170,8 +2497,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Parametriccoordinatesystem">
-        <h3>Parametric coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="parametriccoordinatesystem">
+        <h3>parametric coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2192,7 +2519,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2251,8 +2578,50 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Polarcoordinatesystem">
-        <h3>Polar coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="perifocalcoordinatesystem">
+        <h3>perifocal coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#PerifocalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="planarcoordinatesystem">
+        <h3>planar coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#PlanarCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="polarcoordinatesystem">
+        <h3>polar coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2273,7 +2642,8 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2346,12 +2716,35 @@ ISO country code
             </tr>
         </table>
     </div>
+    <div class="entity class" id="projectedcoordinatesystem">
+        <h3>projected coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#ProjectedCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#2DCoordinateSystem">geocrs:2DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="Projection">
         <h3>projection<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
                 <td><code>http://situx.github.io/proj4rdf/#Projection</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
             </tr>
             <tr>
                 <th>In range of</th>
@@ -2377,8 +2770,8 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#TemporalReferenceSystem">geocrs:TemporalReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2411,19 +2804,19 @@ ISO country code
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#TemporalCRS">geocrs:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2458,6 +2851,27 @@ ISO country code
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="skewcoordinatesystem">
+        <h3>skew coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#SkewCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A skew coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at angles other than right angles</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2539,8 +2953,8 @@ ISO country code
                 <th>Sub-classes</th>
                 <td>
                     <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#LinearReferenceSystem">geocrs:LinearReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2647,8 +3061,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Sphericalcoordinatesystem">
-        <h3>Spherical coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="sphericalcoordinatesystem">
+        <h3>spherical coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2669,7 +3083,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2701,6 +3115,21 @@ ISO country code
             </tr>
         </table>
     </div>
+    <div class="entity class" id="stereographiccoordinatesystem">
+        <h3>stereographic coordinate system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://situx.github.io/proj4rdf/#StereographicCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="Temporalcoordinatereferencesystem">
         <h3>Temporal coordinate reference system<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -2728,8 +3157,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Temporalcoordinatesystem">
-        <h3>Temporal coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="temporalcoordinatesystem">
+        <h3>temporal coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2750,15 +3179,15 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://situx.github.io/proj4rdf/#TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://situx.github.io/proj4rdf/#TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2790,8 +3219,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Temporalcountcoordinatesystem">
-        <h3>Temporal count coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="temporalcountcoordinatesystem">
+        <h3>temporal count coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2844,8 +3273,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Temporalmeasurecoordinatesystem">
-        <h3>Temporal measure coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="temporalmeasurecoordinatesystem">
+        <h3>temporal measure coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2925,8 +3354,8 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Verticalcoordinatesystem">
-        <h3>Vertical coordinate system<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="verticalcoordinatesystem">
+        <h3>vertical coordinate system<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -2947,7 +3376,7 @@ ISO country code
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://situx.github.io/proj4rdf/#1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -3013,16 +3442,16 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Defines an area of use of an operation
+                    <p>Defines an area of use of an operation</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://situx.github.io/proj4rdf/#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup>
-                    <a href="http://situx.github.io/proj4rdf/#OtherCoordinateOperation">geocrs:OtherCoordinateOperation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://situx.github.io/proj4rdf/#CoordinateConcatenatedOperation">geocrs:CoordinateConcatenatedOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateConversionOperation">geocrs:CoordinateConversionOperation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
@@ -3050,7 +3479,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    An axis used by some ellipsoidal or cartesian coordinate system
+                    <p>An axis used by some ellipsoidal or cartesian coordinate system</p>
                 </td>
             </tr>
             <tr>
@@ -3083,7 +3512,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Associates a coordinate operation with a CRS
+                    <p>Associates a coordinate operation with a CRS</p>
                 </td>
             </tr>
             <tr>
@@ -3110,7 +3539,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Associates a coordinate system with a coordinate reference system
+                    <p>Associates a coordinate system with a coordinate reference system</p>
                 </td>
             </tr>
             <tr>
@@ -3137,7 +3566,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Associates a datum with a coordinate reference system
+                    <p>Associates a datum with a coordinate reference system</p>
                 </td>
             </tr>
             <tr>
@@ -3150,8 +3579,8 @@ ISO country code
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://situx.github.io/proj4rdf/#Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
@@ -3172,7 +3601,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Associates a direction with a datum
+                    <p>Associates a direction with a datum</p>
                 </td>
             </tr>
             <tr>
@@ -3199,7 +3628,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    The ellipsoid used by a geodetic datum
+                    <p>The ellipsoid used by a geodetic datum</p>
                 </td>
             </tr>
             <tr>
@@ -3227,7 +3656,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates spatial reference systems used by a compound reference system
+                    <p>Indicates spatial reference systems used by a compound reference system</p>
                 </td>
             </tr>
             <tr>
@@ -3254,7 +3683,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    The prime meridian used by a geodetic datum
+                    <p>The prime meridian used by a geodetic datum</p>
                 </td>
             </tr>
             <tr>
@@ -3308,7 +3737,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    The dimension of the coordinate reference system associated with the data used as input of an operation
+                    <p>The dimension of the coordinate reference system associated with the data used as input of an operation</p>
                 </td>
             </tr>
             <tr>
@@ -3341,7 +3770,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    The dimension of the coordinate reference system associated with the data obtained as output of an operation
+                    <p>The dimension of the coordinate reference system associated with the data obtained as output of an operation</p>
                 </td>
             </tr>
             <tr>
@@ -3368,8 +3797,8 @@ ISO country code
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3431,7 +3860,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    The abbreviation used to identify an axis
+                    <p>The abbreviation used to identify an axis</p>
                 </td>
             </tr>
             <tr>
@@ -3479,7 +3908,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    proj4 representation of the CRS
+                    <p>proj4 representation of the CRS</p>
                 </td>
             </tr>
             <tr>
@@ -3508,7 +3937,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    ProjJSON representation of the CRS
+                    <p>ProjJSON representation of the CRS</p>
                 </td>
             </tr>
             <tr>
@@ -3537,15 +3966,15 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    WKT representation of the CRS
+                    <p>WKT representation of the CRS</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
+                    <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://situx.github.io/proj4rdf/#PrimeMeridian">geocrs:PrimeMeridian</a><sup class="sup-c" title="class">c</sup>
-                    <a href="http://situx.github.io/proj4rdf/#CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3650,7 +4079,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient
+                    <p>A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient</p>
                 </td>
             </tr>
             <tr>
@@ -3671,7 +4100,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    A value relating to distance north of a standard latitude but with a constant added to make the numbers convenient
+                    <p>A value relating to distance north of a standard latitude but with a constant added to make the numbers convenient</p>
                 </td>
             </tr>
             <tr>
@@ -3729,7 +4158,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)
+                    <p>Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)</p>
                 </td>
             </tr>
             <tr>
@@ -3750,7 +4179,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is bound
+                    <p>Indicates if the spatial reference system is bound</p>
                 </td>
             </tr>
             <tr>
@@ -3777,7 +4206,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is deprecated
+                    <p>Indicates if the spatial reference system is deprecated</p>
                 </td>
             </tr>
             <tr>
@@ -3804,7 +4233,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is geocentric
+                    <p>Indicates if the spatial reference system is geocentric</p>
                 </td>
             </tr>
             <tr>
@@ -3831,7 +4260,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is geographic
+                    <p>Indicates if the spatial reference system is geographic</p>
                 </td>
             </tr>
             <tr>
@@ -3858,7 +4287,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is projected
+                    <p>Indicates if the spatial reference system is projected</p>
                 </td>
             </tr>
             <tr>
@@ -3885,7 +4314,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates whether the ellipsoid is a sphere
+                    <p>Indicates whether the ellipsoid is a sphere</p>
                 </td>
             </tr>
             <tr>
@@ -3912,7 +4341,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates if the spatial reference system is vertical
+                    <p>Indicates if the spatial reference system is vertical</p>
                 </td>
             </tr>
             <tr>
@@ -3954,7 +4383,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    the scope of the referring object
+                    <p>the scope of the referring object</p>
                 </td>
             </tr>
             <tr>
@@ -3981,7 +4410,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates the length of the semi major axis of an ellipsoid
+                    <p>Indicates the length of the semi major axis of an ellipsoid</p>
                 </td>
             </tr>
             <tr>
@@ -4014,7 +4443,7 @@ ISO country code
             <tr>
                 <th>Description</th>
                 <td>
-                    Indicates the length of the semi minor axis of an ellipsoid
+                    <p>Indicates the length of the semi minor axis of an ellipsoid</p>
                 </td>
             </tr>
             <tr>
@@ -4106,51 +4535,51 @@ ISO country code
 </section>
 
   
-  <section id="namedindividuals">
-    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hlist">
-        <li><a href="#aft">aft</a></li>
-        <li><a href="#awayfrom">away from</a></li>
-        <li><a href="#clockwise">clockwise</a></li>
-        <li><a href="#columnnegative">column negative</a></li>
-        <li><a href="#columnpositive">column positive</a></li>
-        <li><a href="#counter-clockwise">counter-clockwise</a></li>
-        <li><a href="#displaydown">display down</a></li>
-        <li><a href="#displayleft">display left</a></li>
-        <li><a href="#displayright">display right</a></li>
-        <li><a href="#displayup">display up</a></li>
-        <li><a href="#down">down</a></li>
-        <li><a href="#east">east</a></li>
-        <li><a href="#east-north-east">east-north-east</a></li>
-        <li><a href="#east-south-east">east-south-east</a></li>
-        <li><a href="#forward">forward</a></li>
-        <li><a href="#future">future</a></li>
-        <li><a href="#geocentricX">geocentric X</a></li>
-        <li><a href="#geocentricY">geocentric Y</a></li>
-        <li><a href="#geocentricZ">geocentric Z</a></li>
-        <li><a href="#north">north</a></li>
-        <li><a href="#north-east">north-east</a></li>
-        <li><a href="#north-north-east">north-north-east</a></li>
-        <li><a href="#north-north-west">north-north-west</a></li>
-        <li><a href="#north-west">north-west</a></li>
-        <li><a href="#past">past</a></li>
-        <li><a href="#port">port</a></li>
-        <li><a href="#rownegative">row negative</a></li>
-        <li><a href="#rowpositive">row positive</a></li>
-        <li><a href="#south">south</a></li>
-        <li><a href="#south-east">south-east</a></li>
-        <li><a href="#south-south-east">south-south-east</a></li>
-        <li><a href="#south-south-west">south-south-west</a></li>
-        <li><a href="#south-west">south-west</a></li>
-        <li><a href="#starboard">starboard</a></li>
-        <li><a href="#towards">towards</a></li>
-        <li><a href="#unspecified">unspecified</a></li>
-        <li><a href="#up">up</a></li>
-        <li><a href="#west">west</a></li>
-        <li><a href="#west-north-west">west-north-west</a></li>
-        <li><a href="#west-south-west">west-south-west</a></li>
-    </ul>
-    <div class="entity named_individual" id="aft">
+    <section id="namedindividuals">
+        <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+        <ul class="hlist">
+            <li><a href="#aft">aft</a></li>
+            <li><a href="#awayfrom">away from</a></li>
+            <li><a href="#clockwise">clockwise</a></li>
+            <li><a href="#columnnegative">column negative</a></li>
+            <li><a href="#columnpositive">column positive</a></li>
+            <li><a href="#counter-clockwise">counter-clockwise</a></li>
+            <li><a href="#displaydown">display down</a></li>
+            <li><a href="#displayleft">display left</a></li>
+            <li><a href="#displayright">display right</a></li>
+            <li><a href="#displayup">display up</a></li>
+            <li><a href="#down">down</a></li>
+            <li><a href="#east">east</a></li>
+            <li><a href="#east-north-east">east-north-east</a></li>
+            <li><a href="#east-south-east">east-south-east</a></li>
+            <li><a href="#forward">forward</a></li>
+            <li><a href="#future">future</a></li>
+            <li><a href="#geocentricX">geocentric X</a></li>
+            <li><a href="#geocentricY">geocentric Y</a></li>
+            <li><a href="#geocentricZ">geocentric Z</a></li>
+            <li><a href="#north">north</a></li>
+            <li><a href="#north-east">north-east</a></li>
+            <li><a href="#north-north-east">north-north-east</a></li>
+            <li><a href="#north-north-west">north-north-west</a></li>
+            <li><a href="#north-west">north-west</a></li>
+            <li><a href="#past">past</a></li>
+            <li><a href="#port">port</a></li>
+            <li><a href="#rownegative">row negative</a></li>
+            <li><a href="#rowpositive">row positive</a></li>
+            <li><a href="#south">south</a></li>
+            <li><a href="#south-east">south-east</a></li>
+            <li><a href="#south-south-east">south-south-east</a></li>
+            <li><a href="#south-south-west">south-south-west</a></li>
+            <li><a href="#south-west">south-west</a></li>
+            <li><a href="#starboard">starboard</a></li>
+            <li><a href="#towards">towards</a></li>
+            <li><a href="#unspecified">unspecified</a></li>
+            <li><a href="#up">up</a></li>
+            <li><a href="#west">west</a></li>
+            <li><a href="#west-north-west">west-north-west</a></li>
+            <li><a href="#west-south-west">west-south-west</a></li>
+        </ul>
+            <div class="entity named_individual" id="aft">
         <h3>aft<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4162,7 +4591,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4174,7 +4603,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="awayfrom">
+            <div class="entity named_individual" id="awayfrom">
         <h3>away from<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4186,7 +4615,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4198,7 +4627,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="clockwise">
+            <div class="entity named_individual" id="clockwise">
         <h3>clockwise<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4210,7 +4639,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4222,7 +4651,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="columnnegative">
+            <div class="entity named_individual" id="columnnegative">
         <h3>column negative<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4234,7 +4663,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4246,7 +4675,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="columnpositive">
+            <div class="entity named_individual" id="columnpositive">
         <h3>column positive<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4258,7 +4687,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4270,7 +4699,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="counter-clockwise">
+            <div class="entity named_individual" id="counter-clockwise">
         <h3>counter-clockwise<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4282,7 +4711,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4294,7 +4723,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="displaydown">
+            <div class="entity named_individual" id="displaydown">
         <h3>display down<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4306,7 +4735,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4318,7 +4747,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="displayleft">
+            <div class="entity named_individual" id="displayleft">
         <h3>display left<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4330,7 +4759,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4342,7 +4771,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="displayright">
+            <div class="entity named_individual" id="displayright">
         <h3>display right<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4354,7 +4783,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4366,7 +4795,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="displayup">
+            <div class="entity named_individual" id="displayup">
         <h3>display up<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4378,7 +4807,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4390,7 +4819,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="down">
+            <div class="entity named_individual" id="down">
         <h3>down<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4402,7 +4831,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4414,7 +4843,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="east">
+            <div class="entity named_individual" id="east">
         <h3>east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4426,7 +4855,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4438,7 +4867,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="east-north-east">
+            <div class="entity named_individual" id="east-north-east">
         <h3>east-north-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4450,7 +4879,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4462,7 +4891,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="east-south-east">
+            <div class="entity named_individual" id="east-south-east">
         <h3>east-south-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4474,7 +4903,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4486,7 +4915,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="forward">
+            <div class="entity named_individual" id="forward">
         <h3>forward<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4498,7 +4927,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4510,7 +4939,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="future">
+            <div class="entity named_individual" id="future">
         <h3>future<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4522,7 +4951,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4534,7 +4963,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="geocentricX">
+            <div class="entity named_individual" id="geocentricX">
         <h3>geocentric X<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4546,7 +4975,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4558,7 +4987,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="geocentricY">
+            <div class="entity named_individual" id="geocentricY">
         <h3>geocentric Y<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4570,7 +4999,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4582,7 +5011,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="geocentricZ">
+            <div class="entity named_individual" id="geocentricZ">
         <h3>geocentric Z<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4594,7 +5023,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4606,7 +5035,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="north">
+            <div class="entity named_individual" id="north">
         <h3>north<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4618,7 +5047,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4630,7 +5059,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="north-east">
+            <div class="entity named_individual" id="north-east">
         <h3>north-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4642,7 +5071,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4654,7 +5083,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="north-north-east">
+            <div class="entity named_individual" id="north-north-east">
         <h3>north-north-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4666,7 +5095,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4678,7 +5107,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="north-north-west">
+            <div class="entity named_individual" id="north-north-west">
         <h3>north-north-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4690,7 +5119,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4702,7 +5131,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="north-west">
+            <div class="entity named_individual" id="north-west">
         <h3>north-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4714,7 +5143,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4726,7 +5155,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="past">
+            <div class="entity named_individual" id="past">
         <h3>past<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4738,7 +5167,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4750,7 +5179,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="port">
+            <div class="entity named_individual" id="port">
         <h3>port<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4762,7 +5191,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4774,7 +5203,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="rownegative">
+            <div class="entity named_individual" id="rownegative">
         <h3>row negative<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4786,7 +5215,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4798,7 +5227,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="rowpositive">
+            <div class="entity named_individual" id="rowpositive">
         <h3>row positive<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4810,7 +5239,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4822,7 +5251,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="south">
+            <div class="entity named_individual" id="south">
         <h3>south<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4834,7 +5263,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4846,7 +5275,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="south-east">
+            <div class="entity named_individual" id="south-east">
         <h3>south-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4858,7 +5287,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4870,7 +5299,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="south-south-east">
+            <div class="entity named_individual" id="south-south-east">
         <h3>south-south-east<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4882,7 +5311,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4894,7 +5323,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="south-south-west">
+            <div class="entity named_individual" id="south-south-west">
         <h3>south-south-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4906,7 +5335,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4918,7 +5347,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="south-west">
+            <div class="entity named_individual" id="south-west">
         <h3>south-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4930,7 +5359,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4942,7 +5371,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="starboard">
+            <div class="entity named_individual" id="starboard">
         <h3>starboard<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4954,7 +5383,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4966,7 +5395,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="towards">
+            <div class="entity named_individual" id="towards">
         <h3>towards<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -4978,7 +5407,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -4990,7 +5419,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="unspecified">
+            <div class="entity named_individual" id="unspecified">
         <h3>unspecified<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -5002,7 +5431,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -5014,7 +5443,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="up">
+            <div class="entity named_individual" id="up">
         <h3>up<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -5026,7 +5455,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -5038,7 +5467,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="west">
+            <div class="entity named_individual" id="west">
         <h3>west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -5050,7 +5479,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -5062,7 +5491,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="west-north-west">
+            <div class="entity named_individual" id="west-north-west">
         <h3>west-north-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -5074,7 +5503,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -5086,7 +5515,7 @@ ISO country code
             </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="west-south-west">
+            <div class="entity named_individual" id="west-south-west">
         <h3>west-south-west<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
@@ -5098,7 +5527,7 @@ ISO country code
                   </code>
                 </td>
             </tr>
-            <dt>Classes(s)</dt>
+            <dt>Class(es)</dt>
             <dd>
                 <a href="http://situx.github.io/proj4rdf/#AxisDirection">geocrs:AxisDirection</a><br/>
             </dd>
@@ -5110,13 +5539,17 @@ ISO country code
             </tr>
         </table>
     </div>
-</section>
-  
+    </section>
+
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
+        <dt>default (:)</dt>
+        <dd><code>http://situx.github.io/proj4rdf/#GeoSPARQLCRS</code></dd>
         <dt>dc</dt>
         <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>geocrs</dt>
         <dd><code>http://situx.github.io/proj4rdf/#</code></dd>
         <dt>om</dt>

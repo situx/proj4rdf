@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <title>GeoSPARQLCRS SHACL Rules</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -132,8 +135,8 @@
         .sup-ap,
         .sup-p,
         .sup-ni,
-        .sup-cp,
-        .sup-cl {
+        .sup-con,
+        .sup-col {
             cursor:help;
             margin-left: 3px;
         }
@@ -166,11 +169,11 @@
             color:brown;
         }
 
-        .sup-cp {
+        .sup-con {
             color:orange;
         }
 
-        .sup-cl {
+        .sup-col {
             color:darkred;
         }
 
@@ -205,7 +208,7 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.8.6</span>
+    <span style="font-size:smaller;">2.9.1</span>
   </div>
   <h1>GeoSPARQLCRS SHACL Rules</h1>
 <h3><em>A taxonomy</em></h3>
@@ -250,7 +253,7 @@
 <ul><li><a href="http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape">geocrs:DynamicVerticalReferenceFrameShape</a></li></ul></li>
 </ul>
     <div class="entity concept" id="CompoundCRSShape">
-        <h3>CompoundCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>CompoundCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -259,7 +262,7 @@
         </table>
     </div>
     <div class="entity concept" id="DatumEnsembleShape">
-        <h3>DatumEnsembleShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>DatumEnsembleShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -268,7 +271,7 @@
         </table>
     </div>
     <div class="entity concept" id="DerivedCRSShape">
-        <h3>DerivedCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>DerivedCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -277,20 +280,20 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#ProjectedCRSShape">geocrs:ProjectedCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#DerivedProjectedCRSShape">geocrs:DerivedProjectedCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedProjectedCRSShape">geocrs:DerivedProjectedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ProjectedCRSShape">geocrs:ProjectedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="DerivedProjectedCRSShape">
-        <h3>DerivedProjectedCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>DerivedProjectedCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -299,13 +302,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="DynamicGeodeticReferenceFrameShape">
-        <h3>DynamicGeodeticReferenceFrameShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>DynamicGeodeticReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -314,13 +317,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape">geocrs:GeodeticReferenceFrameShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape">geocrs:GeodeticReferenceFrameShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="DynamicVerticalReferenceFrameShape">
-        <h3>DynamicVerticalReferenceFrameShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>DynamicVerticalReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -329,13 +332,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#VerticalReferenceFrameShape">geocrs:VerticalReferenceFrameShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalReferenceFrameShape">geocrs:VerticalReferenceFrameShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="EngineeringCRSShape">
-        <h3>EngineeringCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>EngineeringCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -344,13 +347,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="GeodeticCRSShape">
-        <h3>GeodeticCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>GeodeticCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -359,19 +362,19 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#GeographicCRSShape">geocrs:GeographicCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeographicCRSShape">geocrs:GeographicCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="GeodeticReferenceFrameShape">
-        <h3>GeodeticReferenceFrameShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>GeodeticReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -380,13 +383,13 @@
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape">geocrs:DynamicGeodeticReferenceFrameShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape">geocrs:DynamicGeodeticReferenceFrameShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="GeographicCRSShape">
-        <h3>GeographicCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>GeographicCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -395,13 +398,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="ParametricCRSShape">
-        <h3>ParametricCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>ParametricCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -410,13 +413,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="ProjectedCRSShape">
-        <h3>ProjectedCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>ProjectedCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -425,13 +428,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="SingleCRSShape">
-        <h3>SingleCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>SingleCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -440,18 +443,18 @@
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#EngineeringCRSShape">geocrs:EngineeringCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ParametricCRSShape">geocrs:ParametricCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#TemporalCRSShape">geocrs:TemporalCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#VerticalCRSShape">geocrs:VerticalCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ParametricCRSShape">geocrs:ParametricCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#EngineeringCRSShape">geocrs:EngineeringCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalCRSShape">geocrs:VerticalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#TemporalCRSShape">geocrs:TemporalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="TemporalCRSShape">
-        <h3>TemporalCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>TemporalCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -460,13 +463,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="TemporalDatumShape">
-        <h3>TemporalDatumShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>TemporalDatumShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -475,7 +478,7 @@
         </table>
     </div>
     <div class="entity concept" id="VerticalCRSShape">
-        <h3>VerticalCRSShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>VerticalCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -484,13 +487,13 @@
             <tr>
                 <th>Broader Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity concept" id="VerticalReferenceFrameShape">
-        <h3>VerticalReferenceFrameShape<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <h3>VerticalReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -499,7 +502,7 @@
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape">geocrs:DynamicVerticalReferenceFrameShape</a><sup class="sup-cp" title="concept">cp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape">geocrs:DynamicVerticalReferenceFrameShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
@@ -509,6 +512,8 @@
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
+        <dt>default (:)</dt>
+        <dd><code>http://www.opengis.net/ont/crs#GeoSPARQLCRSRules</code></dd>
         <dt>dc</dt>
         <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
         <dt>geo</dt>
@@ -541,8 +546,8 @@
   <section id="legend">
     <h2>Legend</h2>
     <table class="entity">
-      <tr><td><sup class="sup-cl" title="Collections">cl</sup></td><td>Collections</td></tr>
-      <tr><td><sup class="sup-cp" title="Concepts">cp</sup></td><td>Concepts</td></tr>
+      <tr><td><sup class="sup-col" title="Collections">col</sup></td><td>Collections</td></tr>
+      <tr><td><sup class="sup-con" title="Concepts">con</sup></td><td>Concepts</td></tr>
     </table>
   </section>
 </body>
