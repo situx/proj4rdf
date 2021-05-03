@@ -18,56 +18,56 @@ coordinatesystem["cartesian"]="geocrs:CartesianCoordinateSystem"
 coordinatesystem["ft"]="om:foot"
 coordinatesystem["us-ft"]="om:usfoot"
 spheroids={}
-spheroids["GRS80"]="geocrs:GRS1980"
-spheroids["GRS 80"]="geocrs:GRS1980"
-spheroids["GRS67"]="geocrs:GRS67"
-spheroids["GRS 1967"]="geocrs:GRS67"
-spheroids["GRS 1967 Modified"]="geocrs:GRS67Modified"
-spheroids["GRS 67"]="geocrs:GRS67"
-spheroids["GRS1980"]="geocrs:GRS1980"
-spheroids["GRS 1980"]="geocrs:GRS1980"
-spheroids["NWL 9D"]="geocrs:NWL9D"
-spheroids["PZ-90"]="geocrs:PZ90"
-spheroids["Airy 1830"]="geocrs:Airy1830"
-spheroids["Airy Modified 1849"]="geocrs:AiryModified1849"
-spheroids["intl"]="geocrs:International1924"
-spheroids["aust_SA"]="geocrs:AustralianNationalSpheroid"
-spheroids["Australian National Spheroid"]="geocrs:AustralianNationalSpheroid"
-spheroids["International 1924"]="geocrs:International1924"
-spheroids["clrk"]="geocrs:Clarke1866"
-spheroids["War Office"]="geocrs:WarOffice"
-spheroids["evrst30"]="geocrs:Everest1930"
-spheroids["clrk66"]="geocrs:Clarke1866"
-spheroids["Plessis 1817"]="geocrs:Plessis1817"
-spheroids["Danish 1876"]="geocrs:Danish1876"
-spheroids["Struve 1860"]="geocrs:Struve1860"
-spheroids["IAG 1975"]="geocrs:IAG1975"
-spheroids["Clarke 1866"]="geocrs:Clarke1866"
-spheroids["Clarke 1858"]="geocrs:Clarke1858"
-spheroids["Clarke 1880"]="geocrs:Clarke1880"
-spheroids["Helmert 1906"]="geocrs:Helmert1906"
-spheroids["CGCS2000"]="geocrs:CGCS2000"
-spheroids["GSK-2011"]="geocrs:GSK2011"
-spheroids["Zach 1812"]="geocrs:Zach1812"
-spheroids["Hough 1960"]="geocrs:Hough1960"
-spheroids["Hughes 1980"]="geocrs:Hughes1980"
-spheroids["Indonesian National Spheroid"]="geocrs:IndonesianNationalSpheroid"
-spheroids["clrk80"]="geocrs:Clarke1880RGS"
-spheroids["Clarke 1880 (Arc)"]="geocrs:Clarke1880ARC"
-spheroids["Clarke 1880 (RGS)"]="geocrs:Clarke1880RGS"
-spheroids["Clarke 1880 (IGN)"]="geocrs:Clarke1880IGN"
-spheroids["clrk80ign"]="geocrs:Clarke1880IGN"
-spheroids["WGS66"]="geocrs:WGS66"
-spheroids["WGS 66"]="geocrs:WGS66"
-spheroids["WGS72"]="geocrs:WGS72"
-spheroids["WGS 72"]="geocrs:WGS72"
-spheroids["WGS84"]="geocrs:WGS84"
-spheroids["WGS 84"]="geocrs:WGS84"
-spheroids["Krassowsky 1940"]="geocrs:Krassowsky1940"
-spheroids["krass"]="geocrs:Krassowsky1940"
-spheroids["Bessel 1841"]="geocrs:Bessel1841"
-spheroids["bessel"]="geocrs:Bessel1841"
-spheroids["Bessel Modified"]="geocrs:BesselModified"
+spheroids["GRS80"]="geocrsgeod:GRS1980"
+spheroids["GRS 80"]="geocrsgeod:GRS1980"
+spheroids["GRS67"]="geocrsgeod:GRS67"
+spheroids["GRS 1967"]="geocrsgeod:GRS67"
+spheroids["GRS 1967 Modified"]="geocrsgeod:GRS67Modified"
+spheroids["GRS 67"]="geocrsgeod:GRS67"
+spheroids["GRS1980"]="geocrsgeod:GRS1980"
+spheroids["GRS 1980"]="geocrsgeod:GRS1980"
+spheroids["NWL 9D"]="geocrsgeod:NWL9D"
+spheroids["PZ-90"]="geocrsgeod:PZ90"
+spheroids["Airy 1830"]="geocrsgeod:Airy1830"
+spheroids["Airy Modified 1849"]="geocrsgeod:AiryModified1849"
+spheroids["intl"]="geocrsgeod:International1924"
+spheroids["aust_SA"]="geocrsgeod:AustralianNationalSpheroid"
+spheroids["Australian National Spheroid"]="geocrsgeod:AustralianNationalSpheroid"
+spheroids["International 1924"]="geocrsgeod:International1924"
+spheroids["clrk"]="geocrsgeod:Clarke1866"
+spheroids["War Office"]="geocrsgeod:WarOffice"
+spheroids["evrst30"]="geocrsgeod:Everest1930"
+spheroids["clrk66"]="geocrsgeod:Clarke1866"
+spheroids["Plessis 1817"]="geocrsgeod:Plessis1817"
+spheroids["Danish 1876"]="geocrsgeod:Danish1876"
+spheroids["Struve 1860"]="geocrsgeod:Struve1860"
+spheroids["IAG 1975"]="geocrsgeod:IAG1975"
+spheroids["Clarke 1866"]="geocrsgeod:Clarke1866"
+spheroids["Clarke 1858"]="geocrsgeod:Clarke1858"
+spheroids["Clarke 1880"]="geocrsgeod:Clarke1880"
+spheroids["Helmert 1906"]="geocrsgeod:Helmert1906"
+spheroids["CGCS2000"]="geocrsgeod:CGCS2000"
+spheroids["GSK-2011"]="geocrsgeod:GSK2011"
+spheroids["Zach 1812"]="geocrsgeod:Zach1812"
+spheroids["Hough 1960"]="geocrsgeod:Hough1960"
+spheroids["Hughes 1980"]="geocrsgeod:Hughes1980"
+spheroids["Indonesian National Spheroid"]="geocrsgeod:IndonesianNationalSpheroid"
+spheroids["clrk80"]="geocrsgeod:Clarke1880RGS"
+spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
+spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
+spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
+spheroids["clrk80ign"]="geocrsgeod:Clarke1880IGN"
+spheroids["WGS66"]="geocrsgeod:WGS66"
+spheroids["WGS 66"]="geocrsgeod:WGS66"
+spheroids["WGS72"]="geocrsgeod:WGS72"
+spheroids["WGS 72"]="geocrsgeod:WGS72"
+spheroids["WGS84"]="geocrsgeod:WGS84"
+spheroids["WGS 84"]="geocrsgeod:WGS84"
+spheroids["Krassowsky 1940"]="geocrsgeod:Krassowsky1940"
+spheroids["krass"]="geocrsgeod:Krassowsky1940"
+spheroids["Bessel 1841"]="geocrsgeod:Bessel1841"
+spheroids["bessel"]="geocrsgeod:Bessel1841"
+spheroids["Bessel Modified"]="geocrsgeod:BesselModified"
 projections={}
 projections["latlong"]="geocrs:LatLonProjection"
 projections["longlat"]="geocrs:LonLatProjection"
@@ -91,7 +91,7 @@ ttlhead+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
 ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
-ttlhead+="@prefix geocrs: <http://situx.github.io/proj4rdf/#> .\n"
+ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdata: <http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
 ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
@@ -129,7 +129,7 @@ ttl.add("geocrs:SpatialReferenceSystem rdfs:label \"spatial reference system\"@e
 ttl.add("geocrs:SpatialReferenceSystem skos:definition \"System for identifying position in the real world\"@en .\n")
 ttl.add("geocrs:SpatialReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .\n")
 ttl.add("geocrs:CoordinateSystem rdf:type owl:Class .\n")
-ttl.add("geocrs:CoordinateSystem rdfs:label \"Coordinate system\"@en .\n")
+ttl.add("geocrs:CoordinateSystem rdfs:label \"coordinate system\"@en .\n")
 ttl.add("geocrs:CoordinateSystem skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space\"@en .\n")
 ttl.add("geocrs:CoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:PlanarCoordinateSystem rdf:type owl:Class .\n")
@@ -148,20 +148,20 @@ ttl.add("geocrs:StereographicCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:StereographicCoordinateSystem rdfs:label \"stereographic coordinate system\"@en .\n")
 ttl.add("geocrs:StereographicCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:CoordinateSystemAxis rdf:type owl:Class .\n")
-ttl.add("geocrs:CoordinateSystemAxis rdfs:label \"Coordinate system axis\"@en .\n")
+ttl.add("geocrs:CoordinateSystemAxis rdfs:label \"coordinate system axis\"@en .\n")
 ttl.add("geocrs:CoordinateSystemAxis skos:definition \"Axis defined by a coordinate system\"@en .\n")
 ttl.add("geocrs:CoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:TemporalCoordinateSystemAxis rdf:type owl:Class .\n")
 ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:subClassOf geocrs:CoordinateSystemAxis .\n")
 ttl.add("geocrs:TemporalCoordinateSystemAxis skos:definition \"Axis defined by a temporal coordinate system\"@en .\n")
-ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:label \"Temporal coordinate system axis\"@en .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:label \"temporal coordinate system axis\"@en .\n")
 ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:AreaOfUse rdf:type owl:Class .\n")
 ttl.add("geocrs:AreaOfUse rdfs:label \"area of use\"@en .\n")
 ttl.add("geocrs:AreaOfUse skos:definition \"area in which a coordinate operation may be used\"@en .\n")
 ttl.add("geocrs:CartesianCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CartesianCoordinateSystem rdfs:subClassOf geocrs:AffineCoordinateSystem, geocrs:OrthogonalCoordinateSystem .\n")
-ttl.add("geocrs:CartesianCoordinateSystem rdfs:label \"Cartesian coordinate system\"@en .\n")
+ttl.add("geocrs:CartesianCoordinateSystem rdfs:label \"cartesian coordinate system\"@en .\n")
 ttl.add("geocrs:CartesianCoordinateSystem skos:definition \"coordinate system in Euclidean space which gives the position of points relative to n mutually perpendicular straight axes all having the same unit of measure\"@en .\n")
 ttl.add("geocrs:CartesianCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:LinearCoordinateSystem rdf:type owl:Class .\n")
@@ -235,12 +235,12 @@ ttl.add("geocrs:SphericalCoordinateSystem skos:definition \"three-dimensional co
 ttl.add("geocrs:SphericalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:3DCoordinateSystem .\n")
-ttl.add("geocrs:CylindricalCoordinateSystem rdfs:label \"Cylindrical coordinate system\"@en .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem rdfs:label \"cylindrical coordinate system\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem skos:definition \"three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate\"@en .\n")
 ttl.add("geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:CurvilinearCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
-ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:label \"Curvilinear coordinate system\"@en .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:label \"curvilinear coordinate system\"@en .\n")
 ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:SkewCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:SkewCoordinateSystem rdfs:subClassOf geocrs:CurvilinearCoordinateSystem .\n")
@@ -256,7 +256,7 @@ ttl.add("geocrs:ConicalCoordinateSystem rdfs:label \"conical coordinate system\"
 ttl.add("geocrs:ConicalCoordinateSystem skos:definition \"An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively\"@en .\n")
 ttl.add("geocrs:HomogeneousCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
-ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:label \"Homogeneous coordinate system\"@en .\n")
+ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:label \"homogeneous coordinate system\"@en .\n")
 ttl.add("geocrs:HomogeneousCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:BarycentricCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:BarycentricCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
@@ -285,7 +285,7 @@ ttl.add("geocrs:TemporalCoordinateSystem skos:definition \"one-dimensionalcoordi
 ttl.add("geocrs:TemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .\n")
-ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:label \"Date time temporal coordinate system\"@en .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:label \"date time temporal coordinate system\"@en .\n")
 ttl.add("geocrs:DateTimeTemporalCoordinateSystem skos:definition \"one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.\"@en .\n")
 ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:TemporalCountCoordinateSystem rdf:type owl:Class .\n")
@@ -299,7 +299,7 @@ ttl.add("geocrs:TemporalMeasureCoordinateSystem rdfs:label \"temporal measure co
 ttl.add("geocrs:TemporalMeasureCoordinateSystem skos:definition \"one-dimensional coordinate system used to record a time as a real number\"@en .\n")
 ttl.add("geocrs:TemporalMeasureCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:CRS rdf:type owl:Class .\n")
-ttl.add("geocrs:CRS rdfs:label \"Coordinate reference system\"@en .\n")
+ttl.add("geocrs:CRS rdfs:label \"coordinate reference system\"@en .\n")
 ttl.add("geocrs:CRS rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
 ttl.add("geocrs:CRS skos:definition \"coordinate system that is related to an object by a datum\"@en .\n")
 ttl.add("geocrs:CRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
@@ -353,7 +353,7 @@ ttl.add("geocrs:GeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/a
 ttl.add("geocrs:AffineCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:AffineCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:AffineCoordinateSystem owl:equivalentClass wd:Q382510 .\n")
-ttl.add("geocrs:AffineCoordinateSystem rdfs:label \"Affine coordinate system\"@en .\n")
+ttl.add("geocrs:AffineCoordinateSystem rdfs:label \"affine coordinate system\"@en .\n")
 ttl.add("geocrs:AffineCoordinateSystem skos:definition \"coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular\"@en .\n")
 ttl.add("geocrs:AffineCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:GeodeticCRS rdfs:subClassOf geocrs:SingleCRS .\n")
@@ -388,38 +388,38 @@ ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdfs:label \"spatio-parametr
 ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:BoundCRS rdfs:subClassOf geocrs:CRS .\n")
 ttl.add("geocrs:BoundCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:BoundCRS rdfs:label \"Bound coordinate reference system\"@en .\n")
+ttl.add("geocrs:BoundCRS rdfs:label \"bound coordinate reference system\"@en .\n")
 ttl.add("geocrs:BoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DynamicCRS rdfs:subClassOf geocrs:CRS .\n")
 ttl.add("geocrs:DynamicCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DynamicCRS rdfs:label \"Dynamic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DynamicCRS rdfs:label \"dynamic coordinate reference system\"@en .\n")
 ttl.add("geocrs:DynamicCRS skos:definition \"coordinate reference system that has a dynamic reference frame\"@en .\n")
 ttl.add("geocrs:DynamicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:TemporalCRS rdfs:subClassOf geocrs:SingleCRS .\n")
 ttl.add("geocrs:TemporalCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:TemporalCRS rdfs:label \"Temporal coordinate reference system\"@en .\n")
+ttl.add("geocrs:TemporalCRS rdfs:label \"temporal coordinate reference system\"@en .\n")
 ttl.add("geocrs:TemporalCRS skos:definition \"coordinate reference system based on a temporal datum\"@en .\n")
 ttl.add("geocrs:TemporalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:ParametricCRS rdfs:subClassOf geocrs:SingleCRS .\n")
 ttl.add("geocrs:ParametricCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:ParametricCRS rdfs:label \"Parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:ParametricCRS rdfs:label \"parametric coordinate reference system\"@en .\n")
 ttl.add("geocrs:ParametricCRS skos:definition \"one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial\"@en .\n")
 ttl.add("geocrs:ParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:SpatioParametricCRS rdfs:subClassOf geocrs:CRS .\n")
 ttl.add("geocrs:SpatioParametricCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:SpatioParametricCRS rdfs:label \"Spatio-Parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioParametricCRS rdfs:label \"spatio-Parametric coordinate reference system\"@en .\n")
 ttl.add("geocrs:SpatioParametricCRS skos:definition \"compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system\"@en .\n")
 ttl.add("geocrs:SpatioParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:GeographicCRS .\n")
 ttl.add("geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedGeographicCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedGeographicCRS rdfs:label \"Derived geographic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdfs:label \"derived geographic coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedGeographicCRS skos:definition \"coordinate reference system that is defined through the application of a specified coordinate conversion to the coordinates within a previously established coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedGeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:ProjectedCRS .\n")
 ttl.add("geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedProjectedCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedProjectedCRS rdfs:label \"Derived projected coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdfs:label \"derived projected coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedProjectedCRS skos:definition \"derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS\"@en .\n")
 ttl.add("geocrs:DerivedProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedCRS rdfs:subClassOf geocrs:SingleCRS .\n")
@@ -430,40 +430,40 @@ ttl.add("geocrs:DerivedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/1
 ttl.add("geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:VerticalCRS .\n")
 ttl.add("geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedVerticalCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedVerticalCRS rdfs:label \"Derived vertical coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdfs:label \"derived vertical coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedVerticalCRS skos:definition \"derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system\"@en .\n")
 ttl.add("geocrs:DerivedVerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:GeodeticCRS .\n")
 ttl.add("geocrs:DerivedGeodeticCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedGeodeticCRS rdfs:label \"Derived geodetic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdfs:label \"derived geodetic coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedGeodeticCRS skos:definition \"derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system\"@en .\n")
 ttl.add("geocrs:DerivedGeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:ParametricCRS .\n")
 ttl.add("geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedParametricCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedParametricCRS rdfs:label \"Derived parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedParametricCRS rdfs:label \"derived parametric coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedParametricCRS skos:definition \"derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system\"@en .\n")
 ttl.add("geocrs:DerivedParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:EngineeringCRS .\n")
 ttl.add("geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:DerivedEngineeringCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedEngineeringCRS rdfs:label \"Derived engineering coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdfs:label \"derived engineering coordinate reference system\"@en .\n")
 ttl.add("geocrs:DerivedEngineeringCRS skos:definition \"derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class\"@en .\n")
 ttl.add("geocrs:DerivedEngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:EngineeringCRS rdfs:subClassOf geocrs:SingleCRS .\n")
 ttl.add("geocrs:EngineeringCRS rdf:type owl:Class .\n")
 ttl.add("geocrs:EngineeringCRS skos:definition \"coordinate reference system based on an engineering datum\"@en .\n")
-ttl.add("geocrs:EngineeringCRS rdfs:label \"Engineering coordinate reference system\"@en .\n")
+ttl.add("geocrs:EngineeringCRS rdfs:label \"engineering coordinate reference system\"@en .\n")
 ttl.add("geocrs:EngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:VerticalCRS rdfs:subClassOf geocrs:SingleCRS .\n")
 ttl.add("geocrs:VerticalCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:VerticalCRS rdfs:label \"Vertical coordinate reference system\"@en .\n")
+ttl.add("geocrs:VerticalCRS rdfs:label \"vertical coordinate reference system\"@en .\n")
 ttl.add("geocrs:VerticalCRS skos:definition \"one-dimensional coordinate reference system based on a vertical reference frame\"@en .\n")
 ttl.add("geocrs:VerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:GeocentricCRS rdfs:subClassOf geocrs:CRS .\n")
 ttl.add("geocrs:GeocentricCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:GeocentricCRS rdfs:label \"Geocentric coordinate reference system\"@en .\n")
+ttl.add("geocrs:GeocentricCRS rdfs:label \"geocentric coordinate reference system\"@en .\n")
 ttl.add("geocrs:GeocentricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:HorizontalDatum rdfs:subClassOf geocrs:Datum .\n")
 ttl.add("geocrs:HorizontalDatum rdf:type owl:Class .\n")
@@ -471,27 +471,27 @@ ttl.add("geocrs:HorizontalDatum rdfs:label \"horizontal datum\"@en .\n")
 ttl.add("geocrs:HorizontalDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:GeodeticReferenceFrame rdfs:subClassOf geocrs:HorizontalDatum .\n")
 ttl.add("geocrs:GeodeticReferenceFrame rdf:type owl:Class .\n")
-ttl.add("geocrs:GeodeticReferenceFrame rdfs:label \"Geodetic reference frame\"@en .\n")
+ttl.add("geocrs:GeodeticReferenceFrame rdfs:label \"geodetic reference frame\"@en .\n")
 ttl.add("geocrs:GeodeticReferenceFrame skos:definition \"reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth\"@en .\n")
 ttl.add("geocrs:GeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DynamicReferenceFrame rdfs:subClassOf geocrs:Datum .\n")
 ttl.add("geocrs:DynamicReferenceFrame rdf:type owl:Class .\n")
-ttl.add("geocrs:DynamicReferenceFrame rdfs:label \"Dynamic reference frame\"@en .\n")
+ttl.add("geocrs:DynamicReferenceFrame rdfs:label \"dynamic reference frame\"@en .\n")
 ttl.add("geocrs:DynamicReferenceFrame skos:definition \"reference frame in which the defining parameters include time evolution\"@en .\n")
 ttl.add("geocrs:DynamicReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:subClassOf geocrs:GeodeticReferenceFrame, geocrs:DynamicReferenceFrame .\n")
 ttl.add("geocrs:DynamicGeodeticReferenceFrame rdf:type owl:Class .\n")
-ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:label \"Dynamic geodetic reference frame\"@en .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:label \"dynamic geodetic reference frame\"@en .\n")
 ttl.add("geocrs:DynamicGeodeticReferenceFrame skos:definition \"geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates\"@en .\n")
 ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:subClassOf geocrs:VerticalReferenceFrame, geocrs:DynamicReferenceFrame .\n")
 ttl.add("geocrs:DynamicVerticalReferenceFrame rdf:type owl:Class .\n")
-ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:label \"Dynamic vertical reference frame\"@en .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:label \"dynamic vertical reference frame\"@en .\n")
 ttl.add("geocrs:DynamicVerticalReferenceFrame skos:definition \"vertical reference frame in which some of the defining parameters have time dependency\"@en .\n")
 ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:VerticalReferenceFrame rdfs:subClassOf geocrs:Datum .\n")
 ttl.add("geocrs:VerticalReferenceFrame rdf:type owl:Class .\n")
-ttl.add("geocrs:VerticalReferenceFrame rdfs:label \"Vertical reference frame\"@en .\n")
+ttl.add("geocrs:VerticalReferenceFrame rdfs:label \"vertical reference frame\"@en .\n")
 ttl.add("geocrs:VerticalReferenceFrame skos:definition \"reference frame describing the relation of gravity-related heights or depths to the Earth\"@en .\n")
 ttl.add("geocrs:VerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:StaticCRS rdfs:subClassOf geocrs:CRS .\n")
@@ -501,7 +501,7 @@ ttl.add("geocrs:StaticCRS skos:definition \"coordinate reference system that has
 ttl.add("geocrs:StaticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:ProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
 ttl.add("geocrs:ProjectedCRS rdf:type owl:Class .\n")
-ttl.add("geocrs:ProjectedCRS rdfs:label \"Projected coordinate reference system\"@en .\n")
+ttl.add("geocrs:ProjectedCRS rdfs:label \"projected coordinate reference system\"@en .\n")
 ttl.add("geocrs:ProjectedCRS skos:definition \"coordinate reference system derived from a geographic coordinate reference system by applying a map projection\"@en .\n")
 ttl.add("geocrs:ProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:Datum rdf:type owl:Class .\n")
@@ -593,7 +593,7 @@ ttl.add("geocrs:SingleOperation rdfs:label \"single operation\"@en .\n")
 ttl.add("geocrs:SingleOperation skos:definition \"single (not concatenated) coordinate operation\"@en .\n")
 ttl.add("geocrs:SingleOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:AxisDirection rdf:type owl:Class .\n")
-ttl.add("geocrs:AxisDirection rdfs:label \"axis directoin\"@en .\n")
+ttl.add("geocrs:AxisDirection rdfs:label \"axis direction\"@en .\n")
 ttl.add("geocrs:AxisDirection skos:definition \"direction of positive increase in the coordinate value for a coordinate system axis\"@en .\n")
 ttl.add("geocrs:AxisDirection rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:north rdf:type geocrs:AxisDirection, owl:NamedIndividual  .\n")
@@ -870,7 +870,7 @@ ttl.add("geocrs:direction rdfs:label \"cardinal direction\"@en .\n")
 ttl.add("geocrs:direction skos:definition \"Associates a direction with a datum\"@en .\n")
 ttl.add("geocrs:direction rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:direction rdfs:domain geocrs:CoordinateSystemAxis .\n")
-ttl.add("geocrs:direction rdfs:range geocrs:CardinalDirection .\n")
+ttl.add("geocrs:direction rdfs:range geocrs:AxisDirection .\n")
 ttl.add("geocrs:unit_conversion_factor rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:unit_conversion_factor rdfs:label \"unit conversion factor\"@en .\n")
 ttl.add("geocrs:unit_conversion_factor rdfs:domain geocrs:CoordinateSystemAxis .\n")
@@ -985,6 +985,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:ProjectedCRS .\n")
 	elif "Geographic 2D CRS" in curcrs.type_name:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
 	elif "Bound CRS" in curcrs.type_name:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:BoundCRS .\n")
 	elif "Vertical CRS" in curcrs.type_name:
@@ -1002,6 +1004,10 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
 	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
 		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
+		if len(curcrs.coordinate_system.axis_list)==2:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
+		elif len(curcrs.coordinate_system.axis_list)==3:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
 		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
 		if curcrs.coordinate_system.remarks!=None:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
@@ -1016,7 +1022,7 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_conversion_factor \""+str(axis.unit_conversion_factor)+"\"^^xsd:double . \n")	
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_auth_code \""+str(axis.unit_auth_code)+"\"^^xsd:string . \n")
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
-			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:CardinalDirection . \n")				
+			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")				
 			if axis.unit_name in units:
 				ttl.add("geocrsaxis:"+axisid+" geocrs:unit "+units[axis.unit_name]+" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
@@ -1032,6 +1038,11 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS geoepsg:"+str(curcrs.source_crs.to_epsg())+" . \n")
 	if curcrs.target_crs!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:targetCRS geoepsg:"+str(curcrs.target_crs.to_epsg())+" . \n")
+	if curcrs.area_of_use!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdfs:label \""+str(curcrs.area_of_use.name).replace("\"","'")+"\"@en .\n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
 	if curcrs.get_geod()!=None:
 		geoid="geocrsgeod:"+str(geodcounter)
 		if curcrs.datum.ellipsoid!=None:
@@ -1071,7 +1082,7 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:area_of_use geocrsaou:"+str(coordoperationid)+"_area_of_use . \n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
-			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
 		for par in curcrs.coordinate_operation.params:
 			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdf:type owl:DatatypeProperty . \n") 
 			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:range xsd:double . \n") 
