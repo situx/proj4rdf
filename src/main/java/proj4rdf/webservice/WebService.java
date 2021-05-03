@@ -114,12 +114,12 @@ public class WebService {
 			System.out.println(result);
 			response.close();
 			httpClient.close();
-			Response res=Response.status(Response.Status.OK).entity(result).type(OpenAPIMediaType.OA3_TYPE).build();
+			Response res=Response.status(Response.Status.OK).entity(result).build();//.type(OpenAPIMediaType.OA3_TYPE).build();
 			return res;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return Response.ok("",OpenAPIMediaType.OA3_TYPE).build();
+			return null;//Response.ok("",OpenAPIMediaType.OA3_TYPE).build();
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class WebService {
 	@Operation(
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
             description = "Returns a CRS definition given in a RDF graph in a predefined format")
-	public Response getCRSByURI(
+	public Response getEligibleCRS(
 			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
 			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
 			@Parameter(description="boundingbox to check the area of validity") @PathParam("bbox") String bbox,

@@ -4,6 +4,10 @@ import org.json.JSONObject;
 
 public class PrimeMeridian {
 
+	public String primeMeridianName;
+	
+	
+	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
 		return builder.toString();

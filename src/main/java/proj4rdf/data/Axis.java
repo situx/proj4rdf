@@ -4,6 +4,14 @@ import org.json.JSONObject;
 
 public class Axis {
 	
+	@Override
+	public String toString() {
+		return "Axis [angleunit=" + angleunit + ", unitconversionfactor=" + unitconversionfactor + ", axisname="
+				+ axisname + ", axisdirection=" + axisdirection + ", axisabbreviation=" + axisabbreviation
+				+ ", axisorder=" + axisorder + "]";
+	}
+
+
 	public String angleunit;
 	
 	public Double unitconversionfactor;

@@ -92,7 +92,6 @@ ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
 ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
 ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
-ttlhead+="@prefix geocrsdata: <http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
 ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
 ttlhead+="@prefix geocrsproj: <http://www.opengis.net/ont/crs/proj/> .\n"
@@ -975,7 +974,7 @@ curname=""
 mapp=pyproj.list.get_proj_operations_map()
 for oper in mapp:
 	print(mapp[oper])
-	ttl.add("geoepsg:"+str(oper)+" rdf:type geoproj:Projection .\n")
+	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrsproj:Projection .\n")
 	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:

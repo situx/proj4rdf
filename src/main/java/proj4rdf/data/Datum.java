@@ -30,6 +30,11 @@ public class Datum {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Datum [datumType=" + datumType + ", datumName=" + datumName + ", ellipsoid=" + ellipsoid + "]";
+	}
+
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
 		builder.append("DATUM["+"'"+datumName+"',");

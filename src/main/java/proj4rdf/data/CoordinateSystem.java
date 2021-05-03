@@ -8,6 +8,14 @@ import org.json.JSONObject;
 
 public class CoordinateSystem {
 
+	@Override
+	public String toString() {
+		return "CoordinateSystem [axisList=" + axisList + ", coordinateSystemType=" + coordinateSystemType
+				+ ", numberDimensions=" + numberDimensions + "]";
+	}
+
+
+
 	List<Axis> axisList=new LinkedList<Axis>();
 	
 	public String coordinateSystemType;

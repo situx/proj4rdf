@@ -18,6 +18,11 @@ import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.ModelFactory;
 
+import proj4rdf.data.CoordinateReferenceSystem;
+import proj4rdf.data.CoordinateSystem;
+import proj4rdf.data.Datum;
+import proj4rdf.data.Ellipsoid;
+
 public class RDFCRSToWKT {
 	
 	public static String prefixCollection="";
@@ -54,14 +59,14 @@ public class RDFCRSToWKT {
 		return endpointURL;		
 	}
 	
-	/*public static getEligibleCRSFromTripleStore(String bbox) {
+	public static String[] getEligibleCRSFromTripleStore(String bbox) {
 		String queryString="SELECT DISTINCT ?crs WHERE { ?crs  <"+GeoSPARQLCRSURI+"datum> ?datum . ?datum ?datumrel ?datumobj .  } ";
 		System.out.println(prefixCollection+queryString);
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
 		ResultSet res=qexec.execSelect();
-		return endpointURL;		
-	}*/
+		return null;		
+	}
 	
 	public static void main(String[] args) throws IOException {
 		model=ModelFactory.createOntologyModel();
@@ -88,30 +93,57 @@ public class RDFCRSToWKT {
 		query = QueryFactory.create(prefixCollection+queryString);
 		qexec = QueryExecutionFactory.create(query, model);
 		res=qexec.execSelect();
-		boolean datum=false,coordinateSystem=false;
+		boolean datum=false,coordinateSystem=false,ellipse=false;
+		CoordinateReferenceSystem refsys=new CoordinateReferenceSystem();
+		refsys.datum=new Datum();
+		refsys.datum.ellipsoid=new Ellipsoid();
+		refsys.cSystem=new CoordinateSystem();
+		String curaxis="";
 		while(res.hasNext()) {
 			QuerySolution sol=res.next();
 			Iterator<String> vars=sol.varNames();
-			if(sol.get("rel").toString().contains("datum")) {
+			if(sol.get("rel").toString().contains("datum") && !datum) {
 				datum=true;
 				coordinateSystem=false;
 			}
-			else if(sol.get("rel").toString().contains("coordinateSystem")) {
+			else if(sol.get("rel").toString().contains("coordinateSystem") && !coordinateSystem) {
 				datum=false;
 				coordinateSystem=true;
 			}else {
 				datum=false;
 				coordinateSystem=false;
+				if(sol.get("rel").toString().contains("scope")) {
+					refsys.scope=sol.get("obj").toString();
+				}
 			}
 			if(datum) {
-				
+				if(sol.get("rel2").toString().contains("ellipse") && !ellipse) {
+					if(sol.get("rel3").toString().contains("inverse_flattening")) {
+						refsys.datum.ellipsoid.inverseFlattening=sol.getLiteral("obj3").getDouble();
+					}
+					if(sol.get("rel3").toString().contains("semiMajorAxis")) {
+						refsys.datum.ellipsoid.semiMajorAxis=sol.getLiteral("obj3").getDouble();
+					}
+					if(sol.get("rel3").toString().contains("semiMinorAxis")) {
+						refsys.datum.ellipsoid.semiMinorAxis=sol.getLiteral("obj3").getDouble();
+					}
+				}else if(sol.get("rel2").toString().contains("scope")) {
+					//datum.scope=sol.get("obj").toString();
+				}
+			}
+			if(coordinateSystem) {
+				if(sol.get("rel2").toString().contains("axis")) {
+					
+				}
 			}
 			while(vars.hasNext()) {
 				String curvar=vars.next();
 				System.out.println(curvar+" "+sol.get(curvar));
 			}
-			
 			//System.out.println(curCRSURI+" - "+sol.get("b").toString()+" - "+sol.get("c").toString());
 		}
+		System.out.println(refsys);
+		System.out.println(refsys.toWKT());
+		System.out.println(refsys.toProjJSON());
 	}
 }

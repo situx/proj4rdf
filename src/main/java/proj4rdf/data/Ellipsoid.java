@@ -5,11 +5,18 @@ import org.json.JSONObject;
 public class Ellipsoid {
 
 	
+	@Override
+	public String toString() {
+		return "Ellipsoid [ellipsoidName=" + ellipsoidName + ", semiMajorAxis=" + semiMajorAxis + ", semiMinorAxis="
+				+ semiMinorAxis + ", inverseFlattening=" + inverseFlattening + ", lengthUnit=" + lengthUnit + "]";
+	}
+
+
 	public String ellipsoidName;
 	
-	public Integer semiMajorAxis;
+	public Double semiMajorAxis;
 	
-	public Integer semiMinorAxis;
+	public Double semiMinorAxis;
 	
 	public Double inverseFlattening;
 	

@@ -4,6 +4,14 @@ import org.json.JSONObject;
 
 public class CoordinateReferenceSystem {
 
+	@Override
+	public String toString() {
+		return "CoordinateReferenceSystem [crsName=" + crsName + ", crsType=" + crsType + ", id=" + id + ", authority="
+				+ authority + ", scope=" + scope + ", area=" + area + ", areaOfValidity=" + areaOfValidity + ", datum="
+				+ datum + ", cSystem=" + cSystem + "]";
+	}
+
+
 	public String crsName;
 	
 	public String crsType;
@@ -35,7 +43,8 @@ public class CoordinateReferenceSystem {
 		result.put("area", area);
 		result.put("datum", datum.toProjJSON());
 		result.put("coordinate_system",cSystem.toProjJSON());
-		result.put("bbox", areaOfValidity.toProjJSON());
+		if(areaOfValidity!=null)
+			result.put("bbox", areaOfValidity.toProjJSON());
 		result.put("id", new JSONObject());
 		result.getJSONObject("id").put("code",id);
 		result.getJSONObject("id").put("authority",authority);
@@ -49,7 +58,15 @@ public class CoordinateReferenceSystem {
 	
 	
 	public String toWKT() {
-		StringBuilder builder=new StringBuilder();	
+		StringBuilder builder=new StringBuilder();
+		builder.append("GEOGCRS[");
+		if(datum!=null) {
+			builder.append(datum.toWKT());
+		}
+		if(cSystem!=null) {
+			builder.append(cSystem.toWKT());
+		}
+		builder.append("]");
 		return builder.toString();
 	}
 	
