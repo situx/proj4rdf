@@ -110,7 +110,7 @@ geocrs:DynamicVerticalReferenceFrame a owl:Class ;
     skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
 
 geocrs:EngineeringCoordinateSystem a owl:Class ;
-    rdfs:label "Engineering coordinate system"@en ;
+    rdfs:label "engineering coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system"@en .
@@ -150,16 +150,15 @@ geocrs:GeocentricCRS a owl:Class ;
     rdfs:subClassOf geocrs:CRS .
 
 geocrs:GeodeticCoordinateSystem a owl:Class ;
-    rdfs:label "Geodetic coordinate system"@en ;
+    rdfs:label "geodetic coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     owl:disjointWith geocrs:CompoundCRS ;
     skos:definition "coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system"@en .
 
 geocrs:GeographicCoordinateSystem a owl:Class ;
+    rdfs:label "geographic coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem .
-
-geocrs:GeographicoordinateSystem rdfs:label "geographic coordinate system"@en .
 
 geocrs:GlobalGridReferenceSystem a owl:Class ;
     rdfs:label "global grid reference system"@en ;
@@ -189,7 +188,7 @@ geocrs:HorizontalCoordinateSystem a owl:Class ;
     skos:definition "A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane"@en .
 
 geocrs:LinearCoordinateSystem a owl:Class ;
-    rdfs:label "Linear coordinate system"@en ;
+    rdfs:label "linear coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:1DCoordinateSystem ;
     skos:definition "one-dimensional coordinate system in which a linear feature forms the axis"@en .
@@ -249,7 +248,7 @@ geocrs:PolarCoordinateSystem a owl:Class ;
 
 geocrs:ProjectedCoordinateSystem a owl:Class ;
     rdfs:label "projected coordinate system"@en ;
-    rdfs:subClassOf geocrs:2DCoordinateSystem .
+    rdfs:subClassOf geocrs:PlanarCoordinateSystem .
 
 geocrs:SkewCoordinateSystem a owl:Class ;
     rdfs:label "skew coordinate system"@en ;
@@ -899,7 +898,7 @@ geocrs:Ellipsoid a owl:Class ;
     skos:definition "reference ellipsoid"@en .
 
 geocrs:EllipsoidalCoordinateSystem a owl:Class ;
-    rdfs:label "Ellipsoidal coordinate system"@en ;
+    rdfs:label "ellipsoidal coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:OrthogonalCoordinateSystem ;
     skos:definition "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height"@en .
@@ -943,11 +942,6 @@ geocrs:ParametricCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:SingleCRS ;
     skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
-
-geocrs:PlanarCoordinateSystem a owl:Class ;
-    rdfs:label "planar coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem ;
-    skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
 
 geocrs:ProjectedCRS a owl:Class ;
     rdfs:label "Projected coordinate reference system"@en ;
@@ -993,6 +987,11 @@ geocrs:GeodeticCRS a owl:Class ;
         geocrs:CompoundCRS,
         geocrs:EllipsoidalCoordinateSystem ;
     skos:definition "three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system"@en .
+
+geocrs:PlanarCoordinateSystem a owl:Class ;
+    rdfs:label "planar coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
 
 geocrs:ReferenceSystem a owl:Class ;
     rdfs:label "reference system"@en ;
@@ -1106,7 +1105,7 @@ geocrs:CRS a owl:Class ;
     skos:definition "coordinate system that is related to an object by a datum"@en .
 
 geocrs:AxisDirection a owl:Class ;
-    rdfs:label "axis directoin"@en ;
+    rdfs:label "axis direction"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "direction of positive increase in the coordinate value for a coordinate system axis"@en .
 

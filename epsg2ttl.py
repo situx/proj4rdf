@@ -95,6 +95,7 @@ ttlhead+="@prefix geocrs: <http://situx.github.io/proj4rdf/#> .\n"
 ttlhead+="@prefix geocrsdata: <http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
 ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
+ttlhead+="@prefix geocrsproj: <http://www.opengis.net/ont/crs/proj/> .\n"
 ttlhead+="@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .\n"
 ttlhead+="@prefix geocrsgeod: <http://www.opengis.net/ont/crs/geod/> .\n"
 ttlhead+="@prefix geocrsaou: <http://www.opengis.net/ont/crs/areaofuse/> .\n"
@@ -593,7 +594,7 @@ ttl.add("geocrs:SingleOperation rdfs:label \"single operation\"@en .\n")
 ttl.add("geocrs:SingleOperation skos:definition \"single (not concatenated) coordinate operation\"@en .\n")
 ttl.add("geocrs:SingleOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:AxisDirection rdf:type owl:Class .\n")
-ttl.add("geocrs:AxisDirection rdfs:label \"axis directoin\"@en .\n")
+ttl.add("geocrs:AxisDirection rdfs:label \"axis direction\"@en .\n")
 ttl.add("geocrs:AxisDirection skos:definition \"direction of positive increase in the coordinate value for a coordinate system axis\"@en .\n")
 ttl.add("geocrs:AxisDirection rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:north rdf:type geocrs:AxisDirection, owl:NamedIndividual  .\n")
@@ -971,8 +972,11 @@ graph.serialize(destination='ontology.ttl', format='turtle')
 #f.close()
 i=0
 curname=""
-for oper in pyproj.list.get_proj_operations_map():
-	print(oper)
+mapp=pyproj.list.get_proj_operations_map()
+for oper in mapp:
+	print(mapp[oper])
+	ttl.add("geoepsg:"+str(oper)+" rdf:type geoproj:Projection .\n")
+	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
@@ -991,6 +995,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:VerticalCRS .\n")
 	elif "Geocentric CRS" in curcrs.type_name:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeocentricCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
 	elif "Compound CRS" in curcrs.type_name:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CompoundCRS .\n")
 		for subcrs in curcrs.sub_crs_list:
