@@ -16,7 +16,7 @@ public class CoordinateSystem {
 
 
 
-	List<Axis> axisList=new LinkedList<Axis>();
+	public List<Axis> axisList=new LinkedList<Axis>();
 	
 	public String coordinateSystemType;
 	

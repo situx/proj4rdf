@@ -22,6 +22,10 @@ public class Ellipsoid {
 	
 	public String lengthUnit;
 	
+	public Double eccentricity;
+	
+	public Double flatteningParameter;
+	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
 		return builder.toString();

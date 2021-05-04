@@ -6,7 +6,9 @@ public class PrimeMeridian {
 
 	public String primeMeridianName;
 	
+	public String angleunit;
 	
+	public Double longitude;
 	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
@@ -15,6 +17,9 @@ public class PrimeMeridian {
 	
 	public JSONObject toProjJSON() {
 		JSONObject result=new JSONObject();
+		result.put("type", "PrimeMeridian");
+		result.put("name", primeMeridianName);
+		result.put("longitude", longitude);
 		return result;
 	}
 	
@@ -25,7 +30,12 @@ public class PrimeMeridian {
 	
 	
 	public String toWKT() {
-		StringBuilder builder=new StringBuilder();	
+		StringBuilder builder=new StringBuilder();
+		builder.append("PRIMEM[");
+		builder.append("'"+primeMeridianName+"',");
+		builder.append(longitude+",");
+		builder.append("ANGLEUNIT['"+angleunit+"',0.0174532925199433]");
+		builder.append("]");
 		return builder.toString();
 	}
 	

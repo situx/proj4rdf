@@ -646,6 +646,12 @@ geocrs:is_semi_minor_computed a owl:DatatypeProperty ;
     rdfs:label "is semi minor computed"@en ;
     rdfs:range xsd:double .
 
+geocrs:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude"@en ;
+    rdfs:domain geocrs:PrimeMeridian ;
+    rdfs:range xsd:double ;
+    skos:definition "Longitude of a prime meridian"@en .
+
 geocrs:north a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "north"@en ;

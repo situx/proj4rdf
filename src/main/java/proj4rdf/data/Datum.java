@@ -11,6 +11,8 @@ public class Datum {
 	
 	public Ellipsoid ellipsoid;
 	
+	public PrimeMeridian primeMeridian;
+	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
 		return builder.toString();
@@ -39,6 +41,9 @@ public class Datum {
 		StringBuilder builder=new StringBuilder();	
 		builder.append("DATUM["+"'"+datumName+"',");
 		builder.append(ellipsoid.toWKT());
+		if(primeMeridian!=null) {
+			builder.append(","+primeMeridian.toWKT());
+		}
 		builder.append("]");
 		return builder.toString();
 	}
