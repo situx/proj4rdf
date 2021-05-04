@@ -50,9 +50,9 @@ public class Axis {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		builder.append("AXIS["+"'"+axisname+"',"+axisdirection+",ORDER["+axisorder+"],");
+		builder.append("AXIS["+"\""+axisname+"\","+axisdirection+",ORDER["+axisorder+"],");
 		builder.append("ANGLEUNIT[");
-		builder.append("'"+angleunit+"',"+unitconversionfactor+"]");
+		builder.append("\""+angleunit+"\","+unitconversionfactor+"]");
 		builder.append("]");
 		return builder.toString();
 	}

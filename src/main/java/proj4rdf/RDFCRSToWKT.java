@@ -163,7 +163,7 @@ public class RDFCRSToWKT {
 						curaxis=new Axis();
 						refsys.cSystem.axisList.add(curaxis);
 						curraxis=curaxis_string;
-						curaxis.axisorder=refsys.cSystem.axisList.size()-1;
+						curaxis.axisorder=refsys.cSystem.axisList.size();
 					}
 					if(sol.get("rel3").toString().contains("label")) {
 						curaxis.axisname=sol.getLiteral("obj3").getString().substring(sol.getLiteral("obj3").getString().lastIndexOf('/')+1);

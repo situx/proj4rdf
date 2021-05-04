@@ -39,7 +39,7 @@ public class Datum {
 
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		builder.append("DATUM["+"'"+datumName+"',");
+		builder.append("DATUM["+"\""+datumName+"\",");
 		builder.append(ellipsoid.toWKT());
 		if(primeMeridian!=null) {
 			builder.append(","+primeMeridian.toWKT());

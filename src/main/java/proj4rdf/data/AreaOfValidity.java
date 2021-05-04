@@ -4,6 +4,12 @@ import org.json.JSONObject;
 
 public class AreaOfValidity {
 
+	public String areaString;
+	
+	public String bbox;
+	
+	public String scope;
+	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
 		return builder.toString();
@@ -22,7 +28,7 @@ public class AreaOfValidity {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		//builder.append("ELLIPSOID["+"'"+ellipsoidName+"',"+semiMajorAxis+","+inverseFlattening+"]");
+		builder.append("USAGE[SCOPE[\"+scope+\"],AREA[\""+areaString+"\"],BBOX["+bbox+"]]");
 		return builder.toString();
 	}
 	

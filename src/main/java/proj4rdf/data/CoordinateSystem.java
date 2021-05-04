@@ -42,7 +42,13 @@ public class CoordinateSystem {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
-		builder.append("CS["+coordinateSystemType+","+numberDimensions+"],");
+		builder.append("CS[");
+		if(coordinateSystemType.contains("CS:")) {
+			builder.append(coordinateSystemType.substring(coordinateSystemType.lastIndexOf(':')+1).trim());
+		}else {
+			builder.append(coordinateSystemType);
+		}
+		builder.append(","+numberDimensions+"],");
 		for(Axis axis:axisList) {
 			builder.append(axis.toWKT()+",");
 		}

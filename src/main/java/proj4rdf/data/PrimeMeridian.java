@@ -32,9 +32,9 @@ public class PrimeMeridian {
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
 		builder.append("PRIMEM[");
-		builder.append("'"+primeMeridianName+"',");
+		builder.append("\""+primeMeridianName+"\",");
 		builder.append(longitude+",");
-		builder.append("ANGLEUNIT['"+angleunit+"',0.0174532925199433]");
+		builder.append("ANGLEUNIT[\""+angleunit+"\",0.0174532925199433]");
 		builder.append("]");
 		return builder.toString();
 	}

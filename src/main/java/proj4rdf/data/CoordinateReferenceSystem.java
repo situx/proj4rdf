@@ -24,6 +24,8 @@ public class CoordinateReferenceSystem {
 	
 	public String area;
 	
+	public String remarks;
+	
 	public AreaOfValidity areaOfValidity;
 	
 	public Datum datum;
@@ -60,8 +62,9 @@ public class CoordinateReferenceSystem {
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
 		builder.append("GEOGCRS[");
+		builder.append("\""+crsName+"\",");
 		if(datum!=null) {
-			builder.append(datum.toWKT());
+			builder.append(datum.toWKT()+",");
 		}
 		if(cSystem!=null) {
 			builder.append(cSystem.toWKT());
