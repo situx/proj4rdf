@@ -208,7 +208,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.9.1</span>
+    <span style="font-size:smaller;">2.9.2</span>
   </div>
   <h1>GeoSPARQLCRS SHACL Rules</h1>
 <h3><em>A taxonomy</em></h3>
@@ -239,7 +239,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
   <section id="concepts">
     <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hierarchy">
-<li><a href="http://www.opengis.net/ont/crs#CompoundCRSShape">geocrs:CompoundCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#DatumEnsembleShape">geocrs:DatumEnsembleShape</a></li><li><a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape">geocrs:GeodeticReferenceFrameShape</a>
+<li><a href="http://www.opengis.net/ont/crs#CompoundCRSShape">geocrs:CompoundCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateSystemShape">geocrs:CoordinateSystemShape</a></li><li><a href="http://www.opengis.net/ont/crs#DatumEnsembleShape">geocrs:DatumEnsembleShape</a></li><li><a href="http://www.opengis.net/ont/crs#EllipsoidShape">geocrs:EllipsoidShape</a></li><li><a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape">geocrs:GeodeticReferenceFrameShape</a>
 <ul><li><a href="http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape">geocrs:DynamicGeodeticReferenceFrameShape</a></li></ul></li><li><a href="http://www.opengis.net/ont/crs#SingleCRSShape">geocrs:SingleCRSShape</a>
 <ul><li><a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a>
 <ul><li><a href="http://www.opengis.net/ont/crs#DerivedProjectedCRSShape">geocrs:DerivedProjectedCRSShape</a></li></ul>
@@ -258,6 +258,15 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>URI</th>
                 <td><code>http://www.opengis.net/ont/crs#CompoundCRSShape</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="CoordinateSystemShape">
+        <h3>CoordinateSystemShape<sup title="Concept" class="sup-con">con</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs#CoordinateSystemShape</code></td>
             </tr>
         </table>
     </div>
@@ -286,8 +295,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#ProjectedCRSShape">geocrs:ProjectedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedProjectedCRSShape">geocrs:DerivedProjectedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ProjectedCRSShape">geocrs:ProjectedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
@@ -334,6 +343,15 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
                 <td>
                     <a href="http://www.opengis.net/ont/crs#VerticalReferenceFrameShape">geocrs:VerticalReferenceFrameShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="EllipsoidShape">
+        <h3>EllipsoidShape<sup title="Concept" class="sup-con">con</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs#EllipsoidShape</code></td>
             </tr>
         </table>
     </div>
@@ -443,12 +461,12 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Narrower Concepts</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs#TemporalCRSShape">geocrs:TemporalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#ParametricCRSShape">geocrs:ParametricCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#EngineeringCRSShape">geocrs:EngineeringCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#VerticalCRSShape">geocrs:VerticalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#ParametricCRSShape">geocrs:ParametricCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                     <a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs#VerticalCRSShape">geocrs:VerticalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs#TemporalCRSShape">geocrs:TemporalCRSShape</a><sup class="sup-con" title="concept">con</sup><br/>
                 </td>
             </tr>
         </table>
