@@ -41,7 +41,7 @@ public class RDFCRSToWKT {
 	
 	public static String prefixCollection="";
 	
-	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/25832";
+	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/7415";
 	
 	public static String GeoSPARQLCRSURI="http://www.opengis.net/ont/crs/";
 	
@@ -177,6 +177,13 @@ public class RDFCRSToWKT {
 				}
 				else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("GeodeticCRS")) {
 					refsys.crsType="GEODCRS";
+				}
+				else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("GeographicCRS")) {
+					refsys.crsType="GEODCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("CompoundCRS")) {
+					refsys.crsType="COMPOUNDCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("VerticalCRS")) {
+					refsys.crsType="VERTCRS";
 				}
 			}
 			if(sol.get("rel").toString().contains("datum")) {

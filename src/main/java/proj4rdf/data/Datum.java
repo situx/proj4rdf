@@ -39,6 +39,8 @@ public class Datum {
 
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
+		if(datumName==null)
+			return builder.toString();
 		builder.append("DATUM["+"\""+datumName.replace("Datum:","").trim()+"\","+System.lineSeparator());
 		builder.append(ellipsoid.toWKT()+"]"+System.lineSeparator());
 		if(primeMeridian!=null) {

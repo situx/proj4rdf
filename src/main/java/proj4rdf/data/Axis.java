@@ -51,7 +51,11 @@ public class Axis {
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
 		builder.append("AXIS["+"\""+axisname+"\","+axisdirection+",ORDER["+axisorder+"],");
-		builder.append("ANGLEUNIT[");
+		if(angleunit.contains("degree") || angleunit.contains("rad")) {
+			builder.append("ANGLEUNIT[");			
+		}else {
+			builder.append("LENGTHUNIT[");
+		}
 		builder.append("\""+angleunit+"\","+unitconversionfactor+"]");
 		builder.append("]");
 		return builder.toString();

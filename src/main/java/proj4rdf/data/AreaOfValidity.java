@@ -29,6 +29,8 @@ public class AreaOfValidity {
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
 		builder.append("");
+		if(scope==null && areaString==null && bbox==null)
+			return builder.toString();
 		if(scope!=null) {
 			builder.append("SCOPE[\""+scope+"\"],"+System.lineSeparator());
 		}
@@ -37,7 +39,7 @@ public class AreaOfValidity {
 		}
 		if(bbox!=null) {
 			if(bbox.contains("ENVELOPE")) {
-				builder.append("BBOX["+bbox.replace("ENVELOPE(","").replace(")","").replace(" ", ",")+"],"+System.lineSeparator());	
+				builder.append("BBOX["+bbox.replace("ENVELOPE(","").replace(")","").replace(" ", ",")+"],");	
 			}	
 		}
 		if(builder.substring(builder.length()-1, builder.length()).equals(",")) {
@@ -46,7 +48,7 @@ public class AreaOfValidity {
 		if(!builder.substring(0, 1).equals(",")) {
 			builder.insert(0, ",");			
 		}
-		builder.append("");
+		builder.append(System.lineSeparator());
 		return builder.toString();
 	}
 	

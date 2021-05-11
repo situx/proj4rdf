@@ -12,13 +12,7 @@ import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 public class CoordinateReferenceSystem {
 
-	@Override
-	public String toString() {
-		return "CoordinateReferenceSystem [crsName=" + crsName + ", crsType=" + crsType + ", id=" + id + ", authority="
-				+ authority + ", scope=" + scope + ", area=" + area + ", areaOfValidity=" + areaOfValidity + ", datum="
-				+ datum + ", cSystem=" + cSystem + "]";
-	}
-
+	public CoordinateReferenceSystem sourceCRS;
 
 	public String crsName;
 	
@@ -26,6 +20,15 @@ public class CoordinateReferenceSystem {
 	
 	public String id;
 	
+	@Override
+	public String toString() {
+		return "CoordinateReferenceSystem [sourceCRS=" + sourceCRS + ", crsName=" + crsName + ", crsType=" + crsType
+				+ ", id=" + id + ", authority=" + authority + ", scope=" + scope + ", area=" + area + ", remarks="
+				+ remarks + ", areaOfValidity=" + areaOfValidity + ", conv=" + conv + ", datum=" + datum + ", cSystem="
+				+ cSystem + "]";
+	}
+
+
 	public String authority;
 	
 	public String scope;
@@ -85,6 +88,9 @@ public class CoordinateReferenceSystem {
 		StringBuilder builder=new StringBuilder();
 		builder.append(crsType+"[");
 		builder.append("\""+crsName+"\","+System.lineSeparator());
+		if(sourceCRS!=null) {
+			builder.append(sourceCRS.toWKT()+","+System.lineSeparator());
+		}
 		if(datum!=null) {
 			builder.append(datum.toWKT()+","+System.lineSeparator());
 		}

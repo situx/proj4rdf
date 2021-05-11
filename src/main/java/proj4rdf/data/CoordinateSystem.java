@@ -42,18 +42,20 @@ public class CoordinateSystem {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
+		if(coordinateSystemType==null)
+			return builder.toString();
 		builder.append("CS["+System.lineSeparator());
 		if(coordinateSystemType.contains("CS:")) {
 			builder.append(coordinateSystemType.substring(coordinateSystemType.lastIndexOf(':')+1).trim()+System.lineSeparator());
 		}else {
 			builder.append(coordinateSystemType+System.lineSeparator());
 		}
-		builder.append(","+numberDimensions+"],"+System.lineSeparator());
+		builder.append(","+numberDimensions+"],");
 		for(Axis axis:axisList) {
-			builder.append(axis.toWKT()+","+System.lineSeparator());
+			builder.append(axis.toWKT()+",");
 		}
 		builder.delete(builder.length()-1, builder.length());
-		return builder.toString();
+		return builder.toString()+System.lineSeparator();
 	}
 	
 }

@@ -28,12 +28,15 @@ public class ConversionOperation {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
+		if(projectionName==null && methodName==null) {
+			return builder.toString();
+		}
 		builder.append("CONVERSION[\""+projectionName+"\",METHOD[\""+methodName+"\","+System.lineSeparator());
 		for(String para:parameters.keySet()) {
-			builder.append("PARAMETER[\""+para+"\","+parameters.get(para)+"],"+System.lineSeparator());
+			builder.append("PARAMETER[\""+para+"\","+parameters.get(para)+"],");
 		}
 		builder.delete(builder.length()-1, builder.length());
-		builder.append("]");
+		builder.append("]]"+System.lineSeparator());
 		return builder.toString();
 	}
 	

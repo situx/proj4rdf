@@ -34,7 +34,11 @@ public class PrimeMeridian {
 		builder.append("PRIMEM[");
 		builder.append("\""+primeMeridianName+"\",");
 		builder.append(longitude+",");
-		builder.append("ANGLEUNIT[\""+angleunit+"\",0.0174532925199433]");
+		if(angleunit.contains("degree") || angleunit.contains("rad")) {
+			builder.append("ANGLEUNIT[\""+angleunit+"\",0.0174532925199433]");			
+		}else {
+			builder.append("LENGTHUNIT[\""+angleunit+"\",0.0174532925199433]");
+		}
 		builder.append("]");
 		return builder.toString();
 	}
