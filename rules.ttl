@@ -74,6 +74,17 @@ rdfs:subClassOf geocrs:VerticalReferenceFrameShape ;
            sh:maxCount 1 ;
        ] .
 
+geocrs:CoordinateSystemShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateSystem ;
+       sh:property [
+           sh:path geocrs:axis  ;
+		   sh:class geocrs:CoordinateSystemAxis ;
+           sh:minCount 1 ;
+       ] .
+
+geocrs:EllipsoidShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:Ellipsoid .
+       
 geocrs:SingleCRSShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:SingleCRS ;
        sh:property [
