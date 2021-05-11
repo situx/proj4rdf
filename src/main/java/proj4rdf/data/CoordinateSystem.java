@@ -42,15 +42,15 @@ public class CoordinateSystem {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
-		builder.append("CS[");
+		builder.append("CS["+System.lineSeparator());
 		if(coordinateSystemType.contains("CS:")) {
-			builder.append(coordinateSystemType.substring(coordinateSystemType.lastIndexOf(':')+1).trim());
+			builder.append(coordinateSystemType.substring(coordinateSystemType.lastIndexOf(':')+1).trim()+System.lineSeparator());
 		}else {
-			builder.append(coordinateSystemType);
+			builder.append(coordinateSystemType+System.lineSeparator());
 		}
-		builder.append(","+numberDimensions+"],");
+		builder.append(","+numberDimensions+"],"+System.lineSeparator());
 		for(Axis axis:axisList) {
-			builder.append(axis.toWKT()+",");
+			builder.append(axis.toWKT()+","+System.lineSeparator());
 		}
 		builder.delete(builder.length()-1, builder.length());
 		return builder.toString();

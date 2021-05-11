@@ -11,7 +11,7 @@ public class EPSGToWKT extends FunctionBase1 {
 	public NodeValue exec(NodeValue v) {		
 		String epsg=v.getString();
 		try {
-			return NodeValue.makeString(CRS.forCode(epsg).getCoordinateSystem(). toWKT());
+			return NodeValue.makeString(CRS.forCode(epsg).getCoordinateSystem().toWKT());
 		} catch (UnsupportedOperationException | FactoryException e) {
 			return NodeValue.nvNothing;
 		}

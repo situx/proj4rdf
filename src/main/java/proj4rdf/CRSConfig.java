@@ -379,6 +379,8 @@ public class PostGISConfig {
             functionRegistry.put(PostGISGeo.st_3ddwithin.getURI(), DWithin3D.class);
             // extra utility functionRegistry
             functionRegistry.put(Constants.SPATIAL_FUNCTION_NS + "transform", Transform.class);
+            functionRegistry.put(Constants.SPATIAL_FUNCTION_NS + "areaOfValidity", A.class);
+            functionRegistry.put(Constants.SPATIAL_FUNCTION_NS + "IsInCRSAreaOfValidity", Transform.class);
             //functionRegistry.put(Constants.SPATIAL_FUNCTION_NS + "makeWKTPoint", CreateWKTPoint.class);
             //functionRegistry.put(Constants.SPATIAL_FUNCTION_NS + "WKTToGeometryPoint", LiteralToGeometryType.class);
             System.out.println(functionRegistry);

@@ -51,7 +51,11 @@ public class Ellipsoid {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		builder.append("ELLIPSOID["+"\""+ellipsoidName+"\","+semiMajorAxis+","+inverseFlattening+"]");
+		builder.append("ELLIPSOID["+"\""+ellipsoidName+"\","+semiMajorAxis+","+inverseFlattening+System.lineSeparator());
+		if(lengthUnit!=null) {
+			builder.append(",LENGTHUNIT[\""+lengthUnit+"\",1]"+System.lineSeparator());
+		}
+		builder.append("]");
 		return builder.toString();
 	}
 }

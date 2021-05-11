@@ -28,7 +28,25 @@ public class AreaOfValidity {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		builder.append("USAGE[SCOPE[\"+scope+\"],AREA[\""+areaString+"\"],BBOX["+bbox+"]]");
+		builder.append("");
+		if(scope!=null) {
+			builder.append("SCOPE[\""+scope+"\"],"+System.lineSeparator());
+		}
+		if(areaString!=null) {
+			builder.append("AREA[\""+areaString+"\"],"+System.lineSeparator());
+		}
+		if(bbox!=null) {
+			if(bbox.contains("ENVELOPE")) {
+				builder.append("BBOX["+bbox.replace("ENVELOPE(","").replace(")","").replace(" ", ",")+"],"+System.lineSeparator());	
+			}	
+		}
+		if(builder.substring(builder.length()-1, builder.length()).equals(",")) {
+			builder.delete(builder.length()-1, builder.length());			
+		}
+		if(!builder.substring(0, 1).equals(",")) {
+			builder.insert(0, ",");			
+		}
+		builder.append("");
 		return builder.toString();
 	}
 	

@@ -39,12 +39,12 @@ public class Datum {
 
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();	
-		builder.append("DATUM["+"\""+datumName+"\",");
-		builder.append(ellipsoid.toWKT());
+		builder.append("DATUM["+"\""+datumName.replace("Datum:","").trim()+"\","+System.lineSeparator());
+		builder.append(ellipsoid.toWKT()+"]"+System.lineSeparator());
 		if(primeMeridian!=null) {
-			builder.append(","+primeMeridian.toWKT());
+			builder.append(","+primeMeridian.toWKT()+System.lineSeparator());
 		}
-		builder.append("]");
+		//builder.append("]");
 		return builder.toString();
 	}
 	
