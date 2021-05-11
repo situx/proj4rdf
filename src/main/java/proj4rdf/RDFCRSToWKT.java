@@ -169,8 +169,14 @@ public class RDFCRSToWKT {
 				if(sol.get("rel").toString().contains("scope")) {
 					refsys.scope=sol.get("obj").toString();
 				}
-				if(sol.get("rel").toString().contains("label")) {
+				else if(sol.get("rel").toString().contains("label")) {
 					refsys.crsName=sol.getLiteral("obj").getString();
+				}
+				else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("ProjectedCRS")) {
+					refsys.crsType="PROJCRS";
+				}
+				else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("GeodeticCRS")) {
+					refsys.crsType="GEODCRS";
 				}
 			}
 			if(sol.get("rel").toString().contains("datum")) {
@@ -280,25 +286,14 @@ public class RDFCRSToWKT {
     {
         char[] str=sstr.toCharArray();
          StringBuilder builder=new StringBuilder();
-        // Traverse the string
         for (int i=0; i < str.length; i++)
         {
-            // Convert to lowercase if its
-            // an uppercase character
             if (str[i]>='A' && str[i]<='Z')
             {
-                  
-                // Print space before it
-                // if its an uppercase character
                 if (i != 0)
                     builder.append(" ");
-      
-                // Print the character
                 builder.append(str[i]);
             }
-      
-            // if lowercase character
-            // then just print
             else
             	builder.append(str[i]);
         }

@@ -83,7 +83,7 @@ public class CoordinateReferenceSystem {
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
-		builder.append("GEODCRS[");
+		builder.append(crsType+"[");
 		builder.append("\""+crsName+"\","+System.lineSeparator());
 		if(datum!=null) {
 			builder.append(datum.toWKT()+","+System.lineSeparator());
