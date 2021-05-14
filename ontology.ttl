@@ -168,7 +168,7 @@ geocrs:GlobalGridReferenceSystem a owl:Class ;
 
 geocrs:HexagonalCoordinateSystem a owl:Class ;
     rdfs:label "hexagonal coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem ;
+    rdfs:subClassOf geocrs:GridCoordinateSystem ;
     skos:definition "A hexagonal coordinate system describes areas with a hexagonal lattice"@en .
 
 geocrs:HierarchicalGridReferenceSystem a owl:Class ;
@@ -197,6 +197,11 @@ geocrs:LinearReferenceSystem a owl:Class ;
     rdfs:label "linear reference system"@en ;
     rdfs:subClassOf geocrs:SpatialReferenceSystem ;
     skos:definition "a reference system in which the locations of physical features along a linear element are described in terms of measurements from a fixed point"@en .
+
+geocrs:LocalCoordinateSystem a owl:Class ;
+    rdfs:label "local coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "coordinate system with a point of local reference"@en .
 
 geocrs:ObliqueCoordinateSystem a owl:Class ;
     rdfs:label "oblique coordinate system"@en ;
@@ -927,6 +932,11 @@ geocrs:GeographicCRS a owl:Class ;
     rdfs:subClassOf geocrs:GeodeticCRS ;
     skos:definition "coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system"@en .
 
+geocrs:GridCoordinateSystem a owl:Class ;
+    rdfs:label "grid coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "A grid coordinate system describes areas with a grid"@en .
+
 geocrs:HorizontalDatum a owl:Class ;
     rdfs:label "horizontal datum"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1053,7 +1063,8 @@ geocrs:OrthogonalCoordinateSystem a owl:Class ;
     skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
 
 geocrs:Projection a owl:Class ;
-    rdfs:label "projection"@en .
+    rdfs:label "projection"@en ;
+    skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
 
 geocrs:PrimeMeridian a owl:Class ;
     rdfs:label "prime meridian"@en ;

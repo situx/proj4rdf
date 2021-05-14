@@ -15,6 +15,7 @@ units["us-ft"]="om:usfoot"
 coordinatesystem={}
 coordinatesystem["ellipsoidal"]="geocrs:EllipsoidalCoordinateSystem"
 coordinatesystem["cartesian"]="geocrs:CartesianCoordinateSystem"
+coordinatesystem["vertical"]="geocrs:VerticalCoordinateSystem"
 coordinatesystem["ft"]="om:foot"
 coordinatesystem["us-ft"]="om:usfoot"
 spheroids={}
@@ -169,8 +170,12 @@ ttl.add("geocrs:LinearCoordinateSystem rdfs:subClassOf geocrs:1DCoordinateSystem
 ttl.add("geocrs:LinearCoordinateSystem rdfs:label \"linear coordinate system\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem skos:definition \"one-dimensional coordinate system in which a linear feature forms the axis\"@en .\n")
 ttl.add("geocrs:LinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GridCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:GridCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:GridCoordinateSystem rdfs:label \"grid coordinate system\"@en .\n")
+ttl.add("geocrs:GridCoordinateSystem skos:definition \"A grid coordinate system describes areas with a grid\"@en .\n")
 ttl.add("geocrs:HexagonalCoordinateSystem rdf:type owl:Class .\n")
-ttl.add("geocrs:HexagonalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:HexagonalCoordinateSystem rdfs:subClassOf geocrs:GridCoordinateSystem .\n")
 ttl.add("geocrs:HexagonalCoordinateSystem rdfs:label \"hexagonal coordinate system\"@en .\n")
 ttl.add("geocrs:HexagonalCoordinateSystem skos:definition \"A hexagonal coordinate system describes areas with a hexagonal lattice\"@en .\n")
 ttl.add("geocrs:ObliqueCoordinateSystem rdf:type owl:Class .\n")
@@ -335,6 +340,10 @@ ttl.add("geocrs:LocalGridReferenceSystem rdfs:label \"local grid reference syste
 ttl.add("geocrs:LocalGridReferenceSystem rdfs:subClassOf geocrs:GridReferenceSystem .\n")
 ttl.add("geocrs:LocalGridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum and is valid on a part of the earth\"@en .\n")
 ttl.add("geocrs:LocalGridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdfs:label \"local coordinate system\"@en .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:LocalCoordinateSystem skos:definition \"coordinate system with a point of local reference\"@en .\n")
 ttl.add("geocrs:SpatialIndex rdf:type owl:Class .\n")
 ttl.add("geocrs:SpatialIndex rdfs:label \"spatial index\"@en .\n")
 ttl.add("geocrs:SpatialIndex rdfs:subClassOf geocrs:GridReferenceSystem .\n")
@@ -544,6 +553,7 @@ ttl.add("geocrs:PrimeMeridian skos:definition \"meridian from which the longitud
 ttl.add("geocrs:PrimeMeridian rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:Projection rdf:type owl:Class .\n")
 ttl.add("geocrs:Projection rdfs:label \"projection\"@en .\n")
+ttl.add("geocrs:Projection skos:definition \"coordinate conversion from an ellipsoidal coordinate system to a plane\"@en .\n")
 ttl.add("geocrs:EquidistantProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:EquidistantProjection rdfs:label \"equidistant projection\"@en .\n")
 ttl.add("geocrs:EquidistantProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -1093,6 +1103,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
+		if curcrs.coordinate_operation.towgs84!=None:
+			print(curcrs.coordinate_operation.towgs84)
 		for par in curcrs.coordinate_operation.params:
 			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdf:type owl:DatatypeProperty . \n") 
 			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:range xsd:double . \n") 
