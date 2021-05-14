@@ -553,6 +553,7 @@ ttl.add("geocrs:PrimeMeridian skos:definition \"meridian from which the longitud
 ttl.add("geocrs:PrimeMeridian rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:Projection rdf:type owl:Class .\n")
 ttl.add("geocrs:Projection rdfs:label \"projection\"@en .\n")
+ttl.add("geocrs:Projection rdfs:subClassOf geocrs:CoordinateConversionOperation .\n")
 ttl.add("geocrs:Projection skos:definition \"coordinate conversion from an ellipsoidal coordinate system to a plane\"@en .\n")
 ttl.add("geocrs:EquidistantProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:EquidistantProjection rdfs:label \"equidistant projection\"@en .\n")
@@ -563,6 +564,30 @@ ttl.add("geocrs:ConformalProjection rdfs:subClassOf geocrs:Projection .\n")
 ttl.add("geocrs:EqualAreaProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:EqualAreaProjection rdfs:label \"equal-area projection\"@en .\n")
 ttl.add("geocrs:EqualAreaProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:LatLonProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:LatLonProjection rdfs:label \"latlon projection\"@en .\n")
+ttl.add("geocrs:LatLonProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:LonLatProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:LonLatProjection rdfs:label \"lonlat projection\"@en .\n")
+ttl.add("geocrs:LonLatProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:Mercator rdf:type owl:Class .\n")
+ttl.add("geocrs:Mercator rdfs:label \"mercator projection\"@en .\n")
+ttl.add("geocrs:Mercator rdfs:subClassOf geocrs:ConformalProjection .\n")
+ttl.add("geocrs:TransverseMercator rdf:type owl:Class .\n")
+ttl.add("geocrs:TransverseMercator rdfs:label \"transverse mercator projection\"@en .\n")
+ttl.add("geocrs:TransverseMercator rdfs:subClassOf geocrs:Mercator .\n")
+ttl.add("geocrs:LambertConformalConic rdf:type owl:Class .\n")
+ttl.add("geocrs:LambertConformalConic rdfs:label \"lambert conformal conic projection\"@en .\n")
+ttl.add("geocrs:LambertConformalConic rdfs:subClassOf geocrs:ConformalProjection .\n")
+ttl.add("geocrs:CylindricalEqualArea rdf:type owl:Class .\n")
+ttl.add("geocrs:CylindricalEqualArea rdfs:label \"cylindrical equal area projection\"@en .\n")
+ttl.add("geocrs:CylindricalEqualArea rdfs:subClassOf geocrs:EqualAreaProjection .\n")
+ttl.add("geocrs:LambertAzimuthalEqualArea rdf:type owl:Class .\n")
+ttl.add("geocrs:LambertAzimuthalEqualArea rdfs:label \"lamber azimuthal equal area projection\"@en .\n")
+ttl.add("geocrs:LambertAzimuthalEqualArea rdfs:subClassOf geocrs:EqualAreaProjection .\n")
+ttl.add("geocrs:EquidistantCylindrical rdf:type owl:Class .\n")
+ttl.add("geocrs:EquidistantCylindrical rdfs:label \"equidistant cylindrical projection\"@en .\n")
+ttl.add("geocrs:EquidistantCylindrical rdfs:subClassOf geocrs:EquidistantProjection .\n")
 ttl.add("geocrs:OperationParameter rdf:type owl:Class .\n")
 ttl.add("geocrs:OperationParameter rdfs:label \"operation parameter\"@en .\n")
 ttl.add("geocrs:OperationParameter skos:definition \"Parameter used by a method to perform some coordinate operation\"@en .\n")
@@ -1124,7 +1149,16 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		if curcrs.coordinate_operation.type_name==None:
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateOperation . \n")
 		elif curcrs.coordinate_operation.type_name=="Conversion":
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConversionOperation . \n")
+			found=False
+			if curcrs.coordinate_operation.to_proj4()!=None:
+				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
+				for prj in projections:
+					if prj in proj4string:
+						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
+						found=True
+						break
+			if not found:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConversionOperation . \n")
 		elif curcrs.coordinate_operation.type_name=="Transformation":
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateTransformationOperation . \n")
 		elif curcrs.coordinate_operation.type_name=="Concatenated Operation":
