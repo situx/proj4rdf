@@ -39,7 +39,8 @@ geocrs:CylindricalCoordinateSystem a owl:Class ;
 
 geocrs:CylindricalEqualArea a owl:Class ;
     rdfs:label "cylindrical equal area projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection .
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
 
 geocrs:DateTimeTemporalCoordinateSystem a owl:Class ;
     rdfs:label "date time temporal coordinate system"@en ;
@@ -128,7 +129,8 @@ geocrs:EquatorialCoordinateSystem a owl:Class ;
 
 geocrs:EquidistantCylindrical a owl:Class ;
     rdfs:label "equidistant cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:EquidistantProjection .
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EquidistantProjection .
 
 geocrs:GalacticCoordinateSystem a owl:Class ;
     rdfs:label "galactic coordinate system"@en ;
@@ -183,13 +185,19 @@ geocrs:HorizontalCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CelestialCoordinateSystem ;
     skos:definition "A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane"@en .
 
+geocrs:Krovak a owl:Class ;
+    rdfs:label "krovak projection"@en ;
+    rdfs:subClassOf geocrs:ConicalProjection .
+
 geocrs:LambertAzimuthalEqualArea a owl:Class ;
     rdfs:label "lamber azimuthal equal area projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection .
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:EqualAreaProjection .
 
 geocrs:LambertConformalConic a owl:Class ;
     rdfs:label "lambert conformal conic projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:ConicalProjection .
 
 geocrs:LatLonProjection a owl:Class ;
     rdfs:label "latlon projection"@en ;
@@ -219,6 +227,10 @@ geocrs:ObliqueCoordinateSystem a owl:Class ;
     rdfs:label "oblique coordinate system"@en ;
     rdfs:subClassOf geocrs:AffineCoordinateSystem ;
     skos:definition "A plane coordinate system whose axes are not perpendicular"@en .
+
+geocrs:ObliqueStereographicProjection a owl:Class ;
+    rdfs:label "oblique stereographic projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection .
 
 geocrs:OperationParameter a owl:Class ;
     rdfs:label "operation parameter"@en ;
@@ -322,6 +334,10 @@ geocrs:StaticCRS a owl:Class ;
 geocrs:StereographicCoordinateSystem a owl:Class ;
     rdfs:label "stereographic coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem .
+
+geocrs:StereographicProjection a owl:Class ;
+    rdfs:label "stereographic projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection .
 
 geocrs:TemporalCRS a owl:Class ;
     rdfs:label "temporal coordinate reference system"@en ;
@@ -1002,8 +1018,16 @@ geocrs:AffineCoordinateSystem a owl:Class ;
     owl:equivalentClass wd:Q382510 ;
     skos:definition "coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular"@en .
 
+geocrs:AzimuthalProjection a owl:Class ;
+    rdfs:label "azimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
 geocrs:ConformalProjection a owl:Class ;
     rdfs:label "conformal projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:ConicalProjection a owl:Class ;
+    rdfs:label "conical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:CoordinateConversionOperation a owl:Class ;
@@ -1057,6 +1081,10 @@ geocrs:CelestialCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "a coordinate system for specifying positions of celstial objects relative to physical reference points"@en .
 
+geocrs:CylindricalProjection a owl:Class ;
+    rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
 geocrs:GeocodeSystem a owl:Class ;
     rdfs:label "geocode system"@en ;
     rdfs:subClassOf geocrs:SpatialReferenceSystem ;
@@ -1099,11 +1127,6 @@ geocrs:PrimeMeridian a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "meridian from which the longitudes of other meridians are quantified"@en .
 
-geocrs:Projection a owl:Class ;
-    rdfs:label "projection"@en ;
-    rdfs:subClassOf geocrs:CoordinateConversionOperation ;
-    skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
-
 geocrs:CompoundCRS a owl:Class ;
     rdfs:label "Compound coordinate reference system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1142,6 +1165,11 @@ geocrs:Datum a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     owl:equivalentClass wd:Q1502887 ;
     skos:definition "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system"@en .
+
+geocrs:Projection a owl:Class ;
+    rdfs:label "projection"@en ;
+    rdfs:subClassOf geocrs:CoordinateConversionOperation ;
+    skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
 
 geocrs:CoordinateSystem a owl:Class ;
     rdfs:label "coordinate system"@en ;
