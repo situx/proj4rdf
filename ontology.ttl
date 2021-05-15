@@ -14,6 +14,10 @@ geocrs:AdministrativeCode a owl:Class ;
         geocrs:GeocodeSystem ;
     skos:definition "a code which describes an administrative area"@en .
 
+geocrs:AlbersEqualAreaProjection a owl:Class ;
+    rdfs:label "albers equal-area projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection .
+
 geocrs:BarycentricCoordinateSystem a owl:Class ;
     rdfs:label "barycentric coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -24,6 +28,14 @@ geocrs:BoundCRS a owl:Class ;
     rdfs:label "bound coordinate reference system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CRS .
+
+geocrs:CassiniProjection a owl:Class ;
+    rdfs:label "cassini projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection .
+
+geocrs:ColombiaUrbanProjection a owl:Class ;
+    rdfs:label "colombia urban projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:ConicalCoordinateSystem a owl:Class ;
     rdfs:label "conical coordinate system"@en ;
@@ -122,6 +134,10 @@ geocrs:EngineeringDatum a owl:Class ;
     rdfs:subClassOf geocrs:Datum ;
     skos:definition "datum describing the relationship of a coordinate system to a local reference"@en .
 
+geocrs:EqualEarthProjection a owl:Class ;
+    rdfs:label "equal earth projection"@en ;
+    rdfs:subClassOf geocrs:PseudoCylindricalProjection .
+
 geocrs:EquatorialCoordinateSystem a owl:Class ;
     rdfs:label "equatorial coordinate system"@en ;
     rdfs:subClassOf geocrs:CelestialCoordinateSystem ;
@@ -194,11 +210,11 @@ geocrs:Krovak a owl:Class ;
     rdfs:subClassOf geocrs:ConicalProjection .
 
 geocrs:LambertAzimuthalEqualArea a owl:Class ;
-    rdfs:label "lamber azimuthal equal area projection"@en ;
+    rdfs:label "lambert azimuthal equal area projection"@en ;
     rdfs:subClassOf geocrs:AzimuthalProjection,
         geocrs:EqualAreaProjection .
 
-geocrs:LambertConformalConic a owl:Class ;
+geocrs:LambertConformalConicProjection a owl:Class ;
     rdfs:label "lambert conformal conic projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:ConicalProjection .
@@ -234,7 +250,8 @@ geocrs:ObliqueCoordinateSystem a owl:Class ;
 
 geocrs:ObliqueMercatorProjection a owl:Class ;
     rdfs:label "oblique mercator projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:MercatorProjection .
 
 geocrs:ObliqueStereographicProjection a owl:Class ;
     rdfs:label "oblique stereographic projection"@en ;
@@ -297,10 +314,6 @@ geocrs:PseudoAzimuthalProjection a owl:Class ;
 
 geocrs:PseudoConicalProjection a owl:Class ;
     rdfs:label "pseudo-conical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:RetroazimuthalProjection a owl:Class ;
@@ -366,7 +379,7 @@ geocrs:StereographicCoordinateSystem a owl:Class ;
 geocrs:StereographicProjection a owl:Class ;
     rdfs:label "stereographic projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection ;
-    skos:scopeNote "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
+    skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
 
 geocrs:TemporalCRS a owl:Class ;
     rdfs:label "temporal coordinate reference system"@en ;
@@ -1013,10 +1026,6 @@ geocrs:LocalGridReferenceSystem a owl:Class ;
     rdfs:subClassOf geocrs:GridReferenceSystem ;
     skos:definition "a grid that divides space with precise positions relative to a datum and is valid on a part of the earth"@en .
 
-geocrs:Mercator a owl:Class ;
-    rdfs:label "mercator projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
-
 geocrs:OtherCoordinateOperation a owl:Class ;
     rdfs:label "other coordinate operation"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1034,9 +1043,13 @@ geocrs:ProjectedCRS a owl:Class ;
     rdfs:subClassOf geocrs:DerivedCRS ;
     skos:definition "coordinate reference system derived from a geographic coordinate reference system by applying a map projection"@en .
 
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
 geocrs:TransverseMercatorProjection a owl:Class ;
     rdfs:label "transverse mercator projection"@en ;
-    rdfs:subClassOf geocrs:Mercator .
+    rdfs:subClassOf geocrs:MercatorProjection .
 
 geocrs:VerticalCRS a owl:Class ;
     rdfs:label "vertical coordinate reference system"@en ;
@@ -1078,10 +1091,6 @@ geocrs:DynamicReferenceFrame a owl:Class ;
     rdfs:subClassOf geocrs:Datum ;
     skos:definition "reference frame in which the defining parameters include time evolution"@en .
 
-geocrs:EqualAreaProjection a owl:Class ;
-    rdfs:label "equal-area projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:GeodeticCRS a owl:Class ;
     rdfs:label "geodetic coordinate reference system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1090,6 +1099,10 @@ geocrs:GeodeticCRS a owl:Class ;
         geocrs:CompoundCRS,
         geocrs:EllipsoidalCoordinateSystem ;
     skos:definition "three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system"@en .
+
+geocrs:MercatorProjection a owl:Class ;
+    rdfs:label "mercator projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection .
 
 geocrs:PlanarCoordinateSystem a owl:Class ;
     rdfs:label "planar coordinate system"@en ;
@@ -1117,8 +1130,8 @@ geocrs:ConformalProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
 
-geocrs:CylindricalProjection a owl:Class ;
-    rdfs:label "cylindrical projection"@en ;
+geocrs:EqualAreaProjection a owl:Class ;
+    rdfs:label "equal-area projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:GeocodeSystem a owl:Class ;
@@ -1157,6 +1170,10 @@ geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:label "orthogonal coordinate system"@en ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
     skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
+
+geocrs:CylindricalProjection a owl:Class ;
+    rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:PrimeMeridian a owl:Class ;
     rdfs:label "prime meridian"@en ;

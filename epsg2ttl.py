@@ -72,17 +72,28 @@ spheroids["Bessel Modified"]="geocrsgeod:BesselModified"
 projections={}
 projections["tmerc"]="geocrs:TransverseMercatorProjection"
 projections["omerc"]="geocrs:ObliqueMercatorProjection"
-projections["merc"]="geocrs:Mercator"
+projections["merc"]="geocrs:MercatorProjection"
 projections["rpoly"]="geocrs:RectangularPolyconicProjection"
 projections["eqdc"]="geocrs:EquidistantConicProjection"
 projections["sterea"]="geocrs:ObliqueStereographicProjection"
 projections["cea"]="geocrs:CylindricalEqualArea"
+projections["aea"]="geocrs:AlbersEqualAreaProjection"
+projections["eqearth"]="geocrs:EqualEarthProjection"
 projections["stere"]="geocrs:StereographicProjection"
-projections["cass"]="geocrs:CylindricalProjection"
+projections["cass"]="geocrs:CassiniProjection"
+projections["nell"]="geocrs:PseudoCylindricalProjection"
+projections["eck1"]="geocrs:PseudoCylindricalProjection"
+projections["eck2"]="geocrs:PseudoCylindricalProjection"
+projections["eck3"]="geocrs:PseudoCylindricalProjection"
+projections["eck4"]="geocrs:PseudoCylindricalProjection"
+projections["eck5"]="geocrs:PseudoCylindricalProjection"
+projections["eck6"]="geocrs:PseudoCylindricalProjection"
 projections["eqc"]="geocrs:EquidistantCylindrical"
+projections["col_urban"]="geocrs:ColombiaUrbanProjection"
 projections["laea"]="geocrs:LambertAzimuthalEqualArea"
 projections["leac"]="geocrs:LambertEqualAreaConic"
-projections["lcc"]="geocrs:LambertConformalConic"
+projections["labrd"]="geocrs:CylindricalProjection"
+projections["lcc"]="geocrs:LambertConformalConicProjection"
 projections["gnom"]="geocrs:GnomonicProjection"
 projections["kav5"]="geocrs:PseudoCylindricalProjection"
 projections["tcea"]="geocrs:CylindricalProjection"
@@ -91,6 +102,7 @@ projections["krovak"]="geocrs:Krovak"
 projections["geocent"]="geocrs:Geocentric"
 projections["latlong"]="geocrs:LatLonProjection"
 projections["longlat"]="geocrs:LonLatProjection"
+#projections["cc"]="geocrs:CylindricalProjection"
 ttl=set()
 ttlhead="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
 ttlhead+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
@@ -582,7 +594,7 @@ ttl.add("geocrs:ConicalProjection rdfs:label \"conical projection\"@en .\n")
 ttl.add("geocrs:ConicalProjection rdfs:subClassOf geocrs:Projection .\n")
 ttl.add("geocrs:ObliqueMercatorProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:ObliqueMercatorProjection rdfs:label \"oblique mercator projection\"@en .\n")
-ttl.add("geocrs:ObliqueMercatorProjection rdfs:subClassOf geocrs:ConformalProjection, geocrs:CylindricalProjection .\n")
+ttl.add("geocrs:ObliqueMercatorProjection rdfs:subClassOf geocrs:MercatorProjection, geocrs:CylindricalProjection .\n")
 ttl.add("geocrs:PolyhedralProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:PolyhedralProjection rdfs:label \"polyhedral projection\"@en .\n")
 ttl.add("geocrs:PolyhedralProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -598,15 +610,27 @@ ttl.add("geocrs:CylindricalProjection rdfs:subClassOf geocrs:Projection .\n")
 ttl.add("geocrs:EqualAreaProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:EqualAreaProjection rdfs:label \"equal-area projection\"@en .\n")
 ttl.add("geocrs:EqualAreaProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:AlbersEqualAreaProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:AlbersEqualAreaProjection rdfs:label \"albers equal-area projection\"@en .\n")
+ttl.add("geocrs:AlbersEqualAreaProjection rdfs:subClassOf geocrs:EqualAreaProjection .\n")
+ttl.add("geocrs:EqualEarthProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:EqualEarthProjection rdfs:label \"equal earth projection\"@en .\n")
+ttl.add("geocrs:EqualEarthProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection .\n")
 ttl.add("geocrs:GnomonicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:GnomonicProjection rdfs:label \"gnomonic projection\"@en .\n")
 ttl.add("geocrs:GnomonicProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:CassiniProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:CassiniProjection rdfs:label \"cassini projection\"@en .\n")
+ttl.add("geocrs:CassiniProjection rdfs:subClassOf geocrs:CylindricalProjection .\n")
 ttl.add("geocrs:PseudoConicalProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:PseudoConicalProjection rdfs:label \"pseudo-conical projection\"@en .\n")
 ttl.add("geocrs:PseudoConicalProjection rdfs:subClassOf geocrs:Projection .\n")
+ttl.add("geocrs:ColombiaUrbanProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:ColombiaUrbanProjection rdfs:label \"colombia urban projection\"@en .\n")
+ttl.add("geocrs:ColombiaUrbanProjection rdfs:subClassOf geocrs:Projection .\n")
 ttl.add("geocrs:StereographicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:StereographicProjection rdfs:label \"stereographic projection\"@en .\n")
-ttl.add("geocrs:StereographicProjection skos:scopeNote \"A projection which can be constructed using the tangent's points antipoide as the point of perspective\"@en .\n")
+ttl.add("geocrs:StereographicProjection skos:definition \"A projection which can be constructed using the tangent's points antipoide as the point of perspective\"@en .\n")
 ttl.add("geocrs:StereographicProjection rdfs:subClassOf geocrs:ConformalProjection .\n")
 ttl.add("geocrs:ObliqueStereographicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:ObliqueStereographicProjection rdfs:label \"oblique stereographic projection\"@en .\n")
@@ -617,26 +641,26 @@ ttl.add("geocrs:LatLonProjection rdfs:subClassOf geocrs:Projection .\n")
 ttl.add("geocrs:LonLatProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:LonLatProjection rdfs:label \"lonlat projection\"@en .\n")
 ttl.add("geocrs:LonLatProjection rdfs:subClassOf geocrs:Projection .\n")
-ttl.add("geocrs:Mercator rdf:type owl:Class .\n")
-ttl.add("geocrs:Mercator rdfs:label \"mercator projection\"@en .\n")
-ttl.add("geocrs:Mercator rdfs:subClassOf geocrs:ConformalProjection .\n")
+ttl.add("geocrs:MercatorProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:MercatorProjection rdfs:label \"mercator projection\"@en .\n")
+ttl.add("geocrs:MercatorProjection rdfs:subClassOf geocrs:ConformalProjection .\n")
 ttl.add("geocrs:Krovak rdf:type owl:Class .\n")
 ttl.add("geocrs:Krovak rdfs:label \"krovak projection\"@en .\n")
 ttl.add("geocrs:Krovak rdfs:subClassOf geocrs:ConicalProjection .\n")
 ttl.add("geocrs:TransverseMercatorProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:TransverseMercatorProjection rdfs:label \"transverse mercator projection\"@en .\n")
-ttl.add("geocrs:TransverseMercatorProjection rdfs:subClassOf geocrs:Mercator .\n")
+ttl.add("geocrs:TransverseMercatorProjection rdfs:subClassOf geocrs:MercatorProjection .\n")
 ttl.add("geocrs:UniversalTransverseMercatorProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:UniversalTransverseMercatorProjection rdfs:label \"universal transverse mercator projection\"@en .\n")
 ttl.add("geocrs:UniversalTransverseMercatorProjection rdfs:subClassOf geocrs:TransverseMercatorProjection .\n")
-ttl.add("geocrs:LambertConformalConic rdf:type owl:Class .\n")
-ttl.add("geocrs:LambertConformalConic rdfs:label \"lambert conformal conic projection\"@en .\n")
-ttl.add("geocrs:LambertConformalConic rdfs:subClassOf geocrs:ConformalProjection, geocrs:ConicalProjection .\n")
+ttl.add("geocrs:LambertConformalConicProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:LambertConformalConicProjection rdfs:label \"lambert conformal conic projection\"@en .\n")
+ttl.add("geocrs:LambertConformalConicProjection rdfs:subClassOf geocrs:ConformalProjection, geocrs:ConicalProjection .\n")
 ttl.add("geocrs:CylindricalEqualArea rdf:type owl:Class .\n")
 ttl.add("geocrs:CylindricalEqualArea rdfs:label \"cylindrical equal area projection\"@en .\n")
 ttl.add("geocrs:CylindricalEqualArea rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:CylindricalProjection .\n")
 ttl.add("geocrs:LambertAzimuthalEqualArea rdf:type owl:Class .\n")
-ttl.add("geocrs:LambertAzimuthalEqualArea rdfs:label \"lamber azimuthal equal area projection\"@en .\n")
+ttl.add("geocrs:LambertAzimuthalEqualArea rdfs:label \"lambert azimuthal equal area projection\"@en .\n")
 ttl.add("geocrs:LambertAzimuthalEqualArea rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:AzimuthalProjection .\n")
 ttl.add("geocrs:EquidistantCylindrical rdf:type owl:Class .\n")
 ttl.add("geocrs:EquidistantCylindrical rdfs:label \"equidistant cylindrical projection\"@en .\n")
@@ -1065,10 +1089,10 @@ graph.serialize(destination='ontology.ttl', format='turtle')
 i=0
 curname=""
 mapp=pyproj.list.get_proj_operations_map()
-for oper in mapp:
-	print(mapp[oper])
-	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrsproj:Projection .\n")
-	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
+#for oper in mapp:
+#	print(mapp[oper])
+#	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrs:Projection .\n")
+#	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
