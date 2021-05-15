@@ -41,6 +41,11 @@ geocrs:CassiniProjection a owl:Class ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:EquidistantProjection .
 
+geocrs:CollignonProjection a owl:Class ;
+    rdfs:label "collignon projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
 geocrs:ColombiaUrbanProjection a owl:Class ;
     rdfs:label "colombia urban projection"@en ;
     rdfs:subClassOf geocrs:Projection .
@@ -1221,12 +1226,12 @@ geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
     skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
 
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:CylindricalProjection a owl:Class ;
     rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:EqualAreaProjection a owl:Class ;
