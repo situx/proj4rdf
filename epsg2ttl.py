@@ -95,7 +95,7 @@ projections["eqc"]="geocrs:EquidistantCylindricalProjection"
 projections["col_urban"]="geocrs:ColombiaUrbanProjection"
 projections["laea"]="geocrs:LambertAzimuthalEqualArea"
 projections["leac"]="geocrs:LambertEqualAreaConic"
-projections["labrd"]="geocrs:CylindricalProjection"
+projections["labrd"]="geocrs:LabordeProjection"
 projections["lcc"]="geocrs:LambertConformalConicProjection"
 projections["gnom"]="geocrs:GnomonicProjection"
 projections["bonne"]="geocrs:BonneProjection"
@@ -681,6 +681,9 @@ ttl.add("geocrs:NaturalEarthProjection rdfs:subClassOf geocrs:PseudoCylindricalP
 ttl.add("geocrs:OrthographicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:OrthographicProjection rdfs:label \"orthographic projection\"@en .\n")
 ttl.add("geocrs:OrthographicProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
+ttl.add("geocrs:LabordeProjection rdf:type owl:Class .\n")
+ttl.add("geocrs:LabordeProjection rdfs:label \"laborde projection\"@en .\n")
+ttl.add("geocrs:LabordeProjection rdfs:subClassOf geocrs:CylindricalProjection, geocrs:ConformalProjection .\n")
 ttl.add("geocrs:GnomonicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:GnomonicProjection rdfs:label \"gnomonic projection\"@en .\n")
 ttl.add("geocrs:GnomonicProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
