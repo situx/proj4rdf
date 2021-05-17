@@ -76,6 +76,11 @@ geocrs:ConicalCoordinateSystem a owl:Class ;
         geocrs:OrthogonalCoordinateSystem ;
     skos:definition "An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively"@en .
 
+geocrs:CraigRetroazimuthalProjection a owl:Class ;
+    rdfs:label "craig retroazimuthal projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:RetroazimuthalProjection .
+
 geocrs:CylindricalCoordinateSystem a owl:Class ;
     rdfs:label "cylindrical coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -273,10 +278,6 @@ geocrs:LambertConformalConicProjection a owl:Class ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:ConicalProjection .
 
-geocrs:LatLonProjection a owl:Class ;
-    rdfs:label "latlon projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:LinearCoordinateSystem a owl:Class ;
     rdfs:label "linear coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -297,10 +298,6 @@ geocrs:LocalCoordinateSystem a owl:Class ;
     rdfs:label "local coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "coordinate system with a point of local reference"@en .
-
-geocrs:LonLatProjection a owl:Class ;
-    rdfs:label "lonlat projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 geocrs:LoximuthalProjection a owl:Class ;
     rdfs:label "loximuthal projection"@en ;
@@ -392,6 +389,11 @@ geocrs:PolarCoordinateSystem a owl:Class ;
 geocrs:ProjectedCoordinateSystem a owl:Class ;
     rdfs:label "projected coordinate system"@en ;
     rdfs:subClassOf geocrs:PlanarCoordinateSystem .
+
+geocrs:QuarticAuthalicProjection a owl:Class ;
+    rdfs:label "quartic authalic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:RectangularPolyconicProjection a owl:Class ;
     rdfs:label "rectangular polyconic projection"@en ;
@@ -1162,10 +1164,6 @@ geocrs:ProjectedCRS a owl:Class ;
     rdfs:subClassOf geocrs:DerivedCRS ;
     skos:definition "coordinate reference system derived from a geographic coordinate reference system by applying a map projection"@en .
 
-geocrs:RetroazimuthalProjection a owl:Class ;
-    rdfs:label "retroazimuthal projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:TransverseMercatorProjection a owl:Class ;
     rdfs:label "transverse mercator projection"@en ;
     rdfs:subClassOf geocrs:MercatorProjection .
@@ -1233,6 +1231,10 @@ geocrs:PlanarCoordinateSystem a owl:Class ;
 geocrs:ReferenceSystem a owl:Class ;
     rdfs:label "reference system"@en ;
     skos:definition "a system that uses a reference to establish a position"@en .
+
+geocrs:RetroazimuthalProjection a owl:Class ;
+    rdfs:label "retroazimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:SingleOperation a owl:Class ;
     rdfs:label "single operation"@en ;
@@ -1332,14 +1334,14 @@ geocrs:Geoid a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
 
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:CoordinateSystemAxis a owl:Class ;
     rdfs:label "coordinate system axis"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "Axis defined by a coordinate system"@en .
+
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:SingleCRS a owl:Class ;
     rdfs:label "single coordinate reference system"@en ;
