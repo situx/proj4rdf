@@ -182,8 +182,16 @@ public class RDFCRSToWKT {
 					refsys.crsType="GEODCRS";
 				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("CompoundCRS")) {
 					refsys.crsType="COMPOUNDCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("BoundCRS")) {
+					refsys.crsType="BOUNDCRS";
 				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("VerticalCRS")) {
 					refsys.crsType="VERTCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("EngineeringCRS")) {
+					refsys.crsType="ENGCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("ParametricCRS")) {
+					refsys.crsType="PARAMETRICCRS";
+				}else if(sol.get("rel").toString().contains("type") && sol.get("obj").toString().contains("TemporalCRS")) {
+					refsys.crsType="TIMECRS";
 				}
 			}
 			if(sol.get("rel").toString().contains("datum")) {
