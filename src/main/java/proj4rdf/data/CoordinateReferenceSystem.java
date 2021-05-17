@@ -1,12 +1,22 @@
 package proj4rdf.data;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.StringWriter;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.sis.referencing.CRS;
 import org.json.JSONObject;
+import org.opengis.referencing.NoSuchAuthorityCodeException;
+import org.opengis.util.FactoryException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
@@ -83,6 +93,56 @@ public class CoordinateReferenceSystem {
 		return strwriter.toString();
 	}
 	
+	public static OntModel WKTToRDF(String wkt) throws FactoryException, IOException {
+		OntModel result=ModelFactory.createOntologyModel();
+		Set<String> resultset=new TreeSet<String>();
+		org.opengis.referencing.crs.CoordinateReferenceSystem res = CRS.fromWKT(wkt);
+		String crsid="geocrs:"+res.getName().getCode().replace(" ", "_");
+		String csid=crsid+"_cs";//geocrs:"+res.getCoordinateSystem().getName().getCode().replace(" ", "_").replace(".", "").replace(",", "").replace(":", "");		
+		resultset.add(crsid+" rdf:type geocrs:"+res.ALIAS_KEY+" ."+System.lineSeparator());
+		resultset.add(crsid+" rdfs:label \""+res.getName()+"\"@en ."+System.lineSeparator());
+		resultset.add(crsid+" geocrs:coordinateSystem "+csid+" ."+System.lineSeparator());
+		resultset.add(crsid+" geocrs:scope \""+res.getScope()+"\"@en ."+System.lineSeparator());
+		resultset.add(crsid+" geocrs:area_of_use geocrs:"+crsid+"_aou ."+System.lineSeparator());
+		resultset.add(crsid+"_aou rdf:type geocrs:AreaOfUse ."+System.lineSeparator());
+		resultset.add(crsid+"_aou geo:asWKT \"ENVELOPE()\"^^geo:wktLiteral ."+System.lineSeparator());
+		resultset.add(csid+" rdf:type geocrs:CoordinateSystem ."+System.lineSeparator());
+		resultset.add(csid+" rdfs:label \""+res.getCoordinateSystem().getName()+"\"@en ."+System.lineSeparator());
+		resultset.add("geocrs:coordinateSystem rdf:type owl:ObjectProperty ."+System.lineSeparator());
+		resultset.add("geocrs:area_of_use rdf:type owl:ObjectProperty ."+System.lineSeparator());
+		resultset.add("geocrs:axis rdf:type owl:ObjectProperty ."+System.lineSeparator());
+		for(int i=0;i<res.getCoordinateSystem().getDimension();i++) {
+			String axisid=csid+"_axis"+i;
+			resultset.add(csid+" geocrs:axis "+axisid+" ."+System.lineSeparator());
+			resultset.add(axisid+" rdf:type geocrs:CoordinateSystemAxis ."+System.lineSeparator());
+			resultset.add(axisid+" geocrs:abbreviation \""+res.getCoordinateSystem().getAxis(i).getAbbreviation()+"\" ."+System.lineSeparator());				
+			resultset.add(axisid+" geocrs:direction geocrs:"+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+" ."+System.lineSeparator());
+			resultset.add(axisid+" geocrs:unit om:"+res.getCoordinateSystem().getAxis(i).getUnit().getName()+" ."+System.lineSeparator());
+			resultset.add("geocrs:"+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+" rdf:type geocrs:AxisDirection ."+System.lineSeparator());
+		}
+		StringBuilder builder=new StringBuilder();
+		builder.append("@prefix geocrs:<http://www.opengis.net/ont/crs/> ."+System.lineSeparator());
+		builder.append("@prefix geo:<http://www.opengis.net/ont/> ."+System.lineSeparator());
+		builder.append("@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> ."+System.lineSeparator());
+		builder.append("@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> ."+System.lineSeparator());
+		builder.append("@prefix owl:<http://www.w3.org/2002/07/owl#> ."+System.lineSeparator());	
+		builder.append("@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> ."+System.lineSeparator());			
+		for(String trip:resultset) {
+			builder.append(trip);
+		}
+		System.out.println(builder.toString());
+		FileWriter writer=new FileWriter(new File("importtest.ttl"));
+		writer.write(builder.toString());
+		writer.close();
+		return result;
+	}
+
+	public static OntModel GMLToRDF(String gml) throws FactoryException {
+		CRS.fromXML(gml);
+		OntModel result=ModelFactory.createOntologyModel();
+		return result;
+	}
+	
 	
 	public String toWKT() {
 		StringBuilder builder=new StringBuilder();
@@ -105,6 +165,11 @@ public class CoordinateReferenceSystem {
 		}
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	
+	public static void main(String[] args) throws NoSuchAuthorityCodeException, UnsupportedOperationException, FactoryException, IOException {
+		WKTToRDF(CRS.forCode("EPSG:4326").toWKT());
 	}
 	
 }
