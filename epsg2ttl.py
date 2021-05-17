@@ -121,6 +121,7 @@ ttlhead+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
 ttlhead+="@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
 ttlhead+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
+ttlhead+="@prefix prov: <http://www.w3.org/ns/prov-o/> .\n"
 ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
 ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
@@ -278,6 +279,13 @@ ttl.add("geocrs:EquatorialCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:EquatorialCoordinateSystem rdfs:subClassOf geocrs:CelestialCoordinateSystem .\n")
 ttl.add("geocrs:EquatorialCoordinateSystem rdfs:label \"equatorial coordinate system\"@en .\n")
 ttl.add("geocrs:EquatorialCoordinateSystem skos:definition \"A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively\"@en .\n")
+ttl.add("geocrs:EclipticCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:EclipticCoordinateSystem rdfs:subClassOf geocrs:CelestialCoordinateSystem .\n")
+ttl.add("geocrs:EclipticCoordinateSystem rdfs:label \"ecliptic coordinate system\"@en .\n")
+ttl.add("geocrs:EclipticCoordinateSystem skos:definition \"An ecliptic coordinate system is used for representing the apparent positions and orbits of solar system objects.\"@en .\n")
+ttl.add("geocrs:SuperGalacticCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:SuperGalacticCoordinateSystem rdfs:subClassOf geocrs:CelestialCoordinateSystem, geocrs:3DCoordinateSystem .\n")
+ttl.add("geocrs:SuperGalacticCoordinateSystem rdfs:label \"super galactic coordinate system\"@en .\n")
 ttl.add("geocrs:GalacticCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:GalacticCoordinateSystem rdfs:subClassOf geocrs:CelestialCoordinateSystem, geocrs:3DCoordinateSystem .\n")
 ttl.add("geocrs:GalacticCoordinateSystem rdfs:label \"galactic coordinate system\"@en .\n")
@@ -1278,6 +1286,7 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			ttl.add("geoepsg:"+epsgcode+" geocrs:includesSRS geoepsg:"+str(subcrs.to_epsg())+" .\n")			
 	else:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
+	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
