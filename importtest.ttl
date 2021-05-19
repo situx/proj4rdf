@@ -1,0 +1,30 @@
+@prefix geocrs:<http://www.opengis.net/ont/crs/> .
+@prefix geo:<http://www.opengis.net/ont/> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:<http://www.w3.org/2002/07/owl#> .
+@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+geocrs:WGS_84 geocrs:area_of_use geocrs:geocrs:WGS_84_aou .
+geocrs:WGS_84 geocrs:coordinateSystem geocrs:WGS_84_cs .
+geocrs:WGS_84 geocrs:scope "Horizontal component of 3D system."@en .
+geocrs:WGS_84 rdf:type geocrs:alias .
+geocrs:WGS_84 rdfs:label "WGS 84"@en .
+geocrs:WGS_84_aou geo:asWKT "ENVELOPE()"^^geo:wktLiteral .
+geocrs:WGS_84_aou rdf:type geocrs:AreaOfUse .
+geocrs:WGS_84_cs geocrs:axis geocrs:WGS_84_cs_axis0 .
+geocrs:WGS_84_cs geocrs:axis geocrs:WGS_84_cs_axis1 .
+geocrs:WGS_84_cs rdf:type geocrs:CoordinateSystem .
+geocrs:WGS_84_cs rdfs:label "Ellipsoidal CS: North (°), East (°)."@en .
+geocrs:WGS_84_cs_axis0 geocrs:abbreviation "?" .
+geocrs:WGS_84_cs_axis0 geocrs:direction geocrs:north .
+geocrs:WGS_84_cs_axis0 geocrs:unit om:degree .
+geocrs:WGS_84_cs_axis0 rdf:type geocrs:CoordinateSystemAxis .
+geocrs:WGS_84_cs_axis1 geocrs:abbreviation "?" .
+geocrs:WGS_84_cs_axis1 geocrs:direction geocrs:east .
+geocrs:WGS_84_cs_axis1 geocrs:unit om:degree .
+geocrs:WGS_84_cs_axis1 rdf:type geocrs:CoordinateSystemAxis .
+geocrs:area_of_use rdf:type owl:ObjectProperty .
+geocrs:axis rdf:type owl:ObjectProperty .
+geocrs:coordinateSystem rdf:type owl:ObjectProperty .
+geocrs:east rdf:type geocrs:AxisDirection .
+geocrs:north rdf:type geocrs:AxisDirection .
