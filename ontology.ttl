@@ -559,6 +559,12 @@ geocrs:SpatioTemporalCompoundCRS a owl:Class ;
     rdfs:subClassOf geocrs:CompoundCRS ;
     skos:definition "coordinate reference system combining a spatial reference system with at least one temporal reference system"@en .
 
+geocrs:Sphere a owl:Class ;
+    rdfs:label "sphere"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:Geoid ;
+    skos:definition "reference sphere"@en .
+
 geocrs:SphericalCoordinateSystem a owl:Class ;
     rdfs:label "spherical coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1495,11 +1501,6 @@ geocrs:EquidistantProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "Projection in which all points on the map exhibit proportionally correct distances from the center point"@en .
 
-geocrs:Geoid a owl:Class ;
-    rdfs:label "geoid"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
-
 geocrs:PolyhedralProjection a owl:Class ;
     rdfs:label "polyhedral projection"@en ;
     rdfs:subClassOf geocrs:Projection .
@@ -1508,6 +1509,11 @@ geocrs:CoordinateSystemAxis a owl:Class ;
     rdfs:label "coordinate system axis"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "Axis defined by a coordinate system"@en .
+
+geocrs:Geoid a owl:Class ;
+    rdfs:label "geoid"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
 
 geocrs:SingleCRS a owl:Class ;
     rdfs:label "single coordinate reference system"@en ;

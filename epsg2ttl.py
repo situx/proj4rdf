@@ -618,6 +618,11 @@ ttl.add("geocrs:Ellipsoid rdfs:label \"ellipsoid\"@en .\n")
 ttl.add("geocrs:Ellipsoid owl:disjointWith geocrs:PrimeMeridian .\n")
 ttl.add("geocrs:Ellipsoid skos:definition \"reference ellipsoid\"@en .\n")
 ttl.add("geocrs:Ellipsoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:Sphere rdf:type owl:Class .\n")
+ttl.add("geocrs:Sphere rdfs:subClassOf geocrs:Geoid .\n")
+ttl.add("geocrs:Sphere rdfs:label \"sphere\"@en .\n")
+ttl.add("geocrs:Sphere skos:definition \"reference sphere\"@en .\n")
+ttl.add("geocrs:Sphere rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:Geoid rdf:type owl:Class .\n")
 ttl.add("geocrs:Geoid rdfs:label \"geoid\"@en .\n")
 ttl.add("geocrs:Geoid skos:definition \"equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally\"@en .\n")
@@ -1394,6 +1399,10 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 			if curcrs.datum.ellipsoid.name in spheroids:
 				geoid=spheroids[curcrs.datum.ellipsoid.name]
 				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+			elif curcrs.get_geod().sphere:
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
+				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 			else:
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
