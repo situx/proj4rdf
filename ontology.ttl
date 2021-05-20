@@ -2,6 +2,7 @@
 @prefix geocrs: <http://www.opengis.net/ont/crs/> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
@@ -221,6 +222,8 @@ geocrs:EngineeringDatum a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:Datum ;
     skos:definition "datum describing the relationship of a coordinate system to a local reference"@en .
+
+geocrs:Entity rdfs:label "entity"@en .
 
 geocrs:EqualEarthProjection a owl:Class ;
     rdfs:label "equal earth projection"@en ;
@@ -678,6 +681,12 @@ geocrs:TopographicMap a owl:Class ;
 geocrs:TranslationOperation a owl:Class ;
     rdfs:label "translation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:TriaxialEllipsoid a owl:Class ;
+    rdfs:label "triaxial ellipsoid"@en ;
+    rdfs:subClassOf geocrs:Ellipsoid ;
+    owl:disjointWith geocrs:PrimeMeridian ;
+    skos:definition "triaxial reference ellipsoid"@en .
 
 geocrs:TwoPointEquidistantProjection a owl:Class ;
     rdfs:label "two-point equidistance projection"@en ;
@@ -1247,6 +1256,8 @@ geocrs:west_south_west a geocrs:AxisDirection,
 
 owl:versionInfo rdfs:label 1e-01 .
 
+prov:Entity a owl:Class .
+
 geocrs:AreaCode a owl:Class ;
     rdfs:label "area code"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1287,13 +1298,6 @@ geocrs:DynamicCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CRS ;
     skos:definition "coordinate reference system that has a dynamic reference frame"@en .
-
-geocrs:Ellipsoid a owl:Class ;
-    rdfs:label "ellipsoid"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    rdfs:subClassOf geocrs:Geoid ;
-    owl:disjointWith geocrs:PrimeMeridian ;
-    skos:definition "reference ellipsoid"@en .
 
 geocrs:EllipsoidalCoordinateSystem a owl:Class ;
     rdfs:label "ellipsoidal coordinate system"@en ;
@@ -1397,6 +1401,13 @@ geocrs:DynamicReferenceFrame a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:Datum ;
     skos:definition "reference frame in which the defining parameters include time evolution"@en .
+
+geocrs:Ellipsoid a owl:Class ;
+    rdfs:label "ellipsoid"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:Geoid ;
+    owl:disjointWith geocrs:PrimeMeridian ;
+    skos:definition "reference ellipsoid"@en .
 
 geocrs:GeodeticCRS a owl:Class ;
     rdfs:label "geodetic coordinate reference system"@en ;
@@ -1511,11 +1522,6 @@ geocrs:AzimuthalProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection with the property that directions from a central point are preserved"@en .
 
-geocrs:PrimeMeridian a owl:Class ;
-    rdfs:label "prime meridian"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    skos:definition "meridian from which the longitudes of other meridians are quantified"@en .
-
 geocrs:PseudoConicalProjection a owl:Class ;
     rdfs:label "pseudo-conical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
@@ -1544,6 +1550,11 @@ geocrs:EquidistantProjection a owl:Class ;
 geocrs:PolyhedralProjection a owl:Class ;
     rdfs:label "polyhedral projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:PrimeMeridian a owl:Class ;
+    rdfs:label "prime meridian"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    skos:definition "meridian from which the longitudes of other meridians are quantified"@en .
 
 geocrs:CoordinateSystemAxis a owl:Class ;
     rdfs:label "coordinate system axis"@en ;

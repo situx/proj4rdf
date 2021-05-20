@@ -5,6 +5,216 @@ from rdflib import Graph
 from pyproj import CRS
 
 
+def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
+	epsgcode=str(x)
+	wkt=curcrs.to_wkt().replace("\"","'").strip()
+	if crsclass!=None:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type "+crsclass+" .\n")
+	elif "Projected CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:ProjectedCRS .\n")
+	elif "Geographic 2D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Bound CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:BoundCRS .\n")
+	elif "Vertical CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:VerticalCRS .\n")
+	elif "Geocentric CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeocentricCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Compound CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CompoundCRS .\n")
+		for subcrs in curcrs.sub_crs_list:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:includesSRS geoepsg:"+str(subcrs.to_epsg())+" .\n")			
+	else:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
+	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
+	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
+	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
+	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
+		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
+		if len(curcrs.coordinate_system.axis_list)==2:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
+		elif len(curcrs.coordinate_system.axis_list)==3:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
+		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
+		if curcrs.coordinate_system.remarks!=None:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
+		if curcrs.coordinate_system.scope!=None:
+			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:scope \""+str(curcrs.coordinate_system.scope)+"\" . \n")
+		for axis in curcrs.coordinate_system.axis_list:
+			axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
+			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:axis geocrsaxis:"+axisid+" . \n")
+			ttl.add("geocrsaxis:"+axisid+" rdf:type geocrs:CoordinateSystemAxis . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:direction geocrs:"+axis.direction+" . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:abbreviation \""+str(axis.abbrev).replace("\"","'")+"\"^^xsd:string . \n")				
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_conversion_factor \""+str(axis.unit_conversion_factor)+"\"^^xsd:double . \n")	
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_auth_code \""+str(axis.unit_auth_code)+"\"^^xsd:string . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
+			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")				
+			if axis.unit_name in units:
+				ttl.add("geocrsaxis:"+axisid+" geocrs:unit "+units[axis.unit_name]+" . \n")
+				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
+			else:
+				ttl.add("geocrsaxis:"+axisid+" geocrs:unit \""+axis.unit_name+"\" . \n")
+				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem geoepsg:"+epsgcode+"_cs . \n")		
+	elif curcrs.coordinate_system!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
+	if curcrs.source_crs!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS geoepsg:"+str(curcrs.source_crs.to_epsg())+" . \n")
+	if curcrs.target_crs!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:targetCRS geoepsg:"+str(curcrs.target_crs.to_epsg())+" . \n")
+	if curcrs.area_of_use!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdfs:label \""+str(curcrs.area_of_use.name).replace("\"","'")+"\"@en .\n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
+	if curcrs.get_geod()!=None:
+		geoid="geocrsgeod:"+str(geodcounter)
+		if curcrs.datum.ellipsoid!=None:
+			if curcrs.datum.ellipsoid.name in spheroids:
+				geoid=spheroids[curcrs.datum.ellipsoid.name]
+				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+			elif curcrs.get_geod().sphere:
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
+				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+			else:
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
+				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+		else:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
+			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
+			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
+		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
+		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
+		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
+		ttl.add(geoid+" geocrs:semiMajorAxis \""+str(curcrs.get_geod().a)+"\"^^xsd:string . \n")
+		ttl.add(geoid+" geocrs:semiMinorAxis \""+str(curcrs.get_geod().b)+"\"^^xsd:string . \n")
+		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
+		geodcounter+=1
+	if curcrs.coordinate_operation!=None:
+		coordoperationid=curcrs.coordinate_operation.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace(",","_").replace("&","and").strip()
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateOperation geocrsoperation:"+str(coordoperationid)+" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:accuracy \""+str(curcrs.coordinate_operation.accuracy)+"\"^^xsd:double . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:method_name \""+str(curcrs.coordinate_operation.method_name)+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geo:wktLiteral . \n")
+		if curcrs.coordinate_operation.scope!=None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:scope \""+str(curcrs.coordinate_operation.scope).replace("\"","'")+"\"^^xsd:string . \n")
+		if curcrs.coordinate_operation.remarks!=None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:comment \""+str(curcrs.coordinate_operation.remarks).replace("\"","'").replace("\n","")+"\"^^xsd:string . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:has_ballpark_transformation \""+str(curcrs.coordinate_operation.has_ballpark_transformation)+"\"^^xsd:boolean . \n")
+		if curcrs.coordinate_operation.area_of_use!=None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:area_of_use geocrsaou:"+str(coordoperationid)+"_area_of_use . \n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
+		if curcrs.coordinate_operation.towgs84!=None:
+			print(curcrs.coordinate_operation.towgs84)
+		for par in curcrs.coordinate_operation.params:
+			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdf:type owl:DatatypeProperty . \n") 
+			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:range xsd:double . \n") 
+			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:domain geocrs:CoordinateOperation . \n") 
+			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:label \""+str(par.name)+"\"@en . \n")				
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" \""+str(par.value)+"\"^^xsd:double . \n") 
+		for grid in curcrs.coordinate_operation.grids:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:grid geocrsgrid:"+str(grid.name).replace(" ","_")+" . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdf:type geocrs:Grid . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.full_name)+"\"@en . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.short_name)+"\"@en . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" geocrs:open_license \""+str(grid.open_license)+"\"^^xsd:boolean . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:comment \""+str(grid.url)+"\"@en . \n")
+		if curcrs.coordinate_operation.operations!=None:
+			for operation in curcrs.coordinate_operation.operations:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:operation \""+str(operation).replace("\n","").replace("\"","'")+"\"^^xsd:string . \n")
+		if curcrs.coordinate_operation.type_name==None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Conversion":
+			found=False
+			if curcrs.coordinate_operation.to_proj4()!=None:
+				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
+				for prj in projections:
+					if prj in proj4string:
+						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
+						found=True
+						break
+			if not found:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConversionOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Transformation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateTransformationOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Concatenated Operation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConcatenatedOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Other Coordinate Operation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:OtherCoordinateOperation . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:label \""+curcrs.coordinate_operation.name+": "+curcrs.coordinate_operation.method_name+"\"@en . \n")
+	if curcrs.datum!=None:
+		datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus").replace("[","_").replace("]","_"))
+		ttl.add("geoepsg:"+epsgcode+" geocrs:datum geocrsdatum:"+str(datumid)+" . \n")
+		if "Geodetic Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:GeodeticReferenceFrame . \n")
+		elif "Dynamic Vertical Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DynamicVerticalReferenceFrame . \n")
+		elif "Vertical Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:VerticalReferenceFrame . \n")
+		else:
+			print(curcrs.datum.type_name)
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
+		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
+		if curcrs.datum.remarks!=None:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdfs:comment \""+str(curcrs.datum.remarks)+"\"@en . \n")
+		if curcrs.datum.scope!=None:
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:scope \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
+		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdf:type geocrs:Ellipsoid .\n")	
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:inverse_flattening \""+str(curcrs.datum.ellipsoid.inverse_flattening)+"\"^^xsd:double .\n")			
+			if curcrs.datum.ellipsoid.remarks!=None:
+				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:comment \""+str(curcrs.datum.ellipsoid.remarks)+"\"^^xsd:string .\n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:is_semi_minor_computed \""+str(curcrs.datum.ellipsoid.is_semi_minor_computed).lower()+"\"^^xsd:boolean .\n")
+		elif curcrs.datum.ellipsoid!=None:	
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n")
+		if curcrs.prime_meridian!=None:
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:primeMeridian geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdf:type geocrs:PrimeMeridian . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:label \""+curcrs.prime_meridian.name+"\"@en . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:longitude \""+str(curcrs.prime_meridian.longitude)+"\"^^xsd:double . \n")
+			if curcrs.prime_meridian.unit_name in units:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit om:"+units[curcrs.prime_meridian.unit_name]+" . \n")
+				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
+			else:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+			if curcrs.prime_meridian.remarks!=None:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:comment \""+str(curcrs.prime_meridian.remarks)+"\"@en . \n")
+			if curcrs.prime_meridian.scope!=None:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:scope \""+str(curcrs.prime_meridian.scope)+"\"^^xsd:string . \n")				
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isVertical \""+str(curcrs.is_vertical).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isProjected \""+str(curcrs.is_projected).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeocentric \""+str(curcrs.is_geocentric).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeographic \""+str(curcrs.is_geographic).lower()+"\"^^xsd:boolean . \n")
+	if curcrs.utm_zone!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")	
+	if curcrs.to_proj4()!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
+	if curcrs.to_json()!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
+	if wkt!="":
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
+	#i+=1
+
 units={}
 units["m"]="om:meter"
 units["metre"]="om:metre"
@@ -47,6 +257,7 @@ spheroids["Clarke 1866"]="geocrsgeod:Clarke1866"
 spheroids["Clarke 1858"]="geocrsgeod:Clarke1858"
 spheroids["Clarke 1880"]="geocrsgeod:Clarke1880"
 spheroids["Helmert 1906"]="geocrsgeod:Helmert1906"
+spheroids["Moon_2000_IAU_IAG"]="geocrsgeod:Moon2000_IAU_IAG"
 spheroids["CGCS2000"]="geocrsgeod:CGCS2000"
 spheroids["GSK-2011"]="geocrsgeod:GSK2011"
 spheroids["Zach 1812"]="geocrsgeod:Zach1812"
@@ -142,6 +353,8 @@ ttl.add("geocrs:GeoSPARQLCRS dc:creator wd:Q67624599 .\n")
 ttl.add("geocrs:GeoSPARQLCRS dc:description \"This ontology models coordinate reference systems\"@en .\n")
 ttl.add("geocrs:GeoSPARQLCRS rdfs:label \"GeoSPARQL CRS Ontology Draft\"@en .\n")
 ttl.add("owl:versionInfo rdfs:label \"0.1\"^^xsd:double .\n")
+ttl.add("prov:Entity rdf:type owl:Class .\n")
+ttl.add("geocrs:Entity rdfs:label \"entity\"@en .\n")
 ttl.add("geocrs:SRSApplication rdf:type owl:Class .\n")
 ttl.add("geocrs:SRSApplication rdfs:label \"srs application\"@en .\n")
 ttl.add("geocrs:SRSApplication skos:definition \"an application for which a spatial reference system is used\"@en .\n")
@@ -618,6 +831,11 @@ ttl.add("geocrs:Ellipsoid rdfs:label \"ellipsoid\"@en .\n")
 ttl.add("geocrs:Ellipsoid owl:disjointWith geocrs:PrimeMeridian .\n")
 ttl.add("geocrs:Ellipsoid skos:definition \"reference ellipsoid\"@en .\n")
 ttl.add("geocrs:Ellipsoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TriaxialEllipsoid rdf:type owl:Class .\n")
+ttl.add("geocrs:TriaxialEllipsoid rdfs:subClassOf geocrs:Ellipsoid.\n")
+ttl.add("geocrs:TriaxialEllipsoid rdfs:label \"triaxial ellipsoid\"@en .\n")
+ttl.add("geocrs:TriaxialEllipsoid owl:disjointWith geocrs:PrimeMeridian .\n")
+ttl.add("geocrs:TriaxialEllipsoid skos:definition \"triaxial reference ellipsoid\"@en .\n")
 ttl.add("geocrs:Sphere rdf:type owl:Class .\n")
 ttl.add("geocrs:Sphere rdfs:subClassOf geocrs:Geoid .\n")
 ttl.add("geocrs:Sphere rdfs:label \"sphere\"@en .\n")
@@ -1347,6 +1565,7 @@ graph.serialize(destination='ontology.ttl', format='turtle')
 i=0
 curname=""
 mapp=pyproj.list.get_proj_operations_map()
+
 #for oper in mapp:
 #	print(mapp[oper])
 #	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrs:Projection .\n")
@@ -1357,212 +1576,8 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		print("EPSG: "+str(x))
 	except:
 		continue	
-	epsgcode=str(x)
-	wkt=curcrs.to_wkt().replace("\"","'").strip()
-	if "Projected CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:ProjectedCRS .\n")
-	elif "Geographic 2D CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
-	elif "Geographic 3D CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
-	elif "Bound CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:BoundCRS .\n")
-	elif "Vertical CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:VerticalCRS .\n")
-	elif "Geocentric CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeocentricCRS .\n")
-	elif "Geographic 3D CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
-	elif "Compound CRS" in curcrs.type_name:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CompoundCRS .\n")
-		for subcrs in curcrs.sub_crs_list:
-			ttl.add("geoepsg:"+epsgcode+" geocrs:includesSRS geoepsg:"+str(subcrs.to_epsg())+" .\n")			
-	else:
-		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
-	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
-	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
-	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
-	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
-		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
-		if len(curcrs.coordinate_system.axis_list)==2:
-			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
-		elif len(curcrs.coordinate_system.axis_list)==3:
-			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
-		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
-		if curcrs.coordinate_system.remarks!=None:
-			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
-		if curcrs.coordinate_system.scope!=None:
-			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:scope \""+str(curcrs.coordinate_system.scope)+"\" . \n")
-		for axis in curcrs.coordinate_system.axis_list:
-			axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
-			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:axis geocrsaxis:"+axisid+" . \n")
-			ttl.add("geocrsaxis:"+axisid+" rdf:type geocrs:CoordinateSystemAxis . \n")
-			ttl.add("geocrsaxis:"+axisid+" geocrs:direction geocrs:"+axis.direction+" . \n")
-			ttl.add("geocrsaxis:"+axisid+" geocrs:abbreviation \""+str(axis.abbrev).replace("\"","'")+"\"^^xsd:string . \n")				
-			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_conversion_factor \""+str(axis.unit_conversion_factor)+"\"^^xsd:double . \n")	
-			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_auth_code \""+str(axis.unit_auth_code)+"\"^^xsd:string . \n")
-			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
-			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")				
-			if axis.unit_name in units:
-				ttl.add("geocrsaxis:"+axisid+" geocrs:unit "+units[axis.unit_name]+" . \n")
-				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
-			else:
-				ttl.add("geocrsaxis:"+axisid+" geocrs:unit \""+axis.unit_name+"\" . \n")
-				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem geoepsg:"+epsgcode+"_cs . \n")		
-	elif curcrs.coordinate_system!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
-	if curcrs.source_crs!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS geoepsg:"+str(curcrs.source_crs.to_epsg())+" . \n")
-	if curcrs.target_crs!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:targetCRS geoepsg:"+str(curcrs.target_crs.to_epsg())+" . \n")
-	if curcrs.area_of_use!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
-		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
-		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdfs:label \""+str(curcrs.area_of_use.name).replace("\"","'")+"\"@en .\n")
-		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
-	if curcrs.get_geod()!=None:
-		geoid="geocrsgeod:"+str(geodcounter)
-		if curcrs.datum.ellipsoid!=None:
-			if curcrs.datum.ellipsoid.name in spheroids:
-				geoid=spheroids[curcrs.datum.ellipsoid.name]
-				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
-				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
-			elif curcrs.get_geod().sphere:
-				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
-				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
-				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
-			else:
-				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
-				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
-				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
-		else:
-			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
-			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
-			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
-		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
-		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
-		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
-		ttl.add(geoid+" geocrs:semiMajorAxis \""+str(curcrs.get_geod().a)+"\"^^xsd:string . \n")
-		ttl.add(geoid+" geocrs:semiMinorAxis \""+str(curcrs.get_geod().b)+"\"^^xsd:string . \n")
-		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
-		geodcounter+=1
-	if curcrs.coordinate_operation!=None:
-		coordoperationid=curcrs.coordinate_operation.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace(",","_").replace("&","and").strip()
-		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateOperation geocrsoperation:"+str(coordoperationid)+" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:accuracy \""+str(curcrs.coordinate_operation.accuracy)+"\"^^xsd:double . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:method_name \""+str(curcrs.coordinate_operation.method_name)+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geo:wktLiteral . \n")
-		if curcrs.coordinate_operation.scope!=None:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:scope \""+str(curcrs.coordinate_operation.scope).replace("\"","'")+"\"^^xsd:string . \n")
-		if curcrs.coordinate_operation.remarks!=None:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:comment \""+str(curcrs.coordinate_operation.remarks).replace("\"","'").replace("\n","")+"\"^^xsd:string . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:has_ballpark_transformation \""+str(curcrs.coordinate_operation.has_ballpark_transformation)+"\"^^xsd:boolean . \n")
-		if curcrs.coordinate_operation.area_of_use!=None:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:area_of_use geocrsaou:"+str(coordoperationid)+"_area_of_use . \n")
-			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
-			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
-			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
-		if curcrs.coordinate_operation.towgs84!=None:
-			print(curcrs.coordinate_operation.towgs84)
-		for par in curcrs.coordinate_operation.params:
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdf:type owl:DatatypeProperty . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:range xsd:double . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:domain geocrs:CoordinateOperation . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:label \""+str(par.name)+"\"@en . \n")				
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" \""+str(par.value)+"\"^^xsd:double . \n") 
-		for grid in curcrs.coordinate_operation.grids:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:grid geocrsgrid:"+str(grid.name).replace(" ","_")+" . \n")
-			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdf:type geocrs:Grid . \n")
-			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.full_name)+"\"@en . \n")
-			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.short_name)+"\"@en . \n")
-			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" geocrs:open_license \""+str(grid.open_license)+"\"^^xsd:boolean . \n")
-			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:comment \""+str(grid.url)+"\"@en . \n")
-		if curcrs.coordinate_operation.operations!=None:
-			for operation in curcrs.coordinate_operation.operations:
-				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:operation \""+str(operation).replace("\n","").replace("\"","'")+"\"^^xsd:string . \n")
-		if curcrs.coordinate_operation.type_name==None:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateOperation . \n")
-		elif curcrs.coordinate_operation.type_name=="Conversion":
-			found=False
-			if curcrs.coordinate_operation.to_proj4()!=None:
-				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
-				for prj in projections:
-					if prj in proj4string:
-						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
-						found=True
-						break
-			if not found:
-				ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConversionOperation . \n")
-		elif curcrs.coordinate_operation.type_name=="Transformation":
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateTransformationOperation . \n")
-		elif curcrs.coordinate_operation.type_name=="Concatenated Operation":
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateConcatenatedOperation . \n")
-		elif curcrs.coordinate_operation.type_name=="Other Coordinate Operation":
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:OtherCoordinateOperation . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:label \""+curcrs.coordinate_operation.name+": "+curcrs.coordinate_operation.method_name+"\"@en . \n")
-	if curcrs.datum!=None:
-		datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus").replace("[","_").replace("]","_"))
-		ttl.add("geoepsg:"+epsgcode+" geocrs:datum geocrsdatum:"+str(datumid)+" . \n")
-		if "Geodetic Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:GeodeticReferenceFrame . \n")
-		elif "Dynamic Vertical Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DynamicVerticalReferenceFrame . \n")
-		elif "Vertical Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:VerticalReferenceFrame . \n")
-		else:
-			print(curcrs.datum.type_name)
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
-		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
-		if curcrs.datum.remarks!=None:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdfs:comment \""+str(curcrs.datum.remarks)+"\"@en . \n")
-		if curcrs.datum.scope!=None:
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:scope \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
-		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
-			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
-			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdf:type geocrs:Ellipsoid .\n")	
-			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:inverse_flattening \""+str(curcrs.datum.ellipsoid.inverse_flattening)+"\"^^xsd:double .\n")			
-			if curcrs.datum.ellipsoid.remarks!=None:
-				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:comment \""+str(curcrs.datum.ellipsoid.remarks)+"\"^^xsd:string .\n")
-			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:is_semi_minor_computed \""+str(curcrs.datum.ellipsoid.is_semi_minor_computed).lower()+"\"^^xsd:boolean .\n")
-		elif curcrs.datum.ellipsoid!=None:	
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n")
-		if curcrs.prime_meridian!=None:
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:primeMeridian geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdf:type geocrs:PrimeMeridian . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:label \""+curcrs.prime_meridian.name+"\"@en . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:longitude \""+str(curcrs.prime_meridian.longitude)+"\"^^xsd:double . \n")
-			if curcrs.prime_meridian.unit_name in units:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit om:"+units[curcrs.prime_meridian.unit_name]+" . \n")
-				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
-			else:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
-			if curcrs.prime_meridian.remarks!=None:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:comment \""+str(curcrs.prime_meridian.remarks)+"\"@en . \n")
-			if curcrs.prime_meridian.scope!=None:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:scope \""+str(curcrs.prime_meridian.scope)+"\"^^xsd:string . \n")				
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isVertical \""+str(curcrs.is_vertical).lower()+"\"^^xsd:boolean . \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isProjected \""+str(curcrs.is_projected).lower()+"\"^^xsd:boolean . \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeocentric \""+str(curcrs.is_geocentric).lower()+"\"^^xsd:boolean . \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeographic \""+str(curcrs.is_geographic).lower()+"\"^^xsd:boolean . \n")
-	if curcrs.utm_zone!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")	
-	if curcrs.to_proj4()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
-	if curcrs.to_json()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
-	if wkt!="":
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
-	i+=1
+	crsToTTL(ttl,curcrs,x,geodcounter,None)
+crsToTTL(ttl,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["Moon_2000_IAU_IAG",1737400.0,0.0]],PRIMEM["Moon_Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433]]'),"GCS_Moon",geodcounter,"geocrs:SelenographicCRS")
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl), format='n3')
 graph2.serialize(destination='result.ttl', format='turtle')
@@ -1571,3 +1586,5 @@ graph2.serialize(destination='result.ttl', format='turtle')
 #for line in ttl:
 #	f.write(line)
 #f.close()
+
+
