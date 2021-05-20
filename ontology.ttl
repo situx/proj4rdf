@@ -7,6 +7,18 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+geocrs:2DCoordinateTransformationOperation a owl:Class ;
+    rdfs:label "2d coordinate transformation operation"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:CoordinateTransformationOperation ;
+    skos:definition "Coordinate operation in which the two 2-dimensional coordinate reference systems are based on different datums"@en .
+
+geocrs:3DCoordinateTransformationOperation a owl:Class ;
+    rdfs:label "3d coordinate transformation operation"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:CoordinateTransformationOperation ;
+    skos:definition "Coordinate operation in which the two 3-dimensional coordinate reference systems are based on different datums"@en .
+
 geocrs:AdministrativeCode a owl:Class ;
     rdfs:label "administrative code"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -337,6 +349,10 @@ geocrs:HorizontalCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CelestialCoordinateSystem ;
     skos:definition "A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane"@en .
 
+geocrs:IdentityOperation a owl:Class ;
+    rdfs:label "identity transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
 geocrs:Krovak a owl:Class ;
     rdfs:label "krovak projection"@en ;
     rdfs:subClassOf geocrs:ConicalProjection .
@@ -504,10 +520,26 @@ geocrs:RectangularPolyconicProjection a owl:Class ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoConicalProjection .
 
+geocrs:ReflectionOperation a owl:Class ;
+    rdfs:label "reflection transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
 geocrs:RobinsonProjection a owl:Class ;
     rdfs:label "robinson projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
+
+geocrs:RotationOperation a owl:Class ;
+    rdfs:label "rotation transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:ScaleOperation a owl:Class ;
+    rdfs:label "scale transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:ShearOperation a owl:Class ;
+    rdfs:label "shear transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
 
 geocrs:SinusoidalProjection a owl:Class ;
     rdfs:label "sinusoidal projection"@en ;
@@ -642,6 +674,10 @@ geocrs:TopographicMap a owl:Class ;
     geocrs:uses geocrs:ConformalProjection ;
     rdfs:subClassOf geocrs:SRSApplication ;
     skos:definition "A type of map characterized by large-scale detail and quantitative representation of relief."@en .
+
+geocrs:TranslationOperation a owl:Class ;
+    rdfs:label "translation transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
 
 geocrs:TwoPointEquidistantProjection a owl:Class ;
     rdfs:label "two-point equidistance projection"@en ;
@@ -1241,12 +1277,6 @@ geocrs:CoordinateConcatenatedOperation a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateOperation ;
     skos:definition "ordered sequence of two or more single coordinate operations"@en .
 
-geocrs:CoordinateTransformationOperation a owl:Class ;
-    rdfs:label "coordinate transformation operation"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    rdfs:subClassOf geocrs:SingleOperation ;
-    skos:definition "Coordinate operation in which the two coordinate reference systems are based on different datums"@en .
-
 geocrs:DatumEnsemble a owl:Class ;
     rdfs:label "datum ensemble"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1446,6 +1476,12 @@ geocrs:ConicalProjection a owl:Class ;
     rdfs:label "conical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:CoordinateTransformationOperation a owl:Class ;
+    rdfs:label "coordinate transformation operation"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:SingleOperation ;
+    skos:definition "Coordinate operation in which the two coordinate reference systems are based on different datums"@en .
+
 geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:label "orthogonal coordinate system"@en ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
@@ -1465,6 +1501,10 @@ geocrs:CelestialCoordinateSystem a owl:Class ;
 geocrs:PseudoAzimuthalProjection a owl:Class ;
     rdfs:label "pseudo-azimuthal projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:AffineTransformationOperation a owl:Class ;
+    rdfs:label "affine coordinate transformation operation"@en ;
+    rdfs:subClassOf geocrs:CoordinateTransformationOperation .
 
 geocrs:AzimuthalProjection a owl:Class ;
     rdfs:label "azimuthal projection"@en ;
