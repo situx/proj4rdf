@@ -14,12 +14,12 @@ geocrs:WGS_84_aou rdf:type geocrs:AreaOfUse .
 geocrs:WGS_84_cs geocrs:axis geocrs:WGS_84_cs_axis0 .
 geocrs:WGS_84_cs geocrs:axis geocrs:WGS_84_cs_axis1 .
 geocrs:WGS_84_cs rdf:type geocrs:CoordinateSystem .
-geocrs:WGS_84_cs rdfs:label "Ellipsoidal CS: North (°), East (°)."@en .
-geocrs:WGS_84_cs_axis0 geocrs:abbreviation "φ" .
+geocrs:WGS_84_cs rdfs:label "Ellipsoidal CS: North (�), East (�)."@en .
+geocrs:WGS_84_cs_axis0 geocrs:abbreviation "?" .
 geocrs:WGS_84_cs_axis0 geocrs:direction geocrs:north .
 geocrs:WGS_84_cs_axis0 geocrs:unit om:degree .
 geocrs:WGS_84_cs_axis0 rdf:type geocrs:CoordinateSystemAxis .
-geocrs:WGS_84_cs_axis1 geocrs:abbreviation "λ" .
+geocrs:WGS_84_cs_axis1 geocrs:abbreviation "?" .
 geocrs:WGS_84_cs_axis1 geocrs:direction geocrs:east .
 geocrs:WGS_84_cs_axis1 geocrs:unit om:degree .
 geocrs:WGS_84_cs_axis1 rdf:type geocrs:CoordinateSystemAxis .
