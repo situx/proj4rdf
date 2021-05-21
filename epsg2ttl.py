@@ -174,6 +174,15 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsdatum:"+str(datumid)+" rdfs:comment \""+str(curcrs.datum.remarks)+"\"@en . \n")
 		if curcrs.datum.scope!=None:
 			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:scope \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
+			if "," in curcrs.datum.scope:
+				for scp in curcrs.datum.scope.split(","):
+					#print("Scope: "+scp)
+					if scp.lower().strip().replace(".","") in scope:
+						ttl.add("geocrsdatum:"+str(datumid)+" geocrs:usage "+scope[scp.lower().strip().replace(".","")]+" . \n")
+						ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
+					else:
+						ttl.add("geocrsdatum:"+str(datumid)+" geocrs:usage \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
+			print(str(curcrs.datum.scope))
 		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
 			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
 			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
@@ -215,6 +224,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
 	#i+=1
 
+
+
+
 units={}
 units["m"]="om:meter"
 units["metre"]="om:metre"
@@ -222,6 +234,19 @@ units["grad"]="om:degree"
 units["degree"]="om:degree"
 units["ft"]="om:foot"
 units["us-ft"]="om:usfoot"
+scope={}
+scope["geodesy"]="geocrs:Geodesy"
+scope["topographic mapping"]="geocrs:TopographicMap"
+scope["spatial referencing"]="geocrs:SpatialReferencing"
+scope["engineering survey"]="geocrs:EngineeringSurvey"
+scope["satellite survey"]="geocrs:SatelliteSurvey"
+scope["coastal hydrography"]="geocrs:CoastalHydrography"
+scope["offshore engineering"]="geocrs:OffshoreEngineering"
+scope["hydrography"]="geocrs:Hydrography"
+scope["drilling"]="geocrs:Drilling"
+scope["nautical charting"]="geocrs:NauticalChart"
+scope["oil and gas exploration"]="geocrs:OilAndGasExploration"
+scope["cadastre"]="geocrs:CadastreMap"
 coordinatesystem={}
 coordinatesystem["ellipsoidal"]="geocrs:EllipsoidalCoordinateSystem"
 coordinatesystem["cartesian"]="geocrs:CartesianCoordinateSystem"
@@ -376,6 +401,10 @@ ttl.add("geocrs:ThematicMap rdf:type owl:Class .\n")
 ttl.add("geocrs:ThematicMap rdfs:label \"thematic map\"@en .\n")
 ttl.add("geocrs:ThematicMap skos:definition \"A map used to highlight a specific phenomenon\"@en .\n")
 ttl.add("geocrs:ThematicMap rdfs:subClassOf geocrs:SRSApplication .\n")
+ttl.add("geocrs:CadastreMap rdf:type owl:Class .\n")
+ttl.add("geocrs:CadastreMap rdfs:label \"cadastre map\"@en .\n")
+ttl.add("geocrs:CadastreMap skos:definition \"A map displaying a cadastre\"@en .\n")
+ttl.add("geocrs:CadastreMap rdfs:subClassOf geocrs:SRSApplication .\n")
 ttl.add("geocrs:ChloroplethMap rdf:type owl:Class .\n")
 ttl.add("geocrs:ChloroplethMap rdfs:label \"chloropleth map\"@en .\n")
 ttl.add("geocrs:ChloroplethMap skos:definition \"A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable \"@en .\n")
@@ -410,6 +439,10 @@ ttl.add("geocrs:SpatialReferenceSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:SpatialReferenceSystem rdfs:label \"spatial reference system\"@en .\n")
 ttl.add("geocrs:SpatialReferenceSystem skos:definition \"System for identifying position in the real world\"@en .\n")
 ttl.add("geocrs:SpatialReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .\n")
+ttl.add("geocrs:UnknownSpatialReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:UnknownSpatialReferenceSystem rdfs:label \"unknown spatial reference system\"@en .\n")
+ttl.add("geocrs:UnknownSpatialReferenceSystem skos:definition \"A spatial reference system which definition is not known\"@en .\n")
+ttl.add("geocrs:UnknownSpatialReferenceSystem rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
 ttl.add("geocrs:CoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CoordinateSystem rdfs:label \"coordinate system\"@en .\n")
 ttl.add("geocrs:CoordinateSystem skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space\"@en .\n")
@@ -510,7 +543,7 @@ ttl.add("geocrs:PerifocalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSyste
 ttl.add("geocrs:PerifocalCoordinateSystem rdfs:label \"perifocal coordinate system\"@en .\n")
 ttl.add("geocrs:OrdinalCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:OrdinalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
-ttl.add("geocrs:OrdinalCoordinateSystem rdfs:label \"Ordinal coordinate system\"@en .\n")
+ttl.add("geocrs:OrdinalCoordinateSystem rdfs:label \"ordinal coordinate system\"@en .\n")
 ttl.add("geocrs:OrdinalCoordinateSystem skos:definition \"n-dimensional coordinate system in which every axis uses integers\"@en .\n")
 ttl.add("geocrs:OrdinalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:ProjectedCoordinateSystem rdf:type owl:Class .\n")
@@ -1433,6 +1466,11 @@ ttl.add("geocrs:includesSRS rdfs:label \"includes srs\"@en .\n")
 ttl.add("geocrs:includesSRS skos:definition \"Indicates spatial reference systems used by a compound reference system\"@en .\n")
 ttl.add("geocrs:includesSRS rdfs:domain geocrs:CompoundCRS .\n")
 ttl.add("geocrs:includesSRS rdfs:range geocrs:CRS .\n")
+ttl.add("geocrs:usage rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:usage rdfs:label \"usage\"@en .\n")
+ttl.add("geocrs:usage skos:definition \"Indicates an application of an SRS for which this datum may be used\"@en .\n")
+ttl.add("geocrs:usage rdfs:domain geocrs:Datum .\n")
+ttl.add("geocrs:usage rdfs:range geocrs:SRSApplication .\n")
 ttl.add("geocrs:axis rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:axis rdfs:label \"axis\"@en .\n")
 ttl.add("geocrs:axis skos:definition \"An axis used by some ellipsoidal or cartesian coordinate system\"@en .\n")

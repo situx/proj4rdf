@@ -87,6 +87,11 @@ geocrs:BoundCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CRS .
 
+geocrs:CadastreMap a owl:Class ;
+    rdfs:label "cadastre map"@en ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "A map displaying a cadastre"@en .
+
 geocrs:CahillKeyesProjection a owl:Class ;
     rdfs:label "cahill-keyes projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
@@ -456,7 +461,7 @@ geocrs:OperationValue a owl:Class ;
     skos:definition "Value of a parameter used by a method to perform some coordinate operation"@en .
 
 geocrs:OrdinalCoordinateSystem a owl:Class ;
-    rdfs:label "Ordinal coordinate system"@en ;
+    rdfs:label "ordinal coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "n-dimensional coordinate system in which every axis uses integers"@en .
@@ -696,6 +701,11 @@ geocrs:TwoPointEquidistantProjection a owl:Class ;
 geocrs:UniversalTransverseMercatorProjection a owl:Class ;
     rdfs:label "universal transverse mercator projection"@en ;
     rdfs:subClassOf geocrs:TransverseMercatorProjection .
+
+geocrs:UnknownSpatialReferenceSystem a owl:Class ;
+    rdfs:label "unknown spatial reference system"@en ;
+    rdfs:subClassOf geocrs:SpatialReferenceSystem ;
+    skos:definition "A spatial reference system which definition is not known"@en .
 
 geocrs:VanDerGrintenProjection a owl:Class ;
     rdfs:label "van der grinten projection"@en ;
@@ -1228,6 +1238,12 @@ geocrs:up a geocrs:AxisDirection,
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is up relative to gravity"@en .
 
+geocrs:usage a owl:ObjectProperty ;
+    rdfs:label "usage"@en ;
+    rdfs:domain geocrs:Datum ;
+    rdfs:range geocrs:SRSApplication ;
+    skos:definition "Indicates an application of an SRS for which this datum may be used"@en .
+
 geocrs:uses a owl:ObjectProperty ;
     rdfs:label "uses"@en ;
     rdfs:domain geocrs:SRSApplication ;
@@ -1462,11 +1478,6 @@ geocrs:ReferenceSystem a owl:Class ;
     rdfs:label "reference system"@en ;
     skos:definition "a system that uses a reference to establish a position"@en .
 
-geocrs:SpatialReferenceSystem a owl:Class ;
-    rdfs:label "spatial reference system"@en ;
-    rdfs:subClassOf geocrs:ReferenceSystem ;
-    skos:definition "System for identifying position in the real world"@en .
-
 geocrs:TemporalCoordinateSystem a owl:Class ;
     rdfs:label "temporal coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1498,6 +1509,11 @@ geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
     skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
 
+geocrs:SpatialReferenceSystem a owl:Class ;
+    rdfs:label "spatial reference system"@en ;
+    rdfs:subClassOf geocrs:ReferenceSystem ;
+    skos:definition "System for identifying position in the real world"@en .
+
 geocrs:3DCoordinateSystem a owl:Class ;
     rdfs:label "3D coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
@@ -1525,10 +1541,6 @@ geocrs:AzimuthalProjection a owl:Class ;
 geocrs:PseudoConicalProjection a owl:Class ;
     rdfs:label "pseudo-conical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
-
-geocrs:SRSApplication a owl:Class ;
-    rdfs:label "srs application"@en ;
-    skos:definition "an application for which a spatial reference system is used"@en .
 
 geocrs:CompoundCRS a owl:Class ;
     rdfs:label "compound coordinate reference system"@en ;
@@ -1565,6 +1577,10 @@ geocrs:Geoid a owl:Class ;
     rdfs:label "geoid"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
+
+geocrs:SRSApplication a owl:Class ;
+    rdfs:label "srs application"@en ;
+    skos:definition "an application for which a spatial reference system is used"@en .
 
 geocrs:SingleCRS a owl:Class ;
     rdfs:label "single coordinate reference system"@en ;
