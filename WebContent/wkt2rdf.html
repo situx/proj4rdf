@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<title>WKT To RDF Converter</title>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href="css/yasqe.css"/>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/yasqe.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script>
+  function convertWKT(){
+    $.get(url+"rest/service/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        var json=JSON.parse(data)
+                $('#number').text(json["size"]+" Results");
+        var i=1;
+        var table="<thead><tr><th>Counter</th>"
+        for(variable in json["data"][0]){
+        	table+="<th>"+variable+"</th>"
+        }
+        table+="</tr></thead><tbody>"
+        for(obj in json["data"]){
+        	table+="<tr><td>"+i+++"</td>"
+        	for(variable in json["data"][obj]){
+        		if(json["data"][obj][variable].startsWith("http") || json["data"][obj][variable].startsWith("https")){
+            		table+="<td><a href=\""+json["data"][obj][variable]+"\" target=\"_blank\">"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</a></td>"
+        		}else{
+            		table+="<td>"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</td>"        			
+        		}
+        	}
+        	table+="</tr>"
+        }
+        $('#queryres').html(table+"</tbody>")    
+        clearMap();
+        var overlays={}
+        for(layer in json["geojson"]){
+            var officiallayer=L.geoJSON(json["geojson"][layer],{
+            	coordsToLatLng: function (coords) {
+            		//console.log($('#dataset').val())
+            		if($('#dataset').val()=="linkedgeodata.ttl" || $('#dataset').val()=="cologne.ttl"){
+            			return new L.LatLng(coords[0], coords[1], coords[2]);
+            		}
+            		return new L.LatLng(coords[1], coords[0], coords[2]);                 
+                },
+                style: function(){
+                	return {fillColor: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length]),
+                        color: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length])}
+                },
+                pointToLayer: function (feature, latlng) {
+                	var greyIcon = new L.Icon({
+                        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41],
+                        popupAnchor: [1, -34],
+                        shadowSize: [41, 41]
+                    });
+                	var mark=L.marker(feature.geometry.coordinates,{icon: greyIcon})
+                	markercollection.push(mark)
+                    return mark;
+                },
+            	onEachFeature: function (feature, layer) {
+            		 var popup="GeoJSON Result<br/><ul>"
+            		 for(prop in feature.properties){
+            		 	popup+="<li>"+prop+" - ";
+            		 	var value=trimcoords(feature.properties[prop],90)
+                		if(value.startsWith("http") || value.startsWith("https")){
+                    		popup+="<a href=\""+value+"\" target=\"_blank\">"+value+"</a>"
+                		}else if(value.includes("^^")){
+                			popup+="<a href=\""+value.substring(value.lastIndexOf('^')+1)+"\">"+value.substring(0,value.indexOf('^'))+"</a>"       			
+                		}else{
+                			popup+=value
+                		}
+            		 	popup+="</li>"
+            		 }
+            		 popup+="</ul>"
+            	     layer.bindPopup(popup);
+            }});
+            gardensLayerGroup = L.layerGroup()
+            .addLayer(officiallayer)
+            .addTo(mymap);
+            overlays[json["geojson"][layer]["name"]]=gardensLayerGroup;
+            //layercontrol.addOverlay(gardensLayerGroup, json["geojson"][layer]["name"]);
+            //overlayMaps[layer+""]=officiallayer;
+
+        }
+        mymap.removeControl(layercontrol);
+		// add one with the cities
+		overlayControl = L.control.layers(baseMaps, overlays).addTo(mymap);
+        mymap.fitBounds(officiallayer.getBounds());
+        $('#queryres').DataTable();
+        //$("#queryres").tablesorter(); 
+        if(geojsonres){
+        	saveTextAsFile(JSON.stringify(json["geojson"][0],null, 2),".geojson","queryresult")
+        }
+    });
+  }
+  
+  </script>
+  <style>
+  #mapid { height: 500px;}
+  </style>
+  <style>
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 500px;
+  max-width: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="page-header">
+<h1 align="center">WKT to RDF Converter</h1>
+</div>
+</header>
+<div class="container" role="main">
+  <div class="row">
+  <div class="col-sm-5">
+</select>
+<!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
+<br/>
+<textarea id="wktinput" rows=16 cols=45>
+</textarea><textarea id="rdfoutput" rows=16 cols=45>
+</textarea><br/>
+<br/>
+<button id="convertWKTButton" onClick="convertWKT()">Convert WKT To RDF</button>
+</div></div>
+</body>
+</html>
