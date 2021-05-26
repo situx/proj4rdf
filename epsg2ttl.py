@@ -31,6 +31,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	else:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrs:Earth .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
@@ -240,6 +241,7 @@ scope["topographic mapping"]="geocrs:TopographicMap"
 scope["spatial referencing"]="geocrs:SpatialReferencing"
 scope["engineering survey"]="geocrs:EngineeringSurvey"
 scope["satellite survey"]="geocrs:SatelliteSurvey"
+scope["satellite navigation"]="geocrs:SatelliteNvaigation"
 scope["coastal hydrography"]="geocrs:CoastalHydrography"
 scope["offshore engineering"]="geocrs:OffshoreEngineering"
 scope["hydrography"]="geocrs:Hydrography"
@@ -1179,6 +1181,17 @@ ttl.add("geocrs:ReflectionOperation rdfs:label \"reflection transformation opera
 ttl.add("geocrs:ScaleOperation rdf:type owl:Class .\n")
 ttl.add("geocrs:ScaleOperation rdfs:subClassOf geocrs:AffineTransformationOperation .\n")
 ttl.add("geocrs:ScaleOperation rdfs:label \"scale transformation operation\"@en .\n")
+ttl.add("geocrs:InterstellarBody rdf:type owl:Class .\n")
+ttl.add("geocrs:InterstellarBody rdfs:label \"interstellar body\"@en .\n")
+ttl.add("geocrs:Planet rdf:type owl:Class .\n")
+ttl.add("geocrs:Planet rdfs:label \"planet\"@en .\n")
+ttl.add("geocrs:Planet rdfs:subClassOf geocrs:InterstellarBody .\n")
+ttl.add("geocrs:Moon rdf:type owl:Class .\n")
+ttl.add("geocrs:Moon rdfs:label \"moon\"@en .\n")
+ttl.add("geocrs:Moon rdfs:subClassOf geocrs:InterstellarBody .\n")
+ttl.add("geocrs:Asteroid rdf:type owl:Class .\n")
+ttl.add("geocrs:Asteroid rdfs:label \"asteroid\"@en .\n")
+ttl.add("geocrs:Asteroid rdfs:subClassOf geocrs:InterstellarBody .\n")
 ttl.add("geocrs:RotationOperation rdf:type owl:Class .\n")
 ttl.add("geocrs:RotationOperation rdfs:subClassOf geocrs:AffineTransformationOperation .\n")
 ttl.add("geocrs:RotationOperation rdfs:label \"rotation transformation operation\"@en .\n")
@@ -1506,6 +1519,10 @@ ttl.add("geocrs:uses rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:uses rdfs:label \"uses\"@en .\n")
 ttl.add("geocrs:uses rdfs:domain geocrs:SRSApplication .\n")
 ttl.add("geocrs:uses rdfs:range geocrs:Projection .\n")
+ttl.add("geocrs:isApplicableTo rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:isApplicableTo rdfs:label \"is applicable to\"@en .\n")
+ttl.add("geocrs:isApplicableTo rdfs:domain geocrs:SpatialReferenceSystem .\n")
+ttl.add("geocrs:isApplicableTo rdfs:range geocrs:InterstellarBody .\n")
 ttl.add("geocrs:abbreviation rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:abbreviation rdfs:label \"axis abbreviation\"@en .\n")
 ttl.add("geocrs:abbreviation skos:definition \"The abbreviation used to identify an axis\"@en .\n")
@@ -1591,6 +1608,10 @@ ttl.add("geocrs:has_ballpark_transformation rdfs:range xsd:boolean .\n")
 ttl.add("geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:label \"is semi minor computed\"@en .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
+ttl.add("geocrs:Earth rdf:type geocrs:Planet, owl:NamedIndividual .\n")
+ttl.add("geocrs:Earth rdfs:label \"earth\"@en .\n")
+ttl.add("geocrs:EarthMoon rdf:type geocrs:Moon, owl:NamedIndividual .\n")
+ttl.add("geocrs:EarthMoon rdfs:label \"moon\"@en .\n")
 geodcounter=1
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttl), format='turtle')

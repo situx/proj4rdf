@@ -47,6 +47,10 @@ geocrs:ArmadilloProjection a owl:Class ;
     rdfs:label "armadillo projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection .
 
+geocrs:Asteroid a owl:Class ;
+    rdfs:label "asteroid"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
 geocrs:AtlantisProjection a owl:Class ;
     rdfs:label "atlantis projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
@@ -210,6 +214,14 @@ geocrs:DynamicVerticalReferenceFrame a owl:Class ;
     rdfs:subClassOf geocrs:DynamicReferenceFrame,
         geocrs:VerticalReferenceFrame ;
     skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
+
+geocrs:Earth a geocrs:Planet,
+        owl:NamedIndividual ;
+    rdfs:label "earth"@en .
+
+geocrs:EarthMoon a geocrs:Moon,
+        owl:NamedIndividual ;
+    rdfs:label "moon"@en .
 
 geocrs:EclipticCoordinateSystem a owl:Class ;
     rdfs:label "ecliptic coordinate system"@en ;
@@ -1007,6 +1019,11 @@ geocrs:inverse_flattening a owl:DatatypeProperty ;
     rdfs:range xsd:double ;
     skos:definition "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)"@en .
 
+geocrs:isApplicableTo a owl:ObjectProperty ;
+    rdfs:label "is applicable to"@en ;
+    rdfs:domain geocrs:SpatialReferenceSystem ;
+    rdfs:range geocrs:InterstellarBody .
+
 geocrs:isAppliedTo a owl:ObjectProperty ;
     rdfs:label "is applied to"@en ;
     rdfs:domain geocrs:ReferenceSystem ;
@@ -1355,6 +1372,10 @@ geocrs:LocalGridReferenceSystem a owl:Class ;
     rdfs:subClassOf geocrs:GridReferenceSystem ;
     skos:definition "a grid that divides space with precise positions relative to a datum and is valid on a part of the earth"@en .
 
+geocrs:Moon a owl:Class ;
+    rdfs:label "moon"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
 geocrs:ObliqueMercatorProjection a owl:Class ;
     rdfs:label "oblique mercator projection"@en ;
     rdfs:subClassOf geocrs:CylindricalProjection,
@@ -1371,6 +1392,10 @@ geocrs:ParametricCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:SingleCRS ;
     skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
+
+geocrs:Planet a owl:Class ;
+    rdfs:label "planet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
 
 geocrs:ProjectedCRS a owl:Class ;
     rdfs:label "projected coordinate reference system"@en ;
@@ -1504,15 +1529,13 @@ geocrs:CoordinateTransformationOperation a owl:Class ;
     rdfs:subClassOf geocrs:SingleOperation ;
     skos:definition "Coordinate operation in which the two coordinate reference systems are based on different datums"@en .
 
+geocrs:InterstellarBody a owl:Class ;
+    rdfs:label "interstellar body"@en .
+
 geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:label "orthogonal coordinate system"@en ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
     skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
-
-geocrs:SpatialReferenceSystem a owl:Class ;
-    rdfs:label "spatial reference system"@en ;
-    rdfs:subClassOf geocrs:ReferenceSystem ;
-    skos:definition "System for identifying position in the real world"@en .
 
 geocrs:3DCoordinateSystem a owl:Class ;
     rdfs:label "3D coordinate system"@en ;
@@ -1528,6 +1551,11 @@ geocrs:CelestialCoordinateSystem a owl:Class ;
 geocrs:PseudoAzimuthalProjection a owl:Class ;
     rdfs:label "pseudo-azimuthal projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:SpatialReferenceSystem a owl:Class ;
+    rdfs:label "spatial reference system"@en ;
+    rdfs:subClassOf geocrs:ReferenceSystem ;
+    skos:definition "System for identifying position in the real world"@en .
 
 geocrs:AffineTransformationOperation a owl:Class ;
     rdfs:label "affine coordinate transformation operation"@en ;
