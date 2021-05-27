@@ -1557,19 +1557,9 @@ geodcounter=1
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttl), format='turtle')
 graph.serialize(destination='ontology.ttl', format='turtle')
-#f = open("ontology.ttl", "w", encoding="utf-8")
-#f.write(ttlhead)
-#for line in ttl:
-#	f.write(line)
-#f.close()
 i=0
 curname=""
 mapp=pyproj.list.get_proj_operations_map()
-
-#for oper in mapp:
-#	print(mapp[oper])
-#	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrs:Projection .\n")
-#	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
@@ -1581,10 +1571,3 @@ crsToTTL(ttl,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl), format='n3')
 graph2.serialize(destination='result.ttl', format='turtle')
-#f = open("result.ttl", "w", encoding="utf-8")
-#f.write(ttlhead)
-#for line in ttl:
-#	f.write(line)
-#f.close()
-
-
