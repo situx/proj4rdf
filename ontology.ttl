@@ -553,6 +553,10 @@ geocrs:RotationOperation a owl:Class ;
     rdfs:label "rotation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformationOperation .
 
+geocrs:SRSRegistry a owl:Class ;
+    rdfs:label "srs registry"@en ;
+    skos:definition "A rdf-enabled registry for SRS definitions"@en .
+
 geocrs:ScaleOperation a owl:Class ;
     rdfs:label "scale transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformationOperation .
