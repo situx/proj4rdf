@@ -1,0 +1,104 @@
+@prefix : <http://www.semanticweb.org/timo.homburg/ontologies/2021/4/untitled-ontology-101#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.opengis.net/ont/crs/example#> .
+
+<http://www.opengis.net/ont/crs/example#> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#geoJSONLiteral
+<http://www.opengis.net/ont/geosparql#geoJSONLiteral> rdf:type rdfs:Datatype .
+
+
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+<http://www.opengis.net/ont/geosparql#wktLiteral> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#inSRS
+<http://www.opengis.net/ont/geosparql#inSRS> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+<http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/timo.homburg/ontologies/2021/4/untitled-ontology-101#asGeoJSON
+:asGeoJSON rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.opengis.net/ont/crs/CRS
+<http://www.opengis.net/ont/crs/CRS> rdf:type owl:Class ;
+                                     rdfs:label "coordinate reference system" .
+
+
+###  http://www.opengis.net/ont/crs/example##CityArea
+<http://www.opengis.net/ont/crs/example##CityArea> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/sf#Polygon
+<http://www.opengis.net/ont/sf#Polygon> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.opengis.net/def/crs/OGC/1.3/CRS84
+<http://www.opengis.net/def/crs/OGC/1.3/CRS84> rdf:type owl:NamedIndividual ,
+                                                        <http://www.opengis.net/ont/crs/CRS> .
+
+
+###  http://www.opengis.net/ont/crs/example#berlin_area2
+:berlin_area2 rdf:type owl:NamedIndividual ,
+                       <http://www.opengis.net/ont/crs/example##CityArea> ;
+              <http://www.opengis.net/ont/geosparql#hasGeometry> :berlin_area2_geom .
+
+
+###  http://www.opengis.net/ont/crs/example#berlin_area2_geom
+:berlin_area2_geom rdf:type owl:NamedIndividual ,
+                            <http://www.opengis.net/ont/sf#Polygon> ;
+                   <http://www.opengis.net/ont/geosparql#inSRS> <http://www.opengis.net/def/crs/OGC/1.3/CRS84> ;
+                   <http://www.opengis.net/ont/geosparql#asWKT> "POLYGON ((797575.649655694 5827314.90793617,798288.015761982 5827439.89844395,798373.457670374 5826973.09429399,797659.698314433 5826869.85896007,797575.649655694 5827314.90793617))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+                   :asGeoJSON "\"geometry\": { \"type\": \"Polygon\", \"coordinates\": [ [ [ 797575.649655694025569, 5827314.907936172559857 ], [ 798288.015761982183903, 5827439.898443946614861 ], [ 798373.457670374191366, 5826973.094293992966413 ], [ 797659.698314433451742, 5826869.858960069715977 ], [ 797575.649655694025569, 5827314.907936172559857 ] ] ] }"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
