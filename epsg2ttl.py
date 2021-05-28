@@ -1235,7 +1235,7 @@ ttl.add("geocrs:NaturalSatellite skos:definition \"an interstellar body orbiting
 ttl.add("geocrs:NaturalSatellite rdfs:subClassOf geocrs:InterstellarBody .\n")
 ttl.add("geocrs:Star rdf:type owl:Class .\n")
 ttl.add("geocrs:Star rdfs:label \"star\"@en .\n")
-ttl.add("geocrs:Star rdfs:subClassOf geocrs:NaturalSatellite .\n")
+ttl.add("geocrs:Star rdfs:subClassOf geocrs:InterstellarBody .\n")
 ttl.add("geocrs:Moon rdf:type owl:Class .\n")
 ttl.add("geocrs:Moon rdfs:label \"moon\"@en .\n")
 ttl.add("geocrs:Moon rdfs:subClassOf geocrs:NaturalSatellite .\n")

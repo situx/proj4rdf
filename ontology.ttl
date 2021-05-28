@@ -637,7 +637,7 @@ geocrs:SphericalCoordinateSystem a owl:Class ;
 
 geocrs:Star a owl:Class ;
     rdfs:label "star"@en ;
-    rdfs:subClassOf geocrs:NaturalSatellite .
+    rdfs:subClassOf geocrs:InterstellarBody .
 
 geocrs:StaticCRS a owl:Class ;
     rdfs:label "Static coordinate reference system"@en ;
@@ -1426,6 +1426,11 @@ geocrs:Moon a owl:Class ;
     rdfs:label "moon"@en ;
     rdfs:subClassOf geocrs:NaturalSatellite .
 
+geocrs:NaturalSatellite a owl:Class ;
+    rdfs:label "natural satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody ;
+    skos:definition "an interstellar body orbiting around another interstellar body"@en .
+
 geocrs:ObliqueMercatorProjection a owl:Class ;
     rdfs:label "oblique mercator projection"@en ;
     rdfs:subClassOf geocrs:CylindricalProjection,
@@ -1509,11 +1514,6 @@ geocrs:MercatorProjection a owl:Class ;
     rdfs:label "mercator projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:CylindricalProjection .
-
-geocrs:NaturalSatellite a owl:Class ;
-    rdfs:label "natural satellite"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody ;
-    skos:definition "an interstellar body orbiting around another interstellar body"@en .
 
 geocrs:ObliqueProjection a owl:Class ;
     rdfs:label "oblique projection"@en ;
@@ -1684,12 +1684,12 @@ geocrs:ConformalProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
 
-geocrs:InterstellarBody a owl:Class ;
-    rdfs:label "interstellar body"@en .
-
 geocrs:PseudoCylindricalProjection a owl:Class ;
     rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:InterstellarBody a owl:Class ;
+    rdfs:label "interstellar body"@en .
 
 geocrs:CylindricalProjection a owl:Class ;
     rdfs:label "cylindrical projection"@en ;
