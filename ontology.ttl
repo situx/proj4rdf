@@ -120,6 +120,10 @@ geocrs:ColombiaUrbanProjection a owl:Class ;
     rdfs:label "colombia urban projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:Comet a owl:Class ;
+    rdfs:label "comet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
 geocrs:ConicalCoordinateSystem a owl:Class ;
     rdfs:label "conical coordinate system"@en ;
     rdfs:subClassOf geocrs:3DCoordinateSystem,
@@ -514,6 +518,10 @@ geocrs:PerifocalCoordinateSystem a owl:Class ;
     rdfs:label "perifocal coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem .
 
+geocrs:Plutoid a owl:Class ;
+    rdfs:label "plutoid"@en ;
+    rdfs:subClassOf geocrs:DwarfPlanet .
+
 geocrs:PolarCoordinateSystem a owl:Class ;
     rdfs:label "polar coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -626,6 +634,10 @@ geocrs:SphericalCoordinateSystem a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:3DCoordinateSystem ;
     skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates"@en .
+
+geocrs:Star a owl:Class ;
+    rdfs:label "star"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
 
 geocrs:StaticCRS a owl:Class ;
     rdfs:label "Static coordinate reference system"@en ;
@@ -1085,6 +1097,11 @@ geocrs:longitude a owl:DatatypeProperty ;
     rdfs:range xsd:double ;
     skos:definition "Longitude of a prime meridian"@en .
 
+geocrs:mass a owl:DatatypeProperty ;
+    rdfs:label "mass"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
+
 geocrs:north a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "north"@en ;
@@ -1115,11 +1132,21 @@ geocrs:north_west a geocrs:AxisDirection,
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is approximately north-west"@en .
 
+geocrs:orbital_period a owl:DatatypeProperty ;
+    rdfs:label "orbital period"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
+
 geocrs:past a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "past"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "temporal axis positive direction is towards the past"@en .
+
+geocrs:planet_status a owl:ObjectProperty ;
+    rdfs:label "planet status"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:PlanetStatus .
 
 geocrs:port a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1138,6 +1165,11 @@ geocrs:projection a owl:ObjectProperty ;
     rdfs:domain geocrs:CRS ;
     rdfs:range geocrs:Projection .
 
+geocrs:radius a owl:DatatypeProperty ;
+    rdfs:label "radius"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
+
 geocrs:row_negative a geocrs:AxisDirection,
         owl:NamedIndividual ;
     rdfs:label "row negative"@en ;
@@ -1149,6 +1181,11 @@ geocrs:row_positive a geocrs:AxisDirection,
     rdfs:label "row positive"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is towards higher pixel row"@en .
+
+geocrs:satelliteOf a owl:ObjectProperty ;
+    rdfs:label "satellite of"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:InterstellarBody .
 
 geocrs:scope a owl:DatatypeProperty ;
     rdfs:label "scope"@en ;
@@ -1205,6 +1242,11 @@ geocrs:south_west a geocrs:AxisDirection,
     rdfs:label "south-west"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is approximately south-west"@en .
+
+geocrs:starDistance a owl:DatatypeProperty ;
+    rdfs:label "star distance"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
 
 geocrs:starboard a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1330,6 +1372,10 @@ geocrs:DatumEnsemble a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other"@en .
 
+geocrs:DwarfPlanet a owl:Class ;
+    rdfs:label "dwarf planet"@en ;
+    rdfs:subClassOf geocrs:Planet .
+
 geocrs:DynamicCRS a owl:Class ;
     rdfs:label "dynamic coordinate reference system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
@@ -1378,7 +1424,12 @@ geocrs:LocalGridReferenceSystem a owl:Class ;
 
 geocrs:Moon a owl:Class ;
     rdfs:label "moon"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
+    rdfs:subClassOf geocrs:NaturalSatellite .
+
+geocrs:NaturalSatellite a owl:Class ;
+    rdfs:label "natural satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody ;
+    skos:definition "an interstellar body orbiting around another interstellar body"@en .
 
 geocrs:ObliqueMercatorProjection a owl:Class ;
     rdfs:label "oblique mercator projection"@en ;
@@ -1397,9 +1448,10 @@ geocrs:ParametricCRS a owl:Class ;
     rdfs:subClassOf geocrs:SingleCRS ;
     skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
 
-geocrs:Planet a owl:Class ;
-    rdfs:label "planet"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
+geocrs:PlanetStatus a owl:Class ;
+    rdfs:label "planetstatus"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    skos:definition "indicates the confirmed status of an interstellar body"@en .
 
 geocrs:ProjectedCRS a owl:Class ;
     rdfs:label "projected coordinate reference system"@en ;
@@ -1478,6 +1530,10 @@ geocrs:PlanarCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
 
+geocrs:Planet a owl:Class ;
+    rdfs:label "planet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
 geocrs:RetroazimuthalProjection a owl:Class ;
     rdfs:label "retroazimuthal projection"@en ;
     rdfs:subClassOf geocrs:Projection .
@@ -1533,9 +1589,6 @@ geocrs:CoordinateTransformationOperation a owl:Class ;
     rdfs:subClassOf geocrs:SingleOperation ;
     skos:definition "Coordinate operation in which the two coordinate reference systems are based on different datums"@en .
 
-geocrs:InterstellarBody a owl:Class ;
-    rdfs:label "interstellar body"@en .
-
 geocrs:OrthogonalCoordinateSystem a owl:Class ;
     rdfs:label "orthogonal coordinate system"@en ;
     rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
@@ -1550,7 +1603,7 @@ geocrs:CelestialCoordinateSystem a owl:Class ;
     rdfs:label "celestial coordinate system"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
-    skos:definition "a coordinate system for specifying positions of celstial objects relative to physical reference points"@en .
+    skos:definition "a coordinate system for specifying positions of celestial objects relative to physical reference points"@en .
 
 geocrs:PseudoAzimuthalProjection a owl:Class ;
     rdfs:label "pseudo-azimuthal projection"@en ;
@@ -1639,6 +1692,9 @@ geocrs:ConformalProjection a owl:Class ;
 geocrs:PseudoCylindricalProjection a owl:Class ;
     rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:InterstellarBody a owl:Class ;
+    rdfs:label "interstellar body"@en .
 
 geocrs:CylindricalProjection a owl:Class ;
     rdfs:label "cylindrical projection"@en ;

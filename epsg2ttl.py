@@ -1,6 +1,7 @@
 import os
 import re
 import pyproj
+import csv
 from rdflib import Graph
 from pyproj import CRS
 
@@ -225,7 +226,41 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
 	#i+=1
 
-
+def parseAdditionalPlanetarySpheroids(filename,ttlstring):
+	with open('exoplanet.eu_catalog.csv') as csv_file:
+		csv_reader = csv.DictReader(csv_file)
+		for row in csv_reader:
+			curname=row["name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+			ttlstring.add("geocrsisbody:"+curname+" rdf:type geocrs:Planet .\n")
+			ttlstring.add("geocrsisbody:"+curname+" rdfs:label \""+str(row["name"])+"\"@en .\n")
+			if str(row["mass"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:mass \""+str(row["mass"])+"\"^^xsd:double .\n")
+			if str(row["orbital_period"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:orbital_period \""+str(row["orbital_period"])+"\"^^xsd:double .\n")
+			if str(row["radius"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
+			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrsisbody:"+str(row["planet_status"])+" .\n")
+			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdf:type geocrs:PlanetStatus .\n")
+			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdfs:label \""+row["planet_status"]+"\"@en .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["name"])+"\"@en .\n")
+			if str(row["semi_major_axis"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+			if str(row["eccentricity"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
+			if str(row["star_name"])!="":
+				starname=row["star_name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+				ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Star .\n")
+				ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["star_name"])+"\"@en .\n")			
+				if str(row["star_mass"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" geocrs:mass \""+row["star_mass"]+"\"^^xsd:double .\n")
+				if str(row["star_radius"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" geocrs:radius \""+row["star_radius"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:satelliteOf geocrsisbody:"+starname+" .\n")
+				if str(row["star_distance"])!="":
+					ttlstring.add("geocrsisbody:"+curname+" geocrs:starDistance \""+str(row["star_distance"])+"\"^^xsd:double .\n")
+		return ttlstring
 
 
 units={}
@@ -364,6 +399,7 @@ ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
 ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
 ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
+ttlhead+="@prefix geocrsisbody: <http://www.opengis.net/ont/crs/isbody/> .\n"
 ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
 ttlhead+="@prefix geocrsproj: <http://www.opengis.net/ont/crs/proj/> .\n"
 ttlhead+="@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .\n"
@@ -501,7 +537,7 @@ ttl.add("geocrs:ObliqueCoordinateSystem skos:definition \"A plane coordinate sys
 ttl.add("geocrs:CelestialCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:label \"celestial coordinate system\"@en .\n")
-ttl.add("geocrs:CelestialCoordinateSystem skos:definition \"a coordinate system for specifying positions of celstial objects relative to physical reference points\"@en .\n")
+ttl.add("geocrs:CelestialCoordinateSystem skos:definition \"a coordinate system for specifying positions of celestial objects relative to physical reference points\"@en .\n")
 ttl.add("geocrs:CelestialCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:EngineeringCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:EngineeringCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
@@ -876,6 +912,10 @@ ttl.add("geocrs:Sphere rdfs:subClassOf geocrs:Geoid .\n")
 ttl.add("geocrs:Sphere rdfs:label \"sphere\"@en .\n")
 ttl.add("geocrs:Sphere skos:definition \"reference sphere\"@en .\n")
 ttl.add("geocrs:Sphere rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:PlanetStatus rdf:type owl:Class .\n")
+ttl.add("geocrs:PlanetStatus rdfs:label \"planetstatus\"@en .\n")
+ttl.add("geocrs:PlanetStatus skos:definition \"indicates the confirmed status of an interstellar body\"@en .\n")
+ttl.add("geocrs:PlanetStatus rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:Geoid rdf:type owl:Class .\n")
 ttl.add("geocrs:Geoid rdfs:label \"geoid\"@en .\n")
 ttl.add("geocrs:Geoid skos:definition \"equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally\"@en .\n")
@@ -1189,9 +1229,25 @@ ttl.add("geocrs:InterstellarBody rdfs:label \"interstellar body\"@en .\n")
 ttl.add("geocrs:Planet rdf:type owl:Class .\n")
 ttl.add("geocrs:Planet rdfs:label \"planet\"@en .\n")
 ttl.add("geocrs:Planet rdfs:subClassOf geocrs:InterstellarBody .\n")
+ttl.add("geocrs:DwarfPlanet rdf:type owl:Class .\n")
+ttl.add("geocrs:DwarfPlanet rdfs:label \"dwarf planet\"@en .\n")
+ttl.add("geocrs:DwarfPlanet rdfs:subClassOf geocrs:Planet .\n")
+ttl.add("geocrs:Plutoid rdf:type owl:Class .\n")
+ttl.add("geocrs:Plutoid rdfs:label \"plutoid\"@en .\n")
+ttl.add("geocrs:Plutoid rdfs:subClassOf geocrs:DwarfPlanet .\n")
+ttl.add("geocrs:NaturalSatellite rdf:type owl:Class .\n")
+ttl.add("geocrs:NaturalSatellite rdfs:label \"natural satellite\"@en .\n")
+ttl.add("geocrs:NaturalSatellite skos:definition \"an interstellar body orbiting around another interstellar body\"@en .\n")
+ttl.add("geocrs:NaturalSatellite rdfs:subClassOf geocrs:InterstellarBody .\n")
+ttl.add("geocrs:Star rdf:type owl:Class .\n")
+ttl.add("geocrs:Star rdfs:label \"star\"@en .\n")
+ttl.add("geocrs:Star rdfs:subClassOf geocrs:InterstellarBody .\n")
 ttl.add("geocrs:Moon rdf:type owl:Class .\n")
 ttl.add("geocrs:Moon rdfs:label \"moon\"@en .\n")
-ttl.add("geocrs:Moon rdfs:subClassOf geocrs:InterstellarBody .\n")
+ttl.add("geocrs:Moon rdfs:subClassOf geocrs:NaturalSatellite .\n")
+ttl.add("geocrs:Comet rdf:type owl:Class .\n")
+ttl.add("geocrs:Comet rdfs:label \"comet\"@en .\n")
+ttl.add("geocrs:Comet rdfs:subClassOf geocrs:InterstellarBody .\n")
 ttl.add("geocrs:Asteroid rdf:type owl:Class .\n")
 ttl.add("geocrs:Asteroid rdfs:label \"asteroid\"@en .\n")
 ttl.add("geocrs:Asteroid rdfs:subClassOf geocrs:InterstellarBody .\n")
@@ -1454,6 +1510,14 @@ ttl.add("geocrs:projection rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:projection rdfs:label \"projection\"@en .\n")
 ttl.add("geocrs:projection rdfs:domain geocrs:CRS .\n")
 ttl.add("geocrs:projection rdfs:range geocrs:Projection .\n")
+ttl.add("geocrs:satelliteOf rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:satelliteOf rdfs:label \"satellite of\"@en .\n")
+ttl.add("geocrs:satelliteOf rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:satelliteOf rdfs:range geocrs:InterstellarBody .\n")
+ttl.add("geocrs:planet_status rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:planet_status rdfs:label \"planet status\"@en .\n")
+ttl.add("geocrs:planet_status rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:planet_status rdfs:range geocrs:PlanetStatus .\n")
 ttl.add("geocrs:coordinateSystem rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:coordinateSystem rdfs:label \"coordinate system\"@en .\n")
 ttl.add("geocrs:coordinateSystem skos:definition \"Associates a coordinate system with a coordinate reference system\"@en .\n")
@@ -1563,6 +1627,22 @@ ttl.add("geocrs:flatteningParameter rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:flatteningParameter rdfs:label \"flattening parameter\"@en .\n")
 ttl.add("geocrs:flatteningParameter rdfs:domain geocrs:Geoid .\n")
 ttl.add("geocrs:flatteningParameter rdfs:range xsd:double .\n")
+ttl.add("geocrs:orbital_period rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:orbital_period rdfs:label \"orbital period\"@en .\n")
+ttl.add("geocrs:orbital_period rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:orbital_period rdfs:range xsd:double .\n")
+ttl.add("geocrs:radius rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:radius rdfs:label \"radius\"@en .\n")
+ttl.add("geocrs:radius rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:radius rdfs:range xsd:double .\n")
+ttl.add("geocrs:starDistance rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:starDistance rdfs:label \"star distance\"@en .\n")
+ttl.add("geocrs:starDistance rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:starDistance rdfs:range xsd:double .\n")
+ttl.add("geocrs:mass rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:mass rdfs:label \"mass\"@en .\n")
+ttl.add("geocrs:mass rdfs:domain geocrs:InterstellarBody .\n")
+ttl.add("geocrs:mass rdfs:range xsd:double .\n")
 ttl.add("geocrs:semiMajorAxis rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:semiMajorAxis rdfs:label \"semi major axis\"@en .\n")
 ttl.add("geocrs:semiMajorAxis skos:definition \"Indicates the length of the semi major axis of an ellipsoid\"@en .\n")
@@ -1622,6 +1702,7 @@ graph.serialize(destination='ontology.ttl', format='turtle')
 i=0
 curname=""
 mapp=pyproj.list.get_proj_operations_map()
+parseAdditionalPlanetarySpheroids("exoplanet.eu_catalog.csv",ttl)
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
