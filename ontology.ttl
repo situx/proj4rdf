@@ -1146,7 +1146,7 @@ geocrs:past a geocrs:AxisDirection,
 geocrs:planet_status a owl:ObjectProperty ;
     rdfs:label "planet status"@en ;
     rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range geocrs:Projection .
+    rdfs:range geocrs:PlanetStatus .
 
 geocrs:port a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1447,6 +1447,11 @@ geocrs:ParametricCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:SingleCRS ;
     skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
+
+geocrs:PlanetStatus a owl:Class ;
+    rdfs:label "planetstatus"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    skos:definition "indicates the confirmed status of an interstellar body"@en .
 
 geocrs:ProjectedCRS a owl:Class ;
     rdfs:label "projected coordinate reference system"@en ;
