@@ -7,7 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:´
+    steps:
     - uses: actions/checkout@v1
     - name: Create Ontology Documentation 🔧
       run: |
@@ -20,8 +20,6 @@ jobs:
          sudo pip3 install wheel pylode
          cd docs
          doxygen Doxyfile
-         mkdir docs
-         cd docs
          pylode -i ../ontology.ttl -o index.html
          pylode -i ../rules.ttl -o rules.html -p vocpub
          pylode -i ../result.ttl -o index2.html
