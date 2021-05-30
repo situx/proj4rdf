@@ -11,7 +11,7 @@ var hierarchy =
     [ "CRSGeo", "a00281.html", null ],
     [ "Datum", "a00153.html", null ],
     [ "Ellipsoid", "a00157.html", null ],
-    [ "FunctionBase4", "a00709.html", [
+    [ "FunctionBase4", "a00713.html", [
       [ "ConvertCRS2", "a00189.html", null ]
     ] ],
     [ "CRSGeo.Nodes", "a00285.html", null ],

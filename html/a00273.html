@@ -694,18 +694,19 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">downliftSytem</a>(res);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                System.out.println(refsys);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                System.out.println(refsys.toWKT());</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                System.out.println(refsys.toProjJSON());</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                        String crs2 = CRS.forCode(<span class="stringliteral">&quot;EPSG:25832&quot;</span>).toWKT();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        System.out.println(crs2);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        org.opengis.referencing.crs.CoordinateReferenceSystem crs = CRS.fromWKT(refsys.toWKT());</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException e) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                        e.printStackTrace();</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                System.out.println(refsys.toGML());</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                System.out.println(refsys.toProjJSON());</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        String crs2 = CRS.forCode(<span class="stringliteral">&quot;EPSG:25832&quot;</span>).toWKT();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        System.out.println(crs2);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                        org.opengis.referencing.crs.CoordinateReferenceSystem crs = CRS.fromWKT(refsys.toWKT());</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException e) {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00273.html#abac27a0520e6718b6d6eb0541bd74c2b">RDFCRSToWKT.curCRSURI</a>, <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00273.html#a098344af0b82edd879e12d268ed1de9e">RDFCRSToWKT.GeoSPARQLCRSURI</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
+<p class="reference">References <a class="el" href="a00273.html#abac27a0520e6718b6d6eb0541bd74c2b">RDFCRSToWKT.curCRSURI</a>, <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00273.html#a098344af0b82edd879e12d268ed1de9e">RDFCRSToWKT.GeoSPARQLCRSURI</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
 
 </div>
 </div>

@@ -67,12 +67,15 @@ $(document).ready(function(){initNavTree('a00213.html',''); initResizable(); });
 <div class="title">IsEligibleConversion Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Indicates whether two srs definitions are eligible for a conversion of coordinates.  
+ <a href="a00213.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for IsEligibleConversion:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00212.png" border="0" usemap="#IsEligibleConversion_inherit__map" alt="Inheritance graph"/></div>
 <map name="IsEligibleConversion_inherit__map" id="IsEligibleConversion_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,160,107"/>
+<area shape="rect" title="Indicates whether two srs definitions are eligible for a conversion of coordinates." alt="" coords="5,80,160,107"/>
 <area shape="rect" title=" " alt="" coords="24,5,141,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -81,7 +84,7 @@ Collaboration diagram for IsEligibleConversion:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00211.png" border="0" usemap="#IsEligibleConversion_coll__map" alt="Collaboration graph"/></div>
 <map name="IsEligibleConversion_coll__map" id="IsEligibleConversion_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,160,107"/>
+<area shape="rect" title="Indicates whether two srs definitions are eligible for a conversion of coordinates." alt="" coords="5,80,160,107"/>
 <area shape="rect" title=" " alt="" coords="24,5,141,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -91,7 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a892f62c3bf1ab2917fc8745f0b6da2a3"><td class="memItemLeft" align="right" valign="top">NodeValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00213.html#a892f62c3bf1ab2917fc8745f0b6da2a3">exec</a> (NodeValue v1, NodeValue v2)</td></tr>
 <tr class="separator:a892f62c3bf1ab2917fc8745f0b6da2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Indicates whether two srs definitions are eligible for a conversion of coordinates. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a892f62c3bf1ab2917fc8745f0b6da2a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a892f62c3bf1ab2917fc8745f0b6da2a3">&#9670;&nbsp;</a></span>exec()</h2>
 
@@ -117,14 +122,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                          {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                GeometryWrapper wrapper1=GeometryWrapper.extract(v);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">if</span>(wrapper1 instanceof GeometryWrapper) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                GeometryWrapper geometry = GeometryWrapper.extract(v);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">return</span> NodeValue.makeBoolean(CRS.isHorizontalCRS(geometry.getCRS()));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> NodeValue.FALSE;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                          {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                GeometryWrapper wrapper1=GeometryWrapper.extract(v1);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">if</span>(wrapper1 instanceof GeometryWrapper) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                GeometryWrapper geometry = GeometryWrapper.extract(v1);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> NodeValue.makeBoolean(CRS.isHorizontalCRS(geometry.getCRS()));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> NodeValue.FALSE;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -201,6 +201,7 @@ var a00281 =
     [ "st_isClosed", "a00281.html#a2ad1c4afcc7ea318cd481493ebd5c39f", null ],
     [ "st_isCollection", "a00281.html#afc9f785f1d2a10a45de63be0aced1f77", null ],
     [ "st_isConvex", "a00281.html#a21870bf4fb0d87c85e1c6507fd2cd5ea", null ],
+    [ "st_isEligibleConversion", "a00281.html#a5c546df5a07ac556686c3c31c0aec222", null ],
     [ "st_isEmpty", "a00281.html#a575302a5ab1fb08c4463ff004884e980", null ],
     [ "st_isEquilateralTriangle", "a00281.html#ab04b9ca768e83decb45b077f0afca77a", null ],
     [ "st_isGrayscale", "a00281.html#ace0c2fe46440238587948ef5316068fb", null ],

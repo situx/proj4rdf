@@ -88,8 +88,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa902c6d1cea92aa18f88eef2779152c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memItemLeft" align="right" valign="top">JSONObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">toProjJSON</a> ()</td></tr>
 <tr class="separator:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d99e0ee6df14339693337001c962dc3"><td class="memItemLeft" align="right" valign="top">JSONObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00137.html#a9d99e0ee6df14339693337001c962dc3">toGML</a> ()</td></tr>
-<tr class="separator:a9d99e0ee6df14339693337001c962dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ae4a79473f4a938f9bf62813f44f70"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00137.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a> ()</td></tr>
+<tr class="separator:a83ae4a79473f4a938f9bf62813f44f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec44d50b36093db7d8b1b3cd91ec474"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a> ()</td></tr>
 <tr class="separator:acec44d50b36093db7d8b1b3cd91ec474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -109,31 +109,45 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a786b946aa5d64379c660d741a674a14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9d99e0ee6df14339693337001c962dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d99e0ee6df14339693337001c962dc3">&#9670;&nbsp;</a></span>toGML()</h2>
+<a id="a83ae4a79473f4a938f9bf62813f44f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ae4a79473f4a938f9bf62813f44f70">&#9670;&nbsp;</a></span>toGML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">JSONObject toGML </td>
+          <td class="memname">String toGML </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                result.put(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                result.put(<span class="stringliteral">&quot;abbreviation&quot;</span>, <a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                result.put(<span class="stringliteral">&quot;direction&quot;</span>, <a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                result.put(<span class="stringliteral">&quot;unit&quot;</span>, <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                              {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                XMLOutputFactory factory = XMLOutputFactory.newInstance();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                StringWriter strwriter=<span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                XMLStreamWriter writer;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        writer = <span class="keyword">new</span> IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:CoordinateSystemAxis&quot;</span>);   </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:name&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:axisAbbrev&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:axisDirection&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        writer.flush();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">Axis.angleunit</a>, <a class="el" href="a00137.html#a779321852bd504381da29791a6eb5667">Axis.axisabbreviation</a>, <a class="el" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">Axis.axisdirection</a>, and <a class="el" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">Axis.axisname</a>.</p>
-
 </div>
 </div>
 <a id="aa902c6d1cea92aa18f88eef2779152c7"></a>
@@ -150,10 +164,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                               {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                               {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -171,14 +185,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                       {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                result.put(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                result.put(<span class="stringliteral">&quot;abbreviation&quot;</span>, <a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                result.put(<span class="stringliteral">&quot;direction&quot;</span>, <a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                result.put(<span class="stringliteral">&quot;unit&quot;</span>, <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                       {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                result.put(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                result.put(<span class="stringliteral">&quot;abbreviation&quot;</span>, <a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                result.put(<span class="stringliteral">&quot;direction&quot;</span>, <a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                result.put(<span class="stringliteral">&quot;unit&quot;</span>, <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">Axis.angleunit</a>, <a class="el" href="a00137.html#a779321852bd504381da29791a6eb5667">Axis.axisabbreviation</a>, <a class="el" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">Axis.axisdirection</a>, and <a class="el" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">Axis.axisname</a>.</p>
 
@@ -198,11 +212,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                 {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Axis [angleunit=&quot;</span> + <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a> + <span class="stringliteral">&quot;, unitconversionfactor=&quot;</span> + <a class="code" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">unitconversionfactor</a> + <span class="stringliteral">&quot;, axisname=&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                + <a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a> + <span class="stringliteral">&quot;, axisdirection=&quot;</span> + <a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a> + <span class="stringliteral">&quot;, axisabbreviation=&quot;</span> + <a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                + <span class="stringliteral">&quot;, axisorder=&quot;</span> + <a class="code" href="a00137.html#a786b946aa5d64379c660d741a674a14e">axisorder</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                 {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Axis [angleunit=&quot;</span> + <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a> + <span class="stringliteral">&quot;, unitconversionfactor=&quot;</span> + <a class="code" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">unitconversionfactor</a> + <span class="stringliteral">&quot;, axisname=&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                + <a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a> + <span class="stringliteral">&quot;, axisdirection=&quot;</span> + <a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a> + <span class="stringliteral">&quot;, axisabbreviation=&quot;</span> + <a class="code" href="a00137.html#a779321852bd504381da29791a6eb5667">axisabbreviation</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                + <span class="stringliteral">&quot;, axisorder=&quot;</span> + <a class="code" href="a00137.html#a786b946aa5d64379c660d741a674a14e">axisorder</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">Axis.angleunit</a>, <a class="el" href="a00137.html#a779321852bd504381da29791a6eb5667">Axis.axisabbreviation</a>, <a class="el" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">Axis.axisdirection</a>, <a class="el" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">Axis.axisname</a>, <a class="el" href="a00137.html#a786b946aa5d64379c660d741a674a14e">Axis.axisorder</a>, and <a class="el" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">Axis.unitconversionfactor</a>.</p>
 
@@ -222,18 +236,18 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                              {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                builder.append(<span class="stringliteral">&quot;AXIS[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>+<span class="stringliteral">&quot;,ORDER[&quot;</span>+<a class="code" href="a00137.html#a786b946aa5d64379c660d741a674a14e">axisorder</a>+<span class="stringliteral">&quot;],&quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>.contains(<span class="stringliteral">&quot;degree&quot;</span>) || <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>.contains(<span class="stringliteral">&quot;rad&quot;</span>)) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        builder.append(<span class="stringliteral">&quot;ANGLEUNIT[&quot;</span>);                   </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }<span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        builder.append(<span class="stringliteral">&quot;LENGTHUNIT[&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                builder.append(<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">unitconversionfactor</a>+<span class="stringliteral">&quot;]&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                builder.append(<span class="stringliteral">&quot;]&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                              {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                builder.append(<span class="stringliteral">&quot;AXIS[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">axisname</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">axisdirection</a>+<span class="stringliteral">&quot;,ORDER[&quot;</span>+<a class="code" href="a00137.html#a786b946aa5d64379c660d741a674a14e">axisorder</a>+<span class="stringliteral">&quot;],&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>.contains(<span class="stringliteral">&quot;degree&quot;</span>) || <a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>.contains(<span class="stringliteral">&quot;rad&quot;</span>)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        builder.append(<span class="stringliteral">&quot;ANGLEUNIT[&quot;</span>);                   </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }<span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        builder.append(<span class="stringliteral">&quot;LENGTHUNIT[&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                builder.append(<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">angleunit</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">unitconversionfactor</a>+<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                builder.append(<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">Axis.angleunit</a>, <a class="el" href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">Axis.axisdirection</a>, <a class="el" href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">Axis.axisname</a>, <a class="el" href="a00137.html#a786b946aa5d64379c660d741a674a14e">Axis.axisorder</a>, and <a class="el" href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">Axis.unitconversionfactor</a>.</p>
 
@@ -252,7 +266,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a9d99e0ee6df14339693337001c962dc3">Axis.toGML()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -268,7 +282,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a9d99e0ee6df14339693337001c962dc3">Axis.toGML()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, and <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, and <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>.</p>
 
 </div>
 </div>
@@ -284,7 +298,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a9d99e0ee6df14339693337001c962dc3">Axis.toGML()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -300,7 +314,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a9d99e0ee6df14339693337001c962dc3">Axis.toGML()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00137.html#a8ea8eae38d9733ebbaf710648db2d2aa">Axis.toProjJSON()</a>, <a class="el" href="a00137.html#ad146fa8579a5f8a876c4688cc5a68520">Axis.toString()</a>, and <a class="el" href="a00137.html#acec44d50b36093db7d8b1b3cd91ec474">Axis.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -338,12 +352,12 @@ Public Attributes</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00137_html_a0a6f97279920a7acf95d632b62d66eeb"><div class="ttname"><a href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">proj4rdf.data.Axis.angleunit</a></div><div class="ttdeci">String angleunit</div><div class="ttdef"><b>Definition:</b> Axis.java:15</div></div>
-<div class="ttc" id="aa00137_html_a786b946aa5d64379c660d741a674a14e"><div class="ttname"><a href="a00137.html#a786b946aa5d64379c660d741a674a14e">proj4rdf.data.Axis.axisorder</a></div><div class="ttdeci">Integer axisorder</div><div class="ttdef"><b>Definition:</b> Axis.java:25</div></div>
-<div class="ttc" id="aa00137_html_acc727d3d95e33e235e9d3f62933bb5c2"><div class="ttname"><a href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">proj4rdf.data.Axis.axisname</a></div><div class="ttdeci">String axisname</div><div class="ttdef"><b>Definition:</b> Axis.java:19</div></div>
-<div class="ttc" id="aa00137_html_a7981e5b0af7f9c5a2ce74442ff7b0933"><div class="ttname"><a href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">proj4rdf.data.Axis.axisdirection</a></div><div class="ttdeci">String axisdirection</div><div class="ttdef"><b>Definition:</b> Axis.java:21</div></div>
-<div class="ttc" id="aa00137_html_a779321852bd504381da29791a6eb5667"><div class="ttname"><a href="a00137.html#a779321852bd504381da29791a6eb5667">proj4rdf.data.Axis.axisabbreviation</a></div><div class="ttdeci">String axisabbreviation</div><div class="ttdef"><b>Definition:</b> Axis.java:23</div></div>
-<div class="ttc" id="aa00137_html_abb4cc0b41bd2492e80c75c990f708837"><div class="ttname"><a href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">proj4rdf.data.Axis.unitconversionfactor</a></div><div class="ttdeci">Double unitconversionfactor</div><div class="ttdef"><b>Definition:</b> Axis.java:17</div></div>
+<div class="ttc" id="aa00137_html_a0a6f97279920a7acf95d632b62d66eeb"><div class="ttname"><a href="a00137.html#a0a6f97279920a7acf95d632b62d66eeb">proj4rdf.data.Axis.angleunit</a></div><div class="ttdeci">String angleunit</div><div class="ttdef"><b>Definition:</b> Axis.java:23</div></div>
+<div class="ttc" id="aa00137_html_a786b946aa5d64379c660d741a674a14e"><div class="ttname"><a href="a00137.html#a786b946aa5d64379c660d741a674a14e">proj4rdf.data.Axis.axisorder</a></div><div class="ttdeci">Integer axisorder</div><div class="ttdef"><b>Definition:</b> Axis.java:33</div></div>
+<div class="ttc" id="aa00137_html_acc727d3d95e33e235e9d3f62933bb5c2"><div class="ttname"><a href="a00137.html#acc727d3d95e33e235e9d3f62933bb5c2">proj4rdf.data.Axis.axisname</a></div><div class="ttdeci">String axisname</div><div class="ttdef"><b>Definition:</b> Axis.java:27</div></div>
+<div class="ttc" id="aa00137_html_a7981e5b0af7f9c5a2ce74442ff7b0933"><div class="ttname"><a href="a00137.html#a7981e5b0af7f9c5a2ce74442ff7b0933">proj4rdf.data.Axis.axisdirection</a></div><div class="ttdeci">String axisdirection</div><div class="ttdef"><b>Definition:</b> Axis.java:29</div></div>
+<div class="ttc" id="aa00137_html_a779321852bd504381da29791a6eb5667"><div class="ttname"><a href="a00137.html#a779321852bd504381da29791a6eb5667">proj4rdf.data.Axis.axisabbreviation</a></div><div class="ttdeci">String axisabbreviation</div><div class="ttdef"><b>Definition:</b> Axis.java:31</div></div>
+<div class="ttc" id="aa00137_html_abb4cc0b41bd2492e80c75c990f708837"><div class="ttname"><a href="a00137.html#abb4cc0b41bd2492e80c75c990f708837">proj4rdf.data.Axis.unitconversionfactor</a></div><div class="ttdeci">Double unitconversionfactor</div><div class="ttdef"><b>Definition:</b> Axis.java:25</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

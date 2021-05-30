@@ -68,16 +68,21 @@ $(document).ready(function(){initNavTree('a00153.html',''); initResizable(); });
 <div class="title">Datum Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Representation of a geodetic datum.  
+ <a href="a00153.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for Datum:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00151.png" border="0" usemap="#Datum_coll__map" alt="Collaboration graph"/></div>
 <map name="Datum_coll__map" id="Datum_coll__map">
-<area shape="rect" title=" " alt="" coords="131,245,198,272"/>
-<area shape="rect" title=" " alt="" coords="20,5,80,32"/>
-<area shape="rect" href="a00157.html" title=" " alt="" coords="256,155,334,181"/>
-<area shape="rect" href="a00161.html" title=" " alt="" coords="111,155,228,181"/>
-<area shape="rect" title=" " alt="" coords="358,5,426,32"/>
+<area shape="rect" title="Representation of a geodetic datum." alt="" coords="267,260,334,287"/>
+<area shape="rect" title=" " alt="" coords="5,5,65,32"/>
+<area shape="rect" href="a00157.html" title="Representation of the ellipsoid of a geodetic datum." alt="" coords="202,162,279,189"/>
+<area shape="rect" href="a00161.html" title=" " alt="" coords="303,162,421,189"/>
+<area shape="rect" title=" " alt="" coords="376,5,444,32"/>
+<area shape="rect" title=" " alt="" coords="487,162,600,189"/>
+<area shape="rect" title=" " alt="" coords="563,5,609,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -87,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa902c6d1cea92aa18f88eef2779152c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memItemLeft" align="right" valign="top">JSONObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">toProjJSON</a> ()</td></tr>
 <tr class="separator:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d99e0ee6df14339693337001c962dc3"><td class="memItemLeft" align="right" valign="top">JSONObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a9d99e0ee6df14339693337001c962dc3">toGML</a> ()</td></tr>
-<tr class="separator:a9d99e0ee6df14339693337001c962dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ae4a79473f4a938f9bf62813f44f70"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a> ()</td></tr>
+<tr class="separator:a83ae4a79473f4a938f9bf62813f44f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
 <tr class="separator:ad146fa8579a5f8a876c4688cc5a68520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec44d50b36093db7d8b1b3cd91ec474"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a> ()</td></tr>
@@ -99,15 +104,25 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4124247ee4dfa0cb7078c3355e1b5241"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a></td></tr>
+<tr class="memdesc:a4124247ee4dfa0cb7078c3355e1b5241"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the datum.  <a href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">More...</a><br /></td></tr>
 <tr class="separator:a4124247ee4dfa0cb7078c3355e1b5241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe3b6a1aa97ec6d1b27dfb36d560308"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a></td></tr>
+<tr class="memdesc:abfe3b6a1aa97ec6d1b27dfb36d560308"><td class="mdescLeft">&#160;</td><td class="mdescRight">An identifier for the datum.  <a href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">More...</a><br /></td></tr>
 <tr class="separator:abfe3b6a1aa97ec6d1b27dfb36d560308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2bd5aff8299edb4e2b019586052a9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00157.html">Ellipsoid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a></td></tr>
+<tr class="memdesc:a1a2bd5aff8299edb4e2b019586052a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The description of the ellipsoid/geoid which this datum uses.  <a href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">More...</a><br /></td></tr>
 <tr class="separator:a1a2bd5aff8299edb4e2b019586052a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4304802481276a17b15303a2287ded2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00161.html">PrimeMeridian</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a></td></tr>
+<tr class="memdesc:ad4304802481276a17b15303a2287ded2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional description of a prime meridian.  <a href="a00153.html#ad4304802481276a17b15303a2287ded2">More...</a><br /></td></tr>
 <tr class="separator:ad4304802481276a17b15303a2287ded2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacb194c867f8de6ec2f155f59a80f82"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#afacb194c867f8de6ec2f155f59a80f82">interstellarbody</a></td></tr>
+<tr class="separator:afacb194c867f8de6ec2f155f59a80f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847332ff2b57f2599ccadbda1cbd9baa"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00153.html#a847332ff2b57f2599ccadbda1cbd9baa">usagescope</a></td></tr>
+<tr class="separator:a847332ff2b57f2599ccadbda1cbd9baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representation of a geodetic datum. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2bff55fe7265cad512225aa470501d6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bff55fe7265cad512225aa470501d6d">&#9670;&nbsp;</a></span>datumQuery()</h2>
 
@@ -122,31 +137,63 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                      {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                      {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9d99e0ee6df14339693337001c962dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d99e0ee6df14339693337001c962dc3">&#9670;&nbsp;</a></span>toGML()</h2>
+<a id="a83ae4a79473f4a938f9bf62813f44f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ae4a79473f4a938f9bf62813f44f70">&#9670;&nbsp;</a></span>toGML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">JSONObject toGML </td>
+          <td class="memname">String toGML </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                  {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                              {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                XMLOutputFactory factory = XMLOutputFactory.newInstance();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                StringWriter strwriter=<span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                XMLStreamWriter writer;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        writer = <span class="keyword">new</span> IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:&quot;</span>+<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>);     </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:datumName&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesPrimeMeridian&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                writer.writeCharacters(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                writer.flush();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                strwriter.write(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesEllipsoid&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                writer.writeCharacters(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                writer.flush();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                strwriter.write(this.<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        writer.flush();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">Datum.datumType</a>, <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>, <a class="el" href="a00153.html#ad4304802481276a17b15303a2287ded2">Datum.primeMeridian</a>, <a class="el" href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">PrimeMeridian.toGML()</a>, and <a class="el" href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">Ellipsoid.toGML()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>.</p>
+
 </div>
 </div>
 <a id="aa902c6d1cea92aa18f88eef2779152c7"></a>
@@ -163,10 +210,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                               {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                               {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,13 +231,13 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                       {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                result.put(<span class="stringliteral">&quot;name&quot;</span>,<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>);           </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                result.put(<span class="stringliteral">&quot;type&quot;</span>,<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                result.put(<span class="stringliteral">&quot;ellipsoid&quot;</span>, <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#a8ea8eae38d9733ebbaf710648db2d2aa">toProjJSON</a>());</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                       {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                JSONObject result=<span class="keyword">new</span> JSONObject();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                result.put(<span class="stringliteral">&quot;name&quot;</span>,<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>);           </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                result.put(<span class="stringliteral">&quot;type&quot;</span>,<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                result.put(<span class="stringliteral">&quot;ellipsoid&quot;</span>, <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#a8ea8eae38d9733ebbaf710648db2d2aa">toProjJSON</a>());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">Datum.datumName</a>, <a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">Datum.datumType</a>, <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>, and <a class="el" href="a00157.html#a8ea8eae38d9733ebbaf710648db2d2aa">Ellipsoid.toProjJSON()</a>.</p>
 
@@ -212,9 +259,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                 {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Datum [datumType=&quot;</span> + <a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a> + <span class="stringliteral">&quot;, datumName=&quot;</span> + <a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a> + <span class="stringliteral">&quot;, ellipsoid=&quot;</span> + <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                 {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Datum [datumType=&quot;</span> + <a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a> + <span class="stringliteral">&quot;, datumName=&quot;</span> + <a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a> + <span class="stringliteral">&quot;, ellipsoid=&quot;</span> + <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">Datum.datumName</a>, <a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">Datum.datumType</a>, and <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>.</p>
 
@@ -234,18 +281,18 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                              {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>==<span class="keyword">null</span>)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                builder.append(<span class="stringliteral">&quot;DATUM[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>.replace(<span class="stringliteral">&quot;Datum:&quot;</span>,<span class="stringliteral">&quot;&quot;</span>).trim()+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                builder.append(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;]&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        builder.append(<span class="stringliteral">&quot;,&quot;</span>+<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="comment">//builder.append(&quot;]&quot;);</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>==<span class="keyword">null</span>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                builder.append(<span class="stringliteral">&quot;DATUM[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>.replace(<span class="stringliteral">&quot;Datum:&quot;</span>,<span class="stringliteral">&quot;&quot;</span>).trim()+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                builder.append(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;]&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        builder.append(<span class="stringliteral">&quot;,&quot;</span>+<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">//builder.append(&quot;]&quot;);</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">Datum.datumName</a>, <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>, <a class="el" href="a00153.html#ad4304802481276a17b15303a2287ded2">Datum.primeMeridian</a>, <a class="el" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">PrimeMeridian.toWKT()</a>, and <a class="el" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">Ellipsoid.toWKT()</a>.</p>
 
@@ -266,6 +313,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>An identifier for the datum. </p>
+
 <p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">Datum.toProjJSON()</a>, <a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">Datum.toString()</a>, and <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>.</p>
 
 </div>
@@ -282,7 +331,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">Datum.toProjJSON()</a>, and <a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">Datum.toString()</a>.</p>
+<p>The type of the datum. </p>
+
+<p class="reference">Referenced by <a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">Datum.toGML()</a>, <a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">Datum.toProjJSON()</a>, and <a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">Datum.toString()</a>.</p>
 
 </div>
 </div>
@@ -298,7 +349,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">Datum.toProjJSON()</a>, <a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">Datum.toString()</a>, and <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>.</p>
+<p>The description of the ellipsoid/geoid which this datum uses. </p>
+
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">Datum.toGML()</a>, <a class="el" href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">Datum.toProjJSON()</a>, <a class="el" href="a00153.html#ad146fa8579a5f8a876c4688cc5a68520">Datum.toString()</a>, and <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>.</p>
+
+</div>
+</div>
+<a id="afacb194c867f8de6ec2f155f59a80f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afacb194c867f8de6ec2f155f59a80f82">&#9670;&nbsp;</a></span>interstellarbody</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String interstellarbody</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -314,19 +381,37 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, and <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>.</p>
+<p>Optional description of a prime meridian. </p>
+
+<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">Datum.toGML()</a>, and <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>.</p>
+
+</div>
+</div>
+<a id="a847332ff2b57f2599ccadbda1cbd9baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847332ff2b57f2599ccadbda1cbd9baa">&#9670;&nbsp;</a></span>usagescope</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;String&gt; usagescope</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00161_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.PrimeMeridian.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> PrimeMeridian.java:32</div></div>
-<div class="ttc" id="aa00153_html_ad4304802481276a17b15303a2287ded2"><div class="ttname"><a href="a00153.html#ad4304802481276a17b15303a2287ded2">proj4rdf.data.Datum.primeMeridian</a></div><div class="ttdeci">PrimeMeridian primeMeridian</div><div class="ttdef"><b>Definition:</b> Datum.java:14</div></div>
-<div class="ttc" id="aa00157_html_a8ea8eae38d9733ebbaf710648db2d2aa"><div class="ttname"><a href="a00157.html#a8ea8eae38d9733ebbaf710648db2d2aa">proj4rdf.data.Ellipsoid.toProjJSON</a></div><div class="ttdeci">JSONObject toProjJSON()</div><div class="ttdef"><b>Definition:</b> Ellipsoid.java:34</div></div>
-<div class="ttc" id="aa00153_html_abfe3b6a1aa97ec6d1b27dfb36d560308"><div class="ttname"><a href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">proj4rdf.data.Datum.datumName</a></div><div class="ttdeci">String datumName</div><div class="ttdef"><b>Definition:</b> Datum.java:10</div></div>
-<div class="ttc" id="aa00153_html_a1a2bd5aff8299edb4e2b019586052a9e"><div class="ttname"><a href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">proj4rdf.data.Datum.ellipsoid</a></div><div class="ttdeci">Ellipsoid ellipsoid</div><div class="ttdef"><b>Definition:</b> Datum.java:12</div></div>
-<div class="ttc" id="aa00153_html_a4124247ee4dfa0cb7078c3355e1b5241"><div class="ttname"><a href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">proj4rdf.data.Datum.datumType</a></div><div class="ttdeci">String datumType</div><div class="ttdef"><b>Definition:</b> Datum.java:8</div></div>
-<div class="ttc" id="aa00157_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.Ellipsoid.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> Ellipsoid.java:52</div></div>
+<div class="ttc" id="aa00161_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.PrimeMeridian.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> PrimeMeridian.java:60</div></div>
+<div class="ttc" id="aa00153_html_ad4304802481276a17b15303a2287ded2"><div class="ttname"><a href="a00153.html#ad4304802481276a17b15303a2287ded2">proj4rdf.data.Datum.primeMeridian</a></div><div class="ttdeci">PrimeMeridian primeMeridian</div><div class="ttdoc">Optional description of a prime meridian.</div><div class="ttdef"><b>Definition:</b> Datum.java:31</div></div>
+<div class="ttc" id="aa00157_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.Ellipsoid.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> Ellipsoid.java:58</div></div>
+<div class="ttc" id="aa00161_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.PrimeMeridian.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> PrimeMeridian.java:34</div></div>
+<div class="ttc" id="aa00157_html_a8ea8eae38d9733ebbaf710648db2d2aa"><div class="ttname"><a href="a00157.html#a8ea8eae38d9733ebbaf710648db2d2aa">proj4rdf.data.Ellipsoid.toProjJSON</a></div><div class="ttdeci">JSONObject toProjJSON()</div><div class="ttdef"><b>Definition:</b> Ellipsoid.java:46</div></div>
+<div class="ttc" id="aa00153_html_abfe3b6a1aa97ec6d1b27dfb36d560308"><div class="ttname"><a href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">proj4rdf.data.Datum.datumName</a></div><div class="ttdeci">String datumName</div><div class="ttdoc">An identifier for the datum.</div><div class="ttdef"><b>Definition:</b> Datum.java:25</div></div>
+<div class="ttc" id="aa00153_html_a1a2bd5aff8299edb4e2b019586052a9e"><div class="ttname"><a href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">proj4rdf.data.Datum.ellipsoid</a></div><div class="ttdeci">Ellipsoid ellipsoid</div><div class="ttdoc">The description of the ellipsoid/geoid which this datum uses.</div><div class="ttdef"><b>Definition:</b> Datum.java:28</div></div>
+<div class="ttc" id="aa00153_html_a4124247ee4dfa0cb7078c3355e1b5241"><div class="ttname"><a href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">proj4rdf.data.Datum.datumType</a></div><div class="ttdeci">String datumType</div><div class="ttdoc">The type of the datum.</div><div class="ttdef"><b>Definition:</b> Datum.java:22</div></div>
+<div class="ttc" id="aa00157_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.Ellipsoid.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdoc">Converts the representation to WKT.</div><div class="ttdef"><b>Definition:</b> Ellipsoid.java:91</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
