@@ -44,6 +44,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.opengis.util.FactoryException;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -53,6 +54,7 @@ import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 import proj4rdf.RDFCRSToWKT;
+import proj4rdf.data.CoordinateReferenceSystem;
 
 
 /**
@@ -164,5 +166,23 @@ public class WebService {
 			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
 		return null;
 	}
+	
+	@GET
+	@Produces({ MediaType.TEXT_PLAIN })
+	@Path("/wkt2RDF")
+	@Operation(
+            summary = "Converts a WKT CRS definition to RDF.",
+            description = "Converts a WKT CRS definition to RDF.")
+	public Response convertFeaturetoCRSDefinedinRDF(
+			@Parameter(description="The WKT String to convert") @PathParam("wktstring") String wktstring) {
+		try {
+			return Response.ok(CoordinateReferenceSystem.WKTToRDF(wktstring)).build();
+		} catch (FactoryException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return Response.ok("").build();
+	}
+
 
 }

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -167,9 +169,42 @@ public class CoordinateReferenceSystem {
 		return builder.toString();
 	}
 	
+	public static OntModel fromWKT(String wktString) {
+		OntModel result=ModelFactory.createOntologyModel();
+		List<String> parts=new LinkedList<String>();
+		System.out.println("{"+wktString+"}");
+		String lastWord="";
+		int bracketopencounter=0,bracketclosecounter=0;
+		for(int i=0;i<wktString.length();i++) {
+			System.out.println(wktString.charAt(i));
+			if(wktString.charAt(i)==' ') {
+				lastWord="";
+			}else {
+				lastWord+=wktString.charAt(i);
+			}
+			if(wktString.charAt(i)=='[') {
+				//System.out.println("Bracket open!!!");
+				bracketopencounter++;
+				if(parts.size()<bracketopencounter) {
+					parts.add(lastWord);
+				}
+
+			}
+			//System.out.println(parts);
+			for(int j=0;j<bracketopencounter;j++) {
+				parts.set(j, parts.get(j)+wktString.charAt(i));
+			}
+		}
+		for(String p:parts) {
+			System.out.println("====");
+			System.out.println(p);
+		}
+		return result;
+	}
+	
 	
 	public static void main(String[] args) throws NoSuchAuthorityCodeException, UnsupportedOperationException, FactoryException, IOException {
-		WKTToRDF(CRS.forCode("EPSG:4326").toWKT());
+		fromWKT(CRS.forCode("EPSG:4326").toWKT());
 	}
 	
 }

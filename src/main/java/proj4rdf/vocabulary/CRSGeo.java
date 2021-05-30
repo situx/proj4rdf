@@ -25,6 +25,12 @@ public class CRSGeo {
    public static String uri2 = "http://www.opengis.net/ont/geosparqlplus#";
 
 
+
+
+
+
+
+
    protected static final Resource resource(String local) {
       return ResourceFactory.createResource(uri + local);
    }
@@ -136,6 +142,8 @@ public class CRSGeo {
    public static final Property st_ensureClosed = property("ST_EnsureClosed");
    public static final Property st_envelope = property("ST_Envelope");
    public static final Property st_epsgToSRID = property("ST_EPSGToSRID");
+   public static final Property st_epsgToGML = property("ST_EPSGToGML");
+   public static final Property st_epsgToWKT = property("ST_EPSGToWKT");
    public static final Property st_equals = property("ST_Equals");
    public static final Property st_equalSRS = property("ST_EqualSRS");
    public static final Property st_equalsNorm = property("ST_EqualsNorm");
@@ -190,6 +198,7 @@ public class CRSGeo {
    public static final Property st_isEquilateralTriangle= property("ST_IsEquilateralTriangle");
    public static final Property st_isGrayscale = property("ST_IsGrayscale");
    public static final Property st_isIndexed = property("ST_IsIndexed");
+   public static final Property st_isInSRSAreaOfValidity = property("ST_IsInSRSAreaOfValidity");
    public static final Property st_isIsocelesTriangle= property("ST_IsIsocelesTriangle");
    public static final Property st_isMeasured = property("ST_IsMeasured");
    public static final Property st_isMorePrecise = property("ST_IsMorePrecise");
@@ -390,6 +399,7 @@ public class CRSGeo {
    public static final Property st_selfIntersections = property("ST_SelfIntersections");
    public static final Property st_setEndPoint = property("ST_SetEndPoint");
    public static final Property st_setGeometry = property("ST_SetGeometry");
+   public static final Property st_setGeoReference = property("ST_SetGeoReference");
    public static final Property st_setPoint = property("ST_SetPoint");
    public static final Property st_setRing = property("ST_SetRing");
    public static final Property st_setStartPoint = property("ST_SetStartPoint");
@@ -410,13 +420,19 @@ public class CRSGeo {
    public static final Property st_split = property("ST_Split");
    public static final Property st_srid = property("ST_SRID");
    public static final Property st_sridToEPSG = property("ST_SRIDToEPSG");
+   public static final Property st_sridToWKT = property("ST_SRIDToWKT");
+   public static final Property st_sridToGML = property("ST_SRIDToGML");
    public static final Property st_sridGetAxis1Name= property("ST_SRIDGetAxis1Name");
    public static final Property st_sridGetAxis1Orientation= property("ST_SRIDGetAxis1Orientation");
    public static final Property st_sridGetAxis2Name= property("ST_SRIDGetAxis2Name");
    public static final Property st_sridGetAxis2Orientation= property("ST_SRIDGetAxis2Orientation");
    public static final Property st_sridHasFlippedAxis= property("ST_SRIDHasFlippedAxis");
+   public static final Property st_srsAreaOfValidity= property("ST_SRSAreaOfValidity");  
+   public static final Property st_srsURIToWKT= property("ST_SRSURIToWKT");  
+   public static final Property st_srsURIToGML= property("ST_SRSURIToGML"); 
    public static final Property st_startPoint = property("ST_StartPoint");
    public static final Property st_straightSkeleton = property("ST_StraightSkeleton");
+   public static final Property st_suggestProjection = property("ST_SuggestProjection");
    public static final Property st_summary = property("ST_Summary");
    public static final Property st_summaryStats = property("ST_SummaryStats");
    public static final Property st_swapOrdinates = property("ST_SwapOrdinates");
