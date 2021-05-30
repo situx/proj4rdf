@@ -6,6 +6,7 @@ var a00149 =
     [ "toString", "a00149.html#ad146fa8579a5f8a876c4688cc5a68520", null ],
     [ "toWKT", "a00149.html#acec44d50b36093db7d8b1b3cd91ec474", null ],
     [ "axisList", "a00149.html#aab5ff420ad2afa723eba33d40feef551", null ],
+    [ "coordinateSystemName", "a00149.html#acf426814f7c0e638ab7ccb1f6a8b0f9d", null ],
     [ "coordinateSystemType", "a00149.html#aa4ccaa50b07cd25fc22c5dcc7ea622b5", null ],
     [ "numberDimensions", "a00149.html#aaffbbed37773ce149d1247305db4a503", null ]
 ];
