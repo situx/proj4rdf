@@ -1,0 +1,10 @@
+var a00149 =
+[
+    [ "toProj", "a00149.html#aa902c6d1cea92aa18f88eef2779152c7", null ],
+    [ "toProjJSON", "a00149.html#a8ea8eae38d9733ebbaf710648db2d2aa", null ],
+    [ "toString", "a00149.html#ad146fa8579a5f8a876c4688cc5a68520", null ],
+    [ "toWKT", "a00149.html#acec44d50b36093db7d8b1b3cd91ec474", null ],
+    [ "axisList", "a00149.html#aab5ff420ad2afa723eba33d40feef551", null ],
+    [ "coordinateSystemType", "a00149.html#aa4ccaa50b07cd25fc22c5dcc7ea622b5", null ],
+    [ "numberDimensions", "a00149.html#aaffbbed37773ce149d1247305db4a503", null ]
+];

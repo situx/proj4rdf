@@ -1,0 +1,27 @@
+var a00122 =
+[
+    [ "AffineTransformation", "a00177.html", null ],
+    [ "AreaOfValidity", "a00181.html", null ],
+    [ "ConvertCRS", "a00185.html", "a00185" ],
+    [ "ConvertCRS2", "a00189.html", "a00189" ],
+    [ "EPSGToSRID", "a00193.html", "a00193" ],
+    [ "EPSGToWKT", "a00197.html", "a00197" ],
+    [ "ESPGToGML", "a00201.html", "a00201" ],
+    [ "GeomToOpenLocationCode", "a00205.html", "a00205" ],
+    [ "HasHorizontalCRS", "a00209.html", "a00209" ],
+    [ "IsEligibleConversion", "a00213.html", "a00213" ],
+    [ "IsInCRSAreaOfValidity", "a00217.html", "a00217" ],
+    [ "SetGeoReference", "a00221.html", null ],
+    [ "SetSRID", "a00225.html", "a00225" ],
+    [ "SRIDGetAxis1Name", "a00229.html", "a00229" ],
+    [ "SRIDGetAxis1Orientation", "a00233.html", "a00233" ],
+    [ "SRIDGetAxis2Name", "a00237.html", "a00237" ],
+    [ "SRIDGetAxis2Orientation", "a00241.html", "a00241" ],
+    [ "SRIDHasFlippedAxis", "a00245.html", "a00245" ],
+    [ "SRIDToEPSG", "a00249.html", "a00249" ],
+    [ "SRIDToGML", "a00253.html", "a00253" ],
+    [ "SRIDToWKT", "a00257.html", "a00257" ],
+    [ "SRSURIToGML", "a00261.html", "a00261" ],
+    [ "SRSURIToWKT", "a00265.html", "a00265" ],
+    [ "SuggestProjection", "a00269.html", "a00269" ]
+];
