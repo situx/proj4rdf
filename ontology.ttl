@@ -300,10 +300,10 @@ geocrs:GeneralReferenceMap a owl:Class ;
     rdfs:subClassOf geocrs:SRSApplication ;
     skos:definition "general reference map which includes a variety of different information"@en .
 
-geocrs:GeoSPARQLCRS a owl:Ontology ;
-    rdfs:label "GeoSPARQL CRS Ontology Draft"@en ;
+geocrs:GeoSPARQLSRS a owl:Ontology ;
+    rdfs:label "GeoSPARQL SRS Ontology Draft"@en ;
     dc:creator wd:Q67624599 ;
-    dc:description "This ontology models coordinate reference systems"@en .
+    dc:description "This ontology models spatial reference systems"@en .
 
 geocrs:GeocentricCRS a owl:Class ;
     rdfs:label "geocentric coordinate reference system"@en ;

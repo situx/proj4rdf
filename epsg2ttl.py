@@ -226,8 +226,37 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
 	#i+=1
 
+def parseSolarSystemSatellites(filename,ttlstring):
+	with open(filename) as csv_file:
+		csv_reader = csv.DictReader(csv_file)
+		for row in csv_reader:
+			curname=row["Name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_").replace("~","_")
+			if curname=="":
+				continue
+			ttlstring.add("geocrsisbody:"+curname+" rdf:type geocrs:Moon .\n")
+			ttlstring.add("geocrsisbody:"+curname+" rdfs:label \""+str(row["Name"])+"\"@en .\n")
+			if str(row["radius"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
+			if str(row["orbital_period"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:orbital_period \""+row["orbital_period"]+"\"^^xsd:double .\n")
+			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:Confirmed .\n")
+			ttlstring.add("geocrs:Confirmed rdf:type geocrs:PlanetStatus .\n")
+			ttlstring.add("geocrs:Confirmed rdfs:label \"Confirmed\"@en .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["Name"])+"\"@en .\n")
+			if str(row["semi_major_axis"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
+			if str(row["Parent"])!="":
+				starname=row["Parent"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+				if starname!="":
+					ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Planet .\n")
+					ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["Parent"])+"\"@en .\n")	
+					ttlstring.add("geocrsisbody:"+curname+" geocrs:satelliteOf geocrsisbody:"+starname+" .\n")					
+
+
 def parseAdditionalPlanetarySpheroids(filename,ttlstring):
-	with open('exoplanet.eu_catalog.csv') as csv_file:
+	with open(filename) as csv_file:
 		csv_reader = csv.DictReader(csv_file)
 		for row in csv_reader:
 			curname=row["name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
@@ -239,7 +268,7 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 				ttlstring.add("geocrsisbody:"+curname+" geocrs:orbital_period \""+str(row["orbital_period"])+"\"^^xsd:double .\n")
 			if str(row["radius"])!="":
 				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
-			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrsisbody:"+str(row["planet_status"])+" .\n")
+			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:"+str(row["planet_status"])+" .\n")
 			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdf:type geocrs:PlanetStatus .\n")
 			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdfs:label \""+row["planet_status"]+"\"@en .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
@@ -411,10 +440,10 @@ ttlhead+="@prefix geocs: <http://www.opengis.net/ont/crs/cs/> .\n"
 ttlhead+="@prefix dc: <http://purl.org/dc/elements/1.1/> .\n"
 ttlhead+="@prefix wd: <http://www.wikidata.org/entity/> .\n"
 ttlhead+="@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
-ttl.add("geocrs:GeoSPARQLCRS rdf:type owl:Ontology .\n")
-ttl.add("geocrs:GeoSPARQLCRS dc:creator wd:Q67624599 .\n")
-ttl.add("geocrs:GeoSPARQLCRS dc:description \"This ontology models coordinate reference systems\"@en .\n")
-ttl.add("geocrs:GeoSPARQLCRS rdfs:label \"GeoSPARQL CRS Ontology Draft\"@en .\n")
+ttl.add("geocrs:GeoSPARQLSRS rdf:type owl:Ontology .\n")
+ttl.add("geocrs:GeoSPARQLSRS dc:creator wd:Q67624599 .\n")
+ttl.add("geocrs:GeoSPARQLSRS dc:description \"This ontology models spatial reference systems\"@en .\n")
+ttl.add("geocrs:GeoSPARQLSRS rdfs:label \"GeoSPARQL SRS Ontology Draft\"@en .\n")
 ttl.add("owl:versionInfo rdfs:label \"0.1\"^^xsd:double .\n")
 ttl.add("prov:Entity rdf:type owl:Class .\n")
 ttl.add("geocrs:Entity rdfs:label \"entity\"@en .\n")
@@ -1691,10 +1720,6 @@ ttl.add("geocrs:has_ballpark_transformation rdfs:range xsd:boolean .\n")
 ttl.add("geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:label \"is semi minor computed\"@en .\n")
 ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
-ttl.add("geocrs:Earth rdf:type geocrs:Planet, owl:NamedIndividual .\n")
-ttl.add("geocrs:Earth rdfs:label \"earth\"@en .\n")
-ttl.add("geocrs:EarthMoon rdf:type geocrs:Moon, owl:NamedIndividual .\n")
-ttl.add("geocrs:EarthMoon rdfs:label \"moon\"@en .\n")
 geodcounter=1
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttl), format='turtle')
@@ -1713,6 +1738,7 @@ mapp=pyproj.list.get_proj_operations_map()
 #	ttl.add("geoepsg:"+str(oper)+" rdf:type geocrs:Projection .\n")
 #	ttl.add("geoepsg:"+str(oper)+" rdfs:label \""+str(mapp[oper])+"\"@en .\n")
 parseAdditionalPlanetarySpheroids("exoplanet.eu_catalog.csv",ttl)
+parseSolarSystemSatellites("solar_system_satellites.csv",ttl)
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
@@ -1721,6 +1747,9 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		continue	
 	crsToTTL(ttl,curcrs,x,geodcounter,None)
 crsToTTL(ttl,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["Moon_2000_IAU_IAG",1737400.0,0.0]],PRIMEM["Moon_Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433]]'),"GCS_Moon",geodcounter,"geocrs:SelenographicCRS")
+f = open("result.nt", "w", encoding="utf-8")
+f.write(ttlhead+"".join(ttl))
+f.close()
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl), format='n3')
 graph2.serialize(destination='result.ttl', format='turtle')

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.jena.sparql.expr.ExprEvalException;
 import org.apache.jena.sparql.expr.NodeValue;
-import org.apache.jena.sparql.function.FunctionBase3;
+import org.apache.jena.sparql.function.FunctionBase4;
 import org.apache.sis.geometry.DirectPosition2D;
 import org.apache.sis.referencing.CRS;
 import org.locationtech.jts.geom.Coordinate;

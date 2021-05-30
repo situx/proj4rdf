@@ -107,7 +107,7 @@ public class RDFCRSToWKT {
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointURL, query);
 		ResultSet res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		switch(format) {
 			case "WKT": return refsys.toWKT();
 			case "GML": return refsys.toGML().toString();
@@ -123,7 +123,7 @@ public class RDFCRSToWKT {
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
 		ResultSet res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		switch(format) {
 			case "WKT": return refsys.toWKT();
 			case "GML": return refsys.toGML().toString();
@@ -142,7 +142,7 @@ public class RDFCRSToWKT {
 		return null;		
 	}
 	
-	public static CoordinateReferenceSystem downliftSytem(ResultSet res) {
+	public static CoordinateReferenceSystem downliftSystem(ResultSet res) {
 		boolean datum=false,coordinateSystem=false,ellipse=false;
 		CoordinateReferenceSystem refsys=new CoordinateReferenceSystem();
 		refsys.datum=new Datum();
@@ -334,7 +334,7 @@ public class RDFCRSToWKT {
 		query = QueryFactory.create(prefixCollection+queryString);
 		qexec = QueryExecutionFactory.create(query, model);
 		res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		System.out.println(refsys);
 		System.out.println(refsys.toWKT());
 		System.out.println(refsys.toGML());
