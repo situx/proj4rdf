@@ -337,6 +337,7 @@ public class RDFCRSToWKT {
 		CoordinateReferenceSystem refsys=downliftSytem(res);
 		System.out.println(refsys);
 		System.out.println(refsys.toWKT());
+		System.out.println(refsys.toGML());
 		System.out.println(refsys.toProjJSON());
 		try {
 			String crs2 = CRS.forCode("EPSG:25832").toWKT();

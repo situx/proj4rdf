@@ -7,13 +7,16 @@ import org.apache.sis.referencing.CRS;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 
+/**
+ * Indicates whether two srs definitions are eligible for a conversion of coordinates.
+ */
 public class IsEligibleConversion extends FunctionBase2 {
 
 	@Override
 	public NodeValue exec(NodeValue v1, NodeValue v2) {
-		GeometryWrapper wrapper1=GeometryWrapper.extract(v);
+		GeometryWrapper wrapper1=GeometryWrapper.extract(v1);
     	if(wrapper1 instanceof GeometryWrapper) {
-    		GeometryWrapper geometry = GeometryWrapper.extract(v);
+    		GeometryWrapper geometry = GeometryWrapper.extract(v1);
     		return NodeValue.makeBoolean(CRS.isHorizontalCRS(geometry.getCRS()));
     	}
     	return NodeValue.FALSE;

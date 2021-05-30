@@ -1,6 +1,14 @@
 package proj4rdf.data;
 
+import java.io.StringWriter;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.json.JSONObject;
+
+import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 public class PrimeMeridian {
 
@@ -23,9 +31,29 @@ public class PrimeMeridian {
 		return result;
 	}
 	
-	public JSONObject toGML() {
-		JSONObject result=new JSONObject();
-		return result;
+	public String toGML() {
+		XMLOutputFactory factory = XMLOutputFactory.newInstance();
+		StringWriter strwriter=new StringWriter();
+		XMLStreamWriter writer;
+		try {
+			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+			writer.writeStartElement("gml:PrimeMeridian");	
+			writer.writeStartElement("gml:meridianName");
+			writer.writeCharacters(this.primeMeridianName);
+			writer.writeEndElement();
+			writer.writeStartElement("gml:greenwichLongitude");
+			writer.writeStartElement("gml:angle");
+			writer.writeAttribute("gml:uom", angleunit);
+			writer.writeCharacters(longitude.toString());
+			writer.writeEndElement();
+			writer.writeEndElement();		
+			writer.writeEndElement();
+			writer.flush();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return strwriter.toString();
 	}
 	
 	

@@ -85,7 +85,26 @@ public class CoordinateReferenceSystem {
 		try {
 			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 			writer.writeStartDocument();
-			writer.writeStartElement("gml:GeodeticCRS");		
+			writer.writeStartElement("gml:"+crsType);	
+			writer.writeStartElement("gml:srsName");
+			writer.writeCharacters(this.crsName);
+			writer.writeEndElement();
+			if(this.cSystem!=null) {
+				writer.writeStartElement("gml:usesEllipsoidalCS");
+				writer.writeCharacters(" ");
+				writer.flush();
+				strwriter.write(this.cSystem.toGML());
+				writer.flush();
+				writer.writeEndElement();
+			}
+			if(this.datum!=null) {
+				writer.writeStartElement("gml:usesGeodeticDatum");
+				writer.writeCharacters(" ");
+				writer.flush();
+				strwriter.write(this.datum.toGML());
+				writer.flush();
+				writer.writeEndElement();
+			}
 			writer.writeEndElement();
 			writer.writeEndDocument();
 		} catch (XMLStreamException e) {

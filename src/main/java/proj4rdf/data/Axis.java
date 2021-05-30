@@ -1,6 +1,14 @@
 package proj4rdf.data;
 
+import java.io.StringWriter;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.json.JSONObject;
+
+import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 public class Axis {
 	
@@ -38,13 +46,29 @@ public class Axis {
 		return result;
 	}
 	
-	public JSONObject toGML() {
-		JSONObject result=new JSONObject();
-		result.put("name", axisname);
-		result.put("abbreviation", axisabbreviation);
-		result.put("direction", axisdirection);
-		result.put("unit", angleunit);
-		return result;
+	public String toGML() {
+		XMLOutputFactory factory = XMLOutputFactory.newInstance();
+		StringWriter strwriter=new StringWriter();
+		XMLStreamWriter writer;
+		try {
+			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+			writer.writeStartElement("gml:CoordinateSystemAxis");	
+			writer.writeStartElement("gml:name");
+			writer.writeCharacters(this.axisname);
+			writer.writeEndElement();
+			writer.writeStartElement("gml:axisAbbrev");
+			writer.writeCharacters(this.axisabbreviation);
+			writer.writeEndElement();
+			writer.writeStartElement("gml:axisDirection");
+			writer.writeCharacters(this.axisdirection);
+			writer.writeEndElement();
+			writer.writeEndElement();
+			writer.flush();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return strwriter.toString();
 	}
 	
 	

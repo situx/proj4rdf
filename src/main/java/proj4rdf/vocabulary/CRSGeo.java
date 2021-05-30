@@ -31,6 +31,8 @@ public class CRSGeo {
 
 
 
+
+
    protected static final Resource resource(String local) {
       return ResourceFactory.createResource(uri + local);
    }
@@ -194,6 +196,7 @@ public class CRSGeo {
    public static final Property st_isClosed = property("ST_IsClosed");
    public static final Property st_isCollection = property("ST_IsCollection");
    public static final Property st_isConvex = property("ST_IsConvex");
+   public static final Property st_isEligibleConversion = property("ST_IsEligibleConversion");
    public static final Property st_isEmpty = property("ST_IsEmpty");
    public static final Property st_isEquilateralTriangle= property("ST_IsEquilateralTriangle");
    public static final Property st_isGrayscale = property("ST_IsGrayscale");

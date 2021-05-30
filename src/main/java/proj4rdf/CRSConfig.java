@@ -7,6 +7,7 @@ import org.apache.jena.sparql.function.FunctionRegistry;
 import proj4rdf.functions.srs.AreaOfValidity;
 import proj4rdf.functions.srs.ConvertCRS;
 import proj4rdf.functions.srs.HasHorizontalCRS;
+import proj4rdf.functions.srs.IsEligibleConversion;
 import proj4rdf.functions.srs.IsInCRSAreaOfValidity;
 import proj4rdf.functions.srs.SRIDGetAxis1Name;
 import proj4rdf.functions.srs.SRIDGetAxis1Orientation;
@@ -43,6 +44,7 @@ public class CRSConfig {
             functionRegistry.put(CRSGeo.st_sridHasFlippedAxis.getURI(), SRIDHasFlippedAxis.class);
             functionRegistry.put(CRSGeo.st_sridToEPSG.getURI(), SRIDToEPSG.class);
             functionRegistry.put(CRSGeo.st_isInSRSAreaOfValidity.getURI(), IsInCRSAreaOfValidity.class);
+            functionRegistry.put(CRSGeo.st_isEligibleConversion.getURI(), IsEligibleConversion.class);
             functionRegistry.put(CRSGeo.st_hasHorizontalCRS.getURI(), HasHorizontalCRS.class);
             functionRegistry.put(CRSGeo.st_setGeoReference.getURI(), SetGeoReference.class);
             functionRegistry.put(CRSGeo.st_suggestProjection.getURI(), SuggestProjection.class);
