@@ -93,8 +93,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:adbfecaaeab51bb2aab5b435912d64cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45f83d60142f026830118381ca20eeaf"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html#a45f83d60142f026830118381ca20eeaf">getEligibleCRSFromTripleStore</a> (String bbox)</td></tr>
 <tr class="separator:a45f83d60142f026830118381ca20eeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f2a3c6978f8bfe2c3245d3cb3edc18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00145.html">CoordinateReferenceSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">downliftSytem</a> (ResultSet res)</td></tr>
-<tr class="separator:ac4f2a3c6978f8bfe2c3245d3cb3edc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc7795b90ad27f38e25ed4ae9f33708"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00145.html">CoordinateReferenceSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">downliftSystem</a> (ResultSet res)</td></tr>
+<tr class="separator:a1cc7795b90ad27f38e25ed4ae9f33708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f24960c997e896975ee195ff490e60f"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html#a0f24960c997e896975ee195ff490e60f">amendSentence</a> (String sstr)</td></tr>
 <tr class="separator:a0f24960c997e896975ee195ff490e60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b260eecbaabcef8473fd87ada040682"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html#a8b260eecbaabcef8473fd87ada040682">main</a> (String[] args)  throws IOException </td></tr>
@@ -184,7 +184,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">return</span> builder.toString();</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }     </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>.</p>
 
 </div>
 </div>
@@ -301,8 +301,8 @@ Static Package Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac4f2a3c6978f8bfe2c3245d3cb3edc18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4f2a3c6978f8bfe2c3245d3cb3edc18">&#9670;&nbsp;</a></span>downliftSytem()</h2>
+<a id="a1cc7795b90ad27f38e25ed4ae9f33708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc7795b90ad27f38e25ed4ae9f33708">&#9670;&nbsp;</a></span>downliftSystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,7 +311,7 @@ Static Package Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00145.html">CoordinateReferenceSystem</a> downliftSytem </td>
+          <td class="memname">static <a class="el" href="a00145.html">CoordinateReferenceSystem</a> downliftSystem </td>
           <td>(</td>
           <td class="paramtype">ResultSet&#160;</td>
           <td class="paramname"><em>res</em></td><td>)</td>
@@ -324,7 +324,7 @@ Static Package Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                             {</div>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                              {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordtype">boolean</span> datum=<span class="keyword">false</span>,coordinateSystem=<span class="keyword">false</span>,ellipse=<span class="keyword">false</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                CoordinateReferenceSystem refsys=<span class="keyword">new</span> CoordinateReferenceSystem();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                refsys.datum=<span class="keyword">new</span> Datum();</div>
@@ -530,7 +530,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                Query query = QueryFactory.create(<a class="code" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">prefixCollection</a>+queryString);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointURL, query);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                ResultSet res=qexec.execSelect();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">downliftSytem</a>(res);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">downliftSystem</a>(res);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">switch</span>(format) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;WKT&quot;</span>: <span class="keywordflow">return</span> refsys.toWKT();</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;GML&quot;</span>: <span class="keywordflow">return</span> refsys.toGML().toString();</div>
@@ -540,7 +540,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#aa902c6d1cea92aa18f88eef2779152c7">CoordinateReferenceSystem.toProj()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
+<p class="reference">References <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#aa902c6d1cea92aa18f88eef2779152c7">CoordinateReferenceSystem.toProj()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="a00261.html#a892f62c3bf1ab2917fc8745f0b6da2a3">SRSURIToGML.exec()</a>, <a class="el" href="a00265.html#a892f62c3bf1ab2917fc8745f0b6da2a3">SRSURIToWKT.exec()</a>, <a class="el" href="a00189.html#acb3e73894e185fc4ec6d767abd72a3b8">ConvertCRS2.exec()</a>, <a class="el" href="a00185.html#aaa865e47d486d1cab2e7b7910757302e">ConvertCRS.exec()</a>, and <a class="el" href="a00269.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">SuggestProjection.exec()</a>.</p>
 
@@ -597,7 +597,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                Query query = QueryFactory.create(<a class="code" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">prefixCollection</a>+queryString);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                QueryExecution qexec = QueryExecutionFactory.create(query, <a class="code" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">model</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                ResultSet res=qexec.execSelect();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">downliftSytem</a>(res);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">downliftSystem</a>(res);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">switch</span>(format) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;WKT&quot;</span>: <span class="keywordflow">return</span> refsys.toWKT();</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        <span class="keywordflow">case</span> <span class="stringliteral">&quot;GML&quot;</span>: <span class="keywordflow">return</span> refsys.toGML().toString();</div>
@@ -607,7 +607,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#aa902c6d1cea92aa18f88eef2779152c7">CoordinateReferenceSystem.toProj()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
+<p class="reference">References <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#aa902c6d1cea92aa18f88eef2779152c7">CoordinateReferenceSystem.toProj()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -691,7 +691,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                query = QueryFactory.create(<a class="code" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">prefixCollection</a>+queryString);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                qexec = QueryExecutionFactory.create(query, <a class="code" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">model</a>);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                res=qexec.execSelect();</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">downliftSytem</a>(res);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                CoordinateReferenceSystem refsys=<a class="code" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">downliftSystem</a>(res);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                System.out.println(refsys);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                System.out.println(refsys.toWKT());</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                System.out.println(refsys.toGML());</div>
@@ -706,7 +706,7 @@ Static Package Attributes</h2></td></tr>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                }</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00273.html#abac27a0520e6718b6d6eb0541bd74c2b">RDFCRSToWKT.curCRSURI</a>, <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">RDFCRSToWKT.downliftSytem()</a>, <a class="el" href="a00273.html#a098344af0b82edd879e12d268ed1de9e">RDFCRSToWKT.GeoSPARQLCRSURI</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
+<p class="reference">References <a class="el" href="a00273.html#abac27a0520e6718b6d6eb0541bd74c2b">RDFCRSToWKT.curCRSURI</a>, <a class="el" href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">RDFCRSToWKT.downliftQuery</a>, <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>, <a class="el" href="a00273.html#a098344af0b82edd879e12d268ed1de9e">RDFCRSToWKT.GeoSPARQLCRSURI</a>, <a class="el" href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">RDFCRSToWKT.model</a>, <a class="el" href="a00273.html#a9181599cfb112592f667d6161a33e4e8">RDFCRSToWKT.prefixCollection</a>, <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>, <a class="el" href="a00145.html#a8ea8eae38d9733ebbaf710648db2d2aa">CoordinateReferenceSystem.toProjJSON()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -842,10 +842,10 @@ Static Package Attributes</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aa00273_html_a8480d756c807d9ffc39b0d5405e7a84b"><div class="ttname"><a href="a00273.html#a8480d756c807d9ffc39b0d5405e7a84b">proj4rdf.RDFCRSToWKT.createGeometry</a></div><div class="ttdeci">static GeometryWrapper createGeometry(List&lt; Coordinate &gt; coordinates, String geomtype, GeometryWrapper geometry)</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:77</div></div>
 <div class="ttc" id="aa00273_html_abac27a0520e6718b6d6eb0541bd74c2b"><div class="ttname"><a href="a00273.html#abac27a0520e6718b6d6eb0541bd74c2b">proj4rdf.RDFCRSToWKT.curCRSURI</a></div><div class="ttdeci">static String curCRSURI</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:44</div></div>
+<div class="ttc" id="aa00273_html_a1cc7795b90ad27f38e25ed4ae9f33708"><div class="ttname"><a href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">proj4rdf.RDFCRSToWKT.downliftSystem</a></div><div class="ttdeci">static CoordinateReferenceSystem downliftSystem(ResultSet res)</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:145</div></div>
 <div class="ttc" id="aa00273_html_a0f24960c997e896975ee195ff490e60f"><div class="ttname"><a href="a00273.html#a0f24960c997e896975ee195ff490e60f">proj4rdf.RDFCRSToWKT.amendSentence</a></div><div class="ttdeci">static String amendSentence(String sstr)</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:300</div></div>
 <div class="ttc" id="aa00273_html_a2f7f2eebed62d18c355be86e41820bbc"><div class="ttname"><a href="a00273.html#a2f7f2eebed62d18c355be86e41820bbc">proj4rdf.RDFCRSToWKT.downliftQuery</a></div><div class="ttdeci">static String downliftQuery</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:48</div></div>
 <div class="ttc" id="aa00273_html_a9181599cfb112592f667d6161a33e4e8"><div class="ttname"><a href="a00273.html#a9181599cfb112592f667d6161a33e4e8">proj4rdf.RDFCRSToWKT.prefixCollection</a></div><div class="ttdeci">static String prefixCollection</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:42</div></div>
-<div class="ttc" id="aa00273_html_ac4f2a3c6978f8bfe2c3245d3cb3edc18"><div class="ttname"><a href="a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18">proj4rdf.RDFCRSToWKT.downliftSytem</a></div><div class="ttdeci">static CoordinateReferenceSystem downliftSytem(ResultSet res)</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:145</div></div>
 <div class="ttc" id="aa00273_html_a098344af0b82edd879e12d268ed1de9e"><div class="ttname"><a href="a00273.html#a098344af0b82edd879e12d268ed1de9e">proj4rdf.RDFCRSToWKT.GeoSPARQLCRSURI</a></div><div class="ttdeci">static String GeoSPARQLCRSURI</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:46</div></div>
 <div class="ttc" id="aa00273_html_a9bff403c58c1c1d0c2c3df7c6d435289"><div class="ttname"><a href="a00273.html#a9bff403c58c1c1d0c2c3df7c6d435289">proj4rdf.RDFCRSToWKT.model</a></div><div class="ttdeci">static OntModel model</div><div class="ttdef"><b>Definition:</b> RDFCRSToWKT.java:58</div></div>
 <!-- HTML footer for doxygen 1.8.13-->

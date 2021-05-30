@@ -4,7 +4,7 @@ var a00273 =
     [ "amendSentence", "a00273.html#a0f24960c997e896975ee195ff490e60f", null ],
     [ "createGeometry", "a00273.html#a265853fbcdb81882c687d840770e70ce", null ],
     [ "createGeometry", "a00273.html#a8480d756c807d9ffc39b0d5405e7a84b", null ],
-    [ "downliftSytem", "a00273.html#ac4f2a3c6978f8bfe2c3245d3cb3edc18", null ],
+    [ "downliftSystem", "a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708", null ],
     [ "getCRSFromTripleStore", "a00273.html#a46d0e009fe94197839f1c010ef8dab50", null ],
     [ "getCRSFromTripleStore", "a00273.html#adbfecaaeab51bb2aab5b435912d64cdf", null ],
     [ "getEligibleCRSFromTripleStore", "a00273.html#a45f83d60142f026830118381ca20eeaf", null ],

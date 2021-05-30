@@ -8,13 +8,9 @@ var hierarchy =
     [ "CoordinateReferenceSystem", "a00145.html", null ],
     [ "CoordinateSystem", "a00149.html", null ],
     [ "CRSConfig", "a00129.html", null ],
-    [ "CRSGeo", "a00281.html", null ],
     [ "Datum", "a00153.html", null ],
     [ "Ellipsoid", "a00157.html", null ],
-    [ "FunctionBase4", "a00713.html", [
-      [ "ConvertCRS2", "a00189.html", null ]
-    ] ],
-    [ "CRSGeo.Nodes", "a00285.html", null ],
+    [ "SRSGeo.Nodes", "a00285.html", null ],
     [ "PrimeMeridian", "a00161.html", null ],
     [ "RDFCRSToWKT", "a00273.html", null ],
     [ "ResultFormatter", "a00277.html", [
@@ -23,6 +19,7 @@ var hierarchy =
       [ "WKTCRSFormatter", "a00173.html", null ]
     ] ],
     [ "SetGeoReference", "a00221.html", null ],
+    [ "SRSGeo", "a00281.html", null ],
     [ "WebService", "a00289.html", null ],
     [ "FunctionBase1", null, [
       [ "EPSGToSRID", "a00193.html", null ],
@@ -49,5 +46,8 @@ var hierarchy =
     ] ],
     [ "FunctionBase3", null, [
       [ "ConvertCRS", "a00185.html", null ]
+    ] ],
+    [ "FunctionBase4", null, [
+      [ "ConvertCRS2", "a00189.html", null ]
     ] ]
 ];

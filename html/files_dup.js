@@ -30,10 +30,6 @@ var files_dup =
     [ "CRSConfig.java", "a00002.html", [
       [ "CRSConfig", "a00129.html", "a00129" ]
     ] ],
-    [ "CRSGeo.java", "a00113.html", [
-      [ "CRSGeo", "a00281.html", "a00281" ],
-      [ "Nodes", "a00285.html", "a00285" ]
-    ] ],
     [ "Datum.java", "a00020.html", [
       [ "Datum", "a00153.html", "a00153" ]
     ] ],
@@ -105,6 +101,10 @@ var files_dup =
     ] ],
     [ "SRIDToWKT.java", "a00095.html", [
       [ "SRIDToWKT", "a00257.html", "a00257" ]
+    ] ],
+    [ "SRSGeo.java", "a00113.html", [
+      [ "SRSGeo", "a00281.html", "a00281" ],
+      [ "Nodes", "a00285.html", "a00285" ]
     ] ],
     [ "SRSURIToGML.java", "a00098.html", [
       [ "SRSURIToGML", "a00261.html", "a00261" ]
