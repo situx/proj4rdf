@@ -85,24 +85,41 @@ public class CoordinateReferenceSystem {
 		try {
 			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 			writer.writeStartDocument();
-			writer.writeStartElement("gml:"+crsType);	
+			switch(crsType) {
+			case "PROJCRS": writer.writeStartElement("gml:ProjectedCRS");
+			break;
+			case "GEODCRS": writer.writeStartElement("gml:GeodeticCRS");
+			break;
+			case "BOUNDCRS": writer.writeStartElement("gml:BoundCRS");
+			break;
+			case "COMPOUNDCRS": writer.writeStartElement("gml:CompoundCRS");
+			break;
+			case "VERTCRS": writer.writeStartElement("gml:VerticalCRS");
+			break;
+			case "ENGCRS": writer.writeStartElement("gml:EngineeringCRS");
+			break;
+			case "PARAMETRICCRS": writer.writeStartElement("gml:ParametricCRS");
+			break;
+			case "TIMECRS": writer.writeStartElement("gml:TimeCRS");
+			break;
+			default: 
+				writer.writeStartElement("gml:GeographicCRS");
+			}
 			writer.writeStartElement("gml:srsName");
 			writer.writeCharacters(this.crsName);
 			writer.writeEndElement();
 			if(this.cSystem!=null) {
 				writer.writeStartElement("gml:usesEllipsoidalCS");
-				writer.writeCharacters(" ");
+				writer.writeCharacters(System.lineSeparator());
 				writer.flush();
-				strwriter.write(this.cSystem.toGML());
-				writer.flush();
+				strwriter.write(this.cSystem.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}
 			if(this.datum!=null) {
 				writer.writeStartElement("gml:usesGeodeticDatum");
-				writer.writeCharacters(" ");
+				writer.writeCharacters(System.lineSeparator());
 				writer.flush();
-				strwriter.write(this.datum.toGML());
-				writer.flush();
+				strwriter.write(this.datum.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}
 			writer.writeEndElement();

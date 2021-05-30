@@ -30,6 +30,8 @@ public class CoordinateSystem {
 	public String coordinateSystemType;
 	
 	public Integer numberDimensions;
+
+	public String coordinateSystemName;
 	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
@@ -55,11 +57,16 @@ public class CoordinateSystem {
 		try {
 			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 			writer.writeStartElement("gml:"+coordinateSystemType);
+			if(this.coordinateSystemName!=null) {
+				writer.writeStartElement("gml:csName");
+				writer.writeCharacters(this.coordinateSystemName);
+				writer.writeEndElement();
+			}
 			for(Axis ax:axisList) {
 				writer.writeStartElement("gml:usesAxis");
-				writer.writeCharacters(" ");
+				writer.writeCharacters(System.lineSeparator());
 				writer.flush();
-				strwriter.write(ax.toGML());
+				strwriter.write(ax.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}		
 			writer.writeEndElement();

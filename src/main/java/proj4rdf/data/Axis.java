@@ -10,6 +10,10 @@ import org.json.JSONObject;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+/**
+ * Represents the axis of a coordinate system.
+ *
+ */
 public class Axis {
 	
 	@Override
@@ -23,13 +27,13 @@ public class Axis {
 	public String angleunit;
 	
 	public Double unitconversionfactor;
-	
+	/**The name of the coordinate system axis.*/
 	public String axisname;
-	
+	/**The direction of the coordinate system axis.*/
 	public String axisdirection;
-	
+	/**The abbreviation of the coordinate system axis.*/
 	public String axisabbreviation;
-	
+	/**Order index of the axis in the coordinate system description.*/
 	public Integer axisorder;
 
 	public String toProj() {

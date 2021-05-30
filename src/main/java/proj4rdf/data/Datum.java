@@ -59,16 +59,16 @@ public class Datum {
 			writer.writeEndElement();
 			if(primeMeridian!=null) {
 				writer.writeStartElement("gml:usesPrimeMeridian");
-				writer.writeCharacters(" ");
+				writer.writeCharacters(System.lineSeparator());
 				writer.flush();
-				strwriter.write(primeMeridian.toGML());
+				strwriter.write(primeMeridian.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}
 			if(ellipsoid!=null) {
 				writer.writeStartElement("gml:usesEllipsoid");
-				writer.writeCharacters(" ");
+				writer.writeCharacters(System.lineSeparator());
 				writer.flush();
-				strwriter.write(this.ellipsoid.toGML());
+				strwriter.write(this.ellipsoid.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}
 			writer.writeEndElement();
