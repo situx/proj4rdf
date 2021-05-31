@@ -2,10 +2,14 @@ package proj4rdf.data;
 
 import org.json.JSONObject;
 
+/**
+ * Representation of the area of validity of a SRS.
+ *
+ */
 public class AreaOfValidity {
 
 	public String areaString;
-	
+	/**The string representation of a bounding box.*/
 	public String bbox;
 	
 	public String scope;

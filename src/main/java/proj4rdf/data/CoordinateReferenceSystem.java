@@ -122,6 +122,13 @@ public class CoordinateReferenceSystem {
 				strwriter.write(this.datum.toGML()+System.lineSeparator());
 				writer.writeEndElement();
 			}
+			if(this.conv!=null) {
+				writer.writeStartElement("gml:definedByConversion");
+				writer.writeCharacters(System.lineSeparator());
+				writer.flush();
+				strwriter.write(this.conv.toGML()+System.lineSeparator());
+				writer.writeEndElement();
+			}
 			writer.writeEndElement();
 			writer.writeEndDocument();
 		} catch (XMLStreamException e) {
