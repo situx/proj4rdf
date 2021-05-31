@@ -41,12 +41,12 @@ public class RDFCRSToWKT {
 	
 	public static String prefixCollection="";
 	
-	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/7415";
+	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/4326";
 	
 	public static String GeoSPARQLCRSURI="http://www.opengis.net/ont/crs/";
 	
 	public static String downliftQuery="SELECT DISTINCT * WHERE { BIND(<"+curCRSURI+"> AS ?sub) ?sub ?rel ?obj . OPTIONAL {?obj ?rel2 ?obj2 . "
-			+ "FILTER(STRSTARTS(STR(?rel2), \""+GeoSPARQLCRSURI+"\") || STRSTARTS(STR(?rel2), \"http://www.w3.org/2000/01/rdf-schema#label\")) "
+			+ "FILTER(STRSTARTS(STR(?rel2), \""+GeoSPARQLCRSURI+"\") || STRSTARTS(STR(?rel2), \"http://www.w3.org/2000/01/rdf-schema#label\") || STRSTARTS(STR(?rel2), \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\")) "
 			+ "OPTIONAL {?obj2 ?rel3 ?obj3 . "
 			+ "FILTER(STRSTARTS(STR(?rel3), \""+GeoSPARQLCRSURI+"\") || STRSTARTS(STR(?rel3), \"http://www.w3.org/2000/01/rdf-schema#label\"))"
 			+ "}} "
@@ -107,7 +107,7 @@ public class RDFCRSToWKT {
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointURL, query);
 		ResultSet res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		switch(format) {
 			case "WKT": return refsys.toWKT();
 			case "GML": return refsys.toGML().toString();
@@ -123,7 +123,7 @@ public class RDFCRSToWKT {
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
 		ResultSet res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		switch(format) {
 			case "WKT": return refsys.toWKT();
 			case "GML": return refsys.toGML().toString();
@@ -142,7 +142,12 @@ public class RDFCRSToWKT {
 		return null;		
 	}
 	
-	public static CoordinateReferenceSystem downliftSytem(ResultSet res) {
+	/**
+	 * Converts a CRS system defined in RDF to an internal representation.
+	 * @param res The resultset of the downlift query
+	 * @return
+	 */
+	public static CoordinateReferenceSystem downliftSystem(ResultSet res) {
 		boolean datum=false,coordinateSystem=false,ellipse=false;
 		CoordinateReferenceSystem refsys=new CoordinateReferenceSystem();
 		refsys.datum=new Datum();
@@ -227,12 +232,16 @@ public class RDFCRSToWKT {
 					}
 				}else if(sol.get("rel2").toString().contains("label")) {
 					refsys.datum.datumName=sol.getLiteral("obj2").getString();
+				}else if(sol.get("rel2").toString().contains("type") && sol.get("obj2").toString().contains("ReferenceFrame")) {
+					refsys.datum.datumType=sol.get("obj2").toString().substring(sol.get("obj2").toString().lastIndexOf("/")+1);
 				}
 			}
 			if(sol.get("rel").toString().contains("coordinateSystem")) {
 				if(sol.get("rel2").toString().contains("label")) {
 					System.out.println("Label: "+sol.get("obj2").toString());
-					refsys.cSystem.coordinateSystemType=sol.getLiteral("obj2").getString();
+					refsys.cSystem.coordinateSystemName=sol.getLiteral("obj2").getString();
+				}else if(sol.get("rel2").toString().contains("type") && sol.get("obj2").toString().contains("CoordinateSystem")) {
+					refsys.cSystem.coordinateSystemType=sol.get("obj2").toString().substring(sol.get("obj2").toString().lastIndexOf("/")+1);
 				}
 				if(sol.get("rel2").toString().contains("axis")) {
 					String curaxis_string=sol.get("obj2").toString();
@@ -334,9 +343,10 @@ public class RDFCRSToWKT {
 		query = QueryFactory.create(prefixCollection+queryString);
 		qexec = QueryExecutionFactory.create(query, model);
 		res=qexec.execSelect();
-		CoordinateReferenceSystem refsys=downliftSytem(res);
+		CoordinateReferenceSystem refsys=downliftSystem(res);
 		System.out.println(refsys);
 		System.out.println(refsys.toWKT());
+		System.out.println(refsys.toGML());
 		System.out.println(refsys.toProjJSON());
 		try {
 			String crs2 = CRS.forCode("EPSG:25832").toWKT();

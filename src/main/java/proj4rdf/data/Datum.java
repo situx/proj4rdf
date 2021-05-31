@@ -1,17 +1,38 @@
 package proj4rdf.data;
 
+import java.io.StringWriter;
+import java.util.List;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.apache.jena.query.ResultSet;
 import org.json.JSONObject;
 
+import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
+
+/**
+ * Representation of a geodetic datum.
+ *
+ */
 public class Datum {
 
+	/** The type of the datum.*/
 	public String datumType;
 	
+	/** An identifier for the datum.*/
 	public String datumName;
 	
+	/**The description of the ellipsoid/geoid which this datum uses.*/
 	public Ellipsoid ellipsoid;
 	
+	/**Optional description of a prime meridian.*/
 	public PrimeMeridian primeMeridian;
+	
+	public String interstellarbody;
+	
+	public List<String> usagescope;
 	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
@@ -26,9 +47,37 @@ public class Datum {
 		return result;
 	}
 	
-	public JSONObject toGML() {
-		JSONObject result=new JSONObject();
-		return result;
+	public String toGML() {
+		XMLOutputFactory factory = XMLOutputFactory.newInstance();
+		StringWriter strwriter=new StringWriter();
+		XMLStreamWriter writer;
+		try {
+			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+			writer.writeStartElement("gml:"+datumType);	
+			writer.writeStartElement("gml:datumName");
+			writer.writeCharacters(this.datumName);
+			writer.writeEndElement();
+			if(primeMeridian!=null) {
+				writer.writeStartElement("gml:usesPrimeMeridian");
+				writer.writeCharacters(System.lineSeparator());
+				writer.flush();
+				strwriter.write(primeMeridian.toGML()+System.lineSeparator());
+				writer.writeEndElement();
+			}
+			if(ellipsoid!=null) {
+				writer.writeStartElement("gml:usesEllipsoid");
+				writer.writeCharacters(System.lineSeparator());
+				writer.flush();
+				strwriter.write(this.ellipsoid.toGML()+System.lineSeparator());
+				writer.writeEndElement();
+			}
+			writer.writeEndElement();
+			writer.flush();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return strwriter.toString();
 	}
 	
 	

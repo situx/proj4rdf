@@ -8,6 +8,10 @@ import org.opengis.util.FactoryException;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 
+/**
+ * Indicates if the first two axis of the spatial reference system are flipped.
+ *
+ */
 public class SRIDHasFlippedAxis extends FunctionBase1 {
 
 	@Override

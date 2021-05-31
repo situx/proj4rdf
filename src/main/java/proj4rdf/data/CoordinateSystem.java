@@ -1,11 +1,22 @@
 package proj4rdf.data;
 
+import java.io.StringWriter;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
+
+/**
+ * Representation of a coordinate system as a part of a SRS.
+ *
+ */
 public class CoordinateSystem {
 
 	@Override
@@ -14,13 +25,13 @@ public class CoordinateSystem {
 				+ ", numberDimensions=" + numberDimensions + "]";
 	}
 
-
-
 	public List<Axis> axisList=new LinkedList<Axis>();
 	
 	public String coordinateSystemType;
 	
 	public Integer numberDimensions;
+
+	public String coordinateSystemName;
 	
 	public String toProj() {
 		StringBuilder builder=new StringBuilder();
@@ -36,6 +47,35 @@ public class CoordinateSystem {
 			cs.getJSONArray("axis").put(axis.toProjJSON());
 		}
 		return cs;
+	}
+	
+	
+	public String toGML() {
+		XMLOutputFactory factory = XMLOutputFactory.newInstance();
+		StringWriter strwriter=new StringWriter();
+		XMLStreamWriter writer;
+		try {
+			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+			writer.writeStartElement("gml:"+coordinateSystemType);
+			if(this.coordinateSystemName!=null) {
+				writer.writeStartElement("gml:csName");
+				writer.writeCharacters(this.coordinateSystemName);
+				writer.writeEndElement();
+			}
+			for(Axis ax:axisList) {
+				writer.writeStartElement("gml:usesAxis");
+				writer.writeCharacters(System.lineSeparator());
+				writer.flush();
+				strwriter.write(ax.toGML()+System.lineSeparator());
+				writer.writeEndElement();
+			}		
+			writer.writeEndElement();
+			writer.flush();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return strwriter.toString();
 	}
 	
 

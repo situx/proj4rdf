@@ -5,6 +5,10 @@ import java.math.BigInteger;
 import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase1;
 
+/**
+ * Converts an SRID to EPSG representation.
+ *
+ */
 public class SRIDToEPSG extends FunctionBase1 {
 
 	@Override

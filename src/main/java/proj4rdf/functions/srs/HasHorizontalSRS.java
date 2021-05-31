@@ -6,7 +6,11 @@ import org.apache.sis.referencing.CRS;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 
-public class HasHorizontalCRS extends FunctionBase1 {
+/**
+ * Indicates if a geometry is associated with a horizontal spatial reference system.
+ *
+ */
+public class HasHorizontalSRS extends FunctionBase1 {
 
 	@Override
 	public NodeValue exec(NodeValue v) {

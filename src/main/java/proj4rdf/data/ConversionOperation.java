@@ -1,9 +1,16 @@
 package proj4rdf.data;
 
+import java.io.StringWriter;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.json.JSONObject;
+
+import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 public class ConversionOperation {
 
@@ -24,6 +31,29 @@ public class ConversionOperation {
 	public JSONObject toProjJSON() {
 		JSONObject cs=new JSONObject();
 		return cs;
+	}
+	
+	public String toGML() {
+		XMLOutputFactory factory = XMLOutputFactory.newInstance();
+		StringWriter strwriter=new StringWriter();
+		XMLStreamWriter writer;
+		try {
+			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+			writer.writeStartElement("gml:Conversion");
+			for(String key:parameters.keySet()) {
+				writer.writeStartElement("gml:usesParameterValue");
+				writer.writeStartElement("gml:value");
+				writer.writeCharacters(parameters.get(key));
+				writer.writeEndElement();
+				writer.writeEndElement();
+			}
+			writer.writeEndElement();
+			writer.flush();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return strwriter.toString();
 	}
 	
 	public String toWKT() {

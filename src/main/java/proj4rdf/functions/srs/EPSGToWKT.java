@@ -5,6 +5,10 @@ import org.apache.jena.sparql.function.FunctionBase1;
 import org.apache.sis.referencing.CRS;
 import org.opengis.util.FactoryException;
 
+/**
+ * Converts an EPSG code to its WKT representation.
+ *
+ */
 public class EPSGToWKT extends FunctionBase1 {
 
 	@Override
