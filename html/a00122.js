@@ -1,14 +1,14 @@
 var a00122 =
 [
     [ "AffineTransformation", "a00177.html", null ],
-    [ "AreaOfValidity", "a00181.html", null ],
+    [ "AreaOfValidity", "a00181.html", "a00181" ],
     [ "ConvertCRS", "a00185.html", "a00185" ],
     [ "ConvertCRS2", "a00189.html", "a00189" ],
     [ "EPSGToSRID", "a00193.html", "a00193" ],
     [ "EPSGToWKT", "a00197.html", "a00197" ],
     [ "ESPGToGML", "a00201.html", "a00201" ],
     [ "GeomToOpenLocationCode", "a00205.html", "a00205" ],
-    [ "HasHorizontalCRS", "a00209.html", "a00209" ],
+    [ "HasHorizontalSRS", "a00209.html", "a00209" ],
     [ "IsEligibleConversion", "a00213.html", "a00213" ],
     [ "IsInCRSAreaOfValidity", "a00217.html", "a00217" ],
     [ "SetGeoReference", "a00221.html", null ],

@@ -2,7 +2,6 @@ var hierarchy =
 [
     [ "AffineTransformation", "a00177.html", null ],
     [ "AreaOfValidity", "a00133.html", null ],
-    [ "AreaOfValidity", "a00181.html", null ],
     [ "Axis", "a00137.html", null ],
     [ "ConversionOperation", "a00141.html", null ],
     [ "CoordinateReferenceSystem", "a00145.html", null ],
@@ -22,10 +21,11 @@ var hierarchy =
     [ "SRSGeo", "a00281.html", null ],
     [ "WebService", "a00289.html", null ],
     [ "FunctionBase1", null, [
+      [ "AreaOfValidity", "a00181.html", null ],
       [ "EPSGToSRID", "a00193.html", null ],
       [ "EPSGToWKT", "a00197.html", null ],
       [ "ESPGToGML", "a00201.html", null ],
-      [ "HasHorizontalCRS", "a00209.html", null ],
+      [ "HasHorizontalSRS", "a00209.html", null ],
       [ "IsInCRSAreaOfValidity", "a00217.html", null ],
       [ "SRIDGetAxis1Name", "a00229.html", null ],
       [ "SRIDGetAxis1Orientation", "a00233.html", null ],

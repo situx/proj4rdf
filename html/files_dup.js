@@ -7,7 +7,7 @@ var files_dup =
       [ "AreaOfValidity", "a00133.html", "a00133" ]
     ] ],
     [ "functions/srs/AreaOfValidity.java", "a00717.html", [
-      [ "AreaOfValidity", "a00181.html", null ]
+      [ "AreaOfValidity", "a00181.html", "a00181" ]
     ] ],
     [ "Axis.java", "a00008.html", [
       [ "Axis", "a00137.html", "a00137" ]
@@ -48,8 +48,8 @@ var files_dup =
     [ "GeomToOpenLocationCode.java", "a00056.html", [
       [ "GeomToOpenLocationCode", "a00205.html", "a00205" ]
     ] ],
-    [ "HasHorizontalCRS.java", "a00059.html", [
-      [ "HasHorizontalCRS", "a00209.html", "a00209" ]
+    [ "HasHorizontalSRS.java", "a00059.html", [
+      [ "HasHorizontalSRS", "a00209.html", "a00209" ]
     ] ],
     [ "IsEligibleConversion.java", "a00062.html", [
       [ "IsEligibleConversion", "a00213.html", "a00213" ]

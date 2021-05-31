@@ -67,12 +67,15 @@ $(document).ready(function(){initNavTree('a00193.html',''); initResizable(); });
 <div class="title">EPSGToSRID Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Converts an EPSG code to its SRID representation.  
+ <a href="a00193.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for EPSGToSRID:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00192.png" border="0" usemap="#EPSGToSRID_inherit__map" alt="Inheritance graph"/></div>
 <map name="EPSGToSRID_inherit__map" id="EPSGToSRID_inherit__map">
-<area shape="rect" title=" " alt="" coords="13,80,115,107"/>
+<area shape="rect" title="Converts an EPSG code to its SRID representation." alt="" coords="13,80,115,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,123,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -81,7 +84,7 @@ Collaboration diagram for EPSGToSRID:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00191.png" border="0" usemap="#EPSGToSRID_coll__map" alt="Collaboration graph"/></div>
 <map name="EPSGToSRID_coll__map" id="EPSGToSRID_coll__map">
-<area shape="rect" title=" " alt="" coords="13,80,115,107"/>
+<area shape="rect" title="Converts an EPSG code to its SRID representation." alt="" coords="13,80,115,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,123,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -91,7 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memItemLeft" align="right" valign="top">NodeValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00193.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">exec</a> (NodeValue v)</td></tr>
 <tr class="separator:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Converts an EPSG code to its SRID representation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4cd5b69d6ec07b0cf45215fe1fcadd60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cd5b69d6ec07b0cf45215fe1fcadd60">&#9670;&nbsp;</a></span>exec()</h2>
 
@@ -107,10 +112,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                           {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                String epsg=v.getString();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <span class="keywordflow">return</span> NodeValue.makeInteger(Integer.valueOf(epsg.substring(epsg.indexOf(<span class="charliteral">&#39;:&#39;</span>)+1)));</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                           {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                String epsg=v.getString();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">return</span> NodeValue.makeInteger(Integer.valueOf(epsg.substring(epsg.indexOf(<span class="charliteral">&#39;:&#39;</span>)+1)));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
