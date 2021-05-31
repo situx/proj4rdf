@@ -47,6 +47,10 @@ geocrs:ArmadilloProjection a owl:Class ;
     rdfs:label "armadillo projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection .
 
+geocrs:ArtificialSatellite a owl:Class ;
+    rdfs:label "artificial satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
 geocrs:Asteroid a owl:Class ;
     rdfs:label "asteroid"@en ;
     rdfs:subClassOf geocrs:InterstellarBody .
@@ -75,6 +79,11 @@ geocrs:BehrmannProjection a owl:Class ;
 geocrs:BertinProjection a owl:Class ;
     rdfs:label "bertin projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:BoggsEumorphicProjection a owl:Class ;
+    rdfs:label "boggs eumorphic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:BonneProjection a owl:Class ;
     rdfs:label "bonne projection"@en ;
@@ -134,6 +143,11 @@ geocrs:CraigRetroazimuthalProjection a owl:Class ;
     rdfs:label "craig retroazimuthal projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:RetroazimuthalProjection .
+
+geocrs:CrasterParabolicProjection a owl:Class ;
+    rdfs:label "boggs eumorphic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:CylindricalCoordinateSystem a owl:Class ;
     rdfs:label "cylindrical coordinate system"@en ;
@@ -218,14 +232,6 @@ geocrs:DynamicVerticalReferenceFrame a owl:Class ;
     rdfs:subClassOf geocrs:DynamicReferenceFrame,
         geocrs:VerticalReferenceFrame ;
     skos:definition "vertical reference frame in which some of the defining parameters have time dependency"@en .
-
-geocrs:Earth a geocrs:Planet,
-        owl:NamedIndividual ;
-    rdfs:label "earth"@en .
-
-geocrs:EarthMoon a geocrs:Moon,
-        owl:NamedIndividual ;
-    rdfs:label "moon"@en .
 
 geocrs:EclipticCoordinateSystem a owl:Class ;
     rdfs:label "ecliptic coordinate system"@en ;
@@ -336,6 +342,11 @@ geocrs:GoodeHomolosineProjection a owl:Class ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:HEALPixProjection a owl:Class ;
+    rdfs:label "HEALPix projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
 geocrs:HammerProjection a owl:Class ;
     rdfs:label "hammer projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
@@ -432,6 +443,10 @@ geocrs:MollweideProjection a owl:Class ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:Moon a owl:Class ;
+    rdfs:label "moon"@en ;
+    rdfs:subClassOf geocrs:NaturalSatellite .
+
 geocrs:MyrahedalProjection a owl:Class ;
     rdfs:label "myrahedal projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
@@ -483,7 +498,7 @@ geocrs:OrdinalCoordinateSystem a owl:Class ;
     skos:definition "n-dimensional coordinate system in which every axis uses integers"@en .
 
 geocrs:OrteliusOvalProjection a owl:Class ;
-    rdfs:label "goode homolosine projection"@en ;
+    rdfs:label "ortelius oval projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
 
@@ -699,6 +714,11 @@ geocrs:TemporalReferenceSystem a owl:Class ;
     rdfs:label "temporal reference system"@en ;
     rdfs:subClassOf geocrs:ReferenceSystem ;
     skos:definition "Reference system against which time is measured"@en .
+
+geocrs:TheTimesProjection a owl:Class ;
+    rdfs:label "the times projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:ToblerHyperelliptical a owl:Class ;
     rdfs:label "tobler hyperelliptical projection"@en ;
@@ -1422,10 +1442,6 @@ geocrs:LocalGridReferenceSystem a owl:Class ;
     rdfs:subClassOf geocrs:GridReferenceSystem ;
     skos:definition "a grid that divides space with precise positions relative to a datum and is valid on a part of the earth"@en .
 
-geocrs:Moon a owl:Class ;
-    rdfs:label "moon"@en ;
-    rdfs:subClassOf geocrs:NaturalSatellite .
-
 geocrs:NaturalSatellite a owl:Class ;
     rdfs:label "natural satellite"@en ;
     rdfs:subClassOf geocrs:InterstellarBody ;
@@ -1447,6 +1463,10 @@ geocrs:ParametricCRS a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     rdfs:subClassOf geocrs:SingleCRS ;
     skos:definition "one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial"@en .
+
+geocrs:Planet a owl:Class ;
+    rdfs:label "planet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
 
 geocrs:PlanetStatus a owl:Class ;
     rdfs:label "planetstatus"@en ;
@@ -1529,10 +1549,6 @@ geocrs:PlanarCoordinateSystem a owl:Class ;
     rdfs:label "planar coordinate system"@en ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
-
-geocrs:Planet a owl:Class ;
-    rdfs:label "planet"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
 
 geocrs:RetroazimuthalProjection a owl:Class ;
     rdfs:label "retroazimuthal projection"@en ;
@@ -1689,15 +1705,15 @@ geocrs:ConformalProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
 
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:InterstellarBody a owl:Class ;
     rdfs:label "interstellar body"@en .
 
 geocrs:CylindricalProjection a owl:Class ;
     rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:Projection a owl:Class ;
