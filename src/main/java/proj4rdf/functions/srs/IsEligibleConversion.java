@@ -1,7 +1,6 @@
 package proj4rdf.functions.srs;
 
 import org.apache.jena.sparql.expr.NodeValue;
-import org.apache.jena.sparql.function.FunctionBase1;
 import org.apache.jena.sparql.function.FunctionBase2;
 import org.apache.sis.referencing.CRS;
 

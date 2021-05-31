@@ -7,6 +7,10 @@ import org.apache.jena.sparql.function.FunctionBase1;
 import org.apache.sis.referencing.CRS;
 import org.opengis.util.FactoryException;
 
+/**
+ * Converts an SRID to its GML representation.
+ *
+ */
 public class SRIDToGML extends FunctionBase1 {
 
 	@Override

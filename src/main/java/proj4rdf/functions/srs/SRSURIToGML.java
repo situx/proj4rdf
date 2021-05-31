@@ -5,6 +5,10 @@ import org.apache.jena.sparql.function.FunctionBase2;
 
 import proj4rdf.RDFCRSToWKT;
 
+/**
+ * Converts an SRS URI to its GML representation.
+ *
+ */
 public class SRSURIToGML extends FunctionBase2 {
 
 	@Override

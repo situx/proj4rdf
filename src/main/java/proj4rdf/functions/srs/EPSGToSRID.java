@@ -3,6 +3,10 @@ package proj4rdf.functions.srs;
 import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase1;
 
+/**
+ * Converts an EPSG code to its SRID representation.
+ *
+ */
 public class EPSGToSRID extends FunctionBase1 {
 
 	@Override

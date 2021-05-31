@@ -12,6 +12,10 @@ import org.opengis.util.FactoryException;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 
+/**
+ * Indicates if a geometry is the area of validity of its associated spatial reference system.
+ *
+ */
 public class IsInCRSAreaOfValidity extends FunctionBase1 {
 
 	@Override

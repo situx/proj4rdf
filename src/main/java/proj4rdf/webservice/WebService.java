@@ -135,8 +135,7 @@ public class WebService {
 			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
 			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
 			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
-		
-		return null;
+		return Response.ok(RDFCRSToWKT.getCRSFromTripleStore(crsuri, crsendpoint, returnformat)).build();
 	}
 	
 	@GET

@@ -142,6 +142,11 @@ public class RDFCRSToWKT {
 		return null;		
 	}
 	
+	/**
+	 * Converts a CRS system defined in RDF to an internal representation.
+	 * @param res The resultset of the downlift query
+	 * @return
+	 */
 	public static CoordinateReferenceSystem downliftSystem(ResultSet res) {
 		boolean datum=false,coordinateSystem=false,ellipse=false;
 		CoordinateReferenceSystem refsys=new CoordinateReferenceSystem();

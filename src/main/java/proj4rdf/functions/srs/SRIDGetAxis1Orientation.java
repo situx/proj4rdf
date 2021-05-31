@@ -8,6 +8,10 @@ import org.opengis.util.FactoryException;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 
+/**
+ * Returns the orientation of the first axis defined in the spatial reference system.
+ *
+ */
 public class SRIDGetAxis1Orientation extends FunctionBase1 {
 
 	@Override

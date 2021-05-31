@@ -6,7 +6,7 @@ import org.apache.jena.sparql.function.FunctionRegistry;
 
 import proj4rdf.functions.srs.AreaOfValidity;
 import proj4rdf.functions.srs.ConvertCRS;
-import proj4rdf.functions.srs.HasHorizontalCRS;
+import proj4rdf.functions.srs.HasHorizontalSRS;
 import proj4rdf.functions.srs.IsEligibleConversion;
 import proj4rdf.functions.srs.IsInCRSAreaOfValidity;
 import proj4rdf.functions.srs.SRIDGetAxis1Name;
@@ -42,11 +42,11 @@ public class CRSConfig {
             functionRegistry.put(SRSGeo.st_sridGetAxis2Name.getURI(), SRIDGetAxis2Name.class);
             functionRegistry.put(SRSGeo.st_sridGetAxis2Orientation.getURI(), SRIDGetAxis2Orientation.class);
             functionRegistry.put(SRSGeo.st_sridHasFlippedAxis.getURI(), SRIDHasFlippedAxis.class);
-            functionRegistry.put(SRSGeo.st_hasHorizontalCRS.getURI(), HasHorizontalCRS.class);
+            functionRegistry.put(SRSGeo.st_hasHorizontalCRS.getURI(), HasHorizontalSRS.class);
             functionRegistry.put(SRSGeo.st_sridToEPSG.getURI(), SRIDToEPSG.class);
             functionRegistry.put(SRSGeo.st_isInSRSAreaOfValidity.getURI(), IsInCRSAreaOfValidity.class);
             functionRegistry.put(SRSGeo.st_isEligibleConversion.getURI(), IsEligibleConversion.class);
-            functionRegistry.put(SRSGeo.st_hasHorizontalCRS.getURI(), HasHorizontalCRS.class);
+            functionRegistry.put(SRSGeo.st_hasHorizontalCRS.getURI(), HasHorizontalSRS.class);
             functionRegistry.put(SRSGeo.st_setGeoReference.getURI(), SetGeoReference.class);
             functionRegistry.put(SRSGeo.st_suggestProjection.getURI(), SuggestProjection.class);
             functionRegistry.put(SRSGeo.st_sridToWKT.getURI(), SRIDToWKT.class);
