@@ -86,6 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa902c6d1cea92aa18f88eef2779152c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memItemLeft" align="right" valign="top">JSONObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00141.html#a8ea8eae38d9733ebbaf710648db2d2aa">toProjJSON</a> ()</td></tr>
 <tr class="separator:a8ea8eae38d9733ebbaf710648db2d2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ae4a79473f4a938f9bf62813f44f70"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a> ()</td></tr>
+<tr class="separator:a83ae4a79473f4a938f9bf62813f44f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec44d50b36093db7d8b1b3cd91ec474"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a> ()</td></tr>
 <tr class="separator:acec44d50b36093db7d8b1b3cd91ec474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -101,6 +103,49 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa7bc4e46e558449342e5f9ff9e6dd55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a83ae4a79473f4a938f9bf62813f44f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ae4a79473f4a938f9bf62813f44f70">&#9670;&nbsp;</a></span>toGML()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String toGML </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                              {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                XMLOutputFactory factory = XMLOutputFactory.newInstance();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                StringWriter strwriter=<span class="keyword">new</span> StringWriter();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                XMLStreamWriter writer;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        writer = <span class="keyword">new</span> IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:Conversion&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">for</span>(String key:<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.keySet()) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesParameterValue&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:value&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                writer.writeCharacters(<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.get(key));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        writer.flush();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">ConversionOperation.parameters</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>.</p>
+
+</div>
+</div>
 <a id="aa902c6d1cea92aa18f88eef2779152c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa902c6d1cea92aa18f88eef2779152c7">&#9670;&nbsp;</a></span>toProj()</h2>
 
@@ -115,10 +160,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                               {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                               {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -136,10 +181,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                       {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                JSONObject cs=<span class="keyword">new</span> JSONObject();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> cs;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                       {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                JSONObject cs=<span class="keyword">new</span> JSONObject();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span> cs;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -157,19 +202,19 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                              {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">projectionName</a>==<span class="keyword">null</span> &amp;&amp; <a class="code" href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">methodName</a>==<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                builder.append(<span class="stringliteral">&quot;CONVERSION[\&quot;&quot;</span>+<a class="code" href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">projectionName</a>+<span class="stringliteral">&quot;\&quot;,METHOD[\&quot;&quot;</span>+<a class="code" href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">methodName</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">for</span>(String para:<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.keySet()) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        builder.append(<span class="stringliteral">&quot;PARAMETER[\&quot;&quot;</span>+para+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.get(para)+<span class="stringliteral">&quot;],&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                builder.delete(builder.length()-1, builder.length());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                builder.append(<span class="stringliteral">&quot;]]&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                              {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">projectionName</a>==<span class="keyword">null</span> &amp;&amp; <a class="code" href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">methodName</a>==<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                builder.append(<span class="stringliteral">&quot;CONVERSION[\&quot;&quot;</span>+<a class="code" href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">projectionName</a>+<span class="stringliteral">&quot;\&quot;,METHOD[\&quot;&quot;</span>+<a class="code" href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">methodName</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">for</span>(String para:<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.keySet()) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        builder.append(<span class="stringliteral">&quot;PARAMETER[\&quot;&quot;</span>+para+<span class="stringliteral">&quot;\&quot;,&quot;</span>+<a class="code" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">parameters</a>.get(para)+<span class="stringliteral">&quot;],&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                builder.delete(builder.length()-1, builder.length());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                builder.append(<span class="stringliteral">&quot;]]&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">ConversionOperation.methodName</a>, <a class="el" href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">ConversionOperation.parameters</a>, and <a class="el" href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">ConversionOperation.projectionName</a>.</p>
 
@@ -206,7 +251,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>, and <a class="el" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">ConversionOperation.toWKT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#a1cc7795b90ad27f38e25ed4ae9f33708">RDFCRSToWKT.downliftSystem()</a>, <a class="el" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">ConversionOperation.toGML()</a>, and <a class="el" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">ConversionOperation.toWKT()</a>.</p>
 
 </div>
 </div>
@@ -244,9 +289,9 @@ Public Attributes</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00141_html_a94d69f412981d25a956d0ab00f5e4f3a"><div class="ttname"><a href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">proj4rdf.data.ConversionOperation.projectionName</a></div><div class="ttdeci">String projectionName</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:12</div></div>
-<div class="ttc" id="aa00141_html_a22df0726c974a3e8ae921e50bcc83ce2"><div class="ttname"><a href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">proj4rdf.data.ConversionOperation.parameters</a></div><div class="ttdeci">Map&lt; String, String &gt; parameters</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:14</div></div>
-<div class="ttc" id="aa00141_html_a5438eae54e3f651e6d956c1cd053f1e4"><div class="ttname"><a href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">proj4rdf.data.ConversionOperation.methodName</a></div><div class="ttdeci">String methodName</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:10</div></div>
+<div class="ttc" id="aa00141_html_a94d69f412981d25a956d0ab00f5e4f3a"><div class="ttname"><a href="a00141.html#a94d69f412981d25a956d0ab00f5e4f3a">proj4rdf.data.ConversionOperation.projectionName</a></div><div class="ttdeci">String projectionName</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:19</div></div>
+<div class="ttc" id="aa00141_html_a22df0726c974a3e8ae921e50bcc83ce2"><div class="ttname"><a href="a00141.html#a22df0726c974a3e8ae921e50bcc83ce2">proj4rdf.data.ConversionOperation.parameters</a></div><div class="ttdeci">Map&lt; String, String &gt; parameters</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:21</div></div>
+<div class="ttc" id="aa00141_html_a5438eae54e3f651e6d956c1cd053f1e4"><div class="ttname"><a href="a00141.html#a5438eae54e3f651e6d956c1cd053f1e4">proj4rdf.data.ConversionOperation.methodName</a></div><div class="ttdeci">String methodName</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:17</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
