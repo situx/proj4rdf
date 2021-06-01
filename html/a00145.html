@@ -167,38 +167,38 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                                         {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                List&lt;String&gt; parts=<span class="keyword">new</span> LinkedList&lt;String&gt;();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                System.out.println(<span class="stringliteral">&quot;{&quot;</span>+wktString+<span class="stringliteral">&quot;}&quot;</span>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                String lastWord=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordtype">int</span> bracketopencounter=0,bracketclosecounter=0;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;wktString.length();i++) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        System.out.println(wktString.charAt(i));</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        <span class="keywordflow">if</span>(wktString.charAt(i)==<span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                lastWord=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        }<span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                lastWord+=wktString.charAt(i);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        <span class="keywordflow">if</span>(wktString.charAt(i)==<span class="charliteral">&#39;[&#39;</span>) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                <span class="comment">//System.out.println(&quot;Bracket open!!!&quot;);</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                bracketopencounter++;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                <span class="keywordflow">if</span>(parts.size()&lt;bracketopencounter) {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                        parts.add(lastWord);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        <span class="comment">//System.out.println(parts);</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;bracketopencounter;j++) {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                parts.set(j, parts.get(j)+wktString.charAt(i));</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keywordflow">for</span>(String p:parts) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        System.out.println(<span class="stringliteral">&quot;====&quot;</span>);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        System.out.println(p);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                                         {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                List&lt;String&gt; parts=<span class="keyword">new</span> LinkedList&lt;String&gt;();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                System.out.println(<span class="stringliteral">&quot;{&quot;</span>+wktString+<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                String lastWord=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="keywordtype">int</span> bracketopencounter=0,bracketclosecounter=0;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;wktString.length();i++) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        System.out.println(wktString.charAt(i));</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <span class="keywordflow">if</span>(wktString.charAt(i)==<span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                lastWord=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        }<span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                lastWord+=wktString.charAt(i);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                        }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        <span class="keywordflow">if</span>(wktString.charAt(i)==<span class="charliteral">&#39;[&#39;</span>) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                <span class="comment">//System.out.println(&quot;Bracket open!!!&quot;);</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                bracketopencounter++;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                <span class="keywordflow">if</span>(parts.size()&lt;bracketopencounter) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                        parts.add(lastWord);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        <span class="comment">//System.out.println(parts);</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;bracketopencounter;j++) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                parts.set(j, parts.get(j)+wktString.charAt(i));</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                        }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">for</span>(String p:parts) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        System.out.println(<span class="stringliteral">&quot;====&quot;</span>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        System.out.println(p);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="a00145.html#a8b260eecbaabcef8473fd87ada040682">CoordinateReferenceSystem.main()</a>.</p>
 
@@ -227,11 +227,11 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                CRS.fromXML(gml);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                CRS.fromXML(gml);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,9 +258,9 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                                                                                                                                 {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <a class="code" href="a00145.html#a12e8064b8602eaca62d3edcf1e46c9fb">fromWKT</a>(CRS.forCode(<span class="stringliteral">&quot;EPSG:4326&quot;</span>).toWKT());</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                                                                                                                                 {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <a class="code" href="a00145.html#a12e8064b8602eaca62d3edcf1e46c9fb">fromWKT</a>(CRS.forCode(<span class="stringliteral">&quot;EPSG:4326&quot;</span>).toWKT());</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00145.html#a12e8064b8602eaca62d3edcf1e46c9fb">CoordinateReferenceSystem.fromWKT()</a>.</p>
 
@@ -310,39 +310,46 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:srsName&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00145.html#a9744b7df2e463a8b2b6f5d72b165a82a">crsName</a>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        writer.writeEndElement();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesEllipsoidalCS&quot;</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:sourceCRS&quot;</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                writer.flush();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>.<a class="code" href="a00149.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>.<a class="code" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>());</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                writer.writeEndElement();</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesGeodeticDatum&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesEllipsoidalCS&quot;</span>);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                writer.flush();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>.<a class="code" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>.<a class="code" href="a00149.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                writer.writeEndElement();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:definedByConversion&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesGeodeticDatum&quot;</span>);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                writer.flush();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>.<a class="code" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>.<a class="code" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                writer.writeEndElement();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        writer.writeEndElement();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        writer.writeEndDocument();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        e.printStackTrace();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        <span class="keywordflow">if</span>(this.<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:definedByConversion&quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                writer.flush();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                strwriter.write(this.<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>.<a class="code" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        writer.writeEndDocument();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">CoordinateReferenceSystem.crsType</a>, <a class="el" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">ConversionOperation.toGML()</a>, <a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">Datum.toGML()</a>, and <a class="el" href="a00149.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateSystem.toGML()</a>.</p>
+<p class="reference">References <a class="el" href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">CoordinateReferenceSystem.crsType</a>, <a class="el" href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">ConversionOperation.toGML()</a>, <a class="el" href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">Datum.toGML()</a>, <a class="el" href="a00149.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateSystem.toGML()</a>, and <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="a00273.html#a46d0e009fe94197839f1c010ef8dab50">RDFCRSToWKT.getCRSFromTripleStore()</a>, and <a class="el" href="a00273.html#a8b260eecbaabcef8473fd87ada040682">RDFCRSToWKT.main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00273.html#a46d0e009fe94197839f1c010ef8dab50">RDFCRSToWKT.getCRSFromTripleStore()</a>, <a class="el" href="a00273.html#a8b260eecbaabcef8473fd87ada040682">RDFCRSToWKT.main()</a>, and <a class="el" href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">CoordinateReferenceSystem.toGML()</a>.</p>
 
 </div>
 </div>
@@ -444,28 +451,28 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                              {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                builder.append(<a class="code" href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">crsType</a>+<span class="stringliteral">&quot;[&quot;</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                builder.append(<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00145.html#a9744b7df2e463a8b2b6f5d72b165a82a">crsName</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                        builder.append(<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>.<a class="code" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                        builder.append(<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>.<a class="code" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        builder.append(<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>.<a class="code" href="a00149.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        builder.append(<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>.<a class="code" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#aef19c1a95b28ff8b57f125f1b51f0a19">areaOfValidity</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        builder.append(<a class="code" href="a00145.html#aef19c1a95b28ff8b57f125f1b51f0a19">areaOfValidity</a>.<a class="code" href="a00133.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                builder.append(<span class="stringliteral">&quot;]&quot;</span>);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                              {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                builder.append(<a class="code" href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">crsType</a>+<span class="stringliteral">&quot;[&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                builder.append(<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00145.html#a9744b7df2e463a8b2b6f5d72b165a82a">crsName</a>+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        builder.append(<a class="code" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">sourceCRS</a>.<a class="code" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        builder.append(<a class="code" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">datum</a>.<a class="code" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        builder.append(<a class="code" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">cSystem</a>.<a class="code" href="a00149.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        builder.append(<a class="code" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">conv</a>.<a class="code" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00145.html#aef19c1a95b28ff8b57f125f1b51f0a19">areaOfValidity</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        builder.append(<a class="code" href="a00145.html#aef19c1a95b28ff8b57f125f1b51f0a19">areaOfValidity</a>.<a class="code" href="a00133.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                builder.append(<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00145.html#aef19c1a95b28ff8b57f125f1b51f0a19">CoordinateReferenceSystem.areaOfValidity</a>, <a class="el" href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">CoordinateReferenceSystem.conv</a>, <a class="el" href="a00145.html#a9744b7df2e463a8b2b6f5d72b165a82a">CoordinateReferenceSystem.crsName</a>, <a class="el" href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">CoordinateReferenceSystem.crsType</a>, <a class="el" href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">CoordinateReferenceSystem.cSystem</a>, <a class="el" href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">CoordinateReferenceSystem.datum</a>, <a class="el" href="a00145.html#acb01a3e2cfe5ae455db365436198c26e">CoordinateReferenceSystem.sourceCRS</a>, <a class="el" href="a00133.html#acec44d50b36093db7d8b1b3cd91ec474">AreaOfValidity.toWKT()</a>, <a class="el" href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">ConversionOperation.toWKT()</a>, <a class="el" href="a00149.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateSystem.toWKT()</a>, <a class="el" href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">Datum.toWKT()</a>, and <a class="el" href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">CoordinateReferenceSystem.toWKT()</a>.</p>
 
@@ -496,49 +503,49 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                                                                         {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                Set&lt;String&gt; resultset=<span class="keyword">new</span> TreeSet&lt;String&gt;();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                org.opengis.referencing.crs.CoordinateReferenceSystem res = CRS.fromWKT(wkt);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                String crsid=<span class="stringliteral">&quot;geocrs:&quot;</span>+res.getName().getCode().replace(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;_&quot;</span>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                String csid=crsid+<span class="stringliteral">&quot;_cs&quot;</span>;<span class="comment">//geocrs:&quot;+res.getCoordinateSystem().getName().getCode().replace(&quot; &quot;, &quot;_&quot;).replace(&quot;.&quot;, &quot;&quot;).replace(&quot;,&quot;, &quot;&quot;).replace(&quot;:&quot;, &quot;&quot;);          </span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; rdf:type geocrs:&quot;</span>+res.ALIAS_KEY+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; rdfs:label \&quot;&quot;</span>+res.getName()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:coordinateSystem &quot;</span>+csid+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:scope \&quot;&quot;</span>+res.getScope()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:area_of_use geocrs:&quot;</span>+crsid+<span class="stringliteral">&quot;_aou .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot;_aou rdf:type geocrs:AreaOfUse .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot;_aou geo:asWKT \&quot;ENVELOPE()\&quot;^^geo:wktLiteral .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                resultset.add(csid+<span class="stringliteral">&quot; rdf:type geocrs:CoordinateSystem .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                resultset.add(csid+<span class="stringliteral">&quot; rdfs:label \&quot;&quot;</span>+res.getCoordinateSystem().getName()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:coordinateSystem rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:area_of_use rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:axis rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;res.getCoordinateSystem().getDimension();i++) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        String axisid=csid+<span class="stringliteral">&quot;_axis&quot;</span>+i;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        resultset.add(csid+<span class="stringliteral">&quot; geocrs:axis &quot;</span>+axisid+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; rdf:type geocrs:CoordinateSystemAxis .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:abbreviation \&quot;&quot;</span>+res.getCoordinateSystem().getAxis(i).getAbbreviation()+<span class="stringliteral">&quot;\&quot; .&quot;</span>+System.lineSeparator());                           </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:direction geocrs:&quot;</span>+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:unit om:&quot;</span>+res.getCoordinateSystem().getAxis(i).getUnit().getName()+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        resultset.add(<span class="stringliteral">&quot;geocrs:&quot;</span>+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+<span class="stringliteral">&quot; rdf:type geocrs:AxisDirection .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix geocrs:&lt;http://www.opengis.net/ont/crs/&gt; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix geo:&lt;http://www.opengis.net/ont/&gt; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix owl:&lt;http://www.w3.org/2002/07/owl#&gt; .&quot;</span>+System.lineSeparator());        </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix om:&lt;http://www.ontology-of-units-of-measure.org/resource/om-2/&gt; .&quot;</span>+System.lineSeparator());                     </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">for</span>(String trip:resultset) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        builder.append(trip);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                System.out.println(builder.toString());</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                FileWriter writer=<span class="keyword">new</span> FileWriter(<span class="keyword">new</span> File(<span class="stringliteral">&quot;importtest.ttl&quot;</span>));</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                writer.write(builder.toString());</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                writer.close();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                                                         {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                OntModel result=ModelFactory.createOntologyModel();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                Set&lt;String&gt; resultset=<span class="keyword">new</span> TreeSet&lt;String&gt;();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                org.opengis.referencing.crs.CoordinateReferenceSystem res = CRS.fromWKT(wkt);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                String crsid=<span class="stringliteral">&quot;geocrs:&quot;</span>+res.getName().getCode().replace(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;_&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                String csid=crsid+<span class="stringliteral">&quot;_cs&quot;</span>;<span class="comment">//geocrs:&quot;+res.getCoordinateSystem().getName().getCode().replace(&quot; &quot;, &quot;_&quot;).replace(&quot;.&quot;, &quot;&quot;).replace(&quot;,&quot;, &quot;&quot;).replace(&quot;:&quot;, &quot;&quot;);          </span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; rdf:type geocrs:&quot;</span>+res.ALIAS_KEY+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; rdfs:label \&quot;&quot;</span>+res.getName()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:coordinateSystem &quot;</span>+csid+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:scope \&quot;&quot;</span>+res.getScope()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot; geocrs:area_of_use geocrs:&quot;</span>+crsid+<span class="stringliteral">&quot;_aou .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot;_aou rdf:type geocrs:AreaOfUse .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                resultset.add(crsid+<span class="stringliteral">&quot;_aou geo:asWKT \&quot;ENVELOPE()\&quot;^^geo:wktLiteral .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                resultset.add(csid+<span class="stringliteral">&quot; rdf:type geocrs:CoordinateSystem .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                resultset.add(csid+<span class="stringliteral">&quot; rdfs:label \&quot;&quot;</span>+res.getCoordinateSystem().getName()+<span class="stringliteral">&quot;\&quot;@en .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:coordinateSystem rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:area_of_use rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                resultset.add(<span class="stringliteral">&quot;geocrs:axis rdf:type owl:ObjectProperty .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;res.getCoordinateSystem().getDimension();i++) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        String axisid=csid+<span class="stringliteral">&quot;_axis&quot;</span>+i;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                        resultset.add(csid+<span class="stringliteral">&quot; geocrs:axis &quot;</span>+axisid+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; rdf:type geocrs:CoordinateSystemAxis .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:abbreviation \&quot;&quot;</span>+res.getCoordinateSystem().getAxis(i).getAbbreviation()+<span class="stringliteral">&quot;\&quot; .&quot;</span>+System.lineSeparator());                           </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:direction geocrs:&quot;</span>+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                        resultset.add(axisid+<span class="stringliteral">&quot; geocrs:unit om:&quot;</span>+res.getCoordinateSystem().getAxis(i).getUnit().getName()+<span class="stringliteral">&quot; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        resultset.add(<span class="stringliteral">&quot;geocrs:&quot;</span>+res.getCoordinateSystem().getAxis(i).getDirection().identifier()+<span class="stringliteral">&quot; rdf:type geocrs:AxisDirection .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix geocrs:&lt;http://www.opengis.net/ont/crs/&gt; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix geo:&lt;http://www.opengis.net/ont/&gt; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix owl:&lt;http://www.w3.org/2002/07/owl#&gt; .&quot;</span>+System.lineSeparator());        </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                builder.append(<span class="stringliteral">&quot;@prefix om:&lt;http://www.ontology-of-units-of-measure.org/resource/om-2/&gt; .&quot;</span>+System.lineSeparator());                     </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">for</span>(String trip:resultset) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        builder.append(trip);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                System.out.println(builder.toString());</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                FileWriter writer=<span class="keyword">new</span> FileWriter(<span class="keyword">new</span> File(<span class="stringliteral">&quot;importtest.ttl&quot;</span>));</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                writer.write(builder.toString());</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                writer.close();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="a00289.html#af5809c153e87cb8d1f79fba3566295e3">WebService.convertFeaturetoCRSDefinedinRDF()</a>.</p>
 
@@ -737,21 +744,22 @@ Public Attributes</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00145_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.CoordinateReferenceSystem.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:192</div></div>
+<div class="ttc" id="aa00145_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00145.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.CoordinateReferenceSystem.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:199</div></div>
 <div class="ttc" id="aa00149_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00149.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.CoordinateSystem.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> CoordinateSystem.java:53</div></div>
 <div class="ttc" id="aa00145_html_a2425fcbcaa3383058cdf1f286a2ee10d"><div class="ttname"><a href="a00145.html#a2425fcbcaa3383058cdf1f286a2ee10d">proj4rdf.data.CoordinateReferenceSystem.remarks</a></div><div class="ttdeci">String remarks</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:50</div></div>
 <div class="ttc" id="aa00145_html_a426c56d858b3c8b9ef8eeb31e3a1b17d"><div class="ttname"><a href="a00145.html#a426c56d858b3c8b9ef8eeb31e3a1b17d">proj4rdf.data.CoordinateReferenceSystem.datum</a></div><div class="ttdeci">Datum datum</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:56</div></div>
-<div class="ttc" id="aa00153_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.Datum.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> Datum.java:89</div></div>
+<div class="ttc" id="aa00153_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00153.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.Datum.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> Datum.java:93</div></div>
 <div class="ttc" id="aa00153_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00153.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.Datum.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> Datum.java:50</div></div>
 <div class="ttc" id="aa00153_html_a8ea8eae38d9733ebbaf710648db2d2aa"><div class="ttname"><a href="a00153.html#a8ea8eae38d9733ebbaf710648db2d2aa">proj4rdf.data.Datum.toProjJSON</a></div><div class="ttdeci">JSONObject toProjJSON()</div><div class="ttdef"><b>Definition:</b> Datum.java:42</div></div>
 <div class="ttc" id="aa00145_html_ab6e7c7936c7e634415a92f15d7796a86"><div class="ttname"><a href="a00145.html#ab6e7c7936c7e634415a92f15d7796a86">proj4rdf.data.CoordinateReferenceSystem.conv</a></div><div class="ttdeci">ConversionOperation conv</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:54</div></div>
 <div class="ttc" id="aa00141_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00141.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.ConversionOperation.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:59</div></div>
+<div class="ttc" id="aa00145_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00145.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.CoordinateReferenceSystem.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:81</div></div>
 <div class="ttc" id="aa00145_html_a9744b7df2e463a8b2b6f5d72b165a82a"><div class="ttname"><a href="a00145.html#a9744b7df2e463a8b2b6f5d72b165a82a">proj4rdf.data.CoordinateReferenceSystem.crsName</a></div><div class="ttdeci">String crsName</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:29</div></div>
 <div class="ttc" id="aa00133_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00133.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.AreaOfValidity.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> data/AreaOfValidity.java:33</div></div>
 <div class="ttc" id="aa00145_html_a1186cf0f64687b7d37d7a4ec7660ba6d"><div class="ttname"><a href="a00145.html#a1186cf0f64687b7d37d7a4ec7660ba6d">proj4rdf.data.CoordinateReferenceSystem.crsType</a></div><div class="ttdeci">String crsType</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:31</div></div>
 <div class="ttc" id="aa00133_html_a8ea8eae38d9733ebbaf710648db2d2aa"><div class="ttname"><a href="a00133.html#a8ea8eae38d9733ebbaf710648db2d2aa">proj4rdf.data.AreaOfValidity.toProjJSON</a></div><div class="ttdeci">JSONObject toProjJSON()</div><div class="ttdef"><b>Definition:</b> data/AreaOfValidity.java:22</div></div>
-<div class="ttc" id="aa00145_html_a12e8064b8602eaca62d3edcf1e46c9fb"><div class="ttname"><a href="a00145.html#a12e8064b8602eaca62d3edcf1e46c9fb">proj4rdf.data.CoordinateReferenceSystem.fromWKT</a></div><div class="ttdeci">static OntModel fromWKT(String wktString)</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:215</div></div>
-<div class="ttc" id="aa00149_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00149.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.CoordinateSystem.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> CoordinateSystem.java:83</div></div>
+<div class="ttc" id="aa00145_html_a12e8064b8602eaca62d3edcf1e46c9fb"><div class="ttname"><a href="a00145.html#a12e8064b8602eaca62d3edcf1e46c9fb">proj4rdf.data.CoordinateReferenceSystem.fromWKT</a></div><div class="ttdeci">static OntModel fromWKT(String wktString)</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:222</div></div>
+<div class="ttc" id="aa00149_html_acec44d50b36093db7d8b1b3cd91ec474"><div class="ttname"><a href="a00149.html#acec44d50b36093db7d8b1b3cd91ec474">proj4rdf.data.CoordinateSystem.toWKT</a></div><div class="ttdeci">String toWKT()</div><div class="ttdef"><b>Definition:</b> CoordinateSystem.java:87</div></div>
 <div class="ttc" id="aa00149_html_a8ea8eae38d9733ebbaf710648db2d2aa"><div class="ttname"><a href="a00149.html#a8ea8eae38d9733ebbaf710648db2d2aa">proj4rdf.data.CoordinateSystem.toProjJSON</a></div><div class="ttdeci">JSONObject toProjJSON()</div><div class="ttdef"><b>Definition:</b> CoordinateSystem.java:41</div></div>
 <div class="ttc" id="aa00145_html_a0e9d54ae6899eade5d1d0e7d868e8a96"><div class="ttname"><a href="a00145.html#a0e9d54ae6899eade5d1d0e7d868e8a96">proj4rdf.data.CoordinateReferenceSystem.cSystem</a></div><div class="ttdeci">CoordinateSystem cSystem</div><div class="ttdef"><b>Definition:</b> CoordinateReferenceSystem.java:58</div></div>
 <div class="ttc" id="aa00141_html_a83ae4a79473f4a938f9bf62813f44f70"><div class="ttname"><a href="a00141.html#a83ae4a79473f4a938f9bf62813f44f70">proj4rdf.data.ConversionOperation.toGML</a></div><div class="ttdeci">String toGML()</div><div class="ttdef"><b>Definition:</b> ConversionOperation.java:36</div></div>

@@ -137,9 +137,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                      {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                      {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -163,32 +163,36 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                XMLStreamWriter writer;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        writer = <span class="keyword">new</span> IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:&quot;</span>+<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>);     </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:datumName&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        writer.writeEndElement();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesPrimeMeridian&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                writer.flush();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                strwriter.write(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                writer.writeEndElement();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesEllipsoid&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                writer.flush();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                strwriter.write(this.<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                writer.writeEndElement();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        writer.writeEndElement();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        writer.flush();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        e.printStackTrace();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>.contains(<span class="stringliteral">&quot;ReferenceFrame&quot;</span>)) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:&quot;</span>+<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>.replace(<span class="stringliteral">&quot;ReferenceFrame&quot;</span>, <span class="stringliteral">&quot;Datum&quot;</span>));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        }<span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:&quot;</span>+<a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a>);                                     </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        writer.writeStartElement(<span class="stringliteral">&quot;gml:datumName&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        writer.writeCharacters(this.<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesPrimeMeridian&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                writer.flush();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                strwriter.write(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;gml:usesEllipsoid&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                writer.writeCharacters(System.lineSeparator());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                writer.flush();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                strwriter.write(this.<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">toGML</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                writer.writeEndElement();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        writer.writeEndElement();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        writer.flush();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                } <span class="keywordflow">catch</span> (XMLStreamException e) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        e.printStackTrace();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">return</span> strwriter.toString();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">Datum.datumType</a>, <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>, <a class="el" href="a00153.html#ad4304802481276a17b15303a2287ded2">Datum.primeMeridian</a>, <a class="el" href="a00161.html#a83ae4a79473f4a938f9bf62813f44f70">PrimeMeridian.toGML()</a>, and <a class="el" href="a00157.html#a83ae4a79473f4a938f9bf62813f44f70">Ellipsoid.toGML()</a>.</p>
 
@@ -259,9 +263,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                 {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Datum [datumType=&quot;</span> + <a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a> + <span class="stringliteral">&quot;, datumName=&quot;</span> + <a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a> + <span class="stringliteral">&quot;, ellipsoid=&quot;</span> + <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                 {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Datum [datumType=&quot;</span> + <a class="code" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">datumType</a> + <span class="stringliteral">&quot;, datumName=&quot;</span> + <a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a> + <span class="stringliteral">&quot;, ellipsoid=&quot;</span> + <a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">Datum.datumName</a>, <a class="el" href="a00153.html#a4124247ee4dfa0cb7078c3355e1b5241">Datum.datumType</a>, and <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>.</p>
 
@@ -281,18 +285,18 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>==<span class="keyword">null</span>)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                builder.append(<span class="stringliteral">&quot;DATUM[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>.replace(<span class="stringliteral">&quot;Datum:&quot;</span>,<span class="stringliteral">&quot;&quot;</span>).trim()+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                builder.append(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;]&quot;</span>+System.lineSeparator());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        builder.append(<span class="stringliteral">&quot;,&quot;</span>+<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">//builder.append(&quot;]&quot;);</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                              {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                StringBuilder builder=<span class="keyword">new</span> StringBuilder();      </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>==<span class="keyword">null</span>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                builder.append(<span class="stringliteral">&quot;DATUM[&quot;</span>+<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">datumName</a>.replace(<span class="stringliteral">&quot;Datum:&quot;</span>,<span class="stringliteral">&quot;&quot;</span>).trim()+<span class="stringliteral">&quot;\&quot;,&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                builder.append(<a class="code" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">ellipsoid</a>.<a class="code" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+<span class="stringliteral">&quot;]&quot;</span>+System.lineSeparator());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>!=<span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        builder.append(<span class="stringliteral">&quot;,&quot;</span>+<a class="code" href="a00153.html#ad4304802481276a17b15303a2287ded2">primeMeridian</a>.<a class="code" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">toWKT</a>()+System.lineSeparator());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//builder.append(&quot;]&quot;);</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> builder.toString();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="a00153.html#abfe3b6a1aa97ec6d1b27dfb36d560308">Datum.datumName</a>, <a class="el" href="a00153.html#a1a2bd5aff8299edb4e2b019586052a9e">Datum.ellipsoid</a>, <a class="el" href="a00153.html#ad4304802481276a17b15303a2287ded2">Datum.primeMeridian</a>, <a class="el" href="a00161.html#acec44d50b36093db7d8b1b3cd91ec474">PrimeMeridian.toWKT()</a>, and <a class="el" href="a00157.html#acec44d50b36093db7d8b1b3cd91ec474">Ellipsoid.toWKT()</a>.</p>
 
