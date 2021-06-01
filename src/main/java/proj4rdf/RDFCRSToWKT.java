@@ -41,7 +41,7 @@ public class RDFCRSToWKT {
 	
 	public static String prefixCollection="";
 	
-	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/4326";
+	public static String curCRSURI="http://www.opengis.net/def/crs/EPSG/0/25832";
 	
 	public static String GeoSPARQLCRSURI="http://www.opengis.net/ont/crs/";
 	
@@ -145,7 +145,7 @@ public class RDFCRSToWKT {
 	/**
 	 * Converts a CRS system defined in RDF to an internal representation.
 	 * @param res The resultset of the downlift query
-	 * @return
+	 * @return the coordinate reference 
 	 */
 	public static CoordinateReferenceSystem downliftSystem(ResultSet res) {
 		boolean datum=false,coordinateSystem=false,ellipse=false;

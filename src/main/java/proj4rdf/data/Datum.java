@@ -53,7 +53,11 @@ public class Datum {
 		XMLStreamWriter writer;
 		try {
 			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
-			writer.writeStartElement("gml:"+datumType);	
+			if(datumType.contains("ReferenceFrame")) {
+				writer.writeStartElement("gml:"+datumType.replace("ReferenceFrame", "Datum"));
+			}else {
+				writer.writeStartElement("gml:"+datumType);					
+			}
 			writer.writeStartElement("gml:datumName");
 			writer.writeCharacters(this.datumName);
 			writer.writeEndElement();

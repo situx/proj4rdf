@@ -108,6 +108,13 @@ public class CoordinateReferenceSystem {
 			writer.writeStartElement("gml:srsName");
 			writer.writeCharacters(this.crsName);
 			writer.writeEndElement();
+			if(this.sourceCRS!=null) {
+				writer.writeStartElement("gml:sourceCRS");
+				writer.writeCharacters(System.lineSeparator());
+				writer.flush();
+				strwriter.write(this.sourceCRS.toGML());
+				writer.writeEndElement();
+			}
 			if(this.cSystem!=null) {
 				writer.writeStartElement("gml:usesEllipsoidalCS");
 				writer.writeCharacters(System.lineSeparator());
