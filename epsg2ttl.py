@@ -4,7 +4,9 @@ import pyproj
 import csv
 from rdflib import Graph
 from pyproj import CRS
+import urllib.request
 
+convertToGML=False
 
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	epsgcode=str(x)
@@ -220,7 +222,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	if curcrs.to_proj4()!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
 	if curcrs.to_json()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")		
 	if wkt!="":
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
@@ -1081,7 +1083,7 @@ ttl.add("geocrs:BoggsEumorphicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:BoggsEumorphicProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
 ttl.add("geocrs:BoggsEumorphicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttl.add("geocrs:CrasterParabolicProjection rdf:type owl:Class .\n")
-ttl.add("geocrs:CrasterParabolicProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
+ttl.add("geocrs:CrasterParabolicProjection rdfs:label \"craster parabolic projection\"@en .\n")
 ttl.add("geocrs:CrasterParabolicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttl.add("geocrs:TheTimesProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:TheTimesProjection rdfs:label \"the times projection\"@en .\n")
