@@ -108,27 +108,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                           {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                GeometryWrapper geomwrap=GeometryWrapper.extract(geomliteral);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                String res = RDFCRSToWKT.getCRSFromTripleStore(crsURI.getString(), endpoint.getString(), <span class="stringliteral">&quot;WKT&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        CoordinateReferenceSystem targetCRS = CRS.fromWKT(res);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        CoordinateOperation op;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        op = CRS.findOperation(geomwrap.getCRS(), targetCRS, <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        List&lt;Coordinate&gt; coords=<span class="keyword">new</span> LinkedList&lt;Coordinate&gt;();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <span class="keywordflow">for</span>(Coordinate coord:geomwrap.getXYGeometry().getCoordinates()) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                 DirectPosition pos;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                        pos = op.getMathTransform().transform(<span class="keyword">new</span> DirectPosition2D(coord.x,coord.y), <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                 Coordinate curcor=<span class="keyword">new</span> Coordinate(pos.getCoordinate()[0],pos.getCoordinate()[1]);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 coords.add(curcor);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">return</span> RDFCRSToWKT.createGeometry(coords.toArray(<span class="keyword">new</span> Coordinate[0]), geomwrap.getGeometryType(), geomwrap).asNodeValue();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException | MismatchedDimensionException | TransformException ex) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> ExprEvalException(ex.getMessage(), ex);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="comment">/*GeometryWrapper geomwrap=GeometryWrapper.extract(geomliteral);</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">                String res = RDFCRSToWKT.getCRSFromTripleStore(crsURI.getString(), endpoint.getString(), &quot;WKT&quot;);</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">                try {</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">                        CoordinateReferenceSystem targetCRS = CRS.fromWKT(res);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">                        CoordinateOperation op;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">                        op = CRS.findOperation(geomwrap.getCRS(), targetCRS, null);</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">                        List&lt;Coordinate&gt; coords=new LinkedList&lt;Coordinate&gt;();</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">                        for(Coordinate coord:geomwrap.getXYGeometry().getCoordinates()) {</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">                                 DirectPosition pos;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">                                        pos = op.getMathTransform().transform(new DirectPosition2D(coord.x,coord.y), null);</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">                                 Coordinate curcor=new Coordinate(pos.getCoordinate()[0],pos.getCoordinate()[1]);</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">                                 coords.add(curcor);</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">                        }</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">                        return RDFCRSToWKT.createGeometry(coords.toArray(new Coordinate[0]), geomwrap.getGeometryType(), geomwrap).asNodeValue();</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">                } catch (FactoryException | MismatchedDimensionException | TransformException ex) {</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">            throw new ExprEvalException(ex.getMessage(), ex);</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">                }*/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="a00286.html#a8480d756c807d9ffc39b0d5405e7a84b">RDFCRSToWKT.createGeometry()</a>, and <a class="el" href="a00286.html#a46d0e009fe94197839f1c010ef8dab50">RDFCRSToWKT.getCRSFromTripleStore()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
