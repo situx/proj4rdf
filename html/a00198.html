@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoSPARQLSRSExtension: Member List</title>
+<title>GeoSPARQLSRSExtension: ConvertCRS2 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,25 +55,112 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('a00201.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00198.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00195.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ESPGToGML Member List</div>  </div>
+<div class="title">ConvertCRS2 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for ConvertCRS2:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00197.png" border="0" usemap="#ConvertCRS2_inherit__map" alt="Inheritance graph"/></div>
+<map name="ConvertCRS2_inherit__map" id="ConvertCRS2_inherit__map">
+<area shape="rect" title=" " alt="" coords="11,80,117,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,123,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ConvertCRS2:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00196.png" border="0" usemap="#ConvertCRS2_coll__map" alt="Collaboration graph"/></div>
+<map name="ConvertCRS2_coll__map" id="ConvertCRS2_coll__map">
+<area shape="rect" title=" " alt="" coords="11,80,117,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,123,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acb3e73894e185fc4ec6d767abd72a3b8"><td class="memItemLeft" align="right" valign="top">NodeValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00198.html#acb3e73894e185fc4ec6d767abd72a3b8">exec</a> (NodeValue geomliteral, NodeValue crsURI, NodeValue endpoint, NodeValue crsURI2)</td></tr>
+<tr class="separator:acb3e73894e185fc4ec6d767abd72a3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acb3e73894e185fc4ec6d767abd72a3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3e73894e185fc4ec6d767abd72a3b8">&#9670;&nbsp;</a></span>exec()</h2>
 
-<p>This is the complete list of members for <a class="el" href="a00201.html">ESPGToGML</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00201.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">exec</a>(NodeValue v)</td><td class="entry"><a class="el" href="a00201.html">ESPGToGML</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NodeValue exec </td>
+          <td>(</td>
+          <td class="paramtype">NodeValue&#160;</td>
+          <td class="paramname"><em>geomliteral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NodeValue&#160;</td>
+          <td class="paramname"><em>crsURI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NodeValue&#160;</td>
+          <td class="paramname"><em>endpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NodeValue&#160;</td>
+          <td class="paramname"><em>crsURI2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                                                                              {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                GeometryWrapper geomwrap=GeometryWrapper.extract(geomliteral);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                String res = RDFCRSToWKT.getCRSFromTripleStore(crsURI.getString(), endpoint.getString(), <span class="stringliteral">&quot;WKT&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        CoordinateReferenceSystem targetCRS = CRS.fromWKT(res);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        CoordinateOperation op;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        op = CRS.findOperation(geomwrap.getCRS(), targetCRS, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        List&lt;Coordinate&gt; coords=<span class="keyword">new</span> LinkedList&lt;Coordinate&gt;();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <span class="keywordflow">for</span>(Coordinate coord:geomwrap.getXYGeometry().getCoordinates()) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                 DirectPosition pos;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                        pos = op.getMathTransform().transform(<span class="keyword">new</span> DirectPosition2D(coord.x,coord.y), <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                 Coordinate curcor=<span class="keyword">new</span> Coordinate(pos.getCoordinate()[0],pos.getCoordinate()[1]);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 coords.add(curcor);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">return</span> RDFCRSToWKT.createGeometry(coords.toArray(<span class="keyword">new</span> Coordinate[0]), geomwrap.getGeometryType(), geomwrap).asNodeValue();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException | MismatchedDimensionException | TransformException ex) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> ExprEvalException(ex.getMessage(), ex);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="a00286.html#a8480d756c807d9ffc39b0d5405e7a84b">RDFCRSToWKT.createGeometry()</a>, and <a class="el" href="a00286.html#a46d0e009fe94197839f1c010ef8dab50">RDFCRSToWKT.getCRSFromTripleStore()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00128.html">proj4rdf</a></li><li class="navelem"><a class="el" href="a00132.html">functions</a></li><li class="navelem"><a class="el" href="a00131.html">srs</a></li><li class="navelem"><a class="el" href="a00198.html">ConvertCRS2</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

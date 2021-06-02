@@ -1,53 +1,56 @@
 var hierarchy =
 [
-    [ "AffineTransformation", "a00177.html", null ],
-    [ "AreaOfValidity", "a00133.html", null ],
-    [ "Axis", "a00137.html", null ],
-    [ "ConversionOperation", "a00141.html", null ],
-    [ "CoordinateReferenceSystem", "a00145.html", null ],
-    [ "CoordinateSystem", "a00149.html", null ],
-    [ "CRSConfig", "a00129.html", null ],
-    [ "Datum", "a00153.html", null ],
-    [ "Ellipsoid", "a00157.html", null ],
-    [ "SRSGeo.Nodes", "a00285.html", null ],
-    [ "PrimeMeridian", "a00161.html", null ],
-    [ "RDFCRSToWKT", "a00273.html", null ],
-    [ "ResultFormatter", "a00277.html", [
-      [ "ProjFormatter", "a00165.html", null ],
-      [ "ProjJSONFormatter", "a00169.html", null ],
-      [ "WKTCRSFormatter", "a00173.html", null ]
+    [ "AffineTransformation", "a00186.html", null ],
+    [ "AreaOfValidity", "a00142.html", null ],
+    [ "Axis", "a00146.html", null ],
+    [ "ConversionOperation", "a00150.html", null ],
+    [ "CoordinateReferenceSystem", "a00154.html", null ],
+    [ "CoordinateSystem", "a00158.html", null ],
+    [ "CRSConfig", "a00138.html", null ],
+    [ "Datum", "a00162.html", null ],
+    [ "Ellipsoid", "a00166.html", null ],
+    [ "SRSGeo.Nodes", "a00298.html", null ],
+    [ "PrimeMeridian", "a00170.html", null ],
+    [ "RDFCRSToWKT", "a00286.html", null ],
+    [ "ResultFormatter", "a00290.html", [
+      [ "ProjFormatter", "a00174.html", null ],
+      [ "ProjJSONFormatter", "a00178.html", null ],
+      [ "WKTCRSFormatter", "a00182.html", null ]
     ] ],
-    [ "SetGeoReference", "a00221.html", null ],
-    [ "SRSGeo", "a00281.html", null ],
-    [ "WebService", "a00289.html", null ],
+    [ "SetGeoReference", "a00234.html", null ],
+    [ "SRSGeo", "a00294.html", null ],
+    [ "TripleStoreConnection", "a00306.html", null ],
+    [ "WebService", "a00310.html", null ],
     [ "FunctionBase1", null, [
-      [ "AreaOfValidity", "a00181.html", null ],
-      [ "EPSGToSRID", "a00193.html", null ],
-      [ "EPSGToWKT", "a00197.html", null ],
-      [ "ESPGToGML", "a00201.html", null ],
-      [ "HasHorizontalSRS", "a00209.html", null ],
-      [ "IsInCRSAreaOfValidity", "a00217.html", null ],
-      [ "SRIDGetAxis1Name", "a00229.html", null ],
-      [ "SRIDGetAxis1Orientation", "a00233.html", null ],
-      [ "SRIDGetAxis2Name", "a00237.html", null ],
-      [ "SRIDGetAxis2Orientation", "a00241.html", null ],
-      [ "SRIDHasFlippedAxis", "a00245.html", null ],
-      [ "SRIDToEPSG", "a00249.html", null ],
-      [ "SRIDToGML", "a00253.html", null ],
-      [ "SRIDToWKT", "a00257.html", null ],
-      [ "SuggestProjection", "a00269.html", null ]
+      [ "AreaOfValidity", "a00190.html", null ],
+      [ "EPSGToSRID", "a00202.html", null ],
+      [ "EPSGToWKT", "a00206.html", null ],
+      [ "ESPGToGML", "a00214.html", null ],
+      [ "HasHorizontalSRS", "a00222.html", null ],
+      [ "IsInCRSAreaOfValidity", "a00230.html", null ],
+      [ "SRIDGetAxis1Name", "a00242.html", null ],
+      [ "SRIDGetAxis1Orientation", "a00246.html", null ],
+      [ "SRIDGetAxis2Name", "a00250.html", null ],
+      [ "SRIDGetAxis2Orientation", "a00254.html", null ],
+      [ "SRIDHasFlippedAxis", "a00258.html", null ],
+      [ "SRIDToEPSG", "a00262.html", null ],
+      [ "SRIDToGML", "a00266.html", null ],
+      [ "SRIDToWKT", "a00270.html", null ],
+      [ "SuggestProjection", "a00282.html", null ],
+      [ "AsGeoJSON", "a00302.html", null ]
     ] ],
     [ "FunctionBase2", null, [
-      [ "GeomToOpenLocationCode", "a00205.html", null ],
-      [ "IsEligibleConversion", "a00213.html", null ],
-      [ "SetSRID", "a00225.html", null ],
-      [ "SRSURIToGML", "a00261.html", null ],
-      [ "SRSURIToWKT", "a00265.html", null ]
+      [ "EqualSRS", "a00210.html", null ],
+      [ "GeomToOpenLocationCode", "a00218.html", null ],
+      [ "IsEligibleConversion", "a00226.html", null ],
+      [ "SetSRID", "a00238.html", null ],
+      [ "SRSURIToGML", "a00274.html", null ],
+      [ "SRSURIToWKT", "a00278.html", null ]
     ] ],
     [ "FunctionBase3", null, [
-      [ "ConvertCRS", "a00185.html", null ]
+      [ "ConvertCRS", "a00194.html", null ]
     ] ],
     [ "FunctionBase4", null, [
-      [ "ConvertCRS2", "a00189.html", null ]
+      [ "ConvertCRS2", "a00198.html", null ]
     ] ]
 ];

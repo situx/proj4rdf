@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoSPARQLSRSExtension: Member List</title>
+<title>GeoSPARQLSRSExtension: SRIDGetAxis1Orientation Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,25 +55,83 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('a00249.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00246.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00243.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SRIDToEPSG Member List</div>  </div>
+<div class="title">SRIDGetAxis1Orientation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00249.html">SRIDToEPSG</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00249.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">exec</a>(NodeValue v)</td><td class="entry"><a class="el" href="a00249.html">SRIDToEPSG</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Returns the orientation of the first axis defined in the spatial reference system.  
+ <a href="a00246.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for SRIDGetAxis1Orientation:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00245.png" border="0" usemap="#SRIDGetAxis1Orientation_inherit__map" alt="Inheritance graph"/></div>
+<map name="SRIDGetAxis1Orientation_inherit__map" id="SRIDGetAxis1Orientation_inherit__map">
+<area shape="rect" title="Returns the orientation of the first axis defined in the spatial reference system." alt="" coords="5,80,191,107"/>
+<area shape="rect" title=" " alt="" coords="39,5,157,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for SRIDGetAxis1Orientation:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00244.png" border="0" usemap="#SRIDGetAxis1Orientation_coll__map" alt="Collaboration graph"/></div>
+<map name="SRIDGetAxis1Orientation_coll__map" id="SRIDGetAxis1Orientation_coll__map">
+<area shape="rect" title="Returns the orientation of the first axis defined in the spatial reference system." alt="" coords="5,80,191,107"/>
+<area shape="rect" title=" " alt="" coords="39,5,157,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memItemLeft" align="right" valign="top">NodeValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00246.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">exec</a> (NodeValue v)</td></tr>
+<tr class="separator:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Returns the orientation of the first axis defined in the spatial reference system. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4cd5b69d6ec07b0cf45215fe1fcadd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd5b69d6ec07b0cf45215fe1fcadd60">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NodeValue exec </td>
+          <td>(</td>
+          <td class="paramtype">NodeValue&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                GeometryWrapper wrapper1=GeometryWrapper.extract(v);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                CoordinateReferenceSystem crs;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        crs = CRS.forCode(<span class="stringliteral">&quot;EPSG:&quot;</span>+((GeometryWrapper)wrapper1).getXYGeometry().getSRID());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        <span class="keywordflow">return</span> NodeValue.makeString(crs.getCoordinateSystem().getAxis(0).getDirection().identifier());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException e) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <span class="keywordflow">return</span> NodeValue.nvNothing;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00128.html">proj4rdf</a></li><li class="navelem"><a class="el" href="a00132.html">functions</a></li><li class="navelem"><a class="el" href="a00131.html">srs</a></li><li class="navelem"><a class="el" href="a00246.html">SRIDGetAxis1Orientation</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
