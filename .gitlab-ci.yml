@@ -1,0 +1,63 @@
+#include:
+#  - template: SAST.gitlab-ci.yml
+#  - template: Dependency-Scanning.gitlab-ci.yml
+#  - template: License-Management.gitlab-ci.yml
+
+image: jazzypro/ubuntu-dind
+
+# These are the default stages.
+# You don't need to explicitly define them.
+# But you could define any stages you want.
+stages:
+  - deploy
+  - build
+  - test
+  - release
+
+cache:
+  paths:
+    - .m2/
+
+variables:
+#  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  DOCKER_TLS_CERTDIR: /builds/certs
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+release-image:
+  image: docker:git
+  before_script:
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  - apk update
+  - apk add jq
+  - export COMMIT_TIME=$(git show -s --format=%ct $CI_COMMIT_SHA)
+  - export COMMIT_TIMESTAMP=$(date -d @$COMMIT_TIME +'%Y-%m-%d')
+  - "export SERVICEJSON=$(jq --arg committime \"$COMMIT_TIMESTAMP\" '. + {timestamp: $committime}' WebContent/service.json)"
+  - echo $SERVICEJSON > WebContent/service.json
+  - cat WebContent/service.json
+  - echo $SERVICEJSON
+  services:
+  - docker:dind
+  stage: release
+  script:
+#    - docker pull $CONTAINER_TEST_IMAGE
+#    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker run --rm -v "$PWD":/app -w /app maven:3-jdk-8 mvn clean install
+    - docker build --build-arg servicejson="$SERVICEJSON" -t $CONTAINER_RELEASE_IMAGE .
+    - docker push $CONTAINER_RELEASE_IMAGE  
+#  tags:
+#    - docker
+  only:
+    - main
+
+pages:
+  image: cm0x4d/jsdoc
+  stage: deploy
+  script:
+    - echo "nothing to do"
+  artifacts:
+    paths:
+    - public
+  only:
+  - main
+
