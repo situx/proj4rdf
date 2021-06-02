@@ -140,8 +140,14 @@
 </select>
 <!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
 <br/>
+<select id="epsgcodes">
+<option value="">EPSG:4326</option>
+<option value="">EPSG:25832</option>
+</select>
 <textarea id="wktinput" rows=16 cols=45>
-</textarea><textarea id="rdfoutput" rows=16 cols=45>
+</textarea>
+
+<textarea id="rdfoutput" rows=16 cols=45>
 </textarea><br/>
 <br/>
 <button id="convertWKTButton" onClick="convertWKT()">Convert WKT To RDF</button>

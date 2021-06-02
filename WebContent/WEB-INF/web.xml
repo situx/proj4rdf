@@ -23,10 +23,10 @@
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>proj4rdf.webservice</param-value>
 		</init-param>
-		<init-param>
+		<!-- <init-param>
     <param-name>jersey.config.server.provider.classnames</param-name>
     <param-value>org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
-</init-param>
+</init-param>-->
 <!--<init-param>
       <param-name>jersey.config.server.provider.packages</param-name>
        adding 'io.swagger.v3.jaxrs2.integration.resources' is sufficent on it own to register the following paths:

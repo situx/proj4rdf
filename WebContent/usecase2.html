@@ -38,7 +38,7 @@ var overlayMaps={}
 </script>
 </head>
 <body>
-<h1>Usecase 1: Invalidly encoded GeoJSON</h1>
+<h1>Usecase 2: Reprojected GeoJSON</h1>
 <div id="mapid">
 <script>
 var mymap = L.map('mapid',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
@@ -66,12 +66,12 @@ var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
 </div>
 SPARQL query which is executed:
 
-<pre>
+<textarea>
 SELECT * WHERE {
 ?a ?b ?c .
 }
 LIMIT 10
-</pre>
+</textarea>
 
 </body>
 
