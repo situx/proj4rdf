@@ -149,7 +149,7 @@ geocrs:CraigRetroazimuthalProjection a owl:Class ;
         geocrs:RetroazimuthalProjection .
 
 geocrs:CrasterParabolicProjection a owl:Class ;
-    rdfs:label "boggs eumorphic projection"@en ;
+    rdfs:label "craster parabolic projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
