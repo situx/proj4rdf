@@ -40,6 +40,7 @@ function queryUsecase(){
 	if(!url.endsWith("/")){
 		url=url.substring(0,url.lastIndexOf('/'))
 	}
+	usecasequery=""
 	$.get(url+"rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data, status){
 		$('#downliftresult').html(data);
 	});
@@ -73,7 +74,7 @@ attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a 
 var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
 </script>
 </div>
-SPARQL query which is executed:
+SPARQL query which is executed on the SRS-enhanced triple store implementation:
 
 <pre>
 SELECT * WHERE {

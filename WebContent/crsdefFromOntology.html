@@ -14,7 +14,7 @@ function querySRSDefinition(){
 	}	
 	$.get(url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data, status){
 		console.log(data)
-		$('#downliftresult').html(data);
+		$('#downliftresult').text(data);
 	});
 }
 </script>

@@ -223,7 +223,7 @@ These are queries that can be stated without an extended GeoSPARQL query languag
   <div class="row">
   <div class="col-sm-5">
 Query Input:<br/>
-<span id="numberexamples"></span> Example Queries for New Functions:
+<span id="numberexamples"></span> Example Queries:<br/>
 <script>
 $( document ).ready(function() {
 	$('#numberexamples').html($('#samplequeries option').length);
@@ -232,16 +232,17 @@ $( document ).ready(function() {
 </script>
 
 <select id="samplequeries" onChange="chooseSampleQuery()">
-<option value='SELECT DISTINCT ?srs ?the_geom WHERE { ?geom geo:inSRS ?srs . } LIMIT 10'>10 Random SRS</option>
-<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs geocrs:datum ?crsdatum . ?srs rdfs:label ?label . ?srs geocrs:coordinateSystem ?crs_cs . ?datum rdf:type geocrs:GeodeticReferenceFrame . } LIMIT 10'>10 Random SRS with a geodetic reference frame</option>
-<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs geocrs:coordinateSystem ?crs_cs . ?srs rdfs:label ?label . ?crs_cs rdf:type geocrs:3DCoordinateSystem .  } LIMIT 10'>10 Random 3D SRS</option>
-<option value='SELECT DISTINCT ?spheroid ?label WHERE { ?spheroid geocrs:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Jupiter> . ?spheroid rdfs:label ?label . } LIMIT 10'>Spheriod associated with Planet Jupiter</option>
-<option value='SELECT DISTINCT ?spheroid ?label WHERE {  ?spheroid geocrs:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Jupiter> . } LIMIT 10'>Check if two SRS apply to the same interstellar body</option>
-
-<option value='SELECT DISTINCT ?srs ?the_geom WHERE { ?geom geo:inSRS ?srs . } LIMIT 10'>SRS to be used in Europe</option>
-<option value='SELECT DISTINCT ?srs ?the_geom WHERE { ?geom geo:inSRS ?srs . } LIMIT 10'>SRS with flipped axis</option>
-<option value='SELECT DISTINCT ?srs ?the_geom WHERE { ?geom geo:inSRS ?srs . } LIMIT 10'>SRS associated with a spheroid of eccentricity greater 0.5</option>
-<option value='SELECT DISTINCT ?srs ?the_geom WHERE { ?geom geo:inSRS ?srs . } LIMIT 10'>Check if two SRS apply to the same interstellar body</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . } LIMIT 10'>10 Random SRS</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs WHERE { ?srs geocrs:datum ?crsdatum . ?srs rdfs:label ?label . ?srs geocrs:coordinateSystem ?crs_cs . ?datum rdf:type geocrs:GeodeticReferenceFrame . } LIMIT 10'>10 Random SRS with a geodetic reference frame</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs ?cslabel WHERE { ?srs geocrs:coordinateSystem ?crs_cs . ?srs rdfs:label ?label . ?crs_cs rdf:type geocrs:3DCoordinateSystem . ?crs_cs rdfs:label ?cslabel . } LIMIT 10'>10 Random 3D SRS</option>
+<option value='SELECT DISTINCT ?spheroid ?label ?ecc WHERE { ?spheroid rdf:type geocrs:Sphere . ?spheroid rdfs:label ?label . ?spheroid geocrs:eccentricity ?ecc . } LIMIT 10'>10 Random Spheriods with Eccentricity</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:EqualAreaProjection . } LIMIT 10'>10 Random SRS with EqualArea Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:EquidistantProjection . } LIMIT 10'>10 Random SRS with Equidistant Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:ConformalProjection . } LIMIT 10'>10 Random SRS with Conformal Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:CompromiseProjection . } LIMIT 10'>10 Random SRS with Compromise Projection</option>
+<option value='SELECT DISTINCT ?srs ?planet WHERE {  SERVICE <http://digits.mainzed.org/proj4rdf/sparql> { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem .}  } LIMIT 10'>Federated Query to get a CRS from another triple store</option>
+<option value='SELECT DISTINCT ?srs ?planet WHERE {  ?srs geocrs:datum ?datum geocrs:ellipse ?ell . ?ell  geocrs:isApplicableTo ?planet . } LIMIT 10'>Planetary body to which the SRS is applicable</option>
+<option value='SELECT DISTINCT ?srs ?aou ?aouextent WHERE { ?srs rdf:type ?srscls . ?srs geocrs:area_of_use ?aou . ?aou geocrs:extent ?aouextent . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . } LIMIT 10'>SRS Area Of Use</option>
 </select>
 <!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
 <br/>
@@ -251,11 +252,9 @@ $( document ).ready(function() {
 <option value="https://digits.mainzed.org/proj4rdf/sparql" selected="selected">SRS Dataset</option>
 </select>
 <br/>
-<b>Note: </b> Query variables ending in "_geom" are rendered in the map view. Support for rendering coverages is still in development.
-<br/>
 <button id="sendQueryButton" onClick="sendQuery(false)">Query</button>
 <button id="sendQueryGeoJSONButton" onClick="sendQuery(true)">Query with GeoJSON result</button>
-
+</div>
     <div class="col-sm-7" id="mapid">
 <table align="center" id="queryres" class="tablesorter" border="1">
 </table>
