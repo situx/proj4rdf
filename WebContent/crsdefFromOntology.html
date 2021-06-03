@@ -9,8 +9,10 @@ function querySRSDefinition(){
 	var url=document.location.href
 	if(!url.endsWith("/")){
 		url=url.substring(0,url.lastIndexOf('/'))
-	}
-	$.get(url+"rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data, status){
+	}else{
+		url=url.substring(0,url.lastIndexOf('/'))
+	}	
+	$.get(url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data, status){
 		$('#downliftresult').html(data);
 	});
 }
