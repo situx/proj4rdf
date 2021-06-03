@@ -3,10 +3,10 @@ var files_dup =
     [ "AffineTransformation.java", "a00038.html", [
       [ "AffineTransformation", "a00186.html", null ]
     ] ],
-    [ "data/AreaOfValidity.java", "a00691.html", [
+    [ "data/AreaOfValidity.java", "a00687.html", [
       [ "AreaOfValidity", "a00142.html", "a00142" ]
     ] ],
-    [ "functions/srs/AreaOfValidity.java", "a00694.html", [
+    [ "functions/srs/AreaOfValidity.java", "a00690.html", [
       [ "AreaOfValidity", "a00190.html", "a00190" ]
     ] ],
     [ "AsGeoJSON.java", "a00119.html", [
