@@ -32,9 +32,9 @@ Format:<select id="format">
 <option value="wkt">WKT</option>
 </select>
 <button id="downliftButton" onClick="querySRSDefinition()">Downlift SRS definition</button><br/>
-<pre id="downliftresult">
+<p id="downliftresult">
 
-</pre>
+</p>
 </body>
 <script>
 $.ajax({url:'epsg.txt',success: function (data){
