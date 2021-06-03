@@ -9,8 +9,10 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.apache.jena.ontology.OntModel;
+import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -70,17 +72,29 @@ public class TripleStoreConnection {
 	public static String executeQuery(String query, String model) {
 		return executeQuery(query, model, false);
 	}
+	
+	public static String executeQueryTripleStore(String query, String uri) {
+		return executeQuery(query, uri, false);
+	}
 
 	public static String executeQuery(String query, String model, Boolean geojsonout) {
 		query = prefixCollection + query;
 		System.out.println(query);
 		System.out.println(model);
 		System.out.println(INSTANCE.modelmap.keySet());
-		if (!INSTANCE.modelmap.containsKey(model)) {
-			model = INSTANCE.modelmap.keySet().iterator().next();
+		QueryExecution qe=null;
+		if(model.startsWith("http")) {
+			Query queryjena = QueryFactory.create(query);
+			//"http://localhost:8080/rdf4j-server/repositories/pleiades"
+			qe = QueryExecutionFactory.sparqlService(model, queryjena);
+		}else {
+			if (!INSTANCE.modelmap.containsKey(model)) {
+				model = INSTANCE.modelmap.keySet().iterator().next();
+			}
+			System.out.println(INSTANCE.modelmap.get(model));
+			qe = QueryExecutionFactory.create(query, INSTANCE.modelmap.get(model));
 		}
-		System.out.println(INSTANCE.modelmap.get(model));
-		QueryExecution qe = QueryExecutionFactory.create(query, INSTANCE.modelmap.get(model));
+
 			ResultSet rs = qe.execSelect();
 			//List<QuerySolution> test = ResultSetFormatter.toList(rs);
 			//qe.close();

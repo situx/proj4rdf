@@ -24,15 +24,6 @@ public class SRSGeo {
    
    public static String uri2 = "http://www.opengis.net/ont/geosparqlplus#";
 
-
-
-
-
-
-
-
-
-
    protected static final Resource resource(String local) {
       return ResourceFactory.createResource(uri + local);
    }
@@ -480,37 +471,6 @@ public class SRSGeo {
    public static final Property st_zMax = property("ST_ZMax");
    public static final Property st_zmFlag = property("ST_ZmFlag");
    
-   public static final Property centimeterToMeter = property("CentimeterToMeter");
-   public static final Property chainToMeter = property("ChainToMeter"); 
-   public static final Property decimeterToMeter = property("DecimeterToMeter"); 
-   public static final Property fathomToMeter = property("FathomToMeter"); 
-   public static final Property footToMeter = property("FootToMeter");
-   public static final Property inchToMeter = property("InchToMeter"); 
-   public static final Property kilometerToMeter = property("KilometerToMeter"); 
-   public static final Property linkToMeter = property("LinkToMeter"); 
-   public static final Property meterToCentimeter = property("MeterToCentimeter"); 
-   public static final Property meterToChain = property("MeterToChain"); 
-   public static final Property meterToDecimeter = property("MeterToDecimeter"); 
-   public static final Property meterToFathom = property("MeterToFathom");
-   public static final Property meterToFoot = property("MeterToFoot");
-   public static final Property meterToInch = property("MeterToInch");
-   public static final Property meterToKilometer = property("MeterToKilometer");
-   public static final Property meterToLink = property("MeterToLink");
-   public static final Property meterToMile = property("MeterToMile");
-   public static final Property meterToMillimeter = property("MeterToMillimeter");
-   public static final Property meterToNauticalMile = property("MeterToNauticalMile");
-   public static final Property meterToUSFoot = property("MeterToUSFoot");
-   public static final Property meterToUSInch = property("MeterToUSInch"); 
-   public static final Property meterToUSMile = property("MeterToUSMile"); 
-   public static final Property meterToUSYard = property("MeterToUSYard"); 
-   public static final Property mileToMeter = property("MileToMeter");
-   public static final Property millimeterToMeter = property("MillimeterToMeter");
-   public static final Property nauticalMileToMeter = property("NauticalMileToMeter");
-   public static final Property USFootToMeter = property("USFootToMeter"); 
-   public static final Property USInchToMeter = property("USInchToMeter");
-   public static final Property USMileToMeter = property("USMileToMeter"); 
-   public static final Property USYardToMeter = property("USYardToMeter"); 
-   public static final Property yardToMeter = property("YardToMeter"); 
    
    public static final String WKB = "http://www.opengis.net/ont/geosparqlplus#wkbLiteral";
 public static final String GeoJSON = "http://www.opengis.net/ont/geosparqlplus#GeoJSONLiteral";

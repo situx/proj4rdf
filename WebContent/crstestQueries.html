@@ -123,7 +123,7 @@ function clearMap() {
         	table+="</tr>"
         }
         $('#queryres').html(table+"</tbody>")    
-        clearMap();
+        //clearMap();
         var overlays={}
         for(layer in json["geojson"]){
             var officiallayer=L.geoJSON(json["geojson"][layer],{
@@ -248,7 +248,7 @@ $( document ).ready(function() {
 <textarea id="queryinput" rows=16 cols=45>
 </textarea><br/>
 <select id="dataset">
-<option value="linkedgeodata.ttl" selected="selected">SRS Dataset</option>
+<option value="https://digits.mainzed.org/proj4rdf/sparql" selected="selected">SRS Dataset</option>
 </select>
 <br/>
 <b>Note: </b> Query variables ending in "_geom" are rendered in the map view. Support for rendering coverages is still in development.

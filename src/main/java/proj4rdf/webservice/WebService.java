@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -110,8 +109,17 @@ public class WebService {
 	
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/queryservicegeojson")
-    public String queryService(@QueryParam("query") String query,@QueryParam("dataset") String dataset,@QueryParam("geojson") String geojson) { 
+	@Path("/queryservice2")
+    public String queryService2(@QueryParam("query") String query,@QueryParam("endpoint") String dataset) { 
+		final String dir = System.getProperty("user.dir");
+        System.out.println("current dir = " + dir); 
+		return TripleStoreConnection.executeQuery(query,dataset);
+	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/queryservice2geojson")
+    public String queryService2(@QueryParam("query") String query,@QueryParam("endpoint") String dataset,@QueryParam("geojson") String geojson) { 
 		final String dir = System.getProperty("user.dir");
         System.out.println("current dir = " + dir); 
 		return TripleStoreConnection.executeQuery(query,dataset,true);
