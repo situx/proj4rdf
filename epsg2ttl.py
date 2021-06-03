@@ -35,7 +35,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	else:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrs:Earth .\n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrsisbody:Earth .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
@@ -89,18 +89,22 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				geoid=spheroids[curcrs.datum.ellipsoid.name]
 				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			elif curcrs.get_geod().sphere:
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
 				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			else:
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
 				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 		else:
 			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
 			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
 			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
+			ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
 		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
@@ -284,7 +288,7 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
 			if str(row["eccentricity"])!="":
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
-			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:approximates geocrsisbody:"+curname+" .\n")
 			if str(row["star_name"])!="":
 				starname=row["star_name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
 				ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Star .\n")
@@ -1665,6 +1669,10 @@ ttl.add("geocrs:isApplicableTo rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:isApplicableTo rdfs:label \"is applicable to\"@en .\n")
 ttl.add("geocrs:isApplicableTo rdfs:domain geocrs:SpatialReferenceSystem .\n")
 ttl.add("geocrs:isApplicableTo rdfs:range geocrs:InterstellarBody .\n")
+ttl.add("geocrs:approximates rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:approximates rdfs:label \"approximates\"@en .\n")
+ttl.add("geocrs:approximates rdfs:domain geocrs:Geoid .\n")
+ttl.add("geocrs:approximates rdfs:range geocrs:InterstellarBody .\n")
 ttl.add("geocrs:abbreviation rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:abbreviation rdfs:label \"axis abbreviation\"@en .\n")
 ttl.add("geocrs:abbreviation skos:definition \"The abbreviation used to identify an axis\"@en .\n")

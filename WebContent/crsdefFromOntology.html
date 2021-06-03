@@ -21,6 +21,7 @@ function querySRSDefinition(){
 </head>
 <body>
 <h1>Downlifting SRS definitions from the ontology model</h1>
+This page shows that CRS definitions can be downlifted into other formats from the ontology model using the downlift query stated on this homepage.<br/>
 SRS Definition:<select id="crs">
 <option value="http://www.opengis.net/def/crs/EPSG/0/4326">EPSG:4326</option>
 </select><br/>
@@ -35,6 +36,31 @@ Format:<select id="format">
 <p id="downliftresult">
 
 </p>
+Downlift query illustrated for one SRS system definition for the CRS84 coordinate reference system:<br/>
+<pre style="border:2px solid black">
+SELECT DISTINCT * WHERE { 
+BIND(&lt;http://www.opengis.net/def/crs/OGC/1.3/CRS84&gt; AS ?sub) 
+	?sub ?rel ?obj . 
+	OPTIONAL {
+		?obj ?rel2 ?obj2 . 
+		FILTER(STRSTARTS(STR(?rel2), "http://www.opengis.net/ont/crs/") 
+			|| STRSTARTS(STR(?rel2), "http://www.w3.org/2000/01/rdf-schema#label") 
+			|| STRSTARTS(STR(?rel2), "http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+		)
+		OPTIONAL {
+			?obj2 ?rel3 ?obj3 .
+			FILTER(STRSTARTS(STR(?rel3), "http://www.opengis.net/ont/crs/") 
+				|| STRSTARTS(STR(?rel3), "http://www.w3.org/2000/01/rdf-schema#label")
+			)
+		}
+	}
+	FILTER(STRSTARTS(STR(?rel), "http://www.opengis.net/ont/crs/") 
+		|| STRSTARTS(STR(?rel), "http://www.w3.org/2000/01/rdf-schema#") 
+		|| STRSTARTS(STR(?rel), "http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+	)
+} 
+ORDER BY ?rel ?rel2
+</pre>
 </body>
 <script>
 $.ajax({url:'epsg.txt',success: function (data){

@@ -852,6 +852,11 @@ geocrs:aft a geocrs:AxisDirection,
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "axis positive direction is aft"@en .
 
+geocrs:approximates a owl:ObjectProperty ;
+    rdfs:label "approximates"@en ;
+    rdfs:domain geocrs:Geoid ;
+    rdfs:range geocrs:InterstellarBody .
+
 geocrs:area_of_use a owl:ObjectProperty ;
     rdfs:label "area of use"@en ;
     rdfs:domain geocrs:CoordinateConcatenatedOperation,
@@ -1708,11 +1713,6 @@ geocrs:CoordinateSystemAxis a owl:Class ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "Axis defined by a coordinate system"@en .
 
-geocrs:Geoid a owl:Class ;
-    rdfs:label "geoid"@en ;
-    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
-    skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
-
 geocrs:PolyhedralProjection a owl:Class ;
     rdfs:label "polyhedral projection"@en ;
     rdfs:subClassOf geocrs:Projection .
@@ -1731,6 +1731,11 @@ geocrs:CoordinateOperation a owl:Class ;
     rdfs:label "coordinate operation"@en ;
     rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
     skos:definition "mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch"@en .
+
+geocrs:Geoid a owl:Class ;
+    rdfs:label "geoid"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    skos:definition "equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally"@en .
 
 geocrs:Datum a owl:Class ;
     rdfs:label "datum"@en ;
