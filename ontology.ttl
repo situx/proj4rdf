@@ -1013,7 +1013,8 @@ geocrs:east_south_east a geocrs:AxisDirection,
 geocrs:eccentricity a owl:DatatypeProperty ;
     rdfs:label "eccentricity"@en ;
     rdfs:domain geocrs:Geoid ;
-    rdfs:range xsd:double .
+    rdfs:range xsd:double ;
+    skos:definition "deviation of a curve or orbit from circularity"@en .
 
 geocrs:ellipse a owl:ObjectProperty ;
     rdfs:label "ellipse"@en ;
@@ -1029,8 +1030,9 @@ geocrs:epsgCode a owl:DatatypeProperty ;
 
 geocrs:extent a owl:DatatypeProperty ;
     rdfs:label "extent"@en ;
-    rdfs:domain geocrs:CRS ;
-    rdfs:range geocrs:wktLiteral .
+    rdfs:domain geocrs:AreaOfUse ;
+    rdfs:range geocrs:wktLiteral ;
+    skos:definition "The extent of the area of use of a spatial reference system"@en .
 
 geocrs:falseEasting a owl:DatatypeProperty ;
     rdfs:label "false easting"@en ;
@@ -1160,7 +1162,8 @@ geocrs:longitude a owl:DatatypeProperty ;
 geocrs:mass a owl:DatatypeProperty ;
     rdfs:label "mass"@en ;
     rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
+    rdfs:range xsd:double ;
+    skos:definition "the mass of an interstellar body"@en .
 
 geocrs:north a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1206,7 +1209,8 @@ geocrs:past a geocrs:AxisDirection,
 geocrs:planet_status a owl:ObjectProperty ;
     rdfs:label "planet status"@en ;
     rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range geocrs:PlanetStatus .
+    rdfs:range geocrs:PlanetStatus ;
+    skos:definition "The status of the discovery of the planet, e.g. confirmed, unsure etc."@en .
 
 geocrs:port a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1219,11 +1223,6 @@ geocrs:primeMeridian a owl:ObjectProperty ;
     rdfs:domain geocrs:Datum ;
     rdfs:range geocrs:PrimeMeridian ;
     skos:definition "The prime meridian used by a geodetic datum"@en .
-
-geocrs:projection a owl:ObjectProperty ;
-    rdfs:label "projection"@en ;
-    rdfs:domain geocrs:CRS ;
-    rdfs:range geocrs:Projection .
 
 geocrs:radius a owl:DatatypeProperty ;
     rdfs:label "radius"@en ;
@@ -1245,7 +1244,8 @@ geocrs:row_positive a geocrs:AxisDirection,
 geocrs:satelliteOf a owl:ObjectProperty ;
     rdfs:label "satellite of"@en ;
     rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range geocrs:InterstellarBody .
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "Defines an interstellar body as the natural satellite of another interstellar body."@en .
 
 geocrs:scope a owl:DatatypeProperty ;
     rdfs:label "scope"@en ;
@@ -1306,7 +1306,8 @@ geocrs:south_west a geocrs:AxisDirection,
 geocrs:starDistance a owl:DatatypeProperty ;
     rdfs:label "star distance"@en ;
     rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
+    rdfs:range xsd:double ;
+    skos:definition "the distance of an interstellar body to the next star"@en .
 
 geocrs:starboard a geocrs:AxisDirection,
         owl:NamedIndividual ;
@@ -1404,10 +1405,6 @@ geocrs:AreaCode a owl:Class ;
     rdfs:subClassOf geocrs:LocalGridReferenceSystem ;
     skos:definition "a code which describes a certain area for a specific semantic purpose"@en ;
     skos:example "ISO country code"@en .
-
-geocrs:AreaOfUse a owl:Class ;
-    rdfs:label "area of use"@en ;
-    skos:definition "area in which a coordinate operation may be used"@en .
 
 geocrs:CartesianCoordinateSystem a owl:Class ;
     rdfs:label "cartesian coordinate system"@en ;
@@ -1548,6 +1545,10 @@ geocrs:AffineCoordinateSystem a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     owl:equivalentClass wd:Q382510 ;
     skos:definition "coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular"@en .
+
+geocrs:AreaOfUse a owl:Class ;
+    rdfs:label "area of use"@en ;
+    skos:definition "area in which a coordinate operation may be used"@en .
 
 geocrs:CoordinateConversionOperation a owl:Class ;
     rdfs:label "coordinate conversion operation"@en ;
