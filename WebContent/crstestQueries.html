@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<title>GeoSPARQL SRS Ontology Testbench</title>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href="css/yasqe.css"/>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/yasqe.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> 
+  <script>
+  var markercollection=[]
+  function saveTextAsFile(tosave,fileext,filename)
+  {
+      var a = document.createElement('a');
+      a.style = "display: none";  
+      var blob= new Blob([tosave], {type:'text/plain'});
+      var url = window.URL.createObjectURL(blob);
+      var filename = filename+fileext;
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);  
+      }, 1000);
+  }
+var prefixList="PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
+
+	var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+
+var overlayMaps={}
+var overlayControl;
+var markercollection=[]
+var first=true;
+function clearMap() {
+    for(i in mymap._layers) {
+        if(mymap._layers[i]._path != undefined) {
+            try {
+                mymap.removeLayer(mymap._layers[i]);
+            }
+            catch(e) {
+                console.log("problem with " + e + mymap._layers[i]);
+            }
+        }
+    }
+	if(!first){
+		mymap.removeControl(overlayControl);
+	}else{
+		first=false;
+	}
+	// now put the control back
+
+	layercontrol.addTo(mymap);
+	for(marker in markercollection){
+		mymap.removeLayer(markercollection[marker])
+	}
+	markercollection=[]
+    /*    for(decorator in decorators){
+		mymap.removeLayer(decorators[decorator])
+	}
+	decorators=[]*/
+}
+
+
+
+  function sendQuery(geojsonres){
+	var url=document.location.href
+	if(!url.endsWith("/")){
+		url+="/"
+	}
+    $.get(url+"rest/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        var json=JSON.parse(data)
+                $('#number').text(json["size"]+" Results");
+        var i=1;
+        var table="<thead><tr><th>Counter</th>"
+        for(variable in json["data"][0]){
+        	table+="<th>"+variable+"</th>"
+        }
+        table+="</tr></thead><tbody>"
+        for(obj in json["data"]){
+        	table+="<tr><td>"+i+++"</td>"
+        	for(variable in json["data"][obj]){
+        		if(json["data"][obj][variable].startsWith("http") || json["data"][obj][variable].startsWith("https")){
+            		table+="<td><a href=\""+json["data"][obj][variable]+"\" target=\"_blank\">"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</a></td>"
+        		}else{
+            		table+="<td>"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</td>"        			
+        		}
+        	}
+        	table+="</tr>"
+        }
+        $('#queryres').html(table+"</tbody>")    
+        clearMap();
+        var overlays={}
+        for(layer in json["geojson"]){
+            var officiallayer=L.geoJSON(json["geojson"][layer],{
+            	coordsToLatLng: function (coords) {
+            		//console.log($('#dataset').val())
+            		if($('#dataset').val()=="linkedgeodata.ttl" || $('#dataset').val()=="cologne.ttl"){
+            			return new L.LatLng(coords[0], coords[1], coords[2]);
+            		}
+            		return new L.LatLng(coords[1], coords[0], coords[2]);                 
+                },
+                style: function(){
+                	return {fillColor: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length]),
+                        color: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length])}
+                },
+                pointToLayer: function (feature, latlng) {
+                	var greyIcon = new L.Icon({
+                        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41],
+                        popupAnchor: [1, -34],
+                        shadowSize: [41, 41]
+                    });
+                	var mark=L.marker(feature.geometry.coordinates,{icon: greyIcon})
+                	markercollection.push(mark)
+                    return mark;
+                },
+            	onEachFeature: function (feature, layer) {
+            		 var popup="GeoJSON Result<br/><ul>"
+            		 for(prop in feature.properties){
+            		 	popup+="<li>"+prop+" - ";
+            		 	var value=trimcoords(feature.properties[prop],90)
+                		if(value.startsWith("http") || value.startsWith("https")){
+                    		popup+="<a href=\""+value+"\" target=\"_blank\">"+value+"</a>"
+                		}else if(value.includes("^^")){
+                			popup+="<a href=\""+value.substring(value.lastIndexOf('^')+1)+"\">"+value.substring(0,value.indexOf('^'))+"</a>"       			
+                		}else{
+                			popup+=value
+                		}
+            		 	popup+="</li>"
+            		 }
+            		 popup+="</ul>"
+            	     layer.bindPopup(popup);
+            }});
+            gardensLayerGroup = L.layerGroup()
+            .addLayer(officiallayer)
+            .addTo(mymap);
+            overlays[json["geojson"][layer]["name"]]=gardensLayerGroup;
+            //layercontrol.addOverlay(gardensLayerGroup, json["geojson"][layer]["name"]);
+            //overlayMaps[layer+""]=officiallayer;
+
+        }
+        mymap.removeControl(layercontrol);
+		// add one with the cities
+		overlayControl = L.control.layers(baseMaps, overlays).addTo(mymap);
+        mymap.fitBounds(officiallayer.getBounds());
+        $('#queryres').DataTable();
+        //$("#queryres").tablesorter(); 
+        if(geojsonres){
+        	saveTextAsFile(JSON.stringify(json["geojson"][0],null, 2),".geojson","queryresult")
+        }
+    });
+  }
+  
+  function trimcoords(coords,length){
+		return coords.length > length ? coords.replace("undefined,","").substring(0, length - 3) + "...)" : coords;	
+ }
+  
+  function chooseSampleQuery(){
+	  	yasqe.setValue(prefixList+"\n"+$('#samplequeries :selected').val().replace(".",".\n").replace("}","\n}\n").replace("{","{\n"))
+        $('#queryinput').val(prefixList+"\n"+$('#samplequeries :selected').val().replace(".",".\n").replace("}","\n}\n").replace("{","{\n"));
+        $('#postgisdoc').attr('href','https://postgis.net/docs/'+$('#samplequeries :selected').text().replace("geo:","")+".html");
+  }
+  </script>
+  <style>
+  #mapid { height: 500px;}
+  </style>
+  <style>
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 500px;
+  max-width: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="page-header">
+<h1 align="center">GeoSPARQL SRS Ontology Sample Queries</h1>
+On this page example queries which are now possible using the GeoSPARQL SRS ontology are showcased.
+</div>
+</header>
+<div class="container" role="main">
+  <div class="row">
+  <div class="col-sm-5">
+Query Input:<br/>
+<span id="numberexamples"></span> Example Queries for New Functions:
+<script>
+$( document ).ready(function() {
+	$('#numberexamples').html($('#samplequeries option').length);
+	chooseSampleQuery();
+});
+</script>
+
+<select id="samplequeries" onChange="chooseSampleQuery()">
+<option value='SELECT ?srs ?the_geom WHERE { ?geom geo:asWKT ?the_geom . ?geom geo:inSRS ?srs . } LIMIT 10'>SRS Test</option>
+<option value="SELECT ?disjoint ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Disjoint(?the_geom,?the_geom) AS ?disjoint) } LIMIT 100">geo2:ST_Disjoint</option>
+<option value='SELECT ?distance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Distance(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance) } LIMIT 100'>geo2:ST_Distance</option>
+<option value='SELECT ?distance3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Distance3D(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance3d) } LIMIT 100'>geo2:ST_Distance3D</option>
+<option value='SELECT ?distance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DistanceSphere(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance) } LIMIT 100'>geo2:ST_DistanceSphere</option>
+<option value='SELECT ?withindistance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DFullyWithin(?the_geom,?the_geom,10) AS ?withindistance) } LIMIT 100'>geo2:ST_DFullyWithin</option>
+<option value='SELECT ?withindistance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DWithin(?the_geom,?the_geom,10) AS ?withindistance) } LIMIT 100'>geo2:ST_DWithin</option>
+<option value='SELECT ?withindistance3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DWithin3D(?the_geom,?the_geom,10) AS ?withindistance3d) } LIMIT 100'>geo2:ST_DWithin3D</option>
+<option value="SELECT ?equalsrs ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_EqualSRS(?the_geom,?the_geom) AS ?equalsrs) } LIMIT 100">geo2:ST_EqualSRS</option>
+<option value='SELECT ?srid ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_EPSGToSRID("EPSG:4326") AS ?srid) } LIMIT 100'>geo2:ST_EPSGtoSRID</option>
+<option value="SELECT ?exteriorring_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_ExteriorRing(?the_geom) AS ?exteriorring_geom) } LIMIT 100">geo2:ST_ExteriorRing</option>
+<option value="SELECT ?flipped_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_FlipCoordinates(?the_geom) AS ?flipped_geom) } LIMIT 100">geo2:ST_FlipCoordinates</option>
+<option value="SELECT ?intersects ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Intersects(?the_geom,?the_geom) AS ?intersects) } LIMIT 100">geo2:ST_Intersects</option>
+<option value="SELECT ?is3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_Is3D(?the_geom) AS ?is3d) } LIMIT 100">geo2:ST_Is3D</option>
+<option value="SELECT ?measured ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsMeasured(?the_geom) AS ?measured ) } LIMIT 100">geo2:ST_IsMeasured</option>
+<option value="SELECT ?moreprecise ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsMorePrecise(?the_geom,?the_geom) AS ?moreprecise ) } LIMIT 100">geo2:ST_IsMorePrecise</option>
+<option value="SELECT ?issolid ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsSolid(?the_geom) AS ?issolid) } LIMIT 100">geo2:ST_IsSolid</option>
+<option value="SELECT ?perimeter ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Perimeter(?the_geom) AS ?perimeter) } LIMIT 100">geo2:ST_Perimeter</option>
+<option value="SELECT ?perimeter3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Perimeter3D(?the_geom) AS ?perimeter3d) } LIMIT 100">geo2:ST_Perimeter3D</option>
+<option value="SELECT ?points_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Points(?the_geom) AS ?points_geom) } LIMIT 100">geo2:ST_Points</option>
+<option value='SELECT ?pointN_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_PointN(?the_geom,1) AS ?pointN_geom) } LIMIT 100'>geo2:ST_PointN</option>
+<option value='SELECT ?reduced_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_PrecisionReducer(?the_geom,4) AS ?reduced_geom) } LIMIT 100'>geo2:ST_PrecisionReducer</option>
+<option value='SELECT ?the_geom WHERE { BIND(geo2:ST_PointFromGeoHash("9qqj7nmxncgyy4d0dbxqz0") AS ?the_geom) }'>geo2:ST_PointFromGeoHash</option>
+<option value='SELECT ?the_geom WHERE { BIND(geo2:ST_PointFromText("POINT(23.8263447 40.9248455)") AS ?the_geom) }'>geo2:ST_PointFromText</option>
+<option value='SELECT ?pointinsidecircle WHERE { BIND(geo2:ST_PointInsideCircle(geo2:ST_Point(1,2), 0.5, 2, 3) AS ?pointinsidecircle) }'>geo2:ST_PointInsideCircle</option>
+<option value='SELECT ?polygonized_geom ?the_geom WHERE { BIND(geo2:ST_Polygonize(?the_geom) AS ?polygonized_geom) }'>geo2:ST_Polygonize</option>
+<option value='SELECT ?reflect_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Reflect(?the_geom,geo2:ST_PointN(?the_geom,1)) AS ?reflect_geom) } LIMIT 100'>geo2:ST_Reflect</option>
+<option value='SELECT ?relate ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Relate(?the_geom,?the_geom) AS ?relate) } LIMIT 100'>geo2:ST_Relate</option>
+<option value='SELECT ?relate ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RelateMatch(geo2:ST_Relate(?the_geom,?the_geom),geo2:ST_Relate(?the_geom,?the_geom))) AS ?relate) } LIMIT 100'>geo2:ST_RelateMatch</option>
+<option value="SELECT ?removeGeom_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveGeometry(?the_geom,0) AS ?removeGeom_geom) } LIMIT 100">geo2:ST_RemoveGeometry</option>
+<option value="SELECT ?removePoint_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemovePoint(?the_geom,0) AS ?removePoint_geom) } LIMIT 100">geo2:ST_RemovePoint</option>
+<option value="SELECT ?removePoints_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemovePoints(?the_geom,?the_geom) AS ?removePoints_geom) } LIMIT 100">geo2:ST_RemovePoints</option>
+<option value="SELECT ?removeRing_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveRing(?the_geom,0) AS ?removeRing_geom) } LIMIT 100">geo2:ST_RemoveRing</option>
+<option value="SELECT ?removeRepeatedPoints_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveRepeatedPoints(?the_geom,0) AS ?removeRepeatedPoints_geom) } LIMIT 100">geo2:ST_RemoveRepeatedPoints</option>
+<option value="SELECT ?rast1 ?rast2 WHERE { ?geom geo2:asHexWKB ?raster_geom . BIND(geo2:ST_Summary(?raster_geom) AS ?rast1) BIND(geo2:ST_Summary(geo2:ST_Abs(?raster_geom,?raster_geom)) AS ?rast2) } LIMIT 10">geo2:ST_Abs</option>
+<option value="SELECT ?srid ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRID(?the_geom) AS ?srid) } LIMIT 100">geo2:ST_SRID</option>
+<option value='SELECT ?epsg ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDToEPSG(4326) AS ?epsg) } LIMIT 100'>geo2:ST_SRIDToEPSG</option>
+<option value='SELECT ?axis1name ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDGetAxis1Name(?the_geom) AS ?axis1name) } LIMIT 100'>geo2:ST_SRIDGetAxis1Name</option>
+<option value='SELECT ?axis2name ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDGetAxis2Name(?the_geom) AS ?axis2name) } LIMIT 100'>geo2:ST_SRIDGetAxis2Name</option>
+<option value='SELECT ?axis1orientation ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDGetAxis1Orientation(?the_geom) AS ?axis1orientation) } LIMIT 100'>geo2:ST_SRIDGetAxis1Orientation</option>
+<option value='SELECT ?axis2orientation ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDGetAxis2Orientation(?the_geom) AS ?axis2orientation) } LIMIT 100'>geo2:ST_SRIDGetAxis2Orientation</option>
+<option value='SELECT ?flippedaxis ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDHasFlippedAxis(?the_geom) AS ?flippedaxis) } LIMIT 100'>geo2:ST_SRIDHasFlippedAxis</option>
+<option value='SELECT ?swapOrdinates_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SwapOrdinates(?the_geom,"xy") AS ?swapOrdinates_geom) } LIMIT 100'>geo2:ST_SwapOrdinates</option>
+<option value='SELECT ?transformed_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Transform(?the_geom,2001) AS ?transformed_geom) } LIMIT 100'>geo2:ST_Transform</option>
+<option value='SELECT ?translated_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Translate(?the_geom,5,5) AS ?translated_geom) } LIMIT 100'>geo2:ST_Translate</option>
+<option value='SELECT ?transscaled_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_TransScale(?the_geom,5,5,2,2) AS ?transscaled_geom) } LIMIT 100'>geo2:ST_TransScale</option>
+<option value="SELECT ?width ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Width(?the_geom) AS ?width) } LIMIT 100">geo2:ST_Width</option>
+<option value="SELECT ?within ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Within(?the_geom,?the_geom) AS ?within) } LIMIT 100">geo2:ST_Within</option>
+<option value="SELECT ?rastercoord_geom ?the_geom WHERE { ?geom geo2:asHexWKB ?the_geom . BIND(geo2:ST_WorldToRasterCoord(?the_geom,10,10) AS ?rastercoord_geom) } LIMIT 100">geo2:ST_WorldToRasterCoord</option>
+<option value="SELECT ?rastercoordx_geom ?the_geom WHERE { ?geom geo2:asHexWKB ?the_geom . BIND(geo2:ST_WorldToRasterCoordX(?the_geom,10,10) AS ?rastercoordx_geom) } LIMIT 100">geo2:ST_WorldToRasterCoordX</option>
+<option value="SELECT ?rastercoordy_geom ?the_geom WHERE { ?geom geo2:asHexWKB ?the_geom . BIND(geo2:ST_WorldToRasterCoordY(?the_geom,10,10) AS ?rastercoordy_geom) } LIMIT 100">geo2:ST_WorldToRasterCoordY</option>
+</select>
+<!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
+<br/>
+<textarea id="queryinput" rows=16 cols=45>
+</textarea><br/>
+<select id="dataset">
+<option value="linkedgeodata.ttl" selected="selected">Geographica LinkedGeoData Set</option>
+<option value="cologne.ttl">Cologne Street Dataset</option>
+<option value="gag.ttl">Greek Administrative Dataset</option>
+<option value="hotspots.ttl">Geographica Hotspots Set</option>
+<option value="dbpedia.ttl">Geographica DBPedia Set</option>
+<option value="geonames.ttl">Geographica Geonames Set</option>
+<option value="synthetic.ttl">Synthetic Data Set</option>
+<option value="rasterexample.ttl">Example Raster Data Set</option>
+<!--<option value="testdata.ttl">Rheinland Pfalz Testset</option>
+<option value="testdata3.ttl">Brandenburg TestSet</option>
+<option value="testdata4.ttl">Hospital TestSet</option>-->
+</select>
+<br/>
+<b>Note: </b> Query variables ending in "_geom" are rendered in the map view. Support for rendering coverages is still in development.
+<br/>
+<button id="sendQueryButton" onClick="sendQuery(false)">Query</button>
+<button id="sendQueryGeoJSONButton" onClick="sendQuery(true)">Query with GeoJSON result</button>
+</div>
+  </div>
+
+
+QueryResult:
+<span id="number"></span>
+ <div class="row">
+  <div class="col-sm-12" id="queryresult" class="table-wrapper-scroll-y">
+<table align="center" id="queryres" class="tablesorter" border="1">
+</table>
+</div></div></div>
+</body>
+</html>

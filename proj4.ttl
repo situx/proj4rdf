@@ -1,0 +1,139 @@
+@prefix : <http://www.semanticweb.org/timo.homburg/ontologies/2021/4/untitled-ontology-101#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix geocrsaou: <http://www.opengis.net/ont/crs/areaofuse/> .
+@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .
+@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .
+@prefix geocrsgeod: <http://www.opengis.net/ont/crs/geod/> .
+@prefix geocrsisbody: <http://www.opengis.net/ont/crs/isbody/> .
+@prefix geocrsmeridian: <http://www.opengis.net/ont/crs/primeMeridian/> .
+@prefix geocrsoperation: <http://www.opengis.net/ont/crs/operation/> .
+@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@base <http://www.opengis.net/ont/crs/example#> .
+
+<http://www.opengis.net/ont/crs/example#> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#geoJSONLiteral
+<http://www.opengis.net/ont/geosparql#geoJSONLiteral> rdf:type rdfs:Datatype .
+
+
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+<http://www.opengis.net/ont/geosparql#wktLiteral> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#inSRS
+<http://www.opengis.net/ont/geosparql#inSRS> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.opengis.net/ont/crs/example#asGeoJSON
+:asGeoJSON rdf:type owl:DatatypeProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+<http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.opengis.net/ont/crs/CRS
+<http://www.opengis.net/ont/crs/CRS> rdf:type owl:Class ;
+                                     rdfs:label "coordinate reference system" .
+
+
+###  http://www.opengis.net/ont/crs/example##CityArea
+<http://www.opengis.net/ont/crs/example##CityArea> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/sf#Polygon
+<http://www.opengis.net/ont/sf#Polygon> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> .
+
+
+geoepsg:4326 a geocrs:GeographicCRS,
+        owl:NamedIndividual,
+        prov:Entity ;
+    rdfs:label "WGS 84"@en ;
+    geocrs:area_of_use geoepsg:4326_area_of_use ;
+    geocrs:asProj4 "+proj=longlat +datum=WGS84 +no_defs +type=crs"^^xsd:string ;
+    geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'GeographicCRS','name':'WGS 84','datum':{'type':'GeodeticReferenceFrame','name':'World Geodetic System 1984','ellipsoid':{'name':'WGS 84','semi_major_axis':6378137,'inverse_flattening':298.257223563}},'coordinate_system':{'subtype':'ellipsoidal','axis':[{'name':'Geodetic latitude','abbreviation':'Lat','direction':'north','unit':'degree'},{'name':'Geodetic longitude','abbreviation':'Lon','direction':'east','unit':'degree'}]},'scope':'Horizontal component of 3D system.','area':'World.','bbox':{'south_latitude':-90,'west_longitude':-180,'north_latitude':90,'east_longitude':180},'id':{'authority':'EPSG','code':4326}}"^^xsd:string ;
+    geocrs:asWKT "GEOGCRS['WGS 84',DATUM['World Geodetic System 1984',ELLIPSOID['WGS 84',6378137,298.257223563,LENGTHUNIT['metre',1]]],PRIMEM['Greenwich',0,ANGLEUNIT['degree',0.0174532925199433]],CS[ellipsoidal,2],AXIS['geodetic latitude (Lat)',north,ORDER[1],ANGLEUNIT['degree',0.0174532925199433]],AXIS['geodetic longitude (Lon)',east,ORDER[2],ANGLEUNIT['degree',0.0174532925199433]],USAGE[SCOPE['Horizontal component of 3D system.'],AREA['World.'],BBOX[-90,-180,90,180]],ID['EPSG',4326]]"^^geocrs:wktLiteral ;
+    geocrs:coordinateSystem geoepsg:4326_cs ;
+    geocrs:datum geocrsdatum:World_Geodetic_System_1984 ;
+    geocrs:epsgCode "EPSG:4326"^^xsd:string ;
+    geocrs:isApplicableTo geocrs:Earth ;
+    geocrs:isBound false ;
+    geocrs:isGeocentric false ;
+    geocrs:isGeographic true ;
+    geocrs:isProjected false ;
+    geocrs:isVertical false .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.opengis.net/def/crs/OGC/1.3/CRS84
+<http://www.opengis.net/def/crs/OGC/1.3/CRS84> rdf:type owl:NamedIndividual ,
+                                                        <http://www.opengis.net/ont/crs/CRS> .
+
+
+###  http://www.opengis.net/ont/crs/example##berlin_valid
+<http://www.opengis.net/ont/crs/example##berlin_valid> rdf:type owl:NamedIndividual ,
+                                                                <http://www.opengis.net/ont/crs/example##CityArea> ;
+                                                       <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.opengis.net/ont/crs/example##berlin_valid_geom> .
+
+
+###  http://www.opengis.net/ont/crs/example##berlin_valid_geom
+<http://www.opengis.net/ont/crs/example##berlin_valid_geom> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.opengis.net/ont/sf#Polygon> ;
+                                                            <http://www.opengis.net/ont/geosparql#inSRS> <http://www.opengis.net/def/crs/OGC/1.3/CRS84> ;
+                                                            :asGeoJSON "\"geometry\": { \"type\": \"Polygon\", \"coordinates\": [ [ [ -346.613792181015015, 52.514536377618327 ], [ -346.603213548660278, 52.515267635422248 ], [ -346.602376699447632, 52.511036618218697 ], [ -346.612955331802368, 52.510501182683612 ], [ -346.613792181015015, 52.514536377618327 ] ] ] }"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+                                                            <http://www.opengis.net/ont/geosparql#asWKT> "POLYGON ((-346.613792181015 52.5145363776183,-346.60321354866 52.5152676354222,-346.602376699448 52.5110366182187,-346.612955331802 52.5105011826836,-346.613792181015 52.5145363776183))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

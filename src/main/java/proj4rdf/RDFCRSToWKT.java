@@ -108,11 +108,12 @@ public class RDFCRSToWKT {
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointURL, query);
 		ResultSet res=qexec.execSelect();
 		CoordinateReferenceSystem refsys=downliftSystem(res);
-		switch(format) {
-			case "WKT": return refsys.toWKT();
-			case "GML": return refsys.toGML().toString();
-			case "ProjJSON": return refsys.toProjJSON().toString();
-			case "Proj": return refsys.toProj();
+		switch(format.toLowerCase()) {
+			case "wkt": return refsys.toWKT();
+			case "gml": return refsys.toGML().toString();
+			case "projjson": return refsys.toProjJSON().toString();
+			case "proj": return refsys.toProj();
+			case "rdf":
 			default: return refsys.toProjJSON().toString();
 		}
 	}
@@ -134,7 +135,7 @@ public class RDFCRSToWKT {
 	}
 	
 	public static String[] getEligibleCRSFromTripleStore(String bbox) {
-		String queryString="SELECT DISTINCT ?crs WHERE { ?crs  <"+GeoSPARQLCRSURI+"datum> ?datum . ?datum ?datumrel ?datumobj .  } ";
+		String queryString="SELECT DISTINCT ?crs WHERE { BIND(\""+bbox+"\"^^geo:wktLiteral AS ?geomliteral ) ?crs  <"+GeoSPARQLCRSURI+"area_of_use> ?aou . ?aou <"+GeoSPARQLCRSURI+"extent> ?extent . FILTER(geof:sfContains(?geomliteral,?extent)) } ";
 		System.out.println(prefixCollection+queryString);
 		Query query = QueryFactory.create(prefixCollection+queryString);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
