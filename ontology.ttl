@@ -855,7 +855,8 @@ geocrs:aft a geocrs:AxisDirection,
 geocrs:approximates a owl:ObjectProperty ;
     rdfs:label "approximates"@en ;
     rdfs:domain geocrs:Geoid ;
-    rdfs:range geocrs:InterstellarBody .
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "defines an interstellar body which is approximated by the geoid"@en .
 
 geocrs:area_of_use a owl:ObjectProperty ;
     rdfs:label "area of use"@en ;
@@ -1095,12 +1096,14 @@ geocrs:inverse_flattening a owl:DatatypeProperty ;
 geocrs:isApplicableTo a owl:ObjectProperty ;
     rdfs:label "is applicable to"@en ;
     rdfs:domain geocrs:SpatialReferenceSystem ;
-    rdfs:range geocrs:InterstellarBody .
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "defines to which interstellar body the srs is applicable"@en .
 
 geocrs:isAppliedTo a owl:ObjectProperty ;
     rdfs:label "is applied to"@en ;
     rdfs:domain geocrs:ReferenceSystem ;
-    rdfs:range geocrs:SRSApplication .
+    rdfs:range geocrs:SRSApplication ;
+    skos:definition "defines an srs application for which a srs definition has been used"@en .
 
 geocrs:isBound a owl:DatatypeProperty ;
     rdfs:label "isBound"@en ;
@@ -1367,7 +1370,8 @@ geocrs:usage a owl:ObjectProperty ;
 geocrs:uses a owl:ObjectProperty ;
     rdfs:label "uses"@en ;
     rdfs:domain geocrs:SRSApplication ;
-    rdfs:range geocrs:Projection .
+    rdfs:range geocrs:Projection ;
+    skos:definition "defines an srs application which uses a given projection"@en .
 
 geocrs:utm_zone a owl:DatatypeProperty ;
     rdfs:label "utm zone"@en .
