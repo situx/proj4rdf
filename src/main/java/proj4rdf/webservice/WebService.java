@@ -124,9 +124,9 @@ public class WebService {
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
             description = "Returns a CRS definition given in a RDF graph in a predefined format")
 	public Response getCRSByURI(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="The URI of the CRS defined in RDF") @QueryParam("crsuri") String crsuri,
+			@Parameter(description="The endpoint of the CRS definition") @QueryParam("endpoint") String crsendpoint,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return Response.ok(RDFCRSToWKT.getCRSFromTripleStore(crsuri, crsendpoint, returnformat)).build();
 	}
 	
@@ -137,10 +137,8 @@ public class WebService {
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
             description = "Returns a CRS definition given in a RDF graph in a predefined format")
 	public Response getEligibleCRS(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="boundingbox to check the area of validity") @PathParam("bbox") String bbox,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="boundingbox to check the area of validity") @QueryParam("bbox") String bbox,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return Response.ok(RDFCRSToWKT.getEligibleCRSFromTripleStore(bbox)).build();
 		//return getFeatureById(collectionid, featureid, style, format);
 	}
@@ -152,9 +150,9 @@ public class WebService {
             summary = "Converts a feature defined in a given CRS to another CRS.",
             description = "Converts a feature defined in a given CRS to another CRS.")
 	public Response convertFeaturetoCRSDefinedinRDF(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="The URI of the CRS defined in RDF") @QueryParam("crsuri") String crsuri,
+			@Parameter(description="The endpoint of the CRS definition") @QueryParam("endpoint") String crsendpoint,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return null;
 	}
 	
@@ -165,7 +163,7 @@ public class WebService {
             summary = "Converts a WKT CRS definition to RDF.",
             description = "Converts a WKT CRS definition to RDF.")
 	public Response convertFeaturetoCRSDefinedinRDF(
-			@Parameter(description="The WKT String to convert") @PathParam("wktstring") String wktstring) {
+			@Parameter(description="The WKT String to convert") @QueryParam("wktstring") String wktstring) {
 		try {
 			return Response.ok(CoordinateReferenceSystem.WKTToRDF(wktstring)).build();
 		} catch (FactoryException | IOException e) {
