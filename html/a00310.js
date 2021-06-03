@@ -1,10 +1,10 @@
 var a00310 =
 [
     [ "WebService", "a00310.html#a7a8fdc0242859fa8c99102a9095b600f", null ],
-    [ "convertFeaturetoCRSDefinedinRDF", "a00310.html#a0eb0968e56ee0a32cb0691d46d2c681c", null ],
-    [ "convertFeaturetoCRSDefinedinRDF", "a00310.html#af5809c153e87cb8d1f79fba3566295e3", null ],
-    [ "getCRSByURI", "a00310.html#a84cdc418f794f523e6810da8ec5f1c51", null ],
-    [ "getEligibleCRS", "a00310.html#a8f70428da1277bf1e6aaf56b801a949f", null ],
+    [ "convertFeaturetoCRSDefinedinRDF", "a00310.html#ab3a82562901247d91a1281136d142de7", null ],
+    [ "convertFeaturetoCRSDefinedinRDF", "a00310.html#a08a12e814a2eea5d4722569490a6a9e8", null ],
+    [ "getCRSByURI", "a00310.html#abfd2cc3bc40ad87ae7d2f017e74c8ee2", null ],
+    [ "getEligibleCRS", "a00310.html#a4ae620a961e425e987872d6803aec2af", null ],
     [ "openapiJSON", "a00310.html#ae0e538313c866ad6cb68e0d67d9c7d3d", null ],
     [ "queryService", "a00310.html#aa6e8851926af0396f20c9226f358174d", null ],
     [ "queryService", "a00310.html#a75902e1f331669a7bd86a2ff7d351d4b", null ],
