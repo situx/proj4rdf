@@ -176,10 +176,10 @@ function clearMap() {
             //overlayMaps[layer+""]=officiallayer;
 
         }
-        mymap.removeControl(layercontrol);
+        //mymap.removeControl(layercontrol);
 		// add one with the cities
-		overlayControl = L.control.layers(baseMaps, overlays).addTo(mymap);
-        mymap.fitBounds(officiallayer.getBounds());
+		//overlayControl = L.control.layers(baseMaps, overlays).addTo(mymap);
+        //mymap.fitBounds(officiallayer.getBounds());
         $('#queryres').DataTable();
         //$("#queryres").tablesorter(); 
         if(geojsonres){

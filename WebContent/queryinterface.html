@@ -95,11 +95,13 @@ function clearMap() {
 
 
   function sendQuery(geojsonres){
-	var url=document.location.href
-	if(!url.endsWith("/")){
-		url+="/"
-	}
-    $.get(url+"rest/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
+		var url=document.location.href
+		if(!url.endsWith("/")){
+			url=url.substring(0,url.lastIndexOf('/'))
+		}else{
+			url=url.substring(0,url.lastIndexOf('/'))
+		}	
+    $.get(url+"/rest/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
         //alert("Data: " + data + "\nStatus: " + status);
         var json=JSON.parse(data)
                 $('#number').text(json["size"]+" Results");

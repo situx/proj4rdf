@@ -77,10 +77,13 @@ var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
 SPARQL query which is executed on the SRS-enhanced triple store implementation:
 
 <pre>
-SELECT * WHERE {
-?a ?b ?c .
+SELECT ?wkt_geom WHERE {
+?a geo:hasGeometry ?geo .
+?geo geo:asWKT ?wkt_geom .
+?geo geo:inSRS ?srs .
+?srs rdf:type ?srstype .
+FILTER(?srstype!=geocrs:UnkonwnSpatialReferenceSystem)
 }
-LIMIT 10
 </pre>
 
 </body>
