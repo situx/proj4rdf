@@ -12,9 +12,9 @@ function querySRSDefinition(){
 	}else{
 		url=url.substring(0,url.lastIndexOf('/'))
 	}	
-	$.get(url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data, status){
+	$.get(url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data){
 		console.log(data)
-		$('#downliftresult').text(data);
+		$('#downliftresult').html(data);
 	});
 }
 </script>
