@@ -23,6 +23,8 @@ jobs:
          pylode -i ../ontology.ttl -o index.html
          pylode -i ../rules.ttl -o rules.html -p vocpub
          pylode -i ../result.ttl -o index2.html
+         mkdir ../showcase/
+         cp -r ../WebContent/* ../showcase/ 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
