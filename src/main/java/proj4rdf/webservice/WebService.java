@@ -126,7 +126,7 @@ public class WebService {
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/crsFromRDF")
 	@Operation(
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
@@ -139,7 +139,7 @@ public class WebService {
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/getEligibleCRSForFeature")
 	@Operation(
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
@@ -152,7 +152,7 @@ public class WebService {
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/convertCRS")
 	@Operation(
             summary = "Converts a feature defined in a given CRS to another CRS.",
