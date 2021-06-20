@@ -6,16 +6,22 @@
   crossorigin="anonymous"></script>
 <script>
 function querySRSDefinition(){
-	var url=document.location.href
+	var url="https://digits.mainzed.org/proj4rdf/"
 	if(!url.endsWith("/")){
 		url=url.substring(0,url.lastIndexOf('/'))
 	}else{
 		url=url.substring(0,url.lastIndexOf('/'))
 	}	
-	$.get(url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(), function(data){
-		console.log("hello")
-		console.log(data)
-		$('#downliftresult').html(data);
+	$.ajax({
+	    type: "GET",   
+	    url: url+"/rest/crsFromRDF?crsuri="+$('#crs').val()+"&endpoint="+url+"/sparql&returnformat="+$('#format').val(),   
+	    async: true,
+	    success : function(data,textStatus) {
+	    	console.log("hello")
+			console.log(data)
+			$('#downliftresult').text(data);
+	    	$('#downliftresultlabel').html("Downlift result for "+$('#crs').val())
+	    }
 	});
 }
 </script>
@@ -34,9 +40,11 @@ Format:<select id="format">
 <option value="wkt">WKT</option>
 </select>
 <button id="downliftButton" onClick="querySRSDefinition()">Downlift SRS definition</button><br/>
-<p id="downliftresult">
+<span id="downliftresultlabel">Downliftresult:</span><br/><br/>
+<code id="downliftresult">
 
-</p>
+</code>
+<br/><br/>
 Downlift query illustrated for one SRS system definition for the CRS84 coordinate reference system:<br/>
 <pre style="border:2px solid black">
 SELECT DISTINCT * WHERE { 
