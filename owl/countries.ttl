@@ -1,0 +1,696 @@
+@prefix geo:<http://www.opengis.net/ont/geosparql#> .
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geocrs:<http://www.opengis.net/ont/crs/> .
+geocrs:AF rdf:type geocrs:Country .
+geocrs:AF rdfs:label "Afghanistan"@en .
+geocrs:AF geo:hasGeometry geocrs:AF_geom .
+geocrs:AF_geom geo:asWKT "POLYGON ((75.1580277851 29.318572496, 75.1580277851 38.4862816432, 60.5284298033 38.4862816432, 60.5284298033 29.318572496, 75.1580277851 29.318572496))"^^geo:wktLiteral .
+geocrs:AO rdf:type geocrs:Country .
+geocrs:AO rdfs:label "Angola"@en .
+geocrs:AO geo:hasGeometry geocrs:AO_geom .
+geocrs:AO_geom geo:asWKT "POLYGON ((24.0799052263 -17.9306364885, 24.0799052263 -4.43802336998, 11.6400960629 -4.43802336998, 11.6400960629 -17.9306364885, 24.0799052263 -17.9306364885))"^^geo:wktLiteral .
+geocrs:AL rdf:type geocrs:Country .
+geocrs:AL rdfs:label "Albania"@en .
+geocrs:AL geo:hasGeometry geocrs:AL_geom .
+geocrs:AL_geom geo:asWKT "POLYGON ((21.0200403175 39.624997667, 21.0200403175 42.6882473822, 19.3044861183 42.6882473822, 19.3044861183 39.624997667, 21.0200403175 39.624997667))"^^geo:wktLiteral .
+geocrs:AE rdf:type geocrs:Country .
+geocrs:AE rdfs:label "United Arab Emirates"@en .
+geocrs:AE geo:hasGeometry geocrs:AE_geom .
+geocrs:AE_geom geo:asWKT "POLYGON ((56.3968473651 22.4969475367, 56.3968473651 26.055464179, 51.5795186705 26.055464179, 51.5795186705 22.4969475367, 56.3968473651 22.4969475367))"^^geo:wktLiteral .
+geocrs:AR rdf:type geocrs:Country .
+geocrs:AR rdfs:label "Argentina"@en .
+geocrs:AR geo:hasGeometry geocrs:AR_geom .
+geocrs:AR_geom geo:asWKT "POLYGON ((-53.628348965 -55.25, -53.628348965 -21.8323104794, -73.4154357571 -21.8323104794, -73.4154357571 -55.25, -53.628348965 -55.25))"^^geo:wktLiteral .
+geocrs:AM rdf:type geocrs:Country .
+geocrs:AM rdfs:label "Armenia"@en .
+geocrs:AM geo:hasGeometry geocrs:AM_geom .
+geocrs:AM_geom geo:asWKT "POLYGON ((46.5057198423 38.7412014837, 46.5057198423 41.2481285671, 43.5827458026 41.2481285671, 43.5827458026 38.7412014837, 46.5057198423 38.7412014837))"^^geo:wktLiteral .
+geocrs:AQ rdf:type geocrs:Country .
+geocrs:AQ rdfs:label "Antarctica"@en .
+geocrs:AQ geo:hasGeometry geocrs:AQ_geom .
+geocrs:AQ_geom geo:asWKT "POLYGON ((180 -90, 180 -63.2706604895, -180 -63.2706604895, -180 -90, 180 -90))"^^geo:wktLiteral .
+geocrs:TF rdf:type geocrs:Country .
+geocrs:TF rdfs:label "Fr. S. and Antarctic Lands"@en .
+geocrs:TF geo:hasGeometry geocrs:TF_geom .
+geocrs:TF_geom geo:asWKT "POLYGON ((70.56 -49.775, 70.56 -48.625, 68.72 -48.625, 68.72 -49.775, 70.56 -49.775))"^^geo:wktLiteral .
+geocrs:AU rdf:type geocrs:Country .
+geocrs:AU rdfs:label "Australia"@en .
+geocrs:AU geo:hasGeometry geocrs:AU_geom .
+geocrs:AU_geom geo:asWKT "POLYGON ((153.569469029 -43.6345972634, 153.569469029 -10.6681857235, 113.338953078 -10.6681857235, 113.338953078 -43.6345972634, 153.569469029 -43.6345972634))"^^geo:wktLiteral .
+geocrs:AT rdf:type geocrs:Country .
+geocrs:AT rdfs:label "Austria"@en .
+geocrs:AT geo:hasGeometry geocrs:AT_geom .
+geocrs:AT_geom geo:asWKT "POLYGON ((16.9796667823 46.4318173285, 16.9796667823 49.0390742051, 9.47996951665 49.0390742051, 9.47996951665 46.4318173285, 16.9796667823 46.4318173285))"^^geo:wktLiteral .
+geocrs:AZ rdf:type geocrs:Country .
+geocrs:AZ rdfs:label "Azerbaijan"@en .
+geocrs:AZ geo:hasGeometry geocrs:AZ_geom .
+geocrs:AZ_geom geo:asWKT "POLYGON ((50.3928210793 38.2703775091, 50.3928210793 41.8606751572, 44.7939896991 41.8606751572, 44.7939896991 38.2703775091, 50.3928210793 38.2703775091))"^^geo:wktLiteral .
+geocrs:BI rdf:type geocrs:Country .
+geocrs:BI rdfs:label "Burundi"@en .
+geocrs:BI geo:hasGeometry geocrs:BI_geom .
+geocrs:BI_geom geo:asWKT "POLYGON ((30.752262811 -4.49998341229, 30.752262811 -2.34848683025, 29.0249263852 -2.34848683025, 29.0249263852 -4.49998341229, 30.752262811 -4.49998341229))"^^geo:wktLiteral .
+geocrs:BE rdf:type geocrs:Country .
+geocrs:BE rdfs:label "Belgium"@en .
+geocrs:BE geo:hasGeometry geocrs:BE_geom .
+geocrs:BE_geom geo:asWKT "POLYGON ((6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476, 6.15665815596 49.5294835476))"^^geo:wktLiteral .
+geocrs:BJ rdf:type geocrs:Country .
+geocrs:BJ rdfs:label "Benin"@en .
+geocrs:BJ geo:hasGeometry geocrs:BJ_geom .
+geocrs:BJ_geom geo:asWKT "POLYGON ((3.79711225751 6.14215770103, 3.79711225751 12.2356358912, 0.772335646171 12.2356358912, 0.772335646171 6.14215770103, 3.79711225751 6.14215770103))"^^geo:wktLiteral .
+geocrs:BF rdf:type geocrs:Country .
+geocrs:BF rdfs:label "Burkina Faso"@en .
+geocrs:BF geo:hasGeometry geocrs:BF_geom .
+geocrs:BF_geom geo:asWKT "POLYGON ((2.17710778159 9.610834865759999, 2.17710778159 15.1161577418, -5.47056494793 15.1161577418, -5.47056494793 9.610834865759999, 2.17710778159 9.610834865759999))"^^geo:wktLiteral .
+geocrs:BD rdf:type geocrs:Country .
+geocrs:BD rdfs:label "Bangladesh"@en .
+geocrs:BD geo:hasGeometry geocrs:BD_geom .
+geocrs:BD_geom geo:asWKT "POLYGON ((92.6727209818 20.670883287, 92.6727209818 26.4465255803, 88.08442223510001 26.4465255803, 88.08442223510001 20.670883287, 92.6727209818 20.670883287))"^^geo:wktLiteral .
+geocrs:BG rdf:type geocrs:Country .
+geocrs:BG rdfs:label "Bulgaria"@en .
+geocrs:BG geo:hasGeometry geocrs:BG_geom .
+geocrs:BG_geom geo:asWKT "POLYGON ((28.5580814959 41.2344859889, 28.5580814959 44.2349230007, 22.3805257504 44.2349230007, 22.3805257504 41.2344859889, 28.5580814959 41.2344859889))"^^geo:wktLiteral .
+geocrs:BS rdf:type geocrs:Country .
+geocrs:BS rdfs:label "Bahamas"@en .
+geocrs:BS geo:hasGeometry geocrs:BS_geom .
+geocrs:BS_geom geo:asWKT "POLYGON ((-77 23.71, -77 27.04, -78.98 27.04, -78.98 23.71, -77 23.71))"^^geo:wktLiteral .
+geocrs:BA rdf:type geocrs:Country .
+geocrs:BA rdfs:label "Bosnia and Herz."@en .
+geocrs:BA geo:hasGeometry geocrs:BA_geom .
+geocrs:BA_geom geo:asWKT "POLYGON ((19.59976 42.65, 19.59976 45.2337767604, 15.7500260759 45.2337767604, 15.7500260759 42.65, 19.59976 42.65))"^^geo:wktLiteral .
+geocrs:BY rdf:type geocrs:Country .
+geocrs:BY rdfs:label "Belarus"@en .
+geocrs:BY geo:hasGeometry geocrs:BY_geom .
+geocrs:BY_geom geo:asWKT "POLYGON ((32.6936430193 51.3195034857, 32.6936430193 56.1691299506, 23.1994938494 56.1691299506, 23.1994938494 51.3195034857, 32.6936430193 51.3195034857))"^^geo:wktLiteral .
+geocrs:BZ rdf:type geocrs:Country .
+geocrs:BZ rdfs:label "Belize"@en .
+geocrs:BZ geo:hasGeometry geocrs:BZ_geom .
+geocrs:BZ_geom geo:asWKT "POLYGON ((-88.1068129138 15.8869375676, -88.1068129138 18.4999822047, -89.2291216703 18.4999822047, -89.2291216703 15.8869375676, -88.1068129138 15.8869375676))"^^geo:wktLiteral .
+geocrs:BO rdf:type geocrs:Country .
+geocrs:BO rdfs:label "Bolivia"@en .
+geocrs:BO geo:hasGeometry geocrs:BO_geom .
+geocrs:BO_geom geo:asWKT "POLYGON ((-57.4983711412 -22.8729187965, -57.4983711412 -9.76198780685, -69.5904237535 -9.76198780685, -69.5904237535 -22.8729187965, -57.4983711412 -22.8729187965))"^^geo:wktLiteral .
+geocrs:BR rdf:type geocrs:Country .
+geocrs:BR rdfs:label "Brazil"@en .
+geocrs:BR geo:hasGeometry geocrs:BR_geom .
+geocrs:BR_geom geo:asWKT "POLYGON ((-34.7299934555 -33.7683777809, -34.7299934555 5.24448639569, -73.9872354804 5.24448639569, -73.9872354804 -33.7683777809, -34.7299934555 -33.7683777809))"^^geo:wktLiteral .
+geocrs:BN rdf:type geocrs:Country .
+geocrs:BN rdfs:label "Brunei"@en .
+geocrs:BN geo:hasGeometry geocrs:BN_geom .
+geocrs:BN_geom geo:asWKT "POLYGON ((115.450710484 4.007636827, 115.450710484 5.44772980389, 114.204016555 5.44772980389, 114.204016555 4.007636827, 115.450710484 4.007636827))"^^geo:wktLiteral .
+geocrs:BT rdf:type geocrs:Country .
+geocrs:BT rdfs:label "Bhutan"@en .
+geocrs:BT geo:hasGeometry geocrs:BT_geom .
+geocrs:BT_geom geo:asWKT "POLYGON ((92.1037117859 26.7194029811, 92.1037117859 28.2964385035, 88.8142484883 28.2964385035, 88.8142484883 26.7194029811, 92.1037117859 26.7194029811))"^^geo:wktLiteral .
+geocrs:BW rdf:type geocrs:Country .
+geocrs:BW rdfs:label "Botswana"@en .
+geocrs:BW geo:hasGeometry geocrs:BW_geom .
+geocrs:BW_geom geo:asWKT "POLYGON ((29.4321883481 -26.8285429827, 29.4321883481 -17.6618156877, 19.8954577979 -17.6618156877, 19.8954577979 -26.8285429827, 29.4321883481 -26.8285429827))"^^geo:wktLiteral .
+geocrs:CF rdf:type geocrs:Country .
+geocrs:CF rdfs:label "Central African Rep."@en .
+geocrs:CF geo:hasGeometry geocrs:CF_geom .
+geocrs:CF_geom geo:asWKT "POLYGON ((27.3742261085 2.2676396753, 27.3742261085 11.1423951278, 14.4594071794 11.1423951278, 14.4594071794 2.2676396753, 27.3742261085 2.2676396753))"^^geo:wktLiteral .
+geocrs:CA rdf:type geocrs:Country .
+geocrs:CA rdfs:label "Canada"@en .
+geocrs:CA geo:hasGeometry geocrs:CA_geom .
+geocrs:CA_geom geo:asWKT "POLYGON ((-52.6480987209 41.6751050889, -52.6480987209 83.23324, -140.99778 83.23324, -140.99778 41.6751050889, -52.6480987209 41.6751050889))"^^geo:wktLiteral .
+geocrs:CH rdf:type geocrs:Country .
+geocrs:CH rdfs:label "Switzerland"@en .
+geocrs:CH geo:hasGeometry geocrs:CH_geom .
+geocrs:CH_geom geo:asWKT "POLYGON ((10.4427014502 45.7769477403, 10.4427014502 47.8308275417, 6.02260949059 47.8308275417, 6.02260949059 45.7769477403, 10.4427014502 45.7769477403))"^^geo:wktLiteral .
+geocrs:CL rdf:type geocrs:Country .
+geocrs:CL rdfs:label "Chile"@en .
+geocrs:CL geo:hasGeometry geocrs:CL_geom .
+geocrs:CL_geom geo:asWKT "POLYGON ((-66.95992 -55.61183, -66.95992 -17.5800118954, -75.6443953112 -17.5800118954, -75.6443953112 -55.61183, -66.95992 -55.61183))"^^geo:wktLiteral .
+geocrs:CN rdf:type geocrs:Country .
+geocrs:CN rdfs:label "China"@en .
+geocrs:CN geo:hasGeometry geocrs:CN_geom .
+geocrs:CN_geom geo:asWKT "POLYGON ((135.026311477 18.197700914, 135.026311477 53.4588044297, 73.6753792663 53.4588044297, 73.6753792663 18.197700914, 135.026311477 18.197700914))"^^geo:wktLiteral .
+geocrs:CI rdf:type geocrs:Country .
+geocrs:CI rdfs:label "Ivory Coast"@en .
+geocrs:CI geo:hasGeometry geocrs:CI_geom .
+geocrs:CI_geom geo:asWKT "POLYGON ((-2.56218950033 4.33828847902, -2.56218950033 10.5240607772, -8.60288021487 10.5240607772, -8.60288021487 4.33828847902, -2.56218950033 4.33828847902))"^^geo:wktLiteral .
+geocrs:CM rdf:type geocrs:Country .
+geocrs:CM rdfs:label "Cameroon"@en .
+geocrs:CM geo:hasGeometry geocrs:CM_geom .
+geocrs:CM_geom geo:asWKT "POLYGON ((16.0128524106 1.72767263428, 16.0128524106 12.8593962671, 8.48881554529 12.8593962671, 8.48881554529 1.72767263428, 16.0128524106 1.72767263428))"^^geo:wktLiteral .
+geocrs:CD rdf:type geocrs:Country .
+geocrs:CD rdfs:label "Congo (Kinshasa)"@en .
+geocrs:CD geo:hasGeometry geocrs:CD_geom .
+geocrs:CD_geom geo:asWKT "POLYGON ((31.1741492042 -13.2572266578, 31.1741492042 5.25608775474, 12.1823368669 5.25608775474, 12.1823368669 -13.2572266578, 31.1741492042 -13.2572266578))"^^geo:wktLiteral .
+geocrs:CG rdf:type geocrs:Country .
+geocrs:CG rdfs:label "Congo (Brazzaville)"@en .
+geocrs:CG geo:hasGeometry geocrs:CG_geom .
+geocrs:CG_geom geo:asWKT "POLYGON ((18.4530652198 -5.03798674888, 18.4530652198 3.72819651938, 11.0937728207 3.72819651938, 11.0937728207 -5.03798674888, 18.4530652198 -5.03798674888))"^^geo:wktLiteral .
+geocrs:CO rdf:type geocrs:Country .
+geocrs:CO rdfs:label "Colombia"@en .
+geocrs:CO geo:hasGeometry geocrs:CO_geom .
+geocrs:CO_geom geo:asWKT "POLYGON ((-66.8763258531 -4.29818694419, -66.8763258531 12.4373031682, -78.9909352282 12.4373031682, -78.9909352282 -4.29818694419, -66.8763258531 -4.29818694419))"^^geo:wktLiteral .
+geocrs:CR rdf:type geocrs:Country .
+geocrs:CR rdfs:label "Costa Rica"@en .
+geocrs:CR geo:hasGeometry geocrs:CR_geom .
+geocrs:CR_geom geo:asWKT "POLYGON ((-82.5461962552 8.225027980989999, -82.5461962552 11.2171192489, -85.94172543000001 11.2171192489, -85.94172543000001 8.225027980989999, -82.5461962552 8.225027980989999))"^^geo:wktLiteral .
+geocrs:CU rdf:type geocrs:Country .
+geocrs:CU rdfs:label "Cuba"@en .
+geocrs:CU geo:hasGeometry geocrs:CU_geom .
+geocrs:CU_geom geo:asWKT "POLYGON ((-74.1780248685 19.8554808619, -74.1780248685 23.1886107447, -84.97491105829999 23.1886107447, -84.97491105829999 19.8554808619, -74.1780248685 19.8554808619))"^^geo:wktLiteral .
+geocrs:CY rdf:type geocrs:Country .
+geocrs:CY rdfs:label "Cyprus"@en .
+geocrs:CY geo:hasGeometry geocrs:CY_geom .
+geocrs:CY_geom geo:asWKT "POLYGON ((34.0048808123 34.5718694118, 34.0048808123 35.1731247015, 32.2566671079 35.1731247015, 32.2566671079 34.5718694118, 34.0048808123 34.5718694118))"^^geo:wktLiteral .
+geocrs:CZ rdf:type geocrs:Country .
+geocrs:CZ rdfs:label "Czech Rep."@en .
+geocrs:CZ geo:hasGeometry geocrs:CZ_geom .
+geocrs:CZ_geom geo:asWKT "POLYGON ((18.8531441586 48.5553052842, 18.8531441586 51.1172677679, 12.2401111182 51.1172677679, 12.2401111182 48.5553052842, 18.8531441586 48.5553052842))"^^geo:wktLiteral .
+geocrs:DE rdf:type geocrs:Country .
+geocrs:DE rdfs:label "Germany"@en .
+geocrs:DE geo:hasGeometry geocrs:DE_geom .
+geocrs:DE_geom geo:asWKT "POLYGON ((15.0169958839 47.3024876979, 15.0169958839 54.983104153, 5.98865807458 54.983104153, 5.98865807458 47.3024876979, 15.0169958839 47.3024876979))"^^geo:wktLiteral .
+geocrs:DJ rdf:type geocrs:Country .
+geocrs:DJ rdfs:label "Djibouti"@en .
+geocrs:DJ geo:hasGeometry geocrs:DJ_geom .
+geocrs:DJ_geom geo:asWKT "POLYGON ((43.3178524107 10.9268785669, 43.3178524107 12.6996385767, 41.66176 12.6996385767, 41.66176 10.9268785669, 43.3178524107 10.9268785669))"^^geo:wktLiteral .
+geocrs:DK rdf:type geocrs:Country .
+geocrs:DK rdfs:label "Denmark"@en .
+geocrs:DK geo:hasGeometry geocrs:DK_geom .
+geocrs:DK_geom geo:asWKT "POLYGON ((12.6900061378 54.8000145534, 12.6900061378 57.730016588, 8.08997684086 57.730016588, 8.08997684086 54.8000145534, 12.6900061378 54.8000145534))"^^geo:wktLiteral .
+geocrs:DO rdf:type geocrs:Country .
+geocrs:DO rdfs:label "Dominican Rep."@en .
+geocrs:DO geo:hasGeometry geocrs:DO_geom .
+geocrs:DO_geom geo:asWKT "POLYGON ((-68.31794328479999 17.598564358, -68.31794328479999 19.8849105901, -71.9451120673 19.8849105901, -71.9451120673 17.598564358, -68.31794328479999 17.598564358))"^^geo:wktLiteral .
+geocrs:DZ rdf:type geocrs:Country .
+geocrs:DZ rdfs:label "Algeria"@en .
+geocrs:DZ geo:hasGeometry geocrs:DZ_geom .
+geocrs:DZ_geom geo:asWKT "POLYGON ((11.9995056495 19.0573642034, 11.9995056495 37.1183806422, -8.684399786809999 37.1183806422, -8.684399786809999 19.0573642034, 11.9995056495 19.0573642034))"^^geo:wktLiteral .
+geocrs:EC rdf:type geocrs:Country .
+geocrs:EC rdfs:label "Ecuador"@en .
+geocrs:EC geo:hasGeometry geocrs:EC_geom .
+geocrs:EC_geom geo:asWKT "POLYGON ((-75.2337227037 -4.95912851321, -75.2337227037 1.3809237736, -80.9677654691 1.3809237736, -80.9677654691 -4.95912851321, -75.2337227037 -4.95912851321))"^^geo:wktLiteral .
+geocrs:EG rdf:type geocrs:Country .
+geocrs:EG rdfs:label "Egypt"@en .
+geocrs:EG geo:hasGeometry geocrs:EG_geom .
+geocrs:EG_geom geo:asWKT "POLYGON ((36.86623 22, 36.86623 31.58568, 24.70007 31.58568, 24.70007 22, 36.86623 22))"^^geo:wktLiteral .
+geocrs:ER rdf:type geocrs:Country .
+geocrs:ER rdfs:label "Eritrea"@en .
+geocrs:ER geo:hasGeometry geocrs:ER_geom .
+geocrs:ER_geom geo:asWKT "POLYGON ((43.0812260272 12.4554157577, 43.0812260272 17.9983074, 36.3231889178 17.9983074, 36.3231889178 12.4554157577, 43.0812260272 12.4554157577))"^^geo:wktLiteral .
+geocrs:ES rdf:type geocrs:Country .
+geocrs:ES rdfs:label "Spain"@en .
+geocrs:ES geo:hasGeometry geocrs:ES_geom .
+geocrs:ES_geom geo:asWKT "POLYGON ((3.03948408368 35.946850084, 3.03948408368 43.7483377142, -9.392883673529999 43.7483377142, -9.392883673529999 35.946850084, 3.03948408368 35.946850084))"^^geo:wktLiteral .
+geocrs:EE rdf:type geocrs:Country .
+geocrs:EE rdfs:label "Estonia"@en .
+geocrs:EE geo:hasGeometry geocrs:EE_geom .
+geocrs:EE_geom geo:asWKT "POLYGON ((28.1316992531 57.4745283067, 28.1316992531 59.6110903998, 23.3397953631 59.6110903998, 23.3397953631 57.4745283067, 28.1316992531 57.4745283067))"^^geo:wktLiteral .
+geocrs:ET rdf:type geocrs:Country .
+geocrs:ET rdfs:label "Ethiopia"@en .
+geocrs:ET geo:hasGeometry geocrs:ET_geom .
+geocrs:ET_geom geo:asWKT "POLYGON ((47.78942 3.42206, 47.78942 14.95943, 32.95418 14.95943, 32.95418 3.42206, 47.78942 3.42206))"^^geo:wktLiteral .
+geocrs:FI rdf:type geocrs:Country .
+geocrs:FI rdfs:label "Finland"@en .
+geocrs:FI geo:hasGeometry geocrs:FI_geom .
+geocrs:FI_geom geo:asWKT "POLYGON ((31.5160921567 59.846373196, 31.5160921567 70.1641930203, 20.6455928891 70.1641930203, 20.6455928891 59.846373196, 31.5160921567 59.846373196))"^^geo:wktLiteral .
+geocrs:FJ rdf:type geocrs:Country .
+geocrs:FJ rdfs:label "Fiji"@en .
+geocrs:FJ geo:hasGeometry geocrs:FJ_geom .
+geocrs:FJ_geom geo:asWKT "POLYGON ((180 -18.28799, 180 -16.0208822567, -180 -16.0208822567, -180 -18.28799, 180 -18.28799))"^^geo:wktLiteral .
+geocrs:FK rdf:type geocrs:Country .
+geocrs:FK rdfs:label "Falkland Is."@en .
+geocrs:FK geo:hasGeometry geocrs:FK_geom .
+geocrs:FK_geom geo:asWKT "POLYGON ((-57.75 -52.3, -57.75 -51.1, -61.2 -51.1, -61.2 -52.3, -57.75 -52.3))"^^geo:wktLiteral .
+geocrs:FR rdf:type geocrs:Country .
+geocrs:FR rdfs:label "France"@en .
+geocrs:FR geo:hasGeometry geocrs:FR_geom .
+geocrs:FR_geom geo:asWKT "POLYGON ((9.560016310270001 2.05338918702, 9.560016310270001 51.1485061713, -54.5247541978 51.1485061713, -54.5247541978 2.05338918702, 9.560016310270001 2.05338918702))"^^geo:wktLiteral .
+geocrs:GA rdf:type geocrs:Country .
+geocrs:GA rdfs:label "Gabon"@en .
+geocrs:GA geo:hasGeometry geocrs:GA_geom .
+geocrs:GA_geom geo:asWKT "POLYGON ((14.4254557634 -3.97882659263, 14.4254557634 2.32675751384, 8.797995639690001 2.32675751384, 8.797995639690001 -3.97882659263, 14.4254557634 -3.97882659263))"^^geo:wktLiteral .
+geocrs:GB rdf:type geocrs:Country .
+geocrs:GB rdfs:label "United Kingdom"@en .
+geocrs:GB geo:hasGeometry geocrs:GB_geom .
+geocrs:GB_geom geo:asWKT "POLYGON ((1.68153079591 49.959999905, 1.68153079591 58.6350001085, -7.57216793459 58.6350001085, -7.57216793459 49.959999905, 1.68153079591 49.959999905))"^^geo:wktLiteral .
+geocrs:GE rdf:type geocrs:Country .
+geocrs:GE rdfs:label "Georgia"@en .
+geocrs:GE geo:hasGeometry geocrs:GE_geom .
+geocrs:GE_geom geo:asWKT "POLYGON ((46.6379081561 41.0644446885, 46.6379081561 43.553104153, 39.9550085793 43.553104153, 39.9550085793 41.0644446885, 46.6379081561 41.0644446885))"^^geo:wktLiteral .
+geocrs:GH rdf:type geocrs:Country .
+geocrs:GH rdfs:label "Ghana"@en .
+geocrs:GH geo:hasGeometry geocrs:GH_geom .
+geocrs:GH_geom geo:asWKT "POLYGON ((1.0601216976 4.71046214438, 1.0601216976 11.0983409693, -3.24437008301 11.0983409693, -3.24437008301 4.71046214438, 1.0601216976 4.71046214438))"^^geo:wktLiteral .
+geocrs:GN rdf:type geocrs:Country .
+geocrs:GN rdfs:label "Guinea"@en .
+geocrs:GN geo:hasGeometry geocrs:GN_geom .
+geocrs:GN_geom geo:asWKT "POLYGON ((-7.83210038902 7.3090373804, -7.83210038902 12.5861829696, -15.1303112452 12.5861829696, -15.1303112452 7.3090373804, -7.83210038902 7.3090373804))"^^geo:wktLiteral .
+geocrs:GM rdf:type geocrs:Country .
+geocrs:GM rdfs:label "Gambia"@en .
+geocrs:GM geo:hasGeometry geocrs:GM_geom .
+geocrs:GM_geom geo:asWKT "POLYGON ((-13.8449633448 13.1302841252, -13.8449633448 13.8764918075, -16.8415246241 13.8764918075, -16.8415246241 13.1302841252, -13.8449633448 13.1302841252))"^^geo:wktLiteral .
+geocrs:GW rdf:type geocrs:Country .
+geocrs:GW rdfs:label "Guinea Bissau"@en .
+geocrs:GW geo:hasGeometry geocrs:GW_geom .
+geocrs:GW_geom geo:asWKT "POLYGON ((-13.7004760401 11.0404116887, -13.7004760401 12.6281700708, -16.6774519516 12.6281700708, -16.6774519516 11.0404116887, -13.7004760401 11.0404116887))"^^geo:wktLiteral .
+geocrs:GQ rdf:type geocrs:Country .
+geocrs:GQ rdfs:label "Eq. Guinea"@en .
+geocrs:GQ geo:hasGeometry geocrs:GQ_geom .
+geocrs:GQ_geom geo:asWKT "POLYGON ((11.285078973 1.01011953369, 11.285078973 2.28386607504, 9.305613234100001 2.28386607504, 9.305613234100001 1.01011953369, 11.285078973 1.01011953369))"^^geo:wktLiteral .
+geocrs:GR rdf:type geocrs:Country .
+geocrs:GR rdfs:label "Greece"@en .
+geocrs:GR geo:hasGeometry geocrs:GR_geom .
+geocrs:GR_geom geo:asWKT "POLYGON ((26.6041955909 34.9199876979, 26.6041955909 41.8269046087, 20.1500159034 41.8269046087, 20.1500159034 34.9199876979, 26.6041955909 34.9199876979))"^^geo:wktLiteral .
+geocrs:GL rdf:type geocrs:Country .
+geocrs:GL rdfs:label "Greenland"@en .
+geocrs:GL geo:hasGeometry geocrs:GL_geom .
+geocrs:GL_geom geo:asWKT "POLYGON ((-12.20855 60.03676, -12.20855 83.64512999999999, -73.297 83.64512999999999, -73.297 60.03676, -12.20855 60.03676))"^^geo:wktLiteral .
+geocrs:GT rdf:type geocrs:Country .
+geocrs:GT rdfs:label "Guatemala"@en .
+geocrs:GT geo:hasGeometry geocrs:GT_geom .
+geocrs:GT_geom geo:asWKT "POLYGON ((-88.2250227526 13.7353376327, -88.2250227526 17.8193260767, -92.2292486234 17.8193260767, -92.2292486234 13.7353376327, -88.2250227526 13.7353376327))"^^geo:wktLiteral .
+geocrs:GY rdf:type geocrs:Country .
+geocrs:GY rdfs:label "Guyana"@en .
+geocrs:GY geo:hasGeometry geocrs:GY_geom .
+geocrs:GY_geom geo:asWKT "POLYGON ((-56.5393857489 1.26808828369, -56.5393857489 8.36703481692, -61.4103029039 8.36703481692, -61.4103029039 1.26808828369, -56.5393857489 1.26808828369))"^^geo:wktLiteral .
+geocrs:HN rdf:type geocrs:Country .
+geocrs:HN rdfs:label "Honduras"@en .
+geocrs:HN geo:hasGeometry geocrs:HN_geom .
+geocrs:HN_geom geo:asWKT "POLYGON ((-83.147219001 12.9846857772, -83.147219001 16.0054057886, -89.3533259753 16.0054057886, -89.3533259753 12.9846857772, -83.147219001 12.9846857772))"^^geo:wktLiteral .
+geocrs:HR rdf:type geocrs:Country .
+geocrs:HR rdfs:label "Croatia"@en .
+geocrs:HR geo:hasGeometry geocrs:HR_geom .
+geocrs:HR_geom geo:asWKT "POLYGON ((19.3904757016 42.47999136, 19.3904757016 46.5037509222, 13.6569755388 46.5037509222, 13.6569755388 42.47999136, 19.3904757016 42.47999136))"^^geo:wktLiteral .
+geocrs:HT rdf:type geocrs:Country .
+geocrs:HT rdfs:label "Haiti"@en .
+geocrs:HT geo:hasGeometry geocrs:HT_geom .
+geocrs:HT_geom geo:asWKT "POLYGON ((-71.6248732164 18.0309927434, -71.6248732164 19.9156839055, -74.45803361679999 19.9156839055, -74.45803361679999 18.0309927434, -71.6248732164 18.0309927434))"^^geo:wktLiteral .
+geocrs:HU rdf:type geocrs:Country .
+geocrs:HU rdfs:label "Hungary"@en .
+geocrs:HU geo:hasGeometry geocrs:HU_geom .
+geocrs:HU_geom geo:asWKT "POLYGON ((22.710531447 45.7594811061, 22.710531447 48.6238540716, 16.2022982113 48.6238540716, 16.2022982113 45.7594811061, 22.710531447 45.7594811061))"^^geo:wktLiteral .
+geocrs:ID rdf:type geocrs:Country .
+geocrs:ID rdfs:label "Indonesia"@en .
+geocrs:ID geo:hasGeometry geocrs:ID_geom .
+geocrs:ID_geom geo:asWKT "POLYGON ((141.03385176 -10.3599874813, 141.03385176 5.47982086834, 95.2930261576 5.47982086834, 95.2930261576 -10.3599874813, 141.03385176 -10.3599874813))"^^geo:wktLiteral .
+geocrs:IN rdf:type geocrs:Country .
+geocrs:IN rdfs:label "India"@en .
+geocrs:IN geo:hasGeometry geocrs:IN_geom .
+geocrs:IN_geom geo:asWKT "POLYGON ((97.4025614766 7.96553477623, 97.4025614766 35.4940095078, 68.17664513539999 35.4940095078, 68.17664513539999 7.96553477623, 97.4025614766 7.96553477623))"^^geo:wktLiteral .
+geocrs:IE rdf:type geocrs:Country .
+geocrs:IE rdfs:label "Ireland"@en .
+geocrs:IE geo:hasGeometry geocrs:IE_geom .
+geocrs:IE_geom geo:asWKT "POLYGON ((-6.03298539878 51.6693012559, -6.03298539878 55.1316222195, -9.977085740590001 55.1316222195, -9.977085740590001 51.6693012559, -6.03298539878 51.6693012559))"^^geo:wktLiteral .
+geocrs:IR rdf:type geocrs:Country .
+geocrs:IR rdfs:label "Iran"@en .
+geocrs:IR geo:hasGeometry geocrs:IR_geom .
+geocrs:IR_geom geo:asWKT "POLYGON ((63.3166317076 25.0782370061, 63.3166317076 39.7130026312, 44.1092252948 39.7130026312, 44.1092252948 25.0782370061, 63.3166317076 25.0782370061))"^^geo:wktLiteral .
+geocrs:IQ rdf:type geocrs:Country .
+geocrs:IQ rdfs:label "Iraq"@en .
+geocrs:IQ geo:hasGeometry geocrs:IQ_geom .
+geocrs:IQ_geom geo:asWKT "POLYGON ((48.5679712258 29.0990251735, 48.5679712258 37.3852635768, 38.7923405291 37.3852635768, 38.7923405291 29.0990251735, 48.5679712258 29.0990251735))"^^geo:wktLiteral .
+geocrs:IS rdf:type geocrs:Country .
+geocrs:IS rdfs:label "Iceland"@en .
+geocrs:IS geo:hasGeometry geocrs:IS_geom .
+geocrs:IS_geom geo:asWKT "POLYGON ((-13.609732225 63.4963829617, -13.609732225 66.5267923041, -24.3261840479 66.5267923041, -24.3261840479 63.4963829617, -13.609732225 63.4963829617))"^^geo:wktLiteral .
+geocrs:IL rdf:type geocrs:Country .
+geocrs:IL rdfs:label "Israel"@en .
+geocrs:IL geo:hasGeometry geocrs:IL_geom .
+geocrs:IL_geom geo:asWKT "POLYGON ((35.8363969256 29.5013261988, 35.8363969256 33.2774264593, 34.2654333839 33.2774264593, 34.2654333839 29.5013261988, 35.8363969256 29.5013261988))"^^geo:wktLiteral .
+geocrs:IT rdf:type geocrs:Country .
+geocrs:IT rdfs:label "Italy"@en .
+geocrs:IT geo:hasGeometry geocrs:IT_geom .
+geocrs:IT_geom geo:asWKT "POLYGON ((18.4802470232 36.619987291, 18.4802470232 47.1153931748, 6.7499552751 47.1153931748, 6.7499552751 36.619987291, 18.4802470232 36.619987291))"^^geo:wktLiteral .
+geocrs:JM rdf:type geocrs:Country .
+geocrs:JM rdfs:label "Jamaica"@en .
+geocrs:JM geo:hasGeometry geocrs:JM_geom .
+geocrs:JM_geom geo:asWKT "POLYGON ((-76.19965857610001 17.7011162379, -76.19965857610001 18.5242184514, -78.33771928580001 18.5242184514, -78.33771928580001 17.7011162379, -76.19965857610001 17.7011162379))"^^geo:wktLiteral .
+geocrs:JO rdf:type geocrs:Country .
+geocrs:JO rdfs:label "Jordan"@en .
+geocrs:JO geo:hasGeometry geocrs:JO_geom .
+geocrs:JO_geom geo:asWKT "POLYGON ((39.1954683774 29.1974946152, 39.1954683774 33.3786864284, 34.9226025734 33.3786864284, 34.9226025734 29.1974946152, 39.1954683774 29.1974946152))"^^geo:wktLiteral .
+geocrs:JP rdf:type geocrs:Country .
+geocrs:JP rdfs:label "Japan"@en .
+geocrs:JP geo:hasGeometry geocrs:JP_geom .
+geocrs:JP_geom geo:asWKT "POLYGON ((145.543137242 31.0295791692, 145.543137242 45.5514834662, 129.408463169 45.5514834662, 129.408463169 31.0295791692, 145.543137242 31.0295791692))"^^geo:wktLiteral .
+geocrs:KZ rdf:type geocrs:Country .
+geocrs:KZ rdfs:label "Kazakhstan"@en .
+geocrs:KZ geo:hasGeometry geocrs:KZ_geom .
+geocrs:KZ_geom geo:asWKT "POLYGON ((87.3599703308 40.6623245306, 87.3599703308 55.3852501491, 46.4664457538 55.3852501491, 46.4664457538 40.6623245306, 87.3599703308 40.6623245306))"^^geo:wktLiteral .
+geocrs:KE rdf:type geocrs:Country .
+geocrs:KE rdfs:label "Kenya"@en .
+geocrs:KE geo:hasGeometry geocrs:KE_geom .
+geocrs:KE_geom geo:asWKT "POLYGON ((41.8550830926 -4.67677, 41.8550830926 5.506, 33.8935689697 5.506, 33.8935689697 -4.67677, 41.8550830926 -4.67677))"^^geo:wktLiteral .
+geocrs:KG rdf:type geocrs:Country .
+geocrs:KG rdfs:label "Kyrgyzstan"@en .
+geocrs:KG geo:hasGeometry geocrs:KG_geom .
+geocrs:KG_geom geo:asWKT "POLYGON ((80.2599902689 39.2794632025, 80.2599902689 43.2983393418, 69.464886916 43.2983393418, 69.464886916 39.2794632025, 80.2599902689 39.2794632025))"^^geo:wktLiteral .
+geocrs:KH rdf:type geocrs:Country .
+geocrs:KH rdfs:label "Cambodia"@en .
+geocrs:KH geo:hasGeometry geocrs:KH_geom .
+geocrs:KH_geom geo:asWKT "POLYGON ((107.614547968 10.4865436874, 107.614547968 14.5705838078, 102.3480994 14.5705838078, 102.3480994 10.4865436874, 107.614547968 10.4865436874))"^^geo:wktLiteral .
+geocrs:KR rdf:type geocrs:Country .
+geocrs:KR rdfs:label "S. Korea"@en .
+geocrs:KR geo:hasGeometry geocrs:KR_geom .
+geocrs:KR_geom geo:asWKT "POLYGON ((129.468304478 34.3900458847, 129.468304478 38.6122429469, 126.117397903 38.6122429469, 126.117397903 34.3900458847, 129.468304478 34.3900458847))"^^geo:wktLiteral .
+geocrs:KW rdf:type geocrs:Country .
+geocrs:KW rdfs:label "Kuwait"@en .
+geocrs:KW geo:hasGeometry geocrs:KW_geom .
+geocrs:KW_geom geo:asWKT "POLYGON ((48.4160941913 28.5260627304, 48.4160941913 30.0590699326, 46.5687134133 30.0590699326, 46.5687134133 28.5260627304, 48.4160941913 28.5260627304))"^^geo:wktLiteral .
+geocrs:LA rdf:type geocrs:Country .
+geocrs:LA rdfs:label "Laos"@en .
+geocrs:LA geo:hasGeometry geocrs:LA_geom .
+geocrs:LA_geom geo:asWKT "POLYGON ((107.564525181 13.88109101, 107.564525181 22.4647531194, 100.115987583 22.4647531194, 100.115987583 13.88109101, 107.564525181 13.88109101))"^^geo:wktLiteral .
+geocrs:LB rdf:type geocrs:Country .
+geocrs:LB rdfs:label "Lebanon"@en .
+geocrs:LB geo:hasGeometry geocrs:LB_geom .
+geocrs:LB_geom geo:asWKT "POLYGON ((36.6117501157 33.0890400254, 36.6117501157 34.6449140488, 35.1260526873 34.6449140488, 35.1260526873 33.0890400254, 36.6117501157 33.0890400254))"^^geo:wktLiteral .
+geocrs:LR rdf:type geocrs:Country .
+geocrs:LR rdfs:label "Liberia"@en .
+geocrs:LR geo:hasGeometry geocrs:LR_geom .
+geocrs:LR_geom geo:asWKT "POLYGON ((-7.53971513511 4.35575511313, -7.53971513511 8.54105520267, -11.4387794662 8.54105520267, -11.4387794662 4.35575511313, -7.53971513511 4.35575511313))"^^geo:wktLiteral .
+geocrs:LY rdf:type geocrs:Country .
+geocrs:LY rdfs:label "Libya"@en .
+geocrs:LY geo:hasGeometry geocrs:LY_geom .
+geocrs:LY_geom geo:asWKT "POLYGON ((25.16482 19.58047, 25.16482 33.1369957545, 9.31941084152 33.1369957545, 9.31941084152 19.58047, 25.16482 19.58047))"^^geo:wktLiteral .
+geocrs:LK rdf:type geocrs:Country .
+geocrs:LK rdfs:label "Sri Lanka"@en .
+geocrs:LK geo:hasGeometry geocrs:LK_geom .
+geocrs:LK_geom geo:asWKT "POLYGON ((81.7879590189 5.96836985923, 81.7879590189 9.82407766361, 79.6951668639 9.82407766361, 79.6951668639 5.96836985923, 81.7879590189 5.96836985923))"^^geo:wktLiteral .
+geocrs:LS rdf:type geocrs:Country .
+geocrs:LS rdfs:label "Lesotho"@en .
+geocrs:LS geo:hasGeometry geocrs:LS_geom .
+geocrs:LS_geom geo:asWKT "POLYGON ((29.3251664568 -30.6451058896, 29.3251664568 -28.6475017229, 26.9992619158 -28.6475017229, 26.9992619158 -30.6451058896, 29.3251664568 -30.6451058896))"^^geo:wktLiteral .
+geocrs:LT rdf:type geocrs:Country .
+geocrs:LT rdfs:label "Lithuania"@en .
+geocrs:LT geo:hasGeometry geocrs:LT_geom .
+geocrs:LT_geom geo:asWKT "POLYGON ((26.5882792498 53.9057022162, 26.5882792498 56.3725283881, 21.0558004086 56.3725283881, 21.0558004086 53.9057022162, 26.5882792498 53.9057022162))"^^geo:wktLiteral .
+geocrs:LU rdf:type geocrs:Country .
+geocrs:LU rdfs:label "Luxembourg"@en .
+geocrs:LU geo:hasGeometry geocrs:LU_geom .
+geocrs:LU_geom geo:asWKT "POLYGON ((6.24275109216 49.4426671413, 6.24275109216 50.1280516628, 5.67405195478 50.1280516628, 5.67405195478 49.4426671413, 6.24275109216 49.4426671413))"^^geo:wktLiteral .
+geocrs:LV rdf:type geocrs:Country .
+geocrs:LV rdfs:label "Latvia"@en .
+geocrs:LV geo:hasGeometry geocrs:LV_geom .
+geocrs:LV_geom geo:asWKT "POLYGON ((28.1767094256 55.61510692, 28.1767094256 57.9701569688, 21.0558004086 57.9701569688, 21.0558004086 55.61510692, 28.1767094256 55.61510692))"^^geo:wktLiteral .
+geocrs:MA rdf:type geocrs:Country .
+geocrs:MA rdfs:label "Morocco"@en .
+geocrs:MA geo:hasGeometry geocrs:MA_geom .
+geocrs:MA_geom geo:asWKT "POLYGON ((-1.12455115397 21.4207341578, -1.12455115397 35.7599881048, -17.0204284327 35.7599881048, -17.0204284327 21.4207341578, -1.12455115397 21.4207341578))"^^geo:wktLiteral .
+geocrs:MD rdf:type geocrs:Country .
+geocrs:MD rdfs:label "Moldova"@en .
+geocrs:MD geo:hasGeometry geocrs:MD_geom .
+geocrs:MD_geom geo:asWKT "POLYGON ((30.0246586443 45.4882831895, 30.0246586443 48.4671194525, 26.6193367856 48.4671194525, 26.6193367856 45.4882831895, 30.0246586443 45.4882831895))"^^geo:wktLiteral .
+geocrs:MG rdf:type geocrs:Country .
+geocrs:MG rdfs:label "Madagascar"@en .
+geocrs:MG geo:hasGeometry geocrs:MG_geom .
+geocrs:MG_geom geo:asWKT "POLYGON ((50.4765368996 -25.6014344215, 50.4765368996 -12.0405567359, 43.2541870461 -12.0405567359, 43.2541870461 -25.6014344215, 50.4765368996 -25.6014344215))"^^geo:wktLiteral .
+geocrs:MX rdf:type geocrs:Country .
+geocrs:MX rdfs:label "Mexico"@en .
+geocrs:MX geo:hasGeometry geocrs:MX_geom .
+geocrs:MX_geom geo:asWKT "POLYGON ((-86.811982388 14.5388286402, -86.811982388 32.72083, -117.12776 32.72083, -117.12776 14.5388286402, -86.811982388 14.5388286402))"^^geo:wktLiteral .
+geocrs:MK rdf:type geocrs:Country .
+geocrs:MK rdfs:label "Macedonia"@en .
+geocrs:MK geo:hasGeometry geocrs:MK_geom .
+geocrs:MK_geom geo:asWKT "POLYGON ((22.9523771502 40.8427269557, 22.9523771502 42.3202595078, 20.46315 42.3202595078, 20.46315 40.8427269557, 22.9523771502 40.8427269557))"^^geo:wktLiteral .
+geocrs:ML rdf:type geocrs:Country .
+geocrs:ML rdfs:label "Mali"@en .
+geocrs:ML geo:hasGeometry geocrs:ML_geom .
+geocrs:ML_geom geo:asWKT "POLYGON ((4.27020999514 10.0963607854, 4.27020999514 24.9745740829, -12.1707502914 24.9745740829, -12.1707502914 10.0963607854, 4.27020999514 10.0963607854))"^^geo:wktLiteral .
+geocrs:MM rdf:type geocrs:Country .
+geocrs:MM rdfs:label "Myanmar"@en .
+geocrs:MM geo:hasGeometry geocrs:MM_geom .
+geocrs:MM_geom geo:asWKT "POLYGON ((101.180005324 9.93295990645, 101.180005324 28.335945136, 92.3032344909 28.335945136, 92.3032344909 9.93295990645, 101.180005324 9.93295990645))"^^geo:wktLiteral .
+geocrs:ME rdf:type geocrs:Country .
+geocrs:ME rdfs:label "Montenegro"@en .
+geocrs:ME geo:hasGeometry geocrs:ME_geom .
+geocrs:ME_geom geo:asWKT "POLYGON ((20.3398 41.87755, 20.3398 43.52384, 18.45 43.52384, 18.45 41.87755, 20.3398 41.87755))"^^geo:wktLiteral .
+geocrs:MN rdf:type geocrs:Country .
+geocrs:MN rdfs:label "Mongolia"@en .
+geocrs:MN geo:hasGeometry geocrs:MN_geom .
+geocrs:MN_geom geo:asWKT "POLYGON ((119.772823928 41.5974095729, 119.772823928 52.0473660345, 87.7512642761 52.0473660345, 87.7512642761 41.5974095729, 119.772823928 41.5974095729))"^^geo:wktLiteral .
+geocrs:MZ rdf:type geocrs:Country .
+geocrs:MZ rdfs:label "Mozambique"@en .
+geocrs:MZ geo:hasGeometry geocrs:MZ_geom .
+geocrs:MZ_geom geo:asWKT "POLYGON ((40.7754752948 -26.7421916643, 40.7754752948 -10.3170960425, 30.1794812355 -10.3170960425, 30.1794812355 -26.7421916643, 40.7754752948 -26.7421916643))"^^geo:wktLiteral .
+geocrs:MR rdf:type geocrs:Country .
+geocrs:MR rdfs:label "Mauritania"@en .
+geocrs:MR geo:hasGeometry geocrs:MR_geom .
+geocrs:MR_geom geo:asWKT "POLYGON ((-4.92333736817 14.6168342147, -4.92333736817 27.3957441269, -17.0634232243 27.3957441269, -17.0634232243 14.6168342147, -4.92333736817 14.6168342147))"^^geo:wktLiteral .
+geocrs:MW rdf:type geocrs:Country .
+geocrs:MW rdfs:label "Malawi"@en .
+geocrs:MW geo:hasGeometry geocrs:MW_geom .
+geocrs:MW_geom geo:asWKT "POLYGON ((35.7719047381 -16.8012997372, 35.7719047381 -9.23059905359, 32.6881653175 -9.23059905359, 32.6881653175 -16.8012997372, 35.7719047381 -16.8012997372))"^^geo:wktLiteral .
+geocrs:MY rdf:type geocrs:Country .
+geocrs:MY rdfs:label "Malaysia"@en .
+geocrs:MY geo:hasGeometry geocrs:MY_geom .
+geocrs:MY_geom geo:asWKT "POLYGON ((119.181903925 0.773131415201, 119.181903925 6.92805288332, 100.085756871 6.92805288332, 100.085756871 0.773131415201, 119.181903925 0.773131415201))"^^geo:wktLiteral .
+geocrs:NA rdf:type geocrs:Country .
+geocrs:NA rdfs:label "Namibia"@en .
+geocrs:NA geo:hasGeometry geocrs:NA_geom .
+geocrs:NA_geom geo:asWKT "POLYGON ((25.0844433937 -29.045461928, 25.0844433937 -16.9413428687, 11.7341988461 -16.9413428687, 11.7341988461 -29.045461928, 25.0844433937 -29.045461928))"^^geo:wktLiteral .
+geocrs:NC rdf:type geocrs:Country .
+geocrs:NC rdfs:label "New Caledonia"@en .
+geocrs:NC geo:hasGeometry geocrs:NC_geom .
+geocrs:NC_geom geo:asWKT "POLYGON ((167.120011428 -22.3999760881, 167.120011428 -20.1056458473, 164.029605748 -20.1056458473, 164.029605748 -22.3999760881, 167.120011428 -22.3999760881))"^^geo:wktLiteral .
+geocrs:NE rdf:type geocrs:Country .
+geocrs:NE rdfs:label "Niger"@en .
+geocrs:NE geo:hasGeometry geocrs:NE_geom .
+geocrs:NE_geom geo:asWKT "POLYGON ((15.9032466977 11.6601671412, 15.9032466977 23.4716684026, 0.295646396495 23.4716684026, 0.295646396495 11.6601671412, 15.9032466977 11.6601671412))"^^geo:wktLiteral .
+geocrs:NG rdf:type geocrs:Country .
+geocrs:NG rdfs:label "Nigeria"@en .
+geocrs:NG geo:hasGeometry geocrs:NG_geom .
+geocrs:NG_geom geo:asWKT "POLYGON ((14.5771777686 4.24059418377, 14.5771777686 13.8659239771, 2.69170169436 13.8659239771, 2.69170169436 4.24059418377, 14.5771777686 4.24059418377))"^^geo:wktLiteral .
+geocrs:NI rdf:type geocrs:Country .
+geocrs:NI rdfs:label "Nicaragua"@en .
+geocrs:NI geo:hasGeometry geocrs:NI_geom .
+geocrs:NI_geom geo:asWKT "POLYGON ((-83.147219001 10.7268390975, -83.147219001 15.0162671981, -87.6684934151 15.0162671981, -87.6684934151 10.7268390975, -83.147219001 10.7268390975))"^^geo:wktLiteral .
+geocrs:NL rdf:type geocrs:Country .
+geocrs:NL rdfs:label "Netherlands"@en .
+geocrs:NL geo:hasGeometry geocrs:NL_geom .
+geocrs:NL_geom geo:asWKT "POLYGON ((7.09205325687 50.803721015, 7.09205325687 53.5104033474, 3.31497114423 53.5104033474, 3.31497114423 50.803721015, 7.09205325687 50.803721015))"^^geo:wktLiteral .
+geocrs:NO rdf:type geocrs:Country .
+geocrs:NO rdfs:label "Norway"@en .
+geocrs:NO geo:hasGeometry geocrs:NO_geom .
+geocrs:NO_geom geo:asWKT "POLYGON ((31.29341841 58.0788841824, 31.29341841 80.6571442736, 4.99207807783 80.6571442736, 4.99207807783 58.0788841824, 31.29341841 58.0788841824))"^^geo:wktLiteral .
+geocrs:NP rdf:type geocrs:Country .
+geocrs:NP rdfs:label "Nepal"@en .
+geocrs:NP geo:hasGeometry geocrs:NP_geom .
+geocrs:NP_geom geo:asWKT "POLYGON ((88.1748043151 26.3978980576, 88.1748043151 30.4227169866, 80.08842451370001 30.4227169866, 80.08842451370001 26.3978980576, 88.1748043151 26.3978980576))"^^geo:wktLiteral .
+geocrs:NZ rdf:type geocrs:Country .
+geocrs:NZ rdfs:label "New Zealand"@en .
+geocrs:NZ geo:hasGeometry geocrs:NZ_geom .
+geocrs:NZ_geom geo:asWKT "POLYGON ((178.517093541 -46.641235447, 178.517093541 -34.4506617165, 166.509144322 -34.4506617165, 166.509144322 -46.641235447, 178.517093541 -46.641235447))"^^geo:wktLiteral .
+geocrs:OM rdf:type geocrs:Country .
+geocrs:OM rdfs:label "Oman"@en .
+geocrs:OM geo:hasGeometry geocrs:OM_geom .
+geocrs:OM_geom geo:asWKT "POLYGON ((59.8080603372 16.6510511337, 59.8080603372 26.3959343531, 52.0000098 26.3959343531, 52.0000098 16.6510511337, 59.8080603372 16.6510511337))"^^geo:wktLiteral .
+geocrs:PK rdf:type geocrs:Country .
+geocrs:PK rdfs:label "Pakistan"@en .
+geocrs:PK geo:hasGeometry geocrs:PK_geom .
+geocrs:PK_geom geo:asWKT "POLYGON ((77.8374507995 23.6919650335, 77.8374507995 37.1330309108, 60.8742484882 37.1330309108, 60.8742484882 23.6919650335, 77.8374507995 23.6919650335))"^^geo:wktLiteral .
+geocrs:PA rdf:type geocrs:Country .
+geocrs:PA rdfs:label "Panama"@en .
+geocrs:PA geo:hasGeometry geocrs:PA_geom .
+geocrs:PA_geom geo:asWKT "POLYGON ((-77.24256649439999 7.2205414901, -77.24256649439999 9.61161001224, -82.96578304720001 9.61161001224, -82.96578304720001 7.2205414901, -77.24256649439999 7.2205414901))"^^geo:wktLiteral .
+geocrs:PE rdf:type geocrs:Country .
+geocrs:PE rdfs:label "Peru"@en .
+geocrs:PE geo:hasGeometry geocrs:PE_geom .
+geocrs:PE_geom geo:asWKT "POLYGON ((-68.6650797187 -18.3479753557, -68.6650797187 -0.0572054988649, -81.4109425524 -0.0572054988649, -81.4109425524 -18.3479753557, -68.6650797187 -18.3479753557))"^^geo:wktLiteral .
+geocrs:PH rdf:type geocrs:Country .
+geocrs:PH rdfs:label "Philippines"@en .
+geocrs:PH geo:hasGeometry geocrs:PH_geom .
+geocrs:PH_geom geo:asWKT "POLYGON ((126.537423944 5.58100332277, 126.537423944 18.5052273625, 117.17427453 18.5052273625, 117.17427453 5.58100332277, 126.537423944 5.58100332277))"^^geo:wktLiteral .
+geocrs:PG rdf:type geocrs:Country .
+geocrs:PG rdfs:label "Papua New Guinea"@en .
+geocrs:PG geo:hasGeometry geocrs:PG_geom .
+geocrs:PG_geom geo:asWKT "POLYGON ((156.019965448 -10.6524760881, 156.019965448 -2.50000212973, 141.000210403 -2.50000212973, 141.000210403 -10.6524760881, 156.019965448 -10.6524760881))"^^geo:wktLiteral .
+geocrs:PL rdf:type geocrs:Country .
+geocrs:PL rdfs:label "Poland"@en .
+geocrs:PL geo:hasGeometry geocrs:PL_geom .
+geocrs:PL_geom geo:asWKT "POLYGON ((24.0299857927 49.0273953314, 24.0299857927 54.8515359564, 14.0745211117 54.8515359564, 14.0745211117 49.0273953314, 24.0299857927 49.0273953314))"^^geo:wktLiteral .
+geocrs:PR rdf:type geocrs:Country .
+geocrs:PR rdfs:label "Puerto Rico"@en .
+geocrs:PR geo:hasGeometry geocrs:PR_geom .
+geocrs:PR_geom geo:asWKT "POLYGON ((-65.5910037909 17.946553453, -65.5910037909 18.5206011011, -67.2424275377 18.5206011011, -67.2424275377 17.946553453, -65.5910037909 17.946553453))"^^geo:wktLiteral .
+geocrs:KP rdf:type geocrs:Country .
+geocrs:KP rdfs:label "N. Korea"@en .
+geocrs:KP geo:hasGeometry geocrs:KP_geom .
+geocrs:KP_geom geo:asWKT "POLYGON ((130.780007359 37.669070543, 130.780007359 42.9853868678, 124.265624628 42.9853868678, 124.265624628 37.669070543, 130.780007359 37.669070543))"^^geo:wktLiteral .
+geocrs:PT rdf:type geocrs:Country .
+geocrs:PT rdfs:label "Portugal"@en .
+geocrs:PT geo:hasGeometry geocrs:PT_geom .
+geocrs:PT_geom geo:asWKT "POLYGON ((-6.3890876937 36.838268541, -6.3890876937 42.280468655, -9.526570603870001 42.280468655, -9.526570603870001 36.838268541, -6.3890876937 36.838268541))"^^geo:wktLiteral .
+geocrs:PY rdf:type geocrs:Country .
+geocrs:PY rdfs:label "Paraguay"@en .
+geocrs:PY geo:hasGeometry geocrs:PY_geom .
+geocrs:PY_geom geo:asWKT "POLYGON ((-54.2929595608 -27.5484990374, -54.2929595608 -19.3427466773, -62.6850571357 -19.3427466773, -62.6850571357 -27.5484990374, -54.2929595608 -27.5484990374))"^^geo:wktLiteral .
+geocrs:QA rdf:type geocrs:Country .
+geocrs:QA rdfs:label "Qatar"@en .
+geocrs:QA geo:hasGeometry geocrs:QA_geom .
+geocrs:QA_geom geo:asWKT "POLYGON ((51.6067004738 24.5563308782, 51.6067004738 26.1145820175, 50.7439107603 26.1145820175, 50.7439107603 24.5563308782, 51.6067004738 24.5563308782))"^^geo:wktLiteral .
+geocrs:RO rdf:type geocrs:Country .
+geocrs:RO rdfs:label "Romania"@en .
+geocrs:RO geo:hasGeometry geocrs:RO_geom .
+geocrs:RO_geom geo:asWKT "POLYGON ((29.62654341 43.6884447292, 29.62654341 48.2208812526, 20.2201924985 48.2208812526, 20.2201924985 43.6884447292, 29.62654341 43.6884447292))"^^geo:wktLiteral .
+geocrs:RU rdf:type geocrs:Country .
+geocrs:RU rdfs:label "Russia"@en .
+geocrs:RU geo:hasGeometry geocrs:RU_geom .
+geocrs:RU_geom geo:asWKT "POLYGON ((180 41.151416124, 180 81.2504, -180 81.2504, -180 41.151416124, 180 41.151416124))"^^geo:wktLiteral .
+geocrs:RW rdf:type geocrs:Country .
+geocrs:RW rdfs:label "Rwanda"@en .
+geocrs:RW geo:hasGeometry geocrs:RW_geom .
+geocrs:RW_geom geo:asWKT "POLYGON ((30.8161348813 -2.91785776125, 30.8161348813 -1.13465911215, 29.0249263852 -1.13465911215, 29.0249263852 -2.91785776125, 30.8161348813 -2.91785776125))"^^geo:wktLiteral .
+geocrs:SA rdf:type geocrs:Country .
+geocrs:SA rdfs:label "Saudi Arabia"@en .
+geocrs:SA geo:hasGeometry geocrs:SA_geom .
+geocrs:SA_geom geo:asWKT "POLYGON ((55.6666593769 16.3478913436, 55.6666593769 32.161008816, 34.6323360532 32.161008816, 34.6323360532 16.3478913436, 55.6666593769 16.3478913436))"^^geo:wktLiteral .
+geocrs:SD rdf:type geocrs:Country .
+geocrs:SD rdfs:label "Sudan"@en .
+geocrs:SD geo:hasGeometry geocrs:SD_geom .
+geocrs:SD_geom geo:asWKT "POLYGON ((38.4100899595 8.619729712930001, 38.4100899595 22, 21.93681 22, 21.93681 8.619729712930001, 38.4100899595 8.619729712930001))"^^geo:wktLiteral .
+geocrs:SS rdf:type geocrs:Country .
+geocrs:SS rdfs:label "S. Sudan"@en .
+geocrs:SS geo:hasGeometry geocrs:SS_geom .
+geocrs:SS_geom geo:asWKT "POLYGON ((35.2980071182 3.50917, 35.2980071182 12.2480077571, 23.8869795809 12.2480077571, 23.8869795809 3.50917, 35.2980071182 3.50917))"^^geo:wktLiteral .
+geocrs:SN rdf:type geocrs:Country .
+geocrs:SN rdfs:label "Senegal"@en .
+geocrs:SN geo:hasGeometry geocrs:SN_geom .
+geocrs:SN_geom geo:asWKT "POLYGON ((-11.4678991358 12.332089952, -11.4678991358 16.5982636581, -17.6250426905 16.5982636581, -17.6250426905 12.332089952, -11.4678991358 12.332089952))"^^geo:wktLiteral .
+geocrs:SB rdf:type geocrs:Country .
+geocrs:SB rdfs:label "Solomon Is."@en .
+geocrs:SB geo:hasGeometry geocrs:SB_geom .
+geocrs:SB_geom geo:asWKT "POLYGON ((162.398645868 -10.8263672828, 162.398645868 -6.59933847415, 156.491357864 -6.59933847415, 156.491357864 -10.8263672828, 162.398645868 -10.8263672828))"^^geo:wktLiteral .
+geocrs:SL rdf:type geocrs:Country .
+geocrs:SL rdfs:label "Sierra Leone"@en .
+geocrs:SL geo:hasGeometry geocrs:SL_geom .
+geocrs:SL_geom geo:asWKT "POLYGON ((-10.2300935531 6.78591685631, -10.2300935531 10.0469839543, -13.2465502588 10.0469839543, -13.2465502588 6.78591685631, -10.2300935531 6.78591685631))"^^geo:wktLiteral .
+geocrs:SV rdf:type geocrs:Country .
+geocrs:SV rdfs:label "El Salvador"@en .
+geocrs:SV geo:hasGeometry geocrs:SV_geom .
+geocrs:SV_geom geo:asWKT "POLYGON ((-87.7235029772 13.1490168319, -87.7235029772 14.4241327987, -90.0955545723 14.4241327987, -90.0955545723 13.1490168319, -87.7235029772 13.1490168319))"^^geo:wktLiteral .
+geocrs:SO rdf:type geocrs:Country .
+geocrs:SO rdfs:label "Somalia"@en .
+geocrs:SO geo:hasGeometry geocrs:SO_geom .
+geocrs:SO_geom geo:asWKT "POLYGON ((51.13387 -1.68325, 51.13387 12.02464, 40.98105 12.02464, 40.98105 -1.68325, 51.13387 -1.68325))"^^geo:wktLiteral .
+geocrs:RS rdf:type geocrs:Country .
+geocrs:RS rdfs:label "Serbia"@en .
+geocrs:RS geo:hasGeometry geocrs:RS_geom .
+geocrs:RS_geom geo:asWKT "POLYGON ((22.9860185076 42.2452243971, 22.9860185076 46.1717298447, 18.82982 46.1717298447, 18.82982 42.2452243971, 22.9860185076 42.2452243971))"^^geo:wktLiteral .
+geocrs:SR rdf:type geocrs:Country .
+geocrs:SR rdfs:label "Suriname"@en .
+geocrs:SR geo:hasGeometry geocrs:SR_geom .
+geocrs:SR_geom geo:asWKT "POLYGON ((-53.9580446031 1.81766714112, -53.9580446031 6.0252914494, -58.0446943834 6.0252914494, -58.0446943834 1.81766714112, -53.9580446031 1.81766714112))"^^geo:wktLiteral .
+geocrs:SK rdf:type geocrs:Country .
+geocrs:SK rdfs:label "Slovakia"@en .
+geocrs:SK geo:hasGeometry geocrs:SK_geom .
+geocrs:SK_geom geo:asWKT "POLYGON ((22.5581376482 47.7584288601, 22.5581376482 49.5715740017, 16.8799829444 49.5715740017, 16.8799829444 47.7584288601, 22.5581376482 47.7584288601))"^^geo:wktLiteral .
+geocrs:SI rdf:type geocrs:Country .
+geocrs:SI rdfs:label "Slovenia"@en .
+geocrs:SI geo:hasGeometry geocrs:SI_geom .
+geocrs:SI_geom geo:asWKT "POLYGON ((16.5648083839 45.4523163926, 16.5648083839 46.8523859727, 13.6981099789 46.8523859727, 13.6981099789 45.4523163926, 16.5648083839 45.4523163926))"^^geo:wktLiteral .
+geocrs:SE rdf:type geocrs:Country .
+geocrs:SE rdfs:label "Sweden"@en .
+geocrs:SE geo:hasGeometry geocrs:SE_geom .
+geocrs:SE_geom geo:asWKT "POLYGON ((23.9033785336 55.3617373725, 23.9033785336 69.10624726020001, 11.0273686052 69.10624726020001, 11.0273686052 55.3617373725, 23.9033785336 55.3617373725))"^^geo:wktLiteral .
+geocrs:SZ rdf:type geocrs:Country .
+geocrs:SZ rdfs:label "Swaziland"@en .
+geocrs:SZ geo:hasGeometry geocrs:SZ_geom .
+geocrs:SZ_geom geo:asWKT "POLYGON ((32.0716654803 -27.2858794085, 32.0716654803 -25.660190525, 30.6766085141 -25.660190525, 30.6766085141 -27.2858794085, 32.0716654803 -27.2858794085))"^^geo:wktLiteral .
+geocrs:SY rdf:type geocrs:Country .
+geocrs:SY rdfs:label "Syria"@en .
+geocrs:SY geo:hasGeometry geocrs:SY_geom .
+geocrs:SY_geom geo:asWKT "POLYGON ((42.3495910988 32.312937527, 42.3495910988 37.2298725449, 35.7007979673 37.2298725449, 35.7007979673 32.312937527, 42.3495910988 32.312937527))"^^geo:wktLiteral .
+geocrs:TD rdf:type geocrs:Country .
+geocrs:TD rdfs:label "Chad"@en .
+geocrs:TD geo:hasGeometry geocrs:TD_geom .
+geocrs:TD_geom geo:asWKT "POLYGON ((23.88689 7.42192454674, 23.88689 23.40972, 13.5403935076 23.40972, 13.5403935076 7.42192454674, 23.88689 7.42192454674))"^^geo:wktLiteral .
+geocrs:TG rdf:type geocrs:Country .
+geocrs:TG rdfs:label "Togo"@en .
+geocrs:TG geo:hasGeometry geocrs:TG_geom .
+geocrs:TG_geom geo:asWKT "POLYGON ((1.86524051271 5.92883738853, 1.86524051271 11.0186817489, -0.0497847151599 11.0186817489, -0.0497847151599 5.92883738853, 1.86524051271 5.92883738853))"^^geo:wktLiteral .
+geocrs:TH rdf:type geocrs:Country .
+geocrs:TH rdfs:label "Thailand"@en .
+geocrs:TH geo:hasGeometry geocrs:TH_geom .
+geocrs:TH_geom geo:asWKT "POLYGON ((105.589038527 5.69138418215, 105.589038527 20.4178496363, 97.37589643760001 20.4178496363, 97.37589643760001 5.69138418215, 105.589038527 5.69138418215))"^^geo:wktLiteral .
+geocrs:TJ rdf:type geocrs:Country .
+geocrs:TJ rdfs:label "Tajikistan"@en .
+geocrs:TJ geo:hasGeometry geocrs:TJ_geom .
+geocrs:TJ_geom geo:asWKT "POLYGON ((74.98000247589999 36.7381712916, 74.98000247589999 40.9602133245, 67.4422196796 40.9602133245, 67.4422196796 36.7381712916, 74.98000247589999 36.7381712916))"^^geo:wktLiteral .
+geocrs:TM rdf:type geocrs:Country .
+geocrs:TM rdfs:label "Turkmenistan"@en .
+geocrs:TM geo:hasGeometry geocrs:TM_geom .
+geocrs:TM_geom geo:asWKT "POLYGON ((66.54615034370001 35.2706639674, 66.54615034370001 42.7515510117, 52.5024597512 42.7515510117, 52.5024597512 35.2706639674, 66.54615034370001 35.2706639674))"^^geo:wktLiteral .
+geocrs:TL rdf:type geocrs:Country .
+geocrs:TL rdfs:label "East Timor"@en .
+geocrs:TL geo:hasGeometry geocrs:TL_geom .
+geocrs:TL_geom geo:asWKT "POLYGON ((127.335928176 -9.393173109579999, 127.335928176 -8.273344821809999, 124.968682489 -8.273344821809999, 124.968682489 -9.393173109579999, 127.335928176 -9.393173109579999))"^^geo:wktLiteral .
+geocrs:TT rdf:type geocrs:Country .
+geocrs:TT rdfs:label "Trinidad and Tobago"@en .
+geocrs:TT geo:hasGeometry geocrs:TT_geom .
+geocrs:TT_geom geo:asWKT "POLYGON ((-60.895 10, -60.895 10.89, -61.95 10.89, -61.95 10, -60.895 10))"^^geo:wktLiteral .
+geocrs:TN rdf:type geocrs:Country .
+geocrs:TN rdfs:label "Tunisia"@en .
+geocrs:TN geo:hasGeometry geocrs:TN_geom .
+geocrs:TN_geom geo:asWKT "POLYGON ((11.4887874691 30.3075560572, 11.4887874691 37.3499944118, 7.52448164229 37.3499944118, 7.52448164229 30.3075560572, 11.4887874691 30.3075560572))"^^geo:wktLiteral .
+geocrs:TR rdf:type geocrs:Country .
+geocrs:TR rdfs:label "Turkey"@en .
+geocrs:TR geo:hasGeometry geocrs:TR_geom .
+geocrs:TR_geom geo:asWKT "POLYGON ((44.7939896991 35.8215347357, 44.7939896991 42.1414848903, 26.0433512713 42.1414848903, 26.0433512713 35.8215347357, 44.7939896991 35.8215347357))"^^geo:wktLiteral .
+geocrs:TW rdf:type geocrs:Country .
+geocrs:TW rdfs:label "Taiwan"@en .
+geocrs:TW geo:hasGeometry geocrs:TW_geom .
+geocrs:TW_geom geo:asWKT "POLYGON ((121.951243931 21.9705713974, 121.951243931 25.2954588893, 120.106188593 25.2954588893, 120.106188593 21.9705713974, 121.951243931 21.9705713974))"^^geo:wktLiteral .
+geocrs:TZ rdf:type geocrs:Country .
+geocrs:TZ rdfs:label "Tanzania"@en .
+geocrs:TZ geo:hasGeometry geocrs:TZ_geom .
+geocrs:TZ_geom geo:asWKT "POLYGON ((40.31659 -11.7209380022, 40.31659 -0.95, 29.3399975929 -0.95, 29.3399975929 -11.7209380022, 40.31659 -11.7209380022))"^^geo:wktLiteral .
+geocrs:UG rdf:type geocrs:Country .
+geocrs:UG rdfs:label "Uganda"@en .
+geocrs:UG geo:hasGeometry geocrs:UG_geom .
+geocrs:UG_geom geo:asWKT "POLYGON ((35.03599 -1.44332244223, 35.03599 4.24988494736, 29.5794661801 4.24988494736, 29.5794661801 -1.44332244223, 35.03599 -1.44332244223))"^^geo:wktLiteral .
+geocrs:UA rdf:type geocrs:Country .
+geocrs:UA rdfs:label "Ukraine"@en .
+geocrs:UA geo:hasGeometry geocrs:UA_geom .
+geocrs:UA_geom geo:asWKT "POLYGON ((40.0807890155 44.3614785833, 40.0807890155 52.3350745713, 22.0856083513 52.3350745713, 22.0856083513 44.3614785833, 40.0807890155 44.3614785833))"^^geo:wktLiteral .
+geocrs:UY rdf:type geocrs:Country .
+geocrs:UY rdfs:label "Uruguay"@en .
+geocrs:UY geo:hasGeometry geocrs:UY_geom .
+geocrs:UY_geom geo:asWKT "POLYGON ((-53.209588996 -34.9526465797, -53.209588996 -30.1096863746, -58.4270741441 -30.1096863746, -58.4270741441 -34.9526465797, -53.209588996 -34.9526465797))"^^geo:wktLiteral .
+geocrs:US rdf:type geocrs:Country .
+geocrs:US rdfs:label "United States"@en .
+geocrs:US geo:hasGeometry geocrs:US_geom .
+geocrs:US_geom geo:asWKT "POLYGON ((-66.96465999999999 18.91619, -66.96465999999999 71.3577635769, -171.791110603 71.3577635769, -171.791110603 18.91619, -66.96465999999999 18.91619))"^^geo:wktLiteral .
+geocrs:UZ rdf:type geocrs:Country .
+geocrs:UZ rdfs:label "Uzbekistan"@en .
+geocrs:UZ geo:hasGeometry geocrs:UZ_geom .
+geocrs:UZ_geom geo:asWKT "POLYGON ((73.055417108 37.1449940049, 73.055417108 45.5868043076, 55.9289172707 45.5868043076, 55.9289172707 37.1449940049, 73.055417108 37.1449940049))"^^geo:wktLiteral .
+geocrs:VE rdf:type geocrs:Country .
+geocrs:VE rdfs:label "Venezuela"@en .
+geocrs:VE geo:hasGeometry geocrs:VE_geom .
+geocrs:VE_geom geo:asWKT "POLYGON ((-59.7582848782 0.724452215982, -59.7582848782 12.1623070337, -73.30495154490001 12.1623070337, -73.30495154490001 0.724452215982, -59.7582848782 0.724452215982))"^^geo:wktLiteral .
+geocrs:VN rdf:type geocrs:Country .
+geocrs:VN rdfs:label "Vietnam"@en .
+geocrs:VN geo:hasGeometry geocrs:VN_geom .
+geocrs:VN_geom geo:asWKT "POLYGON ((109.33526981 8.59975962975, 109.33526981 23.3520633001, 102.170435826 23.3520633001, 102.170435826 8.59975962975, 109.33526981 8.59975962975))"^^geo:wktLiteral .
+geocrs:VU rdf:type geocrs:Country .
+geocrs:VU rdfs:label "Vanuatu"@en .
+geocrs:VU geo:hasGeometry geocrs:VU_geom .
+geocrs:VU_geom geo:asWKT "POLYGON ((167.844876744 -16.5978496233, 167.844876744 -14.6264970842, 166.629136998 -14.6264970842, 166.629136998 -16.5978496233, 167.844876744 -16.5978496233))"^^geo:wktLiteral .
+geocrs:PS rdf:type geocrs:Country .
+geocrs:PS rdfs:label "West Bank"@en .
+geocrs:PS geo:hasGeometry geocrs:PS_geom .
+geocrs:PS_geom geo:asWKT "POLYGON ((35.5456653175 31.3534353704, 35.5456653175 32.5325106878, 34.9274084816 32.5325106878, 34.9274084816 31.3534353704, 35.5456653175 31.3534353704))"^^geo:wktLiteral .
+geocrs:YE rdf:type geocrs:Country .
+geocrs:YE rdfs:label "Yemen"@en .
+geocrs:YE geo:hasGeometry geocrs:YE_geom .
+geocrs:YE_geom geo:asWKT "POLYGON ((53.1085726255 12.5859504257, 53.1085726255 19.0000033635, 42.6048726743 19.0000033635, 42.6048726743 12.5859504257, 53.1085726255 12.5859504257))"^^geo:wktLiteral .
+geocrs:ZA rdf:type geocrs:Country .
+geocrs:ZA rdfs:label "South Africa"@en .
+geocrs:ZA geo:hasGeometry geocrs:ZA_geom .
+geocrs:ZA_geom geo:asWKT "POLYGON ((32.830120477 -34.8191663551, 32.830120477 -22.0913127581, 16.3449768409 -22.0913127581, 16.3449768409 -34.8191663551, 32.830120477 -34.8191663551))"^^geo:wktLiteral .
+geocrs:ZM rdf:type geocrs:Country .
+geocrs:ZM rdfs:label "Zambia"@en .
+geocrs:ZM geo:hasGeometry geocrs:ZM_geom .
+geocrs:ZM_geom geo:asWKT "POLYGON ((33.4856876971 -17.9612289364, 33.4856876971 -8.23825652429, 21.887842645 -8.23825652429, 21.887842645 -17.9612289364, 33.4856876971 -17.9612289364))"^^geo:wktLiteral .
+geocrs:ZW rdf:type geocrs:Country .
+geocrs:ZW rdfs:label "Zimbabwe"@en .
+geocrs:ZW geo:hasGeometry geocrs:ZW_geom .
+geocrs:ZW_geom geo:asWKT "POLYGON ((32.8498608742 -22.2716118303, 32.8498608742 -15.5077869605, 25.2642257016 -15.5077869605, 25.2642257016 -22.2716118303, 32.8498608742 -22.2716118303))"^^geo:wktLiteral .

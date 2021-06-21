@@ -8,6 +8,7 @@ spoc
 
 open atlantgis.
 load "/opt/result.ttl".
+load "/opt/countries.ttl".
 load "/opt/proj4rdf_data.ttl".
 close.
 quit.
