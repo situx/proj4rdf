@@ -7,7 +7,7 @@ atlantgisstore
 spoc
 
 open atlantgis.
-load "/opt/proj4rdf.ttl".
+load "/opt/result.ttl".
 load "/opt/proj4rdf_data.ttl".
 close.
 quit.

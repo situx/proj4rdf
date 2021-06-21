@@ -1783,7 +1783,7 @@ ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
 geodcounter=1
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttl), format='turtle')
-graph.serialize(destination='ontology.ttl', format='turtle')
+graph.serialize(destination='owl/ontology.ttl', format='turtle')
 #f = open("ontology.ttl", "w", encoding="utf-8")
 #f.write(ttlhead)
 #for line in ttl:
@@ -1807,12 +1807,12 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		continue	
 	crsToTTL(ttl,curcrs,x,geodcounter,None)
 crsToTTL(ttl,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["Moon_2000_IAU_IAG",1737400.0,0.0]],PRIMEM["Moon_Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433]]'),"GCS_Moon",geodcounter,"geocrs:SelenographicCRS")
-f = open("result.nt", "w", encoding="utf-8")
+f = open("owl/result.nt", "w", encoding="utf-8")
 f.write(ttlhead+"".join(ttl))
 f.close()
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl), format='n3')
-graph2.serialize(destination='result.ttl', format='turtle')
+graph2.serialize(destination='owl/result.ttl', format='turtle')
 #f = open("result.ttl", "w", encoding="utf-8")
 #f.write(ttlhead)
 #for line in ttl:
