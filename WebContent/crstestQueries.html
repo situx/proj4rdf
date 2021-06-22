@@ -46,7 +46,7 @@
           window.URL.revokeObjectURL(url);  
       }, 1000);
   }
-var prefixList="PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geocrs: <http://www.opengis.net/ont/crs/>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
+var prefixList="PREFIX geof: <http://www.opengis.net/def/geosparql/function/>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geocrs: <http://www.opengis.net/ont/crs/>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
 
 	var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -95,7 +95,7 @@ function clearMap() {
 
 
   function sendQuery(geojsonres){
-	var url="https://digits.mainzed.org/proj4rdf/"
+	var url="https://digits.mainzed.org/proj4rdf/" //document.location.href
 	if(!url.endsWith("/")){
 		url=url.substring(0,url.lastIndexOf('/'))
 	}else{
@@ -256,6 +256,8 @@ $( document ).ready(function() {
 <option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:EngineeringSurvey . } LIMIT 10'>Get SRS which are applicable to be used for Engineering Surveys</option>
 <option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:Drilling . } LIMIT 10'>Get SRS which are applicable to be used for Drilling Operations</option>
 <option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:Hydrography . } LIMIT 10'>Get SRS which are applicable to be used for Hydrography</option>
+<option value='SELECT DISTINCT ?country ?countrylabel ?countrywkt WHERE {  ?country rdf:type geocrs:Country . ?country rdfs:label ?countrylabel . ?country geo:hasGeometry/geo:asWKT ?countrywkt . } LIMIT 10'>Get 10 random countries</option>
+<option value='SELECT DISTINCT ?country ?countrylabel ?countrywkt WHERE {  geocrs:DE rdfs:label ?countrylabel . geocrs:DE geo:hasGeometry/geo:asWKT ?countrywkt . ?srs rdf:type ?srscls . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:area_of_use ?aou . ?aou geocrs:extent ?aouwkt . FILTER(geof:sfContains(?aouwkt,?countrywkt)) } LIMIT 10'>Get SRS eligible to be used in Germany</option>
 </select>
 <!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
 <br/>

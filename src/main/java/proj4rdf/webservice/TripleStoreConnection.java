@@ -206,7 +206,7 @@ public class TripleStoreConnection {
 
 	public static void main(String[] args) {
 		String res = TripleStoreConnection.executeQuery(
-				"SELECT ?a ?c WHERE { ?a ?b ?c . } LIMIT 1",
+				"SELECT ?a ?c WHERE { ?a ?b ?c . } LIMIT 1000",
 				"proj4.ttl");
 		// System.out.println(res[0]);
 		System.out.println(res);

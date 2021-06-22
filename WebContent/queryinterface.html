@@ -46,7 +46,7 @@
           window.URL.revokeObjectURL(url);  
       }, 1000);
   }
-var prefixList="PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
+var prefixList="PREFIX geof: <http://www.opengis.net/def/geosparql/function>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
 
 	var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -95,7 +95,7 @@ function clearMap() {
 
 
   function sendQuery(geojsonres){
-	  	var url="https://digits.mainzed.org/proj4rdf/"
+	  	var url=document.location.href //"https://digits.mainzed.org/proj4rdf/"
 		if(!url.endsWith("/")){
 			url=url.substring(0,url.lastIndexOf('/'))
 		}else{
@@ -231,7 +231,6 @@ $( document ).ready(function() {
 
 <select id="samplequeries" onChange="chooseSampleQuery()">
 <option value='SELECT ?srs ?the_geom WHERE { ?geom geo:asWKT ?the_geom . ?geom geo:inSRS ?srs . } LIMIT 10'>SRS Test</option>
-<option value="SELECT ?disjoint ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Disjoint(?the_geom,?the_geom) AS ?disjoint) } LIMIT 100">geo2:ST_Disjoint</option>
 <option value='SELECT ?distance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Distance(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance) } LIMIT 100'>geo2:ST_Distance</option>
 <option value='SELECT ?distance3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Distance3D(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance3d) } LIMIT 100'>geo2:ST_Distance3D</option>
 <option value='SELECT ?distance ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DistanceSphere(?the_geom,"POINT(23.8263447 40.9248455)"^^geo:wktLiteral) AS ?distance) } LIMIT 100'>geo2:ST_DistanceSphere</option>
@@ -240,30 +239,19 @@ $( document ).ready(function() {
 <option value='SELECT ?withindistance3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_DWithin3D(?the_geom,?the_geom,10) AS ?withindistance3d) } LIMIT 100'>geo2:ST_DWithin3D</option>
 <option value="SELECT ?equalsrs ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_EqualSRS(?the_geom,?the_geom) AS ?equalsrs) } LIMIT 100">geo2:ST_EqualSRS</option>
 <option value='SELECT ?srid ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_EPSGToSRID("EPSG:4326") AS ?srid) } LIMIT 100'>geo2:ST_EPSGtoSRID</option>
-<option value="SELECT ?exteriorring_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_ExteriorRing(?the_geom) AS ?exteriorring_geom) } LIMIT 100">geo2:ST_ExteriorRing</option>
 <option value="SELECT ?flipped_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_FlipCoordinates(?the_geom) AS ?flipped_geom) } LIMIT 100">geo2:ST_FlipCoordinates</option>
 <option value="SELECT ?intersects ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Intersects(?the_geom,?the_geom) AS ?intersects) } LIMIT 100">geo2:ST_Intersects</option>
 <option value="SELECT ?is3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_Is3D(?the_geom) AS ?is3d) } LIMIT 100">geo2:ST_Is3D</option>
 <option value="SELECT ?measured ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsMeasured(?the_geom) AS ?measured ) } LIMIT 100">geo2:ST_IsMeasured</option>
 <option value="SELECT ?moreprecise ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsMorePrecise(?the_geom,?the_geom) AS ?moreprecise ) } LIMIT 100">geo2:ST_IsMorePrecise</option>
 <option value="SELECT ?issolid ?the_geom WHERE { ?geom geo:asWKT ?the_geom .  BIND(geo2:ST_IsSolid(?the_geom) AS ?issolid) } LIMIT 100">geo2:ST_IsSolid</option>
-<option value="SELECT ?perimeter ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Perimeter(?the_geom) AS ?perimeter) } LIMIT 100">geo2:ST_Perimeter</option>
-<option value="SELECT ?perimeter3d ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Perimeter3D(?the_geom) AS ?perimeter3d) } LIMIT 100">geo2:ST_Perimeter3D</option>
-<option value="SELECT ?points_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Points(?the_geom) AS ?points_geom) } LIMIT 100">geo2:ST_Points</option>
-<option value='SELECT ?pointN_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_PointN(?the_geom,1) AS ?pointN_geom) } LIMIT 100'>geo2:ST_PointN</option>
 <option value='SELECT ?reduced_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_PrecisionReducer(?the_geom,4) AS ?reduced_geom) } LIMIT 100'>geo2:ST_PrecisionReducer</option>
 <option value='SELECT ?the_geom WHERE { BIND(geo2:ST_PointFromGeoHash("9qqj7nmxncgyy4d0dbxqz0") AS ?the_geom) }'>geo2:ST_PointFromGeoHash</option>
 <option value='SELECT ?the_geom WHERE { BIND(geo2:ST_PointFromText("POINT(23.8263447 40.9248455)") AS ?the_geom) }'>geo2:ST_PointFromText</option>
 <option value='SELECT ?pointinsidecircle WHERE { BIND(geo2:ST_PointInsideCircle(geo2:ST_Point(1,2), 0.5, 2, 3) AS ?pointinsidecircle) }'>geo2:ST_PointInsideCircle</option>
-<option value='SELECT ?polygonized_geom ?the_geom WHERE { BIND(geo2:ST_Polygonize(?the_geom) AS ?polygonized_geom) }'>geo2:ST_Polygonize</option>
 <option value='SELECT ?reflect_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Reflect(?the_geom,geo2:ST_PointN(?the_geom,1)) AS ?reflect_geom) } LIMIT 100'>geo2:ST_Reflect</option>
 <option value='SELECT ?relate ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_Relate(?the_geom,?the_geom) AS ?relate) } LIMIT 100'>geo2:ST_Relate</option>
 <option value='SELECT ?relate ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RelateMatch(geo2:ST_Relate(?the_geom,?the_geom),geo2:ST_Relate(?the_geom,?the_geom))) AS ?relate) } LIMIT 100'>geo2:ST_RelateMatch</option>
-<option value="SELECT ?removeGeom_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveGeometry(?the_geom,0) AS ?removeGeom_geom) } LIMIT 100">geo2:ST_RemoveGeometry</option>
-<option value="SELECT ?removePoint_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemovePoint(?the_geom,0) AS ?removePoint_geom) } LIMIT 100">geo2:ST_RemovePoint</option>
-<option value="SELECT ?removePoints_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemovePoints(?the_geom,?the_geom) AS ?removePoints_geom) } LIMIT 100">geo2:ST_RemovePoints</option>
-<option value="SELECT ?removeRing_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveRing(?the_geom,0) AS ?removeRing_geom) } LIMIT 100">geo2:ST_RemoveRing</option>
-<option value="SELECT ?removeRepeatedPoints_geom ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_RemoveRepeatedPoints(?the_geom,0) AS ?removeRepeatedPoints_geom) } LIMIT 100">geo2:ST_RemoveRepeatedPoints</option>
 <option value="SELECT ?rast1 ?rast2 WHERE { ?geom geo2:asHexWKB ?raster_geom . BIND(geo2:ST_Summary(?raster_geom) AS ?rast1) BIND(geo2:ST_Summary(geo2:ST_Abs(?raster_geom,?raster_geom)) AS ?rast2) } LIMIT 10">geo2:ST_Abs</option>
 <option value="SELECT ?srid ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRID(?the_geom) AS ?srid) } LIMIT 100">geo2:ST_SRID</option>
 <option value='SELECT ?epsg ?the_geom WHERE { ?geom geo:asWKT ?the_geom . BIND(geo2:ST_SRIDToEPSG(4326) AS ?epsg) } LIMIT 100'>geo2:ST_SRIDToEPSG</option>
