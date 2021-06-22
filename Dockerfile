@@ -36,6 +36,8 @@ ARG SERVICEJSON=""
 
 RUN rm -rf /usr/local/tomcat/webapps/ROOT/
 
+COPY *.ttl /usr/local/tomcat/
+
 COPY target/proj4rdf-0.0.1-SNAPSHOT.war /tmp/ROOT.war
 
 RUN unzip /tmp/ROOT.war -d /usr/local/tomcat/webapps/ROOT/
