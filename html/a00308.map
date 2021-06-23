@@ -1,8 +1,6 @@
-<map id="WebService" name="WebService">
-<area shape="rect" id="node1" title="Implements OGC API Features and WFS webservice functionality." alt="" coords="201,109,299,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,65,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="89,5,181,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="206,5,297,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="326,5,422,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="447,5,584,32"/>
+<map id="KMLDatatype" name="KMLDatatype">
+<area shape="rect" id="node1" title=" " alt="" coords="23,229,134,256"/>
+<area shape="rect" id="node2" href="$a00337.html" title=" " alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node3" href="$a00377.html" title=" " alt="" coords="15,80,142,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="21,5,136,32"/>
 </map>

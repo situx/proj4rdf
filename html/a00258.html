@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoSPARQLSRSExtension: SRIDHasFlippedAxis Class Reference</title>
+<title>GeoSPARQLSRSExtension: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,92 +55,26 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('a00258.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00261.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00255.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SRIDHasFlippedAxis Class Reference</div>  </div>
+<div class="title">JtsPolyshapeWriter Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Indicates if the first two axis of the spatial reference system are flipped.  
- <a href="a00258.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SRIDHasFlippedAxis:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00257.png" border="0" usemap="#SRIDHasFlippedAxis_inherit__map" alt="Inheritance graph"/></div>
-<map name="SRIDHasFlippedAxis_inherit__map" id="SRIDHasFlippedAxis_inherit__map">
-<area shape="rect" title="Indicates if the first two axis of the spatial reference system are flipped." alt="" coords="5,80,160,107"/>
-<area shape="rect" title=" " alt="" coords="24,5,141,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for SRIDHasFlippedAxis:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00256.png" border="0" usemap="#SRIDHasFlippedAxis_coll__map" alt="Collaboration graph"/></div>
-<map name="SRIDHasFlippedAxis_coll__map" id="SRIDHasFlippedAxis_coll__map">
-<area shape="rect" title="Indicates if the first two axis of the spatial reference system are flipped." alt="" coords="5,80,160,107"/>
-<area shape="rect" title=" " alt="" coords="24,5,141,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memItemLeft" align="right" valign="top">NodeValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00258.html#a4cd5b69d6ec07b0cf45215fe1fcadd60">exec</a> (NodeValue v)</td></tr>
-<tr class="separator:a4cd5b69d6ec07b0cf45215fe1fcadd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Indicates if the first two axis of the spatial reference system are flipped. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4cd5b69d6ec07b0cf45215fe1fcadd60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cd5b69d6ec07b0cf45215fe1fcadd60">&#9670;&nbsp;</a></span>exec()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">NodeValue exec </td>
-          <td>(</td>
-          <td class="paramtype">NodeValue&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                GeometryWrapper wrapper1=GeometryWrapper.extract(v);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                CoordinateReferenceSystem crs;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <span class="keywordflow">if</span>(wrapper1 instanceof GeometryWrapper) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                crs = CRS.forCode(<span class="stringliteral">&quot;EPSG:&quot;</span>+((GeometryWrapper)wrapper1).getXYGeometry().getSRID());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                <span class="keywordflow">if</span>(<span class="stringliteral">&quot;Y&quot;</span>.equals(crs.getCoordinateSystem().getAxis(0).getName().toString()) &amp;&amp; <span class="stringliteral">&quot;X&quot;</span>.equals(crs.getCoordinateSystem().getAxis(1).getName().toString())){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                        <span class="keywordflow">return</span> NodeValue.TRUE;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                }<span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                        <span class="keywordflow">return</span> NodeValue.FALSE;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        }                       </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                } <span class="keywordflow">catch</span> (FactoryException e) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        e.printStackTrace();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> NodeValue.FALSE;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00261.html">JtsPolyshapeWriter</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00277.html#aecf7db5b6782ec66f95d40c786a4d223">getFormatName</a>()</td><td class="entry"><a class="el" href="a00277.html">PolyshapeWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00277.html#aa960f2057742a7bdaa5ee30ca6290d1a">write</a>(Writer output, Geometry shape)</td><td class="entry"><a class="el" href="a00277.html">PolyshapeWriter</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00128.html">proj4rdf</a></li><li class="navelem"><a class="el" href="a00132.html">functions</a></li><li class="navelem"><a class="el" href="a00131.html">srs</a></li><li class="navelem"><a class="el" href="a00258.html">SRIDHasFlippedAxis</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
