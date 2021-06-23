@@ -35,6 +35,8 @@ public class SRSGeo {
    public static final Resource SpatialObject = resource("SpatialObject");
    public static final Resource Feature = resource("Feature");
 
+   
+   
    // simple features topological relations
    public static final Property st_3ddwithin = property("ST_3DDWithin");
    public static final Property st_3dclosestpoint = property("ST_3DClosestPoint");
