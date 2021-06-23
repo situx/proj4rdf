@@ -8,82 +8,82 @@
 
 <http://www.opengis.net/ont/crs/example#> rdf:type owl:Ontology .
 
-#################################################################
+#################################
 #    Datatypes
-#################################################################
+#################################
 
-###  http://www.opengis.net/ont/geosparql#wktLiteral
+##  http://www.opengis.net/ont/geosparql#wktLiteral
 <http://www.opengis.net/ont/geosparql#wktLiteral> rdf:type rdfs:Datatype .
 
 
-#################################################################
+#################################
 #    Object Properties
-#################################################################
+#################################
 
-###  http://www.opengis.net/ont/geosparql#hasGeometry
+##  http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
 
 
-###  http://www.opengis.net/ont/geosparql#inSRS
+##  http://www.opengis.net/ont/geosparql#inSRS
 <http://www.opengis.net/ont/geosparql#inSRS> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf owl:topObjectProperty .
 
 
-#################################################################
+#################################
 #    Data properties
-#################################################################
+#################################
 
-###  http://www.opengis.net/ont/geosparql#asWKT
+##  http://www.opengis.net/ont/geosparql#asWKT
 <http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty .
 
 
-#################################################################
+#################################
 #    Classes
-#################################################################
+#################################
 
-###  http://www.opengis.net/ont/crs/example##CityArea
-<http://www.opengis.net/ont/crs/example##CityArea> rdf:type owl:Class ;
+##  http://www.opengis.net/ont/crs/example#CityArea
+<http://www.opengis.net/ont/crs/example#CityArea> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> .
 
 
-###  http://www.opengis.net/ont/geosparql#Feature
+##  http://www.opengis.net/ont/geosparql#Feature
 <http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
 
 
-###  http://www.opengis.net/ont/geosparql#Geometry
+##  http://www.opengis.net/ont/geosparql#Geometry
 <http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> .
 
 
-###  http://www.opengis.net/ont/geosparql#SpatialObject
+##  http://www.opengis.net/ont/geosparql#SpatialObject
 <http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class .
 
 
-###  http://www.opengis.net/ont/sf#Polygon
+##  http://www.opengis.net/ont/sf#Polygon
 <http://www.opengis.net/ont/sf#Polygon> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> .
 
 
-#################################################################
+#################################
 #    Individuals
-#################################################################
+#################################
 
-###  http://www.opengis.net/ont/crs/UnknownSRS
+##  http://www.opengis.net/ont/crs/UnknownSRS
 <http://www.opengis.net/ont/crs/UnknownSRS> rdf:type owl:NamedIndividual .
 
 
-###  http://www.opengis.net/ont/crs/example##berlin_wkt_unreferenced
-<http://www.opengis.net/ont/crs/example##berlin_wkt_unreferenced> rdf:type owl:NamedIndividual ,
-                                                                <http://www.opengis.net/ont/crs/example##CityArea> ;
-                                                       <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.opengis.net/ont/crs/example##berlin_wkt_unreferenced_geom> .
+##  http://www.opengis.net/ont/crs/example#berlin_wkt_unreferenced
+<http://www.opengis.net/ont/crs/example#berlin_wkt_unreferenced> rdf:type owl:NamedIndividual ,
+                                                                <http://www.opengis.net/ont/crs/example#CityArea> ;
+                                                       <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.opengis.net/ont/crs/example#berlin_wkt_unreferenced_geom> .
 
 
-###  http://www.opengis.net/ont/crs/example##berlin_wkt_unreferenced_geom
-<http://www.opengis.net/ont/crs/example##berlin_wkt_unreferenced_geom> rdf:type owl:NamedIndividual ,
+##  http://www.opengis.net/ont/crs/example#berlin_wkt_unreferenced_geom
+<http://www.opengis.net/ont/crs/example#berlin_wkt_unreferenced_geom> rdf:type owl:NamedIndividual ,
                                                                      <http://www.opengis.net/ont/sf#Polygon> ;
                                                             <http://www.opengis.net/ont/geosparql#inSRS> <http://www.opengis.net/ont/crs/UnknownSRS> ;
                                                             <http://www.opengis.net/ont/geosparql#asWKT> "POLYGON((-77.089005 38.913574,-77.029953 38.913574,-77.029953 38.886321,-77.089005 38.886321,-77.089005 38.913574))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+##  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

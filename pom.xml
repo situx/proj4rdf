@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>proj4rdf</groupId>
   <artifactId>proj4rdf</artifactId>
+  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
     <build>
         <sourceDirectory>src/main</sourceDirectory>
@@ -101,6 +102,11 @@
     <groupId>org.glassfish.jaxb</groupId>
     <artifactId>txw2</artifactId>
     <version>2.2.11</version>
+</dependency>
+      <dependency>
+    <groupId>org.wololo</groupId>
+    <artifactId>jts2geojson</artifactId>
+    <version>0.13.0</version>
 </dependency>
 <dependency>
     <groupId>org.json</groupId>

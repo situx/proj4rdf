@@ -1,39 +1,15 @@
 package proj4rdf.webservice;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.BufferedWriter;
-import java.io.Writer;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.StreamingOutput;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -41,15 +17,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.opengis.util.FactoryException;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.enums.ParameterStyle;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
@@ -126,43 +99,68 @@ public class WebService {
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/queryservice")
+    public String queryService(@QueryParam("query") String query,@QueryParam("dataset") String dataset) { 
+		final String dir = System.getProperty("user.dir");
+        System.out.println("current dir = " + dir); 
+		return TripleStoreConnection.executeQuery(query,dataset);
+	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/queryservice2")
+    public String queryService2(@QueryParam("query") String query,@QueryParam("endpoint") String dataset) { 
+		final String dir = System.getProperty("user.dir");
+        System.out.println("current dir = " + dir); 
+		return TripleStoreConnection.executeQuery(query,dataset);
+	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/queryservice2geojson")
+    public String queryService2(@QueryParam("query") String query,@QueryParam("endpoint") String dataset,@QueryParam("geojson") String geojson) { 
+		final String dir = System.getProperty("user.dir");
+        System.out.println("current dir = " + dir); 
+		return TripleStoreConnection.executeQuery(query,dataset,true);
+	}
+	
+	@GET
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/crsFromRDF")
 	@Operation(
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
             description = "Returns a CRS definition given in a RDF graph in a predefined format")
 	public Response getCRSByURI(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="The URI of the CRS defined in RDF") @QueryParam("crsuri") String crsuri,
+			@Parameter(description="The endpoint of the CRS definition") @QueryParam("endpoint") String crsendpoint,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return Response.ok(RDFCRSToWKT.getCRSFromTripleStore(crsuri, crsendpoint, returnformat)).build();
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/getEligibleCRSForFeature")
 	@Operation(
             summary = "Returns a CRS definition given in a RDF graph in a predefined format",
             description = "Returns a CRS definition given in a RDF graph in a predefined format")
 	public Response getEligibleCRS(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="boundingbox to check the area of validity") @PathParam("bbox") String bbox,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="boundingbox to check the area of validity") @QueryParam("bbox") String bbox,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return Response.ok(RDFCRSToWKT.getEligibleCRSFromTripleStore(bbox)).build();
 		//return getFeatureById(collectionid, featureid, style, format);
 	}
 	
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
 	@Path("/convertCRS")
 	@Operation(
             summary = "Converts a feature defined in a given CRS to another CRS.",
             description = "Converts a feature defined in a given CRS to another CRS.")
 	public Response convertFeaturetoCRSDefinedinRDF(
-			@Parameter(description="The URI of the CRS defined in RDF") @PathParam("crsuri") String crsuri,
-			@Parameter(description="The endpoint of the CRS definition") @PathParam("endpoint") String crsendpoint,
-			@Parameter(description="The return format")@PathParam("returnformat") String returnformat) {
+			@Parameter(description="The URI of the CRS defined in RDF") @QueryParam("crsuri") String crsuri,
+			@Parameter(description="The endpoint of the CRS definition") @QueryParam("endpoint") String crsendpoint,
+			@Parameter(description="The return format")@QueryParam("returnformat") String returnformat) {
 		return null;
 	}
 	
@@ -173,7 +171,7 @@ public class WebService {
             summary = "Converts a WKT CRS definition to RDF.",
             description = "Converts a WKT CRS definition to RDF.")
 	public Response convertFeaturetoCRSDefinedinRDF(
-			@Parameter(description="The WKT String to convert") @PathParam("wktstring") String wktstring) {
+			@Parameter(description="The WKT String to convert") @QueryParam("wktstring") String wktstring) {
 		try {
 			return Response.ok(CoordinateReferenceSystem.WKTToRDF(wktstring)).build();
 		} catch (FactoryException | IOException e) {

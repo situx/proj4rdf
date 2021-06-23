@@ -56,7 +56,11 @@ public class CoordinateSystem {
 		XMLStreamWriter writer;
 		try {
 			writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
-			writer.writeStartElement("gml:"+coordinateSystemType);
+			if(coordinateSystemType.contains("PlanarCoordinateSystem")) {
+				writer.writeStartElement("gml:CartesianCS");
+			}else {
+				writer.writeStartElement("gml:"+coordinateSystemType);				
+			}
 			if(this.coordinateSystemName!=null) {
 				writer.writeStartElement("gml:csName");
 				writer.writeCharacters(this.coordinateSystemName);

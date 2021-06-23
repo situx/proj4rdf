@@ -27,7 +27,7 @@
 
 <script>
   function convertWKT(){
-    $.get(url+"rest/service/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
+    $.get("https://digits.mainzed.org/proj4rdf/"+"rest/service/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
         //alert("Data: " + data + "\nStatus: " + status);
         var json=JSON.parse(data)
                 $('#number').text(json["size"]+" Results");
@@ -137,11 +137,16 @@
 <div class="container" role="main">
   <div class="row">
   <div class="col-sm-5">
-</select>
 <!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
 <br/>
+<select id="epsgcodes">
+<option value="">EPSG:4326</option>
+<option value="">EPSG:25832</option>
+</select>
 <textarea id="wktinput" rows=16 cols=45>
-</textarea><textarea id="rdfoutput" rows=16 cols=45>
+</textarea>
+
+<textarea id="rdfoutput" rows=16 cols=45>
 </textarea><br/>
 <br/>
 <button id="convertWKTButton" onClick="convertWKT()">Convert WKT To RDF</button>

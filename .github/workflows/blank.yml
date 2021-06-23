@@ -20,9 +20,11 @@ jobs:
          sudo pip3 install wheel pylode
          cd docs
          doxygen Doxyfile
-         pylode -i ../ontology.ttl -o index.html
-         pylode -i ../rules.ttl -o rules.html -p vocpub
-         pylode -i ../result.ttl -o index2.html
+         pylode -i ../owl/ontology.ttl -o index.html
+         pylode -i ../owl/rules.ttl -o rules.html -p vocpub
+         pylode -i ../owl/result.ttl -o index2.html
+         mkdir showcase
+         cp -r ../WebContent/* showcase/ 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

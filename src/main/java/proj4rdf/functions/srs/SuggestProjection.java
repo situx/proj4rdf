@@ -23,7 +23,7 @@ public class SuggestProjection extends FunctionBase1 {
 
 	@Override
 	public NodeValue exec(NodeValue v) {
-		GeometryWrapper geomwrap=GeometryWrapper.extract(geomliteral);
+		/*GeometryWrapper geomwrap=GeometryWrapper.extract(geomliteral);
 		String res = RDFCRSToWKT.getCRSFromTripleStore(crsURI.getString(), endpoint.getString(), "WKT");
 		try {
 			CoordinateReferenceSystem targetCRS = CRS.fromWKT(res);
@@ -39,7 +39,8 @@ public class SuggestProjection extends FunctionBase1 {
 			return RDFCRSToWKT.createGeometry(coords.toArray(new Coordinate[0]), geomwrap.getGeometryType(), geomwrap).asNodeValue();
 		} catch (FactoryException | MismatchedDimensionException | TransformException ex) {
             throw new ExprEvalException(ex.getMessage(), ex);
-		}
+		}*/
+		return null;
 	}
 
 }

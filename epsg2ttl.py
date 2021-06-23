@@ -4,7 +4,10 @@ import pyproj
 import csv
 from rdflib import Graph
 from pyproj import CRS
+import urllib.request
+from shapely.geometry import box
 
+convertToGML=False
 
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	epsgcode=str(x)
@@ -32,7 +35,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	else:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
-	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrs:Earth .\n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrsisbody:Earth .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
@@ -76,7 +79,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
 		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
 		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdfs:label \""+str(curcrs.area_of_use.name).replace("\"","'")+"\"@en .\n")
-		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
+		b = box(curcrs.area_of_use.west, curcrs.area_of_use.south, curcrs.area_of_use.east, curcrs.area_of_use.north)
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent   \"<http://www.opengis.net/def/crs/OGC/1.3/CRS84> "+str(b.wkt)+"\"^^geo:wktLiteral . \n")
+		#\"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
 	if curcrs.get_geod()!=None:
 		geoid="geocrsgeod:"+str(geodcounter)
 		if curcrs.datum.ellipsoid!=None:
@@ -84,18 +89,22 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				geoid=spheroids[curcrs.datum.ellipsoid.name]
 				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			elif curcrs.get_geod().sphere:
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
 				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			else:
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
 				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 		else:
 			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
 			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
 			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
+			ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
 		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
@@ -120,7 +129,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:area_of_use geocrsaou:"+str(coordoperationid)+"_area_of_use . \n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
-			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" geocrs:extent \"ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
+			b = box(curcrs.coordinate_operation.area_of_use.west, curcrs.coordinate_operation.area_of_use.south, curcrs.coordinate_operation.area_of_use.east, curcrs.coordinate_operation.area_of_use.north)
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use geocrs:extent \"<http://www.opengis.net/def/crs/OGC/1.3/CRS84> "+str(b.wkt)+"\"^^geo:wktLiteral . \n")
+			#ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
 		if curcrs.coordinate_operation.towgs84!=None:
 			print(curcrs.coordinate_operation.towgs84)
 		for par in curcrs.coordinate_operation.params:
@@ -220,7 +231,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	if curcrs.to_proj4()!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
 	if curcrs.to_json()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")		
 	if wkt!="":
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
@@ -277,7 +288,7 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
 			if str(row["eccentricity"])!="":
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
-			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:approximates geocrsisbody:"+curname+" .\n")
 			if str(row["star_name"])!="":
 				starname=row["star_name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
 				ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Star .\n")
@@ -1081,7 +1092,7 @@ ttl.add("geocrs:BoggsEumorphicProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:BoggsEumorphicProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
 ttl.add("geocrs:BoggsEumorphicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttl.add("geocrs:CrasterParabolicProjection rdf:type owl:Class .\n")
-ttl.add("geocrs:CrasterParabolicProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
+ttl.add("geocrs:CrasterParabolicProjection rdfs:label \"craster parabolic projection\"@en .\n")
 ttl.add("geocrs:CrasterParabolicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttl.add("geocrs:TheTimesProjection rdf:type owl:Class .\n")
 ttl.add("geocrs:TheTimesProjection rdfs:label \"the times projection\"@en .\n")
@@ -1574,16 +1585,14 @@ ttl.add("geocrs:primeMeridian rdfs:label \"prime meridian\"@en .\n")
 ttl.add("geocrs:primeMeridian skos:definition \"The prime meridian used by a geodetic datum\"@en .\n")
 ttl.add("geocrs:primeMeridian rdfs:domain geocrs:Datum .\n")
 ttl.add("geocrs:primeMeridian rdfs:range geocrs:PrimeMeridian .\n")
-ttl.add("geocrs:projection rdf:type owl:ObjectProperty .\n")
-ttl.add("geocrs:projection rdfs:label \"projection\"@en .\n")
-ttl.add("geocrs:projection rdfs:domain geocrs:CRS .\n")
-ttl.add("geocrs:projection rdfs:range geocrs:Projection .\n")
 ttl.add("geocrs:satelliteOf rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:satelliteOf rdfs:label \"satellite of\"@en .\n")
+ttl.add("geocrs:satelliteOf skos:definition \"Defines an interstellar body as the natural satellite of another interstellar body.\"@en .\n")
 ttl.add("geocrs:satelliteOf rdfs:domain geocrs:InterstellarBody .\n")
 ttl.add("geocrs:satelliteOf rdfs:range geocrs:InterstellarBody .\n")
 ttl.add("geocrs:planet_status rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:planet_status rdfs:label \"planet status\"@en .\n")
+ttl.add("geocrs:planet_status skos:definition \"The status of the discovery of the planet, e.g. confirmed, unsure etc.\"@en .\n")
 ttl.add("geocrs:planet_status rdfs:domain geocrs:InterstellarBody .\n")
 ttl.add("geocrs:planet_status rdfs:range geocrs:PlanetStatus .\n")
 ttl.add("geocrs:coordinateSystem rdf:type owl:ObjectProperty .\n")
@@ -1648,16 +1657,24 @@ ttl.add("geocrs:unit_conversion_factor rdfs:domain geocrs:CoordinateSystemAxis .
 ttl.add("geocrs:unit_conversion_factor rdfs:range xsd:string .\n")
 ttl.add("geocrs:isAppliedTo rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:isAppliedTo rdfs:label \"is applied to\"@en .\n")
+ttl.add("geocrs:isAppliedTo skos:definition \"defines an srs application for which a srs definition has been used\"@en .\n")
 ttl.add("geocrs:isAppliedTo rdfs:domain geocrs:ReferenceSystem .\n")
 ttl.add("geocrs:isAppliedTo rdfs:range geocrs:SRSApplication .\n")
 ttl.add("geocrs:uses rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:uses rdfs:label \"uses\"@en .\n")
+ttl.add("geocrs:uses skos:definition \"defines an srs application which uses a given projection\"@en .\n")
 ttl.add("geocrs:uses rdfs:domain geocrs:SRSApplication .\n")
 ttl.add("geocrs:uses rdfs:range geocrs:Projection .\n")
 ttl.add("geocrs:isApplicableTo rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:isApplicableTo rdfs:label \"is applicable to\"@en .\n")
+ttl.add("geocrs:isApplicableTo skos:definition \"defines to which interstellar body the srs is applicable\"@en .\n")
 ttl.add("geocrs:isApplicableTo rdfs:domain geocrs:SpatialReferenceSystem .\n")
 ttl.add("geocrs:isApplicableTo rdfs:range geocrs:InterstellarBody .\n")
+ttl.add("geocrs:approximates rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:approximates rdfs:label \"approximates\"@en .\n")
+ttl.add("geocrs:approximates skos:definition \"defines an interstellar body which is approximated by the geoid\"@en .\n")
+ttl.add("geocrs:approximates rdfs:domain geocrs:Geoid .\n")
+ttl.add("geocrs:approximates rdfs:range geocrs:InterstellarBody .\n")
 ttl.add("geocrs:abbreviation rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:abbreviation rdfs:label \"axis abbreviation\"@en .\n")
 ttl.add("geocrs:abbreviation skos:definition \"The abbreviation used to identify an axis\"@en .\n")
@@ -1685,6 +1702,7 @@ ttl.add("geocrs:accuracy rdfs:domain geocrs:CoordinateOperation .\n")
 ttl.add("geocrs:accuracy rdfs:range xsd:double .\n")
 ttl.add("geocrs:eccentricity rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:eccentricity rdfs:label \"eccentricity\"@en .\n")
+ttl.add("geocrs:eccentricity skos:definition \"deviation of a curve or orbit from circularity\"@en .\n")
 ttl.add("geocrs:eccentricity rdfs:domain geocrs:Geoid .\n")
 ttl.add("geocrs:eccentricity rdfs:range xsd:double .\n")
 ttl.add("geocrs:coordinateEpoch rdf:type owl:DatatypeProperty .\n")
@@ -1705,10 +1723,12 @@ ttl.add("geocrs:radius rdfs:domain geocrs:InterstellarBody .\n")
 ttl.add("geocrs:radius rdfs:range xsd:double .\n")
 ttl.add("geocrs:starDistance rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:starDistance rdfs:label \"star distance\"@en .\n")
+ttl.add("geocrs:starDistance skos:definition \"the distance of an interstellar body to the next star\"@en .\n")
 ttl.add("geocrs:starDistance rdfs:domain geocrs:InterstellarBody .\n")
 ttl.add("geocrs:starDistance rdfs:range xsd:double .\n")
 ttl.add("geocrs:mass rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:mass rdfs:label \"mass\"@en .\n")
+ttl.add("geocrs:mass skos:definition \"the mass of an interstellar body\"@en .\n")
 ttl.add("geocrs:mass rdfs:domain geocrs:InterstellarBody .\n")
 ttl.add("geocrs:mass rdfs:range xsd:double .\n")
 ttl.add("geocrs:semiMajorAxis rdf:type owl:DatatypeProperty .\n")
@@ -1730,7 +1750,8 @@ ttl.add("geocrs:isSphere rdfs:domain geocrs:Geoid .\n")
 ttl.add("geocrs:isSphere rdfs:range xsd:double .\n")
 ttl.add("geocrs:extent rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:extent rdfs:label \"extent\"@en .\n")
-ttl.add("geocrs:extent rdfs:domain geocrs:CRS .\n")
+ttl.add("geocrs:extent skos:definition \"The extent of the area of use of a spatial reference system\"@en .\n")
+ttl.add("geocrs:extent rdfs:domain geocrs:AreaOfUse .\n")
 ttl.add("geocrs:extent rdfs:range geocrs:wktLiteral .\n")
 ttl.add("geocrs:utm_zone rdf:type owl:DatatypeProperty .\n")
 ttl.add("geocrs:utm_zone rdfs:label \"utm zone\"@en .\n")
@@ -1762,7 +1783,12 @@ ttl.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
 geodcounter=1
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttl), format='turtle')
-graph.serialize(destination='ontology.ttl', format='turtle')
+graph.serialize(destination='owl/ontology.ttl', format='turtle')
+#f = open("ontology.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
 i=0
 curname=""
 mapp=pyproj.list.get_proj_operations_map()
@@ -1776,9 +1802,15 @@ for x in list(range(2000,10000))+list(range(20000,30000)):
 		continue	
 	crsToTTL(ttl,curcrs,x,geodcounter,None)
 crsToTTL(ttl,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["Moon_2000_IAU_IAG",1737400.0,0.0]],PRIMEM["Moon_Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433]]'),"GCS_Moon",geodcounter,"geocrs:SelenographicCRS")
-f = open("result.nt", "w", encoding="utf-8")
+f = open("owl/result.nt", "w", encoding="utf-8")
 f.write(ttlhead+"".join(ttl))
 f.close()
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl), format='n3')
-graph2.serialize(destination='result.ttl', format='turtle')
+graph2.serialize(destination='owl/result.ttl', format='turtle')
+#f = open("result.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
+

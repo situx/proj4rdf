@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<title>GeoSPARQL SRS Ontology Testbench</title>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href="css/yasqe.css"/>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/yasqe.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> 
+  <script>
+  var markercollection=[]
+  function saveTextAsFile(tosave,fileext,filename)
+  {
+      var a = document.createElement('a');
+      a.style = "display: none";  
+      var blob= new Blob([tosave], {type:'text/plain'});
+      var url = window.URL.createObjectURL(blob);
+      var filename = filename+fileext;
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);  
+      }, 1000);
+  }
+var prefixList="PREFIX geof: <http://www.opengis.net/def/geosparql/function/>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX geocrs: <http://www.opengis.net/ont/crs/>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geo2: <http://www.opengis.net/ont/geosparqlplus#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xml: <http://www.w3.org/XML/1998/namespace>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>\nPREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>\nPREFIX semgis: <http://www.semgis.de/geodata#> "
+
+	var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+
+var overlayMaps={}
+var overlayControl;
+var markercollection=[]
+var first=true;
+function clearMap() {
+    for(i in mymap._layers) {
+        if(mymap._layers[i]._path != undefined) {
+            try {
+                mymap.removeLayer(mymap._layers[i]);
+            }
+            catch(e) {
+                console.log("problem with " + e + mymap._layers[i]);
+            }
+        }
+    }
+	if(!first){
+		mymap.removeControl(overlayControl);
+	}else{
+		first=false;
+	}
+	// now put the control back
+
+	layercontrol.addTo(mymap);
+	for(marker in markercollection){
+		mymap.removeLayer(markercollection[marker])
+	}
+	markercollection=[]
+    /*    for(decorator in decorators){
+		mymap.removeLayer(decorators[decorator])
+	}
+	decorators=[]*/
+}
+
+
+
+  function sendQuery(geojsonres){
+	var url="https://digits.mainzed.org/proj4rdf/" //document.location.href
+	if(!url.endsWith("/")){
+		url=url.substring(0,url.lastIndexOf('/'))
+	}else{
+		url=url.substring(0,url.lastIndexOf('/'))
+	}	
+    $.get(url+"/rest/queryservice?query="+encodeURIComponent(yasqe.getValue())+"&dataset="+encodeURIComponent($('#dataset').val()), function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        var json=JSON.parse(data)
+                $('#number').text(json["size"]+" Results");
+        var i=1;
+        var table="<thead><tr><th>Counter</th>"
+        for(variable in json["data"][0]){
+        	table+="<th>"+variable+"</th>"
+        }
+        table+="</tr></thead><tbody>"
+        for(obj in json["data"]){
+        	table+="<tr><td>"+i+++"</td>"
+        	for(variable in json["data"][obj]){
+        		if(json["data"][obj][variable].startsWith("http") || json["data"][obj][variable].startsWith("https")){
+            		table+="<td><a href=\""+json["data"][obj][variable]+"\" target=\"_blank\">"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</a></td>"
+        		}else{
+            		table+="<td>"+json["data"][obj][variable].replace( new RegExp( "\n", "g" ),"<br>")+"</td>"        			
+        		}
+        	}
+        	table+="</tr>"
+        }
+        $('#queryres').html(table+"</tbody>")    
+        //clearMap();
+        var overlays={}
+        for(layer in json["geojson"]){
+            var officiallayer=L.geoJSON(json["geojson"][layer],{
+            	coordsToLatLng: function (coords) {
+            		//console.log($('#dataset').val())
+            		if($('#dataset').val()=="linkedgeodata.ttl" || $('#dataset').val()=="cologne.ttl"){
+            			return new L.LatLng(coords[0], coords[1], coords[2]);
+            		}
+            		return new L.LatLng(coords[1], coords[0], coords[2]);                 
+                },
+                style: function(){
+                	return {fillColor: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length]),
+                        color: ("color" in json["geojson"][layer]?json["geojson"][layer]["color"]:colorArray[layer%colorArray.length])}
+                },
+                pointToLayer: function (feature, latlng) {
+                	var greyIcon = new L.Icon({
+                        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41],
+                        popupAnchor: [1, -34],
+                        shadowSize: [41, 41]
+                    });
+                	var mark=L.marker(feature.geometry.coordinates,{icon: greyIcon})
+                	markercollection.push(mark)
+                    return mark;
+                },
+            	onEachFeature: function (feature, layer) {
+            		 var popup="GeoJSON Result<br/><ul>"
+            		 for(prop in feature.properties){
+            		 	popup+="<li>"+prop+" - ";
+            		 	var value=trimcoords(feature.properties[prop],90)
+                		if(value.startsWith("http") || value.startsWith("https")){
+                    		popup+="<a href=\""+value+"\" target=\"_blank\">"+value+"</a>"
+                		}else if(value.includes("^^")){
+                			popup+="<a href=\""+value.substring(value.lastIndexOf('^')+1)+"\">"+value.substring(0,value.indexOf('^'))+"</a>"       			
+                		}else{
+                			popup+=value
+                		}
+            		 	popup+="</li>"
+            		 }
+            		 popup+="</ul>"
+            	     layer.bindPopup(popup);
+            }});
+            gardensLayerGroup = L.layerGroup()
+            .addLayer(officiallayer)
+            .addTo(mymap);
+            overlays[json["geojson"][layer]["name"]]=gardensLayerGroup;
+            //layercontrol.addOverlay(gardensLayerGroup, json["geojson"][layer]["name"]);
+            //overlayMaps[layer+""]=officiallayer;
+
+        }
+        //mymap.removeControl(layercontrol);
+		// add one with the cities
+		//overlayControl = L.control.layers(baseMaps, overlays).addTo(mymap);
+        //mymap.fitBounds(officiallayer.getBounds());
+        $('#queryres').DataTable();
+        //$("#queryres").tablesorter(); 
+        if(geojsonres){
+        	saveTextAsFile(JSON.stringify(json["geojson"][0],null, 2),".geojson","queryresult")
+        }
+    });
+  }
+  
+  function trimcoords(coords,length){
+		return coords.length > length ? coords.replace("undefined,","").substring(0, length - 3) + "...)" : coords;	
+ }
+  
+  function chooseSampleQuery(){
+	  	yasqe.setValue(prefixList+"\n"+$('#samplequeries :selected').val().replace(".",".\n").replace("}","\n}\n").replace("{","{\n"))
+        $('#queryinput').val(prefixList+"\n"+$('#samplequeries :selected').val().replace(".",".\n").replace("}","\n}\n").replace("{","{\n"));
+        $('#postgisdoc').attr('href','https://postgis.net/docs/'+$('#samplequeries :selected').text().replace("geo:","")+".html");
+  }
+  </script>
+  <style>
+  #mapid { height: 500px;}
+  </style>
+  <style>
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 500px;
+  max-width: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="page-header">
+<h1 align="center">GeoSPARQL SRS Ontology Sample Queries</h1>
+On this page example queries which are now possible using the GeoSPARQL SRS ontology are showcased.<br/>
+These are queries that can be stated without an extended GeoSPARQL query language, just by making use of the new ontology model.
+</div>
+</header>
+<div class="container-fluid" role="main">
+  <div class="row">
+  <div class="col-sm-5">
+Query Input:<br/>
+<span id="numberexamples"></span> Example Queries:<br/>
+<script>
+$( document ).ready(function() {
+	$('#numberexamples').html($('#samplequeries option').length);
+	chooseSampleQuery();
+});
+</script>
+
+<select id="samplequeries" onChange="chooseSampleQuery()">
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . } LIMIT 10'>10 Random SRS</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs WHERE { ?srs geocrs:datum ?crsdatum . ?srs rdfs:label ?label . ?srs geocrs:coordinateSystem ?crs_cs . ?datum rdf:type geocrs:GeodeticReferenceFrame . } LIMIT 10'>10 Random SRS with a geodetic reference frame</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs ?cslabel WHERE { ?srs geocrs:coordinateSystem ?crs_cs . ?srs rdfs:label ?label . ?crs_cs rdf:type geocrs:3DCoordinateSystem . ?crs_cs rdfs:label ?cslabel . } LIMIT 10'>10 Random 3D SRS</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs ?cslabel (COUNT(?csaxis) AS ?axiscount) WHERE { ?srs geocrs:coordinateSystem ?crs_cs . ?srs rdfs:label ?cslabel . ?crs_cs geocrs:axis ?csaxis . } LIMIT 10'>10 Random SRS with axis count</option>
+<option value='SELECT DISTINCT ?srs ?label ?crs_cs ?cslabel ?csaxislabel WHERE { ?srs geocrs:coordinateSystem ?crs_cs . ?srs rdfs:label ?cslabel . ?crs_cs geocrs:axis ?csaxis . ?csaxis rdfs:label ?csaxislabel . } LIMIT 10'>Random SRS with axis names</option>
+<option value='SELECT DISTINCT ?spheroid ?label ?ecc WHERE { ?spheroid rdf:type geocrs:Sphere . ?spheroid rdfs:label ?label . ?spheroid geocrs:eccentricity ?ecc . } LIMIT 10'>10 Random Spheriods with Eccentricity</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:MercatorProjection . } LIMIT 10'>10 Random SRS with Mercator Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:EqualAreaProjection . } LIMIT 10'>10 Random SRS with EqualArea Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:EquidistantProjection . } LIMIT 10'>10 Random SRS with Equidistant Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:ConformalProjection . } LIMIT 10'>10 Random SRS with Conformal Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:coordinateOperation ?cop . ?cop rdf:type ?coptype . ?coptype rdfs:subClassOf* geocrs:CompromiseProjection . } LIMIT 10'>10 Random SRS with Compromise Projection</option>
+<option value='SELECT DISTINCT ?srs ?label WHERE {  SERVICE <http://digits.mainzed.org/proj4rdf/sparql> { ?srs rdf:type ?srscls . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem .}  } LIMIT 10'>Federated Query to get a CRS from another triple store</option>
+<option value='SELECT DISTINCT ?srs ?planet WHERE {  ?srs geocrs:isApplicableTo ?planet . } LIMIT 10'>Planetary body to which the SRS is applicable</option>
+<option value='SELECT DISTINCT ?sphere ?planet WHERE {  ?sphere geocrs:approximates ?planet . ?planet rdf:type geocrs:Moon . } LIMIT 10'>Get 10 natural satellites with defined spheres</option>
+<option value='SELECT DISTINCT ?sphere ?planet WHERE {  ?sphere geocrs:approximates ?planet . ?planet rdf:type geocrs:Planet . } LIMIT 10'>Get 10 planetary bodies with defined spheres</option>
+<option value='SELECT DISTINCT ?sphere ?planet ?star WHERE {  ?sphere geocrs:approximates ?planet . ?planet rdf:type geocrs:Planet . ?planet gecors:satelliteOf ?star . } LIMIT 10'>Get 10 planetary bodies with their stars</option>
+<option value='SELECT DISTINCT ?sphere ?planet ?moon WHERE {  ?sphere geocrs:approximates ?planet . ?planet rdf:type geocrs:Planet . ?moon gecors:satelliteOf ?planet . } LIMIT 10'>Get 10 planetary bodies with their moons</option>
+<option value='SELECT DISTINCT ?meridian ?meridianlabel WHERE {  ?meridian rdf:type geocrs:PrimeMeridian . ?meridian rdfs:label ?meridianlabel . } LIMIT 10'>List of Prime Meridians</option>
+<option value='SELECT DISTINCT ?axisdir ?axisdirlabel WHERE {  ?axisdir rdf:type geocrs:AxisDirection . ?meridian rdfs:label ?axisdirlabel . } LIMIT 10'>List of Axis Directions</option>
+<option value='SELECT DISTINCT ?srs ?aou ?aouextent WHERE { ?srs rdf:type ?srscls . ?srs geocrs:area_of_use ?aou . ?aou geocrs:extent ?aouextent . ?srs rdfs:label ?label . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . } LIMIT 10'>SRS Area Of Use</option>
+<option value='SELECT DISTINCT ?application ?applicationlabel WHERE {  ?application rdfs:subClassOf* geocrs:SRSApplication . ?application rdfs:label ?applicationlabel . } LIMIT 10'>List of CRS Applications</option>
+<option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:EngineeringSurvey . } LIMIT 10'>Get SRS which are applicable to be used for Engineering Surveys</option>
+<option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:Drilling . } LIMIT 10'>Get SRS which are applicable to be used for Drilling Operations</option>
+<option value='SELECT DISTINCT ?srs ?srslabel WHERE {  ?srs rdf:type ?srscls . ?srs rdfs:label ?srslabel . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:datum ?datum . ?datum geocrs:usage geocrs:Hydrography . } LIMIT 10'>Get SRS which are applicable to be used for Hydrography</option>
+<option value='SELECT DISTINCT ?country ?countrylabel ?countrywkt WHERE {  ?country rdf:type geocrs:Country . ?country rdfs:label ?countrylabel . ?country geo:hasGeometry/geo:asWKT ?countrywkt . } LIMIT 10'>Get 10 random countries</option>
+<option value='SELECT DISTINCT ?country ?countrylabel ?countrywkt WHERE {  geocrs:DE rdfs:label ?countrylabel . geocrs:DE geo:hasGeometry/geo:asWKT ?countrywkt . ?srs rdf:type ?srscls . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . ?srs geocrs:area_of_use ?aou . ?aou geocrs:extent ?aouwkt . FILTER(geof:sfContains(?aouwkt,?countrywkt)) } LIMIT 10'>Get SRS eligible to be used in Germany</option>
+</select>
+<!-- &nbsp;<a href="#" id="postgisdoc" target="_blank">POSTGIS Docs</a>-->
+<br/>
+<textarea id="queryinput" rows=16 cols=45>
+</textarea><br/>
+<select id="dataset">
+<option value="https://digits.mainzed.org/proj4rdf/sparql" selected="selected">SRS Dataset</option>
+</select>
+<br/>
+<button id="sendQueryButton" onClick="sendQuery(false)">Query</button>
+</div>
+    <div class="col-sm-7" id="mapid">
+<table align="center" id="queryres" class="tablesorter" border="1">
+</table>
+</div>
+  </div>
+
+<script>
+var yasqe = YASQE.fromTextArea(document.getElementById("queryinput"));
+</script>
+QueryResult:
+<span id="number"></span>
+</div>
+</body>
+</html>
