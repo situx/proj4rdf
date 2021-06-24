@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoSPARQLSRSExtension: RasterQueryTester Class Reference</title>
+<title>GeoSPARQLSRSExtension: SRSGeo.java File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,103 +61,32 @@ $(document).ready(function(){initNavTree('a00281.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00278.html">List of all members</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Packages</a>  </div>
   <div class="headertitle">
-<div class="title">RasterQueryTester Class Reference</div>  </div>
+<div class="title">SRSGeo.java File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7d7a68247a04debf86cc5a1115af14a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00281.html#a7d7a68247a04debf86cc5a1115af14a5">readRaster</a> ()</td></tr>
-<tr class="separator:a7d7a68247a04debf86cc5a1115af14a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b260eecbaabcef8473fd87ada040682"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00281.html#a8b260eecbaabcef8473fd87ada040682">main</a> (String[] args)</td></tr>
-<tr class="separator:a8b260eecbaabcef8473fd87ada040682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html">SRSGeo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00786.html">SRSGeo.Nodes</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Packages</h2></td></tr>
+<tr class="memitem:a00339"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00339.html">proj4rdf.vocabulary</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8b260eecbaabcef8473fd87ada040682"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b260eecbaabcef8473fd87ada040682">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void main </td>
-          <td>(</td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                               {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="comment">/*GridCoverage2D coverage;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">                try {</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">                        coverage = CoverageIO.read(geometryLiteral);</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">                        return new CoverageWrapper(coverage, URI);</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">                } catch (CoverageStoreException e) {</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">                        // TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">                        e.printStackTrace();</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">                        throw new RuntimeException();</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">                }</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">                //InputStream stream = new ByteArrayInputStream(geometryLiteral.getBytes(StandardCharsets.UTF_8));</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">                final StorageConnector c;// = new StorageConnector(stream);</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">                c=new StorageConnector(new File(&quot;flood/hochwasser.tif&quot;));</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">                GeoTiffStoreProvider prov=new GeoTiffStoreProvider();</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">                GridCoverage cov;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">                GeoTiffStore store=new GeoTiffStore(prov,c);</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">                store.getProvider().open(c);</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">                cov = store.components().get(0).read(store.components().get(0).getGridGeometry(), 1);</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">                */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7d7a68247a04debf86cc5a1115af14a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d7a68247a04debf86cc5a1115af14a5">&#9670;&nbsp;</a></span>readRaster()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void readRaster </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00225.html">de</a></li><li class="navelem"><a class="el" href="a00226.html">hsmainz</a></li><li class="navelem"><a class="el" href="a00227.html">cs</a></li><li class="navelem"><a class="el" href="a00228.html">semgis</a></li><li class="navelem"><a class="el" href="a00229.html">arqextension</a></li><li class="navelem"><a class="el" href="a00224.html">util</a></li><li class="navelem"><a class="el" href="a00281.html">RasterQueryTester</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_2f6541b5ae7f81f8a3141a1dcb1db364.html">proj4rdf</a></li><li class="navelem"><a class="el" href="dir_441952719ede15d2aec69e271395f5d5.html">vocabulary</a></li><li class="navelem"><a class="el" href="a00281.html">SRSGeo.java</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

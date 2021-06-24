@@ -23,6 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "GeoSPARQLSRSExtension", "index.html", [
+    [ "Deprecated List", "a00293.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -44,13 +45,15 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"a00002.html",
-"a00301.html#ad1ee2f6512af0e5dba3d40a3e8b731f9",
-"a00365.html#afcce5db1b9f7c599c6be21e837b5489d",
-"a00429.html#ad0e582394adb63f6e5b72b020e4db388",
-"a00553.html#a3f5c94a0340cb25aba559be2ab67db20",
-"a00553.html#aca69322d99e3f20f2a9d2064eebc0f11",
-"functions_func_o.html"
+"a00005.html",
+"a00374.html#ad63c13e3dc040d1b9a35249edd1839c5",
+"a00450.html#a1c0373662a2dcdd665113c7b0dd8421f",
+"a00502.html#a3bb2e931e5a262d279a485ba5936672c",
+"a00570.html#a1bbf2e471d2964af19292437ad42729b",
+"a00634.html#ad146fa8579a5f8a876c4688cc5a68520",
+"a00782.html#a15ef7fc2eff4c6e12cb69b83a9b8083f",
+"a00782.html#a9e4af0fc83f5aa42bbd0ccaf372e86ec",
+"a00786.html#ad459220e331f3dbf207e249bcf5d4f6f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

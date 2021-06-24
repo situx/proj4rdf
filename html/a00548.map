@@ -1,6 +1,8 @@
-<map id="ResultFormatter" name="ResultFormatter">
-<area shape="rect" id="node1" title="Abstract class to downlift query results." alt="" coords="148,5,275,32"/>
-<area shape="rect" id="node2" href="$a00433.html" title=" " alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node3" href="$a00437.html" title=" " alt="" coords="140,80,283,107"/>
-<area shape="rect" id="node4" href="$a00441.html" title=" " alt="" coords="307,80,447,107"/>
+<map id="LEDataInputStream" name="LEDataInputStream">
+<area shape="rect" id="node1" title="Little endian Data input stream." alt="" coords="168,95,316,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="132,5,219,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="243,5,377,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="401,5,451,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="475,5,558,32"/>
 </map>

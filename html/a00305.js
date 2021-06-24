@@ -1,8 +1,8 @@
 var a00305 =
 [
-    [ "HexWKBTextSRS", "a00305.html#a9551cc49d0697080a64a79a497cf35e9", null ],
-    [ "getSrsURI", "a00305.html#a7d7dded4f73b0a90d90f68ccc5f16bc3", null ],
-    [ "getWkbText", "a00305.html#a4a2ce7a2dcd4fa0818378fb8b97931fb", null ],
-    [ "srsURI", "a00305.html#aaa7845d06052bead86bb2de40935e4d9", null ],
-    [ "wkbText", "a00305.html#a7b6ce5371e4ad222f4b09eaadfdcae09", null ]
+    [ "datatype", "a00306.html", "a00306" ],
+    [ "index", "a00308.html", "a00308" ],
+    [ "registry", "a00309.html", "a00309" ],
+    [ "GeometryWrapper", "a00486.html", "a00486" ],
+    [ "SRSInfo", "a00502.html", "a00502" ]
 ];

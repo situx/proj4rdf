@@ -1,6 +1,8 @@
-<map id="HexWKBRastDatatype" name="HexWKBRastDatatype">
-<area shape="rect" id="node1" title=" " alt="" coords="5,229,173,256"/>
-<area shape="rect" id="node2" href="$a00373.html" title=" " alt="" coords="27,155,152,181"/>
-<area shape="rect" id="node3" href="$a00377.html" title=" " alt="" coords="26,80,153,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="32,5,147,32"/>
+<map id="GPXHandler" name="GPXHandler">
+<area shape="rect" id="node1" title=" " alt="" coords="211,184,311,211"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,135,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="159,95,227,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="251,95,449,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="327,5,373,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="473,95,547,121"/>
 </map>

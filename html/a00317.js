@@ -1,8 +1,9 @@
 var a00317 =
 [
-    [ "WKBTextSRS", "a00317.html#a12d2a5c4b7a29eae5d108bccb1e55b11", null ],
-    [ "getSrsURI", "a00317.html#a7d7dded4f73b0a90d90f68ccc5f16bc3", null ],
-    [ "getWkbText", "a00317.html#a4a2ce7a2dcd4fa0818378fb8b97931fb", null ],
-    [ "srsURI", "a00317.html#aaa7845d06052bead86bb2de40935e4d9", null ],
-    [ "wkbText", "a00317.html#a7b6ce5371e4ad222f4b09eaadfdcae09", null ]
+    [ "WKBRasterBand", "a00514.html", "a00514" ],
+    [ "WKBRasterConstants", "a00518.html", "a00518" ],
+    [ "WKBRasterImageReader", "a00522.html", "a00522" ],
+    [ "WKBRasterImageWriter", "a00534.html", "a00534" ],
+    [ "WKBRasterReader", "a00542.html", "a00542" ],
+    [ "WKBRasterWriter", "a00546.html", "a00546" ]
 ];

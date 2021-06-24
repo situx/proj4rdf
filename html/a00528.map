@@ -1,4 +1,5 @@
-<map id="SRIDToWKT" name="SRIDToWKT">
-<area shape="rect" id="node1" title="Converts an SRID to its WKT representation." alt="" coords="16,80,112,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,123,32"/>
+<map id="WKBRasterImageReader.InputStreamAdapter" name="WKBRasterImageReader.InputStreamAdapter">
+<area shape="rect" id="node1" title=" " alt="" coords="21,95,239,136"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="132,5,275,32"/>
 </map>

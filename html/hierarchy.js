@@ -1,108 +1,164 @@
 var hierarchy =
 [
-    [ "AffineTransformation", "a00445.html", null ],
-    [ "AreaOfValidity", "a00401.html", null ],
-    [ "Axis", "a00405.html", null ],
-    [ "ConversionOperation", "a00409.html", null ],
-    [ "CoordinateReferenceSystem", "a00413.html", null ],
-    [ "CoordinateSystem", "a00417.html", null ],
-    [ "CovJSONCoverage", "a00253.html", null ],
-    [ "CRSConfig", "a00397.html", null ],
-    [ "Datum", "a00421.html", null ],
-    [ "Ellipsoid", "a00425.html", null ],
-    [ "Exception", "a01373.html", [
-      [ "CannotEvaluateException", "a00249.html", null ]
+    [ "AffineTransformation", "a00674.html", null ],
+    [ "AreaOfValidity", "a00630.html", null ],
+    [ "Axis", "a00634.html", null ],
+    [ "ConcaveHull", "a00606.html", null ],
+    [ "ConversionOperation", "a00638.html", null ],
+    [ "CoordinateReferenceSystem", "a00642.html", null ],
+    [ "CoordinateSystem", "a00646.html", null ],
+    [ "CovJSONCoverage", "a00354.html", null ],
+    [ "CRSConfig", "a00626.html", null ],
+    [ "Datum", "a00650.html", null ],
+    [ "Edge", "a00614.html", null ],
+    [ "Ellipsoid", "a00654.html", null ],
+    [ "Exception", "a01926.html", [
+      [ "CannotEvaluateException", "a00350.html", null ],
+      [ "CannotEvaluateException", "a00506.html", null ]
     ] ],
-    [ "GeometryLiteralIndex.GeometryIndex", "a00393.html", null ],
-    [ "GeometryLiteralIndex", "a00389.html", null ],
-    [ "HexWKBDatatype.HexWKBTextSRS", "a00305.html", null ],
-    [ "LiteralUtils", "a00265.html", null ],
-    [ "SRSGeo.Nodes", "a00557.html", null ],
-    [ "PolyshapeReader", "a00269.html", null ],
-    [ "PolyshapeWriter", "a00277.html", [
-      [ "JtsPolyshapeWriter", "a00261.html", null ]
+    [ "GeometryLiteralIndex.GeometryIndex", "a00494.html", null ],
+    [ "GeometryLiteralIndex", "a00490.html", null ],
+    [ "HexWKBDatatype.HexWKBTextSRS", "a00406.html", null ],
+    [ "LengthSubstring", "a00594.html", null ],
+    [ "LengthToPoint", "a00598.html", null ],
+    [ "LiteralUtils", "a00366.html", null ],
+    [ "LocatePoint", "a00602.html", null ],
+    [ "SRSGeo.Nodes", "a00786.html", null ],
+    [ "PolyshapeReader", "a00370.html", null ],
+    [ "PolyshapeWriter", "a00378.html", [
+      [ "JtsPolyshapeWriter", "a00362.html", null ]
     ] ],
-    [ "PrimeMeridian", "a00429.html", null ],
-    [ "RasterQueryTester", "a00281.html", null ],
-    [ "RDFCRSToWKT", "a00545.html", null ],
-    [ "ResultFormatter", "a00549.html", [
-      [ "ProjFormatter", "a00433.html", null ],
-      [ "ProjJSONFormatter", "a00437.html", null ],
-      [ "WKTCRSFormatter", "a00441.html", null ]
+    [ "TWKBReader.PrecisionReader", "a00566.html", [
+      [ "TWKBReader.ExtendedPrecisionReader", "a00570.html", null ]
     ] ],
-    [ "SetGeoReference", "a00493.html", null ],
-    [ "SRSGeo", "a00553.html", null ],
-    [ "SVGDatatype", "a00325.html", null ],
-    [ "TripleStoreConnection", "a00565.html", null ],
-    [ "WebService", "a00569.html", null ],
-    [ "OSMDatatype.WKBTextSRS", "a00317.html", null ],
-    [ "WKBDatatype.WKBTextSRS", "a00333.html", null ],
-    [ "Wrapper", "a00285.html", [
-      [ "SpatialWrapper", "a00381.html", [
-        [ "CoverageWrapper", "a00341.html", null ],
-        [ "GeometryWrapper", "a00385.html", null ]
+    [ "TWKBWriter.PrecisionWriter", "a00582.html", [
+      [ "TWKBWriter.ExtendedPrecisionWriter", "a00586.html", null ]
+    ] ],
+    [ "PrimeMeridian", "a00658.html", null ],
+    [ "RasterQueryTester", "a00382.html", null ],
+    [ "RDFCRSToWKT", "a00774.html", null ],
+    [ "ResultFormatter", "a00778.html", [
+      [ "ProjFormatter", "a00662.html", null ],
+      [ "ProjJSONFormatter", "a00666.html", null ],
+      [ "WKTCRSFormatter", "a00670.html", null ]
+    ] ],
+    [ "SetGeoReference", "a00722.html", null ],
+    [ "SRSGeo", "a00782.html", null ],
+    [ "SRSInfo", "a00502.html", null ],
+    [ "SVGDatatype", "a00426.html", null ],
+    [ "SVGWriter", "a00590.html", null ],
+    [ "Triangle", "a00618.html", null ],
+    [ "TripleStoreConnection", "a00794.html", null ],
+    [ "TWKBReader", "a00558.html", null ],
+    [ "TWKBUtils", "a00574.html", null ],
+    [ "TWKBWriter", "a00578.html", null ],
+    [ "Vertex", "a00622.html", null ],
+    [ "WebService", "a00798.html", null ],
+    [ "WKBRasterBand", "a00514.html", null ],
+    [ "WKBRasterConstants", "a00518.html", null ],
+    [ "WKBRasterReader", "a00542.html", null ],
+    [ "WKBRasterWriter", "a00546.html", null ],
+    [ "WKBDatatype.WKBTextSRS", "a00434.html", null ],
+    [ "OSMDatatype.WKBTextSRS", "a00418.html", null ],
+    [ "Wrapper", "a00386.html", [
+      [ "SpatialWrapper", "a00482.html", [
+        [ "CoverageWrapper", "a00442.html", null ],
+        [ "GeometryWrapper", "a00486.html", null ]
       ] ]
     ] ],
-    [ "PolyshapeReader.XReader", "a00273.html", null ],
+    [ "PolyshapeReader.XReader", "a00374.html", null ],
     [ "BaseDatatype", null, [
-      [ "SpatialDatatype", "a00377.html", [
-        [ "GeometryDatatype", "a00337.html", [
-          [ "EncodedPolylineDatatype", "a00289.html", null ],
-          [ "GeoJSONDatatype", "a00293.html", null ],
-          [ "GeoURIDatatype", "a00297.html", null ],
-          [ "HexWKBDatatype", "a00301.html", null ],
-          [ "KMLDatatype", "a00309.html", null ],
-          [ "OSMDatatype", "a00313.html", null ],
-          [ "PolyshapeDatatype", "a00321.html", null ],
-          [ "WKBDatatype", "a00329.html", null ]
+      [ "SpatialDatatype", "a00478.html", [
+        [ "GeometryDatatype", "a00438.html", [
+          [ "EncodedPolylineDatatype", "a00390.html", null ],
+          [ "GeoJSONDatatype", "a00394.html", null ],
+          [ "GeoURIDatatype", "a00398.html", null ],
+          [ "HexWKBDatatype", "a00402.html", null ],
+          [ "KMLDatatype", "a00410.html", null ],
+          [ "OSMDatatype", "a00414.html", null ],
+          [ "PolyshapeDatatype", "a00422.html", null ],
+          [ "WKBDatatype", "a00430.html", null ]
         ] ],
-        [ "RasterDataType", "a00373.html", [
-          [ "CovJSONDatatype", "a00345.html", null ],
-          [ "GeoTIFFDatatype", "a00349.html", null ],
-          [ "GMLCOVDatatype", "a00353.html", null ],
-          [ "HexWKBRastDatatype", "a00357.html", null ],
-          [ "NetCDFDatatype", "a00361.html", null ],
-          [ "WKBRastDatatype", "a00365.html", null ],
-          [ "XYZDatatype", "a00369.html", null ]
+        [ "RasterDataType", "a00474.html", [
+          [ "CovJSONDatatype", "a00446.html", null ],
+          [ "GeoTIFFDatatype", "a00450.html", null ],
+          [ "GMLCOVDatatype", "a00454.html", null ],
+          [ "HexWKBRastDatatype", "a00458.html", null ],
+          [ "NetCDFDatatype", "a00462.html", null ],
+          [ "WKBRastDatatype", "a00466.html", null ],
+          [ "XYZDatatype", "a00470.html", null ]
         ] ]
       ] ]
     ] ],
+    [ "CodeList", null, [
+      [ "SampleDimensionType", "a00510.html", null ]
+    ] ],
+    [ "Comparator", null, [
+      [ "DoubleComparator", "a00610.html", null ]
+    ] ],
+    [ "DataInput", null, [
+      [ "LEDataInputStream", "a00550.html", null ]
+    ] ],
+    [ "DataOutput", null, [
+      [ "LEDataOutputStream", "a00554.html", null ]
+    ] ],
     [ "DefaultHandler2", null, [
-      [ "GPXHandler", "a00257.html", null ]
+      [ "GPXHandler", "a00358.html", null ]
+    ] ],
+    [ "FilterOutputStream", null, [
+      [ "LEDataOutputStream", "a00554.html", null ]
     ] ],
     [ "FunctionBase1", null, [
-      [ "AreaOfValidity", "a00449.html", null ],
-      [ "EPSGToSRID", "a00461.html", null ],
-      [ "EPSGToWKT", "a00465.html", null ],
-      [ "ESPGToGML", "a00473.html", null ],
-      [ "HasHorizontalSRS", "a00481.html", null ],
-      [ "IsInCRSAreaOfValidity", "a00489.html", null ],
-      [ "SRIDGetAxis1Name", "a00501.html", null ],
-      [ "SRIDGetAxis1Orientation", "a00505.html", null ],
-      [ "SRIDGetAxis2Name", "a00509.html", null ],
-      [ "SRIDGetAxis2Orientation", "a00513.html", null ],
-      [ "SRIDHasFlippedAxis", "a00517.html", null ],
-      [ "SRIDToEPSG", "a00521.html", null ],
-      [ "SRIDToGML", "a00525.html", null ],
-      [ "SRIDToWKT", "a00529.html", null ],
-      [ "SuggestProjection", "a00541.html", null ],
-      [ "AsGeoJSON", "a00561.html", null ]
+      [ "AreaOfValidity", "a00678.html", null ],
+      [ "EPSGToSRID", "a00690.html", null ],
+      [ "EPSGToWKT", "a00694.html", null ],
+      [ "ESPGToGML", "a00702.html", null ],
+      [ "HasHorizontalSRS", "a00710.html", null ],
+      [ "IsInCRSAreaOfValidity", "a00718.html", null ],
+      [ "SRIDGetAxis1Name", "a00730.html", null ],
+      [ "SRIDGetAxis1Orientation", "a00734.html", null ],
+      [ "SRIDGetAxis2Name", "a00738.html", null ],
+      [ "SRIDGetAxis2Orientation", "a00742.html", null ],
+      [ "SRIDHasFlippedAxis", "a00746.html", null ],
+      [ "SRIDToEPSG", "a00750.html", null ],
+      [ "SRIDToGML", "a00754.html", null ],
+      [ "SRIDToWKT", "a00758.html", null ],
+      [ "SuggestProjection", "a00770.html", null ],
+      [ "AsGeoJSON", "a00790.html", null ]
     ] ],
     [ "FunctionBase2", null, [
-      [ "EqualSRS", "a00469.html", null ],
-      [ "GeomToOpenLocationCode", "a00477.html", null ],
-      [ "IsEligibleConversion", "a00485.html", null ],
-      [ "SetSRID", "a00497.html", null ],
-      [ "SRSURIToGML", "a00533.html", null ],
-      [ "SRSURIToWKT", "a00537.html", null ]
+      [ "EqualSRS", "a00698.html", null ],
+      [ "GeomToOpenLocationCode", "a00706.html", null ],
+      [ "IsEligibleConversion", "a00714.html", null ],
+      [ "SetSRID", "a00726.html", null ],
+      [ "SRSURIToGML", "a00762.html", null ],
+      [ "SRSURIToWKT", "a00766.html", null ]
     ] ],
     [ "FunctionBase3", null, [
-      [ "ConvertCRS", "a00453.html", null ]
+      [ "ConvertCRS", "a00682.html", null ]
     ] ],
     [ "FunctionBase4", null, [
-      [ "ConvertCRS2", "a00457.html", null ]
+      [ "ConvertCRS2", "a00686.html", null ]
+    ] ],
+    [ "ImageReader", null, [
+      [ "WKBRasterImageReader", "a00522.html", null ]
+    ] ],
+    [ "ImageReaderSpi", null, [
+      [ "WKBRasterImageReader.Spi", "a00526.html", null ]
+    ] ],
+    [ "ImageWriter", null, [
+      [ "WKBRasterImageWriter", "a00534.html", null ]
+    ] ],
+    [ "ImageWriterSpi", null, [
+      [ "WKBRasterImageWriter.Spi", "a00538.html", null ]
+    ] ],
+    [ "InputStream", null, [
+      [ "WKBRasterImageReader.InputStreamAdapter", "a00530.html", null ],
+      [ "LEDataInputStream", "a00550.html", null ],
+      [ "TWKBReader.ByteBufferInputStream", "a00562.html", null ]
     ] ],
     [ "Serializable", null, [
-      [ "SpatialWrapper", "a00381.html", null ]
+      [ "SpatialWrapper", "a00482.html", null ],
+      [ "SRSRegistry", "a00498.html", null ]
     ] ]
 ];
