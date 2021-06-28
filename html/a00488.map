@@ -1,7 +1,4 @@
-<map id="GeometryLiteralIndex" name="GeometryLiteralIndex">
-<area shape="rect" id="node1" title=" " alt="" coords="843,83,1007,109"/>
-<area shape="rect" id="node2" title=" " alt="" coords="445,9,505,36"/>
-<area shape="rect" id="node3" title=" " alt="" coords="337,61,613,131"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,83,108,109"/>
-<area shape="rect" id="node5" title=" " alt="" coords="438,156,513,183"/>
+<map id="SampleDimensionType" name="SampleDimensionType">
+<area shape="rect" id="node1" title="Specifies the various dimension types for coverage values." alt="" coords="26,95,197,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,217,47"/>
 </map>

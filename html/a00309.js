@@ -1,4 +1,5 @@
 var a00309 =
 [
-    [ "SRSRegistry", "a00498.html", "a00498" ]
+    [ "LEDataInputStream", "a00529.html", "a00529" ],
+    [ "LEDataOutputStream", "a00533.html", "a00533" ]
 ];

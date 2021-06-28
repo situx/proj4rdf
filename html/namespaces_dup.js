@@ -1,7 +1,7 @@
 var namespaces_dup =
 [
-    [ "de", "a00295.html", "a00295" ],
-    [ "io", "a00301.html", "a00301" ],
-    [ "org", "a00311.html", "a00311" ],
-    [ "proj4rdf", "a00334.html", "a00334" ]
+    [ "de", "a00286.html", "a00286" ],
+    [ "io", "a00292.html", "a00292" ],
+    [ "org", "a00302.html", "a00302" ],
+    [ "proj4rdf", "a00325.html", "a00325" ]
 ];

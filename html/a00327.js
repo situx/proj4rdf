@@ -1,6 +1,6 @@
 var a00327 =
 [
-    [ "LengthSubstring", "a00594.html", "a00594" ],
-    [ "LengthToPoint", "a00598.html", "a00598" ],
-    [ "LocatePoint", "a00602.html", "a00602" ]
+    [ "ProjFormatter", "a00641.html", "a00641" ],
+    [ "ProjJSONFormatter", "a00645.html", "a00645" ],
+    [ "WKTCRSFormatter", "a00649.html", "a00649" ]
 ];

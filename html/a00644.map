@@ -1,7 +1,4 @@
-<map id="CoordinateSystem" name="CoordinateSystem">
-<area shape="rect" id="node1" title="Representation of a coordinate system as a part of a SRS." alt="" coords="131,199,273,225"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,73,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="172,95,232,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="299,95,489,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="371,5,417,32"/>
+<map id="ProjJSONFormatter" name="ProjJSONFormatter">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node2" href="$a00757.html" title="Abstract class to downlift query results." alt="" coords="13,5,140,32"/>
 </map>

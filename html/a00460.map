@@ -1,9 +1,7 @@
-<map id="NetCDFDatatype" name="NetCDFDatatype">
-<area shape="rect" id="node1" title=" " alt="" coords="187,260,319,287"/>
-<area shape="rect" id="node2" href="$a00474.html" title=" " alt="" coords="131,171,257,197"/>
-<area shape="rect" id="node3" href="$a00478.html" title=" " alt="" coords="5,81,132,108"/>
-<area shape="rect" id="node4" title=" " alt="" coords="11,5,126,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="157,81,231,108"/>
-<area shape="rect" id="node6" title=" " alt="" coords="327,81,429,108"/>
-<area shape="rect" id="node7" title=" " alt="" coords="281,171,341,197"/>
+<map id="SpatialWrapper" name="SpatialWrapper">
+<area shape="rect" id="node1" title=" " alt="" coords="96,80,219,107"/>
+<area shape="rect" id="node4" href="$a00433.html" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node5" href="$a00465.html" title=" " alt="" coords="169,155,311,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="52,5,151,32"/>
+<area shape="rect" id="node3" href="$a00377.html" title=" " alt="" coords="175,5,252,32"/>
 </map>

@@ -1,4 +1,5 @@
-<map id="WKBRasterImageWriter" name="WKBRasterImageWriter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,181,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="42,5,145,32"/>
+<map id="LEDataOutputStream" name="LEDataOutputStream">
+<area shape="rect" id="node1" title="Little endian Data output stream." alt="" coords="73,80,231,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="177,5,274,32"/>
 </map>

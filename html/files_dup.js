@@ -1,314 +1,305 @@
 var files_dup =
 [
-    [ "AffineTransformation.java", "a00203.html", [
-      [ "AffineTransformation", "a00674.html", null ]
+    [ "AffineTransformation.java", "a00194.html", [
+      [ "AffineTransformation", "a00653.html", null ]
     ] ],
-    [ "data/AreaOfValidity.java", "a01927.html", [
-      [ "AreaOfValidity", "a00630.html", "a00630" ]
+    [ "data/AreaOfValidity.java", "a01874.html", [
+      [ "AreaOfValidity", "a00609.html", "a00609" ]
     ] ],
-    [ "functions/srs/AreaOfValidity.java", "a01930.html", [
-      [ "AreaOfValidity", "a00678.html", "a00678" ]
+    [ "functions/srs/AreaOfValidity.java", "a01877.html", [
+      [ "AreaOfValidity", "a00657.html", "a00657" ]
     ] ],
-    [ "AsGeoJSON.java", "a00284.html", [
-      [ "AsGeoJSON", "a00790.html", "a00790" ]
+    [ "AsGeoJSON.java", "a00275.html", [
+      [ "AsGeoJSON", "a00769.html", "a00769" ]
     ] ],
-    [ "Axis.java", "a00173.html", [
-      [ "Axis", "a00634.html", "a00634" ]
+    [ "Axis.java", "a00164.html", [
+      [ "Axis", "a00613.html", "a00613" ]
     ] ],
-    [ "de/hsmainz/cs/semgis/arqextension/util/CannotEvaluateException.java", "a01933.html", [
-      [ "CannotEvaluateException", "a00350.html", null ]
+    [ "de/hsmainz/cs/semgis/arqextension/util/CannotEvaluateException.java", "a01880.html", [
+      [ "CannotEvaluateException", "a00341.html", null ]
     ] ],
-    [ "org/apache/sis/coverage/grid/CannotEvaluateException.java", "a01936.html", [
-      [ "CannotEvaluateException", "a00506.html", null ]
+    [ "org/apache/sis/coverage/grid/CannotEvaluateException.java", "a01883.html", [
+      [ "CannotEvaluateException", "a00485.html", null ]
     ] ],
-    [ "ConcaveHull.java", "a00152.html", [
-      [ "ConcaveHull", "a00606.html", "a00606" ]
+    [ "ConcaveHull.java", "a00143.html", [
+      [ "ConcaveHull", "a00585.html", "a00585" ]
     ] ],
-    [ "ConversionOperation.java", "a00176.html", [
-      [ "ConversionOperation", "a00638.html", "a00638" ]
+    [ "ConversionOperation.java", "a00167.html", [
+      [ "ConversionOperation", "a00617.html", "a00617" ]
     ] ],
-    [ "ConvertCRS.java", "a00206.html", [
-      [ "ConvertCRS", "a00682.html", "a00682" ]
+    [ "ConvertCRS.java", "a00197.html", [
+      [ "ConvertCRS", "a00661.html", "a00661" ]
     ] ],
-    [ "ConvertCRS2.java", "a00209.html", [
-      [ "ConvertCRS2", "a00686.html", "a00686" ]
+    [ "ConvertCRS2.java", "a00200.html", [
+      [ "ConvertCRS2", "a00665.html", "a00665" ]
     ] ],
-    [ "CoordinateReferenceSystem.java", "a00179.html", [
-      [ "CoordinateReferenceSystem", "a00642.html", "a00642" ]
+    [ "CoordinateReferenceSystem.java", "a00170.html", [
+      [ "CoordinateReferenceSystem", "a00621.html", "a00621" ]
     ] ],
-    [ "CoordinateSystem.java", "a00182.html", [
-      [ "CoordinateSystem", "a00646.html", "a00646" ]
+    [ "CoordinateSystem.java", "a00173.html", [
+      [ "CoordinateSystem", "a00625.html", "a00625" ]
     ] ],
     [ "CoverageWrapper.java", "a00059.html", [
-      [ "CoverageWrapper", "a00442.html", "a00442" ]
+      [ "CoverageWrapper", "a00433.html", "a00433" ]
     ] ],
     [ "CovJSONCoverage.java", "a00005.html", [
-      [ "CovJSONCoverage", "a00354.html", "a00354" ]
+      [ "CovJSONCoverage", "a00345.html", "a00345" ]
     ] ],
-    [ "CovJSONDatatype.java", "a00062.html", [
-      [ "CovJSONDatatype", "a00446.html", "a00446" ]
+    [ "CRSConfig.java", "a00158.html", [
+      [ "CRSConfig", "a00605.html", "a00605" ]
     ] ],
-    [ "CRSConfig.java", "a00167.html", [
-      [ "CRSConfig", "a00626.html", "a00626" ]
+    [ "Datum.java", "a00176.html", [
+      [ "Datum", "a00629.html", "a00629" ]
     ] ],
-    [ "Datum.java", "a00185.html", [
-      [ "Datum", "a00650.html", "a00650" ]
+    [ "DoubleComparator.java", "a00146.html", [
+      [ "DoubleComparator", "a00589.html", "a00589" ]
     ] ],
-    [ "DoubleComparator.java", "a00155.html", [
-      [ "DoubleComparator", "a00610.html", "a00610" ]
+    [ "Edge.java", "a00149.html", [
+      [ "Edge", "a00593.html", "a00593" ]
     ] ],
-    [ "Edge.java", "a00158.html", [
-      [ "Edge", "a00614.html", "a00614" ]
-    ] ],
-    [ "Ellipsoid.java", "a00188.html", [
-      [ "Ellipsoid", "a00654.html", "a00654" ]
+    [ "Ellipsoid.java", "a00179.html", [
+      [ "Ellipsoid", "a00633.html", "a00633" ]
     ] ],
     [ "EncodedPolylineDatatype.java", "a00029.html", [
-      [ "EncodedPolylineDatatype", "a00390.html", "a00390" ]
+      [ "EncodedPolylineDatatype", "a00381.html", "a00381" ]
     ] ],
-    [ "EPSGToSRID.java", "a00212.html", [
-      [ "EPSGToSRID", "a00690.html", "a00690" ]
+    [ "EPSGToSRID.java", "a00203.html", [
+      [ "EPSGToSRID", "a00669.html", "a00669" ]
     ] ],
-    [ "EPSGToWKT.java", "a00215.html", [
-      [ "EPSGToWKT", "a00694.html", "a00694" ]
+    [ "EPSGToWKT.java", "a00206.html", [
+      [ "EPSGToWKT", "a00673.html", "a00673" ]
     ] ],
-    [ "EqualSRS.java", "a00218.html", [
-      [ "EqualSRS", "a00698.html", "a00698" ]
+    [ "EqualSRS.java", "a00209.html", [
+      [ "EqualSRS", "a00677.html", "a00677" ]
     ] ],
-    [ "ESPGToGML.java", "a00221.html", [
-      [ "ESPGToGML", "a00702.html", "a00702" ]
+    [ "ESPGToGML.java", "a00212.html", [
+      [ "ESPGToGML", "a00681.html", "a00681" ]
     ] ],
     [ "GeoJSONDatatype.java", "a00032.html", [
-      [ "GeoJSONDatatype", "a00394.html", "a00394" ]
+      [ "GeoJSONDatatype", "a00385.html", "a00385" ]
     ] ],
     [ "GeometryDatatype.java", "a00056.html", [
-      [ "GeometryDatatype", "a00438.html", "a00438" ]
+      [ "GeometryDatatype", "a00429.html", "a00429" ]
     ] ],
-    [ "GeometryLiteralIndex.java", "a00095.html", [
-      [ "GeometryLiteralIndex", "a00490.html", "a00490" ],
-      [ "GeometryIndex", "a00494.html", "a00494" ]
+    [ "GeometryLiteralIndex.java", "a00086.html", [
+      [ "GeometryLiteralIndex", "a00469.html", "a00469" ],
+      [ "GeometryIndex", "a00473.html", "a00473" ]
     ] ],
-    [ "GeometryWrapper.java", "a00092.html", [
-      [ "GeometryWrapper", "a00486.html", "a00486" ]
+    [ "GeometryWrapper.java", "a00083.html", [
+      [ "GeometryWrapper", "a00465.html", "a00465" ]
     ] ],
-    [ "GeomToOpenLocationCode.java", "a00224.html", [
-      [ "GeomToOpenLocationCode", "a00706.html", "a00706" ]
-    ] ],
-    [ "GeoTIFFDatatype.java", "a00065.html", [
-      [ "GeoTIFFDatatype", "a00450.html", "a00450" ]
+    [ "GeomToOpenLocationCode.java", "a00215.html", [
+      [ "GeomToOpenLocationCode", "a00685.html", "a00685" ]
     ] ],
     [ "GeoURIDatatype.java", "a00035.html", [
-      [ "GeoURIDatatype", "a00398.html", "a00398" ]
+      [ "GeoURIDatatype", "a00389.html", "a00389" ]
     ] ],
-    [ "GMLCOVDatatype.java", "a00068.html", [
-      [ "GMLCOVDatatype", "a00454.html", "a00454" ]
+    [ "GMLCOVDatatype.java", "a00062.html", [
+      [ "GMLCOVDatatype", "a00437.html", "a00437" ]
     ] ],
     [ "GPXHandler.java", "a00008.html", [
-      [ "GPXHandler", "a00358.html", "a00358" ]
+      [ "GPXHandler", "a00349.html", "a00349" ]
     ] ],
-    [ "HasHorizontalSRS.java", "a00227.html", [
-      [ "HasHorizontalSRS", "a00710.html", "a00710" ]
+    [ "HasHorizontalSRS.java", "a00218.html", [
+      [ "HasHorizontalSRS", "a00689.html", "a00689" ]
     ] ],
     [ "HexWKBDatatype.java", "a00038.html", [
-      [ "HexWKBDatatype", "a00402.html", "a00402" ],
-      [ "HexWKBTextSRS", "a00406.html", "a00406" ]
+      [ "HexWKBDatatype", "a00393.html", "a00393" ],
+      [ "HexWKBTextSRS", "a00397.html", "a00397" ]
     ] ],
-    [ "HexWKBRastDatatype.java", "a00071.html", [
-      [ "HexWKBRastDatatype", "a00458.html", "a00458" ]
+    [ "IsEligibleConversion.java", "a00221.html", [
+      [ "IsEligibleConversion", "a00693.html", "a00693" ]
     ] ],
-    [ "IsEligibleConversion.java", "a00230.html", [
-      [ "IsEligibleConversion", "a00714.html", "a00714" ]
-    ] ],
-    [ "IsInCRSAreaOfValidity.java", "a00233.html", [
-      [ "IsInCRSAreaOfValidity", "a00718.html", "a00718" ]
+    [ "IsInCRSAreaOfValidity.java", "a00224.html", [
+      [ "IsInCRSAreaOfValidity", "a00697.html", "a00697" ]
     ] ],
     [ "JtsPolyshapeWriter.java", "a00011.html", [
-      [ "JtsPolyshapeWriter", "a00362.html", "a00362" ]
+      [ "JtsPolyshapeWriter", "a00353.html", "a00353" ]
     ] ],
     [ "KMLDatatype.java", "a00041.html", [
-      [ "KMLDatatype", "a00410.html", "a00410" ]
+      [ "KMLDatatype", "a00401.html", "a00401" ]
     ] ],
-    [ "LEDataInputStream.java", "a00125.html", [
-      [ "LEDataInputStream", "a00550.html", "a00550" ]
+    [ "LEDataInputStream.java", "a00116.html", [
+      [ "LEDataInputStream", "a00529.html", "a00529" ]
     ] ],
-    [ "LEDataOutputStream.java", "a00128.html", [
-      [ "LEDataOutputStream", "a00554.html", "a00554" ]
+    [ "LEDataOutputStream.java", "a00119.html", [
+      [ "LEDataOutputStream", "a00533.html", "a00533" ]
     ] ],
-    [ "LengthSubstring.java", "a00143.html", [
-      [ "LengthSubstring", "a00594.html", "a00594" ]
+    [ "LengthSubstring.java", "a00134.html", [
+      [ "LengthSubstring", "a00573.html", "a00573" ]
     ] ],
-    [ "LengthToPoint.java", "a00146.html", [
-      [ "LengthToPoint", "a00598.html", "a00598" ]
+    [ "LengthToPoint.java", "a00137.html", [
+      [ "LengthToPoint", "a00577.html", "a00577" ]
     ] ],
     [ "LiteralUtils.java", "a00014.html", [
-      [ "LiteralUtils", "a00366.html", "a00366" ]
+      [ "LiteralUtils", "a00357.html", "a00357" ]
     ] ],
-    [ "LocatePoint.java", "a00149.html", [
-      [ "LocatePoint", "a00602.html", "a00602" ]
+    [ "LocatePoint.java", "a00140.html", [
+      [ "LocatePoint", "a00581.html", "a00581" ]
     ] ],
-    [ "NetCDFDatatype.java", "a00074.html", [
-      [ "NetCDFDatatype", "a00462.html", "a00462" ]
+    [ "NetCDFDatatype.java", "a00065.html", [
+      [ "NetCDFDatatype", "a00441.html", "a00441" ]
     ] ],
     [ "OSMDatatype.java", "a00044.html", [
-      [ "OSMDatatype", "a00414.html", "a00414" ],
-      [ "WKBTextSRS", "a00418.html", "a00418" ]
+      [ "OSMDatatype", "a00405.html", "a00405" ],
+      [ "WKBTextSRS", "a00409.html", "a00409" ]
     ] ],
     [ "PolyshapeDatatype.java", "a00047.html", [
-      [ "PolyshapeDatatype", "a00422.html", "a00422" ]
+      [ "PolyshapeDatatype", "a00413.html", "a00413" ]
     ] ],
     [ "PolyshapeReader.java", "a00017.html", [
-      [ "PolyshapeReader", "a00370.html", "a00370" ],
-      [ "XReader", "a00374.html", "a00374" ]
+      [ "PolyshapeReader", "a00361.html", "a00361" ],
+      [ "XReader", "a00365.html", "a00365" ]
     ] ],
     [ "PolyshapeWriter.java", "a00020.html", [
-      [ "PolyshapeWriter", "a00378.html", "a00378" ]
+      [ "PolyshapeWriter", "a00369.html", "a00369" ]
     ] ],
-    [ "PrimeMeridian.java", "a00191.html", [
-      [ "PrimeMeridian", "a00658.html", "a00658" ]
+    [ "PrimeMeridian.java", "a00182.html", [
+      [ "PrimeMeridian", "a00637.html", "a00637" ]
     ] ],
-    [ "ProjFormatter.java", "a00194.html", [
-      [ "ProjFormatter", "a00662.html", "a00662" ]
+    [ "ProjFormatter.java", "a00185.html", [
+      [ "ProjFormatter", "a00641.html", "a00641" ]
     ] ],
-    [ "ProjJSONFormatter.java", "a00197.html", [
-      [ "ProjJSONFormatter", "a00666.html", "a00666" ]
+    [ "ProjJSONFormatter.java", "a00188.html", [
+      [ "ProjJSONFormatter", "a00645.html", "a00645" ]
     ] ],
-    [ "RasterDataType.java", "a00083.html", [
-      [ "RasterDataType", "a00474.html", "a00474" ]
+    [ "RasterDataType.java", "a00074.html", [
+      [ "RasterDataType", "a00453.html", "a00453" ]
     ] ],
     [ "RasterQueryTester.java", "a00023.html", [
-      [ "RasterQueryTester", "a00382.html", "a00382" ]
+      [ "RasterQueryTester", "a00373.html", "a00373" ]
     ] ],
-    [ "RDFCRSToWKT.java", "a00275.html", [
-      [ "RDFCRSToWKT", "a00774.html", "a00774" ]
+    [ "RDFCRSToWKT.java", "a00266.html", [
+      [ "RDFCRSToWKT", "a00753.html", "a00753" ]
     ] ],
-    [ "ResultFormatter.java", "a00278.html", [
-      [ "ResultFormatter", "a00778.html", "a00778" ]
+    [ "ResultFormatter.java", "a00269.html", [
+      [ "ResultFormatter", "a00757.html", "a00757" ]
     ] ],
-    [ "SampleDimensionType.java", "a00104.html", [
-      [ "SampleDimensionType", "a00510.html", "a00510" ]
+    [ "SampleDimensionType.java", "a00095.html", [
+      [ "SampleDimensionType", "a00489.html", "a00489" ]
     ] ],
-    [ "SetGeoReference.java", "a00236.html", [
-      [ "SetGeoReference", "a00722.html", null ]
+    [ "SetGeoReference.java", "a00227.html", [
+      [ "SetGeoReference", "a00701.html", "a00701" ]
     ] ],
-    [ "SetSRID.java", "a00239.html", [
-      [ "SetSRID", "a00726.html", "a00726" ]
+    [ "SetSRID.java", "a00230.html", [
+      [ "SetSRID", "a00705.html", "a00705" ]
     ] ],
-    [ "SpatialDatatype.java", "a00086.html", [
-      [ "SpatialDatatype", "a00478.html", "a00478" ]
+    [ "SpatialDatatype.java", "a00077.html", [
+      [ "SpatialDatatype", "a00457.html", "a00457" ]
     ] ],
-    [ "SpatialWrapper.java", "a00089.html", [
-      [ "SpatialWrapper", "a00482.html", null ]
+    [ "SpatialWrapper.java", "a00080.html", [
+      [ "SpatialWrapper", "a00461.html", null ]
     ] ],
-    [ "SRIDGetAxis1Name.java", "a00242.html", [
-      [ "SRIDGetAxis1Name", "a00730.html", "a00730" ]
+    [ "SRIDGetAxis1Name.java", "a00233.html", [
+      [ "SRIDGetAxis1Name", "a00709.html", "a00709" ]
     ] ],
-    [ "SRIDGetAxis1Orientation.java", "a00245.html", [
-      [ "SRIDGetAxis1Orientation", "a00734.html", "a00734" ]
+    [ "SRIDGetAxis1Orientation.java", "a00236.html", [
+      [ "SRIDGetAxis1Orientation", "a00713.html", "a00713" ]
     ] ],
-    [ "SRIDGetAxis2Name.java", "a00248.html", [
-      [ "SRIDGetAxis2Name", "a00738.html", "a00738" ]
+    [ "SRIDGetAxis2Name.java", "a00239.html", [
+      [ "SRIDGetAxis2Name", "a00717.html", "a00717" ]
     ] ],
-    [ "SRIDGetAxis2Orientation.java", "a00251.html", [
-      [ "SRIDGetAxis2Orientation", "a00742.html", "a00742" ]
+    [ "SRIDGetAxis2Orientation.java", "a00242.html", [
+      [ "SRIDGetAxis2Orientation", "a00721.html", "a00721" ]
     ] ],
-    [ "SRIDHasFlippedAxis.java", "a00254.html", [
-      [ "SRIDHasFlippedAxis", "a00746.html", "a00746" ]
+    [ "SRIDHasFlippedAxis.java", "a00245.html", [
+      [ "SRIDHasFlippedAxis", "a00725.html", "a00725" ]
     ] ],
-    [ "SRIDToEPSG.java", "a00257.html", [
-      [ "SRIDToEPSG", "a00750.html", "a00750" ]
+    [ "SRIDToEPSG.java", "a00248.html", [
+      [ "SRIDToEPSG", "a00729.html", "a00729" ]
     ] ],
-    [ "SRIDToGML.java", "a00260.html", [
-      [ "SRIDToGML", "a00754.html", "a00754" ]
+    [ "SRIDToGML.java", "a00251.html", [
+      [ "SRIDToGML", "a00733.html", "a00733" ]
     ] ],
-    [ "SRIDToWKT.java", "a00263.html", [
-      [ "SRIDToWKT", "a00758.html", "a00758" ]
+    [ "SRIDToWKT.java", "a00254.html", [
+      [ "SRIDToWKT", "a00737.html", "a00737" ]
     ] ],
-    [ "SRSGeo.java", "a00281.html", [
-      [ "SRSGeo", "a00782.html", "a00782" ],
-      [ "Nodes", "a00786.html", "a00786" ]
+    [ "SRSGeo.java", "a00272.html", [
+      [ "SRSGeo", "a00761.html", "a00761" ],
+      [ "Nodes", "a00765.html", "a00765" ]
     ] ],
-    [ "SRSInfo.java", "a00101.html", [
-      [ "SRSInfo", "a00502.html", "a00502" ]
+    [ "SRSInfo.java", "a00092.html", [
+      [ "SRSInfo", "a00481.html", "a00481" ]
     ] ],
-    [ "SRSRegistry.java", "a00098.html", [
-      [ "SRSRegistry", "a00498.html", "a00498" ]
+    [ "SRSRegistry.java", "a00089.html", [
+      [ "SRSRegistry", "a00477.html", "a00477" ]
     ] ],
-    [ "SRSURIToGML.java", "a00266.html", [
-      [ "SRSURIToGML", "a00762.html", "a00762" ]
+    [ "SRSURIToGML.java", "a00257.html", [
+      [ "SRSURIToGML", "a00741.html", "a00741" ]
     ] ],
-    [ "SRSURIToWKT.java", "a00269.html", [
-      [ "SRSURIToWKT", "a00766.html", "a00766" ]
+    [ "SRSURIToWKT.java", "a00260.html", [
+      [ "SRSURIToWKT", "a00745.html", "a00745" ]
     ] ],
-    [ "SuggestProjection.java", "a00272.html", [
-      [ "SuggestProjection", "a00770.html", "a00770" ]
+    [ "SuggestProjection.java", "a00263.html", [
+      [ "SuggestProjection", "a00749.html", "a00749" ]
     ] ],
     [ "SVGDatatype.java", "a00050.html", [
-      [ "SVGDatatype", "a00426.html", null ]
+      [ "SVGDatatype", "a00417.html", null ]
     ] ],
-    [ "SVGWriter.java", "a00140.html", [
-      [ "SVGWriter", "a00590.html", "a00590" ]
+    [ "SVGWriter.java", "a00131.html", [
+      [ "SVGWriter", "a00569.html", "a00569" ]
     ] ],
-    [ "Triangle.java", "a00161.html", [
-      [ "Triangle", "a00618.html", "a00618" ]
+    [ "Triangle.java", "a00152.html", [
+      [ "Triangle", "a00597.html", "a00597" ]
     ] ],
-    [ "TripleStoreConnection.java", "a00287.html", [
-      [ "TripleStoreConnection", "a00794.html", "a00794" ]
+    [ "TripleStoreConnection.java", "a00278.html", [
+      [ "TripleStoreConnection", "a00773.html", "a00773" ]
     ] ],
-    [ "TWKBReader.java", "a00131.html", [
-      [ "TWKBReader", "a00558.html", "a00558" ],
-      [ "ByteBufferInputStream", "a00562.html", "a00562" ],
-      [ "PrecisionReader", "a00566.html", "a00566" ],
-      [ "ExtendedPrecisionReader", "a00570.html", "a00570" ]
+    [ "TWKBReader.java", "a00122.html", [
+      [ "TWKBReader", "a00537.html", "a00537" ],
+      [ "ByteBufferInputStream", "a00541.html", "a00541" ],
+      [ "PrecisionReader", "a00545.html", "a00545" ],
+      [ "ExtendedPrecisionReader", "a00549.html", "a00549" ]
     ] ],
-    [ "TWKBUtils.java", "a00134.html", [
-      [ "TWKBUtils", "a00574.html", "a00574" ]
+    [ "TWKBUtils.java", "a00125.html", [
+      [ "TWKBUtils", "a00553.html", "a00553" ]
     ] ],
-    [ "TWKBWriter.java", "a00137.html", [
-      [ "TWKBWriter", "a00578.html", "a00578" ],
-      [ "PrecisionWriter", "a00582.html", "a00582" ],
-      [ "ExtendedPrecisionWriter", "a00586.html", "a00586" ]
+    [ "TWKBWriter.java", "a00128.html", [
+      [ "TWKBWriter", "a00557.html", "a00557" ],
+      [ "PrecisionWriter", "a00561.html", "a00561" ],
+      [ "ExtendedPrecisionWriter", "a00565.html", "a00565" ]
     ] ],
-    [ "Vertex.java", "a00164.html", [
-      [ "Vertex", "a00622.html", "a00622" ]
+    [ "Vertex.java", "a00155.html", [
+      [ "Vertex", "a00601.html", "a00601" ]
     ] ],
-    [ "WebService.java", "a00290.html", [
-      [ "WebService", "a00798.html", "a00798" ]
+    [ "WebService.java", "a00281.html", [
+      [ "WebService", "a00777.html", "a00777" ]
     ] ],
     [ "WKBDatatype.java", "a00053.html", [
-      [ "WKBDatatype", "a00430.html", "a00430" ],
-      [ "WKBTextSRS", "a00434.html", "a00434" ]
+      [ "WKBDatatype", "a00421.html", "a00421" ],
+      [ "WKBTextSRS", "a00425.html", "a00425" ]
     ] ],
-    [ "WKBRastDatatype.java", "a00077.html", [
-      [ "WKBRastDatatype", "a00466.html", "a00466" ]
+    [ "WKBRastDatatype.java", "a00068.html", [
+      [ "WKBRastDatatype", "a00445.html", "a00445" ]
     ] ],
-    [ "WKBRasterBand.java", "a00107.html", [
-      [ "WKBRasterBand", "a00514.html", "a00514" ]
+    [ "WKBRasterBand.java", "a00098.html", [
+      [ "WKBRasterBand", "a00493.html", "a00493" ]
     ] ],
-    [ "WKBRasterConstants.java", "a00110.html", [
-      [ "WKBRasterConstants", "a00518.html", "a00518" ]
+    [ "WKBRasterConstants.java", "a00101.html", [
+      [ "WKBRasterConstants", "a00497.html", "a00497" ]
     ] ],
-    [ "WKBRasterImageReader.java", "a00113.html", [
-      [ "WKBRasterImageReader", "a00522.html", "a00522" ],
-      [ "Spi", "a00526.html", "a00526" ],
-      [ "InputStreamAdapter", "a00530.html", "a00530" ]
+    [ "WKBRasterImageReader.java", "a00104.html", [
+      [ "WKBRasterImageReader", "a00501.html", "a00501" ],
+      [ "Spi", "a00505.html", "a00505" ],
+      [ "InputStreamAdapter", "a00509.html", "a00509" ]
     ] ],
-    [ "WKBRasterImageWriter.java", "a00116.html", [
-      [ "WKBRasterImageWriter", "a00534.html", "a00534" ],
-      [ "Spi", "a00538.html", "a00538" ]
+    [ "WKBRasterImageWriter.java", "a00107.html", [
+      [ "WKBRasterImageWriter", "a00513.html", "a00513" ],
+      [ "Spi", "a00517.html", "a00517" ]
     ] ],
-    [ "WKBRasterReader.java", "a00119.html", [
-      [ "WKBRasterReader", "a00542.html", "a00542" ]
+    [ "WKBRasterReader.java", "a00110.html", [
+      [ "WKBRasterReader", "a00521.html", "a00521" ]
     ] ],
-    [ "WKBRasterWriter.java", "a00122.html", [
-      [ "WKBRasterWriter", "a00546.html", "a00546" ]
+    [ "WKBRasterWriter.java", "a00113.html", [
+      [ "WKBRasterWriter", "a00525.html", "a00525" ]
     ] ],
-    [ "WKTCRSFormatter.java", "a00200.html", [
-      [ "WKTCRSFormatter", "a00670.html", "a00670" ]
+    [ "WKTCRSFormatter.java", "a00191.html", [
+      [ "WKTCRSFormatter", "a00649.html", "a00649" ]
     ] ],
     [ "Wrapper.java", "a00026.html", [
-      [ "Wrapper", "a00386.html", null ]
+      [ "Wrapper", "a00377.html", null ]
     ] ],
-    [ "XYZDatatype.java", "a00080.html", [
-      [ "XYZDatatype", "a00470.html", "a00470" ]
+    [ "XYZDatatype.java", "a00071.html", [
+      [ "XYZDatatype", "a00449.html", "a00449" ]
     ] ]
 ];

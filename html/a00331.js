@@ -1,5 +1,6 @@
 var a00331 =
 [
-    [ "algorithm", "a00329.html", "a00329" ],
-    [ "triangulation", "a00332.html", "a00332" ]
+    [ "AsGeoJSON", "a00769.html", "a00769" ],
+    [ "TripleStoreConnection", "a00773.html", "a00773" ],
+    [ "WebService", "a00777.html", "a00777" ]
 ];

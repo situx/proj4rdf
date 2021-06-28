@@ -1,5 +1,6 @@
 var a00318 =
 [
-    [ "LEDataInputStream", "a00550.html", "a00550" ],
-    [ "LEDataOutputStream", "a00554.html", "a00554" ]
+    [ "LengthSubstring", "a00573.html", "a00573" ],
+    [ "LengthToPoint", "a00577.html", "a00577" ],
+    [ "LocatePoint", "a00581.html", "a00581" ]
 ];

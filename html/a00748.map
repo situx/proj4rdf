@@ -1,4 +1,4 @@
-<map id="SRIDToEPSG" name="SRIDToEPSG">
-<area shape="rect" id="node1" title="Converts an SRID to EPSG representation." alt="" coords="13,80,115,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,123,32"/>
+<map id="SuggestProjection" name="SuggestProjection">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="16,5,133,32"/>
 </map>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoSPARQLSRSExtension: RasterQueryTester Class Reference</title>
+<title>GeoSPARQLSRSExtension: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,109 +55,42 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('a00382.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00385.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00379.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RasterQueryTester Class Reference</div>  </div>
+<div class="title">GeoJSONDatatype Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7d7a68247a04debf86cc5a1115af14a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html#a7d7a68247a04debf86cc5a1115af14a5">readRaster</a> ()</td></tr>
-<tr class="separator:a7d7a68247a04debf86cc5a1115af14a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b260eecbaabcef8473fd87ada040682"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html#a8b260eecbaabcef8473fd87ada040682">main</a> (String[] args)</td></tr>
-<tr class="separator:a8b260eecbaabcef8473fd87ada040682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8b260eecbaabcef8473fd87ada040682"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b260eecbaabcef8473fd87ada040682">&#9670;&nbsp;</a></span>main()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void main </td>
-          <td>(</td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                               {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="comment">/*GridCoverage2D coverage;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">                try {</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">                        coverage = CoverageIO.read(geometryLiteral);</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">                        return new CoverageWrapper(coverage, URI);</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">                } catch (CoverageStoreException e) {</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">                        // TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">                        e.printStackTrace();</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">                        throw new RuntimeException();</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">                }</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">                //InputStream stream = new ByteArrayInputStream(geometryLiteral.getBytes(StandardCharsets.UTF_8));</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">                final StorageConnector c;// = new StorageConnector(stream);</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">                c=new StorageConnector(new File(&quot;flood/hochwasser.tif&quot;));</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">                GeoTiffStoreProvider prov=new GeoTiffStoreProvider();</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">                GridCoverage cov;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">                GeoTiffStore store=new GeoTiffStore(prov,c);</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">                store.getProvider().open(c);</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">                cov = store.components().get(0).read(store.components().get(0).getGridGeometry(), 1);</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">                */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7d7a68247a04debf86cc5a1115af14a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d7a68247a04debf86cc5a1115af14a5">&#9670;&nbsp;</a></span>readRaster()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void readRaster </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00385.html">GeoJSONDatatype</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00429.html#afcce5db1b9f7c599c6be21e837b5489d">check</a>(RDFDatatype rdfDatatype)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#a5df594a39203302c2daed2aed74735c7">checkURI</a>(String datatypeURI)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00385.html#a5a97b6924c173c82a1f86eff37290696">GeoJSONDatatype</a>()</td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#a3720281f7f788ad5309cd499c0684499">GeometryDatatype</a>(String uri)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00429.html#ad1ee2f6512af0e5dba3d40a3e8b731f9">get</a>(RDFDatatype rdfDatatype)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#a0a24dee6650e86f3f00a406a199073cd">get</a>(String datatypeURI)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00385.html#ac55256a5d2432ae12b6846d3416c13e0">INSTANCE</a></td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#a3c1944c708771867fd3be8937d59bc8d">isDatatypesRegistered</a></td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00385.html#ab1d069f56091df4f6436f8c713ab2f39">LOGGER</a></td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#a6ca6e70f10f54a3b0e7fdc14be052483">parse</a>(String lexicalForm)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00429.html#adb0c0c075ba104124ca28f2d25ef76d5">parse</a>(String lexicalForm, GeometryIndex targetIndex)</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00385.html#ab987fb3c5c1835116368b15c0761d3b0">read</a>(String geometryLiteral)</td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00429.html#a1c0373662a2dcdd665113c7b0dd8421f">registerDatatypes</a>()</td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00457.html#a15bec69aa612b57c4ca9a99d5aecb3e3">SpatialDatatype</a>(String uri)</td><td class="entry"><a class="el" href="a00457.html">SpatialDatatype</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00385.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00429.html#ad4920a4c1891d72231838321e34cf5c1">TYPE_MAPPER</a></td><td class="entry"><a class="el" href="a00429.html">GeometryDatatype</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00385.html#a5f9a3e6b51a268326f70a7c5e5695ab4">unparse</a>(Object geometry)</td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00385.html#addbf30e6c0ad68fa34277d59a2c6eb5e">URI</a></td><td class="entry"><a class="el" href="a00385.html">GeoJSONDatatype</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00295.html">de</a></li><li class="navelem"><a class="el" href="a00296.html">hsmainz</a></li><li class="navelem"><a class="el" href="a00297.html">cs</a></li><li class="navelem"><a class="el" href="a00298.html">semgis</a></li><li class="navelem"><a class="el" href="a00299.html">arqextension</a></li><li class="navelem"><a class="el" href="a00294.html">util</a></li><li class="navelem"><a class="el" href="a00382.html">RasterQueryTester</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
