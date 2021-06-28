@@ -4,9 +4,7 @@ import org.apache.jena.datatypes.DatatypeFormatException;
 import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.datatypes.TypeMapper;
 
-import io.github.galbiston.geosparql_jena.implementation.datatype.raster.CovJSONDatatype;
 import io.github.galbiston.geosparql_jena.implementation.datatype.raster.CoverageWrapper;
-import io.github.galbiston.geosparql_jena.implementation.datatype.raster.HexWKBRastDatatype;
 import io.github.galbiston.geosparql_jena.implementation.datatype.raster.WKBRastDatatype;
 import io.github.galbiston.geosparql_jena.implementation.index.GeometryLiteralIndex;
 import io.github.galbiston.geosparql_jena.implementation.index.GeometryLiteralIndex.GeometryIndex;
@@ -48,10 +46,10 @@ public abstract class RasterDataType extends SpatialDatatype {
 
     public static final void registerDatatypes() {
         if (!isDatatypesRegistered) {
-            TYPE_MAPPER.registerDatatype(CovJSONDatatype.INSTANCE);
+            //TYPE_MAPPER.registerDatatype(CovJSONDatatype.INSTANCE);
         	//TYPE_MAPPER.registerDatatype(GeoTIFFDatatype.INSTANCE);
             //TYPE_MAPPER.registerDatatype(GMLCOVDatatype.INSTANCE);
-            TYPE_MAPPER.registerDatatype(HexWKBRastDatatype.INSTANCE);
+            //TYPE_MAPPER.registerDatatype(HexWKBRastDatatype.INSTANCE);
             TYPE_MAPPER.registerDatatype(WKBRastDatatype.INSTANCE);
             isDatatypesRegistered = true;
         }

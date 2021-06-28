@@ -21,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import io.github.galbiston.geosparql_jena.configuration.GeoSPARQLConfig;
+import io.github.galbiston.geosparql_jena.implementation.registry.SRSRegistry;
 import proj4rdf.CRSConfig;
 
 public class TripleStoreConnection {
@@ -53,13 +54,14 @@ public class TripleStoreConnection {
 		// modelmap.put("testdata4.ttl", ModelFactory.createOntologyModel());
 		try {
 			modelmap.get("proj4.ttl").read(new FileInputStream("ontology.ttl"), null, "TTL");
-
+			SRSRegistry.exploreGraphForSRSDefinitions(modelmap.get("proj4.ttl"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			modelmap.get("proj4.ttl").read(new FileInputStream("proj4.ttl"), null, "TTL");
+			SRSRegistry.exploreGraphForSRSDefinitions(modelmap.get("proj4.ttl"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

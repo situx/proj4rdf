@@ -98,17 +98,18 @@ public class SRSRegistry implements Serializable {
 
         //Add the Units of Measure
         UnitsRegistry.addUnit(srsInfo.getUnitsOfMeasure());
+        
+        
     }
     
-    public void exploreGraphForSRSDefinitions(OntModel model) {
+    public static void exploreGraphForSRSDefinitions(OntModel model) {
     	List<String> srsToParse=RDFCRSToWKT.getCRSListFromModel(model);
     	for(String srsuri:srsToParse) {
     		SRS_REGISTRY.put(srsuri,SRSInfo.resolveSRS(srsuri, model));
     	}
-    }
+    }   
     
-    
-    public void exploreGraphForSRSDefinitions(String endpoint) {
+    public static void exploreGraphForSRSDefinitions(String endpoint) {
     	List<String> srsToParse=RDFCRSToWKT.getCRSListFromTripleStore(endpoint);
     	for(String srsuri:srsToParse) {
     		SRS_REGISTRY.put(srsuri,SRSInfo.resolveSRS(srsuri, endpoint));

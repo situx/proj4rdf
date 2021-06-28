@@ -103,6 +103,7 @@
     <artifactId>expiring-map</artifactId>
     <version>1.0.1</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/it.geosolutions.jaiext/jaiext -->
 <dependency>
     <groupId>it.geosolutions.jaiext</groupId>
@@ -110,6 +111,13 @@
     <version>1.1.11</version>
     <type>pom</type>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.addthis/stream-lib -->
+<dependency>
+    <groupId>com.addthis</groupId>
+    <artifactId>stream-lib</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/org.jaitools/jt-all -->
 <dependency>
     <groupId>org.jaitools</groupId>
@@ -186,6 +194,17 @@
             <artifactId>sis-utility</artifactId>
             <version>${sis.version}</version>
         </dependency>
+        <dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-bundle</artifactId>
+    <version>1.19</version>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/java3d/j3d-core -->
+<dependency>
+    <groupId>java3d</groupId>
+    <artifactId>j3d-core</artifactId>
+    <version>1.3.1</version>
+</dependency>
  <dependency>
     <groupId>org.apache.sis.non-free</groupId>
     <artifactId>sis-embedded-data</artifactId>
@@ -198,6 +217,12 @@
             <version>${sis.version}</version>
         </dependency>-->
 
+<!-- https://mvnrepository.com/artifact/javax.media/jai_core -->
+<dependency>
+    <groupId>javax.media</groupId>
+    <artifactId>jai_core</artifactId>
+    <version>1.1.3</version>
+</dependency>
 
         <dependency>
             <groupId>org.apache.sis.core</groupId>

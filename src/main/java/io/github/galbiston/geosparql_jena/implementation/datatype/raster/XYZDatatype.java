@@ -5,8 +5,6 @@ import java.awt.image.DataBuffer;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 
-import javax.media.jai.DataBufferFloat;
-
 import io.github.galbiston.geosparql_jena.implementation.datatype.RasterDataType;
 import proj4rdf.vocabulary.SRSGeo;
 
@@ -29,7 +27,7 @@ public class XYZDatatype extends RasterDataType {
 	@Override
 	public String unparse(Object value) {
 		//GridCoverageBuilder builder=new GridCoverageBuilder();
-		DataBuffer buffer=new DataBufferFloat(10);
+		//DataBuffer buffer=new DataBufferFloat(10);
 		/*builder.setValues(buffer);
 		SampleModel sm=new BandedSampleModel(dataType, w, h, numBands);
 		WritableRaster rast=new WritableRaster(null, buffer, null);

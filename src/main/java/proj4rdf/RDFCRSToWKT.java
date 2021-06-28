@@ -52,7 +52,7 @@ public class RDFCRSToWKT {
 			+ "FILTER(STRSTARTS(STR(?rel), \""+GeoSPARQLCRSURI+"\") || STRSTARTS(STR(?rel), \"http://www.w3.org/2000/01/rdf-schema#\") || STRSTARTS(STR(?rel), \"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\")"+")"
 			+ " } ORDER BY ?rel ?rel2 ";
 	
-	//public static String downliftQuery="SELECT "
+	public static String SRSdiscoveryQuery="SELECT DISTINCT ?srs WHERE { ?srs rdf:type ?srscls . ?srscls rdfs:subClassOf* geocrs:SpatialReferenceSystem . }";
 	
 	static OntModel model;
 	
@@ -117,7 +117,7 @@ public class RDFCRSToWKT {
 		}
 	}
 	
-	public static String getCRSFromTripleStore(String crsURI, String endpointURL, String format, OntModel model) {
+	public static String getCRSFromTripleStore(String crsURI, OntModel model, String format) {
 		String queryString=downliftQuery;
 		System.out.println(prefixCollection+queryString);
 		Query query = QueryFactory.create(prefixCollection+queryString);
@@ -131,6 +131,34 @@ public class RDFCRSToWKT {
 			case "Proj": return refsys.toProj();
 			default: return refsys.toProjJSON().toString();
 		}
+	}
+	
+	public static List<String> getCRSListFromTripleStore(String endpointURL) {
+		List<String> result=new LinkedList<String>();
+		String queryString=SRSdiscoveryQuery;
+		System.out.println(prefixCollection+queryString);
+		Query query = QueryFactory.create(prefixCollection+queryString);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointURL, query);
+		ResultSet res=qexec.execSelect();
+		while(res.hasNext()) {
+			QuerySolution qres=res.next();
+			result.add(qres.getResource("srs").getURI());
+		}
+		return result;
+	}
+	
+	public static List<String> getCRSListFromModel(OntModel model) {
+		List<String> result=new LinkedList<String>();
+		String queryString=SRSdiscoveryQuery;
+		System.out.println(prefixCollection+queryString);
+		Query query = QueryFactory.create(prefixCollection+queryString);
+		QueryExecution qexec = QueryExecutionFactory.create(query, model);
+		ResultSet res=qexec.execSelect();
+		while(res.hasNext()) {
+			QuerySolution qres=res.next();
+			result.add(qres.getResource("srs").getURI());
+		}
+		return result;
 	}
 	
 	public static String[] getEligibleCRSFromTripleStore(String bbox) {

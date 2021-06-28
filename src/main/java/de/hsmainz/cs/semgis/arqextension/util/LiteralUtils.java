@@ -42,14 +42,14 @@ import org.opengis.referencing.operation.NoninvertibleTransformException;
 import org.opengis.referencing.operation.TransformException;
 import org.opengis.util.FactoryException;
 
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapper;
 import io.github.galbiston.geosparql_jena.implementation.GeometryWrapperFactory;
 import io.github.galbiston.geosparql_jena.implementation.datatype.GeometryDatatype;
 import io.github.galbiston.geosparql_jena.implementation.datatype.RasterDataType;
+import io.github.galbiston.geosparql_jena.implementation.datatype.geometry.HexWKBDatatype;
 import io.github.galbiston.geosparql_jena.implementation.datatype.raster.CoverageWrapper;
-import io.github.galbiston.geosparql_jena.implementation.datatype.raster.HexWKBRastDatatype;
 
 public class LiteralUtils {
 
@@ -261,7 +261,7 @@ public class LiteralUtils {
         }
         BufferedGridCoverage coverage=new BufferedGridCoverage(
         		gridgeom, dimensions, raster.getDataBuffer());		
-		return CoverageWrapper.createCoverage(coverage, "EPSG:4326", HexWKBRastDatatype.URI.toString()).asNodeValue();
+		return CoverageWrapper.createCoverage(coverage, "EPSG:4326", HexWKBDatatype.URI.toString()).asNodeValue();
 	}
 	
 	public static Geometry getCorrectVectorRepresentation(Wrapper wrapper) {

@@ -68,6 +68,7 @@ public abstract class GeometryDatatype extends SpatialDatatype {
             throw new DatatypeFormatException(ex.getMessage() + " - Illegal Geometry Literal: " + lexicalForm);
         }
     }
+    
 
     private static final TypeMapper TYPE_MAPPER = TypeMapper.getInstance();
     private static boolean isDatatypesRegistered = false;
