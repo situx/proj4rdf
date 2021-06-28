@@ -38,8 +38,8 @@ public class TripleStoreConnection {
 	public static Integer resultSetSize = 0;
 
 	public TripleStoreConnection() {
-		GeoSPARQLConfig.setupMemoryIndex();
-		CRSConfig.setup();
+		//GeoSPARQLConfig.setupMemoryIndex();
+		//CRSConfig.setup();
 		modelmap = new TreeMap<String, OntModel>();
 		modelmap.put("proj4.ttl", ModelFactory.createOntologyModel());
 		//modelmap.put("owl/proj4rdf_data.ttl", ModelFactory.createOntologyModel());

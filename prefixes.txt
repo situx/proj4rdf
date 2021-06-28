@@ -9,6 +9,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX bn-lemon: <http://babelnet.org/model/babelnet#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#>
+PREFIX geocrs: <http://www.opengis.net/ont/crs/>
 PREFIX dbpedia: <http://dbpedia.org/resource/>
 Prefix lgdr:<http://linkedgeodata.org/triplify/>
 Prefix lgdo:<http://linkedgeodata.org/ontology/>
