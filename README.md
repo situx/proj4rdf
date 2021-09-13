@@ -22,6 +22,8 @@ The GeoSPARQL SRS ontology draft contains classes for the following components o
 * Spatial reference system registry
 * Interstellar bodies
 
+![GeoSPARQL SRS ontology draft](geocrs.png)
+
 The ontology documentation is automatically generated as part of this repository as a Github pages:
 Ontology Documentation: https://situx.github.io/proj4rdf/ as owl/ontology.ttl in this repository and visually represented using [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/situx/proj4rdf/master/owl/ontology.ttl)
 
