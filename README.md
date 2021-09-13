@@ -40,6 +40,16 @@ The example data can be generated using the Python script available in this repo
 
 A set of SHACL rules to verify a well-defined coordinate reference system has been added to this repository. The SHACL rules are a minimum set of rules which might be extended in a further process.
 
+```
+geocrs:CoordinateSystemShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateSystem ;
+       sh:property [
+           sh:path geocrs:axis  ;
+		   sh:class geocrs:CoordinateSystemAxis ;
+           sh:minCount 1 ;
+       ] .
+```
+
 SHACL rules: owl/rules.ttl  https://situx.github.io/proj4rdf/rules.html  [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/situx/proj4rdf/master/owl/rules.ttl)
 
 ## Apache Jena extension documentation
