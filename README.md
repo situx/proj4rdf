@@ -27,12 +27,14 @@ The GeoSPARQL SRS ontology draft contains classes for the following components o
 The ontology documentation is automatically generated as part of this repository as a Github pages:
 Ontology Documentation: https://situx.github.io/proj4rdf/ as owl/ontology.ttl in this repository and visually represented using [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/situx/proj4rdf/master/owl/ontology.ttl)
 
-### Example data
+### Example CRS data
 
 To apply the ontology model, the PROJ4 library in the form of pyproj has been extracted and modelled in the new ontology model.
 In addition, more than 4000 geoids of interstellar bodies have been added to the ontology model.
 
 Example Data with PROJ4: https://situx.github.io/proj4rdf/index2.html as owl/result.ttl in this repository and visually represented using [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/situx/proj4rdf/master/owl/result.ttl)
+
+The example data can be generated using the Python script available in this repository: epsg2ttl.py
 
 ### SHACL rules
 
@@ -41,5 +43,8 @@ A set of SHACL rules to verify a well-defined coordinate reference system has be
 SHACL rules: owl/rules.ttl  https://situx.github.io/proj4rdf/rules.html  [WebVOWL](http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/situx/proj4rdf/master/owl/rules.ttl)
 
 ## Apache Jena extension documentation
+
+The repository also includes a Java application which is an extension of the Apache Jena GeoSPARQL library.
+The library has been extended by new functions for coordinate conversion and by conversion classes from RDF to WKT.
 
 Source Code Documentation: https://situx.github.io/proj4rdf/html/
