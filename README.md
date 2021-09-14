@@ -54,7 +54,7 @@ SHACL rules: owl/rules.ttl  https://situx.github.io/proj4rdf/rules.html  [WebVOW
 
 ## Apache Jena extension documentation
 
-The repository also includes a Java application which is an extension of the Apache Jena GeoSPARQL library.
+The repository also includes an in-development Java application which is an extension of the Apache Jena GeoSPARQL library.
 The library has been extended by new functions for coordinate conversion and by conversion classes from RDF to WKT.
 
 Source Code Documentation: https://situx.github.io/proj4rdf/html/
