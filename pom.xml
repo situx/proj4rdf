@@ -59,7 +59,7 @@
 		 <!-- <sis.version>0.8-jdk7-M1</sis.version>-->
 		  <sis.version>2.0-SNAPSHOT</sis.version>
 		  <geoapi.version>4.0-M16</geoapi.version>
-		  <jena.version>3.16.0</jena.version>
+		  <jena.version>4.2.0</jena.version>
 		          <swagger.version>2.1.5</swagger.version>
         <swagger-ui.version>3.34.0</swagger-ui.version>
 		  <maven.compiler.source>1.8</maven.compiler.source>
