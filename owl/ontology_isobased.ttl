@@ -1,0 +1,3384 @@
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix ns1: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirectionCollection> a owl:NamedIndividual,
+        skos:Collection ;
+    skos:member <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/aft>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/awayFrom>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/clockwise>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/columnNegative>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/columnPositive>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/counterClockwise>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayDown>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayLeft>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayRight>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayUp>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/down>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/east>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/eastNorthEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/eastSouthEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/forward>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/future>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricX>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricY>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricZ>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/north>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northNorthEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northNorthWest>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northWest>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/past>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/port>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/rowNegative>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/rowPositive>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/south>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southSouthEast>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southSouthWest>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southWest>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/starboard>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/towards>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/unspecified>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/up>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/west>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/westNorthWest>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/westSouthWest> ;
+    skos:prefLabel "AxisDirection - Collection" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataTypeCollection> a owl:NamedIndividual,
+        skos:Collection ;
+    skos:member <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/dateTime>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/integer>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/real> ;
+    skos:prefLabel "CoordinateDataType - Collection" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaningCollection> a owl:NamedIndividual,
+        skos:Collection ;
+    skos:member <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning/exact>,
+        <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning/wraparound> ;
+    skos:prefLabel "RangeMeaning - Collection" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/CalendarCollection> a owl:NamedIndividual,
+        skos:Collection ;
+    skos:member <http://def.isotc211.org/iso19111/2019/Datums/code/Calendar/prolepticGregorian> ;
+    skos:prefLabel "Calendar - Collection" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethodCollection> a owl:NamedIndividual,
+        skos:Collection ;
+    skos:member <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/geoid>,
+        <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/levelling>,
+        <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/tidal> ;
+    skos:prefLabel "RealizationMethod - Collection" .
+
+ns1:isFormatOf a owl:AnnotationProperty .
+
+ns1:source a owl:AnnotationProperty .
+
+geocrs:AdamsProjection a owl:Class ;
+    rdfs:label "adams projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection .
+
+geocrs:AitoffProjection a owl:Class ;
+    rdfs:label "aitoff projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:AlbersEqualAreaProjection a owl:Class ;
+    rdfs:label "albers equal-area projection"@en ;
+    rdfs:subClassOf geocrs:ConicalProjection,
+        geocrs:EqualAreaProjection ;
+    skos:definition "a conic, equal area map projection that uses two standard parallels"@en .
+
+geocrs:AmericanPolyconicProjection a owl:Class ;
+    rdfs:label "american polyconic projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:ArmadilloProjection a owl:Class ;
+    rdfs:label "armadillo projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:ArtificialSatellite a owl:Class ;
+    rdfs:label "artificial satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:Asteroid a owl:Class ;
+    rdfs:label "asteroid"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:AtlantisProjection a owl:Class ;
+    rdfs:label "atlantis projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:AuthaGraphProjection a owl:Class ;
+    rdfs:label "autha graph projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:BehrmannProjection a owl:Class ;
+    rdfs:label "behrmann projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
+
+geocrs:BertinProjection a owl:Class ;
+    rdfs:label "bertin projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:BoggsEumorphicProjection a owl:Class ;
+    rdfs:label "boggs eumorphic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:BonneProjection a owl:Class ;
+    rdfs:label "bonne projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:BottomleyProjection a owl:Class ;
+    rdfs:label "bottomley projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:CahillKeyesProjection a owl:Class ;
+    rdfs:label "cahill-keyes projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:CassiniProjection a owl:Class ;
+    rdfs:label "cassini projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EquidistantProjection .
+
+geocrs:CentralCylindricalProjection a owl:Class ;
+    rdfs:label "central cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:PerspectiveProjection .
+
+geocrs:CollignonProjection a owl:Class ;
+    rdfs:label "collignon projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:ColombiaUrbanProjection a owl:Class ;
+    rdfs:label "colombia urban projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:Comet a owl:Class ;
+    rdfs:label "comet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:CraigRetroazimuthalProjection a owl:Class ;
+    rdfs:label "craig retroazimuthal projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:RetroazimuthalProjection .
+
+geocrs:CrasterParabolicProjection a owl:Class ;
+    rdfs:label "craster parabolic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:CylindricalEqualArea a owl:Class ;
+    rdfs:label "cylindrical equal area projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
+
+geocrs:DateTimeTemporalCS a owl:Class ;
+    rdfs:label "DateTimeTemporalCS" ;
+    geocrs:constraint "coordinateType.eq.dateTime" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:TemporalCS ;
+    skos:definition "one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.Note: A DateTimeTemporalCS shall have one axis association. It does not use axisUnitID; the temporal quantities are defined through the ISO 8601 representation." .
+
+geocrs:DerivedEngineeringCRS a owl:Class ;
+    rdfs:label "DerivedEngineeringCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:EngineeringCRS ;
+    skos:definition "derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class" .
+
+geocrs:DerivedGeodeticCRS a owl:Class ;
+    rdfs:label "DerivedGeodeticCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:GeodeticCRS ;
+    skos:definition "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system" .
+
+geocrs:DerivedGeographicCRS a owl:Class ;
+    rdfs:label "DerivedGeographicCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:GeographicCRS ;
+    skos:definition "derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and an ellipsoidal coordinate systemNote: A derived geographic CRS can be based on a geodetic CRS only if that geodetic CRS definition includes an ellipsoid." .
+
+geocrs:DerivedParametricCRS a owl:Class ;
+    rdfs:label "DerivedParametricCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:ParametricCRS ;
+    skos:definition "derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system" .
+
+geocrs:DerivedTemporalCRS a owl:Class ;
+    rdfs:label "DerivedTemporalCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:TemporalCRS ;
+    skos:definition "derived coordinate reference system which has a temporal coordinate reference system as its base CRS, thereby inheriting a temporal datum, and is associated with a temporal coordinate system" .
+
+geocrs:DerivedVerticalCRS a owl:Class ;
+    rdfs:label "DerivedVerticalCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:DerivedCRS,
+        geocrs:VerticalCRS ;
+    skos:definition "derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system" .
+
+geocrs:DymaxionProjection a owl:Class ;
+    rdfs:label "dymaxion projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:Eckert2Projection a owl:Class ;
+    rdfs:label "Eckert II projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:Eckert4Projection a owl:Class ;
+    rdfs:label "Eckert IV projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:Eckert6Projection a owl:Class ;
+    rdfs:label "Eckert VI projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:EqualEarthProjection a owl:Class ;
+    rdfs:label "equal earth projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:EquidistantConicProjection a owl:Class ;
+    rdfs:label "equidistant conic projection"@en ;
+    rdfs:subClassOf geocrs:ConicalProjection,
+        geocrs:EquidistantProjection .
+
+geocrs:EquidistantCylindricalProjection a owl:Class ;
+    rdfs:label "equidistant cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EquidistantProjection .
+
+geocrs:EquirectangularProjection a owl:Class ;
+    rdfs:label "equirectangular projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EquidistantProjection .
+
+geocrs:GS50Projection a owl:Class ;
+    rdfs:label "gs50 projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection .
+
+geocrs:GallPetersProjection a owl:Class ;
+    rdfs:label "gall-peters projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
+
+geocrs:GallStereographicProjection a owl:Class ;
+    rdfs:label "gall stereographic projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:GaussKruegerProjection a owl:Class ;
+    rdfs:label "gauss-krüger projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:GnomonicProjection a owl:Class ;
+    rdfs:label "gnomonic projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection .
+
+geocrs:GoodeHomolosineProjection a owl:Class ;
+    rdfs:label "goode homolosine projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:GuyouProjection a owl:Class ;
+    rdfs:label "guyou projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection .
+
+geocrs:HEALPixProjection a owl:Class ;
+    rdfs:label "HEALPix projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HammerProjection a owl:Class ;
+    rdfs:label "hammer projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:HoboDyerProjection a owl:Class ;
+    rdfs:label "hobo-dyer projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
+
+geocrs:IdentityOperation a owl:Class ;
+    rdfs:label "identity transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:Kavrayskiy7Projection a owl:Class ;
+    rdfs:label "Kavrayskiy VII projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:Krovak a owl:Class ;
+    rdfs:label "krovak projection"@en ;
+    rdfs:subClassOf geocrs:ConicalProjection .
+
+geocrs:LabordeProjection a owl:Class ;
+    rdfs:label "laborde projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:LambertAzimuthalEqualArea a owl:Class ;
+    rdfs:label "lambert azimuthal equal area projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:EqualAreaProjection .
+
+geocrs:LambertConformalConicProjection a owl:Class ;
+    rdfs:label "lambert conformal conic projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:ConicalProjection .
+
+geocrs:LeeProjection a owl:Class ;
+    rdfs:label "lee projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:LittrowProjection a owl:Class ;
+    rdfs:label "littrow projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:RetroazimuthalProjection .
+
+geocrs:LoximuthalProjection a owl:Class ;
+    rdfs:label "loximuthal projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:MillerProjection a owl:Class ;
+    rdfs:label "miller projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:MollweideProjection a owl:Class ;
+    rdfs:label "mollweide projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:Moon a owl:Class ;
+    rdfs:label "moon"@en ;
+    rdfs:subClassOf geocrs:NaturalSatellite .
+
+geocrs:MyrahedalProjection a owl:Class ;
+    rdfs:label "myrahedal projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:NaturalEarthProjection a owl:Class ;
+    rdfs:label "natural earth projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:NicolosiGlobularProjection a owl:Class ;
+    rdfs:label "nicolosi globular projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:ObliqueStereographicProjection a owl:Class ;
+    rdfs:label "oblique stereographic projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:ObliqueProjection .
+
+geocrs:OctantProjection a owl:Class ;
+    rdfs:label "octant projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:OrteliusOvalProjection a owl:Class ;
+    rdfs:label "ortelius oval projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:OrthographicProjection a owl:Class ;
+    rdfs:label "orthographic projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:PerspectiveProjection .
+
+geocrs:PeirceQuincuncialProjection a owl:Class ;
+    rdfs:label "peirce quincuncial projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection .
+
+geocrs:Plutoid a owl:Class ;
+    rdfs:label "plutoid"@en ;
+    rdfs:subClassOf geocrs:DwarfPlanet .
+
+geocrs:QuadrilateralizedSphericalCubeProjection a owl:Class ;
+    rdfs:label "quadrilateralized spherical cube projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:QuarticAuthalicProjection a owl:Class ;
+    rdfs:label "quartic authalic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:RectangularPolyconicProjection a owl:Class ;
+    rdfs:label "rectangular polyconic projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:RobinsonProjection a owl:Class ;
+    rdfs:label "robinson projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:RotationOperation a owl:Class ;
+    rdfs:label "rotation transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:RoussilheProjection a owl:Class ;
+    rdfs:label "roussilhe projection"@en ;
+    rdfs:subClassOf geocrs:ObliqueProjection,
+        geocrs:StereographicProjection .
+
+geocrs:SRSRegistry a owl:Class ;
+    rdfs:label "srs registry"@en ;
+    skos:definition "A rdf-enabled registry for SRS definitions"@en .
+
+geocrs:ShearOperation a owl:Class ;
+    rdfs:label "shear transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:SinusoidalProjection a owl:Class ;
+    rdfs:label "sinusoidal projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:EquidistantProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:SpaceObliqueMercatorProjection a owl:Class ;
+    rdfs:label "space oblique mercator projection"@en ;
+    rdfs:subClassOf geocrs:ObliqueMercatorProjection .
+
+geocrs:Star a owl:Class ;
+    rdfs:label "star"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:Strebe1995Projection a owl:Class ;
+    rdfs:label "strebe 1995 projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:TemporalCountCS a owl:Class ;
+    rdfs:label "TemporalCountCS" ;
+    geocrs:constraint "coordinateType.eq.integer" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:TemporalCS ;
+    skos:definition "one-dimensional coordinate system used to record time as an integer countNote: A TemporalCountCS shall have one axis association." .
+
+geocrs:TemporalMeasureCS a owl:Class ;
+    rdfs:label "TemporalMeasureCS" ;
+    geocrs:constraint "coordinateType.eq.real" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:TemporalCS ;
+    skos:definition "one-dimensional coordinate system used to record a time as a real numberNote: A TemporalMeasureCS shall have one axis association." .
+
+geocrs:TheTimesProjection a owl:Class ;
+    rdfs:label "the times projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:ToblerHyperelliptical a owl:Class ;
+    rdfs:label "tobler hyperelliptical projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:TranslationOperation a owl:Class ;
+    rdfs:label "translation transformation operation"@en ;
+    rdfs:subClassOf geocrs:AffineTransformationOperation .
+
+geocrs:TwoPointEquidistantProjection a owl:Class ;
+    rdfs:label "two-point equidistance projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:EquidistantProjection .
+
+geocrs:UniversalTransverseMercatorProjection a owl:Class ;
+    rdfs:label "universal transverse mercator projection"@en ;
+    rdfs:subClassOf geocrs:TransverseMercatorProjection .
+
+geocrs:VanDerGrintenProjection a owl:Class ;
+    rdfs:label "van der grinten projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:VerticalPerspectiveProjection a owl:Class ;
+    rdfs:label "vertical perspective projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:PerspectiveProjection .
+
+geocrs:WagnerVIIProjection a owl:Class ;
+    rdfs:label "wagner VII projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:WatermanButterflyProjection a owl:Class ;
+    rdfs:label "waterman butterfly projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PolyhedralProjection .
+
+geocrs:WebMercatorProjection a owl:Class ;
+    rdfs:label "web mercator projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:WernerProjection a owl:Class ;
+    rdfs:label "werner projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:EquidistantProjection,
+        geocrs:PseudoConicalProjection .
+
+geocrs:WinkelTripelProjection a owl:Class ;
+    rdfs:label "winkel tripel projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:accuracy a owl:DatatypeProperty ;
+    rdfs:label "accuracy"@en ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:range xsd:double .
+
+geocrs:aggregationType a owl:AnnotationProperty .
+
+geocrs:approximates a owl:ObjectProperty ;
+    rdfs:label "approximates"@en ;
+    rdfs:domain geocrs:Geoid ;
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "defines an interstellar body which is approximated by the geoid"@en .
+
+geocrs:area_of_use a owl:ObjectProperty ;
+    rdfs:label "area of use"@en ;
+    rdfs:domain geocrs:CoordinateConcatenatedOperation,
+        geocrs:CoordinateConversionOperation,
+        geocrs:CoordinateOperation,
+        geocrs:CoordinateTransformationOperation,
+        geocrs:OtherCoordinateOperation ;
+    rdfs:range geocrs:AreaOfUse ;
+    skos:definition "Defines an area of use of an operation"@en .
+
+geocrs:asProj4 a owl:DatatypeProperty ;
+    rdfs:label "asProj4"@en ;
+    rdfs:domain geocrs:CRS,
+        geocrs:CoordinateSystem,
+        geocrs:PrimeMeridian ;
+    rdfs:range xsd:string ;
+    skos:definition "proj4 representation of the CRS"@en .
+
+geocrs:asProjJSON a owl:DatatypeProperty ;
+    rdfs:label "asProjJSON"@en ;
+    rdfs:domain geocrs:CRS,
+        geocrs:CoordinateSystem,
+        geocrs:PrimeMeridian ;
+    rdfs:range xsd:string ;
+    skos:definition "ProjJSON representation of the CRS"@en .
+
+geocrs:asWKT a owl:DatatypeProperty ;
+    rdfs:label "asWKT"@en ;
+    rdfs:domain geocrs:CRS,
+        geocrs:CoordinateSystem,
+        geocrs:PrimeMeridian ;
+    rdfs:range geocrs:wktLiteral ;
+    skos:definition "WKT representation of the CRS"@en .
+
+geocrs:associationName a owl:AnnotationProperty .
+
+geocrs:constraint a owl:AnnotationProperty .
+
+geocrs:eccentricity a owl:DatatypeProperty ;
+    rdfs:label "eccentricity"@en ;
+    rdfs:domain geocrs:Geoid ;
+    rdfs:range xsd:double ;
+    skos:definition "deviation of a curve or orbit from circularity"@en .
+
+geocrs:epsgCode a owl:DatatypeProperty ;
+    rdfs:label "epsgCode"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:string .
+
+geocrs:extent a owl:DatatypeProperty ;
+    rdfs:label "extent"@en ;
+    rdfs:domain geocrs:AreaOfUse ;
+    rdfs:range geocrs:wktLiteral ;
+    skos:definition "The extent of the area of use of a spatial reference system"@en .
+
+geocrs:falseEasting a owl:DatatypeProperty ;
+    rdfs:label "false easting"@en ;
+    rdfs:range xsd:string ;
+    skos:definition "A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient"@en .
+
+geocrs:falseNorthing a owl:DatatypeProperty ;
+    rdfs:label "false northing"@en ;
+    rdfs:range xsd:string ;
+    skos:definition "A value relating to distance north of a standard latitude but with a constant added to make the numbers convenient"@en .
+
+geocrs:flatteningParameter a owl:DatatypeProperty ;
+    rdfs:label "flattening parameter"@en ;
+    rdfs:domain geocrs:Geoid ;
+    rdfs:range xsd:double,
+        xsd:string .
+
+geocrs:has_ballpark_transformation a owl:DatatypeProperty ;
+    rdfs:label "has ballpark transformation"@en ;
+    rdfs:range xsd:boolean .
+
+geocrs:inverse_flattening a owl:DatatypeProperty ;
+    rdfs:label "inverse flattening"@en ;
+    rdfs:range xsd:double ;
+    skos:definition "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)"@en .
+
+geocrs:isAbstract a owl:AnnotationProperty .
+
+geocrs:isApplicableTo a owl:ObjectProperty ;
+    rdfs:label "is applicable to"@en ;
+    rdfs:domain geocrs:SpatialReferenceSystem ;
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "defines to which interstellar body the srs is applicable"@en .
+
+geocrs:isAppliedTo a owl:ObjectProperty ;
+    rdfs:label "is applied to"@en ;
+    rdfs:domain geocrs:ReferenceSystem ;
+    rdfs:range geocrs:SRSApplication ;
+    skos:definition "defines an srs application for which a srs definition has been used"@en .
+
+geocrs:isBound a owl:DatatypeProperty ;
+    rdfs:label "isBound"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is bound"@en .
+
+geocrs:isDeprecated a owl:DatatypeProperty ;
+    rdfs:label "isDeprecated"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is deprecated"@en .
+
+geocrs:isGeocentric a owl:DatatypeProperty ;
+    rdfs:label "isGeocentric"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is geocentric"@en .
+
+geocrs:isGeographic a owl:DatatypeProperty ;
+    rdfs:label "isGeographic"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is geographic"@en .
+
+geocrs:isProjected a owl:DatatypeProperty ;
+    rdfs:label "isProjected"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is projected"@en .
+
+geocrs:isVertical a owl:DatatypeProperty ;
+    rdfs:label "isVertical"@en ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates if the spatial reference system is vertical"@en .
+
+geocrs:is_semi_minor_computed a owl:DatatypeProperty ;
+    rdfs:label "is semi minor computed"@en ;
+    rdfs:range xsd:double .
+
+geocrs:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude"@en ;
+    rdfs:domain geocrs:PrimeMeridian ;
+    rdfs:range xsd:double ;
+    skos:definition "Longitude of a prime meridian"@en .
+
+geocrs:mass a owl:DatatypeProperty ;
+    rdfs:label "mass"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double ;
+    skos:definition "the mass of an interstellar body"@en .
+
+geocrs:orbital_period a owl:DatatypeProperty ;
+    rdfs:label "orbital period"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
+
+geocrs:planet_status a owl:ObjectProperty ;
+    rdfs:label "planet status"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:PlanetStatus ;
+    skos:definition "The status of the discovery of the planet, e.g. confirmed, unsure etc."@en .
+
+geocrs:radius a owl:DatatypeProperty ;
+    rdfs:label "radius"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double .
+
+geocrs:satelliteOf a owl:ObjectProperty ;
+    rdfs:label "satellite of"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "Defines an interstellar body as the natural satellite of another interstellar body."@en .
+
+geocrs:starDistance a owl:DatatypeProperty ;
+    rdfs:label "star distance"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range xsd:double ;
+    skos:definition "the distance of an interstellar body to the next star"@en .
+
+geocrs:unit a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "unit"@en ;
+    rdfs:domain geocrs:CRS,
+        geocrs:CoordinateSystemAxis ;
+    rdfs:range om:Unit .
+
+geocrs:unit_auth_code a owl:DatatypeProperty ;
+    rdfs:label "unit auth code"@en ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:range xsd:string .
+
+geocrs:unit_code a owl:DatatypeProperty ;
+    rdfs:label "unit code"@en ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:range xsd:string .
+
+geocrs:unit_conversion_factor a owl:DatatypeProperty ;
+    rdfs:label "unit conversion factor"@en ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:range xsd:string .
+
+geocrs:usage a owl:ObjectProperty ;
+    rdfs:label "usage"@en ;
+    rdfs:domain geocrs:Datum ;
+    rdfs:range geocrs:SRSApplication ;
+    skos:definition "Indicates an application of an SRS for which this datum may be used"@en .
+
+geocrs:uses a owl:ObjectProperty ;
+    rdfs:label "uses"@en ;
+    rdfs:domain geocrs:SRSApplication ;
+    rdfs:range geocrs:Projection ;
+    skos:definition "defines an srs application which uses a given projection"@en .
+
+geocrs:utm_zone a owl:DatatypeProperty ;
+    rdfs:label "utm zone"@en .
+
+<http://www.semanticweb.org/timohomburg/ontologies/2022/2/untitled-ontology-35> a owl:Ontology ;
+    rdfs:label "ISO 19111:2019 Common Classes",
+        "ISO 19111:2019 Coordinate Operations",
+        "ISO 19111:2019 Coordinate Reference Systems",
+        "ISO 19111:2019 Coordinate Systems",
+        "ISO 19111:2019 Coordinates",
+        "ISO 19111:2019 Datums",
+        "ISO 19111:2019 Referencing by coordinates" ;
+    ns1:source "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    owl:imports <http://def.isotc211.org/iso19103/2015/Collections>,
+        <http://def.isotc211.org/iso19103/2015/MeasureTypes>,
+        <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes>,
+        <http://def.isotc211.org/iso19107/2019/Geometry>,
+        <http://def.isotc211.org/iso19111/2007/Datums>,
+        <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation>,
+        <http://def.isotc211.org/iso19115/-1/2014/CommonClasses>,
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation>,
+        <http://def.isotc211.org/iso19150/-2/2012/base>,
+        <http://def.isotc211.org/iso19157/2013/DataQuality> ;
+    owl:versionInfo "2019-01" .
+
+skos:definition a owl:AnnotationProperty .
+
+skos:inScheme a owl:AnnotationProperty .
+
+skos:member a owl:AnnotationProperty .
+
+skos:prefLabel a owl:AnnotationProperty .
+
+<http://def.isotc211.org/iso19107/2019/Geometry#Geometry> a owl:Class .
+
+<http://def.isotc211.org/iso19108/2006/TemporalReferenceSystem#TM_ReferenceSystem> a owl:Class .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/aft> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "Axis positive direction is aftNote: for an observer at the centre of the object this will be towards its back, stern or tail." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "aft" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/awayFrom> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is away from the object" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "awayFrom" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/clockwise> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is clockwise from a specified direction" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "clockwise" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/columnNegative> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards lower pixel column" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "columnNegative" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/columnPositive> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards higher pixel column" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "columnPositive" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/counterClockwise> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is counter clockwise from a specified direction" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "counterClockwise" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayDown> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards bottom of approximately vertical display surface" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "displayDown" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayLeft> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is left in display" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "displayLeft" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayRight> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is right in display" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "displayRight" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/displayUp> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards top of approximately vertical display surface" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "displayUp" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/down> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is down relative to gravity" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "down" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/east> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is p.sl.2 radians clockwise from north" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "east" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/eastNorthEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately east-north-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "eastNorthEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/eastSouthEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately east-south-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "eastSouthEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/forward> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is forwardNote: For an observer at the centre of the object this is will be towards its front, bow or nose." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "forward" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/future> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "temporal axis positive direction is towards the future" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "future" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricX> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator with the prime meridian" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "geocentricX" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricY> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is in the equatorial plane from the centre of the modelled Earth towards the intersection of the equator and the meridian p.sl.2 radians eastwards from the prime meridian" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "geocentricY" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/geocentricZ> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is from the centre of the modelled Earth parallel to its rotation axis and towards its north pole" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "geocentricZ" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/north> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is northNote:  In a geodetic, geographic or projected CRS, north is defined through the geodetic reference frame. In an engineering CRS, north may be defined with respect to an engineering object rather than a geographical direction." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "north" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately north-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "northEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northNorthEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately north-north-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "northNorthEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northNorthWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately north-north-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "northNorthWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/northWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately north-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "northWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/past> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "temporal axis positive direction is towards the past" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "past" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/port> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "Axis positive direction is port Note: For an observer at the centre of the object this will be towards its left." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "port" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/rowNegative> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards lower pixel row" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "rowNegative" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/rowPositive> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards higher pixel row" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "rowPositive" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/south> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is p radians clockwise from north" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "south" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately south-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "southEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southSouthEast> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately south-south-east" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "southSouthEast" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southSouthWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately south-south-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "southSouthWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/southWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately south-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "southWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/starboard> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "Axis positive direction is starboard Note: For an observer at the centre of the object this will be towards its right." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "starboard" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/towards> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is towards the object" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "towards" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/unspecified> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is unspecified" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "unspecified" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/up> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is up relative to gravity" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "up" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/west> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is 3p.sl.2 radians clockwise from north" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "west" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/westNorthWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately west-north-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "westNorthWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection/westSouthWest> a geocrs:AxisDirection,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis positive direction is approximately west-south-west" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> ;
+    skos:prefLabel "westSouthWest" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/dateTime> a geocrs:CoordinateDataType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "compound quantity representable as a character string conformant with ISO 8601 used for a temporal coordinate system axis" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType> ;
+    skos:prefLabel "dateTime" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/integer> a geocrs:CoordinateDataType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "quantity expressed as a count used for a temporal or ordinal coordinate system axis" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType> ;
+    skos:prefLabel "integer" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType/real> a geocrs:CoordinateDataType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "quantity expressed as a measure used for a temporal coordinate system axis" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType> ;
+    skos:prefLabel "real" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning/exact> a geocrs:RangeMeaning,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "any value between and including minimumValue and maximumValue is valid" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning> ;
+    skos:prefLabel "exact" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning/wraparound> a geocrs:RangeMeaning,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "axis is continuous with values wrapping around at the minimumValue and maximumValueNote: Values with the same meaning repeat modulo the difference between maximumValue and minimumValue." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning> ;
+    skos:prefLabel "wraparound" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/Calendar> a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    ns1:isFormatOf geocrs:Calendar ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:prefLabel "Calendar - ConceptScheme" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/Calendar/prolepticGregorian> a geocrs:Calendar,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "proleptic Gregorian calendar as defined in ISO 8601Note: This is the default value." ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/Datums/code/Calendar> ;
+    skos:prefLabel "prolepticGregorian" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/geoid> a geocrs:RealizationMethod,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "realization is through a geoid height model or a height correction modelNote: This is applied to a specified geodetic CRS. " ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod> ;
+    skos:prefLabel "geoid" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/levelling> a geocrs:RealizationMethod,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "realization is by adjustment of a levelling network fixed to one or more tide gauges" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod> ;
+    skos:prefLabel "levelling" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod/tidal> a geocrs:RealizationMethod,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:definition "realization is through a tidal model or by tidal predictions" ;
+    skos:inScheme <http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod> ;
+    skos:prefLabel "tidal" .
+
+geocrs:CRS.geometricCoordinates a owl:ObjectProperty ;
+    rdfs:label "geometricCoordinates" ;
+    geocrs:associationName "Coordinate Reference System" ;
+    rdfs:domain geocrs:CRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19107/2019/SpatialReferenceSystems#GeometricCoordinateSystem> .
+
+geocrs:CompoundCRS a owl:Class ;
+    rdfs:label "CompoundCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:SingleCRS ;
+            owl:onProperty geocrs:CompoundCRS.componentReferenceSystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CompoundCRS.componentReferenceSystem ],
+        geocrs:CRS ;
+    skos:definition "coordinate reference system describing the position of points through two or more independent single coordinate reference systemsNote: two coordinate reference systems are independent of each other if coordinate values in one cannot be converted or transformed into coordinate values in the other." .
+
+geocrs:ConcatenatedOperation a owl:Class ;
+    rdfs:label "ConcatenatedOperation" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateOperation ;
+            owl:onProperty geocrs:ConcatenatedOperation.coordOperation ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ConcatenatedOperation.coordOperation ],
+        geocrs:CoordinateOperation ;
+    skos:definition "ordered sequence of two or more single coordinate operationsNote: The sequence of coordinate operations is constrained by the requirement that the source coordinate reference system of step (n + 1) shall be the same as the target coordinate reference system of step (n). The source coordinate reference system of the first step and the target coordinate reference system of the last step are the source and target coordinate reference system associated with the concatenated coordinate operation. For a concatenated coordinate operation sequence of n coordinate operations:     source CRS (concatenated coordinate operation) .eq. source CRS (coordinate operation step 1)     target CRS (coordinate operation step i) .eq. source CRS (coordinate operation step i + 1); i .eq. 1 ...(n - 1)     target CRS (concatenated coordinate operation) .eq. target CRS (coordinate operation step n) Instead of a forward coordinate operation, an inverse coordinate operation may be used for one or more of the coordinate operation steps mentioned above, if the inverse coordinate operation is uniquely defined by the forward coordinate operation method." .
+
+geocrs:CoordinateOperation.coordinateOperationAccuracy a owl:ObjectProperty ;
+    rdfs:label "coordinateOperationAccuracy" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19157/2013/DataQuality#DQ_PositionalAccuracy> ;
+    skos:definition "estimate(s) of the impact of this coordinate operation on point accuracyNote: Gives position error estimates for target coordinates of this coordinate operation, assuming no errors in source coordinates." .
+
+geocrs:DwarfPlanet a owl:Class ;
+    rdfs:label "dwarf planet"@en ;
+    rdfs:subClassOf geocrs:Planet .
+
+geocrs:DynamicGeodeticReferenceFrame a owl:Class ;
+    rdfs:label "DynamicGeodeticReferenceFrame" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+            owl:onProperty geocrs:DynamicGeodeticReferenceFrame.frameReferenceEpoch ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DynamicGeodeticReferenceFrame.frameReferenceEpoch ],
+        geocrs:GeodeticReferenceFrame ;
+    skos:definition "geodetic reference frame in which some of the parameters describe time evolution of defining station coordinatesExample: defining station coordinates having linear velocities to account for crustal motion." .
+
+geocrs:DynamicVerticalReferenceFrame a owl:Class ;
+    rdfs:label "DynamicVerticalReferenceFrame" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+            owl:onProperty geocrs:DynamicVerticalReferenceFrame.frameReferenceEpoch ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DynamicVerticalReferenceFrame.frameReferenceEpoch ],
+        geocrs:VerticalReferenceFrame ;
+    skos:definition "vertical reference frame in which some of the defining parameters have time dependencyExample: Defining station heights have velocity to account for post-glacial isostatic rebound motion." .
+
+geocrs:GeodeticCRS.velocityModel a owl:ObjectProperty ;
+    rdfs:label "velocityModel" ;
+    geocrs:associationName "Deformation" ;
+    rdfs:domain geocrs:GeodeticCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:PointMotionOperation .
+
+geocrs:GeographicObject.identifier a owl:ObjectProperty ;
+    rdfs:label "identifier" ;
+    rdfs:domain geocrs:GeographicObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+    skos:definition "identifier of the geographic object" .
+
+geocrs:IdentifiedObject.alias a owl:ObjectProperty ;
+    rdfs:label "alias" ;
+    rdfs:domain geocrs:IdentifiedObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/NameTypes#GenericName> ;
+    skos:definition "alternative name by which this object is identified" .
+
+geocrs:IdentifiedObject.identifier a owl:ObjectProperty ;
+    rdfs:label "identifier" ;
+    rdfs:domain geocrs:IdentifiedObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+    skos:definition "identifier which references elsewhere the object's defining information; alternatively an identifier by which this object can be referenced" .
+
+geocrs:NaturalSatellite a owl:Class ;
+    rdfs:label "natural satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody ;
+    skos:definition "an interstellar body orbiting around another interstellar body"@en .
+
+geocrs:ObjectUsage.domain a owl:ObjectProperty ;
+    rdfs:label "domain" ;
+    rdfs:domain geocrs:ObjectUsage ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ObjectDomain ;
+    skos:definition "scope and validity of a CRS-related object" .
+
+geocrs:ObliqueMercatorProjection a owl:Class ;
+    rdfs:label "oblique mercator projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:MercatorProjection,
+        geocrs:ObliqueProjection .
+
+geocrs:OperationMethod.parameter a owl:ObjectProperty ;
+    rdfs:label "parameter" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:OperationMethod ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeneralOperationParameter .
+
+geocrs:ParametricDatum.datumDefiningParameter a owl:ObjectProperty ;
+    rdfs:label "datumDefiningParameter" ;
+    rdfs:domain geocrs:ParametricDatum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DefiningParameter ;
+    skos:definition "parameter used to define the parametric datum" .
+
+geocrs:Planet a owl:Class ;
+    rdfs:label "planet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:RegisterOperations a owl:Class ;
+    rdfs:label "RegisterOperations" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation#CI_Citation> ;
+            owl:onProperty geocrs:RegisterOperations.authority ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:RegisterOperations.authority ] ;
+    skos:definition "operations supported in the Coordinate Operations package" .
+
+geocrs:SingleOperation.parameterValue a owl:ObjectProperty ;
+    rdfs:label "parameterValue" ;
+    geocrs:aggregationType "partOfCompositeAggregation" ;
+    rdfs:domain geocrs:SingleOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeneralParameterValue .
+
+geocrs:StereographicProjection a owl:Class ;
+    rdfs:label "stereographic projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:ConformalProjection ;
+    skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
+
+geocrs:TransverseMercatorProjection a owl:Class ;
+    rdfs:label "transverse mercator projection"@en ;
+    rdfs:subClassOf geocrs:MercatorProjection .
+
+geocrs:VerticalCRS.geoidModel a owl:ObjectProperty ;
+    rdfs:label "geoidModel" ;
+    geocrs:associationName "HeightTransformation" ;
+    rdfs:domain geocrs:VerticalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Transformation .
+
+geocrs:VerticalCRS.velocityModel a owl:ObjectProperty ;
+    rdfs:label "velocityModel" ;
+    geocrs:associationName "Deformation" ;
+    rdfs:domain geocrs:VerticalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:PointMotionOperation .
+
+<http://def.isotc211.org/iso19103/2015/MeasureTypes#Angle> a owl:Class .
+
+<http://def.isotc211.org/iso19103/2015/MeasureTypes#Scale> a owl:Class .
+
+<http://def.isotc211.org/iso19103/2015/MeasureTypes#UnitOfMeasure> a owl:Class .
+
+<http://def.isotc211.org/iso19103/2015/NameTypes#GenericName> a owl:Class .
+
+<http://def.isotc211.org/iso19107/2019/SpatialReferenceSystems#GeometricCoordinateSystem> a owl:Class .
+
+<http://def.isotc211.org/iso19111/2007/Datums#CD_Datum> a owl:Class .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning> a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    ns1:isFormatOf geocrs:RangeMeaning ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:prefLabel "RangeMeaning - ConceptScheme" .
+
+<http://def.isotc211.org/iso19115/-1/2014/ExtentInformation#EX_Extent> a owl:Class .
+
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation#CI_Citation> a owl:Class .
+
+geocrs:CompoundCRS.componentReferenceSystem a owl:ObjectProperty ;
+    rdfs:label "componentReferenceSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:CompoundCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:SingleCRS .
+
+geocrs:ConcatenatedOperation.coordOperation a owl:ObjectProperty ;
+    rdfs:label "coordOperation" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:ConcatenatedOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateOperation .
+
+geocrs:Conversion.operationVersion a owl:DatatypeProperty ;
+    rdfs:label "operationVersion" ;
+    rdfs:domain geocrs:Conversion ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "(not applicable) Note: This attribute is not used in a coordinate conversion." .
+
+geocrs:CoordinateMetadata.coordinateEpoch a owl:ObjectProperty ;
+    rdfs:label "coordinateEpoch" ;
+    rdfs:domain geocrs:CoordinateMetadata ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DataEpoch ;
+    skos:definition "epoch at which a coordinate set referenced to a dynamic CRS is valid Note: Required if the CRS is dynamic, otherwise should no be given." .
+
+geocrs:CoordinateMetadata.crs a owl:ObjectProperty ;
+    rdfs:label "crs" ;
+    rdfs:domain geocrs:CoordinateMetadata ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CRS ;
+    skos:definition ".lt.font color.eq..gu.#ff0000.gu..gt.full definition.lt..sl.font.gt. of the coordinate reference system to which a coordinate set is referenced" .
+
+geocrs:CoordinateMetadata.crsID a owl:ObjectProperty ;
+    rdfs:label "crsID" ;
+    rdfs:domain geocrs:CoordinateMetadata ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+    skos:definition "identifier of the coordinate reference system to which a coordinate set is referenced" .
+
+geocrs:CoordinateOperation.interpolationCRS a owl:ObjectProperty ;
+    rdfs:label "interpolationCRS" ;
+    geocrs:associationName "Interpolation" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CRS .
+
+geocrs:CoordinateOperation.operationVersion a owl:DatatypeProperty ;
+    rdfs:label "operationVersion" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters) Condition: Mandatory when describing a coordinate transformation or point motion operation, and should not be supplied for a coordinate conversion." .
+
+geocrs:CoordinateOperation.sourceCRS a owl:ObjectProperty ;
+    rdfs:label "sourceCRS" ;
+    geocrs:associationName "Source" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CRS .
+
+geocrs:CoordinateOperation.sourceCoordinateEpoch a owl:ObjectProperty ;
+    rdfs:label "sourceCoordinateEpoch" ;
+    geocrs:associationName "SourceEpoch" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DataEpoch .
+
+geocrs:CoordinateOperation.sourcePosition a owl:ObjectProperty ;
+    rdfs:label "sourcePosition" ;
+    geocrs:associationName "Source" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> .
+
+geocrs:CoordinateOperation.targetCRS a owl:ObjectProperty ;
+    rdfs:label "targetCRS" ;
+    geocrs:associationName "Target" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CRS .
+
+geocrs:CoordinateOperation.targetCoordinateEpoch a owl:ObjectProperty ;
+    rdfs:label "targetCoordinateEpoch" ;
+    geocrs:associationName "TargetEpoch" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DataEpoch .
+
+geocrs:CoordinateOperation.targetPosition a owl:ObjectProperty ;
+    rdfs:label "targetPosition" ;
+    geocrs:associationName "Target" ;
+    rdfs:domain geocrs:CoordinateOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> .
+
+geocrs:CoordinateSet a owl:Class ;
+    rdfs:label "CoordinateSet" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateMetadata ;
+            owl:onProperty geocrs:CoordinateSet.coordinateMetadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> ;
+            owl:onProperty geocrs:CoordinateSet.coordinateTuple ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSet.coordinateTuple ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSet.coordinateMetadata ] ;
+    skos:definition "description of the coordinate tuples in a coordinate set Note: A single coordinate tuple is treated as a special case of coordinate set containing only one member." .
+
+geocrs:CoordinateSet.coordinateMetadata a owl:ObjectProperty ;
+    rdfs:label "coordinateMetadata" ;
+    rdfs:domain geocrs:CoordinateSet ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateMetadata .
+
+geocrs:CoordinateSet.coordinateTuple a owl:ObjectProperty ;
+    rdfs:label "coordinateTuple" ;
+    rdfs:domain geocrs:CoordinateSet ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> ;
+    skos:definition "position described by a coordinate tuple" .
+
+geocrs:CoordinateSystem.axis a owl:ObjectProperty ;
+    rdfs:label "axis" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:CoordinateSystem ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateSystemAxis .
+
+geocrs:CoordinateSystemAxis.axisAbbrev a owl:DatatypeProperty ;
+    rdfs:label "axisAbbrev" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "abbreviation used for this coordinate system axis; this abbreviation is also used to identify the coordinates in the coordinate tupleExamples: X and Y. Note: when the standard symbol is a Greek character the abbreviation may differ from the symbol (for example to constrain symbols to other character sets)." .
+
+geocrs:CoordinateSystemAxis.axisDirection a owl:ObjectProperty ;
+    rdfs:label "axisDirection" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:AxisDirection ;
+    skos:definition "direction of this coordinate system axis (or in the case of Cartesian projected coordinates, the direction of this coordinate system axis locally) Examples: north or south, east or west, up or down. Note: Within any set of coordinate system axes, only one of each pair of terms can be used. For Earth-fixed CRSs, this direction is often approximate and intended to provide a human interpretable meaning to the axis. When a geodetic reference frame is used, the precise directions of the axes may therefore vary slightly from this approximate direction. Note that an EngineeringCRS often requires specific descriptions of the directions of its coordinate system axes." .
+
+geocrs:CoordinateSystemAxis.axisUnitID a owl:ObjectProperty ;
+    rdfs:label "axisUnitID" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#UnitOfMeasure> ;
+    skos:definition "spatial unit or temporal quantity used for this coordinate system axisNote: The value of a coordinate in a coordinate tuple is recorded using this unit. This element is omitted if this axis is part of a DateTimeTemporalCS or an OrdinalCS, and is provided in all other cases." .
+
+geocrs:CoordinateSystemAxis.maximumValue a owl:ObjectProperty ;
+    rdfs:label "maximumValue" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/Numerics#Number> ;
+    skos:definition "maximum value normally allowed for this axis, in the unit for the axis" .
+
+geocrs:CoordinateSystemAxis.minimumValue a owl:ObjectProperty ;
+    rdfs:label "minimumValue" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/Numerics#Number> ;
+    skos:definition "minimum value normally allowed for this axis, in the unit for the axis" .
+
+geocrs:CoordinateSystemAxis.rangeMeaning a owl:ObjectProperty ;
+    rdfs:label "rangeMeaning" ;
+    rdfs:domain geocrs:CoordinateSystemAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:RangeMeaning ;
+    skos:definition "meaning of axis value range specified by minimumValue and maximumValueNote: This element shall be omitted when both minimumValue and maximumValue are omitted. It may be included when minimumValue and.sl.or maximumValue are included. If this element is omitted when minimumValue or maximumValue are included, the meaning is unspecified." .
+
+geocrs:CylindricalCS a owl:Class ;
+    rdfs:label "CylindricalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate systemNote: A CylindricalCS shall have three axis associations." .
+
+geocrs:DataEpoch.coordinateEpoch a owl:ObjectProperty ;
+    rdfs:label "coordinateEpoch" ;
+    rdfs:domain geocrs:DataEpoch ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+    skos:definition "date at which coordinates are referenced to a dynamic coordinate reference system, expressed as a decimal year in the Gregorian calendarExample: 2017-03-25 in the Gregorian calendar is epoch 2017.23." .
+
+geocrs:Datum.anchorDefinition a owl:DatatypeProperty ;
+    rdfs:label "anchorDefinition" ;
+    rdfs:domain geocrs:Datum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "description, possibly including coordinates of an identified point or points, of the relationship used to anchor a coordinate system to the Earth or alternate object Note: For modern geodetic reference frames the anchor may be a set of station coordinates; if the reference frame is dynamic it will also include coordinate velocities. For a traditional geodetic datum, the anchor may be a point known as the fundamental point, which is traditionally the point where the relationship between geoid and ellipsoid is defined, together with a direction from that point.- For a vertical reference frame the anchor may be the zero level at one or more defined locations or a conventionally defined surface. - For an engineering datum, the anchor may be an identified physical point with the orientation defined relative to the object." .
+
+geocrs:Datum.conventionalRS a owl:ObjectProperty ;
+    rdfs:label "conventionalRS" ;
+    rdfs:domain geocrs:Datum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:IdentifiedObject ;
+    skos:definition "name, identifier, alias and remarks for the terrestrial reference system or vertical reference system realized by this reference frameExamples: .gu.ITRS.gu. for ITRF88 through ITRF2008 and ITRF2014, or .gu.EVRS.gu. for EVRF2000 and EVRF2007." .
+
+geocrs:Datum.publicationDate a owl:DatatypeProperty ;
+    rdfs:label "publicationDate" ;
+    rdfs:domain geocrs:Datum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range rdf:XMLLiteral ;
+    skos:definition "date on which the datum definition was published" .
+
+geocrs:DatumEnsemble.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    rdfs:domain geocrs:DatumEnsemble ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Datum .
+
+geocrs:DatumEnsemble.ensembleAccuracy a owl:ObjectProperty ;
+    rdfs:label "ensembleAccuracy" ;
+    rdfs:domain geocrs:DatumEnsemble ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19157/2013/DataQuality#DQ_PositionalAccuracy> ;
+    skos:definition "inaccuracy introduced through use of this collection of reference frames or datumsNote: It is an indication of the differences in coordinate values at all points between the various realizations that have been grouped into this datum ensemble." .
+
+geocrs:DefiningParameter.parameterValue a owl:ObjectProperty ;
+    rdfs:label "parameterValue" ;
+    rdfs:domain geocrs:DefiningParameter ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ParameterValue ;
+    skos:definition "value of the datum-defining parameter" .
+
+geocrs:DerivedCRS.baseCRS a owl:ObjectProperty ;
+    rdfs:label "baseCRS" ;
+    rdfs:domain geocrs:DerivedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:SingleCRS .
+
+geocrs:DerivedCRS.derivingConversion a owl:ObjectProperty ;
+    rdfs:label "derivingConversion" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "Definition" ;
+    rdfs:domain geocrs:DerivedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Conversion .
+
+geocrs:DerivedProjectedCRS a owl:Class ;
+    rdfs:label "DerivedProjectedCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ProjectedCRS ;
+            owl:onProperty geocrs:DerivedProjectedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DerivedProjectedCS ;
+            owl:onProperty geocrs:DerivedProjectedCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DerivedProjectedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DerivedProjectedCRS.coordinateSystem ],
+        geocrs:DerivedCRS ;
+    skos:definition "derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS" .
+
+geocrs:DerivedProjectedCRS.baseCRS a owl:ObjectProperty ;
+    rdfs:label "baseCRS" ;
+    rdfs:domain geocrs:DerivedProjectedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ProjectedCRS .
+
+geocrs:DerivedProjectedCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:DerivedProjectedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DerivedProjectedCS .
+
+geocrs:DerivedProjectedCS a owl:Class ;
+    rdfs:label "DerivedProjectedCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uAffineCS geocrs:uCartesianCS geocrs:uCylindricalCS geocrs:uOrdinalCS geocrs:uPolarCS geocrs:uSphericalCS ) ] ;
+    skos:definition "coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system" .
+
+geocrs:DynamicGeodeticReferenceFrame.frameReferenceEpoch a owl:ObjectProperty ;
+    rdfs:label "frameReferenceEpoch" ;
+    rdfs:domain geocrs:DynamicGeodeticReferenceFrame ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+    skos:definition "epoch to which the coordinates of stations defining the dynamic geodetic reference frame are referenced, expressed as a decimal year in the Gregorian calendarExample: 2016,47." .
+
+geocrs:DynamicVerticalReferenceFrame.frameReferenceEpoch a owl:ObjectProperty ;
+    rdfs:label "frameReferenceEpoch" ;
+    rdfs:domain geocrs:DynamicVerticalReferenceFrame ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+    skos:definition "epoch to which the coordinates of stations defining the dynamic vertical reference frame are referenced, expressed as a decimal year in the Gregorian calendarExample: 2016,47." .
+
+geocrs:Ellipsoid.secondDefiningParameter a owl:ObjectProperty ;
+    rdfs:label "secondDefiningParameter" ;
+    rdfs:domain geocrs:Ellipsoid ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:SecondDefiningParameter ;
+    skos:definition "definition of the second parameter that describes the shape of this ellipsoid" .
+
+geocrs:Ellipsoid.semiMajorAxis a owl:ObjectProperty ;
+    rdfs:label "semiMajorAxis" ;
+    rdfs:domain geocrs:Ellipsoid ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+    skos:definition "length of the semi-major axis of the ellipsoid" .
+
+geocrs:Ellipsoid.semiMedianAxis a owl:ObjectProperty ;
+    rdfs:label "semiMedianAxis" ;
+    rdfs:domain geocrs:Ellipsoid ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+    skos:definition "length of the semi-median axis of a triaxial ellipsoidNote: This parameter is not required for a biaxial ellipsoid." .
+
+geocrs:EngineeringCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:EngineeringCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:EngineeringCS .
+
+geocrs:EngineeringCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:EngineeringCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:EngineeringDatum .
+
+geocrs:EngineeringCS a owl:Class ;
+    rdfs:label "EngineeringCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uAffineCS geocrs:uCartesianCS geocrs:uCylindricalCS geocrs:uLinearCS geocrs:uOrdinalCS geocrs:uPolarCS geocrs:uSphericalCS ) ] ;
+    skos:definition "coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system" .
+
+geocrs:EngineeringDatum a owl:Class ;
+    rdfs:label "EngineeringDatum" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:Datum ;
+    skos:definition "definition of the origin and orientation of an engineering coordinate reference systemNote: The origin can be fixed with respect to the Earth (such as a defined point at a construction site), or be a defined point on a moving vehicle (such as on a ship or satellite), or a defined point of an image." .
+
+geocrs:Formula a owl:Class ;
+    rdfs:label "Formula" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uFormula geocrs:uFormulaCitation ) ] ;
+    skos:definition "specification of the coordinate operation method formula" .
+
+geocrs:GeneralParameterValue.parameter a owl:ObjectProperty ;
+    rdfs:label "parameter" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:GeneralParameterValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeneralOperationParameter .
+
+geocrs:GeodeticCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:GeodeticCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeodeticCS .
+
+geocrs:GeodeticCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:GeodeticCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeodeticReferenceFrame .
+
+geocrs:GeodeticCS a owl:Class ;
+    rdfs:label "GeodeticCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uCartesianCS geocrs:uEllipsoidalCS geocrs:uSphericalCS ) ] ;
+    skos:definition "coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system" .
+
+geocrs:GeodeticReferenceFrame.ellipsoid a owl:ObjectProperty ;
+    rdfs:label "ellipsoid" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:GeodeticReferenceFrame ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Ellipsoid .
+
+geocrs:GeodeticReferenceFrame.primeMeridian a owl:ObjectProperty ;
+    rdfs:label "primeMeridian" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:GeodeticReferenceFrame ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:PrimeMeridian .
+
+geocrs:GeographicCRS a owl:Class ;
+    rdfs:label "GeographicCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:EllipsoidalCS ;
+            owl:onProperty geocrs:GeographicCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeographicCRS.coordinateSystem ],
+        geocrs:GeodeticCRS ;
+    skos:definition "coordinate reference system associated with a geodetic reference frame and a two- or three-dimensional ellipsoidal coordinate system Note: If the geodetic reference frame is dynamic then the geographic CRS is dynamic, else it is static." .
+
+geocrs:GeographicCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:GeographicCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:EllipsoidalCS .
+
+geocrs:IdentifiedObject.name a owl:ObjectProperty ;
+    rdfs:label "name" ;
+    rdfs:domain geocrs:IdentifiedObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+    skos:definition "primary name by which this object is identified" .
+
+geocrs:IdentifiedObject.remarks a owl:DatatypeProperty ;
+    rdfs:label "remarks" ;
+    rdfs:domain geocrs:IdentifiedObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "comments on or information about this object, including data source information" .
+
+geocrs:LinearCS a owl:Class ;
+    rdfs:label "LinearCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "one-dimensional coordinate system that consists of the points that lie on the single axis describedNote: The associated coordinate is the distance – with or without offset – from the origin point, specified through the datum definition, to the point along the axis. Example: usage of the line feature representing a pipeline to describe points on or along that pipeline. A LinearCS shall have one axis association." .
+
+geocrs:MercatorProjection a owl:Class ;
+    rdfs:label "mercator projection"@en ;
+    rdfs:subClassOf geocrs:ConformalProjection,
+        geocrs:CylindricalProjection .
+
+geocrs:ObjectDomain.domainOfValidity a owl:ObjectProperty ;
+    rdfs:label "domainOfValidity" ;
+    rdfs:domain geocrs:ObjectDomain ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/ExtentInformation#EX_Extent> ;
+    skos:definition "spatial and temporal extent in which this object is valid" .
+
+geocrs:ObjectDomain.scope a owl:DatatypeProperty ;
+    rdfs:label "scope" ;
+    rdfs:domain geocrs:ObjectDomain ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "description of usage, or limitations of usage, for which this object is valid Note: If unknown, enter .gu.not known.gu.." .
+
+geocrs:OperationMethod.formulaReference a owl:ObjectProperty ;
+    rdfs:label "formulaReference" ;
+    rdfs:domain geocrs:OperationMethod ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Formula ;
+    skos:definition "formula(s) or procedure used by this coordinate operation methodNote: This may be a reference to a publication. Note that the operation method may not be analytic, in which case this attribute references or contains the procedure, not an analytic formula." .
+
+geocrs:OperationParameter a owl:Class ;
+    rdfs:label "OperationParameter" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:GeneralOperationParameter ;
+    skos:definition "definition of a parameter used by a coordinate operation methodNote: Most parameter values are numeric, but other types of parameter values are possible." .
+
+geocrs:OperationParameterGroup.maximumOccurs a owl:DatatypeProperty ;
+    rdfs:label "maximumOccurs" ;
+    rdfs:domain geocrs:OperationParameterGroup ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:integer ;
+    skos:definition "maximum number of times that values for this parameter group or parameter can be includedNote: If this attribute is omitted, the maximum number is one." .
+
+geocrs:OperationParameterGroup.minimumOccurs a owl:DatatypeProperty ;
+    rdfs:label "minimumOccurs" ;
+    rdfs:domain geocrs:OperationParameterGroup ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:integer ;
+    skos:definition "minimum number of times that values for this parameter group or parameter is requiredNote: If this attribute is omitted, the minimum number is one." .
+
+geocrs:OperationParameterGroup.parameter a owl:ObjectProperty ;
+    rdfs:label "parameter" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:OperationParameterGroup ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeneralOperationParameter .
+
+geocrs:OperationParameterValue a owl:Class ;
+    rdfs:label "OperationParameterValue" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:OperationParameter ;
+            owl:onProperty geocrs:OperationParameterValue.parameter ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ParameterValue ;
+            owl:onProperty geocrs:OperationParameterValue.parameterValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationParameterValue.parameter ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationParameterValue.parameterValue ],
+        geocrs:GeneralParameterValue ;
+    skos:definition "parameter value, ordered sequence of values, or reference to a file of parameter values" .
+
+geocrs:OperationParameterValue.parameter a owl:ObjectProperty ;
+    rdfs:label "parameter" ;
+    rdfs:domain geocrs:OperationParameterValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:OperationParameter .
+
+geocrs:OperationParameterValue.parameterValue a owl:ObjectProperty ;
+    rdfs:label "parameterValue" ;
+    rdfs:domain geocrs:OperationParameterValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ParameterValue ;
+    skos:definition "value of the coordinate operation parameter" .
+
+geocrs:OrdinalCS.coordinateType a owl:ObjectProperty ;
+    rdfs:label "coordinateType" ;
+    rdfs:domain geocrs:OrdinalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateDataType ;
+    skos:definition "datatype of coordinate values" .
+
+geocrs:ParameterValueGroup a owl:Class ;
+    rdfs:label "ParameterValueGroup" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:OperationParameterGroup ;
+            owl:onProperty geocrs:ParameterValueGroup.group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeneralParameterValue ;
+            owl:onProperty geocrs:ParameterValueGroup.parameterValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ParameterValueGroup.parameterValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ParameterValueGroup.group ],
+        geocrs:GeneralParameterValue ;
+    skos:definition "group of related parameter valuesNote: The same group can be repeated more than once in a coordinate operation or higher level ParameterValueGroup, if those instances contain different values of one or more ParameterValues which suitably distinguish among those groups." .
+
+geocrs:ParameterValueGroup.group a owl:ObjectProperty ;
+    rdfs:label "group" ;
+    rdfs:domain geocrs:ParameterValueGroup ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:OperationParameterGroup .
+
+geocrs:ParameterValueGroup.parameterValue a owl:ObjectProperty ;
+    rdfs:label "parameterValue" ;
+    geocrs:aggregationType "partOfCompositeAggregation" ;
+    rdfs:domain geocrs:ParameterValueGroup ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeneralParameterValue .
+
+geocrs:ParametricCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:ParametricCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ParametricCS .
+
+geocrs:ParametricCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:ParametricCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:ParametricDatum .
+
+geocrs:ParametricCS a owl:Class ;
+    rdfs:label "ParametricCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "one-dimensional coordinate reference system which uses parameter values or functions that may vary monotonically with heightNote: A ParametricCS shall have one axis association." .
+
+geocrs:PassThroughOperation a owl:Class ;
+    rdfs:label "PassThroughOperation" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateOperation ;
+            owl:onProperty geocrs:PassThroughOperation.coordOperation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Sequence ;
+            owl:onProperty geocrs:PassThroughOperation.modifiedCoordinate ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:PassThroughOperation.coordOperation ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:PassThroughOperation.modifiedCoordinate ],
+        geocrs:CoordinateOperation ;
+    skos:definition "specification of a subset of coordinate tuples that is subject to a coordinate operation" .
+
+geocrs:PassThroughOperation.coordOperation a owl:ObjectProperty ;
+    rdfs:label "coordOperation" ;
+    rdfs:domain geocrs:PassThroughOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateOperation .
+
+geocrs:PassThroughOperation.modifiedCoordinate a owl:ObjectProperty ;
+    rdfs:label "modifiedCoordinate" ;
+    rdfs:domain geocrs:PassThroughOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Sequence ;
+    skos:definition "ordered sequence of positive integers defining the positions in a source coordinate tuple of the coordinates affected by this pass-through operation" .
+
+geocrs:PointMotionOperation.operationVersion a owl:DatatypeProperty ;
+    rdfs:label "operationVersion" ;
+    rdfs:domain geocrs:PointMotionOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "version of the point motion operation (i.e. instantiation due to the stochastic nature of the parameters) Note: This attribute is mandatory in a point motion operation." .
+
+geocrs:PolarCS a owl:Class ;
+    rdfs:label "PolarCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference directionNote: A PolarCS shall have two axis associations." .
+
+geocrs:PrimeMeridian.greenwichLongitude a owl:ObjectProperty ;
+    rdfs:label "greenwichLongitude" ;
+    rdfs:domain geocrs:PrimeMeridian ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Angle> ;
+    skos:definition "longitude of the prime meridian measured from the internationally-recognised reference meridian ('Greenwich meridian'), positive eastwardNote 1: Default value: 0 degrees. Note 2: If the value of the prime meridian name is “Greenwich” then the value of greenwichLongitude is required to be 0 degrees." .
+
+geocrs:ProjectedCRS.baseCRS a owl:ObjectProperty ;
+    rdfs:label "baseCRS" ;
+    rdfs:domain geocrs:ProjectedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeodeticCRS .
+
+geocrs:ProjectedCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:ProjectedCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CartesianCS .
+
+geocrs:RegisterOperations.authority a owl:ObjectProperty ;
+    rdfs:label "authority" ;
+    rdfs:domain geocrs:RegisterOperations ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation#CI_Citation> .
+
+geocrs:RetroazimuthalProjection a owl:Class ;
+    rdfs:label "retroazimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:SecondDefiningParameter a owl:Class ;
+    rdfs:label "SecondDefiningParameter" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uInverseFlattening geocrs:uIsSphere geocrs:uSemiMinorAxis ) ] ;
+    skos:definition "definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoidNote: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis “degenerates” into the radius of the sphere." .
+
+geocrs:SingleCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:SingleCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateSystem .
+
+geocrs:SingleCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:SingleCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Datum .
+
+geocrs:SingleCRS.datumEnsemble a owl:ObjectProperty ;
+    rdfs:label "datumEnsemble" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    rdfs:domain geocrs:SingleCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:DatumEnsemble .
+
+geocrs:SingleOperation.method a owl:ObjectProperty ;
+    rdfs:label "method" ;
+    rdfs:domain geocrs:SingleOperation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:OperationMethod .
+
+geocrs:SphericalCS a owl:Class ;
+    rdfs:label "SphericalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinatesNote: Not to be confused with an ellipsoidal coordinate system based on an ellipsoid .gu.degenerated.gu. into a sphere. A SphericalCS shall have three axis associations." .
+
+geocrs:TemporalCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:TemporalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:TemporalCS .
+
+geocrs:TemporalCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:TemporalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:TemporalDatum .
+
+geocrs:TemporalCS.coordinateType a owl:ObjectProperty ;
+    rdfs:label "coordinateType" ;
+    rdfs:domain geocrs:TemporalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CoordinateDataType ;
+    skos:definition "datatype of coordinate values" .
+
+geocrs:TemporalDatum.calendar a owl:ObjectProperty ;
+    rdfs:label "calendar" ;
+    rdfs:domain geocrs:TemporalDatum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Calendar ;
+    skos:definition "calendar to which the temporal origin is referencedNote: Default value is prolepticGregorian" .
+
+geocrs:TemporalDatum.origin a owl:DatatypeProperty ;
+    rdfs:label "origin" ;
+    rdfs:domain geocrs:TemporalDatum ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "date and time to which temporal coordinates are referenced, expressed in conformance with ISO 8601" .
+
+geocrs:Transformation.operationVersion a owl:DatatypeProperty ;
+    rdfs:label "operationVersion" ;
+    rdfs:domain geocrs:Transformation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string ;
+    skos:definition "version of the coordinate transformation (i.e. instantiation due to the stochastic nature of the parameters)" .
+
+geocrs:VerticalCRS.coordinateSystem a owl:ObjectProperty ;
+    rdfs:label "coordinateSystem" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "CoordinateSystem" ;
+    rdfs:domain geocrs:VerticalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:VerticalCS .
+
+geocrs:VerticalCRS.datum a owl:ObjectProperty ;
+    rdfs:label "datum" ;
+    geocrs:aggregationType "partOfSharedAggregation" ;
+    geocrs:associationName "DefiningDatum" ;
+    rdfs:domain geocrs:VerticalCRS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:VerticalReferenceFrame .
+
+geocrs:VerticalCS a owl:Class ;
+    rdfs:label "VerticalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth's gravity fieldNote: An exact definition is deliberately not provided as the complexities of the subject fall outside the scope of this document. A VerticalCS shall have one axis association." .
+
+geocrs:VerticalReferenceFrame.realizationMethod a owl:ObjectProperty ;
+    rdfs:label "realizationMethod" ;
+    rdfs:domain geocrs:VerticalReferenceFrame ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:RealizationMethod ;
+    skos:definition "method through which this vertical reference frame is realized" .
+
+geocrs:uAffineCS.affineCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uAffineCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:AffineCS ;
+    skos:prefLabel "affineCS" .
+
+geocrs:uBooleanValue a owl:Class ;
+    rdfs:label "BooleanValue" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty geocrs:uBooleanValue.booleanValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uBooleanValue.booleanValue ] ;
+    skos:definition "boolean value of a coordinate operation parameterNote: A Boolean value does not have an associated unit." .
+
+geocrs:uBooleanValue.booleanValue a owl:DatatypeProperty ;
+    rdfs:label "booleanValue" ;
+    rdfs:domain geocrs:uBooleanValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:boolean .
+
+geocrs:uCartesianCS.cartesianCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uCartesianCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CartesianCS ;
+    skos:prefLabel "cartesianCS" .
+
+geocrs:uCylindricalCS.cylindricalCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uCylindricalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:CylindricalCS ;
+    skos:prefLabel "cylindricalCS" .
+
+geocrs:uEllipsoidalCS a owl:Class ;
+    rdfs:label "EllipsoidalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:EllipsoidalCS ;
+            owl:onProperty geocrs:uEllipsoidalCS.ellipsoidalCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uEllipsoidalCS.ellipsoidalCS ] ;
+    skos:definition "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height. An EllipsoidalCS shall have two or three associations; the number of associations shall equal the dimension of the CS." .
+
+geocrs:uEllipsoidalCS.ellipsoidalCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uEllipsoidalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:EllipsoidalCS ;
+    skos:prefLabel "ellipsoidalCS" .
+
+geocrs:uFormula a owl:Class ;
+    rdfs:label "Formula" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:uFormula.formula ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uFormula.formula ] ;
+    skos:definition "formula(s) or procedure used by the coordinate operation method" .
+
+geocrs:uFormula.formula a owl:DatatypeProperty ;
+    rdfs:label "formula" ;
+    rdfs:domain geocrs:uFormula ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string .
+
+geocrs:uFormulaCitation a owl:Class ;
+    rdfs:label "FormulaCitation" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation> ;
+            owl:onProperty geocrs:uFormulaCitation.formulaCitation ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uFormulaCitation.formulaCitation ] ;
+    skos:definition "reference to a publication giving the formula(s) or procedure used by the coordinate operation method" .
+
+geocrs:uFormulaCitation.formulaCitation a owl:ObjectProperty ;
+    rdfs:domain geocrs:uFormulaCitation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation> ;
+    skos:prefLabel "formulaCitation" .
+
+geocrs:uGeographicObject a owl:Class ;
+    rdfs:label "GeographicObject" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeographicObject ;
+            owl:onProperty geocrs:uGeographicObject.geographicObject ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uGeographicObject.geographicObject ] ;
+    skos:definition "identifier of a geographic feature of which the coordinates are used as operation parameters" .
+
+geocrs:uGeographicObject.geographicObject a owl:ObjectProperty ;
+    rdfs:domain geocrs:uGeographicObject ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:GeographicObject ;
+    skos:prefLabel "geographicObject" .
+
+geocrs:uIntegerValue a owl:Class ;
+    rdfs:label "IntegerValue" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty geocrs:uIntegerValue.integerValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uIntegerValue.integerValue ] ;
+    skos:definition "positive integer value of a coordinate operation parameter, usually used for a countNote: An integer value does not have an associated unit." .
+
+geocrs:uIntegerValue.integerValue a owl:DatatypeProperty ;
+    rdfs:label "integerValue" ;
+    rdfs:domain geocrs:uIntegerValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:integer .
+
+geocrs:uIntegerValueList a owl:Class ;
+    rdfs:label "IntegerValueList" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Sequence ;
+            owl:onProperty geocrs:uIntegerValueList.integerValueList ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uIntegerValueList.integerValueList ] ;
+    skos:definition "ordered collection, i.e. sequence, of two or more integer values of a coordinate operation parameter list, usually used for countsNote: These integer values do not have an associated unit." .
+
+geocrs:uIntegerValueList.integerValueList a owl:ObjectProperty ;
+    rdfs:domain geocrs:uIntegerValueList ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Sequence ;
+    skos:prefLabel "integerValueList" .
+
+geocrs:uInverseFlattening a owl:Class ;
+    rdfs:label "InverseFlattening" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Scale> ;
+            owl:onProperty geocrs:uInverseFlattening.inverseFlattening ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uInverseFlattening.inverseFlattening ] ;
+    skos:definition "inverse flattening value of the ellipsoid" .
+
+geocrs:uInverseFlattening.inverseFlattening a owl:ObjectProperty ;
+    rdfs:domain geocrs:uInverseFlattening ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Scale> ;
+    skos:prefLabel "inverseFlattening" .
+
+geocrs:uIsSphere a owl:Class ;
+    rdfs:label "IsSphere" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty geocrs:uIsSphere.isSphere ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uIsSphere.isSphere ] ;
+    skos:definition "ellipsoid is degenerate and is actually a sphereNote: The sphere is completely defined by the semi-major axis, which is the radius of the sphere. This attribute has the value “true” if the figure is a sphere." .
+
+geocrs:uIsSphere.isSphere a owl:DatatypeProperty ;
+    rdfs:label "isSphere" ;
+    rdfs:domain geocrs:uIsSphere ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:boolean .
+
+geocrs:uLinearCS a owl:Class ;
+    rdfs:label "LinearCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:LinearCS ;
+            owl:onProperty geocrs:uLinearCS.linearCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uLinearCS.linearCS ] ;
+    skos:definition "one-dimensional coordinate system that consists of the points that lie on the single axis described. The associated coordinate is the distance – with or without offset – from the origin point, specified through the datum definition, to the point along the axis. Example: usage of the line feature representing a pipeline to describe points on or along that pipeline. A LinearCS shall have one axis association." .
+
+geocrs:uLinearCS.linearCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uLinearCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:LinearCS ;
+    skos:prefLabel "linearCS" .
+
+geocrs:uOrdinalCS.ordinalCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uOrdinalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:OrdinalCS ;
+    skos:prefLabel "ordinalCS" .
+
+geocrs:uPolarCS.polarCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uPolarCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:PolarCS ;
+    skos:prefLabel "polarCS" .
+
+geocrs:uSemiMinorAxis a owl:Class ;
+    rdfs:label "SemiMinorAxis" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+            owl:onProperty geocrs:uSemiMinorAxis.semiMinorAxis ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uSemiMinorAxis.semiMinorAxis ] ;
+    skos:definition "length of the semi-minor axis of the ellipsoid" .
+
+geocrs:uSemiMinorAxis.semiMinorAxis a owl:ObjectProperty ;
+    rdfs:domain geocrs:uSemiMinorAxis ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+    skos:prefLabel "semiMinorAxis" .
+
+geocrs:uSphericalCS.sphericalCS a owl:ObjectProperty ;
+    rdfs:domain geocrs:uSphericalCS ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:SphericalCS ;
+    skos:prefLabel "sphericalCS" .
+
+geocrs:uStringValue a owl:Class ;
+    rdfs:label "StringValue" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:uStringValue.stringValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uStringValue.stringValue ] ;
+    skos:definition "string value of a coordinate operation parameterNote: A string value does not have an associated unit." .
+
+geocrs:uStringValue.stringValue a owl:DatatypeProperty ;
+    rdfs:label "stringValue" ;
+    rdfs:domain geocrs:uStringValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string .
+
+geocrs:uValue a owl:Class ;
+    rdfs:label "Value" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+            owl:onProperty geocrs:uValue.value ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uValue.value ] ;
+    skos:definition "numeric value of the coordinate operation parameter with its associated unit" .
+
+geocrs:uValue.value a owl:ObjectProperty ;
+    rdfs:domain geocrs:uValue ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+    skos:prefLabel "value" .
+
+geocrs:uValueFile a owl:Class ;
+    rdfs:label "ValueFile" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:uValueFile.valueFile ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uValueFile.valueFile ] ;
+    skos:definition "reference to a file or an identified part of a file containing one or more parameter values.gu. and note changed to .gu.Note: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents" .
+
+geocrs:uValueFile.valueFile a owl:DatatypeProperty ;
+    rdfs:label "valueFile" ;
+    rdfs:domain geocrs:uValueFile ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range xsd:string .
+
+geocrs:uValueFileCitation a owl:Class ;
+    rdfs:label "ValueFileCitation" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation> ;
+            owl:onProperty geocrs:uValueFileCitation.valueFileCitation ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uValueFileCitation.valueFileCitation ] ;
+    skos:definition "citation for a reference to a file or an identified part of a file containing one or more parameter valuesNote: The referenced file or part of a file can reference another part of the same or different files, as allowed in XML documents" .
+
+geocrs:uValueFileCitation.valueFileCitation a owl:ObjectProperty ;
+    rdfs:domain geocrs:uValueFileCitation ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation> ;
+    skos:prefLabel "valueFileCitation" .
+
+geocrs:uValueList a owl:Class ;
+    rdfs:label "ValueList" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Sequence ;
+            owl:onProperty geocrs:uValueList.valueList ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uValueList.valueList ] ;
+    skos:definition "ordered collection, i.e. sequence, of two or more numeric values of a coordinate operation parameter list, where each value has the same associated unit" .
+
+geocrs:uValueList.valueList a owl:ObjectProperty ;
+    rdfs:domain geocrs:uValueList ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:range geocrs:Sequence ;
+    skos:prefLabel "valueList" .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType> a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    ns1:isFormatOf geocrs:CoordinateDataType ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:prefLabel "CoordinateDataType - ConceptScheme" .
+
+<http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod> a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    ns1:isFormatOf geocrs:RealizationMethod ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:prefLabel "RealizationMethod - ConceptScheme" .
+
+geocrs:AffineCS a owl:Class ;
+    rdfs:label "AffineCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonalNote: The number of associations shall equal the dimension of the coordinate system." .
+
+geocrs:Conversion a owl:Class ;
+    rdfs:label "Conversion" ;
+    geocrs:constraint "count(sourceEpoch).eq.0 and count(targetEpoch).eq.0" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:Conversion.operationVersion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Conversion.operationVersion ],
+        geocrs:SingleOperation ;
+    skos:definition "mathematical operation on coordinates in which the parameter values are defined rather than empirically derived; application of the coordinate conversion introduces no error into output coordinatesNote: The best-known example of a coordinate conversion is a map projection. For coordinate conversions the output coordinates are referenced to the same datum as are the input coordinates.Coordinate conversions forming a component of a derived CRS have a source CRS and a target CRS that are NOT specified through the source and target associations, but through associations from DerivedCRS to SingleCRS." .
+
+geocrs:DefiningParameter a owl:Class ;
+    rdfs:label "DefiningParameter" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ParameterValue ;
+            owl:onProperty geocrs:DefiningParameter.parameterValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DefiningParameter.parameterValue ],
+        geocrs:IdentifiedObject ;
+    skos:definition "parameter value, an ordered sequence of values, or a reference to a file of parameter values that define a paramtric datum" .
+
+geocrs:EngineeringCRS a owl:Class ;
+    rdfs:label "EngineeringCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:EngineeringCS ;
+            owl:onProperty geocrs:EngineeringCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:EngineeringDatum ;
+            owl:onProperty geocrs:EngineeringCRS.datum ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:EngineeringCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:EngineeringCRS.datum ],
+        geocrs:SingleCRS ;
+    skos:definition "contextually local coordinate reference system associated with an engineering datum and which is applied either to activities on or near the surface of the Earth without geodetic corrections, or on moving platforms such as road vehicles, vessels, aircraft or spacecraft, or as the internal CRS of an image" .
+
+geocrs:GeographicObject a owl:Class ;
+    rdfs:label "GeographicObject" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+            owl:onProperty geocrs:GeographicObject.identifier ],
+        <http://def.isotc211.org/iso19107/2019/Geometry#Geometry> ;
+    skos:definition "identification of an object used as a parameter in a coordinate transformation, point motion operation or coordinate conversion" .
+
+geocrs:ObliqueProjection a owl:Class ;
+    rdfs:label "oblique projection"@en ;
+    rdfs:subClassOf geocrs:Projection ;
+    skos:definition "a projection made by parallel lines drawn from every point of a figure and meeting the plane of projection obliquely"@en .
+
+geocrs:OrdinalCS a owl:Class ;
+    rdfs:label "OrdinalCS" ;
+    geocrs:constraint "coordinateType.eq.integer" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateDataType ;
+            owl:onProperty geocrs:OrdinalCS.coordinateType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OrdinalCS.coordinateType ],
+        geocrs:CoordinateSystem ;
+    skos:definition "n-dimensional coordinate system in which every axis uses integersNote: The number of associations shall be equal the dimension of the coordinate system." .
+
+geocrs:ParametricCRS a owl:Class ;
+    rdfs:label "ParametricCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ParametricCS ;
+            owl:onProperty geocrs:ParametricCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ParametricDatum ;
+            owl:onProperty geocrs:ParametricCRS.datum ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ParametricCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ParametricCRS.datum ],
+        geocrs:SingleCRS ;
+    skos:definition "coordinate reference system having a parametric datum and a one-dimensional parametric coordinate system which uses parameter values or functions" .
+
+geocrs:ParametricDatum a owl:Class ;
+    rdfs:label "ParametricDatum" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DefiningParameter ;
+            owl:onProperty geocrs:ParametricDatum.datumDefiningParameter ],
+        <http://def.isotc211.org/iso19111/2007/Datums#CD_Datum>,
+        geocrs:Datum ;
+    skos:definition "textual description and.sl.or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth" .
+
+geocrs:PerspectiveProjection a owl:Class ;
+    rdfs:label "perspective projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:TemporalCRS a owl:Class ;
+    rdfs:label "TemporalCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:TemporalCS ;
+            owl:onProperty geocrs:TemporalCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:TemporalDatum ;
+            owl:onProperty geocrs:TemporalCRS.datum ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:TemporalCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:TemporalCRS.datum ],
+        <http://def.isotc211.org/iso19108/2006/TemporalReferenceSystem#TM_ReferenceSystem>,
+        geocrs:SingleCRS ;
+    skos:definition "coordinate reference system associated with a temporal datum and a one-dimensional temporal coordinate system" .
+
+geocrs:Transformation a owl:Class ;
+    rdfs:label "Transformation" ;
+    geocrs:constraint "count(sourceEpoch).eq.0 and count(targetEpoch).eq.0" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:Transformation.operationVersion ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Transformation.operationVersion ],
+        geocrs:SingleOperation ;
+    skos:definition "mathematical operation on coordinates in which parameters are empirically derived from data containing the coordinates of a series of points in both coordinate reference systemsNote: This computational process is usually “over-determined”, allowing derivation of error (or accuracy) estimates for the coordinate transformation. Also, the stochastic nature of the parameters may result in multiple (different) versions of the same coordinate transformations between the same source and target CRSs. Any single coordinate operation in which the input and output coordinates are referenced to different datums (reference frames) will be a coordinate transformation." .
+
+geocrs:uAffineCS a owl:Class ;
+    rdfs:label "AffineCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:AffineCS ;
+            owl:onProperty geocrs:uAffineCS.affineCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uAffineCS.affineCS ] ;
+    skos:definition "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonal. The number of associations shall equal the dimension of the CS." .
+
+geocrs:uCylindricalCS a owl:Class ;
+    rdfs:label "CylindricalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CylindricalCS ;
+            owl:onProperty geocrs:uCylindricalCS.cylindricalCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uCylindricalCS.cylindricalCS ] ;
+    skos:definition "three-dimensional coordinate system in Euclidean space consisting of a polar coordinate system extended by a straight coordinate axis perpendicular to the plane spanned by the polar coordinate system. A CylindricalCS shall have three axis associations." .
+
+geocrs:uOrdinalCS a owl:Class ;
+    rdfs:label "OrdinalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:OrdinalCS ;
+            owl:onProperty geocrs:uOrdinalCS.ordinalCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uOrdinalCS.ordinalCS ] ;
+    skos:definition "n-dimensional coordinate system in which every axis uses integers. The number of associations shall be equal the dimension of the CS." .
+
+geocrs:uPolarCS a owl:Class ;
+    rdfs:label "PolarCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:PolarCS ;
+            owl:onProperty geocrs:uPolarCS.polarCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uPolarCS.polarCS ] ;
+    skos:definition "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference direction. A PolarCS shall have two axis associations." .
+
+<http://def.isotc211.org/iso19103/2015/Numerics#Number> a owl:Class .
+
+<http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation> a owl:Class .
+
+<http://def.isotc211.org/iso19157/2013/DataQuality#DQ_PositionalAccuracy> a owl:Class .
+
+geocrs:Calendar a owl:Class ;
+    rdfs:label "Calendar" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf skos:Concept .
+
+geocrs:CartesianCS a owl:Class ;
+    rdfs:label "CartesianCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:AffineCS ;
+    skos:definition "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonalNote: The number of associations shall equal the dimension of the coordinate system." .
+
+geocrs:ConicalProjection a owl:Class ;
+    rdfs:label "conical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:DatumEnsemble a owl:Class ;
+    rdfs:label "DatumEnsemble" ;
+    geocrs:constraint "datum -.gt.forAll(p1, p2 | p1.conventionalRS.eq.p2.conventionalRS)" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Datum ;
+            owl:onProperty geocrs:DatumEnsemble.datum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19157/2013/DataQuality#DQ_PositionalAccuracy> ;
+            owl:onProperty geocrs:DatumEnsemble.ensembleAccuracy ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DatumEnsemble.datum ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DatumEnsemble.ensembleAccuracy ],
+        geocrs:ObjectUsage ;
+    skos:definition "A collection of two or more datums (or if geodetic or vertical, a collection of two or more reference frames) that are realizations of one Conventional Reference System and which for all but the highest accuracy requirements may be considered to be insignificantly different from each other.Note: Within the datum ensemble every frame or datum is constrained to be a realization of the same reference system." .
+
+geocrs:EllipsoidalCS a owl:Class ;
+    rdfs:label "EllipsoidalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal heightNote: An EllipsoidalCS shall have two or three associations; the number of associations shall equal the dimension of the coordinate system." .
+
+geocrs:ObjectDomain a owl:Class ;
+    rdfs:label "ObjectDomain" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/ExtentInformation#EX_Extent> ;
+            owl:onProperty geocrs:ObjectDomain.domainOfValidity ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ObjectDomain.domainOfValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:ObjectDomain.scope ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ObjectDomain.scope ] ;
+    skos:definition "scope and validity of a CRS-related object" .
+
+geocrs:OperationMethod a owl:Class ;
+    rdfs:label "OperationMethod" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Formula ;
+            owl:onProperty geocrs:OperationMethod.formulaReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeneralOperationParameter ;
+            owl:onProperty geocrs:OperationMethod.parameter ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationMethod.formulaReference ],
+        geocrs:IdentifiedObject ;
+    skos:definition "method (algorithm or procedure) used to perform the coordinate operation" .
+
+geocrs:ParameterValue a owl:Class ;
+    rdfs:label "ParameterValue" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( geocrs:uBooleanValue geocrs:uGeographicObject geocrs:uIntegerValue geocrs:uIntegerValueList geocrs:uStringValue geocrs:uValue geocrs:uValueFile geocrs:uValueFileCitation geocrs:uValueList ) ] ;
+    skos:definition "value of the coordinate operation parameter" .
+
+geocrs:ProjectedCRS a owl:Class ;
+    rdfs:label "ProjectedCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeodeticCRS ;
+            owl:onProperty geocrs:ProjectedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CartesianCS ;
+            owl:onProperty geocrs:ProjectedCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ProjectedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:ProjectedCRS.coordinateSystem ],
+        geocrs:DerivedCRS ;
+    skos:definition "derived coordinate reference system which has a geodetic (usually geographic) coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, is converted using a map projection, and has a Cartesian coordinate system, usually two-dimensional but may be three-dimensionalNote: In the 3D case the base geographic CRSs ellipsoidal height is passed through unchanged and forms the vertical axis of the projected CRS's Cartesian coordinate system." .
+
+geocrs:TemporalDatum a owl:Class ;
+    rdfs:label "TemporalDatum" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Calendar ;
+            owl:onProperty geocrs:TemporalDatum.calendar ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:TemporalDatum.calendar ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty geocrs:TemporalDatum.origin ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:TemporalDatum.origin ],
+        <http://def.isotc211.org/iso19111/2007/Datums#CD_Datum>,
+        geocrs:Datum ;
+    skos:definition "definition of the relationship of a temporal coordinate system to an objectNote: The object is normally time on the Earth." .
+
+geocrs:VerticalReferenceFrame a owl:Class ;
+    rdfs:label "VerticalReferenceFrame" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:RealizationMethod ;
+            owl:onProperty geocrs:VerticalReferenceFrame.realizationMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:VerticalReferenceFrame.realizationMethod ],
+        geocrs:Datum ;
+    skos:definition "textual description and.sl.or a set of parameters identifying a particular reference level surface used as a zero-height or zero-depth surface, including its position with respect to the EarthNote: In 19111:2007 this class was called VerticalDatum." .
+
+geocrs:uCartesianCS a owl:Class ;
+    rdfs:label "CartesianCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CartesianCS ;
+            owl:onProperty geocrs:uCartesianCS.cartesianCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uCartesianCS.cartesianCS ] ;
+    skos:definition "two- or three-dimensional coordinate system in Euclidean space with orthogonal straight axes. All axes shall have the same length unit. A CartesianCS shall have two or three axis associations; the number of associations shall equal the dimension of the CS." .
+
+geocrs:uSphericalCS a owl:Class ;
+    rdfs:label "SphericalCS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:SphericalCS ;
+            owl:onProperty geocrs:uSphericalCS.sphericalCS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:uSphericalCS.sphericalCS ] ;
+    skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates. Not to be confused with an ellipsoidal coordinate system based on an ellipsoid .gu.degenerated.gu. into a sphere. A SphericalCS shall have three axis associations." .
+
+geocrs:CoordinateMetadata a owl:Class ;
+    rdfs:label "CoordinateMetadata" ;
+    geocrs:constraint "crs.datum.oclAsType(DynamicGeodeticReferenceFrame or DynamicVerticalReferenceFrame) implies count(coordinateEpoch).eq.1" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DataEpoch ;
+            owl:onProperty geocrs:CoordinateMetadata.coordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CRS ;
+            owl:onProperty geocrs:CoordinateMetadata.crs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+            owl:onProperty geocrs:CoordinateMetadata.crsID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateMetadata.coordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateMetadata.crs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateMetadata.crsID ] ;
+    skos:definition "metadata required to reference coordinates" .
+
+geocrs:Ellipsoid a owl:Class ;
+    rdfs:label "Ellipsoid" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:SecondDefiningParameter ;
+            owl:onProperty geocrs:Ellipsoid.secondDefiningParameter ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+            owl:onProperty geocrs:Ellipsoid.semiMajorAxis ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> ;
+            owl:onProperty geocrs:Ellipsoid.semiMedianAxis ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Ellipsoid.secondDefiningParameter ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Ellipsoid.semiMajorAxis ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Ellipsoid.semiMedianAxis ],
+        geocrs:IdentifiedObject ;
+    skos:definition "geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axisNote: For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal centre of the Earth." .
+
+geocrs:GeodeticReferenceFrame a owl:Class ;
+    rdfs:label "GeodeticReferenceFrame" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Ellipsoid ;
+            owl:onProperty geocrs:GeodeticReferenceFrame.ellipsoid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:PrimeMeridian ;
+            owl:onProperty geocrs:GeodeticReferenceFrame.primeMeridian ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeodeticReferenceFrame.primeMeridian ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeodeticReferenceFrame.ellipsoid ],
+        geocrs:Datum ;
+    skos:definition "definition of the position, scale and orientation of a geocentric Cartesian 3D coordinate system relative to the EarthNote 1: It may also identify a defined ellipsoid (or sphere) that approximates the shape of the Earth and which is centred on and aligned to this geocentric coordinate system. Older geodetic datums define the location and orientation of a defined ellipsoid (or sphere) that approximates the shape of the earth.Note 2: In 19111:2007 this class was called GeodeticDatum." .
+
+geocrs:ObjectUsage a owl:Class ;
+    rdfs:label "ObjectUsage" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:ObjectDomain ;
+            owl:onProperty geocrs:ObjectUsage.domain ],
+        geocrs:IdentifiedObject ;
+    skos:definition "usage of a CRS-related object" .
+
+geocrs:OperationParameterGroup a owl:Class ;
+    rdfs:label "OperationParameterGroup" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeneralOperationParameter ;
+            owl:onProperty geocrs:OperationParameterGroup.parameter ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationParameterGroup.parameter ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty geocrs:OperationParameterGroup.maximumOccurs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty geocrs:OperationParameterGroup.minimumOccurs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationParameterGroup.maximumOccurs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:OperationParameterGroup.minimumOccurs ],
+        geocrs:GeneralOperationParameter ;
+    skos:definition "definition of a group of related parameters used by a coordinate operation method" .
+
+geocrs:PointMotionOperation a owl:Class ;
+    rdfs:label "PointMotionOperation" ;
+    geocrs:constraint "targetCRS.eq.sourceCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:PointMotionOperation.operationVersion ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:PointMotionOperation.operationVersion ],
+        geocrs:SingleOperation ;
+    skos:definition "mathematical operation that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch Note: In this document the motion is due to tectonic plate movement or deformation." .
+
+geocrs:PseudoAzimuthalProjection a owl:Class ;
+    rdfs:label "pseudo-azimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:RangeMeaning a owl:Class ;
+    rdfs:label "RangeMeaning" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf skos:Concept .
+
+geocrs:SingleOperation a owl:Class ;
+    rdfs:label "SingleOperation" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:OperationMethod ;
+            owl:onProperty geocrs:SingleOperation.method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeneralParameterValue ;
+            owl:onProperty geocrs:SingleOperation.parameterValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:SingleOperation.method ],
+        geocrs:CoordinateOperation ;
+    skos:definition "single (not concatenated) coordinate operation" .
+
+geocrs:VerticalCRS a owl:Class ;
+    rdfs:label "VerticalCRS" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:VerticalCS ;
+            owl:onProperty geocrs:VerticalCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:VerticalReferenceFrame ;
+            owl:onProperty geocrs:VerticalCRS.datum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Transformation ;
+            owl:onProperty geocrs:VerticalCRS.geoidModel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:PointMotionOperation ;
+            owl:onProperty geocrs:VerticalCRS.velocityModel ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:VerticalCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:VerticalCRS.datum ],
+        geocrs:SingleCRS ;
+    skos:definition "coordinate reference system having a vertical reference frame and a one-dimensional vertical coordinate system used for recording gravity-related heights or depths; vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward. Note 1: If the vertical reference frame is dynamic then the vertical CRS is dynamic, else it is static. Note 2: Ellipsoidal heights cannot be captured in a vertical coordinate reference system. They exist only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system." .
+
+skos:Collection a owl:Class .
+
+skos:ConceptScheme a owl:Class .
+
+<http://def.isotc211.org/iso19103/2015/MeasureTypes#Length> a owl:Class .
+
+<http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> a owl:Class .
+
+geocrs:AzimuthalProjection a owl:Class ;
+    rdfs:label "azimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection ;
+    skos:definition "A projection with the property that directions from a central point are preserved"@en .
+
+geocrs:PseudoConicalProjection a owl:Class ;
+    rdfs:label "pseudo-conical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:RealizationMethod a owl:Class ;
+    rdfs:label "RealizationMethod" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf skos:Concept .
+
+geocrs:Sequence a owl:Class .
+
+geocrs:TemporalCS a owl:Class ;
+    rdfs:label "TemporalCS" ;
+    geocrs:constraint "axis-.gt.size().eq.1" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateDataType ;
+            owl:onProperty geocrs:TemporalCS.coordinateType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:TemporalCS.coordinateType ],
+        geocrs:CoordinateSystem ;
+    skos:definition "one-dimensional coordinate system used to record time Note: A TemporalCS shall have one axis association." .
+
+geocrs:DataEpoch a owl:Class ;
+    rdfs:label "DataEpoch" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> ;
+            owl:onProperty geocrs:DataEpoch.coordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DataEpoch.coordinateEpoch ] ;
+    skos:definition "time attribute of a coordinate set that is referenced to a dynamic CRS" .
+
+geocrs:EquidistantProjection a owl:Class ;
+    rdfs:label "equidistant projection"@en ;
+    rdfs:subClassOf geocrs:Projection ;
+    skos:definition "Projection in which all points on the map exhibit proportionally correct distances from the center point"@en .
+
+geocrs:GeneralParameterValue a owl:Class ;
+    rdfs:label "GeneralParameterValue" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeneralOperationParameter ;
+            owl:onProperty geocrs:GeneralParameterValue.parameter ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeneralParameterValue.parameter ] ;
+    skos:definition "parameter value or group of parameter values" .
+
+geocrs:GeodeticCRS a owl:Class ;
+    rdfs:label "GeodeticCRS" ;
+    geocrs:constraint "coordinateSystem.oclAsType(ellipsoidalCS) implies count(datum.ellipsoid).eq.1" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeodeticCS ;
+            owl:onProperty geocrs:GeodeticCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:GeodeticReferenceFrame ;
+            owl:onProperty geocrs:GeodeticCRS.datum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:PointMotionOperation ;
+            owl:onProperty geocrs:GeodeticCRS.velocityModel ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeodeticCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:GeodeticCRS.datum ],
+        geocrs:SingleCRS ;
+    skos:definition "coordinate reference system associated with a geodetic reference frame and a three-dimensional Cartesian or spherical coordinate systemNote: If the geodetic reference frame is dynamic then the geodetic CRS is dynamic, else it is static." .
+
+geocrs:PrimeMeridian a owl:Class ;
+    rdfs:label "PrimeMeridian" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#Angle> ;
+            owl:onProperty geocrs:PrimeMeridian.greenwichLongitude ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:PrimeMeridian.greenwichLongitude ],
+        geocrs:IdentifiedObject ;
+    skos:definition "origin meridian from which longitude values are determined Note: The default value for prime meridian name is “Greenwich”. When the default applies, the value for the greenwichLongitude shall be 0 (degrees)." .
+
+<http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> a owl:Class .
+
+<http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> a owl:Class .
+
+geocrs:CoordinateDataType a owl:Class ;
+    rdfs:label "CoordinateDataType" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf skos:Concept .
+
+geocrs:GeneralOperationParameter a owl:Class ;
+    rdfs:label "GeneralOperationParameter" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf geocrs:IdentifiedObject ;
+    skos:definition "definition of a parameter or group of parameters used by a coordinate operation method" .
+
+geocrs:PolyhedralProjection a owl:Class ;
+    rdfs:label "polyhedral projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:DerivedCRS a owl:Class ;
+    rdfs:label "DerivedCRS" ;
+    geocrs:constraint "count(baseCRS.datumEnsemble).eq.1 implies datumEnsemble.eq.baseCRS.datumEnsemble" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:SingleCRS ;
+            owl:onProperty geocrs:DerivedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Conversion ;
+            owl:onProperty geocrs:DerivedCRS.derivingConversion ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DerivedCRS.baseCRS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:DerivedCRS.derivingConversion ],
+        geocrs:SingleCRS ;
+    skos:definition "single coordinate reference system that is defined through the application of a specified coordinate conversion to the definition of a previously established single coordinate reference system referred to as the base CRSNote:  A derived coordinate reference system inherits its datum (or datum ensemble) from its base CRS. The coordinate conversion between the base and derived coordinate reference system is implemented using the parameters and formula(s) specified in the definition of the coordinate conversion." .
+
+geocrs:ConformalProjection a owl:Class ;
+    rdfs:label "conformal projection"@en ;
+    rdfs:subClassOf geocrs:Projection ;
+    skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
+
+geocrs:CoordinateSystemAxis a owl:Class ;
+    rdfs:label "CoordinateSystemAxis" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:AxisDirection ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisDirection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/MeasureTypes#UnitOfMeasure> ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisUnitID ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/Numerics#Number> ;
+            owl:onProperty geocrs:CoordinateSystemAxis.maximumValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/Numerics#Number> ;
+            owl:onProperty geocrs:CoordinateSystemAxis.minimumValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:RangeMeaning ;
+            owl:onProperty geocrs:CoordinateSystemAxis.rangeMeaning ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisDirection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisUnitID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.maximumValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.minimumValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.rangeMeaning ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisAbbrev ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystemAxis.axisAbbrev ],
+        geocrs:IdentifiedObject ;
+    skos:definition "definition of a coordinate system axis" .
+
+geocrs:Datum a owl:Class ;
+    rdfs:label "Datum" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:IdentifiedObject ;
+            owl:onProperty geocrs:Datum.conventionalRS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Datum.conventionalRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:Datum.anchorDefinition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom rdf:XMLLiteral ;
+            owl:onProperty geocrs:Datum.publicationDate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Datum.anchorDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:Datum.publicationDate ],
+        geocrs:ObjectUsage ;
+    skos:definition "specification of the relationship of a coordinate system to an object, thus creating a coordinate reference systemNote: For geodetic and vertical coordinate reference systems, it relates a coordinate system to the Earth. With other types of coordinate reference systems, the datum may relate the coordinate system to another physical or virtual object. A datum uses a parameter or set of parameters that determine the location of the origin of the coordinate reference system. Each datum subtype can be associated with only specific types of coordinate reference systems." .
+
+geocrs:SingleCRS a owl:Class ;
+    rdfs:label "SingleCRS" ;
+    geocrs:constraint "count(datum)+count(datumEnsemble).eq.1" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateSystem ;
+            owl:onProperty geocrs:SingleCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:Datum ;
+            owl:onProperty geocrs:SingleCRS.datum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DatumEnsemble ;
+            owl:onProperty geocrs:SingleCRS.datumEnsemble ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:SingleCRS.coordinateSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:SingleCRS.datum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:SingleCRS.datumEnsemble ],
+        geocrs:CRS ;
+    skos:definition "coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble" .
+
+geocrs:IdentifiedObject a owl:Class ;
+    rdfs:label "IdentifiedObject" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19103/2015/NameTypes#GenericName> ;
+            owl:onProperty geocrs:IdentifiedObject.alias ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+            owl:onProperty geocrs:IdentifiedObject.identifier ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19115/-1/2014/CommonClasses#MD_Identifier> ;
+            owl:onProperty geocrs:IdentifiedObject.name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:IdentifiedObject.name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:IdentifiedObject.remarks ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:IdentifiedObject.remarks ] ;
+    skos:definition "identifications of a CRS-related object" .
+
+geocrs:InterstellarBody a owl:Class ;
+    rdfs:label "interstellar body"@en .
+
+geocrs:CylindricalProjection a owl:Class ;
+    rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:Projection a owl:Class ;
+    rdfs:label "projection"@en ;
+    rdfs:subClassOf geocrs:CoordinateConversionOperation ;
+    skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
+
+geocrs:CoordinateOperation a owl:Class ;
+    rdfs:label "CoordinateOperation" ;
+    geocrs:constraint "transform() pre sourceCRS.eq.CoordinateSet.coordinateMetadata.crs" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19157/2013/DataQuality#DQ_PositionalAccuracy> ;
+            owl:onProperty geocrs:CoordinateOperation.coordinateOperationAccuracy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CRS ;
+            owl:onProperty geocrs:CoordinateOperation.interpolationCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CRS ;
+            owl:onProperty geocrs:CoordinateOperation.sourceCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DataEpoch ;
+            owl:onProperty geocrs:CoordinateOperation.sourceCoordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> ;
+            owl:onProperty geocrs:CoordinateOperation.sourcePosition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CRS ;
+            owl:onProperty geocrs:CoordinateOperation.targetCRS ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:DataEpoch ;
+            owl:onProperty geocrs:CoordinateOperation.targetCoordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19107/2019/CoordinateDataTypes#DirectPosition> ;
+            owl:onProperty geocrs:CoordinateOperation.targetPosition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.interpolationCRS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.sourceCRS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.sourceCoordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.sourcePosition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.targetCRS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.targetCoordinateEpoch ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.targetPosition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:CoordinateOperation.operationVersion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateOperation.operationVersion ],
+        geocrs:ObjectUsage ;
+    skos:definition "mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epochNote: Many but not all coordinate operations (from CRS A to CRS B) also uniquely define the inverse coordinate operation (from CRS B to CRS A). In some cases, the coordinate operation method algorithm for the inverse coordinate operation is the same as for the forward algorithm, but the signs of some coordinate operation parameter values have to be reversed. In other cases, different algorithms are required for the forward and inverse coordinate operations, but the same coordinate operation parameter values are used. If (some) entirely different parameter values are needed, a different coordinate operation shall be defined." .
+
+geocrs:CoordinateSystem a owl:Class ;
+    rdfs:label "CoordinateSystem" ;
+    geocrs:constraint "axis-.gt.forAll(count(axisUnitID).eq.1)" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geocrs:CoordinateSystemAxis ;
+            owl:onProperty geocrs:CoordinateSystem.axis ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:CoordinateSystem.axis ],
+        geocrs:IdentifiedObject ;
+    skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate spaceNote: A coordinate system is derived from a set of mathematical rules for specifying how coordinates in a given space are to be assigned to points. The coordinate values in a coordinate tuple shall be recorded in the order in which the coordinate system axes associations are recorded." .
+
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:CRS a owl:Class ;
+    rdfs:label "CRS" ;
+    geocrs:isAbstract true ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://def.isotc211.org/iso19107/2019/SpatialReferenceSystems#GeometricCoordinateSystem> ;
+            owl:onProperty geocrs:CRS.geometricCoordinates ],
+        geocrs:ObjectUsage ;
+    skos:definition "coordinate reference system which is usually single but may be compound" .
+
+geocrs:CompromiseProjection a owl:Class ;
+    rdfs:label "compromise projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:EqualAreaProjection a owl:Class ;
+    rdfs:label "equal-area projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+<http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    ns1:isFormatOf geocrs:AxisDirection ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    skos:prefLabel "AxisDirection - ConceptScheme" .
+
+geocrs:AxisDirection a owl:Class ;
+    rdfs:label "AxisDirection" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf skos:Concept .
+
+skos:Concept a owl:Class .
+
