@@ -203,7 +203,7 @@ geocrs:HoboDyerProjection a owl:Class ;
 
 geocrs:IdentityOperation a owl:Class ;
     rdfs:label "identity transformation operation"@en ;
-    rdfs:subClassOf geocrs:AffineTransformationOperation .
+    rdfs:subClassOf geocrs:AffineTransformation .
 
 geocrs:Kavrayskiy7Projection a owl:Class ;
     rdfs:label "Kavrayskiy VII projection"@en ;
@@ -323,7 +323,7 @@ geocrs:RobinsonProjection a owl:Class ;
 
 geocrs:RotationOperation a owl:Class ;
     rdfs:label "rotation transformation operation"@en ;
-    rdfs:subClassOf geocrs:AffineTransformationOperation .
+    rdfs:subClassOf geocrs:AffineTransformation .
 
 geocrs:RoussilheProjection a owl:Class ;
     rdfs:label "roussilhe projection"@en ;
@@ -336,7 +336,7 @@ geocrs:SRSRegistry a owl:Class ;
 
 geocrs:ShearOperation a owl:Class ;
     rdfs:label "shear transformation operation"@en ;
-    rdfs:subClassOf geocrs:AffineTransformationOperation .
+    rdfs:subClassOf geocrs:AffineTransformation .
 
 geocrs:SinusoidalProjection a owl:Class ;
     rdfs:label "sinusoidal projection"@en ;
@@ -369,7 +369,7 @@ geocrs:ToblerHyperelliptical a owl:Class ;
 
 geocrs:TranslationOperation a owl:Class ;
     rdfs:label "translation transformation operation"@en ;
-    rdfs:subClassOf geocrs:AffineTransformationOperation .
+    rdfs:subClassOf geocrs:AffineTransformation .
 
 geocrs:TwoPointEquidistantProjection a owl:Class ;
     rdfs:label "two-point equidistance projection"@en ;
@@ -428,11 +428,11 @@ geocrs:approximates a owl:ObjectProperty ;
 
 geocrs:area_of_use a owl:ObjectProperty ;
     rdfs:label "area of use"@en ;
-    rdfs:domain geocrs:CoordinateConcatenatedOperation,
-        geocrs:CoordinateConversionOperation,
+    rdfs:domain geocrs:ConcatenatedOperation,
+        geocrs:Conversion,
         geocrs:CoordinateOperation,
-        geocrs:CoordinateTransformationOperation,
-        geocrs:OtherCoordinateOperation ;
+        geocrs:OtherCoordinateOperation,
+        geocrs:Transformation ;
     rdfs:range geocrs:AreaOfUse ;
     skos:definition "Defines an area of use of an operation"@en .
 
@@ -718,7 +718,7 @@ geocrs:CylindricalProjection a owl:Class ;
 
 geocrs:Projection a owl:Class ;
     rdfs:label "projection"@en ;
-    rdfs:subClassOf geocrs:CoordinateConversionOperation ;
+    rdfs:subClassOf geocrs:Conversion ;
     skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
 
 geocrs:PseudoCylindricalProjection a owl:Class ;
