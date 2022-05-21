@@ -1,0 +1,60 @@
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+geocrs:PlanetVocabulary rdf:type owl:Ontology .
+
+geocrs:ArtificialSatellite a owl:Class ;
+    rdfs:label "artificial satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:Asteroid a owl:Class ;
+    rdfs:label "asteroid"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:Comet a owl:Class ;
+    rdfs:label "comet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:Moon a owl:Class ;
+    rdfs:label "moon"@en ;
+    rdfs:subClassOf geocrs:NaturalSatellite .
+
+geocrs:Plutoid a owl:Class ;
+    rdfs:label "plutoid"@en ;
+    rdfs:subClassOf geocrs:DwarfPlanet .
+
+geocrs:Star a owl:Class ;
+    rdfs:label "star"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:planet_status a owl:ObjectProperty ;
+    rdfs:label "planet status"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:PlanetStatus ;
+    skos:definition "The status of the discovery of the planet, e.g. confirmed, unsure etc."@en .
+
+geocrs:satelliteOf a owl:ObjectProperty ;
+    rdfs:label "satellite of"@en ;
+    rdfs:domain geocrs:InterstellarBody ;
+    rdfs:range geocrs:InterstellarBody ;
+    skos:definition "Defines an interstellar body as the natural satellite of another interstellar body."@en .
+
+geocrs:DwarfPlanet a owl:Class ;
+    rdfs:label "dwarf planet"@en ;
+    rdfs:subClassOf geocrs:Planet .
+
+geocrs:NaturalSatellite a owl:Class ;
+    rdfs:label "natural satellite"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody ;
+    skos:definition "an interstellar body orbiting around another interstellar body"@en .
+
+geocrs:Planet a owl:Class ;
+    rdfs:label "planet"@en ;
+    rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:InterstellarBody a owl:Class ;
+    rdfs:label "interstellar body"@en .
+
