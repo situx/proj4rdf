@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{no title found}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionVocabulary",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "{no title found}"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.13.2</span>
+  </div>
+  <h1>{no title found}</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>http://www.opengis.net/ont/crs/ProjectionVocabulary</code></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="projection_vocabulary.ttl">RDF (turtle)</a></dd>
+    </dl>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+      <li><a href="http://www.opengis.net/ont/crs/AdamsProjection">geocrs:AdamsProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AitoffProjection">geocrs:AitoffProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AlbersEqualAreaProjection">geocrs:AlbersEqualAreaProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AmericanPolyconicProjection">geocrs:AmericanPolyconicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ArmadilloProjection">geocrs:ArmadilloProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AtlantisProjection">geocrs:AtlantisProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AuthaGraphProjection">geocrs:AuthaGraphProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BehrmannProjection">geocrs:BehrmannProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BertinProjection">geocrs:BertinProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BoggsEumorphicProjection">geocrs:BoggsEumorphicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BonneProjection">geocrs:BonneProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BottomleyProjection">geocrs:BottomleyProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CahillKeyesProjection">geocrs:CahillKeyesProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CassiniProjection">geocrs:CassiniProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CentralCylindricalProjection">geocrs:CentralCylindricalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CollignonProjection">geocrs:CollignonProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ColombiaUrbanProjection">geocrs:ColombiaUrbanProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection">geocrs:CraigRetroazimuthalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CrasterParabolicProjection">geocrs:CrasterParabolicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CylindricalEqualArea">geocrs:CylindricalEqualArea</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DymaxionProjection">geocrs:DymaxionProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Eckert2Projection">geocrs:Eckert2Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Eckert4Projection">geocrs:Eckert4Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Eckert6Projection">geocrs:Eckert6Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EqualEarthProjection">geocrs:EqualEarthProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EquidistantConicProjection">geocrs:EquidistantConicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EquidistantCylindricalProjection">geocrs:EquidistantCylindricalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EquirectangularProjection">geocrs:EquirectangularProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GS50Projection">geocrs:GS50Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GallPetersProjection">geocrs:GallPetersProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GallStereographicProjection">geocrs:GallStereographicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GaussKruegerProjection">geocrs:GaussKruegerProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GnomonicProjection">geocrs:GnomonicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GoodeHomolosineProjection">geocrs:GoodeHomolosineProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HEALPixProjection">geocrs:HEALPixProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HammerProjection">geocrs:HammerProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HoboDyerProjection">geocrs:HoboDyerProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Kavrayskiy7Projection">geocrs:Kavrayskiy7Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Krovak">geocrs:Krovak</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LabordeProjection">geocrs:LabordeProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea">geocrs:LambertAzimuthalEqualArea</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LambertConformalConicProjection">geocrs:LambertConformalConicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LittrowProjection">geocrs:LittrowProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LoximuthalProjection">geocrs:LoximuthalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/MillerProjection">geocrs:MillerProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/MollweideProjection">geocrs:MollweideProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/MyrahedalProjection">geocrs:MyrahedalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/NaturalEarthProjection">geocrs:NaturalEarthProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/NicolosiGlobularProjection">geocrs:NicolosiGlobularProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ObliqueMercatorProjection">geocrs:ObliqueMercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ObliqueStereographicProjection">geocrs:ObliqueStereographicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OctantProjection">geocrs:OctantProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OrteliusOvalProjection">geocrs:OrteliusOvalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OrthographicProjection">geocrs:OrthographicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">geocrs:PeirceQuincuncialProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection">geocrs:QuadrilateralizedSphericalCubeProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/QuarticAuthalicProjection">geocrs:QuarticAuthalicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">geocrs:RectangularPolyconicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/RetroazimuthalProjection">geocrs:RetroazimuthalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/RobinsonProjection">geocrs:RobinsonProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/RoussilheProjection">geocrs:RoussilheProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SinusoidalProjection">geocrs:SinusoidalProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpaceObliqueMercatorProjection">geocrs:SpaceObliqueMercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Strebe1995Projection">geocrs:Strebe1995Projection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TheTimesProjection">geocrs:TheTimesProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ToblerHyperelliptical">geocrs:ToblerHyperelliptical</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TransverseMercatorProjection">geocrs:TransverseMercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TwoPointEquidistantProjection">geocrs:TwoPointEquidistantProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection">geocrs:UniversalTransverseMercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/VanDerGrintenProjection">geocrs:VanDerGrintenProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/VerticalPerspectiveProjection">geocrs:VerticalPerspectiveProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WagnerVIIProjection">geocrs:WagnerVIIProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WatermanButterflyProjection">geocrs:WatermanButterflyProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WebMercatorProjection">geocrs:WebMercatorProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WernerProjection">geocrs:WernerProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WinkelTripelProjection">geocrs:WinkelTripelProjection</a></li>
+    </ul>
+    <div class="entity class" id="adamsprojection">
+        <h3>
+          adams projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#adamsprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AdamsProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="aitoffprojection">
+        <h3>
+          aitoff projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#aitoffprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AitoffProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="albersequal-areaprojection">
+        <h3>
+          albers equal-area projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#albersequal-areaprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AlbersEqualAreaProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a conic, equal area map projection that uses two standard parallels</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="americanpolyconicprojection">
+        <h3>
+          american polyconic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#americanpolyconicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AmericanPolyconicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="armadilloprojection">
+        <h3>
+          armadillo projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#armadilloprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ArmadilloProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="atlantisprojection">
+        <h3>
+          atlantis projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#atlantisprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AtlantisProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="authagraphprojection">
+        <h3>
+          autha graph projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#authagraphprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AuthaGraphProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="azimuthalprojection">
+        <h3>
+          azimuthal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#azimuthalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AzimuthalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A projection with the property that directions from a central point are preserved</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea">geocrs:LambertAzimuthalEqualArea</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VerticalPerspectiveProjection">geocrs:VerticalPerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TwoPointEquidistantProjection">geocrs:TwoPointEquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrthographicProjection">geocrs:OrthographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GnomonicProjection">geocrs:GnomonicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="behrmannprojection">
+        <h3>
+          behrmann projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#behrmannprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BehrmannProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="bertinprojection">
+        <h3>
+          bertin projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#bertinprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BertinProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="boggseumorphicprojection">
+        <h3>
+          boggs eumorphic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#boggseumorphicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BoggsEumorphicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="bonneprojection">
+        <h3>
+          bonne projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#bonneprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BonneProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="bottomleyprojection">
+        <h3>
+          bottomley projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#bottomleyprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BottomleyProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cahill-keyesprojection">
+        <h3>
+          cahill-keyes projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cahill-keyesprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CahillKeyesProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cassiniprojection">
+        <h3>
+          cassini projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cassiniprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CassiniProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="centralcylindricalprojection">
+        <h3>
+          central cylindrical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#centralcylindricalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CentralCylindricalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="collignonprojection">
+        <h3>
+          collignon projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#collignonprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CollignonProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="colombiaurbanprojection">
+        <h3>
+          colombia urban projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#colombiaurbanprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ColombiaUrbanProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="compromiseprojection">
+        <h3>
+          compromise projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#compromiseprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CompromiseProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/WebMercatorProjection">geocrs:WebMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NaturalEarthProjection">geocrs:NaturalEarthProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MillerProjection">geocrs:MillerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ArmadilloProjection">geocrs:ArmadilloProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LoximuthalProjection">geocrs:LoximuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RobinsonProjection">geocrs:RobinsonProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AmericanPolyconicProjection">geocrs:AmericanPolyconicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OctantProjection">geocrs:OctantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrteliusOvalProjection">geocrs:OrteliusOvalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AuthaGraphProjection">geocrs:AuthaGraphProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Kavrayskiy7Projection">geocrs:Kavrayskiy7Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TheTimesProjection">geocrs:TheTimesProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WinkelTripelProjection">geocrs:WinkelTripelProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NicolosiGlobularProjection">geocrs:NicolosiGlobularProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GallStereographicProjection">geocrs:GallStereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AitoffProjection">geocrs:AitoffProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">geocrs:RectangularPolyconicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection">geocrs:CraigRetroazimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BertinProjection">geocrs:BertinProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VanDerGrintenProjection">geocrs:VanDerGrintenProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CahillKeyesProjection">geocrs:CahillKeyesProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WatermanButterflyProjection">geocrs:WatermanButterflyProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DymaxionProjection">geocrs:DymaxionProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="conformalprojection">
+        <h3>
+          conformal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#conformalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ConformalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GaussKruegerProjection">geocrs:GaussKruegerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">geocrs:PeirceQuincuncialProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AdamsProjection">geocrs:AdamsProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LittrowProjection">geocrs:LittrowProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GS50Projection">geocrs:GS50Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LambertConformalConicProjection">geocrs:LambertConformalConicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LabordeProjection">geocrs:LabordeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="conicalprojection">
+        <h3>
+          conical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#conicalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ConicalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantConicProjection">geocrs:EquidistantConicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Krovak">geocrs:Krovak</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LambertConformalConicProjection">geocrs:LambertConformalConicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AlbersEqualAreaProjection">geocrs:AlbersEqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="craigretroazimuthalprojection">
+        <h3>
+          craig retroazimuthal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#craigretroazimuthalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/RetroazimuthalProjection">geocrs:RetroazimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="crasterparabolicprojection">
+        <h3>
+          craster parabolic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#crasterparabolicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CrasterParabolicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cylindricalequalareaprojection">
+        <h3>
+          cylindrical equal area projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cylindricalequalareaprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CylindricalEqualArea</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cylindricalprojection">
+        <h3>
+          cylindrical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cylindricalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CylindricalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/LabordeProjection">geocrs:LabordeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueMercatorProjection">geocrs:ObliqueMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BehrmannProjection">geocrs:BehrmannProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueStereographicProjection">geocrs:ObliqueStereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MillerProjection">geocrs:MillerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquirectangularProjection">geocrs:EquirectangularProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HoboDyerProjection">geocrs:HoboDyerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GaussKruegerProjection">geocrs:GaussKruegerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CentralCylindricalProjection">geocrs:CentralCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CassiniProjection">geocrs:CassiniProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WebMercatorProjection">geocrs:WebMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantCylindricalProjection">geocrs:EquidistantCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GallPetersProjection">geocrs:GallPetersProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalEqualArea">geocrs:CylindricalEqualArea</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GallStereographicProjection">geocrs:GallStereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dymaxionprojection">
+        <h3>
+          dymaxion projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#dymaxionprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DymaxionProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EckertIIprojection">
+        <h3>
+          Eckert II projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#EckertIIprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Eckert2Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EckertIVprojection">
+        <h3>
+          Eckert IV projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#EckertIVprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Eckert4Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EckertVIprojection">
+        <h3>
+          Eckert VI projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#EckertVIprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Eckert6Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equal-areaprojection">
+        <h3>
+          equal-area projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equal-areaprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EqualAreaProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ToblerHyperelliptical">geocrs:ToblerHyperelliptical</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AlbersEqualAreaProjection">geocrs:AlbersEqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HammerProjection">geocrs:HammerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AtlantisProjection">geocrs:AtlantisProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BehrmannProjection">geocrs:BehrmannProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WagnerVIIProjection">geocrs:WagnerVIIProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MollweideProjection">geocrs:MollweideProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HoboDyerProjection">geocrs:HoboDyerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WernerProjection">geocrs:WernerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert2Projection">geocrs:Eckert2Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea">geocrs:LambertAzimuthalEqualArea</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GoodeHomolosineProjection">geocrs:GoodeHomolosineProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BoggsEumorphicProjection">geocrs:BoggsEumorphicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/QuarticAuthalicProjection">geocrs:QuarticAuthalicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GallPetersProjection">geocrs:GallPetersProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalEqualArea">geocrs:CylindricalEqualArea</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HEALPixProjection">geocrs:HEALPixProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MyrahedalProjection">geocrs:MyrahedalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Strebe1995Projection">geocrs:Strebe1995Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CrasterParabolicProjection">geocrs:CrasterParabolicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert6Projection">geocrs:Eckert6Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CollignonProjection">geocrs:CollignonProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BottomleyProjection">geocrs:BottomleyProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert4Projection">geocrs:Eckert4Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualEarthProjection">geocrs:EqualEarthProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BonneProjection">geocrs:BonneProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection">geocrs:QuadrilateralizedSphericalCubeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SinusoidalProjection">geocrs:SinusoidalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equalearthprojection">
+        <h3>
+          equal earth projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equalearthprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EqualEarthProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equidistantconicprojection">
+        <h3>
+          equidistant conic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equidistantconicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EquidistantConicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equidistantcylindricalprojection">
+        <h3>
+          equidistant cylindrical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equidistantcylindricalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EquidistantCylindricalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equidistantprojection">
+        <h3>
+          equidistant projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equidistantprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EquidistantProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Projection in which all points on the map exhibit proportionally correct distances from the center point</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SinusoidalProjection">geocrs:SinusoidalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantConicProjection">geocrs:EquidistantConicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquirectangularProjection">geocrs:EquirectangularProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WernerProjection">geocrs:WernerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CassiniProjection">geocrs:CassiniProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantCylindricalProjection">geocrs:EquidistantCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TwoPointEquidistantProjection">geocrs:TwoPointEquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equirectangularprojection">
+        <h3>
+          equirectangular projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equirectangularprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EquirectangularProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gs50projection">
+        <h3>
+          gs50 projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gs50projection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GS50Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gall-petersprojection">
+        <h3>
+          gall-peters projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gall-petersprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GallPetersProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gallstereographicprojection">
+        <h3>
+          gall stereographic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gallstereographicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GallStereographicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gauss-krgerprojection">
+        <h3>
+          gauss-krüger projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gauss-krgerprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GaussKruegerProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gnomonicprojection">
+        <h3>
+          gnomonic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gnomonicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GnomonicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="goodehomolosineprojection">
+        <h3>
+          goode homolosine projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#goodehomolosineprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GoodeHomolosineProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="guyouprojection">
+        <h3>
+          guyou projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#guyouprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GuyouProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HEALPixprojection">
+        <h3>
+          HEALPix projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#HEALPixprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HEALPixProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="hammerprojection">
+        <h3>
+          hammer projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#hammerprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HammerProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="hobo-dyerprojection">
+        <h3>
+          hobo-dyer projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#hobo-dyerprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HoboDyerProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="KavrayskiyVIIprojection">
+        <h3>
+          Kavrayskiy VII projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#KavrayskiyVIIprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Kavrayskiy7Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="krovakprojection">
+        <h3>
+          krovak projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#krovakprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Krovak</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="labordeprojection">
+        <h3>
+          laborde projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#labordeprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LabordeProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="lambertazimuthalequalareaprojection">
+        <h3>
+          lambert azimuthal equal area projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#lambertazimuthalequalareaprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="lambertconformalconicprojection">
+        <h3>
+          lambert conformal conic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#lambertconformalconicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LambertConformalConicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="leeprojection">
+        <h3>
+          lee projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#leeprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LeeProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="littrowprojection">
+        <h3>
+          littrow projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#littrowprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LittrowProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/RetroazimuthalProjection">geocrs:RetroazimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="loximuthalprojection">
+        <h3>
+          loximuthal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#loximuthalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LoximuthalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="mercatorprojection">
+        <h3>
+          mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#mercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/MercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueMercatorProjection">geocrs:ObliqueMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TransverseMercatorProjection">geocrs:TransverseMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="millerprojection">
+        <h3>
+          miller projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#millerprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/MillerProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="mollweideprojection">
+        <h3>
+          mollweide projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#mollweideprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/MollweideProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="myrahedalprojection">
+        <h3>
+          myrahedal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#myrahedalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/MyrahedalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="naturalearthprojection">
+        <h3>
+          natural earth projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#naturalearthprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/NaturalEarthProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="nicolosiglobularprojection">
+        <h3>
+          nicolosi globular projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#nicolosiglobularprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/NicolosiGlobularProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="obliquemercatorprojection">
+        <h3>
+          oblique mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#obliquemercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ObliqueMercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SpaceObliqueMercatorProjection">geocrs:SpaceObliqueMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="obliqueprojection">
+        <h3>
+          oblique projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#obliqueprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ObliqueProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a projection made by parallel lines drawn from every point of a figure and meeting the plane of projection obliquely</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueStereographicProjection">geocrs:ObliqueStereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RoussilheProjection">geocrs:RoussilheProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueMercatorProjection">geocrs:ObliqueMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="obliquestereographicprojection">
+        <h3>
+          oblique stereographic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#obliquestereographicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ObliqueStereographicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="octantprojection">
+        <h3>
+          octant projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#octantprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OctantProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="orteliusovalprojection">
+        <h3>
+          ortelius oval projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#orteliusovalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OrteliusOvalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="orthographicprojection">
+        <h3>
+          orthographic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#orthographicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OrthographicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="peircequincuncialprojection">
+        <h3>
+          peirce quincuncial projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#peircequincuncialprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PeirceQuincuncialProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="perspectiveprojection">
+        <h3>
+          perspective projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#perspectiveprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PerspectiveProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CentralCylindricalProjection">geocrs:CentralCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VerticalPerspectiveProjection">geocrs:VerticalPerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrthographicProjection">geocrs:OrthographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="polyhedralprojection">
+        <h3>
+          polyhedral projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#polyhedralprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PolyhedralProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AuthaGraphProjection">geocrs:AuthaGraphProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MyrahedalProjection">geocrs:MyrahedalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OctantProjection">geocrs:OctantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection">geocrs:QuadrilateralizedSphericalCubeProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CahillKeyesProjection">geocrs:CahillKeyesProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WatermanButterflyProjection">geocrs:WatermanButterflyProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DymaxionProjection">geocrs:DymaxionProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="projection">
+        <h3>
+          projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#projection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Projection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate conversion from an ellipsoidal coordinate system to a plane</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Conversion">geocrs:Conversion</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConicalProjection">geocrs:ConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ColombiaUrbanProjection">geocrs:ColombiaUrbanProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RetroazimuthalProjection">geocrs:RetroazimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="pseudo-azimuthalprojection">
+        <h3>
+          pseudo-azimuthal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#pseudo-azimuthalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PseudoAzimuthalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/WinkelTripelProjection">geocrs:WinkelTripelProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HammerProjection">geocrs:HammerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WagnerVIIProjection">geocrs:WagnerVIIProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AitoffProjection">geocrs:AitoffProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Strebe1995Projection">geocrs:Strebe1995Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="pseudo-conicalprojection">
+        <h3>
+          pseudo-conical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#pseudo-conicalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PseudoConicalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/BonneProjection">geocrs:BonneProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/WernerProjection">geocrs:WernerProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AmericanPolyconicProjection">geocrs:AmericanPolyconicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NicolosiGlobularProjection">geocrs:NicolosiGlobularProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">geocrs:RectangularPolyconicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BottomleyProjection">geocrs:BottomleyProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="pseudo-cylindricalprojection">
+        <h3>
+          pseudo-cylindrical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#pseudo-cylindricalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PseudoCylindricalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/BoggsEumorphicProjection">geocrs:BoggsEumorphicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/QuarticAuthalicProjection">geocrs:QuarticAuthalicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HEALPixProjection">geocrs:HEALPixProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/RobinsonProjection">geocrs:RobinsonProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrteliusOvalProjection">geocrs:OrteliusOvalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CrasterParabolicProjection">geocrs:CrasterParabolicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert6Projection">geocrs:Eckert6Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert4Projection">geocrs:Eckert4Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualEarthProjection">geocrs:EqualEarthProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Kavrayskiy7Projection">geocrs:Kavrayskiy7Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TheTimesProjection">geocrs:TheTimesProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SinusoidalProjection">geocrs:SinusoidalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ToblerHyperelliptical">geocrs:ToblerHyperelliptical</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CollignonProjection">geocrs:CollignonProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NaturalEarthProjection">geocrs:NaturalEarthProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LoximuthalProjection">geocrs:LoximuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/MollweideProjection">geocrs:MollweideProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Eckert2Projection">geocrs:Eckert2Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AtlantisProjection">geocrs:AtlantisProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GoodeHomolosineProjection">geocrs:GoodeHomolosineProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="quadrilateralizedsphericalcubeprojection">
+        <h3>
+          quadrilateralized spherical cube projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#quadrilateralizedsphericalcubeprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="quarticauthalicprojection">
+        <h3>
+          quartic authalic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#quarticauthalicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/QuarticAuthalicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="rectangularpolyconicprojection">
+        <h3>
+          rectangular polyconic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#rectangularpolyconicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/RectangularPolyconicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="retroazimuthalprojection">
+        <h3>
+          retroazimuthal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#retroazimuthalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/RetroazimuthalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection">geocrs:CraigRetroazimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LittrowProjection">geocrs:LittrowProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="robinsonprojection">
+        <h3>
+          robinson projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#robinsonprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/RobinsonProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="roussilheprojection">
+        <h3>
+          roussilhe projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#roussilheprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/RoussilheProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="sinusoidalprojection">
+        <h3>
+          sinusoidal projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#sinusoidalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SinusoidalProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spaceobliquemercatorprojection">
+        <h3>
+          space oblique mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spaceobliquemercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpaceObliqueMercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ObliqueMercatorProjection">geocrs:ObliqueMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="stereographicprojection">
+        <h3>
+          stereographic projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#stereographicprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/StereographicProjection</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A projection which can be constructed using the tangent's points antipoide as the point of perspective</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/RoussilheProjection">geocrs:RoussilheProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="strebe1995projection">
+        <h3>
+          strebe 1995 projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#strebe1995projection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Strebe1995Projection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="thetimesprojection">
+        <h3>
+          the times projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#thetimesprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TheTimesProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="toblerhyperellipticalprojection">
+        <h3>
+          tobler hyperelliptical projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#toblerhyperellipticalprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ToblerHyperelliptical</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PseudoCylindricalProjection">geocrs:PseudoCylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="transversemercatorprojection">
+        <h3>
+          transverse mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#transversemercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TransverseMercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection">geocrs:UniversalTransverseMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="two-pointequidistanceprojection">
+        <h3>
+          two-point equidistance projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#two-pointequidistanceprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TwoPointEquidistantProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="universaltransversemercatorprojection">
+        <h3>
+          universal transverse mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#universaltransversemercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TransverseMercatorProjection">geocrs:TransverseMercatorProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="vandergrintenprojection">
+        <h3>
+          van der grinten projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#vandergrintenprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/VanDerGrintenProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="verticalperspectiveprojection">
+        <h3>
+          vertical perspective projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#verticalperspectiveprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/VerticalPerspectiveProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AzimuthalProjection">geocrs:AzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="wagnerVIIprojection">
+        <h3>
+          wagner VII projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#wagnerVIIprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WagnerVIIProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="watermanbutterflyprojection">
+        <h3>
+          waterman butterfly projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#watermanbutterflyprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WatermanButterflyProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="webmercatorprojection">
+        <h3>
+          web mercator projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#webmercatorprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WebMercatorProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="wernerprojection">
+        <h3>
+          werner projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#wernerprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WernerProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoConicalProjection">geocrs:PseudoConicalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EquidistantProjection">geocrs:EquidistantProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="winkeltripelprojection">
+        <h3>
+          winkel tripel projection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#winkeltripelprojection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WinkelTripelProjection</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PseudoAzimuthalProjection">geocrs:PseudoAzimuthalProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompromiseProjection">geocrs:CompromiseProjection</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>default (:)</dt>
+        <dd><code>http://www.opengis.net/ont/crs/ProjectionVocabulary</code></dd>
+        <dt>brick</dt>
+        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
+        <dt>csvw</dt>
+        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dcam</dt>
+        <dd><code>http://purl.org/dc/dcam/</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcmitype</dt>
+        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>doap</dt>
+        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>geocrs</dt>
+        <dd><code>http://www.opengis.net/ont/crs/</code></dd>
+        <dt>odrl</dt>
+        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
+        <dt>org</dt>
+        <dd><code>http://www.w3.org/ns/org#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prof</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>time</dt>
+        <dd><code>http://www.w3.org/2006/time#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>void</dt>
+        <dd><code>http://rdfs.org/ns/void#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">ap</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
