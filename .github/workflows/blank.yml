@@ -21,6 +21,7 @@ jobs:
          cd docs
          doxygen Doxyfile
          pylode -i ../owl/ontology.ttl -o proj4rdfiso.html
+         pylode -i ../owl/ontology_noniso.ttl -o proj4rdfnoniso.html
          pylode -i ../owl/rules.ttl -o rules.html -p vocpub
          pylode -i ../owl/result.ttl -o proj4rdfapp1.html
          pylode -i ../projection_vocabulary/projection_vocabulary.ttl -o projvoc.html
