@@ -23,6 +23,7 @@ jobs:
          pylode -i ../owl/ontology.ttl -o index.html
          pylode -i ../owl/rules.ttl -o rules.html -p vocpub
          pylode -i ../owl/result.ttl -o index2.html
+         pylode -i ../projection_vocabulary/projection_vocabulary.ttl -o projvoc.html
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
     - name: Deploy 🚀
