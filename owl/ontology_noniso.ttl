@@ -28,9 +28,20 @@ geocrs:ShearOperation a owl:Class ;
     rdfs:label "shear transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
 
+geocrs:SpatialIndex a owl:Class ;
+    rdfs:label "spatial index"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:GridReferenceSystem ;
+    skos:definition "a grid that divides space with precise positions relative to a datum and acts as a spatial index"@en .
+
 geocrs:TranslationOperation a owl:Class ;
     rdfs:label "translation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
+
+geocrs:UnknownSpatialReferenceSystem a owl:Class ;
+    rdfs:label "unknown spatial reference system"@en ;
+    rdfs:subClassOf geocrs:SpatialReferenceSystem ;
+    skos:definition "A spatial reference system which definition is not known"@en .
 
 geocrs:accuracy a owl:DatatypeProperty ;
     rdfs:label "accuracy"@en ;
@@ -177,28 +188,6 @@ geocrs:longitude a owl:DatatypeProperty ;
     rdfs:range xsd:double ;
     skos:definition "Longitude of a prime meridian"@en .
 
-geocrs:mass a owl:DatatypeProperty ;
-    rdfs:label "mass"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double ;
-    skos:definition "the mass of an interstellar body"@en .
-
-geocrs:orbital_period a owl:DatatypeProperty ;
-    rdfs:label "orbital period"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
-
-geocrs:radius a owl:DatatypeProperty ;
-    rdfs:label "radius"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
-
-geocrs:starDistance a owl:DatatypeProperty ;
-    rdfs:label "star distance"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double ;
-    skos:definition "the distance of an interstellar body to the next star"@en .
-
 geocrs:unit a owl:DatatypeProperty,
         owl:ObjectProperty ;
     rdfs:label "unit"@en ;
@@ -235,4 +224,9 @@ geocrs:uses a owl:ObjectProperty ;
 
 geocrs:utm_zone a owl:DatatypeProperty ;
     rdfs:label "utm zone"@en .
+
+geocrs:SpatialReferenceSystem a owl:Class ;
+    rdfs:label "spatial reference system"@en ;
+    rdfs:subClassOf geocrs:ReferenceSystem ;
+    skos:definition "System for identifying position in the real world"@en .
 

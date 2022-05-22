@@ -152,6 +152,12 @@ geocrs:ShearOperation a owl:Class ;
     rdfs:label "shear transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
 
+geocrs:SpatialIndex a owl:Class ;
+    rdfs:label "spatial index"@en ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:subClassOf geocrs:GridReferenceSystem ;
+    skos:definition "a grid that divides space with precise positions relative to a datum and acts as a spatial index"@en .
+
 geocrs:TemporalCountCS a owl:Class ;
     rdfs:label "TemporalCountCS" ;
     geocrs:constraint "coordinateType.eq.integer" ;
@@ -169,6 +175,11 @@ geocrs:TemporalMeasureCS a owl:Class ;
 geocrs:TranslationOperation a owl:Class ;
     rdfs:label "translation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
+
+geocrs:UnknownSpatialReferenceSystem a owl:Class ;
+    rdfs:label "unknown spatial reference system"@en ;
+    rdfs:subClassOf geocrs:SpatialReferenceSystem ;
+    skos:definition "A spatial reference system which definition is not known"@en .
 
 geocrs:accuracy a owl:DatatypeProperty ;
     rdfs:label "accuracy"@en ;
@@ -1084,6 +1095,11 @@ geocrs:SecondDefiningParameter a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( geocrs:uInverseFlattening geocrs:uIsSphere geocrs:uSemiMinorAxis ) ] ;
     skos:definition "definition of the second parameter that defines the shape of a biaxial ellipsoid, or the third parameter that defines a triaxial ellipsoidNote: A biaxial ellipsoid requires two defining parameters: a semi-major axis and inverse flattening or a semi-major axis and a semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis “degenerates” into the radius of the sphere." .
+
+geocrs:SpatialReferenceSystem a owl:Class ;
+    rdfs:label "spatial reference system"@en ;
+    rdfs:subClassOf geocrs:ReferenceSystem ;
+    skos:definition "System for identifying position in the real world"@en .
 
 geocrs:SphericalCS a owl:Class ;
     rdfs:label "SphericalCS" ;
