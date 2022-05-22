@@ -215,3 +215,170 @@ sh:targetNode geocrs:DatumEnsemble ;
            sh:minCount 1 ;
            sh:maxCount 1 ;
        ] .
+
+geocrs:EllipsoidShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Ellipsoid definition" ;
+sh:targetNode geocrs:Ellipsoid ;
+       sh:property [
+           sh:path geocrs:semiMajorAxis  ;
+		   sh:class geocrs:Length  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:secondDefiningParameter  ;
+		   sh:class geocrs:secondDefiningParameter  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:semiMedianAxis  ;
+           sh:class geocrs:Length ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:EngineeringCRSShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Engineering CRS definition" ;
+sh:targetNode geocrs:EngineeringCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:EngineeringCS  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:EngineeringDatum  ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:GeodeticCRSShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Geodetic CRS definition" ;
+sh:targetNode geocrs:GeodeticCRS ;
+       sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:GeodeticReferenceFrame  ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:velocityModel ;
+		   sh:class geocrs:PointMotionOperation  ;
+       ] ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:GeodeticCS ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:GeodeticReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Geodetic Reference Frame definition" ;
+sh:targetNode geocrs:GeodeticReferenceFrame ;
+       sh:property [
+           sh:path geocrs:ellipsoid  ;
+		   sh:class geocrs:Ellipsoid  ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:primeMeridian  ;
+		   sh:class geocrs:PrimeMeridian ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:GeographicCRSShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Geographic CRS definition" ;
+sh:targetNode geocrs:GeographicCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:EllipsoidalCS  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:ObjectDomainShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Object Domain definition" ;
+sh:targetNode geocrs:ObjectDomain ;
+       sh:property [
+           sh:path geocrs:scope  ;
+		   sh:class xsd:string  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ]
+       sh:property [
+           sh:path geocrs:domainOfValidity  ;
+		   sh:class geocrs:EX_Extent ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ].
+
+geocrs:ObjectUsageShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Object Usage definition" ;
+sh:targetNode geocrs:ObjectUsage ;
+       sh:property [
+           sh:path geocrs:domain  ;
+		   sh:class geocrs:ObjectDomain  ;
+       ] .
+
+geocrs:PointMotionOperationShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Point Motion Operation definition" ;
+sh:targetNode geocrs:PointMotionOperation ;
+       sh:property [
+           sh:path geocrs:operationVersion  ;
+		   sh:class xsd:string  ;
+       ] .
+
+geocrs:PassThroughOperationShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Passthrough Operation definition" ;
+sh:targetNode geocrs:PassThroughOperation ;
+       sh:property [
+           sh:path geocrs:coordOperation  ;
+		   sh:class geocrs:CoordinateOperation  ;
+		   sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:modifiedCoordinate  ;
+		   sh:class geocrs:Sequence  ;
+		   sh:minCount 1 ;
+		   sh:maxCount 1 ;
+       ] .
+
+geocrs:OperationMethodShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Operation Method definition" ;
+sh:targetNode geocrs:OperationMethod ;
+       sh:property [
+           sh:path geocrs:formulaReference  ;
+		   sh:class geocrs:Formula  ;
+           sh:minCount 1;
+           sh:maxCount 1;
+       ];
+       sh:property [
+           sh:path geocrs:parameter  ;
+		   sh:class geocrs:GeneralOperationParameter  ;
+       ].
+
+geocrs:IdentifiedObjectShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Identified Object definition" ;
+sh:targetNode geocrs:IdentifiedObject ;
+       sh:property [
+           sh:path geocrs:name ;
+           sh:class geocrs:MD_Identifier ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:alias ;
+           sh:class geocrs:GenericName ;
+       ] ;
+       sh:property [
+           sh:path geocrs:identifier ;
+           sh:class geocrs:MD_Identifier ;
+       ] ;
+       sh:property [
+           sh:path geocrs:remarks ;
+		   sh:class xsd:string  ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] .
