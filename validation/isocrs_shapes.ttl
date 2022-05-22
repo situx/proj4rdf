@@ -1,0 +1,54 @@
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:<http://www.w3.org/2002/07/owl#> .
+@prefix xsd:<http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:<http://www.w3.org/2004/02/skos/core#> .
+@prefix geoepsg:<http://www.opengis.net/def/crs/EPSG/0/> .
+@prefix geo:<http://www.opengis.net/ont/geosparql#> .
+@prefix geocrs:<http://www.opengis.net/ont/crs#> .
+@prefix dc:<http://purl.org/dc/elements/1.1/> .
+@prefix wd:<http://www.wikidata.org/entity/> .
+@prefix om:<http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sh:<http://www.w3.org/ns/shacl#> .
+
+geocrs:GeoSPARQLCRSISOShapes
+    a owl:Ontology ;
+	rdfs:label "GeoSPARQLCRS SHACL Shapes based on ISO standards" .
+
+geocrs:CoordinateSystemShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateSystem ;
+       sh:property [
+           sh:path geocrs:axis  ;
+		   sh:class geocrs:CoordinateSystemAxis ;
+           sh:minCount 1 ;
+       ] .
+
+geocrs:CoordinateSystemAxisShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateSystemAxis ;
+       sh:property [
+           sh:path geocrs:axisAbbrev  ;
+		   sh:class xsd:string ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:axisDirection  ;
+           sh:class geocrs:AxisDirection ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:DatumEnsembleShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:DatumEnsemble ;
+       sh:property [
+           sh:path geocrs:datum  ;
+		   sh:class geocrs:Datum  ;
+           sh:minCount 2 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:ensembleAccuracy  ;
+           sh:class geocrs:DQ_Positional_Accuracy ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .

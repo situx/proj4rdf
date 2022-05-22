@@ -24,6 +24,7 @@ jobs:
          pylode -i ../owl/ontology_noniso.ttl -o proj4rdfnoniso.html
          pylode -i ../owl/ontology_isobased.ttl -o proj4rdfiso.html
          pylode -i ../owl/rules.ttl -o rules.html -p vocpub
+         pylode -i ../validation/isocrs_shapes.ttl -o isocrs_shapes.html -p vocpub
          pylode -i ../owl/result.ttl -o proj4rdfapp1.html
          pylode -i ../projection_vocabulary/projection_vocabulary.ttl -o projvoc.html
          pylode -i ../planet_vocabulary/planet_vocabulary.ttl -o planetvoc.html
