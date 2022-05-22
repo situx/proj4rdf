@@ -16,7 +16,8 @@ geocrs:GeoSPARQLCRSISOShapes
 	rdfs:label "GeoSPARQLCRS SHACL Shapes based on ISO standards" .
 
 geocrs:CoordinateSystemShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Coordinate System definition" ;
+rdfs:label "CoordinateSystem Shape" ;
+rdfs:comment "Shape constraining a Coordinate System definition" ;
 skos:definition "Ensures that a coordinate system is assigned at least one axis definition" ;
 sh:targetNode geocrs:CoordinateSystem ;
        sh:property [
@@ -26,7 +27,7 @@ sh:targetNode geocrs:CoordinateSystem ;
        ] .
 
 geocrs:ConversionShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Conversion definition" ;
+rdfs:comment "Shape constraining a Conversion definition" ;
 sh:targetNode geocrs:Conversion ;
        sh:property [
            sh:path geocrs:operationVersion  ;
@@ -35,7 +36,7 @@ sh:targetNode geocrs:Conversion ;
        ] .
 
 geocrs:CoordinateMetadataShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Coordinate Metadata definition" ;
+rdfs:comment "Shape constraining a Coordinate Metadata definition" ;
 sh:targetNode geocrs:CoordinateMetadata ;
        sh:property [
            sh:path geocrs:coordinateEpoch  ;
@@ -57,7 +58,7 @@ sh:targetNode geocrs:CoordinateMetadata ;
        ]  .
 
 geocrs:CoordinateSetShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Coordinate Set definition" ;
+rdfs:comment "Shape constraining a Coordinate Set definition" ;
 sh:targetNode geocrs:CoordinateSet ;
        sh:property [
            sh:path geocrs:coordinateMetadata ;
@@ -72,7 +73,7 @@ sh:targetNode geocrs:CoordinateSet ;
        ].
 
 geocrs:CoordinateOperationShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Coordinate Operation definition" ;
+rdfs:comment "Shape constraining a Coordinate Operation definition" ;
 sh:targetNode geocrs:CoordinateOperation ;
        sh:property [
            sh:path geocrs:operationVersion ;
@@ -130,7 +131,7 @@ sh:targetNode geocrs:CoordinateOperation ;
        ]  .
 
 geocrs:CoordinateSystemAxisShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Coordinate System Axis definition" ;
+rdfs:comment "Shape constraining a Coordinate System Axis definition" ;
 sh:targetNode geocrs:CoordinateSystemAxis ;
        sh:property [
            sh:path geocrs:axisAbbrev  ;
@@ -146,7 +147,7 @@ sh:targetNode geocrs:CoordinateSystemAxis ;
        ] .
 
 geocrs:DatumShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Datum definition" ;
+rdfs:comment "Shape constraining a Datum definition" ;
 sh:targetNode geocrs:Datum ;
        sh:property [
            sh:path geocrs:anchorDefinition  ;
@@ -168,7 +169,7 @@ sh:targetNode geocrs:Datum ;
        ]  .
 
 geocrs:DerivedCRSShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Derived CRS definition" ;
+rdfs:comment "Shape constraining a Derived CRS definition" ;
 sh:targetNode geocrs:DerivedCRS ;
        sh:property [
            sh:path geocrs:baseCRS  ;
@@ -184,7 +185,7 @@ sh:targetNode geocrs:DerivedCRS ;
        ] .
 
 geocrs:DerivedProjectedCRSShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Derived Projected CRS definition" ;
+rdfs:comment "Shape constraining a Derived Projected CRS definition" ;
 sh:targetNode geocrs:DerivedProjectedCRS ;
        sh:property [
            sh:path geocrs:coordinateSystem  ;
@@ -200,7 +201,7 @@ sh:targetNode geocrs:DerivedProjectedCRS ;
        ] .
 
 geocrs:DatumEnsembleShape rdf:type sh:NodeShape, owl:Class ;
-rdfs:label "Shape constraining a Datum Ensemble definition" ;
+rdfs:comment "Shape constraining a Datum Ensemble definition" ;
 sh:targetNode geocrs:DatumEnsemble ;
        sh:property [
            sh:path geocrs:datum  ;
