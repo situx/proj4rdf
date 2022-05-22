@@ -23,6 +23,106 @@ sh:targetNode geocrs:CoordinateSystem ;
            sh:minCount 1 ;
        ] .
 
+geocrs:ConversionShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:Conversion ;
+       sh:property [
+           sh:path geocrs:operationVersion  ;
+           sh:class xsd:string ;
+           sh:maxCount 0 ;
+       ] .
+
+geocrs:CoordinateMetadataShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateMetadata ;
+       sh:property [
+           sh:path geocrs:coordinateEpoch  ;
+           sh:class geocrs:DataEpoch ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:crs  ;
+           sh:class geocrs:CRS ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:crsID  ;
+           sh:class geocrs:MD_Identifier ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ]  .
+
+geocrs:CoordinateSetShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateSet ;
+       sh:property [
+           sh:path geocrs:coordinateMetadata ;
+           sh:class geocrs:CoordinateMetadata ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:coordinateTuple ;
+           sh:class geocrs:DirectPosition ;
+           sh:minCount 1 ;
+       ].
+
+geocrs:CoordinateOperationShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:CoordinateOperation ;
+       sh:property [
+           sh:path geocrs:operationVersion ;
+           sh:class xsd:string ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:sourceCoordinateEpoch  ;
+           sh:class geocrs:DataEpoch ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:targetCoordinateEpoch  ;
+           sh:class geocrs:DataEpoch ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:sourceCRS  ;
+           sh:class geocrs:CRS ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:sourcePosition  ;
+           sh:class geocrs:DirectPosition ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:targetCRS  ;
+           sh:class geocrs:CRS ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:interpolationCRS  ;
+           sh:class geocrs:CRS ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:targetPosition  ;
+           sh:class geocrs:DirectPosition ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:crsID  ;
+           sh:class geocrs:MD_Identifier ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ]  .
+
 geocrs:CoordinateSystemAxisShape rdf:type sh:NodeShape, owl:Class ;
 sh:targetNode geocrs:CoordinateSystemAxis ;
        sh:property [
@@ -34,6 +134,57 @@ sh:targetNode geocrs:CoordinateSystemAxis ;
        sh:property [
            sh:path geocrs:axisDirection  ;
            sh:class geocrs:AxisDirection ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:DatumShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:Datum ;
+       sh:property [
+           sh:path geocrs:anchorDefinition  ;
+		   sh:class xsd:string  ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:publicationDate  ;
+           sh:class rdf:XMLLiteral ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:conventionalRS  ;
+           sh:class geocrs:IdentifiedObject ;
+           sh:minCount 0 ;
+           sh:maxCount 1 ;
+       ]  .
+
+geocrs:DerivedCRSShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:DerivedCRS ;
+       sh:property [
+           sh:path geocrs:baseCRS  ;
+		   sh:class geocrs:SingleCRS  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:derivingConversion  ;
+           sh:class geocrs:Conversion ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:DerivedProjectedCRSShape rdf:type sh:NodeShape, owl:Class ;
+sh:targetNode geocrs:DerivedProjectedCRS ;
+       sh:property [
+           sh:path geocrs:coordinateSystem  ;
+		   sh:class geocrs:DerivedProjectedCS  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] ;
+       sh:property [
+           sh:path geocrs:baseCRS  ;
+           sh:class geocrs:ProjectedCRS ;
            sh:minCount 1 ;
            sh:maxCount 1 ;
        ] .
