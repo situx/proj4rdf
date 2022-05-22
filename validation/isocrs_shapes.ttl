@@ -305,7 +305,7 @@ sh:targetNode geocrs:ObjectDomain ;
 		   sh:class xsd:string  ;
            sh:minCount 1 ;
            sh:maxCount 1 ;
-       ]
+       ] ;
        sh:property [
            sh:path geocrs:domainOfValidity  ;
 		   sh:class geocrs:EX_Extent ;
