@@ -287,6 +287,16 @@ sh:targetNode geocrs:GeodeticReferenceFrame ;
            sh:maxCount 1 ;
        ] .
 
+geocrs:PrimeMeridianShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Prime Meridian definition" ;
+sh:targetNode geocrs:PrimeMeridian ;
+       sh:property [
+           sh:path geocrs:greenwichLongitude  ;
+		   sh:class geocrs:Angle  ;
+           sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
 geocrs:GeographicCRSShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:comment "Shape constraining a Geographic CRS definition" ;
 sh:targetNode geocrs:GeographicCRS ;
