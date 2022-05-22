@@ -225,6 +225,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <ol>
         <li><a href="#classes">Classes</a></li>
         <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
@@ -241,14 +242,19 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <ul class="hlist">
       <li><a href="http://www.opengis.net/ont/crs/ArtificialSatellite">geocrs:ArtificialSatellite</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BarycentricCoordinateSystem">geocrs:BarycentricCoordinateSystem</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a></li>
       <li><a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EclipticCS">geocrs:EclipticCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EquatorialCS">geocrs:EquatorialCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GalacticCS">geocrs:GalacticCS</a></li>
       <li><a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Moon">geocrs:Moon</a></li>
       <li><a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Plutoid">geocrs:Plutoid</a></li>
       <li><a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SuperGalacticCS">geocrs:SuperGalacticCS</a></li>
     </ul>
     <div class="entity class" id="artificialsatellite">
         <h3>
@@ -282,6 +288,36 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
                 <th>Super-classes</th>
                 <td>
                     <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="barycentriccoordinatesystem">
+        <h3>
+          barycentric coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#barycentriccoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BarycentricCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a coordinate system in which the location of a point is specified by reference to a simplex </p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -328,6 +364,66 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
+    <div class="entity class" id="eclipticcoordinatesystem">
+        <h3>
+          ecliptic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#eclipticcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EclipticCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An ecliptic coordinate system is used for representing the apparent positions and orbits of solar system objects.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="equatorialcoordinatesystem">
+        <h3>
+          equatorial coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#equatorialcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EquatorialCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="galacticcoordinatesystem">
+        <h3>
+          galactic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#galacticcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GalacticCS</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="interstellarbody">
         <h3>
           interstellar body<sup title="class" class="sup-c">c</sup>
@@ -341,17 +437,21 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/crs/ArtificialSatellite">geocrs:ArtificialSatellite</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="http://www.opengis.net/ont/crs/orbital_period">geocrs:orbital_period</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/mass">geocrs:mass</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/starDistance">geocrs:starDistance</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/radius">geocrs:radius</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://www.opengis.net/ont/crs/planet_status">geocrs:planet_status</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://www.opengis.net/ont/crs/satelliteOf">geocrs:satelliteOf</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
@@ -472,6 +572,25 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
+    <div class="entity class" id="supergalacticcoordinatesystem">
+        <h3>
+          super galactic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#supergalacticcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SuperGalacticCS</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
 </section>
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -533,6 +652,120 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
                 <th>Range(s)</th>
                 <td>
                     <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#mass">mass</a></li>
+        <li><a href="#orbitalperiod">orbital period</a></li>
+        <li><a href="#radius">radius</a></li>
+        <li><a href="#stardistance">star distance</a></li>
+    </ul>
+    <div class="entity property" id="mass">
+        <h3>mass<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#mass" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/mass</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>the mass of an interstellar body</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="orbitalperiod">
+        <h3>orbital period<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#orbitalperiod" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/orbital_period</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="radius">
+        <h3>radius<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#radius" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/radius</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="stardistance">
+        <h3>star distance<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#stardistance" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/starDistance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>the distance of an interstellar body to the next star</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
