@@ -287,6 +287,26 @@ sh:targetNode geocrs:GeodeticReferenceFrame ;
            sh:maxCount 1 ;
        ] .
 
+geocrs:DynamicGeodeticReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Dynamic Geodetic Reference Frame definition" ;
+sh:targetNode geocrs:DynamicGeodeticReferenceFrame ;
+       sh:property [
+           sh:path geocrs:frameReferenceEpoch  ;
+		   sh:class geocrs:Measure  ;
+		   sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
+geocrs:DynamicVerticalReferenceFrameShape rdf:type sh:NodeShape, owl:Class ;
+rdfs:comment "Shape constraining a Dynamic Vertical Reference Frame definition" ;
+sh:targetNode geocrs:DynamicVerticalReferenceFrame ;
+       sh:property [
+           sh:path geocrs:frameReferenceEpoch  ;
+		   sh:class geocrs:Measure  ;
+		   sh:minCount 1 ;
+           sh:maxCount 1 ;
+       ] .
+
 geocrs:PrimeMeridianShape rdf:type sh:NodeShape, owl:Class ;
 rdfs:comment "Shape constraining a Prime Meridian definition" ;
 sh:targetNode geocrs:PrimeMeridian ;
