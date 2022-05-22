@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix geocrs: <http://www.opengis.net/ont/crs/> .
 @prefix ns1: <http://purl.org/dc/terms/> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
@@ -5,6 +6,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirectionCollection> a owl:NamedIndividual,
@@ -80,115 +82,6 @@ ns1:isFormatOf a owl:AnnotationProperty .
 
 ns1:source a owl:AnnotationProperty .
 
-geocrs:AdamsProjection a owl:Class ;
-    rdfs:label "adams projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
-
-geocrs:AitoffProjection a owl:Class ;
-    rdfs:label "aitoff projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoAzimuthalProjection .
-
-geocrs:AlbersEqualAreaProjection a owl:Class ;
-    rdfs:label "albers equal-area projection"@en ;
-    rdfs:subClassOf geocrs:ConicalProjection,
-        geocrs:EqualAreaProjection ;
-    skos:definition "a conic, equal area map projection that uses two standard parallels"@en .
-
-geocrs:AmericanPolyconicProjection a owl:Class ;
-    rdfs:label "american polyconic projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:ArmadilloProjection a owl:Class ;
-    rdfs:label "armadillo projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection .
-
-geocrs:ArtificialSatellite a owl:Class ;
-    rdfs:label "artificial satellite"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
-
-geocrs:Asteroid a owl:Class ;
-    rdfs:label "asteroid"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
-
-geocrs:AtlantisProjection a owl:Class ;
-    rdfs:label "atlantis projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:AuthaGraphProjection a owl:Class ;
-    rdfs:label "autha graph projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:BehrmannProjection a owl:Class ;
-    rdfs:label "behrmann projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EqualAreaProjection .
-
-geocrs:BertinProjection a owl:Class ;
-    rdfs:label "bertin projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection .
-
-geocrs:BoggsEumorphicProjection a owl:Class ;
-    rdfs:label "boggs eumorphic projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:BonneProjection a owl:Class ;
-    rdfs:label "bonne projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:BottomleyProjection a owl:Class ;
-    rdfs:label "bottomley projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:CahillKeyesProjection a owl:Class ;
-    rdfs:label "cahill-keyes projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:CassiniProjection a owl:Class ;
-    rdfs:label "cassini projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EquidistantProjection .
-
-geocrs:CentralCylindricalProjection a owl:Class ;
-    rdfs:label "central cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:PerspectiveProjection .
-
-geocrs:CollignonProjection a owl:Class ;
-    rdfs:label "collignon projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:ColombiaUrbanProjection a owl:Class ;
-    rdfs:label "colombia urban projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:Comet a owl:Class ;
-    rdfs:label "comet"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
-
-geocrs:CraigRetroazimuthalProjection a owl:Class ;
-    rdfs:label "craig retroazimuthal projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:RetroazimuthalProjection .
-
-geocrs:CrasterParabolicProjection a owl:Class ;
-    rdfs:label "craster parabolic projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:CylindricalEqualArea a owl:Class ;
-    rdfs:label "cylindrical equal area projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EqualAreaProjection .
-
 geocrs:DateTimeTemporalCS a owl:Class ;
     rdfs:label "DateTimeTemporalCS" ;
     geocrs:constraint "coordinateType.eq.dateTime" ;
@@ -238,221 +131,18 @@ geocrs:DerivedVerticalCRS a owl:Class ;
         geocrs:VerticalCRS ;
     skos:definition "derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system" .
 
-geocrs:DymaxionProjection a owl:Class ;
-    rdfs:label "dymaxion projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:Eckert2Projection a owl:Class ;
-    rdfs:label "Eckert II projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:Eckert4Projection a owl:Class ;
-    rdfs:label "Eckert IV projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:Eckert6Projection a owl:Class ;
-    rdfs:label "Eckert VI projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:EqualEarthProjection a owl:Class ;
-    rdfs:label "equal earth projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:EquidistantConicProjection a owl:Class ;
-    rdfs:label "equidistant conic projection"@en ;
-    rdfs:subClassOf geocrs:ConicalProjection,
-        geocrs:EquidistantProjection .
-
-geocrs:EquidistantCylindricalProjection a owl:Class ;
-    rdfs:label "equidistant cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EquidistantProjection .
-
-geocrs:EquirectangularProjection a owl:Class ;
-    rdfs:label "equirectangular projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EquidistantProjection .
-
-geocrs:GS50Projection a owl:Class ;
-    rdfs:label "gs50 projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
-
-geocrs:GallPetersProjection a owl:Class ;
-    rdfs:label "gall-peters projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EqualAreaProjection .
-
-geocrs:GallStereographicProjection a owl:Class ;
-    rdfs:label "gall stereographic projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:CylindricalProjection .
-
-geocrs:GaussKruegerProjection a owl:Class ;
-    rdfs:label "gauss-krüger projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:CylindricalProjection .
-
-geocrs:GnomonicProjection a owl:Class ;
-    rdfs:label "gnomonic projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection .
-
-geocrs:GoodeHomolosineProjection a owl:Class ;
-    rdfs:label "goode homolosine projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:GuyouProjection a owl:Class ;
-    rdfs:label "guyou projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
-
-geocrs:HEALPixProjection a owl:Class ;
-    rdfs:label "HEALPix projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:HammerProjection a owl:Class ;
-    rdfs:label "hammer projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoAzimuthalProjection .
-
-geocrs:HoboDyerProjection a owl:Class ;
-    rdfs:label "hobo-dyer projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EqualAreaProjection .
+geocrs:GeoSPARQLSRS a owl:Ontology ;
+    rdfs:label "GeoSPARQL SRS Ontology Draft NonISO classes"@en ;
+    dc:creator wd:Q67624599 ;
+    dc:description "This ontology models spatial reference systems"@en .
 
 geocrs:IdentityOperation a owl:Class ;
     rdfs:label "identity transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
 
-geocrs:Kavrayskiy7Projection a owl:Class ;
-    rdfs:label "Kavrayskiy VII projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:Krovak a owl:Class ;
-    rdfs:label "krovak projection"@en ;
-    rdfs:subClassOf geocrs:ConicalProjection .
-
-geocrs:LabordeProjection a owl:Class ;
-    rdfs:label "laborde projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:CylindricalProjection .
-
-geocrs:LambertAzimuthalEqualArea a owl:Class ;
-    rdfs:label "lambert azimuthal equal area projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection,
-        geocrs:EqualAreaProjection .
-
-geocrs:LambertConformalConicProjection a owl:Class ;
-    rdfs:label "lambert conformal conic projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:ConicalProjection .
-
-geocrs:LeeProjection a owl:Class ;
-    rdfs:label "lee projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:LittrowProjection a owl:Class ;
-    rdfs:label "littrow projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:RetroazimuthalProjection .
-
-geocrs:LoximuthalProjection a owl:Class ;
-    rdfs:label "loximuthal projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:MillerProjection a owl:Class ;
-    rdfs:label "miller projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:CylindricalProjection .
-
-geocrs:MollweideProjection a owl:Class ;
-    rdfs:label "mollweide projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:Moon a owl:Class ;
-    rdfs:label "moon"@en ;
-    rdfs:subClassOf geocrs:NaturalSatellite .
-
-geocrs:MyrahedalProjection a owl:Class ;
-    rdfs:label "myrahedal projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:NaturalEarthProjection a owl:Class ;
-    rdfs:label "natural earth projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:NicolosiGlobularProjection a owl:Class ;
-    rdfs:label "nicolosi globular projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:ObliqueStereographicProjection a owl:Class ;
-    rdfs:label "oblique stereographic projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:ObliqueProjection .
-
-geocrs:OctantProjection a owl:Class ;
-    rdfs:label "octant projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:OrteliusOvalProjection a owl:Class ;
-    rdfs:label "ortelius oval projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:OrthographicProjection a owl:Class ;
-    rdfs:label "orthographic projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection,
-        geocrs:PerspectiveProjection .
-
-geocrs:PeirceQuincuncialProjection a owl:Class ;
-    rdfs:label "peirce quincuncial projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection .
-
-geocrs:Plutoid a owl:Class ;
-    rdfs:label "plutoid"@en ;
-    rdfs:subClassOf geocrs:DwarfPlanet .
-
-geocrs:QuadrilateralizedSphericalCubeProjection a owl:Class ;
-    rdfs:label "quadrilateralized spherical cube projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:QuarticAuthalicProjection a owl:Class ;
-    rdfs:label "quartic authalic projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:RectangularPolyconicProjection a owl:Class ;
-    rdfs:label "rectangular polyconic projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:RobinsonProjection a owl:Class ;
-    rdfs:label "robinson projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
 geocrs:RotationOperation a owl:Class ;
     rdfs:label "rotation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
-
-geocrs:RoussilheProjection a owl:Class ;
-    rdfs:label "roussilhe projection"@en ;
-    rdfs:subClassOf geocrs:ObliqueProjection,
-        geocrs:StereographicProjection .
 
 geocrs:SRSRegistry a owl:Class ;
     rdfs:label "srs registry"@en ;
@@ -461,25 +151,6 @@ geocrs:SRSRegistry a owl:Class ;
 geocrs:ShearOperation a owl:Class ;
     rdfs:label "shear transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
-
-geocrs:SinusoidalProjection a owl:Class ;
-    rdfs:label "sinusoidal projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:EquidistantProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:SpaceObliqueMercatorProjection a owl:Class ;
-    rdfs:label "space oblique mercator projection"@en ;
-    rdfs:subClassOf geocrs:ObliqueMercatorProjection .
-
-geocrs:Star a owl:Class ;
-    rdfs:label "star"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
-
-geocrs:Strebe1995Projection a owl:Class ;
-    rdfs:label "strebe 1995 projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoAzimuthalProjection .
 
 geocrs:TemporalCountCS a owl:Class ;
     rdfs:label "TemporalCountCS" ;
@@ -495,63 +166,9 @@ geocrs:TemporalMeasureCS a owl:Class ;
     rdfs:subClassOf geocrs:TemporalCS ;
     skos:definition "one-dimensional coordinate system used to record a time as a real numberNote: A TemporalMeasureCS shall have one axis association." .
 
-geocrs:TheTimesProjection a owl:Class ;
-    rdfs:label "the times projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoCylindricalProjection .
-
-geocrs:ToblerHyperelliptical a owl:Class ;
-    rdfs:label "tobler hyperelliptical projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
-
 geocrs:TranslationOperation a owl:Class ;
     rdfs:label "translation transformation operation"@en ;
     rdfs:subClassOf geocrs:AffineTransformation .
-
-geocrs:TwoPointEquidistantProjection a owl:Class ;
-    rdfs:label "two-point equidistance projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection,
-        geocrs:EquidistantProjection .
-
-geocrs:UniversalTransverseMercatorProjection a owl:Class ;
-    rdfs:label "universal transverse mercator projection"@en ;
-    rdfs:subClassOf geocrs:TransverseMercatorProjection .
-
-geocrs:VanDerGrintenProjection a owl:Class ;
-    rdfs:label "van der grinten projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection .
-
-geocrs:VerticalPerspectiveProjection a owl:Class ;
-    rdfs:label "vertical perspective projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection,
-        geocrs:PerspectiveProjection .
-
-geocrs:WagnerVIIProjection a owl:Class ;
-    rdfs:label "wagner VII projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoAzimuthalProjection .
-
-geocrs:WatermanButterflyProjection a owl:Class ;
-    rdfs:label "waterman butterfly projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PolyhedralProjection .
-
-geocrs:WebMercatorProjection a owl:Class ;
-    rdfs:label "web mercator projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:CylindricalProjection .
-
-geocrs:WernerProjection a owl:Class ;
-    rdfs:label "werner projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:EquidistantProjection,
-        geocrs:PseudoConicalProjection .
-
-geocrs:WinkelTripelProjection a owl:Class ;
-    rdfs:label "winkel tripel projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoAzimuthalProjection .
 
 geocrs:accuracy a owl:DatatypeProperty ;
     rdfs:label "accuracy"@en ;
@@ -705,40 +322,6 @@ geocrs:longitude a owl:DatatypeProperty ;
     rdfs:domain geocrs:PrimeMeridian ;
     rdfs:range xsd:double ;
     skos:definition "Longitude of a prime meridian"@en .
-
-geocrs:mass a owl:DatatypeProperty ;
-    rdfs:label "mass"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double ;
-    skos:definition "the mass of an interstellar body"@en .
-
-geocrs:orbital_period a owl:DatatypeProperty ;
-    rdfs:label "orbital period"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
-
-geocrs:planet_status a owl:ObjectProperty ;
-    rdfs:label "planet status"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range geocrs:PlanetStatus ;
-    skos:definition "The status of the discovery of the planet, e.g. confirmed, unsure etc."@en .
-
-geocrs:radius a owl:DatatypeProperty ;
-    rdfs:label "radius"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double .
-
-geocrs:satelliteOf a owl:ObjectProperty ;
-    rdfs:label "satellite of"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range geocrs:InterstellarBody ;
-    skos:definition "Defines an interstellar body as the natural satellite of another interstellar body."@en .
-
-geocrs:starDistance a owl:DatatypeProperty ;
-    rdfs:label "star distance"@en ;
-    rdfs:domain geocrs:InterstellarBody ;
-    rdfs:range xsd:double ;
-    skos:definition "the distance of an interstellar body to the next star"@en .
 
 geocrs:unit a owl:DatatypeProperty,
         owl:ObjectProperty ;
@@ -1220,10 +803,6 @@ geocrs:CompoundCRS a owl:Class ;
         geocrs:CRS ;
     skos:definition "coordinate reference system describing the position of points through two or more independent single coordinate reference systemsNote: two coordinate reference systems are independent of each other if coordinate values in one cannot be converted or transformed into coordinate values in the other." .
 
-geocrs:DwarfPlanet a owl:Class ;
-    rdfs:label "dwarf planet"@en ;
-    rdfs:subClassOf geocrs:Planet .
-
 geocrs:DynamicGeodeticReferenceFrame a owl:Class ;
     rdfs:label "DynamicGeodeticReferenceFrame" ;
     rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
@@ -1248,21 +827,6 @@ geocrs:DynamicVerticalReferenceFrame a owl:Class ;
         geocrs:VerticalReferenceFrame ;
     skos:definition "vertical reference frame in which some of the defining parameters have time dependencyExample: Defining station heights have velocity to account for post-glacial isostatic rebound motion." .
 
-geocrs:NaturalSatellite a owl:Class ;
-    rdfs:label "natural satellite"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody ;
-    skos:definition "an interstellar body orbiting around another interstellar body"@en .
-
-geocrs:ObliqueMercatorProjection a owl:Class ;
-    rdfs:label "oblique mercator projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:MercatorProjection,
-        geocrs:ObliqueProjection .
-
-geocrs:Planet a owl:Class ;
-    rdfs:label "planet"@en ;
-    rdfs:subClassOf geocrs:InterstellarBody .
-
 geocrs:RegisterOperations a owl:Class ;
     rdfs:label "RegisterOperations" ;
     rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
@@ -1273,16 +837,6 @@ geocrs:RegisterOperations a owl:Class ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geocrs:authority ] ;
     skos:definition "operations supported in the Coordinate Operations package" .
-
-geocrs:StereographicProjection a owl:Class ;
-    rdfs:label "stereographic projection"@en ;
-    rdfs:subClassOf geocrs:AzimuthalProjection,
-        geocrs:ConformalProjection ;
-    skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
-
-geocrs:TransverseMercatorProjection a owl:Class ;
-    rdfs:label "transverse mercator projection"@en ;
-    rdfs:subClassOf geocrs:MercatorProjection .
 
 geocrs:alias a owl:ObjectProperty ;
     rdfs:label "alias" ;
@@ -1450,11 +1004,6 @@ geocrs:LinearCS a owl:Class ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "one-dimensional coordinate system that consists of the points that lie on the single axis describedNote: The associated coordinate is the distance – with or without offset – from the origin point, specified through the datum definition, to the point along the axis. Example: usage of the line feature representing a pipeline to describe points on or along that pipeline. A LinearCS shall have one axis association." .
 
-geocrs:MercatorProjection a owl:Class ;
-    rdfs:label "mercator projection"@en ;
-    rdfs:subClassOf geocrs:ConformalProjection,
-        geocrs:CylindricalProjection .
-
 geocrs:OperationParameter a owl:Class ;
     rdfs:label "OperationParameter" ;
     rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
@@ -1526,10 +1075,6 @@ geocrs:PolarCS a owl:Class ;
     rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
     rdfs:subClassOf geocrs:CoordinateSystem ;
     skos:definition "two-dimensional coordinate system in Euclidean space in which position is specified by the distance from the origin and the angle between the line from the origin to a point and a reference directionNote: A PolarCS shall have two axis associations." .
-
-geocrs:RetroazimuthalProjection a owl:Class ;
-    rdfs:label "retroazimuthal projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 geocrs:Scale a owl:Class .
 
@@ -2248,11 +1793,6 @@ geocrs:GeographicObject a owl:Class ;
         <http://def.isotc211.org/iso19107/2019/Geometry#Geometry> ;
     skos:definition "identification of an object used as a parameter in a coordinate transformation, point motion operation or coordinate conversion" .
 
-geocrs:ObliqueProjection a owl:Class ;
-    rdfs:label "oblique projection"@en ;
-    rdfs:subClassOf geocrs:Projection ;
-    skos:definition "a projection made by parallel lines drawn from every point of a figure and meeting the plane of projection obliquely"@en .
-
 geocrs:OrdinalCS a owl:Class ;
     rdfs:label "OrdinalCS" ;
     geocrs:constraint "coordinateType.eq.integer" ;
@@ -2300,10 +1840,6 @@ geocrs:ParametricDatum a owl:Class ;
         <http://def.isotc211.org/iso19111/2007/Datums#CD_Datum>,
         geocrs:Datum ;
     skos:definition "textual description and.sl.or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth" .
-
-geocrs:PerspectiveProjection a owl:Class ;
-    rdfs:label "perspective projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 geocrs:TemporalCRS a owl:Class ;
     rdfs:label "TemporalCRS" ;
@@ -2381,9 +1917,18 @@ geocrs:CartesianCS a owl:Class ;
     rdfs:subClassOf geocrs:AffineCS ;
     skos:definition "two- or three-dimensional coordinate system in Euclidean space with straight axes that are not necessarily orthogonalNote: The number of associations shall equal the dimension of the coordinate system." .
 
-geocrs:ConicalProjection a owl:Class ;
-    rdfs:label "conical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
+geocrs:Conversion a owl:Class ;
+    rdfs:label "Conversion" ;
+    geocrs:constraint "count(sourceEpoch).eq.0 and count(targetEpoch).eq.0" ;
+    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty geocrs:operationVersion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty geocrs:operationVersion ],
+        geocrs:SingleOperation ;
+    skos:definition "mathematical operation on coordinates in which the parameter values are defined rather than empirically derived; application of the coordinate conversion introduces no error into output coordinatesNote: The best-known example of a coordinate conversion is a map projection. For coordinate conversions the output coordinates are referenced to the same datum as are the input coordinates.Coordinate conversions forming a component of a derived CRS have a source CRS and a target CRS that are NOT specified through the source and target associations, but through associations from DerivedCRS to SingleCRS." .
 
 geocrs:DQ_PositionalAccuracy a owl:Class .
 
@@ -2576,19 +2121,6 @@ geocrs:uSphericalCS a owl:Class ;
             owl:onProperty geocrs:sphericalCS ] ;
     skos:definition "three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates. Not to be confused with an ellipsoidal coordinate system based on an ellipsoid .gu.degenerated.gu. into a sphere. A SphericalCS shall have three axis associations." .
 
-geocrs:Conversion a owl:Class ;
-    rdfs:label "Conversion" ;
-    geocrs:constraint "count(sourceEpoch).eq.0 and count(targetEpoch).eq.0" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty geocrs:operationVersion ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty geocrs:operationVersion ],
-        geocrs:SingleOperation ;
-    skos:definition "mathematical operation on coordinates in which the parameter values are defined rather than empirically derived; application of the coordinate conversion introduces no error into output coordinatesNote: The best-known example of a coordinate conversion is a map projection. For coordinate conversions the output coordinates are referenced to the same datum as are the input coordinates.Coordinate conversions forming a component of a derived CRS have a source CRS and a target CRS that are NOT specified through the source and target associations, but through associations from DerivedCRS to SingleCRS." .
-
 geocrs:CoordinateMetadata a owl:Class ;
     rdfs:label "CoordinateMetadata" ;
     geocrs:constraint "crs.datum.oclAsType(DynamicGeodeticReferenceFrame or DynamicVerticalReferenceFrame) implies count(coordinateEpoch).eq.1" ;
@@ -2689,10 +2221,6 @@ geocrs:OperationParameterGroup a owl:Class ;
         geocrs:GeneralOperationParameter ;
     skos:definition "definition of a group of related parameters used by a coordinate operation method" .
 
-geocrs:PseudoAzimuthalProjection a owl:Class ;
-    rdfs:label "pseudo-azimuthal projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:RangeMeaning a owl:Class ;
     rdfs:label "RangeMeaning" ;
     rdfs:isDefinedBy "http://standards.iso.org/iso/19111/ed-3/en/" ;
@@ -2742,11 +2270,6 @@ skos:Collection a owl:Class .
 
 skos:ConceptScheme a owl:Class .
 
-geocrs:AzimuthalProjection a owl:Class ;
-    rdfs:label "azimuthal projection"@en ;
-    rdfs:subClassOf geocrs:Projection ;
-    skos:definition "A projection with the property that directions from a central point are preserved"@en .
-
 geocrs:CI_Citation a owl:Class .
 
 geocrs:DirectPosition a owl:Class .
@@ -2771,10 +2294,6 @@ geocrs:GeneralParameterValue a owl:Class ;
     skos:definition "parameter value or group of parameter values" .
 
 geocrs:Length a owl:Class .
-
-geocrs:PseudoConicalProjection a owl:Class ;
-    rdfs:label "pseudo-conical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 geocrs:RealizationMethod a owl:Class ;
     rdfs:label "RealizationMethod" ;
@@ -2822,11 +2341,6 @@ geocrs:DataEpoch a owl:Class ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geocrs:coordinateEpoch ] ;
     skos:definition "time attribute of a coordinate set that is referenced to a dynamic CRS" .
-
-geocrs:EquidistantProjection a owl:Class ;
-    rdfs:label "equidistant projection"@en ;
-    rdfs:subClassOf geocrs:Projection ;
-    skos:definition "Projection in which all points on the map exhibit proportionally correct distances from the center point"@en .
 
 geocrs:GeodeticCRS a owl:Class ;
     rdfs:label "GeodeticCRS" ;
@@ -2890,10 +2404,6 @@ geocrs:parameterValue a owl:ObjectProperty ;
     skos:definition "value of the coordinate operation parameter",
         "value of the datum-defining parameter" .
 
-geocrs:PolyhedralProjection a owl:Class ;
-    rdfs:label "polyhedral projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:operationVersion a owl:DatatypeProperty ;
     rdfs:label "operationVersion" ;
     rdfs:domain geocrs:Conversion,
@@ -2926,11 +2436,6 @@ geocrs:DerivedCRS a owl:Class ;
             owl:onProperty geocrs:derivingConversion ],
         geocrs:SingleCRS ;
     skos:definition "single coordinate reference system that is defined through the application of a specified coordinate conversion to the definition of a previously established single coordinate reference system referred to as the base CRSNote:  A derived coordinate reference system inherits its datum (or datum ensemble) from its base CRS. The coordinate conversion between the base and derived coordinate reference system is implemented using the parameters and formula(s) specified in the definition of the coordinate conversion." .
-
-geocrs:ConformalProjection a owl:Class ;
-    rdfs:label "conformal projection"@en ;
-    rdfs:subClassOf geocrs:Projection ;
-    skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
 
 geocrs:CoordinateSystemAxis a owl:Class ;
     rdfs:label "CoordinateSystemAxis" ;
@@ -3068,18 +2573,6 @@ geocrs:datum a owl:ObjectProperty ;
         geocrs:TemporalDatum,
         geocrs:VerticalReferenceFrame .
 
-geocrs:InterstellarBody a owl:Class ;
-    rdfs:label "interstellar body"@en .
-
-geocrs:CylindricalProjection a owl:Class ;
-    rdfs:label "cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:Projection a owl:Class ;
-    rdfs:label "projection"@en ;
-    rdfs:subClassOf geocrs:Conversion ;
-    skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
-
 geocrs:CoordinateOperation a owl:Class ;
     rdfs:label "CoordinateOperation" ;
     geocrs:constraint "transform() pre sourceCRS.eq.CoordinateSet.coordinateMetadata.crs" ;
@@ -3177,10 +2670,6 @@ geocrs:CoordinateSystem a owl:Class ;
         geocrs:IdentifiedObject ;
     skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate spaceNote: A coordinate system is derived from a set of mathematical rules for specifying how coordinates in a given space are to be assigned to points. The coordinate values in a coordinate tuple shall be recorded in the order in which the coordinate system axes associations are recorded." .
 
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:CRS a owl:Class ;
     rdfs:label "CRS" ;
     geocrs:isAbstract true ;
@@ -3190,14 +2679,6 @@ geocrs:CRS a owl:Class ;
             owl:onProperty geocrs:geometricCoordinates ],
         geocrs:ObjectUsage ;
     skos:definition "coordinate reference system which is usually single but may be compound" .
-
-geocrs:CompromiseProjection a owl:Class ;
-    rdfs:label "compromise projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:EqualAreaProjection a owl:Class ;
-    rdfs:label "equal-area projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 <http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection> a owl:NamedIndividual,
         skos:ConceptScheme ;
