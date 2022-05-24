@@ -243,6 +243,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <ul class="hlist">
       <li><a href="http://www.opengis.net/ont/crs/AreaOfUse">geocrs:AreaOfUse</a></li>
       <li><a href="http://www.opengis.net/ont/crs/AxisDirection">geocrs:AxisDirection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CartesianCS">geocrs:CartesianCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EqualEarthProjection">geocrs:EqualEarthProjection</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a></li>
       <li><a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a></li>
       <li><a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a></li>
       <li><a href="http://www.opengis.net/ont/sf#Polygon">sf:Polygon</a></li>
@@ -279,8 +282,62 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs/cs/axis/north">geocrsaxis:north</a><br/>
                     <a href="http://www.opengis.net/ont/crs/cs/axis/east">geocrsaxis:east</a><br/>
+                    <a href="http://www.opengis.net/ont/crs/cs/axis/north">geocrsaxis:north</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="CartesianCS">
+        <h3>
+          CartesianCS<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#CartesianCS" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CartesianCS</code></td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="http://www.opengis.net/def/crs/EPSG/0/8859_cs">geoepsg:8859_cs</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EqualEarthProjection">
+        <h3>
+          EqualEarthProjection<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#EqualEarthProjection" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EqualEarthProjection</code></td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific">geocrsoperation:Equal_Earth_Asia-Pacific</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PlanarCoordinateSystem">
+        <h3>
+          PlanarCoordinateSystem<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#PlanarCoordinateSystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PlanarCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="http://www.opengis.net/def/crs/EPSG/0/8859_cs">geoepsg:8859_cs</a><br/>
                 </td>
             </tr>
         </table>
@@ -430,8 +487,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.w3.org/2002/07/owl#NamedIndividual">owl:NamedIndividual</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -519,8 +576,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a><br/>
                 <a href="http://www.w3.org/ns/prov-o/Entity">prov1:Entity</a><br/>
+                <a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a><br/>
             </dd>
         </table>
     </div>
