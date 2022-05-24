@@ -3,6 +3,16 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+geocrs:1DCS a owl:Class ;
+    rdfs:label "1D coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension"@en .
+
+geocrs:3DCS a owl:Class ;
+    rdfs:label "3D coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions"@en .
+
 geocrs:CSExtensionOntology a owl:Ontology ;
     rdfs:label "CS Extension Ontology" .
 
@@ -25,6 +35,11 @@ geocrs:PerifocalCS a owl:Class ;
     rdfs:label "perifocal coordinate system"@en .
 
 geocrs:PerifocalCoordinateSystem rdfs:subClassOf geocrs:CS .
+
+geocrs:PlanarCS a owl:Class ;
+    rdfs:label "planar coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem ;
+    skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
 
 geocrs:SkewCoordinateSystem a owl:Class ;
     rdfs:label "skew coordinate system"@en ;
