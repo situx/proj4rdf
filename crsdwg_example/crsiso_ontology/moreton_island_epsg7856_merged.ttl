@@ -21,6 +21,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+<http://example.com/moretonisland7856ont> rdf:type owl:Ontology ; rdfs:label "Moreton Island EPSG 7856 Ontology" .
  geocrs:falseNorthing rdf:type owl:DatatypeProperty .
 geocrsaxis:Easting_metre_east geocrs:unit_code "9001"^^xsd:string .
  geocrs:scaleFactorAtNaturalOrigin rdfs:range xsd:double .

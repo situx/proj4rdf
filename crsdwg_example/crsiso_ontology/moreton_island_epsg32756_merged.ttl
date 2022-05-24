@@ -21,6 +21,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+<http://example.com/moretonisland32756ont> rdf:type owl:Ontology ; rdfs:label "Moreton Island EPSG 32756 Ontology" .
  geocrs:falseNorthing rdf:type owl:DatatypeProperty .
 geocrsaxis:Easting_metre_east geocrs:unit_code "9001"^^xsd:string .
 geocrsaou:UTM_zone_56S_area_of_use rdfs:label "Between 150°E and 156°E, southern hemisphere between 80°S and equator, onshore and offshore."@en .
