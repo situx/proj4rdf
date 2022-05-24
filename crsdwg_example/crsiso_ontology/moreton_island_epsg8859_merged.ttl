@@ -35,9 +35,11 @@ geocrsoperation:Equal_Earth_Asia-Pacific geocrs:method_name "Equal Earth" .
 geocrsgeod:1 geocrs:isSphere "False"^^xsd:boolean .
 geoepsg:8859 geocrs:sourceCRS geoepsg:4326 .
 geocrsoperation:Equal_Earth_Asia-Pacific rdf:type geocrs:EqualEarthProjection .
+geocrs:EqualEarthProjection rdf:type owl:Class .
 geoepsg:8859 geocrs:scope "Very small scale equal-area mapping - Asia-Pacific-centred."^^xsd:string .
 geocrsaou:Equal_Earth_Asia-Pacific_area_of_use rdfs:label "World centred on Asia-Pacific."@en .
 geoepsg:8859_cs rdf:type geocrs:PlanarCoordinateSystem .
+geocrs:PlanarCoordinateSystem rdf:type owl:Class .
 geocrsgeod:1 rdfs:label "Geoid 1"@en .
 geoepsg:8859 geocrs:ellipsoid geocrsgeod:1 .
 geocrsmeridian:Greenwich geocrs:unit om:om:degree .
@@ -70,6 +72,7 @@ geocrsaxis:Northing_metre_north geocrs:axisAbbrev "N"^^xsd:string .
 geoepsg:8859_cs geocrs:axis geocrsaxis:Northing_metre_north .
 geocrsaxis:Easting_metre_east rdfs:label "Easting (om:metre)"@en .
 geocrsaxis:east rdf:type geocrs:AxisDirection .
+geocrs:AxisDirection rdf:type owl:Class .
  geocrs:falseNorthing rdfs:label "False northing"@en .
 geocrsaou:Equal_Earth_Asia-Pacific_area_of_use geocrs:extent "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((-30.01 -90, -30.01 90, -29.99 90, -29.99 -90, -30.01 -90))"^^geo:wktLiteral .
 geocrsaxis:Northing_metre_north geocrs:unit_conversion_factor "1.0"^^xsd:double .
@@ -115,6 +118,7 @@ geoepsg:8859_cs geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.4/pro
 geocrsmeridian:Greenwich geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.4/projjson.schema.json','type':'PrimeMeridian','name':'Greenwich','longitude':0,'id':{'authority':'EPSG','code':8901}}" .
 geocrsoperation:Equal_Earth_Asia-Pacific geocrs:has_ballpark_transformation "False"^^xsd:boolean .
 geoepsg:8859_cs rdf:type geocrs:CartesianCS, owl:NamedIndividual .
+geocrs:CartesianCS rdf:type owl:Class .
 geocrsaxis:Northing_metre_north rdfs:label "Northing (om:metre)"@en .
 geocrsaxis:Northing_metre_north geocrs:unit_auth_code "EPSG"^^xsd:string .
 geoepsg:8859 geocrs:epsgCode "EPSG:8859"^^xsd:string .
