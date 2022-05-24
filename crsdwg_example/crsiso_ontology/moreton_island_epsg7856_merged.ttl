@@ -25,17 +25,17 @@
  geocrs:falseNorthing rdf:type owl:DatatypeProperty .
 geocrsaxis:Easting_metre_east geocrs:unit_code "9001"^^xsd:string .
  geocrs:scaleFactorAtNaturalOrigin rdfs:range xsd:double .
-geocrsaxis:Northing_metre_north rdf:type geocrs:CoordinateSystemAxis .
+geocrsaxis:Northing_metre_north rdf:type geocrs:CoordinateSystemAxis, owl:NamedIndividual .
 geocrs:CoordinateSystemAxis rdf:type owl:Class .
-geocrsdatum:Geocentric_Datum_of_Australia_2020 rdf:type geocrs:GeodeticReferenceFrame .
+geocrsdatum:Geocentric_Datum_of_Australia_2020 rdf:type geocrs:GeodeticReferenceFrame, owl:NamedIndividual .
 geocrs:GeodeticReferenceFrame rdf:type owl:Class .
-geoepsg:7856_area_of_use rdf:type geocrs:AreaOfUse .
+geoepsg:7856_area_of_use rdf:type geocrs:AreaOfUse, owl:NamedIndividual .
 geocrs:AreaOfUse rdf:type owl:Class .
 geocrsdatum:Geocentric_Datum_of_Australia_2020 geocrs:usage geocrs:TopographicMap .
 geocrsaxis:Northing_metre_north geocrs:unit om:metre .
 geoepsg:7856 geocrs:epsgCode "EPSG:7856"^^xsd:string .
 geoepsg:7856 geocrs:area_of_use geoepsg:7856_area_of_use .
-geocrsoperation:Map_Grid_of_Australia_zone_56 rdf:type geocrs:UniversalTransverseMercatorProjection .
+geocrsoperation:Map_Grid_of_Australia_zone_56 rdf:type geocrs:UniversalTransverseMercatorProjection, owl:NamedIndividual .
 geocrs:UniversalTransverseMercatorProjection rdf:type owl:Class .
 geocrs:Geodesy rdfs:subClassOf geocrs:SRSApplication .
 geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:scaleFactorAtNaturalOrigin "0.9996"^^xsd:double .
@@ -47,7 +47,7 @@ geocrsmeridian:Greenwich geocrs:unit om:om:degree .
 geoepsg:7856 geocrs:asProj4 "+proj=utm +zone=56 +south +ellps=GRS80 +units=m +no_defs +type=crs"^^xsd:string .
 geoepsg:7856_cs rdfs:label "EPSG:7856 CS: cartesian" .
 geocrsmeridian:Greenwich geocrs:asWKT "PRIMEM['Greenwich',0,ANGLEUNIT['degree',0.0174532925199433],ID['EPSG',8901]]" .
-geocrsgeod:GRS1980 rdf:type geocrs:Ellipsoid .
+geocrsgeod:GRS1980 rdf:type geocrs:Ellipsoid, owl:NamedIndividual .
 geocrs:Ellipsoid rdf:type owl:Class .
 geoepsg:7856 geocrs:isGeocentric "false"^^xsd:boolean .
 geocrsoperation:Map_Grid_of_Australia_zone_56 rdfs:comment "Grid convergence uses opposite sign convention to UTM."^^xsd:string .
@@ -70,7 +70,7 @@ geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:falseNorthing "10000000.0"^
 geoepsg:7856 geocrs:isApplicableTo geocrsisbody:Earth .
 geoepsg:7856_area_of_use geocrs:extent   "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((156 -58.96, 156 -13.87, 150 -13.87, 150 -58.96, 156 -58.96))"^^geo:wktLiteral .
 geoepsg:7856 rdf:type prov:Entity.
-geoepsg:7856 rdf:type geocrs:ProjectedCRS .
+geoepsg:7856 rdf:type geocrs:ProjectedCRS, owl:NamedIndividual .
 geocrs:ProjectedCRS rdf:type owl:Class .
 geocrsmeridian:Greenwich geocrs:longitude "0.0"^^xsd:double .
 geocrsaxis:Northing_metre_north geocrs:axisAbbrev "N"^^xsd:string .
@@ -80,7 +80,7 @@ geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:longitudeOfNaturalOrigin "1
 geocrsgeod:GRS1980 geocrs:is_semi_minor_computed "true"^^xsd:boolean .
 geocrsaxis:Easting_metre_east rdfs:label "Easting (om:metre)"@en .
  geocrs:latitudeOfNaturalOrigin rdfs:range xsd:double .
-geocrsaxis:east rdf:type geocrs:AxisDirection .
+geocrsaxis:east rdf:type geocrs:AxisDirection, owl:NamedIndividual .
 geocrs:AxisDirection rdf:type owl:Class .
  geocrs:falseNorthing rdfs:label "False northing"@en .
  geocrs:latitudeOfNaturalOrigin rdf:type owl:DatatypeProperty .
@@ -101,19 +101,19 @@ geocrsgeod:GRS1980 geocrs:eccentricity "0.006694380022900681"^^xsd:double .
 geocrsdatum:Geocentric_Datum_of_Australia_2020 geocrs:usage geocrs:CadastreMap .
  geocrs:falseNorthing rdfs:domain geocrs:CoordinateOperation .
 geoepsg:7856 geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.4/projjson.schema.json','type':'ProjectedCRS','name':'GDA2020 / MGA zone 56','base_crs':{'name':'GDA2020','datum':{'type':'GeodeticReferenceFrame','name':'Geocentric Datum of Australia 2020','ellipsoid':{'name':'GRS 1980','semi_major_axis':6378137,'inverse_flattening':298.257222101}},'coordinate_system':{'subtype':'ellipsoidal','axis':[{'name':'Geodetic latitude','abbreviation':'Lat','direction':'north','unit':'degree'},{'name':'Geodetic longitude','abbreviation':'Lon','direction':'east','unit':'degree'}]},'id':{'authority':'EPSG','code':7844}},'conversion':{'name':'Map Grid of Australia zone 56','method':{'name':'Transverse Mercator','id':{'authority':'EPSG','code':9807}},'parameters':[{'name':'Latitude of natural origin','value':0,'unit':'degree','id':{'authority':'EPSG','code':8801}},{'name':'Longitude of natural origin','value':153,'unit':'degree','id':{'authority':'EPSG','code':8802}},{'name':'Scale factor at natural origin','value':0.9996,'unit':'unity','id':{'authority':'EPSG','code':8805}},{'name':'False easting','value':500000,'unit':'metre','id':{'authority':'EPSG','code':8806}},{'name':'False northing','value':10000000,'unit':'metre','id':{'authority':'EPSG','code':8807}}]},'coordinate_system':{'subtype':'Cartesian','axis':[{'name':'Easting','abbreviation':'E','direction':'east','unit':'metre'},{'name':'Northing','abbreviation':'N','direction':'north','unit':'metre'}]},'scope':'Engineering survey, topographic mapping.','area':'Australia - onshore and offshore between 150°E and 156°E.','bbox':{'south_latitude':-58.96,'west_longitude':150,'north_latitude':-13.87,'east_longitude':156},'id':{'authority':'EPSG','code':7856}}"^^xsd:string .
-geocrsgeod:GRS1980 rdf:type geocrs:Ellipsoid .
+geocrsgeod:GRS1980 rdf:type geocrs:Ellipsoid, owl:NamedIndividual .
 geocrs:Ellipsoid rdf:type owl:Class .
 geocrsaou:Map_Grid_of_Australia_zone_56_area_of_use geocrs:extent "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((156 -58.96, 156 -13.87, 150 -13.87, 150 -58.96, 156 -58.96))"^^geo:wktLiteral .
 geoepsg:7856 geocrs:isVertical "false"^^xsd:boolean .
 geoepsg:7856_area_of_use rdfs:label "Australia - onshore and offshore between 150°E and 156°E."@en .
  geocrs:scaleFactorAtNaturalOrigin rdfs:label "Scale factor at natural origin"@en .
-geoepsg:7856_cs rdf:type geocrs:PlanarCoordinateSystem .
+geoepsg:7856_cs rdf:type geocrs:PlanarCoordinateSystem, owl:NamedIndividual .
 geocrs:PlanarCoordinateSystem rdf:type owl:Class .
-geocrsmeridian:Greenwich rdf:type geocrs:PrimeMeridian .
+geocrsmeridian:Greenwich rdf:type geocrs:PrimeMeridian, owl:NamedIndividual .
 geocrs:PrimeMeridian rdf:type owl:Class .
 geocrsdatum:Geocentric_Datum_of_Australia_2020 geocrs:primeMeridian geocrsmeridian:Greenwich .
 geocrsaxis:Easting_metre_east geocrs:unit_conversion_factor "1.0"^^xsd:double .
-geoepsg:7856_cs rdf:type geocrs:CartesianCS .
+geoepsg:7856_cs rdf:type geocrs:CartesianCS, owl:NamedIndividual .
 geocrs:CartesianCS rdf:type owl:Class .
 geoepsg:7856 geocrs:isBound "false"^^xsd:boolean .
 geocrsaxis:Northing_metre_north geocrs:direction geocrs:north .
@@ -127,10 +127,10 @@ om:degree rdf:type om:Unit .
 geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:area_of_use geocrsaou:Map_Grid_of_Australia_zone_56_area_of_use .
 geoepsg:7856 geocrs:isGeographic "false"^^xsd:boolean .
 geocrsaxis:Easting_metre_east geocrs:direction geocrs:east .
-geocrsaxis:north rdf:type geocrs:AxisDirection .
+geocrsaxis:north rdf:type geocrs:AxisDirection, owl:NamedIndividual .
 geocrs:AxisDirection rdf:type owl:Class .
 geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:asProj4 "+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=utm +zone=56 +south +ellps=GRS80" .
-geocrsaxis:Easting_metre_east rdf:type geocrs:CoordinateSystemAxis .
+geocrsaxis:Easting_metre_east rdf:type geocrs:CoordinateSystemAxis, owl:NamedIndividual .
 geocrs:CoordinateSystemAxis rdf:type owl:Class .
 geoepsg:7856 geocrs:sourceCRS geoepsg:7844 .
  geocrs:longitudeOfNaturalOrigin rdfs:domain geocrs:CoordinateOperation .
@@ -138,7 +138,7 @@ geocrsmeridian:Greenwich rdfs:label "Greenwich"@en .
 geocrsgeod:GRS1980 geocrs:semiMajorAxis "6378137.0"^^xsd:string .
 geocrsdatum:Geocentric_Datum_of_Australia_2020 geocrs:ellipsoid geocrsgeod:GRS1980 .
 geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.4/projjson.schema.json','type':'Conversion','name':'Map Grid of Australia zone 56','method':{'name':'Transverse Mercator','id':{'authority':'EPSG','code':9807}},'parameters':[{'name':'Latitude of natural origin','value':0,'unit':'degree','id':{'authority':'EPSG','code':8801}},{'name':'Longitude of natural origin','value':153,'unit':'degree','id':{'authority':'EPSG','code':8802}},{'name':'Scale factor at natural origin','value':0.9996,'unit':'unity','id':{'authority':'EPSG','code':8805}},{'name':'False easting','value':500000,'unit':'metre','id':{'authority':'EPSG','code':8806}},{'name':'False northing','value':10000000,'unit':'metre','id':{'authority':'EPSG','code':8807}}],'id':{'authority':'EPSG','code':17356}}" .
-geocrsaou:Map_Grid_of_Australia_zone_56_area_of_use rdf:type geocrs:AreaOfUse .
+geocrsaou:Map_Grid_of_Australia_zone_56_area_of_use rdf:type geocrs:AreaOfUse, owl:NamedIndividual .
 geocrs:AreaOfUse rdf:type owl:Class .
 geocrsmeridian:Greenwich geocrs:asProjJSON "{'$schema':'https://proj.org/schemas/v0.4/projjson.schema.json','type':'PrimeMeridian','name':'Greenwich','longitude':0,'id':{'authority':'EPSG','code':8901}}" .
 geocrsoperation:Map_Grid_of_Australia_zone_56 geocrs:asWKT "CONVERSION['Map Grid of Australia zone 56',METHOD['Transverse Mercator',ID['EPSG',9807]],PARAMETER['Latitude of natural origin',0,ANGLEUNIT['degree',0.0174532925199433],ID['EPSG',8801]],PARAMETER['Longitude of natural origin',153,ANGLEUNIT['degree',0.0174532925199433],ID['EPSG',8802]],PARAMETER['Scale factor at natural origin',0.9996,SCALEUNIT['unity',1],ID['EPSG',8805]],PARAMETER['False easting',500000,LENGTHUNIT['metre',1],ID['EPSG',8806]],PARAMETER['False northing',10000000,LENGTHUNIT['metre',1],ID['EPSG',8807]],ID['EPSG',17356]]"^^geo:wktLiteral .
