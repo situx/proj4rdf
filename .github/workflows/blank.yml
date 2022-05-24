@@ -26,9 +26,9 @@ jobs:
          pylode -i ../owl/rules.ttl -o rules.html -p vocpub
          pylode -i ../validation/isocrs_shapes.ttl -o isocrs_shapes.html -p vocpub
          pylode -i ../owl/result.ttl -o proj4rdfapp1.html
-         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg7856_merged.ttl -o moretonisland_epsg7856.html
-         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg8859_merged.ttl -o moretonisland_epsg8859.html
-         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg32756_merged.ttl -o moretonisland_epsg32756.html
+         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg7856_merged.ttl -o moretonisland_epsg7856.html -p vocpub
+         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg8859_merged.ttl -o moretonisland_epsg8859.html -p vocpub
+         pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg32756_merged.ttl -o moretonisland_epsg32756.html -p vocpub
          pylode -i ../projection_vocabulary/projection_vocabulary.ttl -o projvoc.html -p vocpub
          pylode -i ../planet_vocabulary/planet_vocabulary.ttl -o planetvoc.html -p vocpub
          pylode -i ../cs_vocabulary/cs_vocabulary.ttl -o csvoc.html -p vocpub
