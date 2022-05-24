@@ -25,6 +25,9 @@ geocrs:NauticalChart a owl:Class ;
     rdfs:subClassOf geocrs:SRSApplication ;
     skos:definition "A nautical chart is a graphic representation of a sea area and adjacent coastal regions."@en .
 
+geocrs:SRSApplicationOntology a owl:Ontology ;
+    rdfs:label "SRS Application Ontology" .
+
 geocrs:TopographicMap a owl:Class ;
     rdfs:label "topographic map"@en ;
     geocrs:uses geocrs:ConformalProjection ;

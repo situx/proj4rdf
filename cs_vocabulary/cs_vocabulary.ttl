@@ -3,6 +3,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+geocrs:CSExtensionOntology a owl:Ontology ;
+    rdfs:label "CS Extension Ontology" .
+
 geocrs:ConicalCoordinateSystem a owl:Class ;
     rdfs:label "conical coordinate system"@en ;
     rdfs:subClassOf geocrs:3DCoordinateSystem,

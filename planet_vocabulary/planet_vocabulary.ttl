@@ -41,6 +41,9 @@ geocrs:Moon a owl:Class ;
     rdfs:label "moon"@en ;
     rdfs:subClassOf geocrs:NaturalSatellite .
 
+geocrs:PlanetOntology a owl:Ontology ;
+    rdfs:label "Planet Ontology" .
+
 geocrs:Plutoid a owl:Class ;
     rdfs:label "plutoid"@en ;
     rdfs:subClassOf geocrs:DwarfPlanet .

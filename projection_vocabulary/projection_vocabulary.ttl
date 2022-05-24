@@ -275,6 +275,9 @@ geocrs:PeirceQuincuncialProjection a owl:Class ;
     rdfs:label "peirce quincuncial projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection .
 
+geocrs:ProjectionOntology a owl:Ontology ;
+    rdfs:label "Projection Ontology"@en .
+
 geocrs:QuadrilateralizedSphericalCubeProjection a owl:Class ;
     rdfs:label "quadrilateralized spherical cube projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
