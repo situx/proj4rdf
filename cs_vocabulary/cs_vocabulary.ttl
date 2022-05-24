@@ -1,0 +1,35 @@
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+geocrs:ConicalCoordinateSystem a owl:Class ;
+    rdfs:label "conical coordinate system"@en ;
+    rdfs:subClassOf geocrs:3DCoordinateSystem,
+        geocrs:OrthogonalCoordinateSystem ;
+    skos:definition "An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively"@en .
+
+geocrs:HexagonalCS a owl:Class ;
+    rdfs:label "hexagonal coordinate system"@en ;
+    rdfs:subClassOf geocrs:GridCS ;
+    skos:definition "A hexagonal coordinate system describes areas with a hexagonal lattice"@en .
+
+geocrs:HomogeneousCoordinateSystem a owl:Class ;
+    rdfs:label "homogeneous coordinate system"@en ;
+    rdfs:subClassOf geocrs:CoordinateSystem .
+
+geocrs:PerifocalCS a owl:Class ;
+    rdfs:label "perifocal coordinate system"@en .
+
+geocrs:PerifocalCoordinateSystem rdfs:subClassOf geocrs:CS .
+
+geocrs:SkewCoordinateSystem a owl:Class ;
+    rdfs:label "skew coordinate system"@en ;
+    rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
+    skos:definition "A skew coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at angles other than right angles"@en .
+
+geocrs:OrthogonalCoordinateSystem a owl:Class ;
+    rdfs:label "orthogonal coordinate system"@en ;
+    rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
+    skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
+

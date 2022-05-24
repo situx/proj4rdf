@@ -1,0 +1,54 @@
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+geocrs:CadastreMap a owl:Class ;
+    rdfs:label "cadastre map"@en ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "A map displaying a cadastre"@en .
+
+geocrs:GeneralReferenceMap a owl:Class ;
+    rdfs:label "general reference map"@en ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "general reference map which includes a variety of different information"@en .
+
+geocrs:HeatMap a owl:Class ;
+    rdfs:label "heat map"@en ;
+    rdfs:subClassOf geocrs:ThematicMap ;
+    owl:disjointWith geocrs:ChloroplethMap ;
+    skos:definition "A data visualization technique that shows magnitude of a phenomenon as color in two dimensions."@en .
+
+geocrs:NauticalChart a owl:Class ;
+    rdfs:label "nautical chart"@en ;
+    geocrs:uses geocrs:ConformalProjection ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "A nautical chart is a graphic representation of a sea area and adjacent coastal regions."@en .
+
+geocrs:TopographicMap a owl:Class ;
+    rdfs:label "topographic map"@en ;
+    geocrs:uses geocrs:ConformalProjection ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "A type of map characterized by large-scale detail and quantitative representation of relief."@en .
+
+geocrs:WeatherMap a owl:Class ;
+    rdfs:label "weather map"@en ;
+    geocrs:uses geocrs:ConformalProjection ;
+    rdfs:subClassOf geocrs:ThematicMap ;
+    skos:definition "A map for showing the local direction in which weather systems are moving."@en .
+
+geocrs:ChloroplethMap a owl:Class ;
+    rdfs:label "chloropleth map"@en ;
+    geocrs:uses geocrs:EqualAreaProjection ;
+    rdfs:subClassOf geocrs:ThematicMap ;
+    skos:definition "A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable "@en .
+
+geocrs:ThematicMap a owl:Class ;
+    rdfs:label "thematic map"@en ;
+    rdfs:subClassOf geocrs:SRSApplication ;
+    skos:definition "A map used to highlight a specific phenomenon"@en .
+
+geocrs:SRSApplication a owl:Class ;
+    rdfs:label "srs application"@en ;
+    skos:definition "an application for which a spatial reference system is used"@en .
+

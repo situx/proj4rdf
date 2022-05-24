@@ -2,11 +2,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-geocrs:PlanetVocabulary rdf:type owl:Ontology ;
-    rdfs:label "Planet Vocabulary" .
 
 geocrs:ArtificialSatellite a owl:Class ;
     rdfs:label "artificial satellite"@en ;
@@ -37,9 +33,8 @@ geocrs:EquatorialCS a owl:Class ;
     skos:definition "A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively"@en .
 
 geocrs:GalacticCS a owl:Class ;
-    rdfs:label "galactic coordinate system"@en .
-
-geocrs:GalacticCoordinateSystem rdfs:subClassOf geocrs:3DCS,
+    rdfs:label "galactic coordinate system"@en ;
+    rdfs:subClassOf geocrs:3DCS,
         geocrs:CelestialCoordinateSystem .
 
 geocrs:Moon a owl:Class ;
@@ -105,6 +100,11 @@ geocrs:NaturalSatellite a owl:Class ;
 geocrs:Planet a owl:Class ;
     rdfs:label "planet"@en ;
     rdfs:subClassOf geocrs:InterstellarBody .
+
+geocrs:CelestialCS a owl:Class ;
+    rdfs:label "celestial coordinate system"@en ;
+    rdfs:subClassOf geocrs:CS ;
+    skos:definition "a coordinate system for specifying positions of celestial objects relative to physical reference points"@en .
 
 geocrs:InterstellarBody a owl:Class ;
     rdfs:label "interstellar body"@en .
