@@ -31,6 +31,7 @@ jobs:
          pylode -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg32756_merged.ttl -o moretonisland_epsg32756.html
          pylode -i ../projection_vocabulary/projection_vocabulary.ttl -o projvoc.html -p vocpub
          pylode -i ../planet_vocabulary/planet_vocabulary.ttl -o planetvoc.html -p vocpub
+         pylode -i ../dggs_vocabulary/dggs_vocabulary.ttl -o gridvoc.html -p vocpub
          pylode -i ../cs_vocabulary/cs_vocabulary.ttl -o csvoc.html -p vocpub
          pylode -i ../srs_application/srs_application.ttl -o srsapplicationvoc.html -p vocpub
          cp ../index.html .
