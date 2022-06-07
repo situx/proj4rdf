@@ -6,7 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.opengis.net/ont/crs/GridOntology> .
 
-<http://www.opengis.net/ont/crs/GridOntology> rdf:type owl:Ontology .
+<http://www.opengis.net/ont/crs/GridOntology> rdf:type owl:Ontology ;
+                                               rdfs:label "Grid Vocabulary" .
 
 #################################################################
 #    Classes
