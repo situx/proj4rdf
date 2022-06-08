@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <title>GeoSPARQLCRS SHACL Shapes based on ISO standards</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
-EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
     <style>
         #pylode {
             position: fixed;
             top: 130px;
-            left: -60px;
+            left: -80px;
             font-size: small;
             transform: rotate(-90deg);
             color: grey;
@@ -25,15 +20,44 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         #pylode a:hover {
             color: #333;
         }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
 
         .cardinality {
             font-style: italic;
             color: #aa00aa;
         }
 
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
         dt {
             font-weight: bold;
-            padding: 5px 0 5px 0;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        #metadata ul,
+        #classes ul {
+            list-style-type: none;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-left: -40px;
         }
 
         ul.hlist {
@@ -95,14 +119,13 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         }
         h3 {
             font: 120% sans-serif;
-            margin-top: 3px;
+            margin-top: 20px;
             padding-bottom: 5px;
             border-bottom: 1px solid navy;
         }
         h4 { font: bold 100% sans-serif }
         h5 { font: italic 100% sans-serif }
         h6 { font: small-caps 100% sans-serif }
-
 
         body {
             padding: 2em 70px 2em 70px;
@@ -138,7 +161,6 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         .sup-con,
         .sup-col {
             cursor:help;
-            margin-left: 3px;
         }
 
         .sup-c {
@@ -177,6 +199,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color:darkred;
         }
 
+        sup {
+            margin-left: -3px;
+        }
         code {
             font-size: large;
             color: darkred;
@@ -187,10 +212,56 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color: #336;
             text-decoration: none;
         }
-    </style>
-    
-    <script type="application/ld+json">
-      [
+
+#toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border: solid 1px navy;
+    font-size: small;
+    width: 180px;
+}
+#toc h3 {
+    margin-top: 5px;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#toc .first > li {
+    margin-top: 5px;
+}
+
+#toc .second,
+#toc .third {
+    padding-left: 10px;
+}
+
+#content {
+    width: calc(100% - 150px);
+}
+
+.hover_property {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.setclass {
+    list-style-type: none;
+}
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
   {
     "@id": "http://www.opengis.net/ont/crs#GeoSPARQLCRSISOShapes",
     "@type": [
@@ -203,483 +274,678 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     ]
   }
 ]
-    </script>
-</head>
-<body>
-  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
-    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.13.2</span>
-  </div>
-  <h1>GeoSPARQLCRS SHACL Shapes based on ISO standards</h1>
-<h3><em>A taxonomy</em></h3>
-  <section id="conceptscheme">
-      <h2 style="display:none;">Concept Scheme</h2>
-      <dl>
-          <dt>URI</dt>
-          <dd><code>http://www.opengis.net/ont/crs#GeoSPARQLCRSISOShapes</code></dd>
-          <dt>Ontology RDF</dt>
-          <dd><a href="isocrs_shapes.ttl">RDF (turtle)</a></dd>
-      </dl>
-  </section>
-  <section id="toc">
-      <h2>Table of Contents</h2>
-      <ol>
-          <li><a href="#concepts">Concepts</a></li>
-          <li><a href="#namespaces">Namespaces</a></li>
-          <li><a href="#legend">Legend</a></li>
-      </ol>
-  </section>
-  <section id="overview">
-      <h2>Overview</h2>
-      <div class="figure">
-          <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
-          <div class="caption"><strong>Figure 1:</strong> Taxonomy overview</div>
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1>GeoSPARQLCRS SHACL Shapes based on ISO standards</h1>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>http://www.opengis.net/ont/crs#GeoSPARQLCRSISOShapes</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/title" title="None. Defined in None">Title</a>
+            </dt>
+            <dd><p>GeoSPARQLCRS SHACL Shapes based on ISO standards</p></dd>
+          </div>
+        </dl>
       </div>
-  </section>
-  <section id="concepts">
-    <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hierarchy">
-<li><a href="http://www.opengis.net/ont/crs#ConversionShape">geocrs:ConversionShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateMetadataShape">geocrs:CoordinateMetadataShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateOperationShape">geocrs:CoordinateOperationShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateSetShape">geocrs:CoordinateSetShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateSystemAxisShape">geocrs:CoordinateSystemAxisShape</a></li><li><a href="http://www.opengis.net/ont/crs#CoordinateSystemShape">geocrs:CoordinateSystemShape</a></li><li><a href="http://www.opengis.net/ont/crs#DatumEnsembleShape">geocrs:DatumEnsembleShape</a></li><li><a href="http://www.opengis.net/ont/crs#DatumShape">geocrs:DatumShape</a></li><li><a href="http://www.opengis.net/ont/crs#DerivedCRSShape">geocrs:DerivedCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#DerivedProjectedCRSShape">geocrs:DerivedProjectedCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape">geocrs:DynamicGeodeticReferenceFrameShape</a></li><li><a href="http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape">geocrs:DynamicVerticalReferenceFrameShape</a></li><li><a href="http://www.opengis.net/ont/crs#EllipsoidShape">geocrs:EllipsoidShape</a></li><li><a href="http://www.opengis.net/ont/crs#EngineeringCRSShape">geocrs:EngineeringCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#GeodeticCRSShape">geocrs:GeodeticCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape">geocrs:GeodeticReferenceFrameShape</a></li><li><a href="http://www.opengis.net/ont/crs#GeographicCRSShape">geocrs:GeographicCRSShape</a></li><li><a href="http://www.opengis.net/ont/crs#IdentifiedObjectShape">geocrs:IdentifiedObjectShape</a></li><li><a href="http://www.opengis.net/ont/crs#ObjectDomainShape">geocrs:ObjectDomainShape</a></li><li><a href="http://www.opengis.net/ont/crs#ObjectUsageShape">geocrs:ObjectUsageShape</a></li><li><a href="http://www.opengis.net/ont/crs#OperationMethodShape">geocrs:OperationMethodShape</a></li><li><a href="http://www.opengis.net/ont/crs#PassThroughOperationShape">geocrs:PassThroughOperationShape</a></li><li><a href="http://www.opengis.net/ont/crs#PointMotionOperationShape">geocrs:PointMotionOperationShape</a></li><li><a href="http://www.opengis.net/ont/crs#PrimeMeridianShape">geocrs:PrimeMeridianShape</a></li>
-</ul>
-    <div class="entity concept" id="ConversionShape">
-        <h3>ConversionShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="CoordinateSystemShape">
+          <h3>CoordinateSystem Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
             <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#ConversionShape</code></td>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#CoordinateSystemShape</code>
+              </td>
             </tr>
             <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Conversion definition</p><br/>
-                </td>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Shape constraining a Coordinate System definition</p></li>
+                  <li><p>Ensures that a coordinate system is assigned at least one axis definition</p></li>
+                </ul>
+              </td>
             </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ConversionShape">
+          <h3>Conversion Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#ConversionShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Conversion definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="CoordinateMetadataShape">
+          <h3>Coordinate Metadata Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#CoordinateMetadataShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Coordinate Metadata definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="CoordinateSetShape">
+          <h3>Coordinate Set Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#CoordinateSetShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Coordinate Set definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="CoordinateOperationShape">
+          <h3>Coordinate Operation Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#CoordinateOperationShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Coordinate Operation definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="CoordinateSystemAxisShape">
+          <h3>Coordinate System Axis Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#CoordinateSystemAxisShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Coordinate System Axis definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DatumShape">
+          <h3>Datum Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DatumShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Datum definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DerivedCRSShape">
+          <h3>Derived Crs Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DerivedCRSShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Derived CRS definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DerivedProjectedCRSShape">
+          <h3>Derived Projected Crs Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DerivedProjectedCRSShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Derived Projected CRS definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DatumEnsembleShape">
+          <h3>Datum Ensemble Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DatumEnsembleShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Datum Ensemble definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="EllipsoidShape">
+          <h3>Ellipsoid Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#EllipsoidShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Ellipsoid definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="EngineeringCRSShape">
+          <h3>Engineering Crs Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#EngineeringCRSShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Engineering CRS definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GeodeticCRSShape">
+          <h3>Geodetic Crs Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#GeodeticCRSShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Geodetic CRS definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GeodeticReferenceFrameShape">
+          <h3>Geodetic Reference Frame Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Geodetic Reference Frame definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DynamicGeodeticReferenceFrameShape">
+          <h3>Dynamic Geodetic Reference Frame Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Dynamic Geodetic Reference Frame definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DynamicVerticalReferenceFrameShape">
+          <h3>Dynamic Vertical Reference Frame Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Dynamic Vertical Reference Frame definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="PrimeMeridianShape">
+          <h3>Prime Meridian Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#PrimeMeridianShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Prime Meridian definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GeographicCRSShape">
+          <h3>Geographic Crs Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#GeographicCRSShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Geographic CRS definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ObjectDomainShape">
+          <h3>Object Domain Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#ObjectDomainShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Object Domain definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ObjectUsageShape">
+          <h3>Object Usage Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#ObjectUsageShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Object Usage definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="PointMotionOperationShape">
+          <h3>Point Motion Operation Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#PointMotionOperationShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Point Motion Operation definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="PassThroughOperationShape">
+          <h3>Pass Through Operation Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#PassThroughOperationShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Passthrough Operation definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="OperationMethodShape">
+          <h3>Operation Method Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#OperationMethodShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Operation Method definition</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="IdentifiedObjectShape">
+          <h3>Identified Object Shape
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs#IdentifiedObjectShape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Shape constraining a Identified Object definition</p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="geocrs">geocrs</dt>
+          <dd>
+            <code>http://www.opengis.net/ont/crs#</code>
+          </dd>
+          <dt id="owl">owl</dt>
+          <dd>
+            <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="sh">sh</dt>
+          <dd>
+            <code>http://www.w3.org/ns/shacl#</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+          <dt id="xsd">xsd</dt>
+          <dd>
+            <code>http://www.w3.org/2001/XMLSchema#</code>
+          </dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
         </table>
+      </div>
     </div>
-    <div class="entity concept" id="CoordinateMetadataShape">
-        <h3>CoordinateMetadataShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#CoordinateMetadataShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Coordinate Metadata definition</p><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.0.1" id="version">3.0.1</a>
+      </p>
     </div>
-    <div class="entity concept" id="CoordinateOperationShape">
-        <h3>CoordinateOperationShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#CoordinateOperationShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Coordinate Operation definition</p><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#CoordinateSystemShape">CoordinateSystem Shape</a>
+            </li>
+            <li>
+              <a href="#ConversionShape">Conversion Shape</a>
+            </li>
+            <li>
+              <a href="#CoordinateMetadataShape">Coordinate Metadata Shape</a>
+            </li>
+            <li>
+              <a href="#CoordinateSetShape">Coordinate Set Shape</a>
+            </li>
+            <li>
+              <a href="#CoordinateOperationShape">Coordinate Operation Shape</a>
+            </li>
+            <li>
+              <a href="#CoordinateSystemAxisShape">Coordinate System Axis Shape</a>
+            </li>
+            <li>
+              <a href="#DatumShape">Datum Shape</a>
+            </li>
+            <li>
+              <a href="#DerivedCRSShape">Derived Crs Shape</a>
+            </li>
+            <li>
+              <a href="#DerivedProjectedCRSShape">Derived Projected Crs Shape</a>
+            </li>
+            <li>
+              <a href="#DatumEnsembleShape">Datum Ensemble Shape</a>
+            </li>
+            <li>
+              <a href="#EllipsoidShape">Ellipsoid Shape</a>
+            </li>
+            <li>
+              <a href="#EngineeringCRSShape">Engineering Crs Shape</a>
+            </li>
+            <li>
+              <a href="#GeodeticCRSShape">Geodetic Crs Shape</a>
+            </li>
+            <li>
+              <a href="#GeodeticReferenceFrameShape">Geodetic Reference Frame Shape</a>
+            </li>
+            <li>
+              <a href="#DynamicGeodeticReferenceFrameShape">Dynamic Geodetic Reference Frame Shape</a>
+            </li>
+            <li>
+              <a href="#DynamicVerticalReferenceFrameShape">Dynamic Vertical Reference Frame Shape</a>
+            </li>
+            <li>
+              <a href="#PrimeMeridianShape">Prime Meridian Shape</a>
+            </li>
+            <li>
+              <a href="#GeographicCRSShape">Geographic Crs Shape</a>
+            </li>
+            <li>
+              <a href="#ObjectDomainShape">Object Domain Shape</a>
+            </li>
+            <li>
+              <a href="#ObjectUsageShape">Object Usage Shape</a>
+            </li>
+            <li>
+              <a href="#PointMotionOperationShape">Point Motion Operation Shape</a>
+            </li>
+            <li>
+              <a href="#PassThroughOperationShape">Pass Through Operation Shape</a>
+            </li>
+            <li>
+              <a href="#OperationMethodShape">Operation Method Shape</a>
+            </li>
+            <li>
+              <a href="#IdentifiedObjectShape">Identified Object Shape</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#geocrs">geocrs</a>
+            </li>
+            <li>
+              <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#sh">sh</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+            <li>
+              <a href="#xsd">xsd</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
     </div>
-    <div class="entity concept" id="CoordinateSetShape">
-        <h3>CoordinateSetShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#CoordinateSetShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Coordinate Set definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="CoordinateSystemAxisShape">
-        <h3>CoordinateSystemAxisShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#CoordinateSystemAxisShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Coordinate System Axis definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="CoordinateSystemShape">
-        <h3>None<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#CoordinateSystemShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Ensures that a coordinate system is assigned at least one axis definition</p><br/>
-                    <p>Shape constraining a Coordinate System definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DatumEnsembleShape">
-        <h3>DatumEnsembleShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DatumEnsembleShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Datum Ensemble definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DatumShape">
-        <h3>DatumShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DatumShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Datum definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DerivedCRSShape">
-        <h3>DerivedCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DerivedCRSShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Derived CRS definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DerivedProjectedCRSShape">
-        <h3>DerivedProjectedCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DerivedProjectedCRSShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Derived Projected CRS definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DynamicGeodeticReferenceFrameShape">
-        <h3>DynamicGeodeticReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DynamicGeodeticReferenceFrameShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Dynamic Geodetic Reference Frame definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="DynamicVerticalReferenceFrameShape">
-        <h3>DynamicVerticalReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#DynamicVerticalReferenceFrameShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Dynamic Vertical Reference Frame definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="EllipsoidShape">
-        <h3>EllipsoidShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#EllipsoidShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Ellipsoid definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="EngineeringCRSShape">
-        <h3>EngineeringCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#EngineeringCRSShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Engineering CRS definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="GeodeticCRSShape">
-        <h3>GeodeticCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#GeodeticCRSShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Geodetic CRS definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="GeodeticReferenceFrameShape">
-        <h3>GeodeticReferenceFrameShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#GeodeticReferenceFrameShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Geodetic Reference Frame definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="GeographicCRSShape">
-        <h3>GeographicCRSShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#GeographicCRSShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Geographic CRS definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="IdentifiedObjectShape">
-        <h3>IdentifiedObjectShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#IdentifiedObjectShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Identified Object definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="ObjectDomainShape">
-        <h3>ObjectDomainShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#ObjectDomainShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Object Domain definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="ObjectUsageShape">
-        <h3>ObjectUsageShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#ObjectUsageShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Object Usage definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="OperationMethodShape">
-        <h3>OperationMethodShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#OperationMethodShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Operation Method definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="PassThroughOperationShape">
-        <h3>PassThroughOperationShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#PassThroughOperationShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Passthrough Operation definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="PointMotionOperationShape">
-        <h3>PointMotionOperationShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#PointMotionOperationShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Point Motion Operation definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="PrimeMeridianShape">
-        <h3>PrimeMeridianShape<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs#PrimeMeridianShape</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>Shape constraining a Prime Meridian definition</p><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-</section>
-
-  <section id="namespaces">
-    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <dl>
-        <dt>default (:)</dt>
-        <dd><code>http://www.opengis.net/ont/crs#GeoSPARQLCRSISOShapes</code></dd>
-        <dt>brick</dt>
-        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
-        <dt>csvw</dt>
-        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
-        <dt>dc</dt>
-        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
-        <dt>dcam</dt>
-        <dd><code>http://purl.org/dc/dcam/</code></dd>
-        <dt>dcat</dt>
-        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
-        <dt>dcmitype</dt>
-        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
-        <dt>dcterms</dt>
-        <dd><code>http://purl.org/dc/terms/</code></dd>
-        <dt>doap</dt>
-        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
-        <dt>foaf</dt>
-        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
-        <dt>geo</dt>
-        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
-        <dt>geocrs</dt>
-        <dd><code>http://www.opengis.net/ont/crs#</code></dd>
-        <dt>geoepsg</dt>
-        <dd><code>http://www.opengis.net/def/crs/EPSG/0/</code></dd>
-        <dt>odrl</dt>
-        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
-        <dt>om</dt>
-        <dd><code>http://www.ontology-of-units-of-measure.org/resource/om-2/</code></dd>
-        <dt>org</dt>
-        <dd><code>http://www.w3.org/ns/org#</code></dd>
-        <dt>owl</dt>
-        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
-        <dt>prof</dt>
-        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
-        <dt>prov</dt>
-        <dd><code>http://www.w3.org/ns/prov#</code></dd>
-        <dt>qb</dt>
-        <dd><code>http://purl.org/linked-data/cube#</code></dd>
-        <dt>rdf</dt>
-        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
-        <dt>rdfs</dt>
-        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>sdo</dt>
-        <dd><code>https://schema.org/</code></dd>
-        <dt>sh</dt>
-        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
-        <dt>skos</dt>
-        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
-        <dt>sosa</dt>
-        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
-        <dt>ssn</dt>
-        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
-        <dt>time</dt>
-        <dd><code>http://www.w3.org/2006/time#</code></dd>
-        <dt>vann</dt>
-        <dd><code>http://purl.org/vocab/vann/</code></dd>
-        <dt>void</dt>
-        <dd><code>http://rdfs.org/ns/void#</code></dd>
-        <dt>wd</dt>
-        <dd><code>http://www.wikidata.org/entity/</code></dd>
-        <dt>xsd</dt>
-        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
-    </dl>
-</section>
-
-  <section id="legend">
-    <h2>Legend</h2>
-    <table class="entity">
-      <tr><td><sup class="sup-col" title="Collections">col</sup></td><td>Collections</td></tr>
-      <tr><td><sup class="sup-con" title="Concepts">con</sup></td><td>Concepts</td></tr>
-    </table>
-  </section>
-</body>
+  </body>
 </html>

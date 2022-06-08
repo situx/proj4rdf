@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <title>SRS Application Ontology</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
-EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
     <style>
         #pylode {
             position: fixed;
             top: 130px;
-            left: -60px;
+            left: -80px;
             font-size: small;
             transform: rotate(-90deg);
             color: grey;
@@ -25,15 +20,44 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         #pylode a:hover {
             color: #333;
         }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
 
         .cardinality {
             font-style: italic;
             color: #aa00aa;
         }
 
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
         dt {
             font-weight: bold;
-            padding: 5px 0 5px 0;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        #metadata ul,
+        #classes ul {
+            list-style-type: none;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-left: -40px;
         }
 
         ul.hlist {
@@ -95,14 +119,13 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         }
         h3 {
             font: 120% sans-serif;
-            margin-top: 3px;
+            margin-top: 20px;
             padding-bottom: 5px;
             border-bottom: 1px solid navy;
         }
         h4 { font: bold 100% sans-serif }
         h5 { font: italic 100% sans-serif }
         h6 { font: small-caps 100% sans-serif }
-
 
         body {
             padding: 2em 70px 2em 70px;
@@ -138,7 +161,6 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         .sup-con,
         .sup-col {
             cursor:help;
-            margin-left: 3px;
         }
 
         .sup-c {
@@ -177,6 +199,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color:darkred;
         }
 
+        sup {
+            margin-left: -3px;
+        }
         code {
             font-size: large;
             color: darkred;
@@ -187,10 +212,56 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color: #336;
             text-decoration: none;
         }
-    </style>
-    
-    <script type="application/ld+json">
-      [
+
+#toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border: solid 1px navy;
+    font-size: small;
+    width: 180px;
+}
+#toc h3 {
+    margin-top: 5px;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#toc .first > li {
+    margin-top: 5px;
+}
+
+#toc .second,
+#toc .third {
+    padding-left: 10px;
+}
+
+#content {
+    width: calc(100% - 150px);
+}
+
+.hover_property {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.setclass {
+    list-style-type: none;
+}
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
   {
     "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
     "@type": [
@@ -203,323 +274,483 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     ]
   }
 ]
-    </script>
-</head>
-<body>
-  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
-    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.13.2</span>
-  </div>
-  <h1>SRS Application Ontology</h1>
-<h3><em>A taxonomy</em></h3>
-  <section id="conceptscheme">
-      <h2 style="display:none;">Concept Scheme</h2>
-      <dl>
-          <dt>URI</dt>
-          <dd><code>http://www.opengis.net/ont/crs/SRSApplicationOntology</code></dd>
-          <dt>Ontology RDF</dt>
-          <dd><a href="srs_application.ttl">RDF (turtle)</a></dd>
-      </dl>
-  </section>
-  <section id="toc">
-      <h2>Table of Contents</h2>
-      <ol>
-          <li><a href="#concepts">Concepts</a></li>
-          <li><a href="#namespaces">Namespaces</a></li>
-          <li><a href="#legend">Legend</a></li>
-      </ol>
-  </section>
-  <section id="overview">
-      <h2>Overview</h2>
-      <div class="figure">
-          <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
-          <div class="caption"><strong>Figure 1:</strong> Taxonomy overview</div>
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1>SRS Application Ontology</h1>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>http://www.opengis.net/ont/crs/SRSApplicationOntology</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/title" title="None. Defined in None">Title</a>
+            </dt>
+            <dd><p>SRS Application Ontology</p></dd>
+          </div>
+        </dl>
       </div>
-  </section>
-  <section id="concepts">
-    <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hierarchy">
-<li><a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a></li></ul></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a></li></ul></li>
-</ul>
-    <div class="entity concept" id="cadastremap">
-        <h3>cadastre map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="cadastremap">
+          <h3>cadastre map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
             <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/CadastreMap</code></td>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/CadastreMap</code>
+              </td>
             </tr>
             <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A map displaying a cadastre</p><br/>
-                </td>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map displaying a cadastre</p></td>
             </tr>
             <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
+          </table>
+        </div>
+        <div class="property entity" id="generalreferencemap">
+          <h3>general reference map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/GeneralReferenceMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>general reference map which includes a variety of different information</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="heatmap">
+          <h3>heat map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/HeatMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A data visualization technique that shows magnitude of a phenomenon as color in two dimensions.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="nauticalchart">
+          <h3>nautical chart
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/NauticalChart</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A nautical chart is a graphic representation of a sea area and adjacent coastal regions.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="topographicmap">
+          <h3>topographic map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/TopographicMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A type of map characterized by large-scale detail and quantitative representation of relief.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="weathermap">
+          <h3>weather map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/WeatherMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map for showing the local direction in which weather systems are moving.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="chloroplethmap">
+          <h3>chloropleth map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ChloroplethMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable </p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="thematicmap">
+          <h3>thematic map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ThematicMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map used to highlight a specific phenomenon</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="srsapplication">
+          <h3>srs application
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/SRSApplication</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>an application for which a spatial reference system is used</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="geocrs">geocrs</dt>
+          <dd>
+            <code>http://www.opengis.net/ont/crs/</code>
+          </dd>
+          <dt id="owl">owl</dt>
+          <dd>
+            <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
         </table>
+      </div>
     </div>
-    <div class="entity concept" id="chloroplethmap">
-        <h3>chloropleth map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/ChloroplethMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable </p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.0.1" id="version">3.0.1</a>
+      </p>
     </div>
-    <div class="entity concept" id="generalreferencemap">
-        <h3>general reference map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/GeneralReferenceMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>general reference map which includes a variety of different information</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#cadastremap">cadastre map</a>
+            </li>
+            <li>
+              <a href="#generalreferencemap">general reference map</a>
+            </li>
+            <li>
+              <a href="#heatmap">heat map</a>
+            </li>
+            <li>
+              <a href="#nauticalchart">nautical chart</a>
+            </li>
+            <li>
+              <a href="#topographicmap">topographic map</a>
+            </li>
+            <li>
+              <a href="#weathermap">weather map</a>
+            </li>
+            <li>
+              <a href="#chloroplethmap">chloropleth map</a>
+            </li>
+            <li>
+              <a href="#thematicmap">thematic map</a>
+            </li>
+            <li>
+              <a href="#srsapplication">srs application</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#geocrs">geocrs</a>
+            </li>
+            <li>
+              <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
     </div>
-    <div class="entity concept" id="heatmap">
-        <h3>heat map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/HeatMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A data visualization technique that shows magnitude of a phenomenon as color in two dimensions.</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="nauticalchart">
-        <h3>nautical chart<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/NauticalChart</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A nautical chart is a graphic representation of a sea area and adjacent coastal regions.</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="srsapplication">
-        <h3>srs application<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/SRSApplication</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>an application for which a spatial reference system is used</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="thematicmap">
-        <h3>thematic map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/ThematicMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A map used to highlight a specific phenomenon</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="topographicmap">
-        <h3>topographic map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/TopographicMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A type of map characterized by large-scale detail and quantitative representation of relief.</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="weathermap">
-        <h3>weather map<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/WeatherMap</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A map for showing the local direction in which weather systems are moving.</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-</section>
-
-  <section id="namespaces">
-    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <dl>
-        <dt>default (:)</dt>
-        <dd><code>http://www.opengis.net/ont/crs/SRSApplicationOntology</code></dd>
-        <dt>brick</dt>
-        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
-        <dt>csvw</dt>
-        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
-        <dt>dc</dt>
-        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
-        <dt>dcam</dt>
-        <dd><code>http://purl.org/dc/dcam/</code></dd>
-        <dt>dcat</dt>
-        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
-        <dt>dcmitype</dt>
-        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
-        <dt>dcterms</dt>
-        <dd><code>http://purl.org/dc/terms/</code></dd>
-        <dt>doap</dt>
-        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
-        <dt>foaf</dt>
-        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
-        <dt>geocrs</dt>
-        <dd><code>http://www.opengis.net/ont/crs/</code></dd>
-        <dt>odrl</dt>
-        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
-        <dt>org</dt>
-        <dd><code>http://www.w3.org/ns/org#</code></dd>
-        <dt>owl</dt>
-        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
-        <dt>prof</dt>
-        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
-        <dt>prov</dt>
-        <dd><code>http://www.w3.org/ns/prov#</code></dd>
-        <dt>qb</dt>
-        <dd><code>http://purl.org/linked-data/cube#</code></dd>
-        <dt>rdf</dt>
-        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
-        <dt>rdfs</dt>
-        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>sdo</dt>
-        <dd><code>https://schema.org/</code></dd>
-        <dt>sh</dt>
-        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
-        <dt>skos</dt>
-        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
-        <dt>sosa</dt>
-        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
-        <dt>ssn</dt>
-        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
-        <dt>time</dt>
-        <dd><code>http://www.w3.org/2006/time#</code></dd>
-        <dt>vann</dt>
-        <dd><code>http://purl.org/vocab/vann/</code></dd>
-        <dt>void</dt>
-        <dd><code>http://rdfs.org/ns/void#</code></dd>
-        <dt>xsd</dt>
-        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
-    </dl>
-</section>
-
-  <section id="legend">
-    <h2>Legend</h2>
-    <table class="entity">
-      <tr><td><sup class="sup-col" title="Collections">col</sup></td><td>Collections</td></tr>
-      <tr><td><sup class="sup-con" title="Concepts">con</sup></td><td>Concepts</td></tr>
-    </table>
-  </section>
-</body>
+  </body>
 </html>

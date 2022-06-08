@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <title>Planet Ontology</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
-EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
     <style>
         #pylode {
             position: fixed;
             top: 130px;
-            left: -60px;
+            left: -80px;
             font-size: small;
             transform: rotate(-90deg);
             color: grey;
@@ -25,15 +20,44 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         #pylode a:hover {
             color: #333;
         }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
 
         .cardinality {
             font-style: italic;
             color: #aa00aa;
         }
 
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
         dt {
             font-weight: bold;
-            padding: 5px 0 5px 0;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        #metadata ul,
+        #classes ul {
+            list-style-type: none;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-left: -40px;
         }
 
         ul.hlist {
@@ -95,14 +119,13 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         }
         h3 {
             font: 120% sans-serif;
-            margin-top: 3px;
+            margin-top: 20px;
             padding-bottom: 5px;
             border-bottom: 1px solid navy;
         }
         h4 { font: bold 100% sans-serif }
         h5 { font: italic 100% sans-serif }
         h6 { font: small-caps 100% sans-serif }
-
 
         body {
             padding: 2em 70px 2em 70px;
@@ -138,7 +161,6 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         .sup-con,
         .sup-col {
             cursor:help;
-            margin-left: 3px;
         }
 
         .sup-c {
@@ -177,6 +199,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color:darkred;
         }
 
+        sup {
+            margin-left: -3px;
+        }
         code {
             font-size: large;
             color: darkred;
@@ -187,10 +212,56 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color: #336;
             text-decoration: none;
         }
-    </style>
-    
-    <script type="application/ld+json">
-      [
+
+#toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border: solid 1px navy;
+    font-size: small;
+    width: 180px;
+}
+#toc h3 {
+    margin-top: 5px;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#toc .first > li {
+    margin-top: 5px;
+}
+
+#toc .second,
+#toc .third {
+    padding-left: 10px;
+}
+
+#content {
+    width: calc(100% - 150px);
+}
+
+.hover_property {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.setclass {
+    list-style-type: none;
+}
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
   {
     "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
     "@type": [
@@ -203,426 +274,1039 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     ]
   }
 ]
-    </script>
-</head>
-<body>
-  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
-    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.13.2</span>
-  </div>
-  <h1>Planet Ontology</h1>
-<h3><em>A taxonomy</em></h3>
-  <section id="conceptscheme">
-      <h2 style="display:none;">Concept Scheme</h2>
-      <dl>
-          <dt>URI</dt>
-          <dd><code>http://www.opengis.net/ont/crs/PlanetOntology</code></dd>
-          <dt>Ontology RDF</dt>
-          <dd><a href="planet_vocabulary.ttl">RDF (turtle)</a></dd>
-      </dl>
-  </section>
-  <section id="toc">
-      <h2>Table of Contents</h2>
-      <ol>
-          <li><a href="#concepts">Concepts</a></li>
-          <li><a href="#namespaces">Namespaces</a></li>
-          <li><a href="#legend">Legend</a></li>
-      </ol>
-  </section>
-  <section id="overview">
-      <h2>Overview</h2>
-      <div class="figure">
-          <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
-          <div class="caption"><strong>Figure 1:</strong> Taxonomy overview</div>
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1>Planet Ontology</h1>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>http://www.opengis.net/ont/crs/PlanetOntology</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/title" title="None. Defined in None">Title</a>
+            </dt>
+            <dd><p>Planet Ontology</p></dd>
+          </div>
+        </dl>
       </div>
-  </section>
-  <section id="concepts">
-    <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hierarchy">
-<li><a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/ArtificialSatellite">geocrs:ArtificialSatellite</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/Moon">geocrs:Moon</a></li></ul></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a>
-<ul><li><a href="http://www.opengis.net/ont/crs/Plutoid">geocrs:Plutoid</a></li></ul></li></ul></li></ul>
-<ul><li><a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a></li></ul></li>
-</ul>
-    <div class="entity concept" id="artificialsatellite">
-        <h3>artificial satellite<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="artificialsatellite">
+          <h3>artificial satellite
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
             <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/ArtificialSatellite</code></td>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ArtificialSatellite</code>
+              </td>
             </tr>
             <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
+          </table>
+        </div>
+        <div class="property entity" id="asteroid">
+          <h3>asteroid
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Asteroid</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="barycentriccoordinatesystem">
+          <h3>barycentric coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/BarycentricCoordinateSystem</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>a coordinate system in which the location of a point is specified by reference to a simplex </p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="comet">
+          <h3>comet
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Comet</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="eclipticcoordinatesystem">
+          <h3>ecliptic coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/EclipticCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An ecliptic coordinate system is used for representing the apparent positions and orbits of solar system objects.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="equatorialcoordinatesystem">
+          <h3>equatorial coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/EquatorialCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="galacticcoordinatesystem">
+          <h3>galactic coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/GalacticCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="moon">
+          <h3>moon
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Moon</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="plutoid">
+          <h3>plutoid
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Plutoid</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="star">
+          <h3>star
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Star</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="supergalacticcoordinatesystem">
+          <h3>super galactic coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/SuperGalacticCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="dwarfplanet">
+          <h3>dwarf planet
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/DwarfPlanet</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Plutoid">geocrs:Plutoid</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="naturalsatellite">
+          <h3>natural satellite
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/NaturalSatellite</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>an interstellar body orbiting around another interstellar body</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Moon">geocrs:Moon</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="planet">
+          <h3>planet
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Planet</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="celestialcoordinatesystem">
+          <h3>celestial coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/CelestialCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>a coordinate system for specifying positions of celestial objects relative to physical reference points</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EclipticCS">geocrs:EclipticCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EquatorialCS">geocrs:EquatorialCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/SuperGalacticCS">geocrs:SuperGalacticCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="interstellarbody">
+          <h3>interstellar body
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/InterstellarBody</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/mass">geocrs:mass</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/orbital_period">geocrs:orbital_period</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/planet_status">geocrs:planet_status</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/radius">geocrs:radius</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/satelliteOf">geocrs:satelliteOf</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/starDistance">geocrs:starDistance</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/satelliteOf">geocrs:satelliteOf</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ArtificialSatellite">geocrs:ArtificialSatellite</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="objectproperties">
+        <h2>Object Properties</h2>
+        <div class="property entity" id="planetstatus">
+          <h3>planet status
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/planet_status</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>The status of the discovery of the planet, e.g. confirmed, unsure etc.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.opengis.net/ont/crs/PlanetStatus">geocrs:PlanetStatus</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="satelliteof">
+          <h3>satellite of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/satelliteOf</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Defines an interstellar body as the natural satellite of another interstellar body.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="datatypeproperties">
+        <h2>Datatype Properties</h2>
+        <div class="property entity" id="mass">
+          <h3>mass
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/mass</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>the mass of an interstellar body</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="orbitalperiod">
+          <h3>orbital period
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/orbital_period</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="radius">
+          <h3>radius
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/radius</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="stardistance">
+          <h3>star distance
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/starDistance</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>the distance of an interstellar body to the next star</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="geocrs">geocrs</dt>
+          <dd>
+            <code>http://www.opengis.net/ont/crs/</code>
+          </dd>
+          <dt id="ns1">ns1</dt>
+          <dd>
+            <code>http://docs.opengeospatial.org/as/18-005r4/</code>
+          </dd>
+          <dt id="owl">owl</dt>
+          <dd>
+            <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+          <dt id="xsd">xsd</dt>
+          <dd>
+            <code>http://www.w3.org/2001/XMLSchema#</code>
+          </dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-op" title="OWL Object Property">op</sup>
+            </td>
+            <td>Object Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+            </td>
+            <td>Datatype Properties</td>
+          </tr>
         </table>
+      </div>
     </div>
-    <div class="entity concept" id="asteroid">
-        <h3>asteroid<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Asteroid</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.0.1" id="version">3.0.1</a>
+      </p>
     </div>
-    <div class="entity concept" id="barycentriccoordinatesystem">
-        <h3>barycentric coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/BarycentricCoordinateSystem</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>a coordinate system in which the location of a point is specified by reference to a simplex </p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#artificialsatellite">artificial satellite</a>
+            </li>
+            <li>
+              <a href="#asteroid">asteroid</a>
+            </li>
+            <li>
+              <a href="#barycentriccoordinatesystem">barycentric coordinate system</a>
+            </li>
+            <li>
+              <a href="#comet">comet</a>
+            </li>
+            <li>
+              <a href="#eclipticcoordinatesystem">ecliptic coordinate system</a>
+            </li>
+            <li>
+              <a href="#equatorialcoordinatesystem">equatorial coordinate system</a>
+            </li>
+            <li>
+              <a href="#galacticcoordinatesystem">galactic coordinate system</a>
+            </li>
+            <li>
+              <a href="#moon">moon</a>
+            </li>
+            <li>
+              <a href="#plutoid">plutoid</a>
+            </li>
+            <li>
+              <a href="#star">star</a>
+            </li>
+            <li>
+              <a href="#supergalacticcoordinatesystem">super galactic coordinate system</a>
+            </li>
+            <li>
+              <a href="#dwarfplanet">dwarf planet</a>
+            </li>
+            <li>
+              <a href="#naturalsatellite">natural satellite</a>
+            </li>
+            <li>
+              <a href="#planet">planet</a>
+            </li>
+            <li>
+              <a href="#celestialcoordinatesystem">celestial coordinate system</a>
+            </li>
+            <li>
+              <a href="#interstellarbody">interstellar body</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#objectproperties">Object Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#planetstatus">planet status</a>
+            </li>
+            <li>
+              <a href="#satelliteof">satellite of</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#datatypeproperties">Datatype Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#mass">mass</a>
+            </li>
+            <li>
+              <a href="#orbitalperiod">orbital period</a>
+            </li>
+            <li>
+              <a href="#radius">radius</a>
+            </li>
+            <li>
+              <a href="#stardistance">star distance</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#geocrs">geocrs</a>
+            </li>
+            <li>
+              <a href="#ns1">ns1</a>
+            </li>
+            <li>
+              <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+            <li>
+              <a href="#xsd">xsd</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
     </div>
-    <div class="entity concept" id="celestialcoordinatesystem">
-        <h3>celestial coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/CelestialCS</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>a coordinate system for specifying positions of celestial objects relative to physical reference points</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/SuperGalacticCS">geocrs:SuperGalacticCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/EquatorialCS">geocrs:EquatorialCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/EclipticCS">geocrs:EclipticCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="comet">
-        <h3>comet<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Comet</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="dwarfplanet">
-        <h3>dwarf planet<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/DwarfPlanet</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/Plutoid">geocrs:Plutoid</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="eclipticcoordinatesystem">
-        <h3>ecliptic coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/EclipticCS</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>An ecliptic coordinate system is used for representing the apparent positions and orbits of solar system objects.</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="equatorialcoordinatesystem">
-        <h3>equatorial coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/EquatorialCS</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>A celestial coordinate system in which an object's position on the celestial sphere is described in terms of its north-south declination and east-west right ascension, measured relative to the celestial equator and vernal equinox, respectively</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="galacticcoordinatesystem">
-        <h3>galactic coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/GalacticCS</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/CelestialCoordinateSystem">geocrs:CelestialCoordinateSystem</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="interstellarbody">
-        <h3>interstellar body<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/InterstellarBody</code></td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/Asteroid">geocrs:Asteroid</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Star">geocrs:Star</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/ArtificialSatellite">geocrs:ArtificialSatellite</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Planet">geocrs:Planet</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/Comet">geocrs:Comet</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="moon">
-        <h3>moon<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Moon</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/NaturalSatellite">geocrs:NaturalSatellite</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="naturalsatellite">
-        <h3>natural satellite<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/NaturalSatellite</code></td>
-            </tr>
-            <tr>
-                <th>Definition</th>
-                <td>
-                    <p>an interstellar body orbiting around another interstellar body</p><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/Moon">geocrs:Moon</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="planet">
-        <h3>planet<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Planet</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Narrower Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="plutoid">
-        <h3>plutoid<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Plutoid</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="star">
-        <h3>star<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/Star</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity concept" id="supergalacticcoordinatesystem">
-        <h3>super galactic coordinate system<sup title="Concept" class="sup-con">con</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td><code>http://www.opengis.net/ont/crs/SuperGalacticCS</code></td>
-            </tr>
-            <tr>
-                <th>Broader Concepts</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-con" title="concept">con</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-</section>
-
-  <section id="namespaces">
-    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <dl>
-        <dt>default (:)</dt>
-        <dd><code>http://www.opengis.net/ont/crs/PlanetOntology</code></dd>
-        <dt>brick</dt>
-        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
-        <dt>csvw</dt>
-        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
-        <dt>dc</dt>
-        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
-        <dt>dcam</dt>
-        <dd><code>http://purl.org/dc/dcam/</code></dd>
-        <dt>dcat</dt>
-        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
-        <dt>dcmitype</dt>
-        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
-        <dt>dcterms</dt>
-        <dd><code>http://purl.org/dc/terms/</code></dd>
-        <dt>doap</dt>
-        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
-        <dt>foaf</dt>
-        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
-        <dt>geocrs</dt>
-        <dd><code>http://www.opengis.net/ont/crs/</code></dd>
-        <dt>odrl</dt>
-        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
-        <dt>org</dt>
-        <dd><code>http://www.w3.org/ns/org#</code></dd>
-        <dt>owl</dt>
-        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
-        <dt>prof</dt>
-        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
-        <dt>prov</dt>
-        <dd><code>http://www.w3.org/ns/prov#</code></dd>
-        <dt>qb</dt>
-        <dd><code>http://purl.org/linked-data/cube#</code></dd>
-        <dt>rdf</dt>
-        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
-        <dt>rdfs</dt>
-        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>sdo</dt>
-        <dd><code>https://schema.org/</code></dd>
-        <dt>sh</dt>
-        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
-        <dt>skos</dt>
-        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
-        <dt>sosa</dt>
-        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
-        <dt>ssn</dt>
-        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
-        <dt>time</dt>
-        <dd><code>http://www.w3.org/2006/time#</code></dd>
-        <dt>vann</dt>
-        <dd><code>http://purl.org/vocab/vann/</code></dd>
-        <dt>void</dt>
-        <dd><code>http://rdfs.org/ns/void#</code></dd>
-        <dt>xsd</dt>
-        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
-    </dl>
-</section>
-
-  <section id="legend">
-    <h2>Legend</h2>
-    <table class="entity">
-      <tr><td><sup class="sup-col" title="Collections">col</sup></td><td>Collections</td></tr>
-      <tr><td><sup class="sup-con" title="Concepts">con</sup></td><td>Concepts</td></tr>
-    </table>
-  </section>
-</body>
+  </body>
 </html>
