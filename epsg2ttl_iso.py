@@ -171,8 +171,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
 						found=True
 						break
-			if not found:
-				ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:Conversion . \n")
+				if not found:
+					print(proj4string)
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:Conversion . \n")
 		elif curcrs.coordinate_operation.type_name=="Transformation":
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:Transformation . \n")
 		elif curcrs.coordinate_operation.type_name=="Concatenated Operation":
@@ -190,7 +191,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		elif "Vertical Reference Frame" in curcrs.datum.type_name:
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:VerticalReferenceFrame . \n")
 		else:
-			print(curcrs.datum.type_name)
+			#print(curcrs.datum.type_name)
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
 		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
 		if curcrs.datum.remarks!=None:
@@ -205,7 +206,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 						ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
 					else:
 						ttl.add("geocrsdatum:"+str(datumid)+" geocrs:usage \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
-			print(str(curcrs.datum.scope))
+			#print(str(curcrs.datum.scope))
 		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
 			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipsoid "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
 			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
@@ -396,24 +397,30 @@ projections={}
 projections["tmerc"]="geocrs:TransverseMercatorProjection"
 projections["omerc"]="geocrs:ObliqueMercatorProjection"
 projections["merc"]="geocrs:MercatorProjection"
+projections["aeqd"]= "geocrs:AzimuthalEquidistantProjection"
+projections["airy"]="geocrs:AiryProjection"
+projections["aitoff"]="geocrs:AitoffProjection"
+projections["august"]= "geocrs:AugustEpicycloidalProjection"
+projections["bacon"]= "geocrs:BaconGlobularProjection"
 projections["sinu"]="geocrs:SinusoidalProjection"
 projections["rpoly"]="geocrs:RectangularPolyconicProjection"
 projections["poly"]="geocrs:AmericanPolyconicProjection"
 projections["eqdc"]="geocrs:EquidistantConicProjection"
 projections["sterea"]="geocrs:ObliqueStereographicProjection"
 projections["cea"]="geocrs:CylindricalEqualArea"
+projections["guyou"]="geocrs:GuyouProjection"
 projections["aea"]="geocrs:AlbersEqualAreaProjection"
 projections["eqearth"]="geocrs:EqualEarthProjection"
 projections["natearth"]="geocrs:NaturalEarthProjection"
 projections["stere"]="geocrs:StereographicProjection"
 projections["cass"]="geocrs:CassiniProjection"
 projections["nell"]="geocrs:PseudoCylindricalProjection"
-projections["eck1"]="geocrs:PseudoCylindricalProjection"
-projections["eck2"]="geocrs:PseudoCylindricalProjection"
-projections["eck3"]="geocrs:PseudoCylindricalProjection"
-projections["eck4"]="geocrs:PseudoCylindricalProjection"
-projections["eck5"]="geocrs:PseudoCylindricalProjection"
-projections["eck6"]="geocrs:PseudoCylindricalProjection"
+projections["eck1"]="geocrs:Eckert1Projection"
+projections["eck2"]="geocrs:Eckert2Projection"
+projections["eck3"]="geocrs:Eckert3Projection"
+projections["eck4"]="geocrs:Eckert4Projection"
+projections["eck5"]="geocrs:Eckert5Projection"
+projections["eck6"]="geocrs:Eckert6Projection"
 projections["eqc"]="geocrs:EquidistantCylindricalProjection"
 projections["col_urban"]="geocrs:ColombiaUrbanProjection"
 projections["laea"]="geocrs:LambertAzimuthalEqualArea"
@@ -421,6 +428,7 @@ projections["leac"]="geocrs:LambertEqualAreaConic"
 projections["labrd"]="geocrs:LabordeProjection"
 projections["lcc"]="geocrs:LambertConformalConicProjection"
 projections["gnom"]="geocrs:GnomonicProjection"
+projections["ortho"]="geocrs:OrthographicProjection"
 projections["bonne"]="geocrs:BonneProjection"
 projections["moll"]="geocrs:MollweideProjection"
 projections["mill"]="geocrs:MillerProjection"
@@ -435,8 +443,160 @@ projections["tcea"]="geocrs:CylindricalProjection"
 projections["utm"]="geocrs:UniversalTransverseMercatorProjection"
 projections["krovak"]="geocrs:Krovak"
 projections["geocent"]="geocrs:Geocentric"
+projections["robin"]="geocrs:RobinsonProjection"
 projections["latlong"]="geocrs:LatLonProjection"
 projections["longlat"]="geocrs:LonLatProjection"
+
+"""
+adams_hemi : Adams Hemisphere in a Square
+adams_ws1 : Adams World in a Square I
+adams_ws2 : Adams World in a Square II
+affine : Affine transformation
+alsk : Modified Stereographic of Alaska
+apian : Apian Globular I
+axisswap : Axis ordering
+bertin1953 : Bertin 1953
+bipc : Bipolar conic of western hemisphere
+boggs : Boggs Eumorphic
+bonne : Bonne (Werner lat_1=90)
+calcofi : Cal Coop Ocean Fish Invest Lines/Stations
+cart : Geodetic/cartesian conversions
+cc : Central Cylindrical
+ccon : Central Conic
+cea : Equal Area Cylindrical
+chamb : Chamberlin Trimetric
+collg : Collignon
+col_urban : Colombia Urban
+comill : Compact Miller
+crast : Craster Parabolic (Putnins P4)
+defmodel : Deformation model
+deformation : Kinematic grid shift
+denoy : Denoyer Semi-Elliptical
+eqc : Equidistant Cylindrical (Plate Carree)
+euler : Euler
+etmerc : Extended Transverse Mercator
+fahey : Fahey
+fouc : Foucaut
+fouc_s : Foucaut Sinusoidal
+gall : Gall (Gall Stereographic)
+geoc : Geocentric Latitude
+geogoffset : Geographic Offset
+geos : Geostationary Satellite View
+gins8 : Ginsburg VIII (TsNIIGAiK)
+gn_sinu : General Sinusoidal Series
+goode : Goode Homolosine
+gs48 : Modified Stereographic of 48 U.S.
+gs50 : Modified Stereographic of 50 U.S.
+hammer : Hammer & Eckert-Greifendorff
+hatano : Hatano Asymmetrical Equal Area
+healpix : HEALPix
+rhealpix : rHEALPix
+helmert : 3(6)-, 4(8)- and 7(14)-parameter Helmert shift
+hgridshift : Horizontal grid shift
+horner : Horner polynomial evaluation
+igh : Interrupted Goode Homolosine
+igh_o : Interrupted Goode Homolosine Oceanic View
+imw_p : International Map of the World Polyconic
+isea : Icosahedral Snyder Equal Area
+kav5 : Kavrayskiy V
+kav7 : Kavrayskiy VII
+labrd : Laborde
+laea : Lambert Azimuthal Equal Area
+lagrng : Lagrange
+larr : Larrivee
+lask : Laskowski
+lonlat : Lat/long (Geodetic)
+latlon : Lat/long (Geodetic alias)
+lcca : Lambert Conformal Conic Alternative
+leac : Lambert Equal Area Conic
+lee_os : Lee Oblated Stereographic
+lsat : Space oblique for LANDSAT
+mbt_s : McBryde-Thomas Flat-Polar Sine (No. 1)
+mbt_fps : McBryde-Thomas Flat-Pole Sine (No. 2)
+mbtfpp : McBride-Thomas Flat-Polar Parabolic
+mbtfpq : McBryde-Thomas Flat-Polar Quartic
+mbtfps : McBryde-Thomas Flat-Polar Sinusoidal
+mil_os : Miller Oblated Stereographic
+mill : Miller Cylindrical
+misrsom : Space oblique for MISR
+molobadekas : Molodensky-Badekas transformation
+molodensky : Molodensky transform
+murd1 : Murdoch I
+murd2 : Murdoch II
+murd3 : Murdoch III
+natearth : Natural Earth
+natearth2 : Natural Earth 2
+nell : Nell
+nell_h : Nell-Hammer
+nsper : Near-sided perspective
+nzmg : New Zealand Map Grid
+noop : No operation
+ob_tran : General Oblique Transformation
+ocea : Oblique Cylindrical Equal Area
+oea : Oblated Equal Area
+omerc : Oblique Mercator
+ortel : Ortelius Oval
+pconic : Perspective Conic
+patterson : Patterson Cylindrical
+peirce_q : Peirce Quincuncial
+pipeline : Transformation pipeline manager
+poly : Polyconic (American)
+pop : Retrieve coordinate value from pipeline stack
+push : Save coordinate value on pipeline stack
+putp1 : Putnins P1
+putp2 : Putnins P2
+putp3 : Putnins P3
+putp3p : Putnins P3'
+putp4p : Putnins P4'
+putp5 : Putnins P5
+putp5p : Putnins P5'
+putp6 : Putnins P6
+putp6p : Putnins P6'
+qua_aut : Quartic Authalic
+qsc : Quadrilateralized Spherical Cube
+rouss : Roussilhe Stereographic
+rpoly : Rectangular Polyconic
+s2 : S2
+sch : Spherical Cross-track Height
+set : Set coordinate value
+somerc : Swiss. Obl. Mercator
+stere : Stereographic
+sterea : Oblique Stereographic Alternative
+gstmerc : Gauss-Schreiber Transverse Mercator (aka Gauss-Laborde Reunion)
+tcc : Transverse Central Cylindrical
+tcea : Transverse Cylindrical Equal Area
+times : Times
+tinshift : Triangulation based transformation
+tissot : Tissot
+tobmerc : Tobler-Mercator
+topocentric : Geocentric/Topocentric conversion
+tpeqd : Two Point Equidistant
+tpers : Tilted perspective
+unitconvert : Unit conversion
+ups : Universal Polar Stereographic
+urm5 : Urmaev V
+urmfps : Urmaev Flat-Polar Sinusoidal
+utm : Universal Transverse Mercator (UTM)
+vandg : van der Grinten (I)
+vandg2 : van der Grinten II
+vandg3 : van der Grinten III
+vandg4 : van der Grinten IV
+vitk1 : Vitkovsky I
+vgridshift : Vertical grid shift
+wag1 : Wagner I (Kavrayskiy VI)
+wag2 : Wagner II
+wag3 : Wagner III
+wag4 : Wagner IV
+wag5 : Wagner V
+wag6 : Wagner VI
+wag7 : Wagner VII
+webmerc : Web Mercator / Pseudo Mercator
+weren : Werenskiold I
+wink1 : Winkel I
+wink2 : Winkel II
+wintri : Winkel Tripel
+xyzgridshift : Geocentric grid shift
+"""
 #projections["cc"]="geocrs:CylindricalProjection"
 ttl=set()
 ttlnoniso=set()
@@ -1005,7 +1165,7 @@ ttlprojectionvocab.add("geocrs:OvalProjection rdfs:subClassOf geocrs:Projection 
 ttlprojectionvocab.add("geocrs:PolyconicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PolyconicProjection rdfs:label \"polyconic projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:PolyconicProjection rdfs:subClassOf geocrs:Projection .\n")
-ttlprojectionvocab.add("geocrs:MiniumErrorProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:MinimumErrorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:MinimumErrorProjection rdfs:label \"minimum error projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:MinimumErrorProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:CordiformProjection rdf:type owl:Class .\n")
@@ -1120,9 +1280,15 @@ ttlprojectionvocab.add("geocrs:Eckert1Projection rdfs:subClassOf geocrs:PseudoCy
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdfs:label \"Eckert II projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:Eckert3Projection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:Eckert3Projection rdfs:label \"Eckert III projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert3Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdfs:label \"Eckert IV projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:Eckert5Projection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:Eckert5Projection rdfs:label \"Eckert V projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert5Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdfs:label \"Eckert VI projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")

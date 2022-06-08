@@ -138,8 +138,18 @@ geocrs:Eckert2Projection a owl:Class ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:Eckert3Projection a owl:Class ;
+    rdfs:label "Eckert III projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
 geocrs:Eckert4Projection a owl:Class ;
     rdfs:label "Eckert IV projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:Eckert5Projection a owl:Class ;
+    rdfs:label "Eckert V projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
@@ -274,8 +284,6 @@ geocrs:MillerProjection a owl:Class ;
     rdfs:label "miller projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:CylindricalProjection .
-
-geocrs:MiniumErrorProjection a owl:Class .
 
 geocrs:MollweideProjection a owl:Class ;
     rdfs:label "mollweide projection"@en ;
@@ -455,7 +463,8 @@ geocrs:CordiformProjection a owl:Class ;
     rdfs:label "cordiform projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
-geocrs:MinimumErrorProjection rdfs:label "minimum error projection"@en ;
+geocrs:MinimumErrorProjection a owl:Class ;
+    rdfs:label "minimum error projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:ObliqueMercatorProjection a owl:Class ;
@@ -544,12 +553,12 @@ geocrs:Projection a owl:Class ;
     rdfs:subClassOf geocrs:Conversion ;
     skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
 
-geocrs:PseudoCylindricalProjection a owl:Class ;
-    rdfs:label "pseudo-cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:CompromiseProjection a owl:Class ;
     rdfs:label "compromise projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:PseudoCylindricalProjection a owl:Class ;
+    rdfs:label "pseudo-cylindrical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:EqualAreaProjection a owl:Class ;
