@@ -400,6 +400,7 @@ projections["merc"]="geocrs:MercatorProjection"
 projections["aeqd"]= "geocrs:AzimuthalEquidistantProjection"
 projections["airy"]="geocrs:AiryProjection"
 projections["aitoff"]="geocrs:AitoffProjection"
+projections["apian"]="geocrs:ApianGlobularIProjection"
 projections["august"]= "geocrs:AugustEpicycloidalProjection"
 projections["bacon"]= "geocrs:BaconGlobularProjection"
 projections["sinu"]="geocrs:SinusoidalProjection"
@@ -423,6 +424,7 @@ projections["eck5"]="geocrs:Eckert5Projection"
 projections["eck6"]="geocrs:Eckert6Projection"
 projections["eqc"]="geocrs:EquidistantCylindricalProjection"
 projections["col_urban"]="geocrs:ColombiaUrbanProjection"
+projections["lagrng"]="geocrs:LagrangeProjection"
 projections["laea"]="geocrs:LambertAzimuthalEqualArea"
 projections["leac"]="geocrs:LambertEqualAreaConic"
 projections["labrd"]="geocrs:LabordeProjection"
@@ -442,6 +444,7 @@ projections["kav5"]="geocrs:PseudoCylindricalProjection"
 projections["tcea"]="geocrs:CylindricalProjection"
 projections["utm"]="geocrs:UniversalTransverseMercatorProjection"
 projections["krovak"]="geocrs:Krovak"
+projections["hatano"]="geocrs:HatanoAsymmetricalEqualAreaProjection"
 projections["geocent"]="geocrs:Geocentric"
 projections["robin"]="geocrs:RobinsonProjection"
 projections["latlong"]="geocrs:LatLonProjection"
@@ -453,7 +456,6 @@ adams_ws1 : Adams World in a Square I
 adams_ws2 : Adams World in a Square II
 affine : Affine transformation
 alsk : Modified Stereographic of Alaska
-apian : Apian Globular I
 axisswap : Axis ordering
 bertin1953 : Bertin 1953
 bipc : Bipolar conic of western hemisphere
@@ -465,7 +467,6 @@ cc : Central Cylindrical
 ccon : Central Conic
 cea : Equal Area Cylindrical
 chamb : Chamberlin Trimetric
-collg : Collignon
 col_urban : Colombia Urban
 comill : Compact Miller
 crast : Craster Parabolic (Putnins P4)
@@ -488,7 +489,6 @@ goode : Goode Homolosine
 gs48 : Modified Stereographic of 48 U.S.
 gs50 : Modified Stereographic of 50 U.S.
 hammer : Hammer & Eckert-Greifendorff
-hatano : Hatano Asymmetrical Equal Area
 healpix : HEALPix
 rhealpix : rHEALPix
 helmert : 3(6)-, 4(8)- and 7(14)-parameter Helmert shift
@@ -500,9 +500,7 @@ imw_p : International Map of the World Polyconic
 isea : Icosahedral Snyder Equal Area
 kav5 : Kavrayskiy V
 kav7 : Kavrayskiy VII
-labrd : Laborde
 laea : Lambert Azimuthal Equal Area
-lagrng : Lagrange
 larr : Larrivee
 lask : Laskowski
 lonlat : Lat/long (Geodetic)
@@ -1231,6 +1229,9 @@ ttlprojectionvocab.add("geocrs:QuarticAuthalicProjection rdfs:subClassOf geocrs:
 ttlprojectionvocab.add("geocrs:CraigRetroazimuthalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CraigRetroazimuthalProjection rdfs:label \"craig retroazimuthal projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:CraigRetroazimuthalProjection rdfs:subClassOf geocrs:RetroazimuthalProjection, geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdfs:label \"peirce quincuncial projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdfs:label \"peirce quincuncial projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdfs:subClassOf geocrs:ConformalProjection .\n")
@@ -1475,9 +1476,18 @@ ttlprojectionvocab.add("geocrs:MercatorProjection rdfs:subClassOf geocrs:Conform
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdfs:label \"bottomley projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdfs:subClassOf geocrs:PseudoConicalProjection, geocrs:EqualAreaProjection .\n")
-ttlprojectionvocab.add("geocrs:VanDerGrintenProjection rdf:type owl:Class .\n")
-ttlprojectionvocab.add("geocrs:VanDerGrintenProjection rdfs:label \"van der grinten projection\"@en .\n")
-ttlprojectionvocab.add("geocrs:VanDerGrintenProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdfs:label \"van der grinten I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIProjection rdfs:label \"van der grinten II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIIProjection rdfs:label \"van der grinten III projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIIIProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIVProjection rdfs:label \"van der grinten IV projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:VanDerGrintenIVProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdfs:label \"robinson projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:CompromiseProjection .\n")
