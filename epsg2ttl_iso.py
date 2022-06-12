@@ -399,6 +399,7 @@ projections["omerc"]="geocrs:ObliqueMercatorProjection"
 projections["merc"]="geocrs:MercatorProjection"
 projections["aeqd"]= "geocrs:AzimuthalEquidistantProjection"
 projections["airy"]="geocrs:AiryProjection"
+projections["fouc_s"]="geocrs:FoucautSinusoidalProjection"
 projections["aitoff"]="geocrs:AitoffProjection"
 projections["apian"]="geocrs:ApianGlobularIProjection"
 projections["august"]= "geocrs:AugustEpicycloidalProjection"
@@ -438,16 +439,32 @@ projections["nicol"]="geocrs:NicolosiGlobularProjection"
 projections["collg"]="geocrs:CollignonProjection"
 projections["robin"]="geocrs:RobinsonProjection"
 projections["loxim"]="geocrs:LoximuthalProjection"
+projections["boggs"]="geocrs:BoggsEumorphicProjection"
 projections["aitoff"]="geocrs:AitoffProjection"
 projections["ortho"]="geocrs:OrthographicProjection"
 projections["kav5"]="geocrs:PseudoCylindricalProjection"
 projections["tcea"]="geocrs:CylindricalProjection"
+projections["qua_aut"]="geocrs:QuarticAuthalicProjection"
 projections["utm"]="geocrs:UniversalTransverseMercatorProjection"
 projections["krovak"]="geocrs:Krovak"
+projections["goode"]="geocrs:GoodeHomolosineProjection"
+projections["gall"]="geocrs:GallStereographicProjection"
+projections["rouss"]="geocrs:RoussilheProjection"
 projections["fahey"]="geocrs:FaheyProjection"
 projections["hatano"]="geocrs:HatanoAsymmetricalEqualAreaProjection"
 projections["geocent"]="geocrs:Geocentric"
 projections["times"]="geocrs:TheTimesProjection"
+projections["wintri"]="geocrs:WinkelTripelProjection"
+projections["wag1"]="geocrs:WagnerIProjection"
+projections["wag2"]="geocrs:WagnerIIProjection"
+projections["wag3"]="geocrs:WagnerIIIProjection"
+projections["wag4"]="geocrs:WagnerIVProjection"
+projections["wag5"]="geocrs:WagnerVProjection"
+projections["wag6"]="geocrs:WagnerVIProjection"
+projections["wag7"]="geocrs:WagnerVIIProjection"
+projections["wag8"]="geocrs:WagnerVIIIProjection"
+projections["wag9"]="geocrs:WagnerIXProjection"
+projections["patterson"]="geocrs:PattersonCylindricalProjection"
 projections["robin"]="geocrs:RobinsonProjection"
 projections["latlong"]="geocrs:LatLonProjection"
 projections["longlat"]="geocrs:LonLatProjection"
@@ -466,7 +483,6 @@ alsk : Modified Stereographic of Alaska
 axisswap : Axis ordering
 bertin1953 : Bertin 1953
 bipc : Bipolar conic of western hemisphere
-boggs : Boggs Eumorphic
 bonne : Bonne (Werner lat_1=90)
 calcofi : Cal Coop Ocean Fish Invest Lines/Stations
 cart : Geodetic/cartesian conversions
@@ -484,16 +500,12 @@ eqc : Equidistant Cylindrical (Plate Carree)
 euler : Euler
 etmerc : Extended Transverse Mercator
 fouc : Foucaut
-fouc_s : Foucaut Sinusoidal
-gall : Gall (Gall Stereographic)
 geoc : Geocentric Latitude
 geogoffset : Geographic Offset
 geos : Geostationary Satellite View
 gins8 : Ginsburg VIII (TsNIIGAiK)
 gn_sinu : General Sinusoidal Series
-goode : Goode Homolosine
 gs48 : Modified Stereographic of 48 U.S.
-gs50 : Modified Stereographic of 50 U.S.
 hammer : Hammer & Eckert-Greifendorff
 healpix : HEALPix
 rhealpix : rHEALPix
@@ -512,7 +524,6 @@ lask : Laskowski
 lonlat : Lat/long (Geodetic)
 latlon : Lat/long (Geodetic alias)
 lcca : Lambert Conformal Conic Alternative
-leac : Lambert Equal Area Conic
 lee_os : Lee Oblated Stereographic
 lsat : Space oblique for LANDSAT
 mbt_s : McBryde-Thomas Flat-Polar Sine (No. 1)
@@ -541,7 +552,6 @@ oea : Oblated Equal Area
 omerc : Oblique Mercator
 ortel : Ortelius Oval
 pconic : Perspective Conic
-patterson : Patterson Cylindrical
 peirce_q : Peirce Quincuncial
 pipeline : Transformation pipeline manager
 poly : Polyconic (American)
@@ -556,9 +566,7 @@ putp5 : Putnins P5
 putp5p : Putnins P5'
 putp6 : Putnins P6
 putp6p : Putnins P6'
-qua_aut : Quartic Authalic
 qsc : Quadrilateralized Spherical Cube
-rouss : Roussilhe Stereographic
 rpoly : Rectangular Polyconic
 s2 : S2
 sch : Spherical Cross-track Height
@@ -574,7 +582,6 @@ tissot : Tissot
 tobmerc : Tobler-Mercator
 topocentric : Geocentric/Topocentric conversion
 tpeqd : Two Point Equidistant
-tpers : Tilted perspective
 unitconvert : Unit conversion
 ups : Universal Polar Stereographic
 urm5 : Urmaev V
@@ -582,18 +589,8 @@ urmfps : Urmaev Flat-Polar Sinusoidal
 utm : Universal Transverse Mercator (UTM)
 vitk1 : Vitkovsky I
 vgridshift : Vertical grid shift
-wag1 : Wagner I (Kavrayskiy VI)
-wag2 : Wagner II
-wag3 : Wagner III
-wag4 : Wagner IV
-wag5 : Wagner V
-wag6 : Wagner VI
-wag7 : Wagner VII
 webmerc : Web Mercator / Pseudo Mercator
 weren : Werenskiold I
-wink1 : Winkel I
-wink2 : Winkel II
-wintri : Winkel Tripel
 xyzgridshift : Geocentric grid shift
 """
 #projections["cc"]="geocrs:CylindricalProjection"
@@ -1146,6 +1143,13 @@ ttlprojectionvocab.add("geocrs:ProjectionOntology rdf:type owl:Ontology .\n")
 ttlprojectionvocab.add("geocrs:ProjectionOntology rdfs:label \"Projection Ontology\"@en .\n")
 ttlprojectionvocab.add("geocrs:isInverseProjectionOf rdf:type owl:ObjectProperty .\n")
 ttlprojectionvocab.add("geocrs:isInverseProjectionOf rdfs:label \"is inverse projection of\"@en .\n")
+ttlprojectionvocab.add("geocrs:isInverseProjectionOf skos:definition \"Defines an inverse projection to the projection identified as the subject\"@en .\n")
+ttlprojectionvocab.add("geocrs:isRelatedTo rdf:type owl:ObjectProperty .\n")
+ttlprojectionvocab.add("geocrs:isRelatedTo rdfs:label \"is related to\"@en .\n")
+ttlprojectionvocab.add("geocrs:isRelatedTo skos:definition \"relates to another projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:PROJidentifier rdf:type owl:DatatypeProperty .\n")
+ttlprojectionvocab.add("geocrs:PROJidentifier rdfs:label \"PROJ identifier\"@en .\n")
+ttlprojectionvocab.add("geocrs:PROJidentifier rdfs:label \"A short String identifier used to identify the projection in a PROJ string description\"@en .\n")
 ttlprojectionvocab.add("geocrs:isTransverseProjectionOf rdf:type owl:ObjectProperty .\n")
 ttlprojectionvocab.add("geocrs:isTransverseProjectionOf rdfs:label \"is transverse projection of\"@en .\n")
 ttlprojectionvocab.add("geocrs:Projection rdf:type owl:Class .\n")
@@ -1155,6 +1159,9 @@ ttlprojectionvocab.add("geocrs:Projection skos:definition \"coordinate conversio
 ttlprojectionvocab.add("geocrs:PerspectiveProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PerspectiveProjection rdfs:label \"perspective projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:PerspectiveProjection rdfs:subClassOf geocrs:Projection .\n")
+ttlprojectionvocab.add("geocrs:PoleLineProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:PoleLineProjection rdfs:label \"pole line projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:PoleLineProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:GlobularProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:GlobularProjection rdfs:label \"globular projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:GlobularProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -1176,6 +1183,10 @@ ttlprojectionvocab.add("geocrs:CordiformProjection rdfs:subClassOf geocrs:Projec
 ttlprojectionvocab.add("geocrs:PerspectiveConicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PerspectiveConicProjection rdfs:label \"perspective conic projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:PerspectiveConicProjection rdfs:subClassOf geocrs:PerspectiveProjection, geocrs:ConicalProjection .\n")
+ttlprojectionvocab.add("geocrs:PetermannStarProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:PetermannStarProjection rdfs:label \"Petermann Star projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:PetermannStarProjection skos:definition \"Pole-centered fusion: joins the Azimuthal Equidistant in central hemisphere to eight lobes with straight edges at 0°N\" .\n")
+ttlprojectionvocab.add("geocrs:PetermannStarProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:EquidistantProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:EquidistantProjection rdfs:label \"equidistant projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:EquidistantProjection skos:definition \"Projection in which all points on the map exhibit proportionally correct distances from the center point\"@en .\n")
@@ -1191,6 +1202,10 @@ ttlprojectionvocab.add("geocrs:AzimuthalProjection rdfs:subClassOf geocrs:Projec
 ttlprojectionvocab.add("geocrs:BerghausStarProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BerghausStarProjection rdfs:label \"berghaus star projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BerghausStarProjection rdfs:subClassOf geocrs:EquidistantProjection .\n")
+ttlprojectionvocab.add("geocrs:PattersonCylindricalProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:PattersonCylindricalProjection rdfs:label \"patterson cylindrical projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:PattersonCylindricalProjection geocrs:PROJidentifier \"patterson\" .\n")
+ttlprojectionvocab.add("geocrs:PattersonCylindricalProjection rdfs:subClassOf geocrs:CylindricalProjection .\n")
 ttlprojectionvocab.add("geocrs:RetroazimuthalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:RetroazimuthalProjection rdfs:label \"retroazimuthal projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:RetroazimuthalProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -1200,6 +1215,11 @@ ttlprojectionvocab.add("geocrs:PlateCarreeProjection rdfs:subClassOf geocrs:Equi
 ttlprojectionvocab.add("geocrs:ObliquePlateCarreeProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:ObliquePlateCarreeProjection rdfs:label \"Oblique Plate Carree Projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:ObliquePlateCarreeProjection rdfs:subClassOf geocrs:EquidistantProjection, geocrs:CylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection rdfs:label \"foucaut sinusoidal projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection geocrs:PROJidentifier \"fouc_s\" .\n")
+ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection skos:definition \"Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area\"@en .\n")
+ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:CollignonProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CollignonProjection rdfs:label \"collignon projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:CollignonProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
@@ -1244,6 +1264,13 @@ ttlprojectionvocab.add("geocrs:CentralCylindricalProjection rdfs:subClassOf geoc
 ttlprojectionvocab.add("geocrs:LittrowProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:LittrowProjection rdfs:label \"littrow projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:LittrowProjection rdfs:subClassOf geocrs:RetroazimuthalProjection, geocrs:ConformalProjection .\n")
+ttlprojectionvocab.add("geocrs:JamesAzimuthalProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:JamesAzimuthalProjection rdfs:label \"james azimuthal projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:JamesAzimuthalProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
+ttlprojectionvocab.add("geocrs:JamesAzimuthalProjection skos:definition \"Azimuthal far-side perspective\" .\n")
+ttlprojectionvocab.add("geocrs:GottWagnerProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GottWagnerProjection rdfs:label \"Gott-Wagner projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GottWagnerProjection rdfs:subClassOf geocrs:PolyconicProjection .\n")
 ttlprojectionvocab.add("geocrs:QuarticAuthalicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:QuarticAuthalicProjection rdfs:label \"quartic authalic projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:QuarticAuthalicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
@@ -1252,6 +1279,7 @@ ttlprojectionvocab.add("geocrs:CraigRetroazimuthalProjection rdfs:label \"craig 
 ttlprojectionvocab.add("geocrs:CraigRetroazimuthalProjection rdfs:subClassOf geocrs:RetroazimuthalProjection, geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdfs:label \"peirce quincuncial projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection geocrs:PROJidentifier \"hatano\" .\n")
 ttlprojectionvocab.add("geocrs:HatanoAsymmetricalEqualAreaProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdfs:label \"peirce quincuncial projection\"@en .\n")
@@ -1274,6 +1302,9 @@ ttlprojectionvocab.add("geocrs:GringortenProjection rdfs:subClassOf geocrs:Equal
 ttlprojectionvocab.add("geocrs:BakerDinomicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BakerDinomicProjection rdfs:label \"baker dinomic projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BakerDinomicProjection rdfs:subClassOf geocrs:Projection .\n")
+ttlprojectionvocab.add("geocrs:ArdenCloseProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:ArdenCloseProjection rdfs:label \"arden close projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:ArdenCloseProjection rdfs:subClassOf geocrs:CylindricalProjection .\n")
 ttlprojectionvocab.add("geocrs:GallPetersProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:GallPetersProjection rdfs:label \"gall-peters projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:GallPetersProjection rdfs:subClassOf geocrs:CylindricalProjection, geocrs:EqualAreaProjection .\n")
@@ -1294,12 +1325,20 @@ ttlprojectionvocab.add("geocrs:GeneralVerticalPerspectiveProjection rdfs:label \
 ttlprojectionvocab.add("geocrs:GeneralVerticalPerspectiveProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:PerspectiveProjection .\n")
 ttlprojectionvocab.add("geocrs:BonneProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BonneProjection rdfs:label \"bonne projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:BonneProjection geocrs:PROJidentifier \"bonne\" .\n")
 ttlprojectionvocab.add("geocrs:BonneProjection rdfs:subClassOf geocrs:PseudoConicalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:LaHireProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:LaHireProjection rdfs:label \"la hire projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:LaHireProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:PerspectiveProjection .\n")
+ttlprojectionvocab.add("geocrs:LowryProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:LowryProjection rdfs:label \"lowry projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:LowryProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:PerspectiveProjection .\n")
 ttlprojectionvocab.add("geocrs:ArmadilloProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:ArmadilloProjection rdfs:label \"armadillo projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:ArmadilloProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:GS50Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:GS50Projection rdfs:label \"gs50 projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GS50Projection geocrs:PROJidentifier \"gs50\" .\n")
 ttlprojectionvocab.add("geocrs:GS50Projection rdfs:subClassOf geocrs:ConformalProjection .\n")
 ttlprojectionvocab.add("geocrs:GS50Projection skos:definition \"A map projection that was developed by John Parr Snyder of the USGS in 1982. The GS50 projection provides a conformal projection suitable only for maps of the 50 United States\"@en .\n")
 ttlprojectionvocab.add("geocrs:BipolarObliqueConicConformalProjection rdf:type owl:Class .\n")
@@ -1307,21 +1346,27 @@ ttlprojectionvocab.add("geocrs:BipolarObliqueConicConformalProjection rdfs:label
 ttlprojectionvocab.add("geocrs:BipolarObliqueConicConformalProjection rdfs:subClassOf geocrs:ConicalProjection, geocrs:ConformalProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert1Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert1Projection rdfs:label \"Eckert I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert1Projection geocrs:PROJidentifier \"eck1\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert1Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdfs:label \"Eckert II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert2Projection geocrs:PROJidentifier \"eck2\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert2Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert3Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert3Projection rdfs:label \"Eckert III projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert3Projection geocrs:PROJidentifier \"eck3\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert3Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdfs:label \"Eckert IV projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert4Projection geocrs:PROJidentifier \"eck4\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert4Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert5Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert5Projection rdfs:label \"Eckert V projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert5Projection geocrs:PROJidentifier \"eck5\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert5Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdfs:label \"Eckert VI projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:Eckert6Projection geocrs:PROJidentifier \"eck6\" .\n")
 ttlprojectionvocab.add("geocrs:Eckert6Projection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:Kavrayskiy7Projection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Kavrayskiy7Projection rdfs:label \"Kavrayskiy VII projection\"@en .\n")
@@ -1350,12 +1395,19 @@ ttlprojectionvocab.add("geocrs:GoodeHomolosineProjection rdfs:label \"goode homo
 ttlprojectionvocab.add("geocrs:GoodeHomolosineProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:HEALPixProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:HEALPixProjection rdfs:label \"HEALPix projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HEALPixProjection geocrs:PROJidentifier \"healpix\" .\n")
+ttlprojectionvocab.add("geocrs:HEALPixProjection skos:definition \"Fusion; joins the Cylindrical Equal-Area and Collignon at ±41°71'. Interrupted for all but the H=1 case\"@en .\n")
 ttlprojectionvocab.add("geocrs:HEALPixProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:BoggsEumorphicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BoggsEumorphicProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BoggsEumorphicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:MayrProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:MayrProjection rdfs:label \"boggs eumorphic projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:MayrProjection skos:definition \"Geometric mean of the cylindrical equal area and sinusoidal projections\"@en .\n")
+ttlprojectionvocab.add("geocrs:MayrProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:CrasterParabolicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CrasterParabolicProjection rdfs:label \"craster parabolic projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:CrasterParabolicProjection geocrs:PROJidentifier \"crast\" .\n")
 ttlprojectionvocab.add("geocrs:CrasterParabolicProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:TheTimesProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:TheTimesProjection rdfs:label \"the times projection\"@en .\n")
@@ -1372,6 +1424,7 @@ ttlprojectionvocab.add("geocrs:MyrahedalProjection rdfs:label \"myrahedal projec
 ttlprojectionvocab.add("geocrs:MyrahedalProjection rdfs:subClassOf geocrs:PolyhedralProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:BaconGlobularProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BaconGlobularProjection rdfs:label \"bacon globular projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:BaconGlobularProjection geocrs:PROJidentifier \"bacon\" .\n")
 ttlprojectionvocab.add("geocrs:BaconGlobularProjection rdfs:subClassOf geocrs:GlobularProjection .\n")
 ttlprojectionvocab.add("geocrs:NicolosiGlobularProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:NicolosiGlobularProjection rdfs:label \"nicolosi globular projection\"@en .\n")
@@ -1385,12 +1438,48 @@ ttlprojectionvocab.add("geocrs:ApianIIProjection rdfs:subClassOf geocrs:Pseudocy
 ttlprojectionvocab.add("geocrs:FournierGlobularIProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:FournierGlobularIProjection rdfs:label \"fournier globular I projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:FournierGlobularIProjection rdfs:subClassOf geocrs:GlobularProjection .\n")
+ttlprojectionvocab.add("geocrs:FournierIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:FournierIIProjection rdfs:label \"fournier II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:FournierIIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:HillEucyclicProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HillEucyclicProjection rdfs:label \"hill eucyclic projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HillEucyclicProjection rdfs:subClassOf geocrs:PolyconicProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerIProjection rdfs:label \"wagner I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerIProjection geocrs:PROJidentifier \"wag1\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIProjection rdfs:label \"wagner II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIProjection geocrs:PROJidentifier \"wag2\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:PoleLineProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIIProjection geocrs:PROJidentifier \"wag3\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIIProjection rdfs:label \"wagner III projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerIIIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:PoleLineProjection .\n")
 ttlprojectionvocab.add("geocrs:WagnerIVProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:WagnerIVProjection rdfs:label \"wagner IV projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerIVProjection geocrs:PROJidentifier \"wag4\" .\n")
 ttlprojectionvocab.add("geocrs:WagnerIVProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerVProjection rdfs:label \"wagner V projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerVProjection geocrs:PROJidentifier \"wag5\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerVProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:PoleLineProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIProjection geocrs:PROJidentifier \"wag6\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIProjection rdfs:label \"wagner VI projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:PoleLineProjection .\n")
 ttlprojectionvocab.add("geocrs:WagnerVIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIProjection geocrs:PROJidentifier \"wag7\" .\n")
 ttlprojectionvocab.add("geocrs:WagnerVIIProjection rdfs:label \"wagner VII projection\"@en .\n")
-ttlprojectionvocab.add("geocrs:WagnerVIIProjection rdfs:subClassOf geocrs:PseudoAzimuthalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIProjection rdfs:subClassOf geocrs:PolyconicProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIIProjection geocrs:PROJidentifier \"wag8\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIIProjection rdfs:label \"wagner VIII projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerVIIIProjection rdfs:subClassOf geocrs:PolyconicProjection, geocrs:PoleLineProjection .\n")
+ttlprojectionvocab.add("geocrs:WagnerIXProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WagnerIXProjection rdfs:label \"wagner IX projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WagnerIXProjection geocrs:PROJidentifier \"wag9\" .\n")
+ttlprojectionvocab.add("geocrs:WagnerIXProjection rdfs:subClassOf geocrs:PolyconicProjection, geocrs:PoleLineProjection .\n")
 ttlprojectionvocab.add("geocrs:AtlantisProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:AtlantisProjection rdfs:label \"atlantis projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:AtlantisProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
@@ -1399,12 +1488,14 @@ ttlprojectionvocab.add("geocrs:BertinProjection rdfs:label \"bertin projection\"
 ttlprojectionvocab.add("geocrs:BertinProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:AiryProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:AiryProjection rdfs:label \"airy projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:AiryProjection geocrs:PROJidentifier \"airy\" .\n")
 ttlprojectionvocab.add("geocrs:AiryProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:MinimumErrorProjection .\n")
 ttlprojectionvocab.add("geocrs:WiechelProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:WiechelProjection rdfs:label \"wiechel projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:WiechelProjection rdfs:subClassOf geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:TiltedPerspectiveProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:TiltedPerspectiveProjection rdfs:label \"tilted perspective projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:TiltedPerspectiveProjection geocrs:PROJidentifier \"tpers\" .\n")
 ttlprojectionvocab.add("geocrs:TiltedPerspectiveProjection rdfs:subClassOf geocrs:PerspectiveProjection .\n")
 ttlprojectionvocab.add("geocrs:FaheyProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:FaheyProjection rdfs:label \"fahey projection\"@en .\n")
@@ -1425,6 +1516,7 @@ ttlprojectionvocab.add("geocrs:ConicalProjection rdfs:label \"conical projection
 ttlprojectionvocab.add("geocrs:ConicalProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:ObliqueMercatorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:ObliqueMercatorProjection rdfs:label \"oblique mercator projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:ObliqueMercatorProjection geocrs:PROJidentifier \"merc\" .\n")
 ttlprojectionvocab.add("geocrs:ObliqueMercatorProjection rdfs:subClassOf geocrs:MercatorProjection, geocrs:CylindricalProjection, geocrs:ObliqueProjection .\n")
 ttlprojectionvocab.add("geocrs:SpaceObliqueMercatorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:SpaceObliqueMercatorProjection rdfs:label \"space oblique mercator projection\"@en .\n")
@@ -1441,6 +1533,9 @@ ttlprojectionvocab.add("geocrs:PseudoAzimuthalProjection rdfs:subClassOf geocrs:
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdfs:label \"cylindrical projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdfs:subClassOf geocrs:Projection .\n")
+ttlprojectionvocab.add("geocrs:EquallySpacedParallelsProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:EquallySpacedParallelsProjection rdfs:label \"equally-spaced parallels projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:EquallySpacedParallelsProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:EqualAreaProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:EqualAreaProjection rdfs:label \"equal-area projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:EqualAreaProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -1456,25 +1551,112 @@ ttlprojectionvocab.add("geocrs:ObliqueProjection skos:definition \"a projection 
 ttlprojectionvocab.add("geocrs:ObliqueProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:LoximuthalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:LoximuthalProjection rdfs:label \"loximuthal projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:LoximuthalProjection geocrs:PROJidentifier \"loxim\" .\n")
 ttlprojectionvocab.add("geocrs:LoximuthalProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:AlbersEqualAreaProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:AlbersEqualAreaProjection rdfs:label \"albers equal-area projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:AlbersEqualAreaProjection skos:definition \"a conic, equal area map projection that uses two standard parallels\"@en .\n")
 ttlprojectionvocab.add("geocrs:AlbersEqualAreaProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:ConicalProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WinkelIProjection rdfs:label \"winkel I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WinkelIProjection geocrs:PROJidentifier \"wink1\" .\n")
+ttlprojectoinvocab.add("geocrs:WinkelIProjection skos:definition \"Arithmetic average of the Equirectangular and Sinusoidal projections. Pseudocylindric, equally spaced parallels, sinusoidal meridians, pole line\" .")
+ttlprojectionvocab.add("geocrs:WinkelIProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelIProjection geocrs:isRelatedTo geocrs:EquirectangularProjection, geocrs:SinusoidalProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WinkelIIProjection rdfs:label \"winkel II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WinkelIIProjection geocrs:PROJidentifier \"wink2\" .\n")
+ttlprojectoinvocab.add("geocrs:WinkelIIProjection skos:definition \"Arithmetic average of the Equirectangular and Apian II projections. Pseudocylindric, equally spaced parallels, elliptical meridians, pole line\" .")
+ttlprojectionvocab.add("geocrs:WinkelIIProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelIIProjection geocrs:isRelatedTo geocrs:EquirectangularProjection, geocrs:ApianIIProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelSnyderProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:WinkelSnyderProjection rdfs:label \"winkel snyder projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WinkelSnyderProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelSnyderProjection skos:definition \"Arithmetic average of the Equirectangular and Mollweide projections\" .\n")
+ttlprojectionvocab.add("geocrs:WinkelSnyderProjection geocrs:isRelatedTo geocrs:EquirectangularProjection, geocrs:MollweideProjection .\n")
 ttlprojectionvocab.add("geocrs:WinkelTripelProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:WinkelTripelProjection rdfs:label \"winkel tripel projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:WinkelTripelProjection geocrs:PROJidentifier \"wintri\" .\n")
 ttlprojectionvocab.add("geocrs:WinkelTripelProjection rdfs:subClassOf geocrs:PseudoAzimuthalProjection, geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:WinkelTripelProjection skos:definition \"Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line\" .\n")
+ttlprojectionvocab.add("geocrs:WinkelTripelProjection geocrs:isRelatedTo geocrs:AitoffProjection, geocrs:EquirectangularProjection .\n") 
 ttlprojectionvocab.add("geocrs:NellProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:NellProjection rdfs:label \"nell projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:NellProjection geocrs:PROJidentifier \"nell\" .\n")
 ttlprojectionvocab.add("geocrs:NellProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:SpilhausOceanicProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:SpilhausOceanicProjection rdfs:label \"spilhaus oceanic projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:SpilhausOceanicProjection rdfs:subClassOf geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:OctantProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:OctantProjection rdfs:label \"octant projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:OctantProjection rdfs:subClassOf geocrs:PolyhedralProjection, geocrs:CompromiseProjection .\n")
+ttlprojectionvocab.add("geocrs:HufnagelProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelProjection rdfs:label \"Hufnagel projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIProjection rdfs:label \"Hufnagel I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIProjection rdfs:label \"Hufnagel II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIIProjection rdfs:label \"Hufnagel III projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIIIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelIVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIVProjection rdfs:label \"Hufnagel IV projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIVProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVProjection rdfs:label \"Hufnagel V projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIProjection rdfs:label \"Hufnagel VI projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIProjection rdfs:label \"Hufnagel VII projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIIProjection rdfs:label \"Hufnagel VIII projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelVIIIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelIXProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIXProjection rdfs:label \"Hufnagel IX projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelIXProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelXProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXProjection rdfs:label \"Hufnagel X projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIProjection rdfs:label \"Hufnagel XI projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIIProjection rdfs:label \"Hufnagel XII projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HufnagelXIIProjection rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:PseudoCylindricalProjection.\n")
+ttlprojectionvocab.add("geocrs:GinzburgIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIProjection rdfs:label \"Ginzburg I projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIIProjection rdfs:label \"Ginzburg II projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIIProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIVProjection rdfs:label \"Ginzburg IV projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIVProjection rdfs:subClassOf geocrs:PolyconicProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVProjection rdfs:label \"Ginzburg V projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVProjection rdfs:subClassOf geocrs:PolyconicProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIProjection rdfs:label \"Ginzburg VI projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIProjection rdfs:subClassOf geocrs:PolyconicProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIIIProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIIIProjection rdfs:label \"Ginzburg VIII projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgVIIIProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIXProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIXProjection rdfs:label \"Ginzburg IX projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:GinzburgIXProjection rdfs:subClassOf geocrs:PolyconicProjection .\n")
 ttlprojectionvocab.add("geocrs:EqualEarthProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:EqualEarthProjection rdfs:label \"equal earth projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:EqualEarthProjection geocrs:PROJidentifier \"eqearth\" .\n")
 ttlprojectionvocab.add("geocrs:EqualEarthProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:NaturalEarthProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:NaturalEarthProjection rdfs:label \"natural earth projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:NaturalEarthProjection geocrs:PROJidentifier \"natearth\" .\n")
 ttlprojectionvocab.add("geocrs:NaturalEarthProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:OrthographicProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:OrthographicProjection rdfs:label \"orthographic projection\"@en .\n")
@@ -1488,9 +1670,11 @@ ttlprojectionvocab.add("geocrs:GnomonicProjection skos:definition \"A map projec
 ttlprojectionvocab.add("geocrs:GnomonicProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
 ttlprojectionvocab.add("geocrs:CassiniProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CassiniProjection rdfs:label \"cassini projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:CassiniProjection geocrs:PROJidentifier \"cass\" .\n")
 ttlprojectionvocab.add("geocrs:CassiniProjection rdfs:subClassOf geocrs:CylindricalProjection, geocrs:EquidistantProjection .\n")
 ttlprojectionvocab.add("geocrs:AitoffProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:AitoffProjection rdfs:label \"aitoff projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:AitoffProjection geocrs:PROJidentifier \"aitoff\" .\n")
 ttlprojectionvocab.add("geocrs:AitoffProjection rdfs:subClassOf geocrs:PseudoAzimuthalProjection, geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:AitoffObliqueProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:AitoffObliqueProjection rdfs:label \"aitoff oblique projection\"@en .\n")
@@ -1506,6 +1690,7 @@ ttlprojectionvocab.add("geocrs:TwoPointEquidistantProjection rdfs:label \"two-po
 ttlprojectionvocab.add("geocrs:TwoPointEquidistantProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:EquidistantProjection .\n")
 ttlprojectionvocab.add("geocrs:SinusoidalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:SinusoidalProjection rdfs:label \"sinusoidal projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:SinusoidalProjection geocrs:PROJidentifier \"sinu\" .\n")
 ttlprojectionvocab.add("geocrs:SinusoidalProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection, geocrs:EquidistantProjection .\n")
 ttlprojectionvocab.add("geocrs:PseudoConicalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:PseudoConicalProjection rdfs:label \"pseudo-conical projection\"@en .\n")
@@ -1522,10 +1707,20 @@ ttlprojectionvocab.add("geocrs:ObliqueStereographicProjection rdfs:label \"obliq
 ttlprojectionvocab.add("geocrs:ObliqueStereographicProjection rdfs:subClassOf geocrs:CylindricalProjection, geocrs:ObliqueProjection .\n")
 ttlprojectionvocab.add("geocrs:MercatorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:MercatorProjection rdfs:label \"mercator projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:MercatorProjection geocrs:PROJidentifier \"merc\" .\n")
 ttlprojectionvocab.add("geocrs:MercatorProjection rdfs:subClassOf geocrs:ConformalProjection, geocrs:CylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:BartholomewProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:BartholomewProjection rdfs:label \"Bartholomew projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:BartholomewProjection rdfs:subClassOf geocrs:WinkelTripelProjection .\n")
 ttlprojectionvocab.add("geocrs:BraunPerspectiveProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BraunPerspectiveProjection rdfs:label \"Braun perspective projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BraunPerspectiveProjection rdfs:subClassOf geocrs:CylindricalProjection .\n")
+ttlprojectionvocab.add("geocrs:NordicProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:NordicProjection rdfs:label \"Nordic projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:NordicProjection rdfs:subClassOf geocrs:ObliqueProjection .\n")
+ttlprojectionvocab.add("geocrs:PavlovProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:PavlovProjection rdfs:label \"Pavlov projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:PavlovProjection rdfs:subClassOf geocrs:CylindricalProjection .\n")
 ttlprojectionvocab.add("geocrs:BreusingGeometricProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BreusingGeometricProjection rdfs:label \"breusing geometric projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BreusingGeometricProjection rdfs:subClassOf geocrs:AzimuthalProjection .\n")
@@ -1535,6 +1730,9 @@ ttlprojectionvocab.add("geocrs:BreusingHarmonicProjection rdfs:subClassOf geocrs
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdfs:label \"bottomley projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:BottomleyProjection rdfs:subClassOf geocrs:PseudoConicalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:DeakinMinimumErrorProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:DeakinMinimumErrorProjection rdfs:label \"deakin minimum error projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:DeakinMinimumErrorProjection rdfs:subClassOf geocrs:DeakinMinimumErrorProjection, geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdfs:label \"van der grinten I projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:VanDerGrintenIProjection rdfs:subClassOf geocrs:CompromiseProjection, geocrs:PolyconicProjection .\n")
@@ -1549,6 +1747,7 @@ ttlprojectionvocab.add("geocrs:VanDerGrintenIVProjection rdfs:label \"van der gr
 ttlprojectionvocab.add("geocrs:VanDerGrintenIVProjection rdfs:subClassOf geocrs:PolyconicProjection, geocrs:GlobularProjection .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdfs:label \"robinson projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:RobinsonProjection geocrs:PROJidentifier \"robin\" .\n")
 ttlprojectionvocab.add("geocrs:RobinsonProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:CompromiseProjection .\n")
 ttlprojectionvocab.add("geocrs:WebMercatorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:WebMercatorProjection rdfs:label \"web mercator projection\"@en .\n")
@@ -1559,6 +1758,9 @@ ttlprojectionvocab.add("geocrs:MillerProjection rdfs:subClassOf geocrs:Cylindric
 ttlprojectionvocab.add("geocrs:Krovak rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Krovak rdfs:label \"krovak projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:Krovak rdfs:subClassOf geocrs:ConicalProjection .\n")
+ttlprojectionvocab.add("geocrs:BalthasartProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:BalthasartProjection rdfs:label \"balthasart projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:BalthasartProjection rdfs:subClassOf geocrs:CylindricalEqualArea .\n")
 ttlprojectionvocab.add("geocrs:TransverseMercatorProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:TransverseMercatorProjection rdfs:label \"transverse mercator projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:TransverseMercatorProjection rdfs:subClassOf geocrs:MercatorProjection .\n")
@@ -1570,6 +1772,7 @@ ttlprojectionvocab.add("geocrs:LambertConformalConicProjection rdfs:label \"lamb
 ttlprojectionvocab.add("geocrs:LambertConformalConicProjection rdfs:subClassOf geocrs:ConformalProjection, geocrs:ConicalProjection .\n")
 ttlprojectionvocab.add("geocrs:CylindricalEqualArea rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CylindricalEqualArea rdfs:label \"cylindrical equal area projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:CylindricalEqualArea geocrs:PROJidentifier \"cea\"@en .\n")
 ttlprojectionvocab.add("geocrs:CylindricalEqualArea rdfs:subClassOf geocrs:EqualAreaProjection, geocrs:CylindricalProjection .\n")
 ttlprojectionvocab.add("geocrs:LambertAzimuthalEqualArea rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:LambertAzimuthalEqualArea rdfs:label \"lambert azimuthal equal area projection\"@en .\n")
