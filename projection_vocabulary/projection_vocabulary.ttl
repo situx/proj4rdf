@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix geocrs: <http://www.opengis.net/ont/crs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -10,6 +11,7 @@ geocrs:AdamsProjection a owl:Class ;
 
 geocrs:AiryProjection a owl:Class ;
     rdfs:label "airy projection"@en ;
+    geocrs:PROJidentifier "airy" ;
     rdfs:subClassOf geocrs:AzimuthalProjection,
         geocrs:MinimumErrorProjection .
 
@@ -18,19 +20,18 @@ geocrs:AitoffObliqueProjection a owl:Class ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoAzimuthalProjection .
 
-geocrs:AitoffProjection a owl:Class ;
-    rdfs:label "aitoff projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoAzimuthalProjection .
-
 geocrs:AlbersEqualAreaProjection a owl:Class ;
     rdfs:label "albers equal-area projection"@en ;
+    dc:creator "Heinrich C. Albers" ;
+    dc:date "1805" ;
     rdfs:subClassOf geocrs:ConicalProjection,
         geocrs:EqualAreaProjection ;
     skos:definition "a conic, equal area map projection that uses two standard parallels"@en .
 
 geocrs:AmericanPolyconicProjection a owl:Class ;
     rdfs:label "american polyconic projection"@en ;
+    dc:creator "Ferdinand Rudolph Hassler" ;
+    dc:date "1820" ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoConicalProjection .
 
@@ -38,9 +39,9 @@ geocrs:ApianGlobularIProjection a owl:Class ;
     rdfs:label "apian globular I projection"@en ;
     rdfs:subClassOf geocrs:GlobularProjection .
 
-geocrs:ApianIIProjection a owl:Class ;
-    rdfs:label "apian II projection"@en ;
-    rdfs:subClassOf geocrs:PseudocylindricalProjection .
+geocrs:ArdenCloseProjection a owl:Class ;
+    rdfs:label "arden close projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection .
 
 geocrs:ArmadilloProjection a owl:Class ;
     rdfs:label "armadillo projection"@en ;
@@ -63,14 +64,29 @@ geocrs:AzimuthalEquidistantProjection a owl:Class ;
 
 geocrs:BaconGlobularProjection a owl:Class ;
     rdfs:label "bacon globular projection"@en ;
+    geocrs:PROJidentifier "bacon" ;
     rdfs:subClassOf geocrs:GlobularProjection .
 
 geocrs:BakerDinomicProjection a owl:Class ;
     rdfs:label "baker dinomic projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
+    dc:creator "J. G. P. Baker" ;
+    dc:date "1986" ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:BalthasartProjection a owl:Class ;
+    rdfs:label "balthasart projection"@en ;
+    dc:creator "M. Balthasart" ;
+    dc:date "1935" ;
+    rdfs:subClassOf geocrs:CylindricalEqualArea .
+
+geocrs:BartholomewProjection a owl:Class ;
+    rdfs:label "Bartholomew projection"@en ;
+    rdfs:subClassOf geocrs:WinkelTripelProjection .
 
 geocrs:BehrmannProjection a owl:Class ;
     rdfs:label "behrmann projection"@en ;
+    dc:creator "Walter Behrmann" ;
+    dc:date "1910" ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:EqualAreaProjection .
 
@@ -94,11 +110,14 @@ geocrs:BoggsEumorphicProjection a owl:Class ;
 
 geocrs:BonneProjection a owl:Class ;
     rdfs:label "bonne projection"@en ;
+    geocrs:PROJidentifier "bonne" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoConicalProjection .
 
 geocrs:BottomleyProjection a owl:Class ;
     rdfs:label "bottomley projection"@en ;
+    dc:creator "Henry Bottomley" ;
+    dc:date "2003" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoConicalProjection .
 
@@ -125,6 +144,7 @@ geocrs:CahillKeyesProjection a owl:Class ;
 
 geocrs:CassiniProjection a owl:Class ;
     rdfs:label "cassini projection"@en ;
+    geocrs:PROJidentifier "cass" ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:EquidistantProjection .
 
@@ -149,16 +169,19 @@ geocrs:CraigRetroazimuthalProjection a owl:Class ;
 
 geocrs:CrasterParabolicProjection a owl:Class ;
     rdfs:label "craster parabolic projection"@en ;
+    geocrs:PROJidentifier "crast" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
-geocrs:CylindricalEqualArea a owl:Class ;
-    rdfs:label "cylindrical equal area projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EqualAreaProjection .
+geocrs:DeakinMinimumErrorProjection a owl:Class ;
+    rdfs:label "deakin minimum error projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:DenoyerSemiEllipticalProjection a owl:Class ;
-    rdfs:label "denoyer semi-elliptical projection"@en .
+    rdfs:label "denoyer semi-elliptical projection"@en ;
+    geocrs:PROJidentifier "denoy" ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
 
 geocrs:DymaxionProjection a owl:Class ;
     rdfs:label "dymaxion projection"@en ;
@@ -167,31 +190,49 @@ geocrs:DymaxionProjection a owl:Class ;
 
 geocrs:Eckert1Projection a owl:Class ;
     rdfs:label "Eckert I projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck1" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert2Projection a owl:Class ;
     rdfs:label "Eckert II projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck2" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert3Projection a owl:Class ;
     rdfs:label "Eckert III projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck3" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert4Projection a owl:Class ;
     rdfs:label "Eckert IV projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck4" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert5Projection a owl:Class ;
     rdfs:label "Eckert V projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck5" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert6Projection a owl:Class ;
     rdfs:label "Eckert VI projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
+    geocrs:PROJidentifier "eck6" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
@@ -201,8 +242,13 @@ geocrs:EisenlohrProjection a owl:Class ;
 
 geocrs:EqualEarthProjection a owl:Class ;
     rdfs:label "equal earth projection"@en ;
+    geocrs:PROJidentifier "eqearth" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
+
+geocrs:EquallySpacedParallelsProjection a owl:Class ;
+    rdfs:label "equally-spaced parallels projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:EquidistantConicProjection a owl:Class ;
     rdfs:label "equidistant conic projection"@en ;
@@ -214,24 +260,34 @@ geocrs:EquidistantCylindricalProjection a owl:Class ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:EquidistantProjection .
 
-geocrs:EquirectangularProjection a owl:Class ;
-    rdfs:label "equirectangular projection"@en ;
-    rdfs:subClassOf geocrs:CylindricalProjection,
-        geocrs:EquidistantProjection .
-
 geocrs:FaheyProjection a owl:Class ;
     rdfs:label "fahey projection"@en ;
-    rdfs:subClassOf geocrs:PseudocylindricalProjection .
+    dc:creator "Lawrence Fahey" ;
+    dc:date "1975" ;
+    rdfs:subClassOf geocrs:PseudoCylindricalProjection .
 
 geocrs:FairgrieveProjection a owl:Class ;
-    rdfs:label "fairgrieve projection"@en .
+    rdfs:label "fairgrieve projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
+
+geocrs:FoucautSinusoidalProjection a owl:Class ;
+    rdfs:label "foucaut sinusoidal projection"@en ;
+    geocrs:PROJidentifier "fouc_s" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection ;
+    skos:definition "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area"@en .
 
 geocrs:FournierGlobularIProjection a owl:Class ;
     rdfs:label "fournier globular I projection"@en ;
     rdfs:subClassOf geocrs:GlobularProjection .
 
+geocrs:FournierIIProjection a owl:Class ;
+    rdfs:label "fournier II projection"@en ;
+    rdfs:subClassOf geocrs:PseudoCylindricalProjection .
+
 geocrs:GS50Projection a owl:Class ;
     rdfs:label "gs50 projection"@en ;
+    geocrs:PROJidentifier "gs50" ;
     rdfs:subClassOf geocrs:ConformalProjection ;
     skos:definition "A map projection that was developed by John Parr Snyder of the USGS in 1982. The GS50 projection provides a conformal projection suitable only for maps of the 50 United States"@en .
 
@@ -256,6 +312,34 @@ geocrs:GeneralVerticalPerspectiveProjection a owl:Class ;
     rdfs:subClassOf geocrs:AzimuthalProjection,
         geocrs:PerspectiveProjection .
 
+geocrs:GinzburgIIProjection a owl:Class ;
+    rdfs:label "Ginzburg II projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection .
+
+geocrs:GinzburgIProjection a owl:Class ;
+    rdfs:label "Ginzburg I projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection .
+
+geocrs:GinzburgIVProjection a owl:Class ;
+    rdfs:label "Ginzburg IV projection"@en ;
+    rdfs:subClassOf geocrs:PolyconicProjection .
+
+geocrs:GinzburgIXProjection a owl:Class ;
+    rdfs:label "Ginzburg IX projection"@en ;
+    rdfs:subClassOf geocrs:PolyconicProjection .
+
+geocrs:GinzburgVIIIProjection a owl:Class ;
+    rdfs:label "Ginzburg VIII projection"@en ;
+    rdfs:subClassOf geocrs:PseudoCylindricalProjection .
+
+geocrs:GinzburgVIProjection a owl:Class ;
+    rdfs:label "Ginzburg VI projection"@en ;
+    rdfs:subClassOf geocrs:PolyconicProjection .
+
+geocrs:GinzburgVProjection a owl:Class ;
+    rdfs:label "Ginzburg V projection"@en ;
+    rdfs:subClassOf geocrs:PolyconicProjection .
+
 geocrs:GnomonicProjection a owl:Class ;
     rdfs:label "gnomonic projection"@en ;
     rdfs:subClassOf geocrs:AzimuthalProjection ;
@@ -266,18 +350,26 @@ geocrs:GoodeHomolosineProjection a owl:Class ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:GottWagnerProjection a owl:Class ;
+    rdfs:label "Gott-Wagner projection"@en ;
+    rdfs:subClassOf geocrs:PolyconicProjection .
+
 geocrs:GringortenProjection a owl:Class ;
     rdfs:label "gringorten projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection .
 
 geocrs:GuyouProjection a owl:Class ;
     rdfs:label "guyou projection"@en ;
+    dc:creator "Emile Guyou" ;
+    dc:date "1887" ;
     rdfs:subClassOf geocrs:ConformalProjection .
 
 geocrs:HEALPixProjection a owl:Class ;
     rdfs:label "HEALPix projection"@en ;
+    geocrs:PROJidentifier "healpix" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection .
+        geocrs:PseudoCylindricalProjection ;
+    skos:definition "Fusion; joins the Cylindrical Equal-Area and Collignon at ±41°71'. Interrupted for all but the H=1 case"@en .
 
 geocrs:HammerProjection a owl:Class ;
     rdfs:label "hammer projection"@en ;
@@ -286,13 +378,98 @@ geocrs:HammerProjection a owl:Class ;
 
 geocrs:HatanoAsymmetricalEqualAreaProjection a owl:Class ;
     rdfs:label "peirce quincuncial projection"@en ;
+    dc:creator "Masataka Hatano" ;
+    dc:date "1972" ;
+    geocrs:PROJidentifier "hatano" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
+
+geocrs:HillEucyclicProjection a owl:Class ;
+    rdfs:label "hill eucyclic projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PolyconicProjection .
 
 geocrs:HoboDyerProjection a owl:Class ;
     rdfs:label "hobo-dyer projection"@en ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:EqualAreaProjection .
+
+geocrs:HufnagelIIIProjection a owl:Class ;
+    rdfs:label "Hufnagel III projection"@en ;
+    dc:creator "Herbert Hufnagel" ;
+    dc:date "1989" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelIIProjection a owl:Class ;
+    rdfs:label "Hufnagel II projection"@en ;
+    dc:creator "Herbert Hufnagel" ;
+    dc:date "1989" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelIProjection a owl:Class ;
+    rdfs:label "Hufnagel I projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelIVProjection a owl:Class ;
+    rdfs:label "Hufnagel IV projection"@en ;
+    dc:creator "Herbert Hufnagel" ;
+    dc:date "1989" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelIXProjection a owl:Class ;
+    rdfs:label "Hufnagel IX projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelProjection a owl:Class ;
+    rdfs:label "Hufnagel projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelVIIIProjection a owl:Class ;
+    rdfs:label "Hufnagel VIII projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelVIIProjection a owl:Class ;
+    rdfs:label "Hufnagel VII projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelVIProjection a owl:Class ;
+    rdfs:label "Hufnagel VI projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelVProjection a owl:Class ;
+    rdfs:label "Hufnagel V projection"@en ;
+    dc:creator "Herbert Hufnagel" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelXIIProjection a owl:Class ;
+    rdfs:label "Hufnagel XII projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelXIProjection a owl:Class ;
+    rdfs:label "Hufnagel XI projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:HufnagelXProjection a owl:Class ;
+    rdfs:label "Hufnagel X projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:JamesAzimuthalProjection a owl:Class ;
+    rdfs:label "james azimuthal projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection ;
+    skos:definition "Azimuthal far-side perspective" .
 
 geocrs:Kavrayskiy7Projection a owl:Class ;
     rdfs:label "Kavrayskiy VII projection"@en ;
@@ -303,6 +480,11 @@ geocrs:Krovak a owl:Class ;
     rdfs:label "krovak projection"@en ;
     rdfs:subClassOf geocrs:ConicalProjection .
 
+geocrs:LaHireProjection a owl:Class ;
+    rdfs:label "la hire projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:PerspectiveProjection .
+
 geocrs:LabordeProjection a owl:Class ;
     rdfs:label "laborde projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection,
@@ -310,6 +492,8 @@ geocrs:LabordeProjection a owl:Class ;
 
 geocrs:LagrangeProjection a owl:Class ;
     rdfs:label "lagrange projection"@en ;
+    dc:creator "Johann Heinrich Lambert" ;
+    dc:date "1772" ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:PolyconicProjection .
 
@@ -333,21 +517,27 @@ geocrs:LittrowProjection a owl:Class ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:RetroazimuthalProjection .
 
+geocrs:LowryProjection a owl:Class ;
+    rdfs:label "lowry projection"@en ;
+    rdfs:subClassOf geocrs:AzimuthalProjection,
+        geocrs:PerspectiveProjection .
+
 geocrs:LoximuthalProjection a owl:Class ;
     rdfs:label "loximuthal projection"@en ;
+    geocrs:PROJidentifier "loxim" ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
+
+geocrs:MayrProjection a owl:Class ;
+    rdfs:label "mayr projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection ;
+    skos:definition "Geometric mean of the cylindrical equal area and sinusoidal projections"@en .
 
 geocrs:MillerProjection a owl:Class ;
     rdfs:label "miller projection"@en ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:CylindricalProjection .
-
-geocrs:MollweideProjection a owl:Class ;
-    rdfs:label "mollweide projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoCylindricalProjection ;
-    skos:altLabel "Babinet projection"@en .
 
 geocrs:MyrahedalProjection a owl:Class ;
     rdfs:label "myrahedal projection"@en ;
@@ -356,11 +546,17 @@ geocrs:MyrahedalProjection a owl:Class ;
 
 geocrs:NaturalEarthProjection a owl:Class ;
     rdfs:label "natural earth projection"@en ;
+    dc:creator "Tom Patterson" ;
+    dc:date "2011" ;
+    geocrs:PROJidentifier "natearth" ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:NellProjection a owl:Class ;
     rdfs:label "nell projection"@en ;
+    dc:creator "Adam Nell" ;
+    dc:date "1890" ;
+    geocrs:PROJidentifier "nell" ;
     rdfs:subClassOf geocrs:PseudoCylindricalProjection .
 
 geocrs:NicolosiGlobularProjection a owl:Class ;
@@ -369,6 +565,10 @@ geocrs:NicolosiGlobularProjection a owl:Class ;
         geocrs:GlobularProjection,
         geocrs:PolyconicProjection,
         geocrs:PseudoConicalProjection .
+
+geocrs:NordicProjection a owl:Class ;
+    rdfs:label "Nordic projection"@en ;
+    rdfs:subClassOf geocrs:ObliqueProjection .
 
 geocrs:ObliquePlateCarreeProjection a owl:Class ;
     rdfs:label "Oblique Plate Carree Projection"@en ;
@@ -396,6 +596,19 @@ geocrs:OrthographicProjection a owl:Class ;
     rdfs:subClassOf geocrs:AzimuthalProjection,
         geocrs:PerspectiveProjection .
 
+geocrs:PROJidentifier a owl:AnnotationProperty ;
+    rdfs:label "PROJ identifier"@en ;
+    skos:definition "A short String identifier used to identify the projection in a PROJ string description"@en .
+
+geocrs:PattersonCylindricalProjection a owl:Class ;
+    rdfs:label "patterson cylindrical projection"@en ;
+    geocrs:PROJidentifier "patterson" ;
+    rdfs:subClassOf geocrs:CylindricalProjection .
+
+geocrs:PavlovProjection a owl:Class ;
+    rdfs:label "Pavlov projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection .
+
 geocrs:PeirceQuincuncialProjection a owl:Class ;
     rdfs:label "peirce quincuncial projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection .
@@ -404,6 +617,11 @@ geocrs:PerspectiveConicProjection a owl:Class ;
     rdfs:label "perspective conic projection"@en ;
     rdfs:subClassOf geocrs:ConicalProjection,
         geocrs:PerspectiveProjection .
+
+geocrs:PetermannStarProjection a owl:Class ;
+    rdfs:label "Petermann Star projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection ;
+    skos:definition "Pole-centered fusion: joins the Azimuthal Equidistant in central hemisphere to eight lobes with straight edges at 0°N" .
 
 geocrs:PlateCarreeProjection a owl:Class ;
     rdfs:label "Plate Carree Projection"@en ;
@@ -434,6 +652,7 @@ geocrs:RectangularPolyconicProjection a owl:Class ;
 
 geocrs:RobinsonProjection a owl:Class ;
     rdfs:label "robinson projection"@en ;
+    geocrs:PROJidentifier "robin" ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
 
@@ -442,15 +661,13 @@ geocrs:RoussilheProjection a owl:Class ;
     rdfs:subClassOf geocrs:ObliqueProjection,
         geocrs:StereographicProjection .
 
-geocrs:SinusoidalProjection a owl:Class ;
-    rdfs:label "sinusoidal projection"@en ;
-    rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:EquidistantProjection,
-        geocrs:PseudoCylindricalProjection .
-
 geocrs:SpaceObliqueMercatorProjection a owl:Class ;
     rdfs:label "space oblique mercator projection"@en ;
     rdfs:subClassOf geocrs:ObliqueMercatorProjection .
+
+geocrs:SpilhausOceanicProjection a owl:Class ;
+    rdfs:label "spilhaus oceanic projection"@en ;
+    rdfs:subClassOf geocrs:CompromiseProjection .
 
 geocrs:Strebe1995Projection a owl:Class ;
     rdfs:label "strebe 1995 projection"@en ;
@@ -464,6 +681,7 @@ geocrs:TheTimesProjection a owl:Class ;
 
 geocrs:TiltedPerspectiveProjection a owl:Class ;
     rdfs:label "tilted perspective projection"@en ;
+    geocrs:PROJidentifier "tpers" ;
     rdfs:subClassOf geocrs:PerspectiveProjection .
 
 geocrs:ToblerCylindricalIIProjection a owl:Class ;
@@ -517,15 +735,73 @@ geocrs:VerticalPerspectiveProjection a owl:Class ;
     rdfs:subClassOf geocrs:AzimuthalProjection,
         geocrs:PerspectiveProjection .
 
-geocrs:WagnerIVProjection a owl:Class ;
-    rdfs:label "wagner IV projection"@en ;
+geocrs:WagnerIIIProjection a owl:Class ;
+    rdfs:label "wagner III projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1932" ;
+    geocrs:PROJidentifier "wag3" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:WagnerIIProjection a owl:Class ;
+    rdfs:label "wagner II projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1949" ;
+    geocrs:PROJidentifier "wag2" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:WagnerIProjection a owl:Class ;
+    rdfs:label "wagner I projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1932" ;
+    geocrs:PROJidentifier "wag1" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:WagnerIVProjection a owl:Class ;
+    rdfs:label "wagner IV projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1932" ;
+    geocrs:PROJidentifier "wag4" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:WagnerIXProjection a owl:Class ;
+    rdfs:label "wagner IX projection"@en ;
+    geocrs:PROJidentifier "wag9" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PolyconicProjection .
+
+geocrs:WagnerVIIIProjection a owl:Class ;
+    rdfs:label "wagner VIII projection"@en ;
+    geocrs:PROJidentifier "wag8" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PolyconicProjection .
+
 geocrs:WagnerVIIProjection a owl:Class ;
     rdfs:label "wagner VII projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1941" ;
+    geocrs:PROJidentifier "wag7" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
-        geocrs:PseudoAzimuthalProjection .
+        geocrs:PolyconicProjection .
+
+geocrs:WagnerVIProjection a owl:Class ;
+    rdfs:label "wagner VI projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1932" ;
+    geocrs:PROJidentifier "wag6" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PseudoCylindricalProjection .
+
+geocrs:WagnerVProjection a owl:Class ;
+    rdfs:label "wagner V projection"@en ;
+    dc:creator "Karlheinz Wagner" ;
+    dc:date "1949" ;
+    geocrs:PROJidentifier "wag5" ;
+    rdfs:subClassOf geocrs:PoleLineProjection,
+        geocrs:PseudoCylindricalProjection .
 
 geocrs:WatermanButterflyProjection a owl:Class ;
     rdfs:label "waterman butterfly projection"@en ;
@@ -547,27 +823,81 @@ geocrs:WiechelProjection a owl:Class ;
     rdfs:label "wiechel projection"@en ;
     rdfs:subClassOf geocrs:EqualAreaProjection .
 
-geocrs:WinkelTripelProjection a owl:Class ;
-    rdfs:label "winkel tripel projection"@en ;
-    rdfs:subClassOf geocrs:CompromiseProjection,
-        geocrs:PseudoAzimuthalProjection .
+geocrs:WinkelIIProjection a owl:Class ;
+    rdfs:label "winkel II projection"@en ;
+    dc:creator "Oswald Winkel" ;
+    dc:date "1921" ;
+    geocrs:PROJidentifier "wink2" ;
+    geocrs:isRelatedTo geocrs:ApianIIProjection,
+        geocrs:EquirectangularProjection ;
+    rdfs:subClassOf geocrs:CompromiseProjection ;
+    skos:definition "Arithmetic average of the Equirectangular and Apian II projections. Pseudocylindric, equally spaced parallels, elliptical meridians, pole line" .
+
+geocrs:WinkelIProjection a owl:Class ;
+    rdfs:label "winkel I projection"@en ;
+    dc:creator "Oswald Winkel" ;
+    dc:date "1921" ;
+    geocrs:PROJidentifier "wink1" ;
+    geocrs:isRelatedTo geocrs:EquirectangularProjection,
+        geocrs:SinusoidalProjection ;
+    rdfs:subClassOf geocrs:CompromiseProjection ;
+    skos:definition "Arithmetic average of the Equirectangular and Sinusoidal projections. Pseudocylindric, equally spaced parallels, sinusoidal meridians, pole line" .
+
+geocrs:WinkelSnyderProjection a owl:Class ;
+    rdfs:label "winkel snyder projection"@en ;
+    geocrs:isRelatedTo geocrs:EquirectangularProjection,
+        geocrs:MollweideProjection ;
+    rdfs:subClassOf geocrs:CompromiseProjection ;
+    skos:definition "Arithmetic average of the Equirectangular and Mollweide projections" .
 
 geocrs:isInverseProjectionOf a owl:ObjectProperty ;
-    rdfs:label "is inverse projection of"@en .
+    rdfs:label "is inverse projection of"@en ;
+    skos:definition "Defines an inverse projection to the projection identified as the subject"@en .
+
+geocrs:isRelatedTo a owl:ObjectProperty ;
+    rdfs:label "is related to"@en ;
+    skos:definition "relates to another projection"@en .
 
 geocrs:isTransverseProjectionOf a owl:ObjectProperty ;
     rdfs:label "is transverse projection of"@en .
+
+geocrs:AitoffProjection a owl:Class ;
+    rdfs:label "aitoff projection"@en ;
+    dc:creator "David Aitoff" ;
+    dc:date "1889" ;
+    geocrs:PROJidentifier "aitoff" ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoAzimuthalProjection .
+
+geocrs:ApianIIProjection a owl:Class ;
+    rdfs:label "apian II projection"@en ;
+    dc:creator "Peter Apian" ;
+    dc:date "1524" ;
+    rdfs:subClassOf geocrs:PseudoCylindricalProjection .
 
 geocrs:CordiformProjection a owl:Class ;
     rdfs:label "cordiform projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:CylindricalEqualArea a owl:Class ;
+    rdfs:label "cylindrical equal area projection"@en ;
+    geocrs:PROJidentifier "cea"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EqualAreaProjection .
+
 geocrs:MinimumErrorProjection a owl:Class ;
     rdfs:label "minimum error projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:MollweideProjection a owl:Class ;
+    rdfs:label "mollweide projection"@en ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:PseudoCylindricalProjection ;
+    skos:altLabel "Babinet projection"@en .
+
 geocrs:ObliqueMercatorProjection a owl:Class ;
     rdfs:label "oblique mercator projection"@en ;
+    geocrs:PROJidentifier "merc" ;
     rdfs:subClassOf geocrs:CylindricalProjection,
         geocrs:MercatorProjection,
         geocrs:ObliqueProjection .
@@ -576,12 +906,31 @@ geocrs:OvalProjection a owl:Class ;
     rdfs:label "oval projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:SinusoidalProjection a owl:Class ;
+    rdfs:label "sinusoidal projection"@en ;
+    geocrs:PROJidentifier "sinu" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection,
+        geocrs:EquidistantProjection,
+        geocrs:PseudoCylindricalProjection .
+
 geocrs:TransverseMercatorProjection a owl:Class ;
     rdfs:label "transverse mercator projection"@en ;
     rdfs:subClassOf geocrs:MercatorProjection .
 
+geocrs:WinkelTripelProjection a owl:Class ;
+    rdfs:label "winkel tripel projection"@en ;
+    geocrs:PROJidentifier "wintri" ;
+    geocrs:isRelatedTo geocrs:AitoffProjection,
+        geocrs:EquirectangularProjection ;
+    rdfs:subClassOf geocrs:CompromiseProjection,
+        geocrs:PseudoAzimuthalProjection ;
+    skos:definition "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" .
+
 geocrs:MercatorProjection a owl:Class ;
     rdfs:label "mercator projection"@en ;
+    dc:creator "Gerardus Mercator" ;
+    dc:date "1569" ;
+    geocrs:PROJidentifier "merc" ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:CylindricalProjection .
 
@@ -595,6 +944,11 @@ geocrs:StereographicProjection a owl:Class ;
         geocrs:ConformalProjection ;
     skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
 
+geocrs:EquirectangularProjection a owl:Class ;
+    rdfs:label "equirectangular projection"@en ;
+    rdfs:subClassOf geocrs:CylindricalProjection,
+        geocrs:EquidistantProjection .
+
 geocrs:ObliqueProjection a owl:Class ;
     rdfs:label "oblique projection"@en ;
     rdfs:subClassOf geocrs:Projection ;
@@ -602,6 +956,10 @@ geocrs:ObliqueProjection a owl:Class ;
 
 geocrs:GlobularProjection a owl:Class ;
     rdfs:label "globular projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:PseudoAzimuthalProjection a owl:Class ;
+    rdfs:label "pseudo-azimuthal projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:PseudoConicalProjection a owl:Class ;
@@ -612,16 +970,12 @@ geocrs:ConicalProjection a owl:Class ;
     rdfs:label "conical projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
+geocrs:PoleLineProjection a owl:Class ;
+    rdfs:label "pole line projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
 geocrs:PerspectiveProjection a owl:Class ;
     rdfs:label "perspective projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:PolyconicProjection a owl:Class ;
-    rdfs:label "polyconic projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
-geocrs:PseudoAzimuthalProjection a owl:Class ;
-    rdfs:label "pseudo-azimuthal projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
 geocrs:PolyhedralProjection a owl:Class ;
@@ -633,24 +987,28 @@ geocrs:EquidistantProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "Projection in which all points on the map exhibit proportionally correct distances from the center point"@en .
 
-geocrs:AzimuthalProjection a owl:Class ;
-    rdfs:label "azimuthal projection"@en ;
-    rdfs:subClassOf geocrs:Projection ;
-    skos:definition "A projection with the property that directions from a central point are preserved"@en .
-
 geocrs:ConformalProjection a owl:Class ;
     rdfs:label "conformal projection"@en ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection"@en .
 
-geocrs:CylindricalProjection a owl:Class ;
-    rdfs:label "cylindrical projection"@en ;
+geocrs:PolyconicProjection a owl:Class ;
+    rdfs:label "polyconic projection"@en ;
     rdfs:subClassOf geocrs:Projection .
+
+geocrs:AzimuthalProjection a owl:Class ;
+    rdfs:label "azimuthal projection"@en ;
+    rdfs:subClassOf geocrs:Projection ;
+    skos:definition "A projection with the property that directions from a central point are preserved"@en .
 
 geocrs:Projection a owl:Class ;
     rdfs:label "projection"@en ;
     rdfs:subClassOf geocrs:Conversion ;
     skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
+
+geocrs:CylindricalProjection a owl:Class ;
+    rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:CompromiseProjection a owl:Class ;
     rdfs:label "compromise projection"@en ;
