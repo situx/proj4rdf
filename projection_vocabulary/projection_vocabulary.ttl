@@ -190,36 +190,48 @@ geocrs:DymaxionProjection a owl:Class ;
 
 geocrs:Eckert1Projection a owl:Class ;
     rdfs:label "Eckert I projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck1" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert2Projection a owl:Class ;
     rdfs:label "Eckert II projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck2" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert3Projection a owl:Class ;
     rdfs:label "Eckert III projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck3" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert4Projection a owl:Class ;
     rdfs:label "Eckert IV projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck4" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert5Projection a owl:Class ;
     rdfs:label "Eckert V projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck5" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
 
 geocrs:Eckert6Projection a owl:Class ;
     rdfs:label "Eckert VI projection"@en ;
+    dc:creator "Max Eckert-Greifendorff" ;
+    dc:date "1906" ;
     geocrs:PROJidentifier "eck6" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
@@ -250,6 +262,8 @@ geocrs:EquidistantCylindricalProjection a owl:Class ;
 
 geocrs:FaheyProjection a owl:Class ;
     rdfs:label "fahey projection"@en ;
+    dc:creator "Lawrence Fahey" ;
+    dc:date "1975" ;
     rdfs:subClassOf geocrs:PseudoCylindricalProjection .
 
 geocrs:FairgrieveProjection a owl:Class ;
@@ -346,6 +360,8 @@ geocrs:GringortenProjection a owl:Class ;
 
 geocrs:GuyouProjection a owl:Class ;
     rdfs:label "guyou projection"@en ;
+    dc:creator "Emile Guyou" ;
+    dc:date "1887" ;
     rdfs:subClassOf geocrs:ConformalProjection .
 
 geocrs:HEALPixProjection a owl:Class ;
@@ -362,6 +378,8 @@ geocrs:HammerProjection a owl:Class ;
 
 geocrs:HatanoAsymmetricalEqualAreaProjection a owl:Class ;
     rdfs:label "peirce quincuncial projection"@en ;
+    dc:creator "Masataka Hatano" ;
+    dc:date "1972" ;
     geocrs:PROJidentifier "hatano" ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoCylindricalProjection .
@@ -528,6 +546,8 @@ geocrs:MyrahedalProjection a owl:Class ;
 
 geocrs:NaturalEarthProjection a owl:Class ;
     rdfs:label "natural earth projection"@en ;
+    dc:creator "Tom Patterson" ;
+    dc:date "2011" ;
     geocrs:PROJidentifier "natearth" ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
@@ -908,6 +928,8 @@ geocrs:WinkelTripelProjection a owl:Class ;
 
 geocrs:MercatorProjection a owl:Class ;
     rdfs:label "mercator projection"@en ;
+    dc:creator "Gerardus Mercator" ;
+    dc:date "1569" ;
     geocrs:PROJidentifier "merc" ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:CylindricalProjection .
