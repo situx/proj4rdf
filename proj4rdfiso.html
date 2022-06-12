@@ -263,13 +263,13 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "RangeMeaning - ConceptScheme"
+        "@value": "Calendar - ConceptScheme"
       }
     ]
   },
@@ -293,50 +293,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft NonISO classes"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Calendar - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "RealizationMethod - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "CoordinateDataType - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "AxisDirection - ConceptScheme"
       }
     ]
   },
@@ -366,6 +322,50 @@
       },
       {
         "@value": "ISO 19111:2019 Referencing by coordinates"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "AxisDirection - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CoordinateDataType - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RangeMeaning - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RealizationMethod - ConceptScheme"
       }
     ]
   }
@@ -4678,9 +4678,6 @@
                 <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
               </th>
               <td><span>
-  <a href="http://www.opengis.net/ont/crs/uBooleanValue">geocrs:uBooleanValue</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uGeographicObject">geocrs:uGeographicObject</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
@@ -4697,6 +4694,9 @@
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uStringValue">geocrs:uStringValue</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
+  <a href="http://www.opengis.net/ont/crs/uBooleanValue">geocrs:uBooleanValue</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uValueFileCitation">geocrs:uValueFileCitation</a>
