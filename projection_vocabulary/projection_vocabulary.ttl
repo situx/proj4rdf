@@ -4,6 +4,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+geocrs:A4Projection a owl:Class ;
+    rdfs:label "A4 projection"@en ;
+    rdfs:subClassOf geocrs:LenticularProjection .
+
 geocrs:AdamsProjection a owl:Class ;
     rdfs:label "adams projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection ;
@@ -401,6 +405,10 @@ geocrs:HammerProjection a owl:Class ;
     rdfs:subClassOf geocrs:EqualAreaProjection,
         geocrs:PseudoAzimuthalProjection .
 
+geocrs:HamusoidalProjection a owl:Class ;
+    rdfs:label "hamusoidal projection"@en ;
+    rdfs:subClassOf geocrs:LenticularProjection .
+
 geocrs:HatanoAsymmetricalEqualAreaProjection a owl:Class ;
     rdfs:label "hatano asymmetrical equal-area projection"@en ;
     dc:creator "Masataka Hatano" ;
@@ -559,10 +567,6 @@ geocrs:LeeProjection a owl:Class ;
     rdfs:label "lee projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:PolyhedralProjection .
-
-geocrs:LenticularProjection a owl:Class ;
-    rdfs:label "lenticular projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
 
 geocrs:LittrowProjection a owl:Class ;
     rdfs:label "littrow projection"@en ;
@@ -1005,6 +1009,10 @@ geocrs:WinkelTripelProjection a owl:Class ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoAzimuthalProjection ;
     skos:definition "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" .
+
+geocrs:LenticularProjection a owl:Class ;
+    rdfs:label "lenticular projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:MercatorProjection a owl:Class ;
     rdfs:label "mercator projection"@en ;
