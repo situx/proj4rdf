@@ -508,6 +508,12 @@ geocrs:Kavrayskiy7Projection a owl:Class ;
     rdfs:subClassOf geocrs:CompromiseProjection,
         geocrs:PseudoCylindricalProjection .
 
+geocrs:KissProjection a owl:Class ;
+    rdfs:label "kiss projection"@en ;
+    dc:creator "Daniel Strebe" ;
+    dc:date "2015" ;
+    rdfs:subClassOf geocrs:EqualAreaProjection .
+
 geocrs:Krovak a owl:Class ;
     rdfs:label "krovak projection"@en ;
     rdfs:subClassOf geocrs:ConicalProjection .
@@ -553,6 +559,10 @@ geocrs:LeeProjection a owl:Class ;
     rdfs:label "lee projection"@en ;
     rdfs:subClassOf geocrs:ConformalProjection,
         geocrs:PolyhedralProjection .
+
+geocrs:LenticularProjection a owl:Class ;
+    rdfs:label "lenticular projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
 
 geocrs:LittrowProjection a owl:Class ;
     rdfs:label "littrow projection"@en ;
@@ -1080,24 +1090,24 @@ geocrs:AzimuthalProjection a owl:Class ;
     rdfs:subClassOf geocrs:Projection ;
     skos:definition "A projection with the property that directions from a central point are preserved"@en .
 
+geocrs:CylindricalProjection a owl:Class ;
+    rdfs:label "cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
 geocrs:Projection a owl:Class ;
     rdfs:label "projection"@en ;
     rdfs:subClassOf geocrs:Conversion ;
     skos:definition "coordinate conversion from an ellipsoidal coordinate system to a plane"@en .
 
-geocrs:CylindricalProjection a owl:Class ;
-    rdfs:label "cylindrical projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:CompromiseProjection a owl:Class ;
     rdfs:label "compromise projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 
-geocrs:EqualAreaProjection a owl:Class ;
-    rdfs:label "equal-area projection"@en ;
-    rdfs:subClassOf geocrs:Projection .
-
 geocrs:PseudoCylindricalProjection a owl:Class ;
     rdfs:label "pseudo-cylindrical projection"@en ;
+    rdfs:subClassOf geocrs:Projection .
+
+geocrs:EqualAreaProjection a owl:Class ;
+    rdfs:label "equal-area projection"@en ;
     rdfs:subClassOf geocrs:Projection .
 

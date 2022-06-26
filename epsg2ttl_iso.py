@@ -477,6 +477,7 @@ projections["weren"]="geocrs:WerenskioldIProjection"
 projections["col_urban"]="geocrs:ColombiaUrbanProjection"
 projections["bertin1953"]="geocrs:BertinProjection"
 projections["crast"]="geocrs:CrasterParabolicProjection"
+projections["lask"]="geocrs:LaskowskiProjection"
 
 """
 adams_hemi : Adams Hemisphere in a Square
@@ -499,7 +500,6 @@ deformation : Kinematic grid shift
 eqc : Equidistant Cylindrical (Plate Carree)
 euler : Euler
 etmerc : Extended Transverse Mercator
-fouc : Foucaut
 geoc : Geocentric Latitude
 geogoffset : Geographic Offset
 geos : Geostationary Satellite View
@@ -1167,6 +1167,9 @@ ttlprojectionvocab.add("geocrs:GlobularProjection rdfs:subClassOf geocrs:Project
 ttlprojectionvocab.add("geocrs:OvalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:OvalProjection rdfs:label \"oval projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:OvalProjection rdfs:subClassOf geocrs:Projection .\n")
+ttlprojectionvocab.add("geocrs:LenticularProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:LenticularProjection rdfs:label \"lenticular projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:LenticularProjection rdfs:subClassOf geocrs:Projection .\n")
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdfs:label \"cylindrical projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:CylindricalProjection rdfs:subClassOf geocrs:Projection .\n")
@@ -1234,6 +1237,11 @@ ttlprojectionvocab.add("geocrs:FoucautSinusoidalProjection rdfs:subClassOf geocr
 ttlprojectionvocab.add("geocrs:CollignonProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:CollignonProjection rdfs:label \"collignon projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:CollignonProjection rdfs:subClassOf geocrs:PseudoCylindricalProjection, geocrs:EqualAreaProjection .\n")
+ttlprojectionvocab.add("geocrs:KissProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:KissProjection rdfs:label \"kiss projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:KissProjection dc:creator \"Daniel Strebe\" .\n")
+ttlprojectionvocab.add("geocrs:KissProjection dc:date \"2015\" .\n")
+ttlprojectionvocab.add("geocrs:KissProjection rdfs:subClassOf geocrs:EqualAreaProjection .\n")
 ttlprojectionvocab.add("geocrs:GaussKruegerProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:GaussKruegerProjection rdfs:label \"gauss-krüger projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:GaussKruegerProjection rdfs:subClassOf geocrs:TransverseMercatorProjection .\n")
@@ -1308,6 +1316,9 @@ ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdf:type owl:Class .\
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdfs:label \"peirce quincuncial projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection geocrs:PROJidentifier \"perice_q\" .\n")
 ttlprojectionvocab.add("geocrs:PeirceQuincuncialProjection rdfs:subClassOf geocrs:ConformalProjection .\n")
+ttlprojectionvocab.add("geocrs:A4Projection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:A4Projection rdfs:label \"A4 projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:A4Projection rdfs:subClassOf geocrs:LenticularProjection .\n")
 ttlprojectionvocab.add("geocrs:VerticalPerspectiveProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:VerticalPerspectiveProjection rdfs:label \"vertical perspective projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:VerticalPerspectiveProjection rdfs:subClassOf geocrs:AzimuthalProjection, geocrs:PerspectiveProjection .\n")
@@ -1889,6 +1900,9 @@ ttlprojectionvocab.add("geocrs:MillerProjection rdfs:subClassOf geocrs:Cylindric
 ttlprojectionvocab.add("geocrs:Krovak rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:Krovak rdfs:label \"krovak projection\"@en .\n")
 ttlprojectionvocab.add("geocrs:Krovak rdfs:subClassOf geocrs:ConicalProjection .\n")
+ttlprojectionvocab.add("geocrs:HamusoidalProjection rdf:type owl:Class .\n")
+ttlprojectionvocab.add("geocrs:HamusoidalProjection rdfs:label \"hamusoidal projection\"@en .\n")
+ttlprojectionvocab.add("geocrs:HamusoidalProjection rdfs:subClassOf geocrs:LenticularProjection .\n")
 ttlprojectionvocab.add("geocrs:BalthasartProjection rdf:type owl:Class .\n")
 ttlprojectionvocab.add("geocrs:BalthasartProjection dc:creator \"M. Balthasart\" .\n")
 ttlprojectionvocab.add("geocrs:BalthasartProjection dc:date \"1935\" .\n")
