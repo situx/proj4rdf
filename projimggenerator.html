@@ -22,6 +22,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/BottomleyProjection":d3.geoBottomley(),
 	"http://www.opengis.net/ont/crs/BromleyProjection":d3.geoBromley(),
 	"http://www.opengis.net/ont/crs/CollignonProjection":d3.geoCollignon(),
+	"http://www.opengis.net/ont/crs/CollignonButterflyProjection": d3.geoPolyhedralCollignon(),
 	"http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection":d3.geoCraig(),
 	"http://www.opengis.net/ont/crs/CrasterParabolicProjection":d3.geoCraster(),
 	"http://www.opengis.net/ont/crs/CylindricalEqualArea":d3.geoCylindricalEqualArea(),
@@ -44,13 +45,16 @@ var projections={
 	"http://www.opengis.net/ont/crs/GinzburgVIIIProjection":d3.geoGinzburg8(),
 	"http://www.opengis.net/ont/crs/GinzburgIXProjection":d3.geoGinzburg9(),
 	"http://www.opengis.net/ont/crs/GnomonicProjection":d3.geoGnomonic(),
+	"http://www.opengis.net/ont/crs/GnomonicButterflyProjection": d3.geoPolyhedralButterfly(),
 	"http://www.opengis.net/ont/crs/GringortenProjection":d3.geoGringorten(),
+	"http://www.opengis.net/ont/crs/GringortenQuincuncialProjection": d3.geoGringortenQuincuncial(),
 	"http://www.opengis.net/ont/crs/GuyouProjection":d3.geoGuyou(),
 	"http://www.opengis.net/ont/crs/HammerProjection":d3.geoHammer(),
 	"http://www.opengis.net/ont/crs/HammerRetroazimuthalProjection":d3.geoHammerRetroazimuthal(),	
 	"http://www.opengis.net/ont/crs/HEALPixProjection":d3.geoHealpix(),
 	"http://www.opengis.net/ont/crs/HillEucyclicProjection":d3.geoHill(),
 	"http://www.opengis.net/ont/crs/GoodeHomolosineProjection":d3.geoHomolosine(),
+	"http://www.opengis.net/ont/crs/LambertConformalConicProjection": d3.geoConicConformal(),
 	"http://www.opengis.net/ont/crs/ToblerHyperellipticalProjection":d3.geoHyperelliptical(),
 	"http://www.opengis.net/ont/crs/Kavrayskiy7Projection":d3.geoKavrayskiy7(),
 	"http://www.opengis.net/ont/crs/LagrangeProjection": d3.geoLagrange(),
@@ -64,14 +68,31 @@ var projections={
 	"http://www.opengis.net/ont/crs/MollweideProjection": d3.geoMollweide(),
 	"http://www.opengis.net/ont/crs/NaturalEarthProjection": d3.geoNaturalEarth1(),
 	"http://www.opengis.net/ont/crs/NaturalEarth2Projection": d3.geoNaturalEarth2(),
-	"http://www.opengis.net/ont/crs/NellProjection": d3.geoNellHammer(),
+	"http://www.opengis.net/ont/crs/NellHammerProjection": d3.geoNellHammer(),
 	"http://www.opengis.net/ont/crs/NicolosiGlobularProjection": d3.geoNicolosi(),
 	"http://www.opengis.net/ont/crs/OrthographicProjection": d3.geoOrthographic(),
 	"http://www.opengis.net/ont/crs/PattersonCylindricalProjection": d3.geoPatterson(),
-	"http://www.opengis.net/ont/crs/PolyconicProjection": d3.geoPolyconic()
+	"http://www.opengis.net/ont/crs/PeirceQuincuncialProjection": d3.geoPeirceQuincuncial(),
+	"http://www.opengis.net/ont/crs/PolyconicProjection": d3.geoPolyconic(),
+	//"http://www.opengis.net/ont/crs/PolyhedralProjection": d3.geoPolyhedral(),
 	"http://www.opengis.net/ont/crs/RectangularPolyconicProjection": d3.geoRectangularPolyconic(),
 	"http://www.opengis.net/ont/crs/RobinsonProjection": d3.geoRobinson(),
-	
+	"http://www.opengis.net/ont/crs/SinusoidalProjection": d3.geoSinusoidal(),
+	"http://www.opengis.net/ont/crs/StereographicProjection": d3.geoStereographic(),
+	"http://www.opengis.net/ont/crs/TheTimesProjection": d3.geoTimes(),
+	"http://www.opengis.net/ont/crs/TransverseMercatorProjection": d3.geoTransverseMercator(),
+	//"http://www.opengis.net/ont/crs/TwoPointEquidistantProjection": d3.geoTwoPointEquidistant()
+	"http://www.opengis.net/ont/crs/VanDerGrintenIProjection": d3.geoVanDerGrinten(),
+	"http://www.opengis.net/ont/crs/VanDerGrintenIIProjection": d3.geoVanDerGrinten2(),
+	"http://www.opengis.net/ont/crs/VanDerGrintenIIIProjection": d3.geoVanDerGrinten3(),
+	"http://www.opengis.net/ont/crs/VanDerGrintenIVProjection": d3.geoVanDerGrinten4(),
+	"http://www.opengis.net/ont/crs/WagnerIVProjection": d3.geoWagner4(),
+	"http://www.opengis.net/ont/crs/WagnerVIProjection": d3.geoWagner6(),
+	"http://www.opengis.net/ont/crs/WagnerVIIProjection": d3.geoWagner7(),
+	"http://www.opengis.net/ont/crs/WagnerVIIIProjection": d3.geoWagner(),
+	"http://www.opengis.net/ont/crs/WatermanButterflyProjection": d3.geoPolyhedralWaterman(),
+	"http://www.opengis.net/ont/crs/WiechelProjection": d3.geoWiechel(),
+	"http://www.opengis.net/ont/crs/WinkelTripelProjection": d3.geoWinkel3()
 	
 	
 	
@@ -113,7 +134,7 @@ function generateImage(){
 	console.log(projection)
     var path = d3.geo.path()
       .projection(projection);
-    var url = "http://enjalot.github.io/wwsd/data/world/world-110m.geojson";
+    var url = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
     d3.json(url, function(err, geojson) {
 	  document.getElementById("projectionview").innerHTML="<svg><path d=\""+path(geojson)+"\"></svg>"
 	  tempsvg="<svg><path d=\""+path(geojson)+"\"></svg>"
@@ -143,6 +164,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/BromleyProjection">Bromley Projection</option>
 <!--<option value="http://www.opengis.net/ont/crs/ChamberlinTrimetricProjection">Chamberlin Trimetric Projection</option>-->
 <option value="http://www.opengis.net/ont/crs/CollignonProjection">Collignon Projection</option>
+<option value="http://www.opengis.net/ont/crs/CollignonButterflyProjection">Collignon Butterfly Projection</option>
 <option value="http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection">Craig Retroazimuthal Projection</option>
 <option value="http://www.opengis.net/ont/crs/CrasterParabolicProjection">Craster Parabolic Projection</option>
 <option value="http://www.opengis.net/ont/crs/CylindricalEqualArea">Cylindrical Equal-Area Projection</option>
@@ -165,13 +187,16 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/GinzburgVIIIProjection">Ginzburg 8 Projection</option>
 <option value="http://www.opengis.net/ont/crs/GinzburgIXProjection">Ginzburg 9 Projection</option>
 <option value="http://www.opengis.net/ont/crs/GnomonicProjection">Gnomonic Projection</option>
+<option value="http://www.opengis.net/ont/crs/GnomonicButterflyProjection">Gnomonic Butterfly Projection</option>
 <option value="http://www.opengis.net/ont/crs/GringortenProjection">Gringorten Projection</option>
+<option value="http://www.opengis.net/ont/crs/GringortenQuincuncialProjection">Gringorten Quincuncial Projection</option>
 <option value="http://www.opengis.net/ont/crs/GuyouProjection">Guyou Projection</option>
 <option value="http://www.opengis.net/ont/crs/HammerProjection">Hammer Projection</option>
 <option value="http://www.opengis.net/ont/crs/HammerRetroazimuthalProjection">Hammer Retroazimuthal Projection</option>
 <option value="http://www.opengis.net/ont/crs/HEALPixProjection">Healpix Projection</option>
 <option value="http://www.opengis.net/ont/crs/HillEucyclicProjection">Hill Eucyclic Projection</option>
 <option value="http://www.opengis.net/ont/crs/GoodeHomolosineProjection">Goode Homolosine Projection</option>
+<option value="http://www.opengis.net/ont/crs/LambertConformalConicProjection">Lambert Conformal Conic Projection</option>
 <!--<option value="http://www.opengis.net/ont/crs/HufnagelIProjection">Hufnagel Projection</option>-->
 <option value="http://www.opengis.net/ont/crs/ToblerHyperellipticalProjection">Tobler Hyperelliptical Projection</option>
 <option value="http://www.opengis.net/ont/crs/Kavrayskiy7Projection">Kavrayskiy VII Projection</option>
@@ -185,13 +210,30 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/MollweideProjection">Mollweide Projection</option>
 <option value="http://www.opengis.net/ont/crs/NaturalEarthProjection">Natural Earth Projection</option>
 <option value="http://www.opengis.net/ont/crs/NaturalEarth2Projection">Natural Earth II Projection</option>
-<option value="http://www.opengis.net/ont/crs/NellProjection">Nell-Hammer Projection</option>
+<option value="http://www.opengis.net/ont/crs/NellHammerProjection">Nell-Hammer Projection</option>
 <option value="http://www.opengis.net/ont/crs/NicolosiGlobularProjection">Nicolosi Globular Projection</option>
 <option value="http://www.opengis.net/ont/crs/OrthographicProjection">Orthographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/PattersonCylindricalProjection">Patterson Projection</option>
+<option value="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">Peirce Quincuncial Projection</option>
 <option value="http://www.opengis.net/ont/crs/PolyconicProjection">Polyconic Projection</option>
+<option value="http://www.opengis.net/ont/crs/PolyhedralProjection">Polyhedral Projection</option>
 <option value="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">Rectangular Polyconic Projection</option>
 <option value="http://www.opengis.net/ont/crs/RobinsonProjection">Robinson Projection</option>
+<option value="http://www.opengis.net/ont/crs/SinusoidalProjection">Sinusiodal Projection</option>
+<option value="http://www.opengis.net/ont/crs/StereographicProjection">Stereographic Projection</option>
+<option value="http://www.opengis.net/ont/crs/TheTimesProjection">Times Projection</option>
+<option value="http://www.opengis.net/ont/crs/TransverseMercatorProjection">Transverse Mercator Projection</option>
+<option value="http://www.opengis.net/ont/crs/VanDerGrintenIProjection">Van der Grinten I Projection</option>
+<option value="http://www.opengis.net/ont/crs/VanDerGrintenIIProjection">Van der Grinten II Projection</option>
+<option value="http://www.opengis.net/ont/crs/VanDerGrintenIIIProjection">Van der Grinten III Projection</option>
+<option value="http://www.opengis.net/ont/crs/VanDerGrintenIVProjection">Van der Grinten IV Projection</option>
+<option value="http://www.opengis.net/ont/crs/WagnerIVProjection">Wagner IV Projection</option>
+<option value="http://www.opengis.net/ont/crs/WagnerVIProjection">Wagner VI Projection</option>
+<option value="http://www.opengis.net/ont/crs/WagnerVIIProjection">Wagner VII Projection</option>
+<option value="http://www.opengis.net/ont/crs/WagnerVIIIProjection">Wagner VIII Projection</option>
+<option value="http://www.opengis.net/ont/crs/WatermanButterflyProjection">Waterman Butterfly Projection</option>
+<option value="http://www.opengis.net/ont/crs/WiechelProjection">Wiechel Projection</option>
+<option value="http://www.opengis.net/ont/crs/WinkelTripelProjection">Winkel Tripel Projection</option>
 </select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
 
 <div id="projectionview"></div>
