@@ -181,6 +181,7 @@ geocrs:AuthaGraphProjection rdf:type owl:Class ;
 geocrs:AzimuthalEquidistantProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:AzimuthalProjection ,
                                                       geocrs:EquidistantProjection ;
+                                      geocrs:PROJidentifier "aeqd" ;
                                       rdfs:label "azimuthal equidistant projection"@en .
 
 
@@ -1060,7 +1061,7 @@ geocrs:LambertConformalConicProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/LarriveeProjection
 geocrs:LarriveeProjection rdf:type owl:Class ;
-                          rdfs:subClassOf geocrs:Projection ;
+                          rdfs:subClassOf geocrs:CompromiseProjection ;
                           geocrs:PROJidentifier "larr" ;
                           rdfs:label "larrivee projection" .
 
@@ -1741,6 +1742,7 @@ geocrs:WebMercatorProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/WerenskioldIProjection
 geocrs:WerenskioldIProjection rdf:type owl:Class ;
+                              rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                               geocrs:PROJidentifier "weren" ;
                               rdfs:label "Werenskiold I Projection"@en .
 
