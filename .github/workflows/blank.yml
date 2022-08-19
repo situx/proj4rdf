@@ -35,6 +35,7 @@ jobs:
          pylode -o csvoc.html ../cs_vocabulary/cs_vocabulary.ttl
          pylode -o srsapplicationvoc.html ../srs_application/srs_application.ttl
          cp ../index.html .
+         cp ../projimggenerator.html .
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
     - name: Deploy 🚀
