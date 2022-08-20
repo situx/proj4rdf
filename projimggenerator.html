@@ -146,23 +146,31 @@ function saveSVG(){
 
 function generateImage(){
 	projtype=document.getElementById('projselect').value
-    var width = 640;
-    var height = 480;
-    document.getElementById("projectionview").innerHTML=""
-    var svg = d3.select("projectionview").append("svg")
-    console.log(projtype)
-    /*var projection = d3.geo.mercator()
-      .scale(width / 2 / Math.PI)
-      //.scale(100)
-      .translate([width / 2, height / 2])*/
+    var width = 1200;
+    var height = 700;
+    document.getElementById("projectionview").innerHTML="<canvas width=\""+width+"\" height=\""+height+"\" id=\"svgcanvas\"></canvas>"
 	projection = projections[projtype]
+	
+    var svg = d3.select("#svgcanvas").node().getContext('2d');
+	//var svg = d3.select("projectionview").append("svg")
+	var geoGenerator = d3.geoPath().projection(projection).context(svg);
+    console.log(projtype)
+	
 	console.log(projection)
-    var path = d3.geo.path()
-      .projection(projection);
+	var graticule = d3.geoGraticule();
+    svg.beginPath();
+    svg.strokeStyle = '#ccc';
+    geoGenerator(graticule());
+    svg.stroke();
     var url = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
     d3.json(url, function(err, geojson) {
-	  document.getElementById("projectionview").innerHTML="<svg><path d=\""+path(geojson)+"\"></svg>"
-	  tempsvg="<svg><path d=\""+path(geojson)+"\"></svg>"
+	  svg.beginPath();
+	  svg.strokeStyle = 'black';
+	  svg.fill = 'black';
+	  geoGenerator(geojson)
+	  svg.stroke()
+	  //document.getElementById("projectionview").innerHTML="<svg><path d=\""+path(d3.geoGraticule10())+"\"><path d=\""+path(geojson)+"\"></svg>"
+	  //tempsvg="<svg><path d=\""+path(d3.geoGraticule10())+"\"><path d=\""+path(geojson)+"\"></svg>"
     })
 	document.getElementById("amountofproj").innerHTML=Object.keys(projections).length
 }
@@ -213,7 +221,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/FoucautSinusoidalProjection">Foucaut Sinusoidal Projection</option>
 <option value="http://www.opengis.net/ont/crs/GallPetersProjection">Gall-Peters Projection</option>
 <option value="http://www.opengis.net/ont/crs/GallStereographicProjection">Gall Stereographic Projection</option>
-<option value="http://www.opengis.net/ont/crs/GilbertTwoWorldPerspectiveProjection">Gilbert Two-WOrld Perspective Projection</option>
+<option value="http://www.opengis.net/ont/crs/GilbertTwoWorldPerspectiveProjection">Gilbert Two-World Perspective Projection</option>
 <option value="http://www.opengis.net/ont/crs/GingeryProjection">Gingery Projection</option>
 <option value="http://www.opengis.net/ont/crs/GinzburgIVProjection">Ginzburg 4 Projection</option>
 <option value="http://www.opengis.net/ont/crs/GinzburgVProjection">Ginzburg 5 Projection</option>

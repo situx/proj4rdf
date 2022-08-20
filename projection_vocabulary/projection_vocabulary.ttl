@@ -79,6 +79,18 @@ geocrs:AdamsProjection rdf:type owl:Class ;
                        skos:definition "The Adams hemisphere-in-a-square projection is a conformal map projection for a hemisphere"@en .
 
 
+###  http://www.opengis.net/ont/crs/AdamsWorldInASquareIIProjection
+geocrs:AdamsWorldInASquareIIProjection rdf:type owl:Class ;
+                                       rdfs:subClassOf geocrs:ConformalProjection ;
+                                       rdfs:label "Adams World in a Square II projection" .
+
+
+###  http://www.opengis.net/ont/crs/AdamsWorldInASquareIProjection
+geocrs:AdamsWorldInASquareIProjection rdf:type owl:Class ;
+                                      rdfs:subClassOf geocrs:ConformalProjection ;
+                                      rdfs:label "Adams World in a Square I projection" .
+
+
 ###  http://www.opengis.net/ont/crs/AiryProjection
 geocrs:AiryProjection rdf:type owl:Class ;
                       rdfs:subClassOf geocrs:AzimuthalProjection ,
@@ -177,6 +189,13 @@ geocrs:AuthaGraphProjection rdf:type owl:Class ;
                             rdfs:label "autha graph projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/AzimuthalEqualAreaProjection
+geocrs:AzimuthalEqualAreaProjection rdf:type owl:Class ;
+                                    rdfs:subClassOf geocrs:AzimuthalProjection ,
+                                                    geocrs:EqualAreaProjection ;
+                                    rdfs:label "Azimuthal Equal-Area projection" .
+
+
 ###  http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection
 geocrs:AzimuthalEquidistantProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:AzimuthalProjection ,
@@ -221,6 +240,30 @@ geocrs:BalthasartProjection rdf:type owl:Class ;
                             dc:creator "M. Balthasart" ;
                             dc:date "1935" ;
                             rdfs:label "balthasart projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/BaranyiIIIProjection
+geocrs:BaranyiIIIProjection rdf:type owl:Class ;
+                            rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                            rdfs:label "Baranyi III projection" .
+
+
+###  http://www.opengis.net/ont/crs/BaranyiIIProjection
+geocrs:BaranyiIIProjection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                           rdfs:label "Baranyi II projection" .
+
+
+###  http://www.opengis.net/ont/crs/BaranyiIProjection
+geocrs:BaranyiIProjection rdf:type owl:Class ;
+                          rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                          rdfs:label "Baranyi I projection" .
+
+
+###  http://www.opengis.net/ont/crs/BaranyiIVProjection
+geocrs:BaranyiIVProjection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                           rdfs:label "Baranyi IV projection" .
 
 
 ###  http://www.opengis.net/ont/crs/BartholomewProjection
@@ -311,7 +354,8 @@ geocrs:BreusingHarmonicProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/BriesemeisterProjection
 geocrs:BriesemeisterProjection rdf:type owl:Class ;
-                               rdfs:subClassOf geocrs:EqualAreaProjection ;
+                               rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                               geocrs:LenticularProjection ;
                                rdfs:label "briesemeister projection"@en .
 
 
@@ -1023,7 +1067,8 @@ geocrs:Kavrayskiy7Projection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/KissProjection
 geocrs:KissProjection rdf:type owl:Class ;
-                      rdfs:subClassOf geocrs:EqualAreaProjection ;
+                      rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                      geocrs:LenticularProjection ;
                       dc:creator "Daniel Strebe" ;
                       dc:date "2015" ;
                       rdfs:label "kiss projection"@en .
@@ -1834,6 +1879,18 @@ geocrs:WinkelSnyderProjection rdf:type owl:Class ;
 geocrs:WinkelTripelProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:CompromiseProjection ,
                                               geocrs:PseudoAzimuthalProjection .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicCubedSphereProjection
+:GnomonicCubedSphereProjection rdf:type owl:Class ;
+                               rdfs:subClassOf geocrs:PolyhedralProjection ;
+                               rdfs:label "Gnomonic Cubed Sphere projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicIcosahedronProjection
+:GnomonicIcosahedronProjection rdf:type owl:Class ;
+                               rdfs:subClassOf geocrs:PolyhedralProjection ;
+                               rdfs:label "Gnomonic Icosahedron projection" .
 
 
 ###  http://www.opengis.net/ont/crs/ProjectionOntology#StabiusWernerIIIProjection
