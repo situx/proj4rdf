@@ -738,6 +738,12 @@ geocrs:GS50Projection rdf:type owl:Class ;
                       skos:definition "A map projection that was developed by John Parr Snyder of the USGS in 1982. The GS50 projection provides a conformal projection suitable only for maps of the 50 United States"@en .
 
 
+###  http://www.opengis.net/ont/crs/GallIsographicProjection
+geocrs:GallIsographicProjection rdf:type owl:Class ;
+                                rdfs:subClassOf geocrs:EquirectangularProjection ;
+                                rdfs:label "Gall isographic projection" .
+
+
 ###  http://www.opengis.net/ont/crs/GallPetersProjection
 geocrs:GallPetersProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:CylindricalProjection ,
@@ -1058,6 +1064,12 @@ geocrs:InterruptedGoodeHomolosineProjection rdf:type owl:Class ;
                                             rdfs:subClassOf geocrs:GoodeHomolosineProjection ;
                                             geocrs:PROJidentifier "igh" ;
                                             rdfs:label "Interrupted goode homolosine projection" .
+
+
+###  http://www.opengis.net/ont/crs/InterruptedQuarticAuthalicProjection
+geocrs:InterruptedQuarticAuthalicProjection rdf:type owl:Class ;
+                                            rdfs:subClassOf geocrs:QuarticAuthalicProjection ;
+                                            rdfs:label "interrupted quartic authalic projection" .
 
 
 ###  http://www.opengis.net/ont/crs/JamesAzimuthalProjection
