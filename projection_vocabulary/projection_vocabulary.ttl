@@ -82,12 +82,14 @@ geocrs:AdamsProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/AdamsWorldInASquareIIProjection
 geocrs:AdamsWorldInASquareIIProjection rdf:type owl:Class ;
                                        rdfs:subClassOf geocrs:ConformalProjection ;
+                                       geocrs:PROJidentifier "adams_ws2" ;
                                        rdfs:label "Adams World in a Square II projection" .
 
 
 ###  http://www.opengis.net/ont/crs/AdamsWorldInASquareIProjection
 geocrs:AdamsWorldInASquareIProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:ConformalProjection ;
+                                      geocrs:PROJidentifier "adams_ws1" ;
                                       rdfs:label "Adams World in a Square I projection" .
 
 
@@ -131,6 +133,7 @@ geocrs:AmericanPolyconicProjection rdf:type owl:Class ;
                                                    geocrs:PseudoConicalProjection ;
                                    dc:creator "Ferdinand Rudolph Hassler" ;
                                    dc:date "1820" ;
+                                   geocrs:PROJidentifier "poly" ;
                                    rdfs:label "american polyconic projection"@en .
 
 
@@ -444,6 +447,13 @@ geocrs:ColombiaUrbanProjection rdf:type owl:Class ;
                                rdfs:subClassOf geocrs:Projection ;
                                geocrs:PROJidentifier "col_urban" ;
                                rdfs:label "colombia urban projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/CompactMillerProjection
+geocrs:CompactMillerProjection rdf:type owl:Class ;
+                               rdfs:subClassOf geocrs:CylindricalProjection ;
+                               geocrs:PROJidentifier "comill" ;
+                               rdfs:label "Compact Miller projection" .
 
 
 ###  http://www.opengis.net/ont/crs/CompromiseProjection
@@ -1036,6 +1046,20 @@ geocrs:HufnagelXProjection rdf:type owl:Class ;
                            rdfs:label "Hufnagel X projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineOceanicViewProjection
+geocrs:InterruptedGoodeHomolosineOceanicViewProjection rdf:type owl:Class ;
+                                                       rdfs:subClassOf geocrs:InterruptedGoodeHomolosineProjection ;
+                                                       geocrs:PROJidentifier "igh_o" ;
+                                                       rdfs:label "Interrupted goode homolosine oceanic view projection" .
+
+
+###  http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineProjection
+geocrs:InterruptedGoodeHomolosineProjection rdf:type owl:Class ;
+                                            rdfs:subClassOf geocrs:GoodeHomolosineProjection ;
+                                            geocrs:PROJidentifier "igh" ;
+                                            rdfs:label "Interrupted goode homolosine projection" .
+
+
 ###  http://www.opengis.net/ont/crs/JamesAzimuthalProjection
 geocrs:JamesAzimuthalProjection rdf:type owl:Class ;
                                 rdfs:subClassOf geocrs:AzimuthalProjection ;
@@ -1109,6 +1133,7 @@ geocrs:LagrangeProjection rdf:type owl:Class ;
 geocrs:LambertAzimuthalEqualArea rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:AzimuthalProjection ,
                                                  geocrs:EqualAreaProjection ;
+                                 geocrs:PROJidentifier "laea" ;
                                  rdfs:label "lambert azimuthal equal area projection"@en .
 
 
@@ -1205,6 +1230,13 @@ geocrs:MercatorProjection rdf:type owl:Class ;
                           dc:date "1569" ;
                           geocrs:PROJidentifier "merc" ;
                           rdfs:label "mercator projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/MillerOblatedStereographicProjection
+geocrs:MillerOblatedStereographicProjection rdf:type owl:Class ;
+                                            rdfs:subClassOf geocrs:StereographicProjection ;
+                                            geocrs:PROJidentifier "mil_os" ;
+                                            rdfs:label "Miller oblated stereographic projection" .
 
 
 ###  http://www.opengis.net/ont/crs/MillerProjection
@@ -1304,12 +1336,19 @@ geocrs:NordicProjection rdf:type owl:Class ;
                         rdfs:label "Nordic projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/ObliqueCylindricalEqualAreaProjection
+geocrs:ObliqueCylindricalEqualAreaProjection rdf:type owl:Class ;
+                                             rdfs:subClassOf geocrs:CylindricalEqualArea ;
+                                             geocrs:PROJidentifier "ocea" ;
+                                             rdfs:label "oblique cylindrical equal area projection" .
+
+
 ###  http://www.opengis.net/ont/crs/ObliqueMercatorProjection
 geocrs:ObliqueMercatorProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:CylindricalProjection ,
                                                  geocrs:MercatorProjection ,
                                                  geocrs:ObliqueProjection ;
-                                 geocrs:PROJidentifier "merc" ;
+                                 geocrs:PROJidentifier "omerc" ;
                                  rdfs:label "oblique mercator projection"@en .
 
 
@@ -1383,7 +1422,7 @@ geocrs:PeirceQuincuncialProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:ConformalProjection ;
                                    dc:creator "Charles Sanders Peirce" ;
                                    dc:date "1879" ;
-                                   geocrs:PROJidentifier "perice_q" ;
+                                   geocrs:PROJidentifier "peirce_q" ;
                                    rdfs:label "peirce quincuncial projection"@en .
 
 
@@ -1649,6 +1688,13 @@ geocrs:ToblerHyperellipticalProjection rdf:type owl:Class ;
 geocrs:ToblerWorldInASquareProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:CylindricalEqualArea ;
                                       rdfs:label "Tobler world in a square projection" .
+
+
+###  http://www.opengis.net/ont/crs/TransverseCylindricalEqualAreaProjection
+geocrs:TransverseCylindricalEqualAreaProjection rdf:type owl:Class ;
+                                                rdfs:subClassOf geocrs:CylindricalEqualArea ;
+                                                geocrs:PROJidentifier "tcea" ;
+                                                rdfs:label "Transverse cylindrical equal-area projection" .
 
 
 ###  http://www.opengis.net/ont/crs/TransverseMercatorProjection
