@@ -1234,6 +1234,44 @@ geocrs:MayrProjection rdf:type owl:Class ;
                       skos:definition "Geometric mean of the cylindrical equal area and sinusoidal projections"@en .
 
 
+###  http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarParabolicProjection
+geocrs:McBrydeThomasFlatPolarParabolicProjection rdf:type owl:Class ;
+                                                 rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                                                 geocrs:PROJidentifier "mbtfpp" ;
+                                                 rdfs:label "Mc Bryde-Thomas Flat-Polar Parabolic projection" .
+
+
+###  http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarQuarticProjection
+geocrs:McBrydeThomasFlatPolarQuarticProjection rdf:type owl:Class ;
+                                               rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                                               geocrs:PROJidentifier "mbtfpq" ;
+                                               rdfs:label "Mc Bryde-Thomas Flat-Polar Quartic projection" .
+
+
+###  http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarSinusoidalProjection
+geocrs:McBrydeThomasFlatPolarSinusoidalProjection rdf:type owl:Class ;
+                                                  rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                                  geocrs:PseudoCylindricalProjection ;
+                                                  geocrs:PROJidentifier "mbtfps" ;
+                                                  rdfs:label "Mc Bryde-Thomas Flat-Polar Sinusoidal projection" .
+
+
+###  http://www.opengis.net/ont/crs/McBrydeThomasIIProjection
+geocrs:McBrydeThomasIIProjection rdf:type owl:Class ;
+                                 rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                 geocrs:PseudoCylindricalProjection ;
+                                 geocrs:PROJidentifier "mbt_fps" ;
+                                 rdfs:label "Mc Bryde-Thomas II projection" .
+
+
+###  http://www.opengis.net/ont/crs/McBrydeThomasIProjection
+geocrs:McBrydeThomasIProjection rdf:type owl:Class ;
+                                rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                geocrs:PseudoCylindricalProjection ;
+                                geocrs:PROJidentifier "mbt_s" ;
+                                rdfs:label "Mc Bryde-Thomas I projection" .
+
+
 ###  http://www.opengis.net/ont/crs/MercatorProjection
 geocrs:MercatorProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:ConformalProjection ,

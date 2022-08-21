@@ -451,6 +451,11 @@ projections["leac"]="geocrs:LambertEqualAreaConic"
 projections["labrd"]="geocrs:LabordeProjection"
 projections["longlat"]="geocrs:LonLatProjection"
 projections["loxim"]="geocrs:LoximuthalProjection"
+projections["mbt_s"]="geocrs:McBrydeThomasIProjection"
+projections["mbt_fps"]="geocrs:McBrydeThomasIIProjection"
+projections["mbtfpp"]="geocrs:McBrydeThomasFlatPolarParabolicProjection"
+projections["mbtfpq"]="geocrs:McBrydeThomasFlatPolarQuarticProjection"
+projections["mbtfps"]="geocrs:McBrydeThomasFlatPolarSinusoidalProjection"
 projections["merc"]="geocrs:MercatorProjection"
 projections["mill"]="geocrs:MillerProjection"
 proejctions["mil_os"]="geocrs:MillerOblatedStereographicProjection"
@@ -463,6 +468,7 @@ projections["moll"]="geocrs:MollweideProjection"
 projections["nell"]="geocrs:PseudoCylindricalProjection"
 projections["nell_h"]="geocrs:NellHammerProjection"
 projections["nicol"]="geocrs:NicolosiGlobularProjection"
+projections["ocea"]="geocrs:ObliqueCylindricalEqualAreaProjection"
 projections["omerc"]="geocrs:ObliqueMercatorProjection"
 projections["sterea"]="geocrs:ObliqueStereographicProjection"
 projections["ocea"]="geocrs:ObliqueCylindricalEqualAreaProjection"
@@ -536,11 +542,6 @@ latlon : Lat/long (Geodetic alias)
 lcca : Lambert Conformal Conic Alternative
 lee_os : Lee Oblated Stereographic
 lsat : Space oblique for LANDSAT
-mbt_s : McBryde-Thomas Flat-Polar Sine (No. 1)
-mbt_fps : McBryde-Thomas Flat-Pole Sine (No. 2)
-mbtfpp : McBride-Thomas Flat-Polar Parabolic
-mbtfpq : McBryde-Thomas Flat-Polar Quartic
-mbtfps : McBryde-Thomas Flat-Polar Sinusoidal
 misrsom : Space oblique for MISR
 molobadekas : Molodensky-Badekas transformation
 molodensky : Molodensky transform
@@ -548,7 +549,6 @@ nsper : Near-sided perspective
 nzmg : New Zealand Map Grid
 noop : No operation
 ob_tran : General Oblique Transformation
-ocea : Oblique Cylindrical Equal Area
 oea : Oblated Equal Area
 pipeline : Transformation pipeline manager
 pop : Retrieve coordinate value from pipeline stack
