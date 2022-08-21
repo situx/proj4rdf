@@ -96,6 +96,9 @@ var projections={
 	"http://www.opengis.net/ont/crs/MercatorProjection": d3.geoMercator(),
 	"http://www.opengis.net/ont/crs/MillerProjection": d3.geoMiller(),
 	"http://www.opengis.net/ont/crs/GS50Projection": d3.geoModifiedStereographicGs50(),
+	"http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarQuarticProjection": d3.geoMtFlatPolarQuartic(),
+	"http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarParabolicProjection": d3.geoMtFlatPolarParabolic(),
+	"http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarSinusoidalProjection": d3.geoMtFlatPolarSinusoidal(),
 	"http://www.opengis.net/ont/crs/MollweideProjection": d3.geoMollweide(),
 	"http://www.opengis.net/ont/crs/NaturalEarthProjection": d3.geoNaturalEarth1(),
 	"http://www.opengis.net/ont/crs/NaturalEarth2Projection": d3.geoNaturalEarth2(),
@@ -232,6 +235,9 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/EquidistantConicProjection">Equidistant Conic Projection</option>
 <option value="http://www.opengis.net/ont/crs/EquirectangularProjection">Equirectangular Projection</option>
 <option value="http://www.opengis.net/ont/crs/FaheyProjection">Fahey Projection</option>
+<option value="http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarParabolicProjection">Flat-Polar Parabolic</option>
+<option value="http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarQuarticProjection">Flat-Polar Quartic</option>
+<option value="http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarSinusoidalProjection">Flat-Polar Sinusoidal</option>
 <option value="http://www.opengis.net/ont/crs/FoucautProjection">Foucaut Projection</option>
 <option value="http://www.opengis.net/ont/crs/FoucautSinusoidalProjection">Foucaut Sinusoidal Projection</option>
 <option value="http://www.opengis.net/ont/crs/GallIsographicProjection">Gall Isographic Projection</option>
