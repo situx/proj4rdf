@@ -14,6 +14,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/ArmadilloProjection":d3.geoArmadillo(),
 	"http://www.opengis.net/ont/crs/AtlantisProjection": d3.geoMollweide().rotate([30, -45, 90]).angle(-90),
 	"http://www.opengis.net/ont/crs/AugustEpicycloidalProjection":d3.geoAugust(),
+	"http://www.opengis.net/ont/crs/AzimuthalEqualAreaProjection": d3.geoAzimuthalEqualArea(),
 	"http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection":d3.geoAzimuthalEquidistant(),
 	"http://www.opengis.net/ont/crs/BakerDinomicProjection":d3.geoBaker(),
 	"http://www.opengis.net/ont/crs/BalthasartProjection": d3.geoCylindricalEqualArea().parallel(50),
@@ -26,6 +27,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/BraunStereographicProjection": d3.geoCylindricalStereographic().parallel(0),
 	"http://www.opengis.net/ont/crs/BromleyProjection":d3.geoBromley(),
 	"http://www.opengis.net/ont/crs/BSAMCylindricalProjection": d3.geoCylindricalStereographic().parallel(30),
+	"http://www.opengis.net/ont/crs/CassiniProjection": d3.geoEquirectangular().rotate([0, 0, 90]).angle(-90),
 	"http://www.opengis.net/ont/crs/CollignonProjection":d3.geoCollignon(),
 	"http://www.opengis.net/ont/crs/CollignonButterflyProjection": d3.geoPolyhedralCollignon(),
 	"http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection":d3.geoCraig(),
@@ -39,10 +41,13 @@ var projections={
 	"http://www.opengis.net/ont/crs/Eckert5Projection":d3.geoEckert5(),
 	"http://www.opengis.net/ont/crs/Eckert6Projection":d3.geoEckert6(),
 	"http://www.opengis.net/ont/crs/EisenlohrProjection":d3.geoEisenlohr(),
+	"http://www.opengis.net/ont/crs/EqualEarthProjection": d3.geoEqualEarth(),
+	"http://www.opengis.net/ont/crs/EquidistantConicProjection": d3.geoConicEquidistant(),
 	"http://www.opengis.net/ont/crs/EquirectangularProjection":d3.geoEquirectangular(),
 	"http://www.opengis.net/ont/crs/FaheyProjection":d3.geoFahey(),
 	"http://www.opengis.net/ont/crs/FoucautProjection":d3.geoFoucaut(),
 	"http://www.opengis.net/ont/crs/FoucautSinusoidalProjection":d3.geoFoucautSinusoidal(),
+	"http://www.opengis.net/ont/crs/GallIsographicProjection": d3.geoEquirectangular().angle(45),
 	"http://www.opengis.net/ont/crs/GallPetersProjection": d3.geoCylindricalEqualArea().parallel(45),
 	"http://www.opengis.net/ont/crs/GallStereographicProjection": d3.geoCylindricalStereographic().parallel(45),
 	"http://www.opengis.net/ont/crs/GilbertTwoWorldPerspectiveProjection":d3.geoGilbert(),
@@ -77,6 +82,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/HufnagelXIIProjection":d3.geoHufnagel().a(0).b(-0.111111).psiMax(40).ratio(2.44),
 	"http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineProjection": d3.geoInterruptedHomolosine(),
 	"http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineOceanicViewProjection": d3.geoInterrupt(d3.geoHomolosineRaw,[[ [[-180, 0], [-130, 90], [-90, 0]],[[-90, 0], [-30, 90], [60, 0]],[[60, 0], [120, 90], [180, 0]]], [ [[-180, 0], [-120, -90], [-60, 0]],[[-60, 0], [20, -90], [100, 0]],[[100, 0], [140, -90], [180, 0]]]]).rotate([-200, 0]),
+	"http://www.opengis.net/ont/crs/InterruptedQuarticAuthalicProjection": d3.geoInterruptedQuarticAuthalic(),
 	"http://www.opengis.net/ont/crs/KamenetskiyIProjection":d3.geoCylindricalStereographic().parallel(55),
 	"http://www.opengis.net/ont/crs/ToblerHyperellipticalProjection":d3.geoHyperelliptical(),
 	"http://www.opengis.net/ont/crs/Kavrayskiy7Projection":d3.geoKavrayskiy7(),
@@ -99,6 +105,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/PattersonCylindricalProjection": d3.geoPatterson(),
 	"http://www.opengis.net/ont/crs/PeirceQuincuncialProjection": d3.geoPeirceQuincuncial(),
 	"http://www.opengis.net/ont/crs/PolyconicProjection": d3.geoPolyconic(),
+	"http://www.opengis.net/ont/crs/QuarticAuthalicProjection": d3.geoHammer().coefficient(Number.MAX_VALUE),
 	//"http://www.opengis.net/ont/crs/PolyhedralProjection": d3.geoPolyhedral(),
 	"http://www.opengis.net/ont/crs/RectangularPolyconicProjection": d3.geoRectangularPolyconic(),
 	"http://www.opengis.net/ont/crs/RobinsonProjection": d3.geoRobinson(),
@@ -193,6 +200,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/AtlantisProjection">Atlantis Projection</option>
 <option value="http://www.opengis.net/ont/crs/ArmadilloProjection">Armadillo Projection</option>
 <option value="http://www.opengis.net/ont/crs/AugustEpicycloidalProjection">August Epicycloidal Projection</option>
+<option value="http://www.opengis.net/ont/crs/AzimuthalEqualAreaProjection">Azimuthal Equal Area Projection</option>
 <option value="http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection">Azimuthal Equidistant Projection</option>
 <option value="http://www.opengis.net/ont/crs/BakerDinomicProjection">Baker Dinomic Projection</option>
 <option value="http://www.opengis.net/ont/crs/BalthasartProjection">Balthasart Projection</option>
@@ -205,6 +213,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/BraunStereographicProjection">Braun Stereographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/BromleyProjection">Bromley Projection</option>
 <option value="http://www.opengis.net/ont/crs/BSAMCylindricalProjection">BSAM Cylindrical Projection</option>
+<option value="http://www.opengis.net/ont/crs/CassiniProjection">Cassini Projection</option>
 <!--<option value="http://www.opengis.net/ont/crs/ChamberlinTrimetricProjection">Chamberlin Trimetric Projection</option>-->
 <option value="http://www.opengis.net/ont/crs/CollignonProjection">Collignon Projection</option>
 <option value="http://www.opengis.net/ont/crs/CollignonButterflyProjection">Collignon Butterfly Projection</option>
@@ -219,10 +228,13 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/Eckert5Projection">Eckert 5 Projection</option>
 <option value="http://www.opengis.net/ont/crs/Eckert6Projection">Eckert 6 Projection</option>
 <option value="http://www.opengis.net/ont/crs/EisenlohrProjection">Eisenlohr Projection</option>
+<option value="http://www.opengis.net/ont/crs/EqualEarthProjection">Equal Earth Projection</option>
+<option value="http://www.opengis.net/ont/crs/EquidistantConicProjection">Equidistant Conic Projection</option>
 <option value="http://www.opengis.net/ont/crs/EquirectangularProjection">Equirectangular Projection</option>
 <option value="http://www.opengis.net/ont/crs/FaheyProjection">Fahey Projection</option>
 <option value="http://www.opengis.net/ont/crs/FoucautProjection">Foucaut Projection</option>
 <option value="http://www.opengis.net/ont/crs/FoucautSinusoidalProjection">Foucaut Sinusoidal Projection</option>
+<option value="http://www.opengis.net/ont/crs/GallIsographicProjection">Gall Isographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/GallPetersProjection">Gall-Peters Projection</option>
 <option value="http://www.opengis.net/ont/crs/GallStereographicProjection">Gall Stereographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/GilbertTwoWorldPerspectiveProjection">Gilbert Two-World Perspective Projection</option>
@@ -259,6 +271,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/ToblerHyperellipticalProjection">Tobler Hyperelliptical Projection</option>
 <option value="http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineProjection">Interrupted Goode Homolosine Projection</option>
 <option value="http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineOceanicViewProjection">Interrupted Goode Homolosine Oceanic View Projection</option>
+<option value="http://www.opengis.net/ont/crs/InterruptedQuarticAuthalicProjection">Interrupted Quartic Authalic Projection</option>
 <option value="http://www.opengis.net/ont/crs/KamenetskiyIProjection">Kamenetskiy I Projection</option>
 <option value="http://www.opengis.net/ont/crs/Kavrayskiy7Projection">Kavrayskiy VII Projection</option>
 <option value="http://www.opengis.net/ont/crs/LambertConformalConicProjection">Lambert Conformal Conic Projection</option>
@@ -280,6 +293,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">Peirce Quincuncial Projection</option>
 <option value="http://www.opengis.net/ont/crs/PolyconicProjection">Polyconic Projection</option>
 <option value="http://www.opengis.net/ont/crs/PolyhedralProjection">Polyhedral Projection</option>
+<option value="http://www.opengis.net/ont/crs/QuarticAuthalicProjection">Quartic Authalic Projection</option>
 <option value="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">Rectangular Polyconic Projection</option>
 <option value="http://www.opengis.net/ont/crs/RobinsonProjection">Robinson Projection</option>
 <option value="http://www.opengis.net/ont/crs/SinusoidalProjection">Sinusiodal Projection</option>
