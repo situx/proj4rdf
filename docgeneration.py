@@ -2,7 +2,7 @@
 from rdflib import Graph
 from rdflib import URIRef, Literal, BNode
 from rdflib.plugins.sparql import prepareQuery
-import geodaisy.converters as convert
+import shapely
 import os
 import json
 import sys
@@ -1286,8 +1286,8 @@ class OntDocGeneration:
             if "http" in literal:
                 crsuri=literal[0:literal.rfind('>')].replace("<","")
                 literal=literal[literal.rfind('>')+1:].strip()
-            print(convert.wkt_to_geojson(literal))
-            return json.loads(convert.wkt_to_geojson(literal))
+            shapelygeom=shapely.wkt.loads(literal)
+            return json.loads(json.dumps(shapely.geometry.mapping(shapelygeom),indent=2))
         if "geojson" in literaltype.lower():
             return literal
         return {}
