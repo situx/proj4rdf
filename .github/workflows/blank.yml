@@ -37,7 +37,7 @@ jobs:
          cp ../index.html .
          cp ../projimggenerator.html .
          cd ..
-         python3 docgeneration.py owl/result.ttl docs/proj4rdf/ http://www.opengis.net/ont/crs/ geocrs
+         python3 docgeneration.py owl/result.ttl docs/proj4rdf/ http://www.opengis.net/ont/crs/ geocrs False
          cd docs
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
