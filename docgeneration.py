@@ -22,6 +22,7 @@ labelproperties={
 
 collectionclasses=["http://www.opengis.net/ont/geosparql#FeatureCollection","http://www.opengis.net/ont/geosparql#GeometryCollection","http://www.opengis.net/ont/geosparql#SpatialObjectCollection","http://www.w3.org/2004/02/skos/core#Collection","http://www.w3.org/2004/02/skos/core#OrderedCollection","https://www.w3.org/ns/activitystreams#Collection","https://www.w3.org/ns/activitystreams#OrderedCollection"]
 
+geoliteraltypes=["http://www.opengis.net/ont/geosparql#wktLiteral","http://www.opengis.net/ont/geosparql#gmlLiteral","http://www.opengis.net/ont/geosparql#kmlLiteral","http://www.opengis.net/ont/geosparql#geoJSONLiteral","http://www.opengis.net/ont/geosparql#dggsLiteral"]
 
 collectionrelationproperties={
     "http://www.w3.org/2000/01/rdf-schema#member":"ObjectProperty",
@@ -1256,7 +1257,7 @@ classtreequery="""PREFIX owl: <http://www.w3.org/2002/07/owl#>\n
 
 class OntDocGeneration:
 
-    def __init__(self, prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,graph):
+    def __init__(self, prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,graph,createIndexPages):
         self.prefixes=prefixes
         self.prefixnamespace = prefixnamespace
         self.namespaceshort = prefixnsshort.replace("/","")
@@ -1264,6 +1265,7 @@ class OntDocGeneration:
         self.license=license
         self.licenseuri=None
         self.labellang=labellang
+        self.createIndexPages=createIndexPages
         self.graph=graph
         self.preparedclassquery=prepareQuery(classtreequery)
         if prefixnamespace==None or prefixnsshort==None or prefixnamespace=="" or prefixnsshort=="":
@@ -1415,50 +1417,51 @@ class OntDocGeneration:
         with open(outpath + corpusid + "_classtree.js", 'w', encoding='utf-8') as f:
             f.write("var tree=" + json.dumps(tree, indent=2))
             f.close()
-        for path in paths:
-            ttlf = open(path + "index.ttl", "w", encoding="utf-8")
-            checkdepth = self.checkDepthFromPath(path, outpath, path)-1
-            sfilelink=self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + '_search.js',False)
-            classtreelink = self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + "_classtree.js",False)
-            stylelink =self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,"style.css",False)
-            scriptlink = self.generateRelativeLinkFromGivenDepth(prefixnamespace, checkdepth, "startscripts.js", False)
-            nslink=prefixnamespace+str(self.getAccessFromBaseURL(str(outpath),str(path)))
-            for sub in self.graph.subjects():
-                if nslink in sub:
-                    for tup in self.graph.predicate_objects(sub):
-                        if isinstance(tup[1],Literal):
-                            if tup[1].datatype!=None:
-                                ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\"^^<"+str(tup[1].datatype)+"> .\n")
-                            else:
-                                ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\" .\n")
-                        elif isinstance(tup[1],URIRef):
-                            ttlf.write("<"+str(sub)+"> <"+str(tup[0])+"> <"+str(tup[1])+"> .\n")
-            ttlf.close()
-            indexhtml = htmltemplate.replace("{{baseurl}}", prefixnamespace).replace("{{toptitle}}","Index page for " + nslink).replace("{{title}}","Index page for " + nslink).replace("{{startscriptpath}}", scriptlink).replace("{{stylepath}}", stylelink)\
-                .replace("{{classtreefolderpath}}",classtreelink).replace("{{baseurlhtml}}", nslink).replace("{{scriptfolderpath}}", sfilelink).replace("{{exports}}",nongeoexports)
-            if nslink==prefixnamespace:
-                indexhtml=indexhtml.replace("{{indexpage}}","true")
-            else:
-                indexhtml = indexhtml.replace("{{indexpage}}", "false")
-            indexhtml+="<p>This page shows information about linked data resources in HTML. Choose the classtree navigation or search to browse the data</p>"
-            indexhtml+="<table class=\"description\" style =\"height: 100%; overflow: auto\" border=1 id=indextable><thead><tr><th>Class</th><th>Number of instances</th><th>Instance Example</th></tr></thead><tbody>"
-            for item in tree["core"]["data"]:
-                if (item["type"]=="geoclass" or item["type"]=="class" or item["type"]=="featurecollection" or item["type"]=="geocollection") and "instancecount" in item and item["instancecount"]>0:
-                    exitem=None
-                    for item2 in tree["core"]["data"]:
-                        if item2["parent"]==item["id"] and (item2["type"]=="instance" or item2["type"]=="geoinstance") and nslink in item2["id"]:
-                            checkdepth = self.checkDepthFromPath(path, prefixnamespace, item2["id"])-1
-                            exitem="<td><img src=\""+tree["types"][item2["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item2["type"]+"\"/><a href=\""+self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,str(item2["id"]),True)+"\">"+str(item2["text"])+"</a></td>"
-                            break
-                    if exitem!=None:
-                        indexhtml+="<tr><td><img src=\""+tree["types"][item["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item["type"]+"\"/><a href=\""+str(item["id"])+"\" target=\"_blank\">"+str(item["text"])+"</a></td>"
-                        indexhtml+="<td>"+str(item["instancecount"])+"</td>"+exitem+"</tr>"
-            indexhtml += "</tbody></table><script>$('#indextable').DataTable();</script>"
-            indexhtml+=htmlfooter.replace("{{license}}",curlicense).replace("{{exports}}",nongeoexports)
-            print(path)
-            with open(path + "index.html", 'w', encoding='utf-8') as f:
-                f.write(indexhtml)
-                f.close()
+        if self.createIndexPages:
+            for path in paths:
+                ttlf = open(path + "index.ttl", "w", encoding="utf-8")
+                checkdepth = self.checkDepthFromPath(path, outpath, path)-1
+                sfilelink=self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + '_search.js',False)
+                classtreelink = self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + "_classtree.js",False)
+                stylelink =self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,"style.css",False)
+                scriptlink = self.generateRelativeLinkFromGivenDepth(prefixnamespace, checkdepth, "startscripts.js", False)
+                nslink=prefixnamespace+str(self.getAccessFromBaseURL(str(outpath),str(path)))
+                for sub in self.graph.subjects():
+                    if nslink in sub:
+                        for tup in self.graph.predicate_objects(sub):
+                            if isinstance(tup[1],Literal):
+                                if tup[1].datatype!=None:
+                                    ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\"^^<"+str(tup[1].datatype)+"> .\n")
+                                else:
+                                    ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\" .\n")
+                            elif isinstance(tup[1],URIRef):
+                                ttlf.write("<"+str(sub)+"> <"+str(tup[0])+"> <"+str(tup[1])+"> .\n")
+                ttlf.close()
+                indexhtml = htmltemplate.replace("{{baseurl}}", prefixnamespace).replace("{{toptitle}}","Index page for " + nslink).replace("{{title}}","Index page for " + nslink).replace("{{startscriptpath}}", scriptlink).replace("{{stylepath}}", stylelink)\
+                    .replace("{{classtreefolderpath}}",classtreelink).replace("{{baseurlhtml}}", nslink).replace("{{scriptfolderpath}}", sfilelink).replace("{{exports}}",nongeoexports)
+                if nslink==prefixnamespace:
+                    indexhtml=indexhtml.replace("{{indexpage}}","true")
+                else:
+                    indexhtml = indexhtml.replace("{{indexpage}}", "false")
+                indexhtml+="<p>This page shows information about linked data resources in HTML. Choose the classtree navigation or search to browse the data</p>"
+                indexhtml+="<table class=\"description\" style =\"height: 100%; overflow: auto\" border=1 id=indextable><thead><tr><th>Class</th><th>Number of instances</th><th>Instance Example</th></tr></thead><tbody>"
+                for item in tree["core"]["data"]:
+                    if (item["type"]=="geoclass" or item["type"]=="class" or item["type"]=="featurecollection" or item["type"]=="geocollection") and "instancecount" in item and item["instancecount"]>0:
+                        exitem=None
+                        for item2 in tree["core"]["data"]:
+                            if item2["parent"]==item["id"] and (item2["type"]=="instance" or item2["type"]=="geoinstance") and nslink in item2["id"]:
+                                checkdepth = self.checkDepthFromPath(path, prefixnamespace, item2["id"])-1
+                                exitem="<td><img src=\""+tree["types"][item2["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item2["type"]+"\"/><a href=\""+self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,str(item2["id"]),True)+"\">"+str(item2["text"])+"</a></td>"
+                                break
+                        if exitem!=None:
+                            indexhtml+="<tr><td><img src=\""+tree["types"][item["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item["type"]+"\"/><a href=\""+str(item["id"])+"\" target=\"_blank\">"+str(item["text"])+"</a></td>"
+                            indexhtml+="<td>"+str(item["instancecount"])+"</td>"+exitem+"</tr>"
+                indexhtml += "</tbody></table><script>$('#indextable').DataTable();</script>"
+                indexhtml+=htmlfooter.replace("{{license}}",curlicense).replace("{{exports}}",nongeoexports)
+                print(path)
+                with open(path + "index.html", 'w', encoding='utf-8') as f:
+                    f.write(indexhtml)
+                    f.close()
 
 
     def getClassTree(self,graph, uritolabel,classidset,uritotreeitem):
@@ -1596,7 +1599,7 @@ class OntDocGeneration:
                         imageannos.add(str(svglit))
                     elif ("POINT" in str(svglit).upper() or "POLYGON" in str(svglit).upper() or "LINESTRING" in str(svglit).upper()):
                         image3dannos.add(str(svglit))
-            if geoprop and str(tup[0]) in geoproperties and isinstance(tup[1], Literal):
+            if isinstance(tup[1], Literal) and (str(tup[0]) in geoproperties or tup[1].datatype in geoliteraltypes):
                 geojsonrep = self.processLiteral(str(tup[1]), tup[1].datatype, "")
             if incollection and "<svg" in str(tup[1]):
                  foundmedia["image"].add(str(tup[1]))
@@ -1657,7 +1660,7 @@ class OntDocGeneration:
                         object).replace("<", "&lt").replace(">", "&gt;").replace("\"", "'") + "\" datatype=\"" + str(
                         object.datatype) + "\">" + objstring + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"" + str(
                         object.datatype) + "\">" + self.shortenURI(str(object.datatype)) + "</a>)</small></span>"
-                if str(pred) in geoproperties and isinstance(object,Literal):
+                if isinstance(object, Literal) and (str(pred) in geoproperties or object.datatype in geoliteraltypes):
                     geojsonrep = self.processLiteral(str(object), object.datatype, "")
             else:
                 if ttlf!=None:
@@ -1947,14 +1950,14 @@ class OntDocGeneration:
                 featcoll={"type":"FeatureCollection", "id":subject, "features":[]}
                 for memberid in graph.objects(subject,URIRef("http://www.w3.org/2000/01/rdf-schema#member")):
                     for geoinstance in graph.predicate_objects(memberid):
-                        geojsonrep=None
-                        if str(geoinstance[0]) in geoproperties and isinstance(geoinstance[1],Literal):
+                        geojsonrep=None                       
+                        if isinstance(geoinstance[1], Literal) and (str(geoinstance[0]) in geoproperties or geoinstance[1].datatype in geoliteraltypes):
                             geojsonrep = self.processLiteral(str(geoinstance[1]), geoinstance[1].datatype, "")
                             uritotreeitem[str(subject)]["type"] = "geocollection"
                         elif str(geoinstance[0]) in geopointerproperties:
                             uritotreeitem[str(subject)]["type"] = "featurecollection"
-                            for geotup in graph.predicate_objects(geoinstance[1]):
-                                if str(geotup[0]) in geoproperties and isinstance(geotup[1],Literal):
+                            for geotup in graph.predicate_objects(geoinstance[1]):             
+                                if isinstance(geotup[1], Literal) and (str(geotup[0]) in geoproperties or geotup[1].datatype in geoliteraltypes):
                                     geojsonrep = self.processLiteral(str(geotup[1]), geotup[1].datatype, "")
                         if geojsonrep!=None:
                             featcoll["features"].append({"type": "Feature", 'id':str(memberid), 'properties': {}, "geometry": geojsonrep})
@@ -1979,6 +1982,7 @@ prefixnamespace="http://purl.org/cuneiform/"
 license="CC BY-SA 4.0"
 outpath="signlist_htmls/"
 labellang="en"
+createIndexPages=True
 if len(sys.argv)<=1:
     print("No TTL file to process has been given as a parameter")
     exit()
@@ -1990,7 +1994,11 @@ if len(sys.argv)>3:
     prefixnamespace=sys.argv[3]
 if len(sys.argv)>4:
     prefixnsshort=sys.argv[4]
+if len(sys.argv)>5:
+    indexp=sys.argv[5]
+    if indexp.lower()=="false":
+        createIndexPages=False
 g = Graph()
 g.parse(filepath)
-docgen=OntDocGeneration(prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,g)
+docgen=OntDocGeneration(prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,g,createIndexPages)
 docgen.generateOntDocForNameSpace(prefixnamespace,dataformat="HTML")
