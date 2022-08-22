@@ -36,6 +36,8 @@ jobs:
          pylode -o srsapplicationvoc.html ../srs_application/srs_application.ttl
          cp ../index.html .
          cp ../projimggenerator.html .
+         cd ..
+         python3 docgeneration.py owl/result.ttl docs/proj4rdf/ http://www.opengis.net/ont/crs/ geocrs
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
     - name: Deploy 🚀

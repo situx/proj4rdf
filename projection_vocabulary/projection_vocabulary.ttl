@@ -174,6 +174,8 @@ geocrs:ArmadilloProjection rdf:type owl:Class ;
 geocrs:AtlantisProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:EqualAreaProjection ,
                                           geocrs:PseudoCylindricalProjection ;
+                          dc:creator "John Bartholomew" ;
+                          dc:date 1948 ;
                           rdfs:label "atlantis projection"@en .
 
 
@@ -277,8 +279,7 @@ geocrs:BartholomewProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/BehrmannProjection
 geocrs:BehrmannProjection rdf:type owl:Class ;
-                          rdfs:subClassOf geocrs:CylindricalProjection ,
-                                          geocrs:EqualAreaProjection ;
+                          rdfs:subClassOf geocrs:CylindricalEqualArea ;
                           dc:creator "Walter Behrmann" ;
                           dc:date "1910" ;
                           rdfs:label "behrmann projection"@en .
@@ -400,6 +401,7 @@ geocrs:CahillKeyesProjection rdf:type owl:Class ;
 geocrs:CassiniProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:CylindricalProjection ,
                                          geocrs:EquidistantProjection ;
+                         dc:date 1745 ;
                          geocrs:PROJidentifier "cass" ;
                          rdfs:label "cassini projection"@en .
 
@@ -505,6 +507,8 @@ geocrs:CraigRetroazimuthalProjection rdf:type owl:Class ;
 geocrs:CrasterParabolicProjection rdf:type owl:Class ;
                                   rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                   geocrs:PseudoCylindricalProjection ;
+                                  dc:creator "John E. E. Craster" ;
+                                  dc:date 1929 ;
                                   geocrs:PROJidentifier "crast" ;
                                   rdfs:label "craster parabolic projection"@en .
 
@@ -908,7 +912,8 @@ geocrs:GringortenQuincuncialProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/GuyouProjection
 geocrs:GuyouProjection rdf:type owl:Class ;
-                       rdfs:subClassOf geocrs:ConformalProjection ;
+                       rdfs:subClassOf geocrs:ConformalProjection ,
+                                       geocrs:PolyhedralProjection ;
                        dc:creator "Emile Guyou" ;
                        dc:date "1887" ;
                        geocrs:PROJidentifier "guyou" ;
@@ -1686,6 +1691,7 @@ geocrs:SpaceObliqueMercatorProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/SpilhausOceanicProjection
 geocrs:SpilhausOceanicProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:CompromiseProjection ;
+                                 dc:date 1942 ;
                                  rdfs:label "spilhaus oceanic projection"@en .
 
 
@@ -2009,6 +2015,72 @@ geocrs:WinkelSnyderProjection rdf:type owl:Class ;
 geocrs:WinkelTripelProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:CompromiseProjection ,
                                               geocrs:PseudoAzimuthalProjection .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIIIProjection
+:FranculaIIIProjection rdf:type owl:Class ;
+                       rdfs:subClassOf geocrs:LenticularProjection ;
+                       dc:creator "Nedjeljko Frančula" ;
+                       dc:date 1971 ;
+                       rdfs:label "Frančula III projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIVProjection
+:FranculaIVProjection rdf:type owl:Class ;
+                      rdfs:subClassOf geocrs:LenticularProjection ;
+                      dc:creator "Nedjeljko Frančula" ;
+                      dc:date 1971 ;
+                      rdfs:label "Frančula IV projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIXProjection
+:FranculaIXProjection rdf:type owl:Class ;
+                      rdfs:subClassOf geocrs:LenticularProjection ;
+                      dc:creator "Nedjeljko Frančula" ;
+                      dc:date 1971 ;
+                      rdfs:label "Frančula IX projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaVIIIProjection
+:FranculaVIIIProjection rdf:type owl:Class ;
+                        rdfs:subClassOf geocrs:LenticularProjection ;
+                        dc:creator "Nedjeljko Frančula" ;
+                        dc:date 1971 ;
+                        rdfs:label "Frančula VIII projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaVProjection
+:FranculaVProjection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                     geocrs:LenticularProjection ;
+                     dc:creator "Nedjeljko Frančula" ;
+                     dc:date 1971 ;
+                     rdfs:label "Frančula V projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIIIProjection
+:FranculaXIIIProjection rdf:type owl:Class ;
+                        rdfs:subClassOf geocrs:LenticularProjection ;
+                        dc:creator "Nedjeljko Frančula" ;
+                        dc:date 1971 ;
+                        rdfs:label "Frančula XIII projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIIProjection
+:FranculaXIIProjection rdf:type owl:Class ;
+                       rdfs:subClassOf geocrs:LenticularProjection ;
+                       dc:creator "Nedjeljko Frančula" ;
+                       dc:date 1971 ;
+                       rdfs:label "Frančula XII projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIVProjection
+:FranculaXIVProjection rdf:type owl:Class ;
+                       rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                       geocrs:LenticularProjection ;
+                       dc:creator "Nedjeljko Frančula" ;
+                       dc:date 1971 ;
+                       rdfs:label "Frančula XIV projection" .
 
 
 ###  http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicCubedSphereProjection
