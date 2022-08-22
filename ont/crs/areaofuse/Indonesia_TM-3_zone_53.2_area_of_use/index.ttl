@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((138 -8.49, 138 -0.58, 135 -0.58, 135 -8.49, 138 -8.49))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Indonesia - onshore between 135°E and 138°E." .
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Indonesia - onshore between 135°E and 138°E." .
+<http://www.opengis.net/ont/crs/areaofuse/Indonesia_TM-3_zone_53.2_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

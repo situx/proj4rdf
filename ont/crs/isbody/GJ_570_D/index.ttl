@@ -1,0 +1,10 @@
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.opengis.net/ont/crs/mass> "42.5"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.opengis.net/ont/crs/planet_status> <http://www.opengis.net/ont/crs/Confirmed> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.opengis.net/ont/crs/radius> "0.855"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/GJ_570_ABC> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.opengis.net/ont/crs/starDistance> "5.91"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.w3.org/2000/01/rdf-schema#label> "GJ 570 D" .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://www.w3.org/2000/01/rdf-schema#label> "GJ 570 D" .
+<http://www.opengis.net/ont/crs/isbody/GJ_570_D> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

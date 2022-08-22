@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((72 -76, 72 -72, 54 -72, 54 -76, 72 -76))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica - 72°S to 76°S and 54°E to 72°E." .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica - 72°S to 76°S and 54°E to 72°E." .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SS40-42_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

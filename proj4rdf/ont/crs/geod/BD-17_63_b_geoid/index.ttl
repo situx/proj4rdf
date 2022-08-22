@@ -1,8 +1,0 @@
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/BD-17_63_b> .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.opengis.net/ont/crs/eccentricity> "0.54"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.opengis.net/ont/crs/semiMajorAxis> "1.34"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for BD-17 63 b" .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for BD-17 63 b" .
-<http://www.opengis.net/ont/crs/geod/BD-17_63_b_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

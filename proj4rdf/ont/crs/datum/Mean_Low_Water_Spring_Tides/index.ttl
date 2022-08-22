@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://www.opengis.net/ont/crs/scope> "Hydrography and nautical charting."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Mean Low Water Spring Tides" .
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Mean Low Water Spring Tides" .
-<http://www.opengis.net/ont/crs/datum/Mean_Low_Water_Spring_Tides> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

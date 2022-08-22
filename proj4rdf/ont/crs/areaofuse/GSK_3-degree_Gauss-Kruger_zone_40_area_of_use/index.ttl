@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((121.5 49.87, 121.5 73.63, 118.5 73.63, 118.5 49.87, 121.5 49.87))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Russian Federation - onshore between 118°30'E and 121°30'E." .
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Russian Federation - onshore between 118°30'E and 121°30'E." .
-<http://www.opengis.net/ont/crs/areaofuse/GSK_3-degree_Gauss-Kruger_zone_40_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

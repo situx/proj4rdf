@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((-98.47 38.26, -98.47 40.01, -99.07 40.01, -99.07 38.26, -98.47 38.26))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "United States (USA) - Kansas - counties of Barton; Osborne; Russell; Smith." .
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "United States (USA) - Kansas - counties of Barton; Osborne; Russell; Smith." .
-<http://www.opengis.net/ont/crs/areaofuse/Kansas_regional_zone_5_Great_Bend__ftUS__area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

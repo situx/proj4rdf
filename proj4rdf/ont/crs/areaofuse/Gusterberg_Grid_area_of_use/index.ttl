@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((16.83 46.93, 16.83 51.06, 12.07 51.06, 12.07 46.93, 16.83 46.93))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Austria - Upper Austria and Salzburg provinces. Czechia - Bohemia." .
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Austria - Upper Austria and Salzburg provinces. Czechia - Bohemia." .
-<http://www.opengis.net/ont/crs/areaofuse/Gusterberg_Grid_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

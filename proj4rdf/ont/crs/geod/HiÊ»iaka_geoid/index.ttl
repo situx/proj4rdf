@@ -1,8 +1,0 @@
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.opengis.net/ont/crs/isApplicableTo> <http://www.opengis.net/ont/crs/isbody/HiÊ»iaka> .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.opengis.net/ont/crs/orbital_period> "49.12"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.opengis.net/ont/crs/semiMajorAxis> "49,880"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for HiÊ»iaka" .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for HiÊ»iaka" .
-<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

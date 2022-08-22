@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((120 0, 120 84, 114 84, 114 0, 120 0))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 114°E and 120°E, northern hemisphere between equator and 84°N, onshore and offshore." .
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 114°E and 120°E, northern hemisphere between equator and 84°N, onshore and offshore." .
-<http://www.opengis.net/ont/crs/areaofuse/6-degree_Gauss-Kruger_zone_20_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

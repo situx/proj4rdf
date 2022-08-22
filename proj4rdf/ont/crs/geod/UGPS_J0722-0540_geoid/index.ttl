@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/UGPS_J0722-0540> .
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for UGPS J0722-0540" .
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for UGPS J0722-0540" .
-<http://www.opengis.net/ont/crs/geod/UGPS_J0722-0540_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

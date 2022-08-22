@@ -263,17 +263,6 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "CS Extension Ontology"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -293,6 +282,17 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CS Extension Ontology"
       }
     ]
   },
@@ -18010,6 +18010,19 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="image">
+          <h3>image
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://xmlns.com/foaf/0.1/image</code>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div id="namespaces">
         <h2>Namespaces</h2>
@@ -18017,6 +18030,10 @@
           <dt id="dc">dc</dt>
           <dd>
             <code>http://purl.org/dc/elements/1.1/</code>
+          </dd>
+          <dt id="foaf">foaf</dt>
+          <dd>
+            <code>http://xmlns.com/foaf/0.1/</code>
           </dd>
           <dt id="geocrs">geocrs</dt>
           <dd>
@@ -19527,6 +19544,9 @@
             <li>
               <a href="#definition">definition</a>
             </li>
+            <li>
+              <a href="#image">image</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -19536,6 +19556,9 @@
           <ul class="second">
             <li>
               <a href="#dc">dc</a>
+            </li>
+            <li>
+              <a href="#foaf">foaf</a>
             </li>
             <li>
               <a href="#geocrs">geocrs</a>
