@@ -15,8 +15,6 @@
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.opengis.net/ont/crs/scope> "Engineering survey and topographic mapping for railway applications."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CompoundCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov-o/Entity> .
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.w3.org/2000/01/rdf-schema#label> "MML07 Grid + ODN height" .
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://www.w3.org/2000/01/rdf-schema#label> "MML07 Grid + ODN height" .
 <http://www.opengis.net/def/crs/EPSG/0/9374> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

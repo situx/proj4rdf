@@ -18,8 +18,6 @@
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov-o/Entity> .
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.w3.org/2000/01/rdf-schema#label> "NAD83 / Ohio South (ftUS)" .
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://www.w3.org/2000/01/rdf-schema#label> "NAD83 / Ohio South (ftUS)" .
 <http://www.opengis.net/def/crs/EPSG/0/3735> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
