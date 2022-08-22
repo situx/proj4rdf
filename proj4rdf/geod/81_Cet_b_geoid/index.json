@@ -1,0 +1,1 @@
+{"http://www.opengis.net/ont/crs/approximates": ["http://www.opengis.net/ont/crs/isbody/81_Cet_b"], "http://www.opengis.net/ont/crs/eccentricity": ["0.206"], "http://www.opengis.net/ont/crs/semiMajorAxis": ["2.5"], "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": ["http://www.opengis.net/ont/crs/Sphere"], "http://www.w3.org/2000/01/rdf-schema#label": ["Geoid for 81 Cet b"]}

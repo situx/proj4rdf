@@ -1,0 +1,5 @@
+<http://www.opengis.net/ont/crs/isbody/ksi_Aql> <http://www.opengis.net/ont/crs/mass> "2.2"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/ksi_Aql> <http://www.opengis.net/ont/crs/radius> "12.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/ksi_Aql> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Star> .
+<http://www.opengis.net/ont/crs/isbody/ksi_Aql> <http://www.w3.org/2000/01/rdf-schema#label> "ksi Aql" .
+<http://www.opengis.net/ont/crs/isbody/ksi_Aql> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

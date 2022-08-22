@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering surveying applications over distances up to 10km."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://www.opengis.net/ont/crs/usage> "Cadastre, engineering surveying applications over distances up to 10km."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Australian Height Datum" .
+<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

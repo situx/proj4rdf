@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://www.opengis.net/ont/crs/ellipse> <http://www.opengis.net/ont/crs/geod/GRS1980> .
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://www.opengis.net/ont/crs/scope> "Geodesy."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: SIRGAS-Chile realization 2 epoch 2010" .
+<http://www.opengis.net/ont/crs/datum/SIRGAS-Chile_realization_2_epoch_2010> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/HD_284149> <http://www.opengis.net/ont/crs/mass> "1.14"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/HD_284149> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Star> .
+<http://www.opengis.net/ont/crs/isbody/HD_284149> <http://www.w3.org/2000/01/rdf-schema#label> "HD 284149" .
+<http://www.opengis.net/ont/crs/isbody/HD_284149> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

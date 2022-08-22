@@ -1,0 +1,1 @@
+{"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": ["http://www.w3.org/2002/07/owl#Class"], "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": ["http://docs.opengeospatial.org/as/18-005r4/18-005r4.html"], "http://www.w3.org/2000/01/rdf-schema#label": ["planetstatus"], "http://www.w3.org/2004/02/skos/core#definition": ["indicates the confirmed status of an interstellar body"]}

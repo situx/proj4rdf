@@ -1,0 +1,9 @@
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/abbreviation> "Y"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/direction> <http://www.opengis.net/ont/crs/geocentricY> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/unit> <http://www.ontology-of-units-of-measure.org/resource/om-2/metre> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/unit_auth_code> "EPSG"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/unit_code> "9001"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.opengis.net/ont/crs/unit_conversion_factor> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CoordinateSystemAxis> .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://www.w3.org/2000/01/rdf-schema#label> "Geocentric Y (om:metre)" .
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

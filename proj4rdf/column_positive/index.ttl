@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/column_positive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AxisDirection> .
+<http://www.opengis.net/ont/crs/column_positive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.opengis.net/ont/crs/column_positive> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
+<http://www.opengis.net/ont/crs/column_positive> <http://www.w3.org/2000/01/rdf-schema#label> "column positive" .
+<http://www.opengis.net/ont/crs/column_positive> <http://www.w3.org/2004/02/skos/core#definition> "axis positive direction is towards higher pixel column" .
+<http://www.opengis.net/ont/crs/column_positive> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

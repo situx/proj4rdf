@@ -1,0 +1,8 @@
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.opengis.net/ont/crs/orbital_period> "24.31576"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.opengis.net/ont/crs/planet_status> <http://www.opengis.net/ont/crs/Confirmed> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.opengis.net/ont/crs/radius> "0.295"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/Kepler-606> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.opengis.net/ont/crs/starDistance> "1208.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://www.w3.org/2000/01/rdf-schema#label> "Kepler-606 b" .
+<http://www.opengis.net/ont/crs/isbody/Kepler-606_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

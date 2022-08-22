@@ -1,0 +1,8 @@
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.opengis.net/ont/crs/orbital_period> "2.580827"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.opengis.net/ont/crs/planet_status> <http://www.opengis.net/ont/crs/Confirmed> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.opengis.net/ont/crs/radius> "0.118"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/Kepler-292> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.opengis.net/ont/crs/starDistance> "1087.23"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://www.w3.org/2000/01/rdf-schema#label> "Kepler-292 b" .
+<http://www.opengis.net/ont/crs/isbody/Kepler-292_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

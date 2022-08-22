@@ -1,0 +1,5 @@
+<http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> <http://www.opengis.net/ont/crs/mass> "8.5"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> <http://www.opengis.net/ont/crs/planet_status> <http://www.opengis.net/ont/crs/Confirmed> .
+<http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
+<http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> <http://www.w3.org/2000/01/rdf-schema#label> "WISEA  J083011.95+283716.0" .
+<http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

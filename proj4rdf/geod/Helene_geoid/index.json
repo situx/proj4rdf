@@ -1,0 +1,1 @@
+{"http://www.opengis.net/ont/crs/isApplicableTo": ["http://www.opengis.net/ont/crs/isbody/Helene"], "http://www.opengis.net/ont/crs/orbital_period": ["2.737"], "http://www.opengis.net/ont/crs/semiMajorAxis": ["377,420"], "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": ["http://www.opengis.net/ont/crs/Sphere"], "http://www.w3.org/2000/01/rdf-schema#label": ["Geoid for Helene"]}

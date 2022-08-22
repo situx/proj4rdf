@@ -1,0 +1,6 @@
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://www.opengis.net/ont/crs/ellipse> <http://www.opengis.net/ont/crs/geod/WGS84> .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://www.opengis.net/ont/crs/scope> "Geodesy. Navigation and positioning using GPS satellite system."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: World Geodetic System 1984 (G1762)" .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984__G1762_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
