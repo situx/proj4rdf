@@ -1,3 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_A3_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((49.04 38.38, 49.04 42.1, 46.03 42.1, 46.03 38.38, 49.04 38.38))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_A3_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_A3_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Armenia and Georgia east of 46°02'E; Azerbaijan between 46°02' and 49°02'E." .

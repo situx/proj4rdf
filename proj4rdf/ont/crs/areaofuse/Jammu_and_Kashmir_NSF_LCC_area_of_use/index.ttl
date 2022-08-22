@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/areaofuse/Jammu_and_Kashmir_NSF_LCC_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((79.56999999999999 32.27, 79.56999999999999 35.51, 73.76000000000001 35.51, 73.76000000000001 32.27, 79.56999999999999 32.27))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/Jammu_and_Kashmir_NSF_LCC_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/Jammu_and_Kashmir_NSF_LCC_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "India - Jammu and Kashmir." .
+<http://www.opengis.net/ont/crs/areaofuse/Jammu_and_Kashmir_NSF_LCC_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "India - Jammu and Kashmir." .

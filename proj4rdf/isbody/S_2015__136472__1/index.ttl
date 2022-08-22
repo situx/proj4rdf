@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://www.opengis.net/ont/crs/planet_status> <http://www.opengis.net/ont/crs/Confirmed> .
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://www.opengis.net/ont/crs/radius> "~87.5"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/Makemake> .
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Moon> .
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://www.w3.org/2000/01/rdf-schema#label> "S/2015 (136472) 1" .
-<http://www.opengis.net/ont/crs/isbody/S_2015__136472__1> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

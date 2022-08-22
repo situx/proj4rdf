@@ -1,3 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/EPSG_Arctic_LCC_zone_3-33_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((1.9 76.16, 1.9 81.17, -24 81.17, -24 76.16, 1.9 76.16))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/EPSG_Arctic_LCC_zone_3-33_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/EPSG_Arctic_LCC_zone_3-33_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Arctic - between 81°10'N and 76°10'N, approximately 24°W to approximately 2°E. May be extended westwards within the latitude limits." .

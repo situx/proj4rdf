@@ -1,0 +1,8 @@
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.opengis.net/ont/crs/ellipse> <http://www.opengis.net/ont/crs/geod/Clarke1880RGS> .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: St. Kitts 1955" .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: St. Kitts 1955" .
+<http://www.opengis.net/ont/crs/datum/St._Kitts_1955> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

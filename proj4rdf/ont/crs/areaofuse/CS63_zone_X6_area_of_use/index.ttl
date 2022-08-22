@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_X6_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((40.01 46.8, 40.01 50.44, 37 50.44, 37 46.8, 40.01 46.8))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_X6_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_X6_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine - between 37°E and 40°E, onshore." .
+<http://www.opengis.net/ont/crs/areaofuse/CS63_zone_X6_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine - between 37°E and 40°E, onshore." .

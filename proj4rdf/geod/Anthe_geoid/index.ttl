@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://www.opengis.net/ont/crs/isApplicableTo> <http://www.opengis.net/ont/crs/isbody/Anthe> .
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://www.opengis.net/ont/crs/orbital_period> "1.0365"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://www.opengis.net/ont/crs/semiMajorAxis> "197,700"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for Anthe" .
-<http://www.opengis.net/ont/crs/geod/Anthe_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

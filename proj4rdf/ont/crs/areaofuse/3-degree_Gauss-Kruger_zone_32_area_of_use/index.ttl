@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/areaofuse/3-degree_Gauss-Kruger_zone_32_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((97.5 0, 97.5 84, 94.5 84, 94.5 0, 97.5 0))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/3-degree_Gauss-Kruger_zone_32_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/3-degree_Gauss-Kruger_zone_32_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 94°30'E and 97°30'E, northern hemisphere." .
+<http://www.opengis.net/ont/crs/areaofuse/3-degree_Gauss-Kruger_zone_32_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 94°30'E and 97°30'E, northern hemisphere." .

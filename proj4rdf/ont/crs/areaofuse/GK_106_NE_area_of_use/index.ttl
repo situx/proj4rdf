@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/areaofuse/GK_106_NE_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((107.58 9.029999999999999, 107.58 11.04, 105.49 11.04, 105.49 9.029999999999999, 107.58 9.029999999999999))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/GK_106_NE_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/GK_106_NE_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Vietnam - onshore Vung Tau area." .
+<http://www.opengis.net/ont/crs/areaofuse/GK_106_NE_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Vietnam - onshore Vung Tau area." .

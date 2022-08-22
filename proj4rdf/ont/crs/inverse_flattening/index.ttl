@@ -1,0 +1,8 @@
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/2000/01/rdf-schema#label> "inverse flattening" .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/2000/01/rdf-schema#label> "inverse flattening" .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/2004/02/skos/core#definition> "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)" .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://www.w3.org/2004/02/skos/core#definition> "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)" .
+<http://www.opengis.net/ont/crs/inverse_flattening> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

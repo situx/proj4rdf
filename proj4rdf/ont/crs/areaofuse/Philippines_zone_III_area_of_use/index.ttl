@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/areaofuse/Philippines_zone_III_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((122.21 3, 122.21 21.62, 119.7 21.62, 119.7 3, 122.21 3))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/Philippines_zone_III_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/Philippines_zone_III_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Philippines - approximately between 120°E and 122°E, onshore and offshore. Luzon (west of 122°E); Mindoro." .
+<http://www.opengis.net/ont/crs/areaofuse/Philippines_zone_III_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Philippines - approximately between 120°E and 122°E, onshore and offshore. Luzon (west of 122°E); Mindoro." .

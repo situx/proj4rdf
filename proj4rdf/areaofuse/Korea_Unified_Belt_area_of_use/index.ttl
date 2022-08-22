@@ -1,3 +1,0 @@
-<http://www.opengis.net/ont/crs/areaofuse/Korea_Unified_Belt_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((134.28 28.6, 134.28 40.27, 122.71 40.27, 122.71 28.6, 134.28 28.6))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/Korea_Unified_Belt_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/Korea_Unified_Belt_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Republic of Korea (South Korea) - onshore and offshore." .
