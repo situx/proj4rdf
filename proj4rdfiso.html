@@ -263,58 +263,13 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "RangeMeaning - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/creator": [
-      {
-        "@id": "http://www.wikidata.org/entity/Q67624599"
-      }
-    ],
-    "https://schema.org/description": [
-      {
-        "@language": "en",
-        "@value": "This ontology models spatial reference systems"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "GeoSPARQL SRS Ontology Draft NonISO classes"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "RealizationMethod - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Calendar - ConceptScheme"
+        "@value": "AxisDirection - ConceptScheme"
       }
     ]
   },
@@ -348,6 +303,40 @@
     ]
   },
   {
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/RealizationMethod",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RealizationMethod - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "http://www.wikidata.org/entity/Q67624599"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "This ontology models spatial reference systems"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "GeoSPARQL SRS Ontology Draft NonISO classes"
+      }
+    ]
+  },
+  {
     "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -359,13 +348,24 @@
     ]
   },
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "AxisDirection - ConceptScheme"
+        "@value": "Calendar - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RangeMeaning - ConceptScheme"
       }
     ]
   }
@@ -1942,13 +1942,13 @@
   <a href="http://www.opengis.net/ont/crs/uPolarCS">geocrs:uPolarCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uLinearCS">geocrs:uLinearCS</a>
+  <a href="http://www.opengis.net/ont/crs/uOrdinalCS">geocrs:uOrdinalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uSphericalCS">geocrs:uSphericalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uOrdinalCS">geocrs:uOrdinalCS</a>
+  <a href="http://www.opengis.net/ont/crs/uLinearCS">geocrs:uLinearCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uAffineCS">geocrs:uAffineCS</a>

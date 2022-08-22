@@ -27,7 +27,7 @@ var geoproperties={
                    "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
 }
 
-  var baseurl="{{baseurl}}"
+  var baseurl="http://www.opengis.net/"
   $( function() {
     var availableTags = Object.keys(search)
     $( "#search" ).autocomplete({
@@ -611,7 +611,7 @@ function formatHTMLTableForResult(result,nodeicon){
             }
             dialogcontent+="</ul></td>"
         }else if((result[res][0]+"").startsWith("http")){
-            dialogcontent+="<td><a href=\""+rewriteLink(result[res]+"")+"\" target=\"_blank\">"+shortenURI(result[res]+"")+"</a></td>"
+            dialogcontent+="<td><a href=\""+rewriteLink(result[res][0]+"")+"\" target=\"_blank\">"+shortenURI(result[res][0]+"")+"</a></td>"
         }else{
             dialogcontent+="<td>"+result[res][0]+"</td>"
         }
