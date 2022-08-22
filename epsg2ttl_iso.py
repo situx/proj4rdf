@@ -34,9 +34,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geoepsg:"+epsgcode+" geocrs:includesSRS geoepsg:"+str(subcrs.to_epsg())+" .\n")			
 	else:
 		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
-	ttl.add("geoepsg:"+epsgcode+" rdf:type prov:Entity. \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrsisbody:Earth .\n")
-	ttl.add("geoepsg:"+epsgcode+" rdf:type owl:NamedIndividual .\n")
 	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
 	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
@@ -478,6 +476,15 @@ projections["patterson"]="geocrs:PattersonCylindricalProjection"
 projections["pconic"]="geocrs:PerspectiveConicProjection"
 projections["poly"]="geocrs:AmericanPolyconicProjection"
 projections["peirce_q"]="geocrs:PeirceQuincuncialProjection"
+projections["putp1"]="geocrs:PutninsP1Projection"
+projections["putp2"]="geocrs:PutninsP2Projection"
+projections["putp3"]="geocrs:PutninsP3Projection"
+projections["putp3p"]="geocrs:PutninsP3'Projection"
+projections["putp4"]="geocrs:PutninsP4Projection"
+projections["putp4p"]="geocrs:PutninsP4'Projection"
+projections["putp5"]="geocrs:PutninsP5Projection"
+projections["putp6"]="geocrs:PutninsP6Projection"
+projections["putp6p"]="geocrs:PutninsP6'Projection"
 projections["qua_aut"]="geocrs:QuarticAuthalicProjection"
 projections["qsc"]="QuadrilateralizedSphericalCubeProjection"
 projections["rpoly"]="geocrs:RectangularPolyconicProjection"
@@ -553,15 +560,6 @@ oea : Oblated Equal Area
 pipeline : Transformation pipeline manager
 pop : Retrieve coordinate value from pipeline stack
 push : Save coordinate value on pipeline stack
-putp1 : Putnins P1
-putp2 : Putnins P2
-putp3 : Putnins P3
-putp3p : Putnins P3'
-putp4p : Putnins P4'
-putp5 : Putnins P5
-putp5p : Putnins P5'
-putp6 : Putnins P6
-putp6p : Putnins P6'
 s2 : S2
 sch : Spherical Cross-track Height
 set : Set coordinate value

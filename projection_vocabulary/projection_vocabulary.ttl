@@ -1575,7 +1575,8 @@ geocrs:PseudoConicalProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/PseudoCylindricalProjection
 geocrs:PseudoCylindricalProjection rdf:type owl:Class ;
-                                   rdfs:subClassOf geocrs:Projection ;
+                                   rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                   geocrs:Projection ;
                                    rdfs:label "pseudo-cylindrical projection"@en .
 
 
@@ -2095,11 +2096,95 @@ geocrs:WinkelTripelProjection rdf:type owl:Class ;
                                rdfs:label "Gnomonic Icosahedron projection" .
 
 
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP1Projection
+:PutninsP1Projection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                     dc:creator "Reinholds V. Putnins" ;
+                     dc:date 1934 ;
+                     geocrs:PROJidentifier "putp1" ;
+                     rdfs:label "Putnins P1 projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection
+:PutninsP2Projection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                     geocrs:PseudoCylindricalProjection ;
+                     dc:creator "Reinholds V. Putnins" ;
+                     dc:date 1934 ;
+                     geocrs:PROJidentifier "putp2" ;
+                     rdfs:label "Putnins P2 projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3Projection
+:PutninsP3Projection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                     dc:creator "Reinholds V. Putnins" ;
+                     dc:date 1934 ;
+                     geocrs:PROJidentifier "putp3" ;
+                     rdfs:label "Putnins P3 projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5Projection
+:PutninsP5Projection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                     dc:creator "Reinholds V. Putnins" ;
+                     dc:date 1934 ;
+                     geocrs:PROJidentifier "putp5" ;
+                     rdfs:label "Putnins P5 projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6Projection
+:PutninsP6Projection rdf:type owl:Class ;
+                     rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                     geocrs:PseudoCylindricalProjection ;
+                     dc:creator "Reinholds V. Putnins" ;
+                     dc:date 1934 ;
+                     geocrs:PROJidentifier "putp6" ;
+                     rdfs:label "Putnins P6 projection" .
+
+
 ###  http://www.opengis.net/ont/crs/ProjectionOntology#StabiusWernerIIIProjection
 :StabiusWernerIIIProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:EqualAreaProjection ,
                                             geocrs:PolyconicProjection ;
                             rdfs:label "Stabius-Werner III projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection
+<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                                                                         dc:creator "Reinholds V. Putnins" ;
+                                                                         dc:date 1934 ;
+                                                                         geocrs:PROJidentifier "putp3p" ;
+                                                                         rdfs:label "Putnins P3' projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP4'Projection
+<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP4'Projection> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                                                                         dc:creator "Reinholds V. Putnins" ;
+                                                                         dc:date 1934 ;
+                                                                         geocrs:PROJidentifier "putp4p" ;
+                                                                         rdfs:label "Putnins P4' projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5'Projection
+<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5'Projection> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                                                                         dc:creator "Reinholds V. Putnins" ;
+                                                                         dc:date 1934 ;
+                                                                         geocrs:PROJidentifier "putp5p" ;
+                                                                         rdfs:label "Putnins P5' projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6'Projection
+<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6'Projection> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                                                         geocrs:PseudoCylindricalProjection ;
+                                                                         dc:creator "Reinholds V. Putnins" ;
+                                                                         dc:date 1934 ;
+                                                                         geocrs:PROJidentifier "putp6p" ;
+                                                                         rdfs:label "Putnins P6' projection" .
 
 
 #################################################################
