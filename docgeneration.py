@@ -2,8 +2,7 @@
 from rdflib import Graph
 from rdflib import URIRef, Literal, BNode
 from rdflib.plugins.sparql import prepareQuery
-import shapely.wkt
-import shapely.geometry
+import shapely
 import os
 import json
 import sys
@@ -753,7 +752,7 @@ function formatHTMLTableForResult(result,nodeicon){
             }
             dialogcontent+="</ul></td>"
         }else if((result[res][0]+"").startsWith("http")){
-            dialogcontent+="<td><a href=\\""+rewriteLink(result[res]+"")+"\\" target=\\"_blank\\">"+shortenURI(result[res]+"")+"</a></td>"
+            dialogcontent+="<td><a href=\\""+rewriteLink(result[res][0]+"")+"\\" target=\\"_blank\\">"+shortenURI(result[res][0]+"")+"</a></td>"
         }else{
             dialogcontent+="<td>"+result[res][0]+"</td>"
         }
@@ -1374,7 +1373,7 @@ class OntDocGeneration:
             f.write(stylesheet)
             f.close()
         with open(outpath + "startscripts.js", 'w', encoding='utf-8') as f:
-            f.write(startscripts)
+            f.write(startscripts.replace("{{baseurl}}",prefixnamespace))
             f.close()
         pathmap = {}
         paths = {}
