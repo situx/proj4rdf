@@ -1,1 +1,4 @@
 <http://www.opengis.net/ont/crs/areaofuse/UTM_zone_48S_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((108 -80, 108 0, 102 0, 102 -80, 108 -80))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_48S_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_48S_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 102°E and 108°E, southern hemisphere between 80°S and equator, onshore and offshore." .
+<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_48S_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 102°E and 108°E, southern hemisphere between 80°S and equator, onshore and offshore." .

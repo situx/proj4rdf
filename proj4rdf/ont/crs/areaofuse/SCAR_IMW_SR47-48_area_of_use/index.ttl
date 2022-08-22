@@ -1,1 +1,4 @@
 <http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SR47-48_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((108 -72, 108 -68, 96 -68, 96 -72, 108 -72))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SR47-48_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SR47-48_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica - 68°S to 72°S and 96°E to 108°E." .
+<http://www.opengis.net/ont/crs/areaofuse/SCAR_IMW_SR47-48_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctica - 68°S to 72°S and 96°E to 108°E." .
