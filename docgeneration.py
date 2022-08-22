@@ -22,6 +22,7 @@ labelproperties={
 
 collectionclasses=["http://www.opengis.net/ont/geosparql#FeatureCollection","http://www.opengis.net/ont/geosparql#GeometryCollection","http://www.opengis.net/ont/geosparql#SpatialObjectCollection","http://www.w3.org/2004/02/skos/core#Collection","http://www.w3.org/2004/02/skos/core#OrderedCollection","https://www.w3.org/ns/activitystreams#Collection","https://www.w3.org/ns/activitystreams#OrderedCollection"]
 
+geoliteraltypes=["http://www.opengis.net/ont/geosparql#wktLiteral","http://www.opengis.net/ont/geosparql#gmlLiteral","http://www.opengis.net/ont/geosparql#kmlLiteral","http://www.opengis.net/ont/geosparql#geoJSONLiteral","http://www.opengis.net/ont/geosparql#dggsLiteral"]
 
 collectionrelationproperties={
     "http://www.w3.org/2000/01/rdf-schema#member":"ObjectProperty",
@@ -1598,7 +1599,7 @@ class OntDocGeneration:
                         imageannos.add(str(svglit))
                     elif ("POINT" in str(svglit).upper() or "POLYGON" in str(svglit).upper() or "LINESTRING" in str(svglit).upper()):
                         image3dannos.add(str(svglit))
-            if geoprop and str(tup[0]) in geoproperties and isinstance(tup[1], Literal):
+            if isinstance(tup[1], Literal) and (str(tup[0]) in geoproperties or tup[1].datatype in geoliteraltypes):
                 geojsonrep = self.processLiteral(str(tup[1]), tup[1].datatype, "")
             if incollection and "<svg" in str(tup[1]):
                  foundmedia["image"].add(str(tup[1]))
@@ -1659,7 +1660,7 @@ class OntDocGeneration:
                         object).replace("<", "&lt").replace(">", "&gt;").replace("\"", "'") + "\" datatype=\"" + str(
                         object.datatype) + "\">" + objstring + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"" + str(
                         object.datatype) + "\">" + self.shortenURI(str(object.datatype)) + "</a>)</small></span>"
-                if str(pred) in geoproperties and isinstance(object,Literal):
+                if isinstance(object, Literal) and (str(pred) in geoproperties or object.datatype in geoliteraltypes):
                     geojsonrep = self.processLiteral(str(object), object.datatype, "")
             else:
                 if ttlf!=None:
@@ -1949,14 +1950,14 @@ class OntDocGeneration:
                 featcoll={"type":"FeatureCollection", "id":subject, "features":[]}
                 for memberid in graph.objects(subject,URIRef("http://www.w3.org/2000/01/rdf-schema#member")):
                     for geoinstance in graph.predicate_objects(memberid):
-                        geojsonrep=None
-                        if str(geoinstance[0]) in geoproperties and isinstance(geoinstance[1],Literal):
+                        geojsonrep=None                       
+                        if isinstance(geoinstance[1], Literal) and (str(geoinstance[0]) in geoproperties or geoinstance[1].datatype in geoliteraltypes):
                             geojsonrep = self.processLiteral(str(geoinstance[1]), geoinstance[1].datatype, "")
                             uritotreeitem[str(subject)]["type"] = "geocollection"
                         elif str(geoinstance[0]) in geopointerproperties:
                             uritotreeitem[str(subject)]["type"] = "featurecollection"
-                            for geotup in graph.predicate_objects(geoinstance[1]):
-                                if str(geotup[0]) in geoproperties and isinstance(geotup[1],Literal):
+                            for geotup in graph.predicate_objects(geoinstance[1]):             
+                                if isinstance(geotup[1], Literal) and (str(geotup[0]) in geoproperties or geotup[1].datatype in geoliteraltypes):
                                     geojsonrep = self.processLiteral(str(geotup[1]), geotup[1].datatype, "")
                         if geojsonrep!=None:
                             featcoll["features"].append({"type": "Feature", 'id':str(memberid), 'properties': {}, "geometry": geojsonrep})
