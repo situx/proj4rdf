@@ -425,7 +425,7 @@ function rewriteLink(thelink){
     console.log(rest)
     count=0
     if(!indexpage){
-        count=rest.split("/").length
+        count=rest.split("/").length-1
     }
     console.log(count)
     counter=0
