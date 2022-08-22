@@ -36,9 +36,11 @@ jobs:
          pylode -o srsapplicationvoc.html ../srs_application/srs_application.ttl
          cp ../index.html .
          cp ../projimggenerator.html .
+         mkdir projections/
+         cp ../resources/projections/* projections/
          cd ..
-         python3 docgeneration.py owl/result.ttl docs/proj4rdf/ http://www.opengis.net/ geocrs False
-         python3 docgeneration.py owl/result.ttl docs/proj4rdf/ http://www.opengis.net/ geoepsg False
+         python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geocrs False
+         python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geoepsg False
          cd docs
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
