@@ -3,5 +3,5 @@
 <http://www.opengis.net/ont/crs/GalacticCS> <http://www.w3.org/2000/01/rdf-schema#label> "galactic coordinate system" .
 <http://www.opengis.net/ont/crs/GalacticCS> <http://www.w3.org/2000/01/rdf-schema#label> "galactic coordinate system" .
 <http://www.opengis.net/ont/crs/GalacticCS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/3DCS> .
-<http://www.opengis.net/ont/crs/GalacticCS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CelestialCoordinateSystem> .
+<http://www.opengis.net/ont/crs/GalacticCS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CelestialCS> .
 <http://www.opengis.net/ont/crs/GalacticCS> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
