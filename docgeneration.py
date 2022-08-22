@@ -425,7 +425,7 @@ function rewriteLink(thelink){
     console.log(rest)
     count=0
     if(!indexpage){
-        count=rest.split("/").length
+        count=rest.split("/").length-1
     }
     console.log(count)
     counter=0
@@ -753,7 +753,7 @@ function formatHTMLTableForResult(result,nodeicon){
             }
             dialogcontent+="</ul></td>"
         }else if((result[res][0]+"").startsWith("http")){
-            dialogcontent+="<td><a href=\\""+rewriteLink(result[res]+"")+"\\" target=\\"_blank\\">"+shortenURI(result[res]+"")+"</a></td>"
+            dialogcontent+="<td><a href=\\""+rewriteLink(result[res][0]+"")+"\\" target=\\"_blank\\">"+shortenURI(result[res][0]+"")+"</a></td>"
         }else{
             dialogcontent+="<td>"+result[res][0]+"</td>"
         }
@@ -1281,7 +1281,7 @@ class OntDocGeneration:
         #prefixes["reversed"]["http://purl.org/suni/"] = "suni"
 
     def processLiteral(self,literal, literaltype, reproject,currentlayergeojson=None,triplestoreconf=None):     
-        print("Process literal: " + str(literal) + " --- " + str(literaltype))
+        #print("Process literal: " + str(literal) + " --- " + str(literaltype))
         if "wkt" in literaltype.lower(): 
             crsuri=""
             if "http" in literal:
@@ -1374,7 +1374,7 @@ class OntDocGeneration:
             f.write(stylesheet)
             f.close()
         with open(outpath + "startscripts.js", 'w', encoding='utf-8') as f:
-            f.write(startscripts)
+            f.write(startscripts.replace("{{baseurl}}",prefixnamespace))
             f.close()
         pathmap = {}
         paths = {}
@@ -1773,12 +1773,21 @@ class OntDocGeneration:
                 if len(predobjmap[tup])>1:
                     tablecontents+="<td class=\"wrapword\"><ul>"
                     for item in predobjmap[tup]:
+                        print("ISLITERALL?:: "+str(item))
+                        print("HASSVG!??:: "+str("<svg" in str(item)))
+                        print("HASHTTP??:: "+str("http" in str(item)))
                         if ("POINT" in str(item).upper() or "POLYGON" in str(item).upper() or "LINESTRING" in str(item).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
                             image3dannos.add(str(item))
                         elif "<svg" in str(item):
                             foundmedia["image"].add(str(item))
                         elif "http" in str(item):
-                            ext="."+''.join(filter(str.isalpha,str(item).split(".")[-1]))
+                            print("CHECKING FOR EXT....?:: "+str(item))
+                            if isinstance(item,Literal):
+                                print("LITERAL:: "+str(item))
+                                ext = "." + ''.join(filter(str.isalpha, str(item.value).split(".")[-1]))
+                            else:
+                                ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
+                            print("THE EXT:: "+str(ext))
                             if ext in fileextensionmap:
                                 foundmedia[fileextensionmap[ext]].add(str(item))
                         tablecontents+="<li>"
@@ -1793,12 +1802,20 @@ class OntDocGeneration:
                     tablecontents+="</ul></td>"
                 else:
                     tablecontents+="<td class=\"wrapword\">"
+                    print("ISLITERALL?:: "+str(predobjmap[tup]))
+                    print("HASSVG!??:: "+str("<svg" in str(predobjmap[tup])))
+                    print("HASHTTP??:: "+str("http" in str(predobjmap[tup])))
                     if ("POINT" in str(predobjmap[tup]).upper() or "POLYGON" in str(predobjmap[tup]).upper() or "LINESTRING" in str(predobjmap[tup]).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
                         image3dannos.add(str(predobjmap[tup][0]))
                     elif "<svg" in str(predobjmap[tup]):
                         foundmedia["image"].add(str(predobjmap[tup][0]))
                     elif "http" in str(predobjmap[tup]):
-                        ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup]).split(".")[-1]))
+                        print("CHECKING FOR EXT....?:: "+str(predobjmap[tup]))
+                        if isinstance(predobjmap[tup],Literal):
+                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0].value).split(".")[-1]))
+                        else:
+                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0]).split(".")[-1]))
+                        print("THE EXT....?:: "+str(ext))
                         if ext in fileextensionmap:
                             foundmedia[fileextensionmap[ext]].add(str(predobjmap[tup][0]))
                     res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, tablecontents, graph,
