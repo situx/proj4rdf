@@ -1,6 +1,9 @@
 <http://www.opengis.net/ont/crs/GS50Projection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/GS50Projection> <http://www.opengis.net/ont/crs/PROJidentifier> "gs50" .
 <http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/2000/01/rdf-schema#label> "gs50 projection" .
 <http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/2000/01/rdf-schema#label> "gs50 projection" .
 <http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/ConformalProjection> .
+<http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/2004/02/skos/core#definition> "A map projection that was developed by John Parr Snyder of the USGS in 1982. The GS50 projection provides a conformal projection suitable only for maps of the 50 United States" .
+<http://www.opengis.net/ont/crs/GS50Projection> <http://www.w3.org/2004/02/skos/core#definition> "A map projection that was developed by John Parr Snyder of the USGS in 1982. The GS50 projection provides a conformal projection suitable only for maps of the 50 United States" .
 <http://www.opengis.net/ont/crs/GS50Projection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

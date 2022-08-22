@@ -1,0 +1,11 @@
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.opengis.net/ont/crs/PROJidentifier> "fouc_s" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2000/01/rdf-schema#label> "foucaut sinusoidal projection" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2000/01/rdf-schema#label> "foucaut sinusoidal projection" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/EqualAreaProjection> .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PseudoCylindricalProjection> .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#altLabel> "Tobler Foucaut" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#definition> "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#definition> "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -1,4 +1,7 @@
+<http://www.opengis.net/ont/crs/TheTimesProjection> <http://purl.org/dc/elements/1.1/creator> "John Muir" .
+<http://www.opengis.net/ont/crs/TheTimesProjection> <http://purl.org/dc/elements/1.1/date> "1965" .
 <http://www.opengis.net/ont/crs/TheTimesProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/TheTimesProjection> <http://www.opengis.net/ont/crs/PROJidentifier> "times" .
 <http://www.opengis.net/ont/crs/TheTimesProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.opengis.net/ont/crs/TheTimesProjection> <http://www.w3.org/2000/01/rdf-schema#label> "the times projection" .
 <http://www.opengis.net/ont/crs/TheTimesProjection> <http://www.w3.org/2000/01/rdf-schema#label> "the times projection" .

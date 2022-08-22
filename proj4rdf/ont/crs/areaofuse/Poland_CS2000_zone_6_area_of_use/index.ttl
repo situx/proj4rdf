@@ -1,4 +1,6 @@
+<http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((19.5 49.39, 19.5 55.93, 16.5 55.93, 16.5 49.39, 19.5 49.39))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
 <http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
 <http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Poland - onshore and offshore between 16°30'E and 19°30'E." .
 <http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Poland - onshore and offshore between 16°30'E and 19°30'E." .
+<http://www.opengis.net/ont/crs/areaofuse/Poland_CS2000_zone_6_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

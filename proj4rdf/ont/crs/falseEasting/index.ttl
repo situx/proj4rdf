@@ -2,11 +2,6 @@
 <http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/crs/CoordinateOperation> .
 <http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#label> "False easting" .
-<http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#label> "false easting" .
 <http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#label> "False easting" .
-<http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#label> "false easting" .
 <http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2004/02/skos/core#definition> "A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient" .
-<http://www.opengis.net/ont/crs/falseEasting> <http://www.w3.org/2004/02/skos/core#definition> "A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient" .
 <http://www.opengis.net/ont/crs/falseEasting> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://www.opengis.net/ont/crs/ellipse> <http://www.opengis.net/ont/crs/geod/International1924> .
+<http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://www.opengis.net/ont/crs/ellipsoid> <http://www.opengis.net/ont/crs/geod/International1924> .
 <http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
 <http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Reseau_National_Belge_1950> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .

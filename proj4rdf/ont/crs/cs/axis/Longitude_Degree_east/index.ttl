@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://www.opengis.net/ont/crs/abbreviation> "lon"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://www.opengis.net/ont/crs/axisAbbrev> "lon"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://www.opengis.net/ont/crs/direction> <http://www.opengis.net/ont/crs/east> .
 <http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://www.opengis.net/ont/crs/unit> "Degree" .
 <http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> <http://www.opengis.net/ont/crs/unit_auth_code> ""^^<http://www.w3.org/2001/XMLSchema#string> .

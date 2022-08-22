@@ -1,9 +1,0 @@
-<http://www.opengis.net/ont/crs/primeMeridian> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/crs/Datum> .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2000/01/rdf-schema#label> "prime meridian" .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2000/01/rdf-schema#label> "prime meridian" .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/crs/PrimeMeridian> .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2004/02/skos/core#definition> "The prime meridian used by a geodetic datum" .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://www.w3.org/2004/02/skos/core#definition> "The prime meridian used by a geodetic datum" .
-<http://www.opengis.net/ont/crs/primeMeridian> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

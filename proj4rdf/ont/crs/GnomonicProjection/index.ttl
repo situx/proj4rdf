@@ -3,4 +3,6 @@
 <http://www.opengis.net/ont/crs/GnomonicProjection> <http://www.w3.org/2000/01/rdf-schema#label> "gnomonic projection" .
 <http://www.opengis.net/ont/crs/GnomonicProjection> <http://www.w3.org/2000/01/rdf-schema#label> "gnomonic projection" .
 <http://www.opengis.net/ont/crs/GnomonicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/AzimuthalProjection> .
+<http://www.opengis.net/ont/crs/GnomonicProjection> <http://www.w3.org/2004/02/skos/core#definition> "A map projection which displays all great circles as straight lines, resulting in any straight line segment on a gnomonic map showing a geodesic, the shortest route between the segment's two endpoints" .
+<http://www.opengis.net/ont/crs/GnomonicProjection> <http://www.w3.org/2004/02/skos/core#definition> "A map projection which displays all great circles as straight lines, resulting in any straight line segment on a gnomonic map showing a geodesic, the shortest route between the segment's two endpoints" .
 <http://www.opengis.net/ont/crs/GnomonicProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

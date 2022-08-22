@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://www.opengis.net/ont/crs/ellipse> <http://www.opengis.net/ont/crs/geod/WarOffice> .
+<http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://www.opengis.net/ont/crs/ellipsoid> <http://www.opengis.net/ont/crs/geod/WarOffice> .
 <http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
 <http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Sierra_Leone_Colony_1924> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
