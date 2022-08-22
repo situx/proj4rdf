@@ -1599,7 +1599,7 @@ class OntDocGeneration:
                         imageannos.add(str(svglit))
                     elif ("POINT" in str(svglit).upper() or "POLYGON" in str(svglit).upper() or "LINESTRING" in str(svglit).upper()):
                         image3dannos.add(str(svglit))
-            if isinstance(tup[1], Literal) and (str(tup[0]) in geoproperties or tup[1].datatype in geoliteraltypes):
+            if isinstance(tup[1], Literal) and (str(tup[0]) in geoproperties or str(tup[1].datatype) in geoliteraltypes):
                 geojsonrep = self.processLiteral(str(tup[1]), tup[1].datatype, "")
             if incollection and "<svg" in str(tup[1]):
                  foundmedia["image"].add(str(tup[1]))
@@ -1660,7 +1660,7 @@ class OntDocGeneration:
                         object).replace("<", "&lt").replace(">", "&gt;").replace("\"", "'") + "\" datatype=\"" + str(
                         object.datatype) + "\">" + objstring + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"" + str(
                         object.datatype) + "\">" + self.shortenURI(str(object.datatype)) + "</a>)</small></span>"
-                if isinstance(object, Literal) and (str(pred) in geoproperties or object.datatype in geoliteraltypes):
+                if isinstance(object, Literal) and (str(pred) in geoproperties or str(object.datatype) in geoliteraltypes):
                     geojsonrep = self.processLiteral(str(object), object.datatype, "")
             else:
                 if ttlf!=None:
@@ -1951,13 +1951,13 @@ class OntDocGeneration:
                 for memberid in graph.objects(subject,URIRef("http://www.w3.org/2000/01/rdf-schema#member")):
                     for geoinstance in graph.predicate_objects(memberid):
                         geojsonrep=None                       
-                        if isinstance(geoinstance[1], Literal) and (str(geoinstance[0]) in geoproperties or geoinstance[1].datatype in geoliteraltypes):
+                        if isinstance(geoinstance[1], Literal) and (str(geoinstance[0]) in geoproperties or str(geoinstance[1].datatype) in geoliteraltypes):
                             geojsonrep = self.processLiteral(str(geoinstance[1]), geoinstance[1].datatype, "")
                             uritotreeitem[str(subject)]["type"] = "geocollection"
                         elif str(geoinstance[0]) in geopointerproperties:
                             uritotreeitem[str(subject)]["type"] = "featurecollection"
                             for geotup in graph.predicate_objects(geoinstance[1]):             
-                                if isinstance(geotup[1], Literal) and (str(geotup[0]) in geoproperties or geotup[1].datatype in geoliteraltypes):
+                                if isinstance(geotup[1], Literal) and (str(geotup[0]) in geoproperties or str(geotup[1].datatype) in geoliteraltypes):
                                     geojsonrep = self.processLiteral(str(geotup[1]), geotup[1].datatype, "")
                         if geojsonrep!=None:
                             featcoll["features"].append({"type": "Feature", 'id':str(memberid), 'properties': {}, "geometry": geojsonrep})
@@ -1968,8 +1968,8 @@ class OntDocGeneration:
         return postprocessing
             
 prefixes={"reversed":{}}
-if os.path.exists('signlist/prefixes.json'):
-    with open('signlist/prefixes.json', encoding="utf-8") as f:
+if os.path.exists('prefixes.json'):
+    with open('prefixes.json', encoding="utf-8") as f:
         prefixes = json.load(f)
    
 prefixes["reversed"]["http://purl.org/cuneiform/"]="cunei"
