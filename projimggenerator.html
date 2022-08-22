@@ -152,7 +152,40 @@ function saveTextAsFile(tosave,fileext){
 }
 
 function saveSVG(){
-	saveTextAsFile(tempsvg,"svg")
+	saveTextAsFile(setSVGDimensions(tempsvg),"svg")
+}
+
+function setSVGDimensions(mysvgstr){
+	var parser = new DOMParser();
+	var mysvg = parser.parseFromString(mysvgstr, "image/svg+xml"); 
+	console.log(obj)
+	maxx=Number.MIN_VALUE
+	maxy=Number.MIN_VALUE
+	minx=Number.MAX_VALUE
+	miny=Number.MAX_VALUE
+	var children=mysvg.children
+	for (var i = 0; i < children.length; i++) {
+		svgbbox=children[i].getBBOX()
+		console.log(svgbbox)
+		if(svgbbox.x+svgbbox.width>maxx){
+			maxx=svgbbox.x+svgbbox.width
+		}
+		if(svgbbox.y+svgbbox.height>maxy){
+			maxy=svgbbox.y+svgbbox.height
+		}
+		if(svgbbox.y<miny){
+			miny=svgbbox.y
+		}
+		if(svgbbox.x<minx){
+			minx=svgbbox.x
+		}
+	}
+	console.log(""+(minx)+" "+(miny-(maxy-miny))+" "+((maxx-minx)+25)+" "+((maxy-miny)+25))
+    newviewport=""+((minx))+" "+(miny)+" "+((maxx-minx)+25)+" "+((maxy-miny)+25)
+	mysvg.setAttribute("viewBox",newviewport)
+	mysvg.setAttribute("width",((maxx-minx))+10)
+	mysvg.setAttribute("height",((maxy-miny)+10))
+	return mysvg.innerHTML
 }
 
 function generateImage(){
@@ -187,7 +220,7 @@ function generateImage(){
 	  
 	  geoGenerator(geojson)
 	  svg.stroke()
-	  tempsvg="<svg><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
+	  tempsvg="<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
 	  console.log(tempsvg)
 	  document.getElementById("amountofproj").innerHTML=Object.keys(projections).length
 	})
