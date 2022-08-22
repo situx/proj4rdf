@@ -1779,7 +1779,8 @@ class OntDocGeneration:
                             foundmedia["image"].add(str(item))
                         elif "http" in str(item):
                             if isinstance(item,Literal):
-                                ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))
+                                print("LITERAL: "+str(item))
+                                ext = "." + ''.join(filter(str.isalpha, str(item.value).split(".")[-1]))
                             else:
                                 ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
                             if ext in fileextensionmap:
@@ -1802,6 +1803,7 @@ class OntDocGeneration:
                         foundmedia["image"].add(str(predobjmap[tup][0]))
                     elif "http" in str(predobjmap[tup]):
                         if isinstance(predobjmap[tup],Literal):
+                            print("LITERAL: "+str(predobjmap[tup]))
                             ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup].value).split(".")[-1]))
                         else:
                             ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup]).split(".")[-1]))
