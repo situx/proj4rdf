@@ -1781,12 +1781,13 @@ class OntDocGeneration:
                         elif "<svg" in str(item):
                             foundmedia["image"].add(str(item))
                         elif "http" in str(item):
+                            print("CHECKING FOR EXT....?:: "+str(item))
                             if isinstance(item,Literal):
                                 print("LITERAL:: "+str(item))
                                 ext = "." + ''.join(filter(str.isalpha, str(item.value).split(".")[-1]))
                             else:
                                 ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
-                            print("EXT:: "+str(ext))
+                            print("THE EXT:: "+str(ext))
                             if ext in fileextensionmap:
                                 foundmedia[fileextensionmap[ext]].add(str(item))
                         tablecontents+="<li>"
@@ -1809,10 +1810,12 @@ class OntDocGeneration:
                     elif "<svg" in str(predobjmap[tup]):
                         foundmedia["image"].add(str(predobjmap[tup][0]))
                     elif "http" in str(predobjmap[tup]):
+                        print("CHECKING FOR EXT....?:: "+str(predobjmap[tup]))
                         if isinstance(predobjmap[tup],Literal):
                             ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0].value).split(".")[-1]))
                         else:
                             ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0]).split(".")[-1]))
+                        print("THE EXT....?:: "+str(ext))
                         if ext in fileextensionmap:
                             foundmedia[fileextensionmap[ext]].add(str(predobjmap[tup][0]))
                     res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, tablecontents, graph,
