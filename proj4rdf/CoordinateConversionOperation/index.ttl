@@ -3,4 +3,3 @@
 <http://www.opengis.net/ont/crs/CoordinateConversionOperation> <http://www.w3.org/2000/01/rdf-schema#label> "coordinate conversion operation" .
 <http://www.opengis.net/ont/crs/CoordinateConversionOperation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/SingleOperation> .
 <http://www.opengis.net/ont/crs/CoordinateConversionOperation> <http://www.w3.org/2004/02/skos/core#definition> "Coordinate operation in which both coordinate reference systems are based on the same datum" .
-<http://www.opengis.net/ont/crs/CoordinateConversionOperation> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

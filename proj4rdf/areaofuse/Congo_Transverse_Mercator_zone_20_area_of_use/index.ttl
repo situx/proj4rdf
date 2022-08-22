@@ -1,4 +1,1 @@
 <http://www.opengis.net/ont/crs/areaofuse/Congo_Transverse_Mercator_zone_20_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((21.01 -8, 21.01 5.16, 18.99 5.16, 18.99 -8, 21.01 -8))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/Congo_Transverse_Mercator_zone_20_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/Congo_Transverse_Mercator_zone_20_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "The Democratic Republic of the Congo (Zaire) - between 19°E to 21°E." .
-<http://www.opengis.net/ont/crs/areaofuse/Congo_Transverse_Mercator_zone_20_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

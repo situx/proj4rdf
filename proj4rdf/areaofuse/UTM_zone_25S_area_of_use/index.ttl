@@ -1,4 +1,1 @@
 <http://www.opengis.net/ont/crs/areaofuse/UTM_zone_25S_area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((-30 -80, -30 0, -36 0, -36 -80, -30 -80))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
-<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_25S_area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_25S_area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "Between 36°W and 30°W, southern hemisphere between 80°S and equator, onshore and offshore." .
-<http://www.opengis.net/ont/crs/areaofuse/UTM_zone_25S_area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -3,4 +3,3 @@
 <http://www.opengis.net/ont/crs/StereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/AzimuthalProjection> .
 <http://www.opengis.net/ont/crs/StereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/ConformalProjection> .
 <http://www.opengis.net/ont/crs/StereographicProjection> <http://www.w3.org/2004/02/skos/core#definition> "A projection which can be constructed using the tangent's points antipoide as the point of perspective" .
-<http://www.opengis.net/ont/crs/StereographicProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

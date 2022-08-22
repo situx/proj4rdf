@@ -2,4 +2,3 @@
 <http://www.opengis.net/ont/crs/CassiniProjection> <http://www.w3.org/2000/01/rdf-schema#label> "cassini projection" .
 <http://www.opengis.net/ont/crs/CassiniProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CylindricalProjection> .
 <http://www.opengis.net/ont/crs/CassiniProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/EquidistantProjection> .
-<http://www.opengis.net/ont/crs/CassiniProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

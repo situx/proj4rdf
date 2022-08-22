@@ -2,4 +2,3 @@
 <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#label> "oblique stereographic projection" .
 <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CylindricalProjection> .
 <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/ObliqueProjection> .
-<http://www.opengis.net/ont/crs/ObliqueStereographicProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
