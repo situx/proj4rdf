@@ -129,7 +129,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:method_name \""+str(curcrs.coordinate_operation.method_name)+"\" . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\" . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geo:wktLiteral . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
 		if curcrs.coordinate_operation.scope!=None:
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:scope \""+str(curcrs.coordinate_operation.scope).replace("\"","'")+"\"^^xsd:string . \n")
 		if curcrs.coordinate_operation.remarks!=None:
@@ -458,7 +458,7 @@ projections["mbtfpq"]="geocrs:McBrydeThomasFlatPolarQuarticProjection"
 projections["mbtfps"]="geocrs:McBrydeThomasFlatPolarSinusoidalProjection"
 projections["merc"]="geocrs:MercatorProjection"
 projections["mill"]="geocrs:MillerProjection"
-proejctions["mil_os"]="geocrs:MillerOblatedStereographicProjection"
+projections["mil_os"]="geocrs:MillerOblatedStereographicProjection"
 projections["murd1"]="geocrs:MurdochIProjection"
 projections["murd2"]="geocrs:MurdochIIProjection"
 projections["murd3"]="geocrs:MurdochIIIProjection"
@@ -586,8 +586,8 @@ ttlnoniso=set()
 ttldata=set()
 ttlprojectionvocab=Graph()
 ttlprojectionvocab.parse("projection_vocabulary/projection_vocabulary.ttl")
-planetvocab=Graph()
-planetvocab.parse("planet_vocabulary/planet_vocabulary.ttl")
+ttlplanetvocab=Graph()
+ttlplanetvocab.parse("planet_vocabulary/planet_vocabulary.ttl")
 srsapplication=Graph()
 srsapplication.parse("srs_application/srs_application.ttl")
 csvocab=Graph()
@@ -648,18 +648,6 @@ ttl.add("geocrs:CoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:CoordinateSystem rdfs:label \"coordinate system\"@en .\n")
 ttl.add("geocrs:CoordinateSystem skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space\"@en .\n")
 ttl.add("geocrs:CoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
-csvocab.add("geocrs:PlanarCS rdf:type owl:Class .\n")
-csvocab.add("geocrs:PlanarCS rdfs:label \"planar coordinate system\"@en .\n")
-csvocab.add("geocrs:PlanarCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
-csvocab.add("geocrs:PlanarCS skos:definition \"A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes\"@en .\n")
-csvocab.add("geocrs:3DCS rdf:type owl:Class .\n")
-csvocab.add("geocrs:3DCS rdfs:label \"3D coordinate system\"@en .\n")
-csvocab.add("geocrs:3DCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
-csvocab.add("geocrs:3DCS skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions\"@en .\n")
-csvocab.add("geocrs:1DCS rdf:type owl:Class .\n")
-csvocab.add("geocrs:1DCS rdfs:label \"1D coordinate system\"@en .\n")
-csvocab.add("geocrs:1DCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
-csvocab.add("geocrs:1DCS skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension\"@en .\n")
 ttl.add("geocrs:StereographicCS rdf:type owl:Class .\n")
 ttl.add("geocrs:StereographicCS rdfs:label \"stereographic coordinate system\"@en .\n")
 ttl.add("geocrs:StereographicCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
@@ -1317,6 +1305,9 @@ graph+=csvocab
 graph.serialize(destination='owl/ontology_noniso.ttl', format='turtle')
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttlnoniso), format='turtle')
+graph+=ttlprojectionvocab
+graph+=ttlplanetvocab
+graph+=csvocab
 graph.parse("iso_changed_srsnamespace.ttl",format='turtle')
 graph.serialize(destination='owl/ontology_isobased.ttl', format='turtle')
 
@@ -1339,9 +1330,15 @@ f.write(ttlhead+"".join(ttl)+"".join(ttldata))
 f.close()
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttl)+"".join(ttldata), format='n3')
+graph2+=ttlprojectionvocab
+graph2+=ttlplanetvocab
+graph2+=csvocab
 graph2.serialize(destination='owl/result.ttl', format='turtle')
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttlnoniso)+"".join(ttldata), format='n3')
+graph2+=ttlprojectionvocab
+graph2+=ttlplanetvocab
+graph2+=csvocab
 graph2.parse("iso_changed_srsnamespace.ttl",format='turtle')
 graph2.serialize(destination='owl/result_iso.ttl', format='turtle')
 ttldata=set()
