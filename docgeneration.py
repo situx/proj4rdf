@@ -1778,7 +1778,10 @@ class OntDocGeneration:
                         elif "<svg" in str(item):
                             foundmedia["image"].add(str(item))
                         elif "http" in str(item):
-                            ext="."+''.join(filter(str.isalpha,str(item).split(".")[-1]))
+                            if isinstance(item,Literal):
+                                ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))
+                            else:
+                                ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
                             if ext in fileextensionmap:
                                 foundmedia[fileextensionmap[ext]].add(str(item))
                         tablecontents+="<li>"
@@ -1798,7 +1801,10 @@ class OntDocGeneration:
                     elif "<svg" in str(predobjmap[tup]):
                         foundmedia["image"].add(str(predobjmap[tup][0]))
                     elif "http" in str(predobjmap[tup]):
-                        ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup]).split(".")[-1]))
+                        if isinstance(predobjmap[tup],Literal):
+                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup].value).split(".")[-1]))
+                        else:
+                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup]).split(".")[-1]))
                         if ext in fileextensionmap:
                             foundmedia[fileextensionmap[ext]].add(str(predobjmap[tup][0]))
                     res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, tablecontents, graph,
