@@ -17,7 +17,7 @@ jobs:
          sudo apt-get install python-dev python3-pip -y
          sudo apt-get install doxygen graphviz -y
          sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
-         sudo pip3 install wheel pylode rdflib geodaisy
+         sudo pip3 install wheel pylode rdflib shapely
          cd docs
          doxygen Doxyfile
          pylode -o proj4rdfextracted.html ../owl/ontology.ttl
