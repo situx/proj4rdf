@@ -1,53 +1,107 @@
-@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@prefix : <http://www.opengis.net/ont/crs/CSExtensionOntology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geocrs: <http://www.opengis.net/ont/crs/> .
+@base <http://www.opengis.net/ont/crs/CSExtensionOntology> .
 
-geocrs:1DCS a owl:Class ;
-    rdfs:label "1D coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem ;
-    skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension"@en .
+<http://www.opengis.net/ont/crs/CSExtensionOntology> rdf:type owl:Ontology ;
+                                                      rdfs:label "CS Extension Ontology" .
 
-geocrs:3DCS a owl:Class ;
-    rdfs:label "3D coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem ;
-    skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions"@en .
+#################################################################
+#    Annotation properties
+#################################################################
 
-geocrs:CSExtensionOntology a owl:Ontology ;
-    rdfs:label "CS Extension Ontology" .
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
 
-geocrs:ConicalCoordinateSystem a owl:Class ;
-    rdfs:label "conical coordinate system"@en ;
-    rdfs:subClassOf geocrs:3DCoordinateSystem,
-        geocrs:OrthogonalCoordinateSystem ;
-    skos:definition "An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively"@en .
 
-geocrs:HexagonalCS a owl:Class ;
-    rdfs:label "hexagonal coordinate system"@en ;
-    rdfs:subClassOf geocrs:GridCS ;
-    skos:definition "A hexagonal coordinate system describes areas with a hexagonal lattice"@en .
+#################################################################
+#    Classes
+#################################################################
 
-geocrs:HomogeneousCoordinateSystem a owl:Class ;
-    rdfs:label "homogeneous coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem .
+###  http://www.opengis.net/ont/crs/ConicalCoordinateSystem
+geocrs:ConicalCoordinateSystem rdf:type owl:Class ;
+                               rdfs:subClassOf geocrs:OrthogonalCoordinateSystem ,
+                                               <http://www.opengis.net/ont/crs/3DCS> ;
+                               rdfs:label "conical coordinate system"@en ;
+                               skos:definition "An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively"@en .
 
-geocrs:PerifocalCS a owl:Class ;
-    rdfs:label "perifocal coordinate system"@en .
 
-geocrs:PerifocalCoordinateSystem rdfs:subClassOf geocrs:CS .
+###  http://www.opengis.net/ont/crs/CoordinateSystem
+geocrs:CoordinateSystem rdf:type owl:Class .
 
-geocrs:PlanarCS a owl:Class ;
-    rdfs:label "planar coordinate system"@en ;
-    rdfs:subClassOf geocrs:CoordinateSystem ;
-    skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
 
-geocrs:SkewCoordinateSystem a owl:Class ;
-    rdfs:label "skew coordinate system"@en ;
-    rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
-    skos:definition "A skew coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at angles other than right angles"@en .
+###  http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem
+geocrs:CurvilinearCoordinateSystem rdf:type owl:Class ;
+                                   rdfs:subClassOf geocrs:CoordinateSystem .
 
-geocrs:OrthogonalCoordinateSystem a owl:Class ;
-    rdfs:label "orthogonal coordinate system"@en ;
-    rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
-    skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
 
+###  http://www.opengis.net/ont/crs/GridCS
+geocrs:GridCS rdf:type owl:Class ;
+              rdfs:subClassOf geocrs:CoordinateSystem .
+
+
+###  http://www.opengis.net/ont/crs/HexagonalCS
+geocrs:HexagonalCS rdf:type owl:Class ;
+                   rdfs:subClassOf geocrs:GridCS ;
+                   rdfs:label "hexagonal coordinate system"@en ;
+                   skos:definition "A hexagonal coordinate system describes areas with a hexagonal lattice"@en .
+
+
+###  http://www.opengis.net/ont/crs/HomogeneousCoordinateSystem
+geocrs:HomogeneousCoordinateSystem rdf:type owl:Class ;
+                                   rdfs:subClassOf geocrs:CoordinateSystem ;
+                                   rdfs:label "homogeneous coordinate system"@en .
+
+
+###  http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem
+geocrs:OrthogonalCoordinateSystem rdf:type owl:Class ;
+                                  rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
+                                  rdfs:label "orthogonal coordinate system"@en ;
+                                  skos:definition "An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles"@en .
+
+
+###  http://www.opengis.net/ont/crs/PerifocalCS
+geocrs:PerifocalCS rdf:type owl:Class ;
+                   rdfs:subClassOf geocrs:CoordinateSystem ;
+                   rdfs:label "perifocal coordinate system"@en .
+
+
+###  http://www.opengis.net/ont/crs/PerifocalCoordinateSystem
+geocrs:PerifocalCoordinateSystem rdf:type owl:Class ;
+                                 rdfs:subClassOf geocrs:CoordinateSystem .
+
+
+###  http://www.opengis.net/ont/crs/PlanarCS
+geocrs:PlanarCS rdf:type owl:Class ;
+                rdfs:subClassOf geocrs:CoordinateSystem ;
+                rdfs:label "planar coordinate system"@en ;
+                skos:definition "A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes"@en .
+
+
+###  http://www.opengis.net/ont/crs/SkewCoordinateSystem
+geocrs:SkewCoordinateSystem rdf:type owl:Class ;
+                            rdfs:subClassOf geocrs:CurvilinearCoordinateSystem ;
+                            rdfs:label "skew coordinate system"@en ;
+                            skos:definition "A skew coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at angles other than right angles"@en .
+
+
+###  http://www.opengis.net/ont/crs/1DCS
+<http://www.opengis.net/ont/crs/1DCS> rdf:type owl:Class ;
+                                      rdfs:subClassOf geocrs:CoordinateSystem ;
+                                      rdfs:label "1D coordinate system"@en ;
+                                      skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension"@en .
+
+
+###  http://www.opengis.net/ont/crs/3DCS
+<http://www.opengis.net/ont/crs/3DCS> rdf:type owl:Class ;
+                                      rdfs:subClassOf geocrs:CoordinateSystem ;
+                                      rdfs:label "3D coordinate system"@en ;
+                                      skos:definition "non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

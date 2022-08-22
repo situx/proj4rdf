@@ -4,6 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas2svg@1.0.16/canvas2svg.min.js"></script>
 <script>
 var namespace="http://www.opengis.net/ont/crs/"
 var tempsvg=""
@@ -131,12 +132,9 @@ var projections={
 	"http://www.opengis.net/ont/crs/WagnerVIIIProjection": d3.geoWagner(),
 	"http://www.opengis.net/ont/crs/WatermanButterflyProjection": d3.geoPolyhedralWaterman(),
 	"http://www.opengis.net/ont/crs/WiechelProjection": d3.geoWiechel(),
-	"http://www.opengis.net/ont/crs/WinkelTripelProjection": d3.geoWinkel3()
-	
-	
-	
+	"http://www.opengis.net/ont/crs/WinkelTripelProjection": d3.geoWinkel3()	
 }
-
+var tempsvg
 function saveTextAsFile(tosave,fileext){
     var a = document.createElement('a');
     a.style = "display: none";  
@@ -160,17 +158,23 @@ function saveSVG(){
 function generateImage(){
 	projtype=document.getElementById('projselect').value
     var width = 1200;
-    var height = 700;
+    var height = 800;
     document.getElementById("projectionview").innerHTML="<canvas width=\""+width+"\" height=\""+height+"\" id=\"svgcanvas\"></canvas>"
 	projection = projections[projtype]
 	
-    var svg = d3.select("#svgcanvas").node().getContext('2d');
-	//var svg = d3.select("projectionview").append("svg")
+    svg = d3.select("#svgcanvas").node().getContext('2d');
+	var svgcontent = d3.select("projectionview2").append("svg")
+	var path = d3.geo.path()
+      .projection(projection);
 	var geoGenerator = d3.geoPath().projection(projection).context(svg);
-    console.log(projtype)
-	
+    console.log(projtype)	
 	console.log(projection)
-	var graticule = d3.geoGraticule();
+		var graticule = d3.geoGraticule();
+	var lines = svgcontent.selectAll('path.graticule').data([graticule()]);
+    lines.enter().append('path').classed('graticule', true);
+    lines.attr('d', path);
+    lines.exit().remove();
+
     svg.beginPath();
     svg.strokeStyle = '#ccc';
     geoGenerator(graticule());
@@ -180,12 +184,13 @@ function generateImage(){
 	  svg.beginPath();
 	  svg.strokeStyle = 'black';
 	  svg.fill = 'black';
+	  
 	  geoGenerator(geojson)
 	  svg.stroke()
-	  //document.getElementById("projectionview").innerHTML="<svg><path d=\""+path(d3.geoGraticule10())+"\"><path d=\""+path(geojson)+"\"></svg>"
-	  //tempsvg="<svg><path d=\""+path(d3.geoGraticule10())+"\"><path d=\""+path(geojson)+"\"></svg>"
-    })
-	document.getElementById("amountofproj").innerHTML=Object.keys(projections).length
+	  tempsvg="<svg><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
+	  console.log(tempsvg)
+	  document.getElementById("amountofproj").innerHTML=Object.keys(projections).length
+	})
 }
 </script>
 <style>
@@ -322,7 +327,8 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/WinkelTripelProjection">Winkel Tripel Projection</option>
 </select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
 
-<div id="projectionview"></div>
+<div id="projectionview"></div><br/>Hello
+<div id="projectionview2"></div>
 <script>
 generateImage()
 </script>

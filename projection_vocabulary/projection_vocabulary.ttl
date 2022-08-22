@@ -487,7 +487,14 @@ geocrs:ConicalProjection rdf:type owl:Class ;
 
 
 ###  http://www.opengis.net/ont/crs/Conversion
-geocrs:Conversion rdf:type owl:Class .
+geocrs:Conversion rdf:type owl:Class ;
+                  rdfs:subClassOf geocrs:CoordinateOperation ;
+                  rdfs:label "conversion" .
+
+
+###  http://www.opengis.net/ont/crs/CoordinateOperation
+geocrs:CoordinateOperation rdf:type owl:Class ;
+                           rdfs:label "coordinate operation" .
 
 
 ###  http://www.opengis.net/ont/crs/CordiformProjection
@@ -2257,8 +2264,8 @@ geocrs:EquirectangularProjection rdfs:label "equirectangular projection"@en .
 
 geocrs:MollweideProjection dc:creator "Karl Brandan Mollweide" ;
                            rdfs:label "mollweide projection"@en ;
-                           geocrs:PROJidentifier "moll" ;
                            skos:altLabel "Babinet projection"@en ;
+                           geocrs:PROJidentifier "moll" ;
                            dc:date "1805" .
 
 
