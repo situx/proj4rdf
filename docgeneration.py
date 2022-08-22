@@ -1774,6 +1774,7 @@ class OntDocGeneration:
                     tablecontents+="<td class=\"wrapword\"><ul>"
                     for item in predobjmap[tup]:
                         print("ISLITERALL?:: "+str(item))
+                        print("HASSVG!??:: "+str("<svg" in str(item)))
                         print("HASHTTP??:: "+str("http" in str(item)))
                         if ("POINT" in str(item).upper() or "POLYGON" in str(item).upper() or "LINESTRING" in str(item).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
                             image3dannos.add(str(item))
@@ -1801,6 +1802,7 @@ class OntDocGeneration:
                 else:
                     tablecontents+="<td class=\"wrapword\">"
                     print("ISLITERALL?:: "+str(predobjmap[tup]))
+                    print("HASSVG!??:: "+str("<svg" in str(predobjmap[tup])))
                     print("HASHTTP??:: "+str("http" in str(predobjmap[tup])))
                     if ("POINT" in str(predobjmap[tup]).upper() or "POLYGON" in str(predobjmap[tup]).upper() or "LINESTRING" in str(predobjmap[tup]).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
                         image3dannos.add(str(predobjmap[tup][0]))
