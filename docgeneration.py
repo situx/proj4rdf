@@ -3,7 +3,7 @@ from rdflib import Graph
 from rdflib import URIRef, Literal, BNode
 from rdflib.plugins.sparql import prepareQuery
 import shapely.wkt
-import shapely.geometry.mapping
+import shapely.geometry
 import os
 import json
 import sys
