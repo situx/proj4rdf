@@ -1,0 +1,6 @@
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://www.opengis.net/ont/crs/asProjJSON> "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'CoordinateSystem','subtype':'vertical','axis':[{'name':'Gravity-related height','abbreviation':'H','direction':'up','unit':'metre'}],'id':{'authority':'EPSG','code':6499}}" .
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://www.opengis.net/ont/crs/asWKT> "CS[vertical,1],AXIS['gravity-related height (H)',up,LENGTHUNIT['metre',1,ID['EPSG',9001]]]" .
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://www.opengis.net/ont/crs/axis> <http://www.opengis.net/ont/crs/cs/axis/Gravity-related_height_metre_up> .
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalCoordinateSystem> .
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://www.w3.org/2000/01/rdf-schema#label> "EPSG:7979 CS: vertical" .
+<http://www.opengis.net/def/crs/EPSG/0/7979_cs> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
