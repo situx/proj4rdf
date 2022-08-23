@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
@@ -153,19 +154,18 @@ function saveTextAsFile(tosave,fileext){
 
 function saveSVG(){
 	saveTextAsFile(setSVGDimensions(tempsvg),"svg")
+	$('#projectionview2').html("")
 }
 
-function setSVGDimensions(mysvgstr){
-	var parser = new DOMParser();
-	var mysvg = parser.parseFromString(mysvgstr, "image/svg+xml"); 
-	console.log(obj)
+function setSVGDimensions(obj){
 	maxx=Number.MIN_VALUE
 	maxy=Number.MIN_VALUE
 	minx=Number.MAX_VALUE
 	miny=Number.MAX_VALUE
-	var children=mysvg.children
-	for (var i = 0; i < children.length; i++) {
-		svgbbox=children[i].getBBOX()
+	$('#projectionview2').html(obj)
+	$('#projectionview2').children().each(function(i){
+		console.log($(this)[0])
+		svgbbox=$(this)[0].getBBox()
 		console.log(svgbbox)
 		if(svgbbox.x+svgbbox.width>maxx){
 			maxx=svgbbox.x+svgbbox.width
@@ -179,13 +179,10 @@ function setSVGDimensions(mysvgstr){
 		if(svgbbox.x<minx){
 			minx=svgbbox.x
 		}
-	}
+	});
 	console.log(""+(minx)+" "+(miny-(maxy-miny))+" "+((maxx-minx)+25)+" "+((maxy-miny)+25))
-    newviewport=""+((minx))+" "+(miny)+" "+((maxx-minx)+25)+" "+((maxy-miny)+25)
-	mysvg.setAttribute("viewBox",newviewport)
-	mysvg.setAttribute("width",((maxx-minx))+10)
-	mysvg.setAttribute("height",((maxy-miny)+10))
-	return mysvg.innerHTML
+	newviewport=""+((minx))+" "+(miny)+" "+((maxx-minx)+25)+" "+((maxy-miny)+25)
+	return "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\""+newviewport+"\" width=\""+((maxx-minx)+10)+"\" height=\""+((maxy-miny)+10)+"\">"+$('#projectionview2').children().first().html()+"</svg>"
 }
 
 function generateImage(){
