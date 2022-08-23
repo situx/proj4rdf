@@ -139,7 +139,8 @@ geocrs:AlbersEqualAreaProjection rdf:type owl:Class ;
                                  dc:date "1805" ;
                                  geocrs:PROJidentifier "aea" ;
                                  rdfs:label "albers equal-area projection"@en ;
-                                 skos:definition "a conic, equal area map projection that uses two standard parallels"@en .
+                                 skos:definition "a conic, equal area map projection that uses two standard parallels"@en ;
+                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AlbersEqualAreaProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/AmericanPolyconicProjection
@@ -182,7 +183,8 @@ geocrs:ArmadilloProjection rdf:type owl:Class ;
                            dc:creator "Erwin J. Raisz" ;
                            dc:date "1943" ;
                            rdfs:label "armadillo projection"@en ;
-                           skos:altLabel "Raisz projection"@en .
+                           skos:altLabel "Raisz projection"@en ;
+                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/ArmadilloProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/AtlantisProjection
@@ -191,7 +193,8 @@ geocrs:AtlantisProjection rdf:type owl:Class ;
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "John Bartholomew" ;
                           dc:date 1948 ;
-                          rdfs:label "atlantis projection"@en .
+                          rdfs:label "atlantis projection"@en ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AtlantisProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/AugustEpicycloidalProjection
@@ -214,7 +217,8 @@ geocrs:AuthaGraphProjection rdf:type owl:Class ;
 geocrs:AzimuthalEqualAreaProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:AzimuthalProjection ,
                                                     geocrs:EqualAreaProjection ;
-                                    rdfs:label "Azimuthal Equal-Area projection" .
+                                    rdfs:label "Azimuthal Equal-Area projection" ;
+                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AzimuthalEqualAreaProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection
@@ -222,7 +226,8 @@ geocrs:AzimuthalEquidistantProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:AzimuthalProjection ,
                                                       geocrs:EquidistantProjection ;
                                       geocrs:PROJidentifier "aeqd" ;
-                                      rdfs:label "azimuthal equidistant projection"@en .
+                                      rdfs:label "azimuthal equidistant projection"@en ;
+                                      <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AzimuthalEquidistantProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/AzimuthalProjection
@@ -235,7 +240,8 @@ geocrs:AzimuthalProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/BSAMCylindricalProjection
 geocrs:BSAMCylindricalProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:CylindricalStereographicProjection ;
-                                 rdfs:label "BSAM cylindrical projection" .
+                                 rdfs:label "BSAM cylindrical projection" ;
+                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BSAMCylindricalProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/BaconGlobularProjection
@@ -307,7 +313,8 @@ geocrs:BehrmannProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/BerghausStarProjection
 geocrs:BerghausStarProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:EquidistantProjection ;
-                              rdfs:label "berghaus star projection"@en .
+                              rdfs:label "berghaus star projection"@en ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BerghausStarProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/BertinProjection
@@ -331,7 +338,8 @@ geocrs:BoggsEumorphicProjection rdf:type owl:Class ;
                                 dc:creator "Samuel Whittemore Boggs" ;
                                 dc:date 1929 ;
                                 geocrs:PROJidentifier "boggs" ;
-                                rdfs:label "boggs eumorphic projection"@en .
+                                rdfs:label "boggs eumorphic projection"@en ;
+                                <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BoggsEumorphicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/BonneProjection
@@ -367,7 +375,8 @@ geocrs:BraunStereographicProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:CylindricalStereographicProjection ;
                                     dc:creator "Carl Braun" ;
                                     dc:date 1867 ;
-                                    rdfs:label "Braun stereographic projection" .
+                                    rdfs:label "Braun stereographic projection" ;
+                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BraunStereographicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/BreusingGeometricProjection
@@ -390,7 +399,8 @@ geocrs:BreusingHarmonicProjection rdf:type owl:Class ;
 geocrs:BriesemeisterProjection rdf:type owl:Class ;
                                rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                geocrs:LenticularProjection ;
-                               rdfs:label "briesemeister projection"@en .
+                               rdfs:label "briesemeister projection"@en ;
+                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BriesemeisterProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/BromleyProjection
@@ -624,7 +634,8 @@ geocrs:Eckert1Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck1" ;
-                         rdfs:label "Eckert I projection"@en .
+                         rdfs:label "Eckert I projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert1Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Eckert2Projection
@@ -634,7 +645,8 @@ geocrs:Eckert2Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck2" ;
-                         rdfs:label "Eckert II projection"@en .
+                         rdfs:label "Eckert II projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert2Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Eckert3Projection
@@ -644,7 +656,8 @@ geocrs:Eckert3Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck3" ;
-                         rdfs:label "Eckert III projection"@en .
+                         rdfs:label "Eckert III projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert3Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Eckert4Projection
@@ -654,7 +667,8 @@ geocrs:Eckert4Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck4" ;
-                         rdfs:label "Eckert IV projection"@en .
+                         rdfs:label "Eckert IV projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert4Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Eckert5Projection
@@ -664,7 +678,8 @@ geocrs:Eckert5Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck5" ;
-                         rdfs:label "Eckert V projection"@en .
+                         rdfs:label "Eckert V projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert5Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Eckert6Projection
@@ -674,7 +689,8 @@ geocrs:Eckert6Projection rdf:type owl:Class ;
                          dc:creator "Max Eckert-Greifendorff" ;
                          dc:date "1906" ;
                          geocrs:PROJidentifier "eck6" ;
-                         rdfs:label "Eckert VI projection"@en .
+                         rdfs:label "Eckert VI projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert6Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/EisenlohrProjection
@@ -712,7 +728,8 @@ geocrs:EquidistantConicProjection rdf:type owl:Class ;
                                   rdfs:subClassOf geocrs:ConicalProjection ,
                                                   geocrs:EquidistantProjection ;
                                   geocrs:PROJidentifier "eqdc" ;
-                                  rdfs:label "equidistant conic projection"@en .
+                                  rdfs:label "equidistant conic projection"@en ;
+                                  <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/EquidistantConicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/EquidistantCylindricalProjection
@@ -768,7 +785,8 @@ geocrs:FoucautSinusoidalProjection rdf:type owl:Class ;
                                    geocrs:PROJidentifier "fouc_s" ;
                                    rdfs:label "foucaut sinusoidal projection"@en ;
                                    skos:altLabel "Tobler Foucaut" ;
-                                   skos:definition "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area"@en .
+                                   skos:definition "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area"@en ;
+                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/FoucautSinusoidalProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/FournierGlobularIProjection
@@ -807,7 +825,8 @@ geocrs:GallPetersProjection rdf:type owl:Class ;
                             dc:creator "James Gall" ;
                             dc:date "1855" ;
                             rdfs:label "gall-peters projection"@en ;
-                            skos:altLabel "Gall orthographic" .
+                            skos:altLabel "Gall orthographic" ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GallPetersProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GallStereographicProjection
@@ -818,7 +837,8 @@ geocrs:GallStereographicProjection rdf:type owl:Class ;
                                    dc:creator "James Gall" ;
                                    dc:date "1855" ;
                                    geocrs:PROJidentifier "gall" ;
-                                   rdfs:label "gall stereographic projection"@en .
+                                   rdfs:label "gall stereographic projection"@en ;
+                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GallStereographicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GaussKruegerProjection
@@ -838,13 +858,15 @@ geocrs:GeneralVerticalPerspectiveProjection rdf:type owl:Class ;
 geocrs:GilbertTwoWorldPerspectiveProjection rdf:type owl:Class ;
                                             rdfs:subClassOf geocrs:PerspectiveProjection ;
                                             dc:creator "Edgar Nelson Gilbert" ;
-                                            rdfs:label "Gilbert two-world perspective projection" .
+                                            rdfs:label "Gilbert two-world perspective projection" ;
+                                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GilbertTwoWorldPerspectiveProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GingeryProjection
 geocrs:GingeryProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:Projection ;
-                         rdfs:label "gingery projection" .
+                         rdfs:label "gingery projection" ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GingeryProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GinzburgIIProjection
@@ -865,7 +887,8 @@ geocrs:GinzburgIVProjection rdf:type owl:Class ;
                             dc:creator "G.A. Ginzburg" ;
                             dc:date "1939" ;
                             rdfs:label "Ginzburg IV projection"@en ;
-                            skos:altLabel "TsNIIGAiK 1959-1949 Modified Polyconic" .
+                            skos:altLabel "TsNIIGAiK 1959-1949 Modified Polyconic" ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIVProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GinzburgIXProjection
@@ -873,7 +896,8 @@ geocrs:GinzburgIXProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:PolyconicProjection ;
                             dc:creator "G.A. Ginzburg" ;
                             dc:date "1966" ;
-                            rdfs:label "Ginzburg IX projection"@en .
+                            rdfs:label "Ginzburg IX projection"@en ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIXProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GinzburgVIIIProjection
@@ -891,7 +915,8 @@ geocrs:GinzburgVIProjection rdf:type owl:Class ;
                             dc:creator "G.A. Ginzburg" ;
                             dc:date "1950" ;
                             rdfs:label "Ginzburg VI projection"@en ;
-                            skos:altLabel "TsNIIGAiK BSE Modified Polyconic" .
+                            skos:altLabel "TsNIIGAiK BSE Modified Polyconic" ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgVIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GinzburgVProjection
@@ -949,7 +974,8 @@ geocrs:GringortenProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/GringortenQuincuncialProjection
 geocrs:GringortenQuincuncialProjection rdf:type owl:Class ;
                                        rdfs:subClassOf geocrs:ConformalProjection ;
-                                       rdfs:label "gringorten quincuncial projection" .
+                                       rdfs:label "gringorten quincuncial projection" ;
+                                       <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projectionsGringortenQuincuncialProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/GuyouProjection
@@ -1018,7 +1044,8 @@ geocrs:HillEucyclicProjection rdf:type owl:Class ;
                                               geocrs:PolyconicProjection ;
                               dc:creator "Karl O. Hill" ;
                               dc:date "1958" ;
-                              rdfs:label "hill eucyclic projection"@en .
+                              rdfs:label "hill eucyclic projection"@en ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HillEucyclicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/HoboDyerProjection
@@ -1169,7 +1196,8 @@ geocrs:JamesAzimuthalProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/KamenetskiyIProjection
 geocrs:KamenetskiyIProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:GallStereographicProjection ;
-                              rdfs:label "Kamenetskiy I projection" .
+                              rdfs:label "Kamenetskiy I projection" ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/KamenetskiyIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/KarchenkoShabanovaProjection
@@ -1185,7 +1213,8 @@ geocrs:KarchenkoShabanovaProjection rdf:type owl:Class ;
 geocrs:Kavrayskiy7Projection rdf:type owl:Class ;
                              rdfs:subClassOf geocrs:CompromiseProjection ,
                                              geocrs:PseudoCylindricalProjection ;
-                             rdfs:label "Kavrayskiy VII projection"@en .
+                             rdfs:label "Kavrayskiy VII projection"@en ;
+                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Kavrayskiy7Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/KissProjection
@@ -1225,7 +1254,8 @@ geocrs:LagrangeProjection rdf:type owl:Class ;
                                           geocrs:PolyconicProjection ;
                           dc:creator "Johann Heinrich Lambert" ;
                           dc:date "1772" ;
-                          rdfs:label "lagrange projection"@en .
+                          rdfs:label "lagrange projection"@en ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LagrangeProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea
@@ -1243,13 +1273,15 @@ geocrs:LambertConformalConicProjection rdf:type owl:Class ;
                                        dc:creator "Johann Heinrich Lambert" ;
                                        dc:date "1772" ;
                                        geocrs:PROJidentifier "lcc" ;
-                                       rdfs:label "lambert conformal conic projection"@en .
+                                       rdfs:label "lambert conformal conic projection"@en ;
+                                       <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LambertConformalConicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/LambertCylindricalEqualAreaProjection
 geocrs:LambertCylindricalEqualAreaProjection rdf:type owl:Class ;
                                              rdfs:subClassOf geocrs:CylindricalEqualArea ;
-                                             rdfs:label "Lambert cylindrical equal-area projection" .
+                                             rdfs:label "Lambert cylindrical equal-area projection" ;
+                                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LambertCylindricalEqualAreaProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/LarriveeProjection
@@ -1289,7 +1321,8 @@ geocrs:LenticularProjection rdf:type owl:Class ;
 geocrs:LittrowProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:ConformalProjection ,
                                          geocrs:RetroazimuthalProjection ;
-                         rdfs:label "littrow projection"@en .
+                         rdfs:label "littrow projection"@en ;
+                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LittrowProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/LorgnaProjection
@@ -1312,7 +1345,8 @@ geocrs:LoximuthalProjection rdf:type owl:Class ;
                                             geocrs:PseudoCylindricalProjection ;
                             geocrs:PROJidentifier "loxim" ;
                             rdfs:label "loximuthal projection"@en ;
-                            skos:altLabel "Siemon I projection" .
+                            skos:altLabel "Siemon I projection" ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LoximuthalProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/MayrProjection
@@ -1368,7 +1402,8 @@ geocrs:MercatorProjection rdf:type owl:Class ;
                           dc:creator "Gerardus Mercator" ;
                           dc:date "1569" ;
                           geocrs:PROJidentifier "merc" ;
-                          rdfs:label "mercator projection"@en .
+                          rdfs:label "mercator projection"@en ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MercatorProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/MillerOblatedStereographicProjection
@@ -1479,7 +1514,8 @@ geocrs:NicolosiGlobularProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/NordicProjection
 geocrs:NordicProjection rdf:type owl:Class ;
                         rdfs:subClassOf geocrs:ObliqueProjection ;
-                        rdfs:label "Nordic projection"@en .
+                        rdfs:label "Nordic projection"@en ;
+                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/NordicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/ObliqueCylindricalEqualAreaProjection
@@ -1541,7 +1577,8 @@ geocrs:OrteliusOvalProjection rdf:type owl:Class ;
 geocrs:OrthographicProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:AzimuthalProjection ,
                                               geocrs:PerspectiveProjection ;
-                              rdfs:label "orthographic projection"@en .
+                              rdfs:label "orthographic projection"@en ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/OrthographicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/OvalProjection
@@ -1616,7 +1653,8 @@ geocrs:PolyconicProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/PolyhedralProjection
 geocrs:PolyhedralProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:Projection ;
-                            rdfs:label "polyhedral projection"@en .
+                            rdfs:label "polyhedral projection"@en ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/PolyhedralProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Projection
@@ -1692,7 +1730,8 @@ geocrs:QuarticAuthalicProjection rdf:type owl:Class ;
                                  dc:date 1937 ;
                                  geocrs:PROJidentifier "qua_aut" ;
                                  rdfs:label "quartic authalic projection"@en ;
-                                 skos:altLabel "Siemon III projection" .
+                                 skos:altLabel "Siemon III projection" ;
+                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/QuarticAuthalicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/RectangularPolyconicProjection
@@ -1746,7 +1785,8 @@ geocrs:SinusoidalProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/SmythEqualSurfaceProjection
 geocrs:SmythEqualSurfaceProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:CylindricalEqualArea ;
-                                   rdfs:label "Smyth equal surface projection" .
+                                   rdfs:label "Smyth equal surface projection" ;
+                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/SmythEqualSurfaceProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/SpaceObliqueMercatorProjection
@@ -1781,7 +1821,8 @@ geocrs:StereographicProjection rdf:type owl:Class ;
                                                geocrs:ConformalProjection ;
                                geocrs:PROJidentifier "stere" ;
                                rdfs:label "stereographic projection"@en ;
-                               skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en .
+                               skos:definition "A projection which can be constructed using the tangent's points antipoide as the point of perspective"@en ;
+                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/StereographicProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/Strebe1995Projection
@@ -1800,7 +1841,8 @@ geocrs:TheTimesProjection rdf:type owl:Class ;
                           dc:creator "John Muir" ;
                           dc:date "1965" ;
                           geocrs:PROJidentifier "times" ;
-                          rdfs:label "the times projection"@en .
+                          rdfs:label "the times projection"@en ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/TheTimesProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/TiltedPerspectiveProjection
@@ -1853,7 +1895,8 @@ geocrs:TransverseCylindricalEqualAreaProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/TransverseMercatorProjection
 geocrs:TransverseMercatorProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:MercatorProjection ;
-                                    rdfs:label "transverse mercator projection"@en .
+                                    rdfs:label "transverse mercator projection"@en ;
+                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/TransverseMercatorProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/TrystanEdwardsProjection
@@ -1862,7 +1905,8 @@ geocrs:TrystanEdwardsProjection rdf:type owl:Class ;
                                                 geocrs:EqualAreaProjection ;
                                 dc:creator "Trystan Edwards" ;
                                 dc:date "1953" ;
-                                rdfs:label "Trystan Edwards projection"@en .
+                                rdfs:label "Trystan Edwards projection"@en ;
+                                <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/TrystanEdwardsProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/TwoPointEquidistantProjection
@@ -1896,7 +1940,8 @@ geocrs:VanDerGrintenIIIProjection rdf:type owl:Class ;
                                   dc:creator "Alois Bludeau" ;
                                   dc:date 1912 ;
                                   geocrs:PROJidentifier "vandg3" ;
-                                  rdfs:label "van der grinten III projection"@en .
+                                  rdfs:label "van der grinten III projection"@en ;
+                                  <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/VanDerGrintenIIIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/VanDerGrintenIIProjection
@@ -1906,7 +1951,8 @@ geocrs:VanDerGrintenIIProjection rdf:type owl:Class ;
                                  dc:creator "Alois Bludau" ;
                                  dc:date 1912 ;
                                  geocrs:PROJidentifier "vandg2" ;
-                                 rdfs:label "van der grinten II projection"@en .
+                                 rdfs:label "van der grinten II projection"@en ;
+                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/VanDerGrintenIIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/VanDerGrintenIProjection
@@ -1914,7 +1960,8 @@ geocrs:VanDerGrintenIProjection rdf:type owl:Class ;
                                 rdfs:subClassOf geocrs:CompromiseProjection ,
                                                 geocrs:PolyconicProjection ;
                                 geocrs:PROJidentifier "vandg" ;
-                                rdfs:label "van der grinten I projection"@en .
+                                rdfs:label "van der grinten I projection"@en ;
+                                <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/VanDerGrintenIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/VanDerGrintenIVProjection
@@ -1923,7 +1970,8 @@ geocrs:VanDerGrintenIVProjection rdf:type owl:Class ;
                                                  geocrs:PolyconicProjection ;
                                  dc:date 1904 ;
                                  geocrs:PROJidentifier "vandg4" ;
-                                 rdfs:label "van der grinten IV projection"@en .
+                                 rdfs:label "van der grinten IV projection"@en ;
+                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/VanDerGrintenIVProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/VerticalPerspectiveProjection
@@ -1980,7 +2028,8 @@ geocrs:WagnerIVProjection rdf:type owl:Class ;
                           dc:date "1932" ;
                           geocrs:PROJidentifier "wag4" ;
                           rdfs:label "wagner IV projection"@en ;
-                          skos:altLabel "Werenskiold III projection" .
+                          skos:altLabel "Werenskiold III projection" ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerIVProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/WagnerIXProjection
@@ -1996,7 +2045,8 @@ geocrs:WagnerVIIIProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:PoleLineProjection ,
                                             geocrs:PolyconicProjection ;
                             geocrs:PROJidentifier "wag8" ;
-                            rdfs:label "wagner VIII projection"@en .
+                            rdfs:label "wagner VIII projection"@en ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerVIIIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/WagnerVIIProjection
@@ -2006,7 +2056,8 @@ geocrs:WagnerVIIProjection rdf:type owl:Class ;
                            dc:creator "Karlheinz Wagner" ;
                            dc:date "1941" ;
                            geocrs:PROJidentifier "wag7" ;
-                           rdfs:label "wagner VII projection"@en .
+                           rdfs:label "wagner VII projection"@en ;
+                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerVIIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/WagnerVIProjection
@@ -2016,7 +2067,8 @@ geocrs:WagnerVIProjection rdf:type owl:Class ;
                           dc:creator "Karlheinz Wagner" ;
                           dc:date "1932" ;
                           geocrs:PROJidentifier "wag6" ;
-                          rdfs:label "wagner VI projection"@en .
+                          rdfs:label "wagner VI projection"@en ;
+                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerVIProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/WagnerVProjection
@@ -2033,7 +2085,8 @@ geocrs:WagnerVProjection rdf:type owl:Class ;
 geocrs:WatermanButterflyProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:CompromiseProjection ,
                                                    geocrs:PolyhedralProjection ;
-                                   rdfs:label "waterman butterfly projection"@en .
+                                   rdfs:label "waterman butterfly projection"@en ;
+                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WatermanButterflyProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/WebMercatorProjection
@@ -2162,6 +2215,13 @@ geocrs:WinkelTripelProjection rdf:type owl:Class ;
 :GnomonicIcosahedronProjection rdf:type owl:Class ;
                                rdfs:subClassOf geocrs:PolyhedralProjection ;
                                rdfs:label "Gnomonic Icosahedron projection" .
+
+
+###  http://www.opengis.net/ont/crs/ProjectionOntology#MaurerNo73Projection
+:MaurerNo73Projection rdf:type owl:Class ;
+                      rdfs:subClassOf geocrs:HillEucyclicProjection ;
+                      rdfs:label "Maurer No 73 projection"^^xsd:anyURI ;
+                      <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MaurerNo73Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP1Projection
@@ -2321,18 +2381,20 @@ geocrs:ApianIIProjection skos:altLabel "Apianus II Projection"@en ;
                          skos:altLabel "Apian 2 Globular Projection"@en .
 
 
-geocrs:EquirectangularProjection rdfs:label "equirectangular projection"@en .
+geocrs:EquirectangularProjection <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/EquirectangularProjection.svg"^^xsd:anyURI ;
+                                 rdfs:label "equirectangular projection"@en .
 
 
 geocrs:MollweideProjection dc:creator "Karl Brandan Mollweide" ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MollweideProjection.svg"^^xsd:anyURI ;
                            rdfs:label "mollweide projection"@en ;
-                           skos:altLabel "Babinet projection"@en ;
                            geocrs:PROJidentifier "moll" ;
+                           skos:altLabel "Babinet projection"@en ;
                            dc:date "1805" .
 
 
-geocrs:SinusoidalProjection rdfs:label "sinusoidal projection"@en ;
+geocrs:SinusoidalProjection <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/SinusoidalProjection.svg"^^xsd:anyURI ;
+                            rdfs:label "sinusoidal projection"@en ;
                             geocrs:PROJidentifier "sinu" .
 
 
@@ -2358,7 +2420,8 @@ geocrs:WinkelTripelProjection dc:date "1921" ;
                               geocrs:PROJidentifier "wintri" ;
                               rdfs:label "winkel tripel projection"@en ;
                               skos:definition "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" ;
-                              dc:creator "Oswald Winkel" .
+                              dc:creator "Oswald Winkel" ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WinkelTripelProjection.svg"^^xsd:anyURI .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

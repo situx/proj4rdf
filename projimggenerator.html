@@ -27,6 +27,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/BonneProjection":d3.geoBonne(),
 	"http://www.opengis.net/ont/crs/BottomleyProjection":d3.geoBottomley(),
 	"http://www.opengis.net/ont/crs/BraunStereographicProjection": d3.geoCylindricalStereographic().parallel(0),
+	"http://www.opengis.net/ont/crs/BriesemeisterProjection":d3.geoProjection(d3.geoHammerRaw(1.75, 2)).rotate([-10, -45]),
 	"http://www.opengis.net/ont/crs/BromleyProjection":d3.geoBromley(),
 	"http://www.opengis.net/ont/crs/BSAMCylindricalProjection": d3.geoCylindricalStereographic().parallel(30),
 	"http://www.opengis.net/ont/crs/CassiniProjection": d3.geoEquirectangular().rotate([0, 0, 90]).angle(-90),
@@ -95,6 +96,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/LaskowskiProjection": d3.geoLaskowski(),
 	"http://www.opengis.net/ont/crs/LittrowProjection": d3.geoLittrow(),
 	"http://www.opengis.net/ont/crs/LoximuthalProjection": d3.geoLoximuthal(),
+	"http://www.opengis.net/ont/crs/MaurerNo73Projection":d3.geoHill().ratio(0),
 	"http://www.opengis.net/ont/crs/MercatorProjection": d3.geoMercator(),
 	"http://www.opengis.net/ont/crs/MillerProjection": d3.geoMiller(),
 	"http://www.opengis.net/ont/crs/GS50Projection": d3.geoModifiedStereographicGs50(),
@@ -106,6 +108,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/NaturalEarth2Projection": d3.geoNaturalEarth2(),
 	"http://www.opengis.net/ont/crs/NellHammerProjection": d3.geoNellHammer(),
 	"http://www.opengis.net/ont/crs/NicolosiGlobularProjection": d3.geoNicolosi(),
+	"http://www.opengis.net/ont/crs/NordicProjection":d3.geoHammer().rotate([0, -45]),
 	"http://www.opengis.net/ont/crs/OrthographicProjection": d3.geoOrthographic(),
 	"http://www.opengis.net/ont/crs/PattersonCylindricalProjection": d3.geoPatterson(),
 	"http://www.opengis.net/ont/crs/PeirceQuincuncialProjection": d3.geoPeirceQuincuncial(),
@@ -249,6 +252,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/BonneProjection">Bonne Projection</option>
 <option value="http://www.opengis.net/ont/crs/BottomleyProjection">Bottomley Projection</option>
 <option value="http://www.opengis.net/ont/crs/BraunStereographicProjection">Braun Stereographic Projection</option>
+<option value="http://www.opengis.net/ont/crs/BriesemeisterProjection">Briesemeister Projection</option>
 <option value="http://www.opengis.net/ont/crs/BromleyProjection">Bromley Projection</option>
 <option value="http://www.opengis.net/ont/crs/BSAMCylindricalProjection">BSAM Cylindrical Projection</option>
 <option value="http://www.opengis.net/ont/crs/CassiniProjection">Cassini Projection</option>
@@ -322,6 +326,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/LaskowskiProjection">Laskowski Projection</option>
 <option value="http://www.opengis.net/ont/crs/LittrowProjection">Littrow Projection</option>
 <option value="http://www.opengis.net/ont/crs/LoximuthalProjection">Loximuthal Projection</option>
+<option value="http://www.opengis.net/ont/crs/MaurerNo73Projection">Maurer No 73 Projection</option>
 <option value="http://www.opengis.net/ont/crs/MercatorProjection">Mercator Projection</option>
 <option value="http://www.opengis.net/ont/crs/MillerProjection">Miller Projection</option>
 <option value="http://www.opengis.net/ont/crs/MollweideProjection">Mollweide Projection</option>
@@ -329,6 +334,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/NaturalEarth2Projection">Natural Earth II Projection</option>
 <option value="http://www.opengis.net/ont/crs/NellHammerProjection">Nell-Hammer Projection</option>
 <option value="http://www.opengis.net/ont/crs/NicolosiGlobularProjection">Nicolosi Globular Projection</option>
+<option value="http://www.opengis.net/ont/crs/NordicProjection">Nordic Projection</option>
 <option value="http://www.opengis.net/ont/crs/OrthographicProjection">Orthographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/PattersonCylindricalProjection">Patterson Projection</option>
 <option value="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">Peirce Quincuncial Projection</option>
@@ -338,6 +344,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/RectangularPolyconicProjection">Rectangular Polyconic Projection</option>
 <option value="http://www.opengis.net/ont/crs/RobinsonProjection">Robinson Projection</option>
 <option value="http://www.opengis.net/ont/crs/SinusoidalProjection">Sinusiodal Projection</option>
+<option value="http://www.opengis.net/ont/crs/SmythEqualSurfaceProjection">Smyth Equal Surface Projection</option>
 <option value="http://www.opengis.net/ont/crs/StabiusWernerIIProjection">Stabius-Werner II Projection</option>
 <option value="http://www.opengis.net/ont/crs/StereographicProjection">Stereographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/TheTimesProjection">Times Projection</option>
