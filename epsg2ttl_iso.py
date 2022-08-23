@@ -59,10 +59,10 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
 			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")				
 			if axis.unit_name in units:
-				ttl.add("geocrsaxis:"+axisid+" geocrs:unit "+units[axis.unit_name]+" . \n")
+				ttl.add("geocrsaxis:"+axisid+" om:hasUnit "+units[axis.unit_name]+" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
 			else:
-				ttl.add("geocrsaxis:"+axisid+" geocrs:unit \""+axis.unit_name+"\" . \n")
+				ttl.add("geocrsaxis:"+axisid+" om:hasUnit \""+axis.unit_name+"\" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
 		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
 		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
@@ -429,6 +429,7 @@ projections["fahey"]="geocrs:FaheyProjection"
 projections["fouc_s"]="geocrs:FoucautSinusoidalProjection"
 projections["gall"]="geocrs:GallStereographicProjection"
 projections["geocent"]="geocrs:Geocentric"
+projections["gins8"]="geocrs:GinzburgVIIIProjection"
 projections["gnom"]="geocrs:GnomonicProjection"
 projections["goode"]="geocrs:GoodeHomolosineProjection"
 projections["guyou"]="geocrs:GuyouProjection"
@@ -526,13 +527,11 @@ calcofi : Cal Coop Ocean Fish Invest Lines/Stations
 cart : Geodetic/cartesian conversions
 defmodel : Deformation model
 deformation : Kinematic grid shift
-eqc : Equidistant Cylindrical (Plate Carree)
 euler : Euler
 etmerc : Extended Transverse Mercator
 geoc : Geocentric Latitude
 geogoffset : Geographic Offset
 geos : Geostationary Satellite View
-gins8 : Ginsburg VIII (TsNIIGAiK)
 gn_sinu : General Sinusoidal Series
 gs48 : Modified Stereographic of 48 U.S.
 hammer : Hammer & Eckert-Greifendorff
@@ -1120,10 +1119,6 @@ ttlnoniso.add("geocrs:asWKT rdfs:label \"asWKT\"@en .\n")
 ttlnoniso.add("geocrs:asWKT rdfs:range geocrs:wktLiteral .\n")
 ttlnoniso.add("geocrs:asWKT skos:definition \"WKT representation of the CRS\"@en .\n")
 ttlnoniso.add("geocrs:asWKT rdfs:domain geocrs:CRS, geocrs:CoordinateSystem, geocrs:PrimeMeridian .\n")
-ttlnoniso.add("geocrs:unit rdf:type owl:ObjectProperty .\n")
-ttlnoniso.add("geocrs:unit rdfs:label \"unit\"@en .\n")
-ttlnoniso.add("geocrs:unit rdfs:domain geocrs:CRS .\n")
-ttlnoniso.add("geocrs:unit rdfs:range om:Unit .\n")
 ttl.add("geocrs:coordinateSystem rdf:type owl:ObjectProperty .\n")
 ttl.add("geocrs:coordinateSystem rdfs:label \"coordinate system\"@en .\n")
 ttl.add("geocrs:coordinateSystem skos:definition \"Associates a coordinate system with a coordinate reference system\"@en .\n")
@@ -1210,9 +1205,6 @@ ttl.add("geocrs:abbreviation skos:definition \"The abbreviation used to identify
 ttl.add("geocrs:abbreviation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:abbreviation rdfs:domain geocrs:CoordinateSystemAxis .\n")
 ttl.add("geocrs:abbreviation rdfs:range xsd:string .\n")
-ttlnoniso.add("geocrs:unit rdf:type owl:DatatypeProperty .\n")
-ttlnoniso.add("geocrs:unit rdfs:label \"unit\"@en .\n")
-ttlnoniso.add("geocrs:unit rdfs:domain geocrs:CoordinateSystemAxis .\n")
 ttlnoniso.add("geocrs:unit_auth_code rdf:type owl:DatatypeProperty .\n")
 ttlnoniso.add("geocrs:unit_auth_code rdfs:label \"unit auth code\"@en .\n")
 ttlnoniso.add("geocrs:unit_auth_code rdfs:domain geocrs:CoordinateSystemAxis .\n")
