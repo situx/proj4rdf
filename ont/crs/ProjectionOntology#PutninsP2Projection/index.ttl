@@ -1,9 +1,0 @@
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://purl.org/dc/elements/1.1/creator> "Reinholds V. Putnins" .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://purl.org/dc/elements/1.1/date> "1934"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://www.opengis.net/ont/crs/PROJidentifier> "putp2" .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://www.w3.org/2000/01/rdf-schema#label> "Putnins P2 projection" .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/EqualAreaProjection> .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PseudoCylindricalProjection> .
-<http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
