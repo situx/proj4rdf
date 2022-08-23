@@ -263,6 +263,18 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Projection Ontology"
+      }
+    ]
+  },
+  {
     "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -304,18 +316,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Projection Ontology"
       }
     ]
   }
@@ -6199,6 +6199,54 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="Coxconformalprojection">
+          <h3>Cox conformal projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ProjectionOntology#CoxConformalProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="dodecahedralprojection">
+          <h3>dodecahedral projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ProjectionOntology#DodecahedralProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="FranulaIIIprojection">
           <h3>Frančula III projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -6444,6 +6492,30 @@
               <th>IRI</th>
               <td>
                 <code>http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicIcosahedronProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="icosahedralprojection">
+          <h3>icosahedral projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ProjectionOntology#IcosahedralProjection</code>
               </td>
             </tr>
             <tr>
@@ -12542,117 +12614,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="polyhedralprojection">
-          <h3>polyhedral projection
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/PolyhedralProjection</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/AuthaGraphProjection">geocrs:AuthaGraphProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/CahillKeyesProjection">geocrs:CahillKeyesProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/CollignonButterflyProjection">geocrs:CollignonButterflyProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/DymaxionProjection">geocrs:DymaxionProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GnomonicButterflyProjection">geocrs:GnomonicButterflyProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/MyrahedalProjection">geocrs:MyrahedalProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/OctantProjection">geocrs:OctantProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#GnomonicCubedSphereprojection">ns2:GnomonicCubedSphereProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#GnomonicIcosahedronprojection">ns2:GnomonicIcosahedronProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection">geocrs:QuadrilateralizedSphericalCubeProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/WatermanButterflyProjection">geocrs:WatermanButterflyProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="coordinatereferencesystem">
           <h3>coordinate reference system
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -12945,6 +12906,129 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/ObliqueProjection">geocrs:ObliqueProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="polyhedralprojection">
+          <h3>polyhedral projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/PolyhedralProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AuthaGraphProjection">geocrs:AuthaGraphProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CahillKeyesProjection">geocrs:CahillKeyesProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CollignonButterflyProjection">geocrs:CollignonButterflyProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/DymaxionProjection">geocrs:DymaxionProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GnomonicButterflyProjection">geocrs:GnomonicButterflyProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/MyrahedalProjection">geocrs:MyrahedalProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/OctantProjection">geocrs:OctantProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#dodecahedralprojection">ns2:DodecahedralProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#GnomonicCubedSphereprojection">ns2:GnomonicCubedSphereProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#GnomonicIcosahedronprojection">ns2:GnomonicIcosahedronProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#icosahedralprojection">ns2:IcosahedralProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection">geocrs:QuadrilateralizedSphericalCubeProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/WatermanButterflyProjection">geocrs:WatermanButterflyProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -13256,153 +13340,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="conformalprojection">
-          <h3>conformal projection
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/ConformalProjection</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/AdamsProjection">geocrs:AdamsProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/AdamsWorldInASquareIIProjection">geocrs:AdamsWorldInASquareIIProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/AdamsWorldInASquareIProjection">geocrs:AdamsWorldInASquareIProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/AugustEpicycloidalProjection">geocrs:AugustEpicycloidalProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/BipolarObliqueConicConformalProjection">geocrs:BipolarObliqueConicConformalProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/EisenlohrProjection">geocrs:EisenlohrProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GS50Projection">geocrs:GS50Projection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GringortenQuincuncialProjection">geocrs:GringortenQuincuncialProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/HerschelConformalConicProjection">geocrs:HerschelConformalConicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LagrangeProjection">geocrs:LagrangeProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LambertConformalConicProjection">geocrs:LambertConformalConicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LittrowProjection">geocrs:LittrowProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">geocrs:PeirceQuincuncialProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/LabordeProjection">geocrs:LabordeProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="polyconicprojection">
           <h3>polyconic projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -13536,6 +13473,159 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="conformalprojection">
+          <h3>conformal projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ConformalProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A projection in which every angle between two curves that crosss each other on a celestical boday is preserved in the image of the projection</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AdamsProjection">geocrs:AdamsProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AdamsWorldInASquareIIProjection">geocrs:AdamsWorldInASquareIIProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AdamsWorldInASquareIProjection">geocrs:AdamsWorldInASquareIProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AugustEpicycloidalProjection">geocrs:AugustEpicycloidalProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/BipolarObliqueConicConformalProjection">geocrs:BipolarObliqueConicConformalProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EisenlohrProjection">geocrs:EisenlohrProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GS50Projection">geocrs:GS50Projection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GringortenQuincuncialProjection">geocrs:GringortenQuincuncialProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GuyouProjection">geocrs:GuyouProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HerschelConformalConicProjection">geocrs:HerschelConformalConicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LagrangeProjection">geocrs:LagrangeProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LambertConformalConicProjection">geocrs:LambertConformalConicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LeeProjection">geocrs:LeeProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LittrowProjection">geocrs:LittrowProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/PeirceQuincuncialProjection">geocrs:PeirceQuincuncialProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Coxconformalprojection">ns2:CoxConformalProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/LabordeProjection">geocrs:LabordeProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/StereographicProjection">geocrs:StereographicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -13769,13 +13859,13 @@
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a>
+                      <a href="http://www.opengis.net/ont/crs/PolyconicProjection">geocrs:PolyconicProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/PolyconicProjection">geocrs:PolyconicProjection</a>
+                      <a href="http://www.opengis.net/ont/crs/ConformalProjection">geocrs:ConformalProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -18809,6 +18899,12 @@
               <a href="#projectedcoordinatesystem">projected coordinate system</a>
             </li>
             <li>
+              <a href="#Coxconformalprojection">Cox conformal projection</a>
+            </li>
+            <li>
+              <a href="#dodecahedralprojection">dodecahedral projection</a>
+            </li>
+            <li>
               <a href="#FranulaIIIprojection">Frančula III projection</a>
             </li>
             <li>
@@ -18837,6 +18933,9 @@
             </li>
             <li>
               <a href="#GnomonicIcosahedronprojection">Gnomonic Icosahedron projection</a>
+            </li>
+            <li>
+              <a href="#icosahedralprojection">icosahedral projection</a>
             </li>
             <li>
               <a href="#MaurerNo73projection">Maurer No 73 projection</a>
@@ -19286,9 +19385,6 @@
               <a href="#interstellarbody">interstellar body</a>
             </li>
             <li>
-              <a href="#polyhedralprojection">polyhedral projection</a>
-            </li>
-            <li>
               <a href="#coordinatereferencesystem">coordinate reference system</a>
             </li>
             <li>
@@ -19296,6 +19392,9 @@
             </li>
             <li>
               <a href="#obliquestereographicprojection">oblique stereographic projection</a>
+            </li>
+            <li>
+              <a href="#polyhedralprojection">polyhedral projection</a>
             </li>
             <li>
               <a href="#lenticularprojection">lenticular projection</a>
@@ -19307,10 +19406,10 @@
               <a href="#azimuthalprojection">azimuthal projection</a>
             </li>
             <li>
-              <a href="#conformalprojection">conformal projection</a>
+              <a href="#polyconicprojection">polyconic projection</a>
             </li>
             <li>
-              <a href="#polyconicprojection">polyconic projection</a>
+              <a href="#conformalprojection">conformal projection</a>
             </li>
             <li>
               <a href="#geoid">geoid</a>
