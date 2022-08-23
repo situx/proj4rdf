@@ -7,4 +7,5 @@
 <http://www.opengis.net/ont/crs/Eckert2Projection> <http://www.w3.org/2000/01/rdf-schema#label> "Eckert II projection" .
 <http://www.opengis.net/ont/crs/Eckert2Projection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/EqualAreaProjection> .
 <http://www.opengis.net/ont/crs/Eckert2Projection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PseudoCylindricalProjection> .
+<http://www.opengis.net/ont/crs/Eckert2Projection> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert2Projection.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.opengis.net/ont/crs/Eckert2Projection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

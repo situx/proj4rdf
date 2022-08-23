@@ -8,4 +8,5 @@
 <http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#altLabel> "Tobler Foucaut" .
 <http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#definition> "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area" .
 <http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://www.w3.org/2004/02/skos/core#definition> "Weighted arithmetic mean of the cylindrical equal area and sinusoidal projections. Pseudocylindric, equal-area" .
+<http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/FoucautSinusoidalProjection.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

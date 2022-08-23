@@ -275,6 +275,17 @@
     ]
   },
   {
+    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Planet Ontology"
+      }
+    ]
+  },
+  {
     "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -305,17 +316,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Planet Ontology"
       }
     ]
   }
@@ -3966,40 +3966,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="hilleucyclicprojection">
-          <h3>hill eucyclic projection
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/HillEucyclicProjection</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/PolyconicProjection">geocrs:PolyconicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="hobo-dyerprojection">
           <h3>hobo-dyer projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -6487,6 +6453,30 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="MaurerNo73projection">
+          <h3>Maurer No 73 projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ProjectionOntology#MaurerNo73Projection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -9486,6 +9476,51 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/HexagonalCS">geocrs:HexagonalCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hilleucyclicprojection">
+          <h3>hill eucyclic projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/HillEucyclicProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">geocrs:EqualAreaProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/PolyconicProjection">geocrs:PolyconicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#MaurerNo73projection">ns2:MaurerNo73Projection</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -13428,12 +13463,6 @@
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="http://www.opengis.net/ont/crs/LagrangeProjection">geocrs:LagrangeProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -13501,6 +13530,12 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/WagnerVIIProjection">geocrs:WagnerVIIProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -14826,12 +14861,6 @@
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="http://www.opengis.net/ont/crs/HoboDyerProjection">geocrs:HoboDyerProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -14989,6 +15018,12 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/GoodeHomolosineProjection">geocrs:GoodeHomolosineProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HillEucyclicProjection">geocrs:HillEucyclicProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -18543,9 +18578,6 @@
               <a href="#hierarchicalgridreferencesystem">hierarchical grid reference system</a>
             </li>
             <li>
-              <a href="#hilleucyclicprojection">hill eucyclic projection</a>
-            </li>
-            <li>
               <a href="#hobo-dyerprojection">hobo-dyer projection</a>
             </li>
             <li>
@@ -18805,6 +18837,9 @@
             </li>
             <li>
               <a href="#GnomonicIcosahedronprojection">Gnomonic Icosahedron projection</a>
+            </li>
+            <li>
+              <a href="#MaurerNo73projection">Maurer No 73 projection</a>
             </li>
             <li>
               <a href="#PutninsP1projection">Putnins P1 projection</a>
@@ -19084,6 +19119,9 @@
             </li>
             <li>
               <a href="#gridcoordinatesystem">grid coordinate system</a>
+            </li>
+            <li>
+              <a href="#hilleucyclicprojection">hill eucyclic projection</a>
             </li>
             <li>
               <a href="#horizontaldatum">horizontal datum</a>

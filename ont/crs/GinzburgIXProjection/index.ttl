@@ -5,4 +5,5 @@
 <http://www.opengis.net/ont/crs/GinzburgIXProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Ginzburg IX projection" .
 <http://www.opengis.net/ont/crs/GinzburgIXProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Ginzburg IX projection" .
 <http://www.opengis.net/ont/crs/GinzburgIXProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PolyconicProjection> .
+<http://www.opengis.net/ont/crs/GinzburgIXProjection> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIXProjection.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.opengis.net/ont/crs/GinzburgIXProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

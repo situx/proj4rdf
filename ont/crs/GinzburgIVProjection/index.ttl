@@ -6,4 +6,5 @@
 <http://www.opengis.net/ont/crs/GinzburgIVProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Ginzburg IV projection" .
 <http://www.opengis.net/ont/crs/GinzburgIVProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PolyconicProjection> .
 <http://www.opengis.net/ont/crs/GinzburgIVProjection> <http://www.w3.org/2004/02/skos/core#altLabel> "TsNIIGAiK 1959-1949 Modified Polyconic" .
+<http://www.opengis.net/ont/crs/GinzburgIVProjection> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIVProjection.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.opengis.net/ont/crs/GinzburgIVProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

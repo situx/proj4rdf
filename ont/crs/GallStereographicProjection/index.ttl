@@ -8,4 +8,5 @@
 <http://www.opengis.net/ont/crs/GallStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CompromiseProjection> .
 <http://www.opengis.net/ont/crs/GallStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CylindricalProjection> .
 <http://www.opengis.net/ont/crs/GallStereographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/StereographicProjection> .
+<http://www.opengis.net/ont/crs/GallStereographicProjection> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GallStereographicProjection.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.opengis.net/ont/crs/GallStereographicProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
