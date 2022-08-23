@@ -427,7 +427,8 @@ geocrs:CahillKeyesProjection rdf:type owl:Class ;
                                              geocrs:PolyhedralProjection ;
                              dc:creator "Gene Keyes" ;
                              dc:date "1975" ;
-                             rdfs:label "cahill-keyes projection"@en .
+                             rdfs:label "cahill-keyes projection"@en ;
+                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/CahillKeyesProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/CassiniProjection

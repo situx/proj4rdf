@@ -4,6 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+<script src="https://unpkg.com/d3-geo-polygon@1"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas2svg@1.0.16/canvas2svg.min.js"></script>
 <script>
@@ -31,6 +32,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/BromleyProjection":d3.geoBromley(),
 	"http://www.opengis.net/ont/crs/BSAMCylindricalProjection": d3.geoCylindricalStereographic().parallel(30),
 	"http://www.opengis.net/ont/crs/CassiniProjection": d3.geoEquirectangular().rotate([0, 0, 90]).angle(-90),
+	"http://www.opengis.net/ont/crs/CahillKeyesProjection":d3.geoCahillKeyes(),
 	"http://www.opengis.net/ont/crs/CollignonProjection":d3.geoCollignon(),
 	"http://www.opengis.net/ont/crs/CollignonButterflyProjection": d3.geoPolyhedralCollignon(),
 	"http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection":d3.geoCraig(),
@@ -256,6 +258,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/BromleyProjection">Bromley Projection</option>
 <option value="http://www.opengis.net/ont/crs/BSAMCylindricalProjection">BSAM Cylindrical Projection</option>
 <option value="http://www.opengis.net/ont/crs/CassiniProjection">Cassini Projection</option>
+<option value="http://www.opengis.net/ont/crs/CahillKeyesProjection">Cahill Keyes Projection</option>
 <!--<option value="http://www.opengis.net/ont/crs/ChamberlinTrimetricProjection">Chamberlin Trimetric Projection</option>-->
 <option value="http://www.opengis.net/ont/crs/CollignonProjection">Collignon Projection</option>
 <option value="http://www.opengis.net/ont/crs/CollignonButterflyProjection">Collignon Butterfly Projection</option>
