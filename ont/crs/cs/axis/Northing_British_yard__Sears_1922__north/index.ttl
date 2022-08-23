@@ -1,7 +1,7 @@
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> "British yard (Sears 1922)" .
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/axisAbbrev> "N"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/direction> <http://www.opengis.net/ont/crs/north> .
-<http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/unit> "British yard (Sears 1922)" .
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/unit_auth_code> "EPSG"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/unit_code> "9040"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> <http://www.opengis.net/ont/crs/unit_conversion_factor> "0.9143984"^^<http://www.w3.org/2001/XMLSchema#double> .

@@ -1,7 +1,7 @@
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> "Clarke's foot" .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/axisAbbrev> "E"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/direction> <http://www.opengis.net/ont/crs/east> .
-<http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/unit> "Clarke's foot" .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/unit_auth_code> "EPSG"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/unit_code> "9005"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> <http://www.opengis.net/ont/crs/unit_conversion_factor> "0.3047973"^^<http://www.w3.org/2001/XMLSchema#double> .
