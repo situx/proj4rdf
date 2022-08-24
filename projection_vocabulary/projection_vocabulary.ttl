@@ -540,6 +540,13 @@ geocrs:CordiformProjection rdf:type owl:Class ;
                            rdfs:label "cordiform projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/CoxConformalProjection
+geocrs:CoxConformalProjection rdf:type owl:Class ;
+                              rdfs:subClassOf geocrs:ConformalProjection ;
+                              rdfs:label "Cox conformal projection"^^xsd:anyURI ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/CoxConformalProjection.svg"^^xsd:anyURI .
+
+
 ###  http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection
 geocrs:CraigRetroazimuthalProjection rdf:type owl:Class ;
                                      rdfs:subClassOf geocrs:CompromiseProjection ,
@@ -617,6 +624,13 @@ geocrs:DietrichKitadaProjection rdf:type owl:Class ;
                                 dc:creator "Bruno Dietrich" ;
                                 dc:date "1927" ;
                                 rdfs:label "Dietrich-Kitada projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/DodecahedralProjection
+geocrs:DodecahedralProjection rdf:type owl:Class ;
+                              rdfs:subClassOf geocrs:PolyhedralProjection ;
+                              rdfs:label "dodecahedral projection" ;
+                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/DodecahedralProjection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/DymaxionProjection
@@ -803,6 +817,72 @@ geocrs:FournierIIProjection rdf:type owl:Class ;
                             rdfs:label "fournier II projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/FranculaIIIProjection
+geocrs:FranculaIIIProjection rdf:type owl:Class ;
+                             rdfs:subClassOf geocrs:LenticularProjection ;
+                             dc:creator "Nedjeljko Frančula" ;
+                             dc:date 1971 ;
+                             rdfs:label "Frančula III projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaIVProjection
+geocrs:FranculaIVProjection rdf:type owl:Class ;
+                            rdfs:subClassOf geocrs:LenticularProjection ;
+                            dc:creator "Nedjeljko Frančula" ;
+                            dc:date 1971 ;
+                            rdfs:label "Frančula IV projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaIXProjection
+geocrs:FranculaIXProjection rdf:type owl:Class ;
+                            rdfs:subClassOf geocrs:LenticularProjection ;
+                            dc:creator "Nedjeljko Frančula" ;
+                            dc:date 1971 ;
+                            rdfs:label "Frančula IX projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaVIIIProjection
+geocrs:FranculaVIIIProjection rdf:type owl:Class ;
+                              rdfs:subClassOf geocrs:LenticularProjection ;
+                              dc:creator "Nedjeljko Frančula" ;
+                              dc:date 1971 ;
+                              rdfs:label "Frančula VIII projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaVProjection
+geocrs:FranculaVProjection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                           geocrs:LenticularProjection ;
+                           dc:creator "Nedjeljko Frančula" ;
+                           dc:date 1971 ;
+                           rdfs:label "Frančula V projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaXIIIProjection
+geocrs:FranculaXIIIProjection rdf:type owl:Class ;
+                              rdfs:subClassOf geocrs:LenticularProjection ;
+                              dc:creator "Nedjeljko Frančula" ;
+                              dc:date 1971 ;
+                              rdfs:label "Frančula XIII projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaXIIProjection
+geocrs:FranculaXIIProjection rdf:type owl:Class ;
+                             rdfs:subClassOf geocrs:LenticularProjection ;
+                             dc:creator "Nedjeljko Frančula" ;
+                             dc:date 1971 ;
+                             rdfs:label "Frančula XII projection" .
+
+
+###  http://www.opengis.net/ont/crs/FranculaXIVProjection
+geocrs:FranculaXIVProjection rdf:type owl:Class ;
+                             rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                             geocrs:LenticularProjection ;
+                             dc:creator "Nedjeljko Frančula" ;
+                             dc:date 1971 ;
+                             rdfs:label "Frančula XIV projection" .
+
+
 ###  http://www.opengis.net/ont/crs/GS50Projection
 geocrs:GS50Projection rdf:type owl:Class ;
                       rdfs:subClassOf geocrs:ConformalProjection ;
@@ -907,6 +987,7 @@ geocrs:GinzburgVIIIProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                               dc:creator "G.A. Ginzburg" ;
                               dc:date "1944" ;
+                              geocrs:PROJidentifier "gins8"^^xsd:anyURI ;
                               rdfs:label "Ginzburg VIII projection"@en ;
                               skos:altLabel "TsNIIGAiK 1944 Pseudocylindrical" .
 
@@ -941,6 +1022,18 @@ geocrs:GnomonicButterflyProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:PolyhedralProjection ;
                                    rdfs:label "gnomonic butterfly projection" ;
                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GnomonicButterflyProjection.svg"^^xsd:anyURI .
+
+
+###  http://www.opengis.net/ont/crs/GnomonicCubedSphereProjection
+geocrs:GnomonicCubedSphereProjection rdf:type owl:Class ;
+                                     rdfs:subClassOf geocrs:PolyhedralProjection ;
+                                     rdfs:label "Gnomonic Cubed Sphere projection" .
+
+
+###  http://www.opengis.net/ont/crs/GnomonicIcosahedronProjection
+geocrs:GnomonicIcosahedronProjection rdf:type owl:Class ;
+                                     rdfs:subClassOf geocrs:PolyhedralProjection ;
+                                     rdfs:label "Gnomonic Icosahedron projection" .
 
 
 ###  http://www.opengis.net/ont/crs/GnomonicProjection
@@ -1169,6 +1262,13 @@ geocrs:HufnagelXProjection rdf:type owl:Class ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HufnagelXProjection.svg"^^xsd:anyURI .
 
 
+###  http://www.opengis.net/ont/crs/IcosahedralProjection
+geocrs:IcosahedralProjection rdf:type owl:Class ;
+                             rdfs:subClassOf geocrs:PolyhedralProjection ;
+                             rdfs:label "icosahedral projection" ;
+                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/IcosahedralProjection.svg"^^xsd:anyURI .
+
+
 ###  http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineOceanicViewProjection
 geocrs:InterruptedGoodeHomolosineOceanicViewProjection rdf:type owl:Class ;
                                                        rdfs:subClassOf geocrs:InterruptedGoodeHomolosineProjection ;
@@ -1350,6 +1450,13 @@ geocrs:LoximuthalProjection rdf:type owl:Class ;
                             rdfs:label "loximuthal projection"@en ;
                             skos:altLabel "Siemon I projection" ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LoximuthalProjection.svg"^^xsd:anyURI .
+
+
+###  http://www.opengis.net/ont/crs/MaurerNo73Projection
+geocrs:MaurerNo73Projection rdf:type owl:Class ;
+                            rdfs:subClassOf geocrs:HillEucyclicProjection ;
+                            rdfs:label "Maurer No 73 projection"^^xsd:anyURI ;
+                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MaurerNo73Projection.svg"^^xsd:anyURI .
 
 
 ###  http://www.opengis.net/ont/crs/MayrProjection
@@ -1714,10 +1821,52 @@ geocrs:PtolemyIProjection rdf:type owl:Class ;
                           rdfs:label "Ptolemy I projection"@en .
 
 
+###  http://www.opengis.net/ont/crs/PutninsP1Projection
+geocrs:PutninsP1Projection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                           dc:creator "Reinholds V. Putnins" ;
+                           dc:date 1934 ;
+                           geocrs:PROJidentifier "putp1" ;
+                           rdfs:label "Putnins P1 projection" .
+
+
+###  http://www.opengis.net/ont/crs/PutninsP2Projection
+geocrs:PutninsP2Projection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                           geocrs:PseudoCylindricalProjection ;
+                           dc:creator "Reinholds V. Putnins" ;
+                           dc:date 1934 ;
+                           geocrs:PROJidentifier "putp2" ;
+                           rdfs:label "Putnins P2 projection" .
+
+
+###  http://www.opengis.net/ont/crs/PutninsP3Projection
+geocrs:PutninsP3Projection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
+                           dc:creator "Reinholds V. Putnins" ;
+                           dc:date 1934 ;
+                           geocrs:PROJidentifier "putp3" ;
+                           rdfs:label "Putnins P3 projection" .
+
+
 ###  http://www.opengis.net/ont/crs/PutninsP5Projection
 geocrs:PutninsP5Projection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
-                           rdfs:label "putnins p5 projection"@en .
+                           dc:creator "Reinholds V. Putnins" ;
+                           dc:date 1934 ;
+                           geocrs:PROJidentifier "putp5" ;
+                           rdfs:label "Putnins P5 projection" ,
+                                      "putnins p5 projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/PutninsP6Projection
+geocrs:PutninsP6Projection rdf:type owl:Class ;
+                           rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                           geocrs:PseudoCylindricalProjection ;
+                           dc:creator "Reinholds V. Putnins" ;
+                           dc:date 1934 ;
+                           geocrs:PROJidentifier "putp6" ;
+                           rdfs:label "Putnins P6 projection" .
 
 
 ###  http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection
@@ -1806,6 +1955,13 @@ geocrs:SpilhausOceanicProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:CompromiseProjection ;
                                  dc:date 1942 ;
                                  rdfs:label "spilhaus oceanic projection"@en .
+
+
+###  http://www.opengis.net/ont/crs/StabiusWernerIIIProjection
+geocrs:StabiusWernerIIIProjection rdf:type owl:Class ;
+                                  rdfs:subClassOf geocrs:EqualAreaProjection ,
+                                                  geocrs:PolyconicProjection ;
+                                  rdfs:label "Stabius-Werner III projection" .
 
 
 ###  http://www.opengis.net/ont/crs/StabiusWernerIIProjection
@@ -2145,166 +2301,6 @@ geocrs:WinkelTripelProjection rdf:type owl:Class ;
                                               geocrs:PseudoAzimuthalProjection .
 
 
-###  http://www.opengis.net/ont/crs/ProjectionOntology#CoxConformalProjection
-geocrs:CoxConformalProjection rdf:type owl:Class ;
-                        rdfs:subClassOf geocrs:ConformalProjection ;
-                        rdfs:label "Cox conformal projection"^^xsd:anyURI ;
-                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/CoxConformalProjection.svg"^^xsd:anyURI .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#DodecahedralProjection
-geocrs:DodecahedralProjection rdf:type owl:Class ;
-                        rdfs:subClassOf geocrs:PolyhedralProjection ;
-                        rdfs:label "dodecahedral projection" ;
-                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/DodecahedralProjection.svg"^^xsd:anyURI .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIIIProjection
-geocrs:FranculaIIIProjection rdf:type owl:Class ;
-                       rdfs:subClassOf geocrs:LenticularProjection ;
-                       dc:creator "Nedjeljko Frančula" ;
-                       dc:date 1971 ;
-                       rdfs:label "Frančula III projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIVProjection
-geocrs:FranculaIVProjection rdf:type owl:Class ;
-                      rdfs:subClassOf geocrs:LenticularProjection ;
-                      dc:creator "Nedjeljko Frančula" ;
-                      dc:date 1971 ;
-                      rdfs:label "Frančula IV projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaIXProjection
-geocrs:FranculaIXProjection rdf:type owl:Class ;
-                      rdfs:subClassOf geocrs:LenticularProjection ;
-                      dc:creator "Nedjeljko Frančula" ;
-                      dc:date 1971 ;
-                      rdfs:label "Frančula IX projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaVIIIProjection
-geocrs:FranculaVIIIProjection rdf:type owl:Class ;
-                        rdfs:subClassOf geocrs:LenticularProjection ;
-                        dc:creator "Nedjeljko Frančula" ;
-                        dc:date 1971 ;
-                        rdfs:label "Frančula VIII projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaVProjection
-geocrs:FranculaVProjection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:EqualAreaProjection ,
-                                     geocrs:LenticularProjection ;
-                     dc:creator "Nedjeljko Frančula" ;
-                     dc:date 1971 ;
-                     rdfs:label "Frančula V projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIIIProjection
-geocrs:FranculaXIIIProjection rdf:type owl:Class ;
-                        rdfs:subClassOf geocrs:LenticularProjection ;
-                        dc:creator "Nedjeljko Frančula" ;
-                        dc:date 1971 ;
-                        rdfs:label "Frančula XIII projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIIProjection
-geocrs:FranculaXIIProjection rdf:type owl:Class ;
-                       rdfs:subClassOf geocrs:LenticularProjection ;
-                       dc:creator "Nedjeljko Frančula" ;
-                       dc:date 1971 ;
-                       rdfs:label "Frančula XII projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#FranculaXIVProjection
-geocrs:FranculaXIVProjection rdf:type owl:Class ;
-                       rdfs:subClassOf geocrs:EqualAreaProjection ,
-                                       geocrs:LenticularProjection ;
-                       dc:creator "Nedjeljko Frančula" ;
-                       dc:date 1971 ;
-                       rdfs:label "Frančula XIV projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicCubedSphereProjection
-geocrs:GnomonicCubedSphereProjection rdf:type owl:Class ;
-                               rdfs:subClassOf geocrs:PolyhedralProjection ;
-                               rdfs:label "Gnomonic Cubed Sphere projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#GnomonicIcosahedronProjection
-geocrs:GnomonicIcosahedronProjection rdf:type owl:Class ;
-                               rdfs:subClassOf geocrs:PolyhedralProjection ;
-                               rdfs:label "Gnomonic Icosahedron projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#IcosahedralProjection
-geocrs:IcosahedralProjection rdf:type owl:Class ;
-                       rdfs:subClassOf geocrs:PolyhedralProjection ;
-                       rdfs:label "icosahedral projection" ;
-                       <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/IcosahedralProjection.svg"^^xsd:anyURI .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#MaurerNo73Projection
-geocrs:MaurerNo73Projection rdf:type owl:Class ;
-                      rdfs:subClassOf geocrs:HillEucyclicProjection ;
-                      rdfs:label "Maurer No 73 projection"^^xsd:anyURI ;
-                      <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MaurerNo73Projection.svg"^^xsd:anyURI .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP1Projection
-geocrs:PutninsP1Projection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
-                     dc:creator "Reinholds V. Putnins" ;
-                     dc:date 1934 ;
-                     geocrs:PROJidentifier "putp1" ;
-                     rdfs:label "Putnins P1 projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP2Projection
-geocrs:PutninsP2Projection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:EqualAreaProjection ,
-                                     geocrs:PseudoCylindricalProjection ;
-                     dc:creator "Reinholds V. Putnins" ;
-                     dc:date 1934 ;
-                     geocrs:PROJidentifier "putp2" ;
-                     rdfs:label "Putnins P2 projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3Projection
-geocrs:PutninsP3Projection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
-                     dc:creator "Reinholds V. Putnins" ;
-                     dc:date 1934 ;
-                     geocrs:PROJidentifier "putp3" ;
-                     rdfs:label "Putnins P3 projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5Projection
-geocrs:PutninsP5Projection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
-                     dc:creator "Reinholds V. Putnins" ;
-                     dc:date 1934 ;
-                     geocrs:PROJidentifier "putp5" ;
-                     rdfs:label "Putnins P5 projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6Projection
-geocrs:PutninsP6Projection rdf:type owl:Class ;
-                     rdfs:subClassOf geocrs:EqualAreaProjection ,
-                                     geocrs:PseudoCylindricalProjection ;
-                     dc:creator "Reinholds V. Putnins" ;
-                     dc:date 1934 ;
-                     geocrs:PROJidentifier "putp6" ;
-                     rdfs:label "Putnins P6 projection" .
-
-
-###  http://www.opengis.net/ont/crs/ProjectionOntology#StabiusWernerIIIProjection
-geocrs:StabiusWernerIIIProjection rdf:type owl:Class ;
-                            rdfs:subClassOf geocrs:EqualAreaProjection ,
-                                            geocrs:PolyconicProjection ;
-                            rdfs:label "Stabius-Werner III projection" .
-
-
 ###  http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection
 <http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection> rdf:type owl:Class ;
                                                                          rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
@@ -2394,7 +2390,7 @@ geocrs:WinkelTripelProjection rdf:type owl:NamedIndividual ;
 #    Annotations
 #################################################################
 
-geocrs:AitoffProjection <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/AitoffProjection.svg"^^xsd:anyURI ;
+geocrs:AitoffProjection <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AitoffProjection.svg"^^xsd:anyURI ;
                         dc:creator "David Aitoff" ;
                         rdfs:label "aitoff projection"@en ;
                         dc:date "1889" ;

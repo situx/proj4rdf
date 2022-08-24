@@ -28,6 +28,10 @@ def csAsSVG(csdef):
             svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+")</text>"               
     return svgstr.replace("\"","'")+"</svg>"
 
+def geoidAsSVG(a,b):
+    svgstr="""<svg viewBox=\"-"""+str(a)+" -"+str(b)+" "+str(a)+" "+str(b)+"""\" height=\"485\" width=\"500\"><ellipse rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
+    return svgstr.replace("\"","'")
+    
 def resolveScope(indid,scopestring):
     ttl=set()
     if "," in scopestring:
@@ -155,7 +159,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
-			ttl.add(geoid+" geocrs:asSVG \"<svg viewBox=\\\"-"+str(curcrs.get_geod().a)+" -"+str(curcrs.get_geod().b)+" "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
+			ttl.add(geoid+" geocrs:asSVG \""+str(geoidAsSVG(curcrs.get_geod().a,curcrs.get_geod().b))+"\" . \n")
 		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
 		geodcounter+=1
 	if curcrs.coordinate_operation!=None:
