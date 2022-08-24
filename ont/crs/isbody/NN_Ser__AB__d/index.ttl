@@ -1,3 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/NN_Ser__AB__d> <http://purl.org/dc/elements/1.1/date> "2009-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.opengis.net/ont/crs/isbody/NN_Ser__AB__d> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/isbody/NN_Ser__AB__d> <http://www.opengis.net/ont/crs/mass> "2.28"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/NN_Ser__AB__d> <http://www.opengis.net/ont/crs/orbital_period> "2830.0"^^<http://www.w3.org/2001/XMLSchema#double> .

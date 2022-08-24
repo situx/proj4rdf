@@ -1,0 +1,3 @@
+<http://www.opengis.net/ont/crs/geod/Trinculo_geoid_obperiod> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/geod/Trinculo_geoid_obperiod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "749.24 (r)"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/geod/Trinculo_geoid_obperiod> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

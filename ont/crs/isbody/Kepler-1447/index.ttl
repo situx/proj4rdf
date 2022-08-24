@@ -1,3 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/Kepler-1447> <http://purl.org/dc/elements/1.1/date> "2016-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.opengis.net/ont/crs/isbody/Kepler-1447> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/isbody/Kepler-1447> <http://www.opengis.net/ont/crs/mass> "0.97"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/Kepler-1447> <http://www.opengis.net/ont/crs/radius> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> .

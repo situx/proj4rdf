@@ -1,3 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/HD_126053_A> <http://purl.org/dc/elements/1.1/date> "2012-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.opengis.net/ont/crs/isbody/HD_126053_A> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/isbody/HD_126053_A> <http://www.opengis.net/ont/crs/mass> "0.87"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/HD_126053_A> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Star> .

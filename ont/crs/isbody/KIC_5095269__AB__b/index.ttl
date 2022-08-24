@@ -1,3 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/KIC_5095269__AB__b> <http://purl.org/dc/elements/1.1/date> "2017-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.opengis.net/ont/crs/isbody/KIC_5095269__AB__b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/isbody/KIC_5095269__AB__b> <http://www.opengis.net/ont/crs/mass> "7.698"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/KIC_5095269__AB__b> <http://www.opengis.net/ont/crs/orbital_period> "237.7082"^^<http://www.w3.org/2001/XMLSchema#double> .

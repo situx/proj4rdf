@@ -1,3 +1,4 @@
+<http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_B> <http://purl.org/dc/elements/1.1/date> "2015-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_B> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_B> <http://www.opengis.net/ont/crs/mass> "39.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_B> <http://www.opengis.net/ont/crs/orbital_period> "3144.0"^^<http://www.w3.org/2001/XMLSchema#double> .
