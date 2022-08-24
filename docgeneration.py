@@ -1632,7 +1632,7 @@ class OntDocGeneration:
             unitlabel=mydata["unitlabel"]
             if baseurl in str(object) or isinstance(object,BNode):
                 rellink = self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,str(object),True)
-                tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(object) + "\" href=\"" + rellink + "\">"+ label + " <span style=\"color: #666;\">(" + self.namespaceshort + ":" + str(self.shortenURI(str(object))) + ")</span></a></span>"
+                tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(object) + "\" href=\"" + rellink + "\">"+ label + " <span style=\"color: #666;\">(" + self.namespaceshort + ":" + str(self.shortenURI(str(object))) + ")</span></a>"
             else:
                 res = self.replaceNameSpacesInLabel(str(object))
                 if res != None:
@@ -1644,9 +1644,9 @@ class OntDocGeneration:
                     tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(
                         object) + "\" target=\"_blank\" href=\"" + str(
                         object) + "\">" + label + "</a>"
-                if unitlabel!="":
-                    tablecontents+="["+str(unitlabel)+"]"
-                    tablecontents+="</span>"
+            if unitlabel!="":
+                tablecontents+="["+str(unitlabel)+"]"
+            tablecontents+="</span>"
         else:
             if isinstance(object, Literal) and object.datatype != None:
                 res = self.replaceNameSpacesInLabel(str(object.datatype))
