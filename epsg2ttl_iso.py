@@ -258,14 +258,18 @@ def parseSolarSystemSatellites(filename,ttlstring):
 			if str(row["radius"])!="":
 				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
 			if str(row["orbital_period"])!="":
-				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:orbital_period \""+row["orbital_period"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:orbital_period geocrsgeod:"+curname+"_geoid_obperiod .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_obperiod rdf:value \""+row["orbital_period"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid om:hasUnit om:day .\n")
 			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:Confirmed .\n")
 			ttlstring.add("geocrs:Confirmed rdf:type geocrs:PlanetStatus .\n")
 			ttlstring.add("geocrs:Confirmed rdfs:label \"Confirmed\"@en .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["Name"])+"\"@en .\n")
 			if str(row["semi_major_axis"])!="":
-				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_sm_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis om:hasUnit  om:astronomicalUnit .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
 			if str(row["Parent"])!="":
 				starname=row["Parent"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
@@ -282,26 +286,34 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 			curname=row["name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
 			ttlstring.add("geocrsisbody:"+curname+" rdf:type geocrs:Planet .\n")
 			ttlstring.add("geocrsisbody:"+curname+" rdfs:label \""+str(row["name"])+"\"@en .\n")
+			if str(row["discovered"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" dc:date \""+str(row["discovered"])+"\"^^xsd:date .\n")
 			if str(row["mass"])!="":
 				ttlstring.add("geocrsisbody:"+curname+" geocrs:mass \""+str(row["mass"])+"\"^^xsd:double .\n")
 			if str(row["orbital_period"])!="":
 				ttlstring.add("geocrsisbody:"+curname+" geocrs:orbital_period \""+str(row["orbital_period"])+"\"^^xsd:double .\n")
 			if str(row["radius"])!="":
-				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius geocrsisbody:"+curname+"_radius .\n")
+				ttlstring.add("geocrsisbody:"+curname+"_radius rdf:value \""+str(row["radius"])+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsisbody:"+curname+"_radius om:hasUnit om:astronomicalUnit .\n")
 			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:"+str(row["planet_status"])+" .\n")
 			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdf:type geocrs:PlanetStatus .\n")
 			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdfs:label \""+row["planet_status"]+"\"@en .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["name"])+"\"@en .\n")
 			if str(row["semi_major_axis"])!="":
-				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_sm_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis om:hasUnit  om:astronomicalUnit .\n")
 			if str(row["eccentricity"])!="":
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:approximates geocrsisbody:"+curname+" .\n")
 			if str(row["star_name"])!="":
 				starname=row["star_name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
 				ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Star .\n")
-				ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["star_name"])+"\"@en .\n")			
+				ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["star_name"])+"\"@en .\n")
+				if str(row["discovered"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" dc:date \""+str(row["discovered"])+"\"^^xsd:date .\n")
 				if str(row["star_mass"])!="":
 					ttlstring.add("geocrsisbody:"+starname+" geocrs:mass \""+row["star_mass"]+"\"^^xsd:double .\n")
 				if str(row["star_radius"])!="":
