@@ -13,9 +13,9 @@ def csAsSVG(csdef):
     svgstr= """<svg width=\"250\" height=\"250\" viewbox=\"0 0 250 250\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
     if len(csdef.axis_list)>0:
         if csdef.axis_list[0].unit_name in units:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"180\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
         else:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"180\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
     if len(csdef.axis_list)>1:
         if csdef.axis_list[1].unit_name in units:
             svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(units[csdef.axis_list[1].unit_name])+"</text>"
@@ -58,11 +58,10 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
 	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
 		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
-		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
-		if len(curcrs.coordinate_system.axis_list)==2:
-			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
-		elif len(curcrs.coordinate_system.axis_list)==3:
-			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
+		#if len(curcrs.coordinate_system.axis_list)==2:
+		#	ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
+		#elif len(curcrs.coordinate_system.axis_list)==3:
+		#	ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
 		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asSVG \""+str(csAsSVG(curcrs.coordinate_system))+"\"^^xsd:string .\n")
 		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
 		if curcrs.coordinate_system.remarks!=None:
@@ -146,7 +145,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
-			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
+			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"-"+str(curcrs.get_geod().a)+" -"+str(curcrs.get_geod().b)+" "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
 		geodcounter+=1
 	if curcrs.coordinate_operation!=None:
