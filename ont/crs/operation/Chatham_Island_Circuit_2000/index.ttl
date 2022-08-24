@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-176.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.opengis.net/ont/crs/scope> "Cadastre."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.w3.org/2000/01/rdf-schema#comment> "Officially discontinued 6 June 2006. Replaced by Chatham Islands Transverse Mercator 2000 (Code 17965)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Chatham_Island_Circuit_2000> <http://www.w3.org/2000/01/rdf-schema#label> "Chatham Island Circuit 2000: Transverse Mercator" .

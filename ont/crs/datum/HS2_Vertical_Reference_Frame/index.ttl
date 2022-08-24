@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://www.opengis.net/ont/crs/scope> "Engineering survey for HS2 project phases 1 and 2a."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://www.opengis.net/ont/crs/usage> "Engineering survey for HS2 project phases 1 and 2a"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
 <http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: HS2 Vertical Reference Frame" .
 <http://www.opengis.net/ont/crs/datum/HS2_Vertical_Reference_Frame> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: HS2 Vertical Reference Frame" .

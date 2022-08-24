@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "165.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "3000000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/scope> "Topographic mapping, environmental studies."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
+<http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.opengis.net/ont/crs/usage> "environmental studies"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.w3.org/2000/01/rdf-schema#label> "Borchgrevink Coast Lambert Conformal 2000: Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Borchgrevink_Coast_Lambert_Conformal_2000> <http://www.w3.org/2000/01/rdf-schema#label> "Borchgrevink Coast Lambert Conformal 2000: Lambert Conic Conformal (2SP)" .

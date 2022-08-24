@@ -13,7 +13,7 @@
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/longitudeOfOrigin> "24.83333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/method_name> "Krovak (North Orientated)" .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/scope> "GIS."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/usage> "GIS"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Krovak> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#comment> "Greenwich-based alternative to projection code 5218."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak East North (Greenwich): Krovak (North Orientated)" .

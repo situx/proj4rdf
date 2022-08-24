@@ -13,7 +13,8 @@
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant B)" .
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/northingAtProjectionCentre> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/LonLatProjection> .
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.w3.org/2000/01/rdf-schema#comment> "In Switzerland, replaced by new grid LV03 (proj code 19922). Longitude is referenced to the Bern meridian. See proj code 19841 for Greenwich-based equivalent."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Swiss_Oblique_Mercator_1903C> <http://www.w3.org/2000/01/rdf-schema#label> "Swiss Oblique Mercator 1903C: Hotine Oblique Mercator (variant B)" .

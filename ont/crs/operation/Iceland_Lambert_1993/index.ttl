@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-19.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "500000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.w3.org/2000/01/rdf-schema#comment> "Used only with ISN93 geogCRS. Replaced by Iceland Lambert 2004 (code 5326)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1993> <http://www.w3.org/2000/01/rdf-schema#label> "Iceland Lambert 1993: Lambert Conic Conformal (2SP)" .

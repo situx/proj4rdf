@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-90.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9996"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/scope> "State-wide spatial data management."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#comment> "Designed to cover the state in a single zone."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#label> "Wisconsin Transverse Mercator 83: Transverse Mercator" .

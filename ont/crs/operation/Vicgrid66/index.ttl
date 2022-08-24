@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "145.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "4500000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.opengis.net/ont/crs/scope> "State-wide spatial data management."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.w3.org/2000/01/rdf-schema#comment> "May also be used to display Victoria, New South Wales, Tasmania and South Australia as a single entity. Replaced by Vicgrid94 with effect from 2nd February 2000. Prior to 2000 this projection was known as VICGRID."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Vicgrid66> <http://www.w3.org/2000/01/rdf-schema#label> "Vicgrid66: Lambert Conic Conformal (2SP)" .

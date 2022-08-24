@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "19.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9993"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium and small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium and small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.w3.org/2000/01/rdf-schema#comment> "See Poland CS2000 zones (codes 18305-08) for cadastral survey and mapping at larger scales."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Poland_CS92> <http://www.w3.org/2000/01/rdf-schema#label> "Poland CS92: Transverse Mercator" .

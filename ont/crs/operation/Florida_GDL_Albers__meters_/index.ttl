@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-84.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/method_name> "Albers Equal Area" .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/scope> "State-wide spatial data management."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Florida GDL Albers (meters): Albers Equal Area" .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Florida GDL Albers (meters): Albers Equal Area" .

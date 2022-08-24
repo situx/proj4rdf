@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-69.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "3500000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/scope> "Exploration and development, mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/usage> "exploration and development"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.opengis.net/ont/crs/usage> "mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.w3.org/2000/01/rdf-schema#comment> "May be defined using LCC (1SP) method (EPSG method code 9801) with value of latitude for natural origin as latitude at false origin here and scale factor = 0.9995760608."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_3-29> <http://www.w3.org/2000/01/rdf-schema#label> "EPSG Arctic LCC zone 3-29: Lambert Conic Conformal (2SP)" .

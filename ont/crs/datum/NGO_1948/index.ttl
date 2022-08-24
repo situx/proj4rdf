@@ -1,7 +1,6 @@
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/ellipsoid> <http://www.opengis.net/ont/crs/geod/BesselModified> .
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
-<http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/scope> "Geodesy, cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/datum/NGO_1948> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .

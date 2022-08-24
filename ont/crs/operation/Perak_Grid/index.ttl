@@ -10,7 +10,8 @@
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "4.859063"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "100.8154"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station TG26 at Gunung Larut Hiijau, Taiping. Offset from old grid origin is -1.769m east, 0.994m north."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Perak_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Perak Grid: Cassini-Soldner" .

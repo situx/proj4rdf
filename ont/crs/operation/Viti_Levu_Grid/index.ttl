@@ -10,7 +10,9 @@
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "-18.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "178.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Original definition is in chains (1 chain = 100 links)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Viti_Levu_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Viti Levu Grid: Cassini-Soldner" .

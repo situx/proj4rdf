@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "5.421325"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "100.3459"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.opengis.net/ont/crs/scope> "Cadastre."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is Fort Cornwallis. Replaced by GDM2000 Pinang grid (code 19888)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Pinang_Cassini_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Pinang Cassini Grid: Cassini-Soldner" .

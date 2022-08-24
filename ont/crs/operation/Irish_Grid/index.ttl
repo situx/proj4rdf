@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-8.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000035"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Defined as part of the 1965 and 1975 mapping adustments in which the scale factor was introduced as a best fit to retain existing grid coordinates."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Irish_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Irish Grid: Transverse Mercator" .

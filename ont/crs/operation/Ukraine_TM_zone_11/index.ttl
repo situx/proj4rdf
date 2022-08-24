@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "33.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/scope> "Cadastre, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine TM zone 11: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Ukraine_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine TM zone 11: Transverse Mercator" .

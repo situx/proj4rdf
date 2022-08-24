@@ -12,7 +12,7 @@
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.opengis.net/ont/crs/isGeographic> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.opengis.net/ont/crs/isProjected> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.opengis.net/ont/crs/scope> "Hydrography and nautical charting."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.opengis.net/ont/crs/usage> "Hydrography and nautical charting"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.w3.org/2000/01/rdf-schema#label> "MLW depth" .
 <http://www.opengis.net/def/crs/EPSG/0/5867> <http://www.w3.org/2000/01/rdf-schema#label> "MLW depth" .

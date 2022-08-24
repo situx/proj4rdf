@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "141.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.999929"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.opengis.net/ont/crs/scope> "Minerals management (including oil and gas exploration and production)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.opengis.net/ont/crs/usage> "Minerals management (including oil and gas exploration and production)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.w3.org/2000/01/rdf-schema#comment> "Grid convergence uses opposite sign convention to UTM. The projection has reduced scale distortion compared to Map Grid of Australia zone 54 (code 17354)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/WEIPA94> <http://www.w3.org/2000/01/rdf-schema#label> "WEIPA94: Transverse Mercator" .

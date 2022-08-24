@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-18.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (West Orientated)" .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.w3.org/2000/01/rdf-schema#comment> "Used only with Hjorsey geogCRS."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.w3.org/2000/01/rdf-schema#label> "Iceland Lambert 1955: Lambert Conic Conformal (West Orientated)" .
 <http://www.opengis.net/ont/crs/operation/Iceland_Lambert_1955> <http://www.w3.org/2000/01/rdf-schema#label> "Iceland Lambert 1955: Lambert Conic Conformal (West Orientated)" .

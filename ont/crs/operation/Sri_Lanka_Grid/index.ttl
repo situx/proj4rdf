@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "80.77171"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9999238"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is Piturutalagala triangulation point. Used with Kandawala datum."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Sri_Lanka_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Sri Lanka Grid: Transverse Mercator" .

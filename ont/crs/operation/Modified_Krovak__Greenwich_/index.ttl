@@ -13,7 +13,9 @@
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/longitudeOfOrigin> "24.83333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/method_name> "Krovak Modified" .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#comment> "Greenwich-based alternative to projection code 5219."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak (Greenwich): Krovak Modified" .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak (Greenwich): Krovak Modified" .

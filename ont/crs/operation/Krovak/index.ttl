@@ -13,7 +13,8 @@
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/longitudeOfOrigin> "42.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/method_name> "Krovak" .
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Krovak> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Krovak> .
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.w3.org/2000/01/rdf-schema#comment> "Original definition. Longitude is referenced to the Ferro meridian. See projection code 5509 for alternative referenced to the Greenwich meridian and code 5218 for north-orientated alternative introduced for GIS purposes."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Krovak> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak: Krovak" .

@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-27.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9996"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.w3.org/2000/01/rdf-schema#label> "UTM zone 26S: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/UTM_zone_26S> <http://www.w3.org/2000/01/rdf-schema#label> "UTM zone 26S: Transverse Mercator" .

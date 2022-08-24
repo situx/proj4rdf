@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "80.875"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "1000000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.opengis.net/ont/crs/scope> "NNRMS National Spatial Framework (NSF) state resource database of medium resolution earth observation imagery and mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.opengis.net/ont/crs/usage> "NNRMS National Spatial Framework (NSF) state resource database of medium resolution earth observation imagery and mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.w3.org/2000/01/rdf-schema#label> "Andhra Pradesh NSF LCC: Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Andhra_Pradesh_NSF_LCC> <http://www.w3.org/2000/01/rdf-schema#label> "Andhra Pradesh NSF LCC: Lambert Conic Conformal (2SP)" .

@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-37.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.opengis.net/ont/crs/scope> "GIS."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.opengis.net/ont/crs/usage> "GIS"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "South Georgia Lambert: Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/South_Georgia_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "South Georgia Lambert: Lambert Conic Conformal (2SP)" .

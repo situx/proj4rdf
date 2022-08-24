@@ -13,10 +13,11 @@
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/isGeographic> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/isProjected> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/isVertical> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/scope> "Cadastre, survey control and engineering survey in urban areas, typically in all municipalities that previously comprised the 73 Municipal Integrated Surveying and Mapping (MISAM) areas, also known as urban cadastral map areas. For rural areas use UTM."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/sourceCRS> <http://www.opengis.net/def/crs/EPSG/0/4269> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
-<http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/usage> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/usage> "also known as urban cadastral map areas for rural areas use utm"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/usage> "survey control and engineering survey in urban areas"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.opengis.net/ont/crs/usage> "typically in all municipalities that previously comprised the 73 municipal integrated surveying and mapping (misam) areas"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.w3.org/2000/01/rdf-schema#label> "NAD83 / Alberta 3TM ref merid 117 W" .
 <http://www.opengis.net/def/crs/EPSG/0/3777> <http://www.w3.org/2000/01/rdf-schema#label> "NAD83 / Alberta 3TM ref merid 117 W" .

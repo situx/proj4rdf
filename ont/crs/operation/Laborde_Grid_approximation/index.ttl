@@ -14,7 +14,7 @@
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant B)" .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.opengis.net/ont/crs/northingAtProjectionCentre> "800000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "0.9995"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/LonLatProjection> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Paris meridian. The conversion method is a good approximation (better than 5cm) to original formula (see proj code 19861) within a few hundred km of origin, but farther away the approximation may be no better than 1m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid_approximation> <http://www.w3.org/2000/01/rdf-schema#label> "Laborde Grid approximation: Hotine Oblique Mercator (variant B)" .

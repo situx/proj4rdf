@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "6.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9995091"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.opengis.net/ont/crs/scope> "Obsolete."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.opengis.net/ont/crs/usage> "Obsolete"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Paris meridian."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Nord_de_Guerre> <http://www.w3.org/2000/01/rdf-schema#label> "Nord de Guerre: Lambert Conic Conformal (1SP)" .

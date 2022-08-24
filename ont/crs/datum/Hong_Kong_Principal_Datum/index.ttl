@@ -1,5 +1,4 @@
 <http://www.opengis.net/ont/crs/datum/Hong_Kong_Principal_Datum> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/Hong_Kong_Principal_Datum> <http://www.opengis.net/ont/crs/scope> "Geodesy, cadastre, engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Hong_Kong_Principal_Datum> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/datum/Hong_Kong_Principal_Datum> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/datum/Hong_Kong_Principal_Datum> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .

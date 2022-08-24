@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "19.16667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.opengis.net/ont/crs/method_name> "Oblique Stereographic" .
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.999714"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> .
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.w3.org/2000/01/rdf-schema#label> "GUGiK-80: Oblique Stereographic" .
 <http://www.opengis.net/ont/crs/operation/GUGiK-80> <http://www.w3.org/2000/01/rdf-schema#label> "GUGiK-80: Oblique Stereographic" .

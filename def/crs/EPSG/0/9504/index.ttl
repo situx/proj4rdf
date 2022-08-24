@@ -13,7 +13,7 @@
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.opengis.net/ont/crs/isGeographic> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.opengis.net/ont/crs/isProjected> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.opengis.net/ont/crs/scope> "Spatial referencing."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/SpatialReferencing> .
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CompoundCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.w3.org/2000/01/rdf-schema#label> "CIGD11 + LCVD61 height (ft)" .
 <http://www.opengis.net/def/crs/EPSG/0/9504> <http://www.w3.org/2000/01/rdf-schema#label> "CIGD11 + LCVD61 height (ft)" .

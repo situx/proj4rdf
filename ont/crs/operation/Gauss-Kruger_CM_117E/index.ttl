@@ -14,7 +14,7 @@
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "117.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.w3.org/2000/01/rdf-schema#comment> "Usually used with zone prefix to FE - see 6-degree Gauss-Kruger zone 20N (code 16220)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Gauss-Kruger_CM_117E> <http://www.w3.org/2000/01/rdf-schema#label> "Gauss-Kruger CM 117E: Transverse Mercator" .

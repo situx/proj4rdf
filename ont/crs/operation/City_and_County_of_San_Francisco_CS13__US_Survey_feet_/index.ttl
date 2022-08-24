@@ -14,7 +14,8 @@
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-122.45"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000007"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "City and County of San Francisco CS13 (US Survey feet): Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/City_and_County_of_San_Francisco_CS13__US_Survey_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "City and County of San Francisco CS13 (US Survey feet): Transverse Mercator" .

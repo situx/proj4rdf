@@ -12,7 +12,9 @@
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "25.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "4725824.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (1:5000 and larger scales)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.opengis.net/ont/crs/usage> "topographic mapping (1:5000 and larger scales)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.w3.org/2000/01/rdf-schema#comment> "Also given with equivalent definition having parameter values latitude of false origin = 42°N and FN = 4651640.214m. Note that at latitude 42°40'04.35246'N scale is minimum but not unity."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005> <http://www.w3.org/2000/01/rdf-schema#label> "Cadastral Coordinate System 2005: Lambert Conic Conformal (2SP)" .

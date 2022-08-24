@@ -1,6 +1,6 @@
 <http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6376523.0 -6355862.933255573 6376523.0 6355862.933255573" height="485" width="500"><ellipse rx="6376523.0" ry="6376523.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns=" .
+<http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox="-6376523.0 -6355862.933255573 6376523.0 6355862.933255573" height="485" width="500"><ellipse rx="6376523.0" ry="6376523.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox=" .
 <http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/eccentricity> "0.006469544"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003240021"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Plessis1817> <http://www.opengis.net/ont/crs/inverse_flattening> "308.64"^^<http://www.w3.org/2001/XMLSchema#double> .

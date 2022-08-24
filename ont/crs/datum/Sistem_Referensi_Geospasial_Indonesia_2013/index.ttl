@@ -1,9 +1,8 @@
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/ellipsoid> <http://www.opengis.net/ont/crs/geod/WGS84> .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
-<http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
-<http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/usage> "Engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Sistem Referensi Geospasial Indonesia 2013" .
 <http://www.opengis.net/ont/crs/datum/Sistem_Referensi_Geospasial_Indonesia_2013> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Sistem Referensi Geospasial Indonesia 2013" .

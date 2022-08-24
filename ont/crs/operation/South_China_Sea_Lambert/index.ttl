@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "114.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "500000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.opengis.net/ont/crs/scope> "Oil and gas exploration and production."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.opengis.net/ont/crs/usage> "Oil and gas exploration and production"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.w3.org/2000/01/rdf-schema#comment> "Originally defined with FN=500000 at true origin. This is at 21° 00' 37.0619'N. But operators assumed that it was at 21°N exactly. Thus by common practice Nf=500000 at 21°N exactly. The potential ambiguity is 1138m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_China_Sea_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "South China Sea Lambert: Lambert Conic Conformal (2SP)" .

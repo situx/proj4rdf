@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-67.50075"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/method_name> "Colombia Urban" .
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/projectionPlaneOriginHeight> "51.58"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ColombiaUrbanProjection> .
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.w3.org/2000/01/rdf-schema#label> "Puerto Carreno urban grid: Colombia Urban" .
 <http://www.opengis.net/ont/crs/operation/Puerto_Carreno_urban_grid> <http://www.w3.org/2000/01/rdf-schema#label> "Puerto Carreno urban grid: Colombia Urban" .

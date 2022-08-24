@@ -1,6 +1,6 @@
 <http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
-<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.opengis.net/ont/crs/scope> "Satellite navigation."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/SatelliteNvaigation> .
 <http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Datum> .
 <http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: World Geodetic System 1984 ensemble" .
 <http://www.opengis.net/ont/crs/datum/World_Geodetic_System_1984_ensemble> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: World Geodetic System 1984 ensemble" .

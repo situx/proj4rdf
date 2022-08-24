@@ -10,7 +10,8 @@
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "5.964673"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "100.6364"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station TG35 at Gunung Perak, Kuala Muda."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Kedah_and_Perlis_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Kedah and Perlis Grid: Cassini-Soldner" .

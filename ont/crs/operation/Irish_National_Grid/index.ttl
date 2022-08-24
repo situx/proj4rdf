@@ -15,7 +15,8 @@
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000035"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AiryProjection> .
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Irish_National_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Used only with the 1952 geodetic adjustment. Replaced by the 1975 Mapping Adjustment: see code 19972."^^<http://www.w3.org/2001/XMLSchema#string> .

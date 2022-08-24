@@ -1,6 +1,6 @@
 <http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6378135.0 -6356750.304921594 6378135.0 6356750.304921594" height="485" width="500"><ellipse rx="6378135.0" ry="6378135.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns=" .
+<http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox="-6378135.0 -6356750.304921594 6378135.0 6356750.304921594" height="485" width="500"><ellipse rx="6378135.0" ry="6378135.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox=" .
 <http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/eccentricity> "0.006694385"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003352813"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Average_Terrestrial_System_1977> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .

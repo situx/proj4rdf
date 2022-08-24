@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-71.60562"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.opengis.net/ont/crs/scope> "Oil and gas exploration and production."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.opengis.net/ont/crs/usage> "Oil and gas exploration and production"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.w3.org/2000/01/rdf-schema#comment> "Grid coordinates are (0 0) at Maracaibo Cathedral."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Maracaibo_Grid__M1_> <http://www.w3.org/2000/01/rdf-schema#label> "Maracaibo Grid (M1): Lambert Conic Conformal (1SP)" .

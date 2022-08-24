@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-77.75"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "See code 15353 for equivalent non-metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Pennsylvania_North_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "SPCS83 Pennsylvania North zone (meters): Lambert Conic Conformal (2SP)" .

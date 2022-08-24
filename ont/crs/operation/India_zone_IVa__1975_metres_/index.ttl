@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "80.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9987864"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.w3.org/2000/01/rdf-schema#comment> "BEWARE ! Different yard to metre conversion values have been used in different parts of south Asia. Some areas have changed conversion value with time."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/India_zone_IVa__1975_metres_> <http://www.w3.org/2000/01/rdf-schema#label> "India zone IVa (1975 metres): Lambert Conic Conformal (1SP)" .

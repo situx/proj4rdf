@@ -1,7 +1,7 @@
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.opengis.net/ont/crs/ellipse> "Everest 1830 (1975 Definition)" .
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
-<http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Kalianpur 1975" .
 <http://www.opengis.net/ont/crs/datum/Kalianpur_1975> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Kalianpur 1975" .

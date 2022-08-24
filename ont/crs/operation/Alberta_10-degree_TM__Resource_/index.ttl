@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-115.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9992"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.opengis.net/ont/crs/scope> "Province-wide spatial data management."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.opengis.net/ont/crs/usage> "Province-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.w3.org/2000/01/rdf-schema#comment> "Has negative easting coordinates in western Alberta. For an alternative with positive coordinates see Alberta 10-degree TM (Forest) (code 19881)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Alberta_10-degree_TM__Resource_> <http://www.w3.org/2000/01/rdf-schema#label> "Alberta 10-degree TM (Resource): Transverse Mercator" .

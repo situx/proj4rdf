@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-122.25"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.00004"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "See code 8286 for equivalent non-metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Medford-Diamond_Lake_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Medford-Diamond Lake zone (meters): Lambert Conic Conformal (1SP)" .

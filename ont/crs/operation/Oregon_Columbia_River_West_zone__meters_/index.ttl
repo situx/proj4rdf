@@ -13,7 +13,7 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfProjectionCentre> "-123.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant A)" .
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "If using Hotine Oblique Mercator (variant B) method (code 9815), Ec=168300.419 m, Nc=185673.833 m. See code 6754 for equivalent non-metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Columbia_River_West_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Columbia River West zone (meters): Hotine Oblique Mercator (variant A)" .

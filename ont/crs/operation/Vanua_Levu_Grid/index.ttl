@@ -10,7 +10,9 @@
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "-16.25"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "179.3333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/method_name> "Hyperbolic Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Original definition is in chains (1 chain = 100 links)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Vanua_Levu_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Vanua Levu Grid: Hyperbolic Cassini-Soldner" .

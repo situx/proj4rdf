@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "147.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.w3.org/2000/01/rdf-schema#comment> "Also found with zone truncated from false easting: see Gauss-Kruger cm 147E (code 16325). Original transformation by Gauss-Kruger formula."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/3-degree_Gauss-Kruger_zone_49> <http://www.w3.org/2000/01/rdf-schema#label> "3-degree Gauss-Kruger zone 49: Transverse Mercator" .

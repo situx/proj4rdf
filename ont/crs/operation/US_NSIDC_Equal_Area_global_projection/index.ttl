@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.opengis.net/ont/crs/latitudeOf1StStandardParallel> "30.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.opengis.net/ont/crs/method_name> "Lambert Cylindrical Equal Area (Spherical)" .
-<http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.opengis.net/ont/crs/scope> "Environmental science - used as basis for EASE grid."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.opengis.net/ont/crs/usage> "Environmental science - used as basis for EASE grid"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CylindricalEqualArea> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.w3.org/2000/01/rdf-schema#comment> "See information source for equations to define Equal-Area Scalable Earth Grid (EASE-Grid) overlay."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_Equal_Area_global_projection> <http://www.w3.org/2000/01/rdf-schema#label> "US NSIDC Equal Area global projection: Lambert Cylindrical Equal Area (Spherical)" .

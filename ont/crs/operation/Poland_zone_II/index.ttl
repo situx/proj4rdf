@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "21.50278"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/method_name> "Oblique Stereographic" .
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9998"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, civilian topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.opengis.net/ont/crs/usage> "civilian topographic mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> .
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.w3.org/2000/01/rdf-schema#label> "Poland zone II: Oblique Stereographic" .
 <http://www.opengis.net/ont/crs/operation/Poland_zone_II> <http://www.w3.org/2000/01/rdf-schema#label> "Poland zone II: Oblique Stereographic" .

@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "78.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.w3.org/2000/01/rdf-schema#comment> "After: Sievers, J. and H. Bennat (1989). 'Reference systems of maps and geographic information systems of Antarctica.' Antarctic Science 1(4): 351-362."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SCAR_IMW_SR43-44> <http://www.w3.org/2000/01/rdf-schema#label> "SCAR IMW SR43-44: Lambert Conic Conformal (2SP)" .

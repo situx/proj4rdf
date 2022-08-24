@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "9.546708"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "138.1687"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.opengis.net/ont/crs/method_name> "Modified Azimuthal Equidistant" .
-<http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection> .
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station YAP SECOR AMS 1965."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Yap_Islands> <http://www.w3.org/2000/01/rdf-schema#label> "Yap Islands: Modified Azimuthal Equidistant" .

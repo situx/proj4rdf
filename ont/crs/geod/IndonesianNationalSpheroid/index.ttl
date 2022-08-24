@@ -1,6 +1,6 @@
 <http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6378160.0 -6356774.50408554 6378160.0 6356774.50408554" height="485" width="500"><ellipse rx="6378160.0" ry="6378160.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns=" .
+<http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox="-6378160.0 -6356774.50408554 6378160.0 6356774.50408554" height="485" width="500"><ellipse rx="6378160.0" ry="6378160.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox=" .
 <http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/eccentricity> "0.006694609"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003352926"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/IndonesianNationalSpheroid> <http://www.opengis.net/ont/crs/inverse_flattening> "298.247"^^<http://www.w3.org/2001/XMLSchema#double> .

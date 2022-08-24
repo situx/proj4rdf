@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-118.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.00013"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "See code 6766 for equivalent non-metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Oregon_La_Grande_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon La Grande zone (meters): Transverse Mercator" .

@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-68.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.opengis.net/ont/crs/method_name> "Albers Equal Area" .
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium and small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium and small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.w3.org/2000/01/rdf-schema#label> "Quebec Albers Projection: Albers Equal Area" .
 <http://www.opengis.net/ont/crs/operation/Quebec_Albers_Projection> <http://www.w3.org/2000/01/rdf-schema#label> "Quebec Albers Projection: Albers Equal Area" .

@@ -1,5 +1,4 @@
 <http://www.opengis.net/ont/crs/datum/North_Rona> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/North_Rona> <http://www.opengis.net/ont/crs/scope> "Geodesy, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/North_Rona> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .
 <http://www.opengis.net/ont/crs/datum/North_Rona> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/datum/North_Rona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .

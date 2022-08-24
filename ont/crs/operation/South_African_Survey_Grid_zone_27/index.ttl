@@ -12,7 +12,9 @@
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "27.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator (South Orientated)" .
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.w3.org/2000/01/rdf-schema#comment> "Transformation method sometimes described as 'Gauss conform'."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_African_Survey_Grid_zone_27> <http://www.w3.org/2000/01/rdf-schema#label> "South African Survey Grid zone 27: Transverse Mercator (South Orientated)" .

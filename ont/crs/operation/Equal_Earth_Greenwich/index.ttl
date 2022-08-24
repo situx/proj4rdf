@@ -9,7 +9,7 @@
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.opengis.net/ont/crs/has_ballpark_transformation> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.opengis.net/ont/crs/method_name> "Equal Earth" .
-<http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.opengis.net/ont/crs/scope> "Very small scale equal-area mapping - Europe-Africa-centred."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.opengis.net/ont/crs/usage> "Very small scale equal-area mapping - Europe-Africa-centred"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/EqualEarthProjection> .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.w3.org/2000/01/rdf-schema#label> "Equal Earth Greenwich: Equal Earth" .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Greenwich> <http://www.w3.org/2000/01/rdf-schema#label> "Equal Earth Greenwich: Equal Earth" .

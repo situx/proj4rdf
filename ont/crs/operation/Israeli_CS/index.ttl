@@ -10,7 +10,8 @@
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "31.7341"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "35.21208"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.w3.org/2000/01/rdf-schema#comment> "Based on proj 18201 but with 1 million added to FN. Note: Palestine Belt (proj code 18202) has identical parameter values: the difference in conversion between the Israeli CS and the Palestine Belt caused by their different methods is under 2m in Israel."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Israeli_CS> <http://www.w3.org/2000/01/rdf-schema#label> "Israeli CS: Cassini-Soldner" .

@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "2.337229"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9998774"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.w3.org/2000/01/rdf-schema#comment> "This is Lambert zone II (code 18082) parameters converted from grads/Paris to degrees/Greenwich for use with ED50."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/France_EuroLambert> <http://www.w3.org/2000/01/rdf-schema#label> "France EuroLambert: Lambert Conic Conformal (1SP)" .

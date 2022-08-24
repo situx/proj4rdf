@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "12.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9985"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Italy zone: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Italy_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Italy zone: Transverse Mercator" .

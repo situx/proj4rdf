@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "6.166667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/LonLatProjection> .
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Oslo meridian."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/NGO_zone_V> <http://www.w3.org/2000/01/rdf-schema#label> "NGO zone V: Transverse Mercator" .

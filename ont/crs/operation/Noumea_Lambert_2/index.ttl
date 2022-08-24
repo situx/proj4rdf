@@ -12,7 +12,9 @@
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "166.4425"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "-2.354"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.w3.org/2000/01/rdf-schema#comment> "Variant of Noumea Lambert (proj code 19873) defined for applications unable to define parameter values in decimal seconds. Gives same conversion results."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Noumea_Lambert_2> <http://www.w3.org/2000/01/rdf-schema#label> "Noumea Lambert 2: Lambert Conic Conformal (2SP)" .

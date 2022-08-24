@@ -13,11 +13,10 @@
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/isGeographic> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/isProjected> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/isVertical> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large and medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/sourceCRS> <http://www.opengis.net/def/crs/EPSG/0/4222> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
-<http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/usage> "Geodesy, cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.w3.org/2000/01/rdf-schema#label> "Cape / Lo19" .
 <http://www.opengis.net/def/crs/EPSG/0/22279> <http://www.w3.org/2000/01/rdf-schema#label> "Cape / Lo19" .

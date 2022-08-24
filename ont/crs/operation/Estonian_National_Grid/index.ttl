@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "24.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "6375000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Coordinates at the projection origin match those of TM Baltic 93."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Estonian_National_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Estonian National Grid: Lambert Conic Conformal (2SP)" .

@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "36.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/scope> "Cadastre, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.w3.org/2000/01/rdf-schema#label> "Local coordinate system of Kharkiv region: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Local_coordinate_system_of_Kharkiv_region> <http://www.w3.org/2000/01/rdf-schema#label> "Local coordinate system of Kharkiv region: Transverse Mercator" .

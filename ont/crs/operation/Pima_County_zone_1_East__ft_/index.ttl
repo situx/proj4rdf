@@ -13,7 +13,8 @@
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant B)" .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/northingAtProjectionCentre> "800000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "1.00011"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/scope> "Cadastre, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.w3.org/2000/01/rdf-schema#comment> "Grid unit is International feet (note: not US Survey feet)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_1_East__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Pima County zone 1 East (ft): Hotine Oblique Mercator (variant B)" .

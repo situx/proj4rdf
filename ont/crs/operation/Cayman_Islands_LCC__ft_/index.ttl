@@ -16,7 +16,7 @@
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "80.56667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "1900000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.opengis.net/ont/crs/scope> "Geodesy."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Cayman Islands LCC (ft): Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Cayman_Islands_LCC__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Cayman Islands LCC (ft): Lambert Conic Conformal (2SP)" .

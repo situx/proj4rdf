@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "3.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "9200000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/scope> "Cadastre, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.w3.org/2000/01/rdf-schema#comment> "Compliments Lambert-93. Scale factor ranges between -9 and +7 cm/km. Area of use overlaps adjacent zone."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_9> <http://www.w3.org/2000/01/rdf-schema#label> "France Conic Conformal zone 9: Lambert Conic Conformal (2SP)" .

@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "159.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.w3.org/2000/01/rdf-schema#comment> "Also found with zone truncated from false easting: see 6-degree Gauss-Kruger CM 159E (code 16327)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/6-degree_Gauss-Kruger_zone_27> <http://www.w3.org/2000/01/rdf-schema#label> "6-degree Gauss-Kruger zone 27: Transverse Mercator" .

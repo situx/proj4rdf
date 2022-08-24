@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-100.35"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000116"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.opengis.net/ont/crs/scope> "Highway engineering."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.opengis.net/ont/crs/usage> "Highway engineering"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.w3.org/2000/01/rdf-schema#label> "Kansas regional zone 3 Oberlin (ftUS): Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_3_Oberlin__ftUS_> <http://www.w3.org/2000/01/rdf-schema#label> "Kansas regional zone 3 Oberlin (ftUS): Transverse Mercator" .

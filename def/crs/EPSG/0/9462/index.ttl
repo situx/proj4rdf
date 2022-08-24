@@ -13,8 +13,10 @@
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/isGeographic> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/isProjected> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/scope> "Location-based services, Intelligent Transport Services, navigation, positioning."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/usage> "Geodesy, cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/usage> "intelligent transport services"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/usage> "location-based services"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/usage> "navigation"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.opengis.net/ont/crs/usage> "positioning"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CompoundCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.w3.org/2000/01/rdf-schema#label> "GDA2020 + AVWS height" .
 <http://www.opengis.net/def/crs/EPSG/0/9462> <http://www.w3.org/2000/01/rdf-schema#label> "GDA2020 + AVWS height" .

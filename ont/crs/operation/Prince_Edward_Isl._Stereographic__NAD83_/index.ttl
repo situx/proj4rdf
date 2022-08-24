@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-63.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/method_name> "Oblique Stereographic" .
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.999912"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> .
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.w3.org/2000/01/rdf-schema#comment> "False Easting and False Northing changed from values used with ATS77 (which were FE=700000m; FN=400000m) to these new values when used with NAD83 (CSRS).  New values are FE=400000m; FN=800000m; adopted in 2000."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Prince_Edward_Isl._Stereographic__NAD83_> <http://www.w3.org/2000/01/rdf-schema#label> "Prince Edward Isl. Stereographic (NAD83): Oblique Stereographic" .

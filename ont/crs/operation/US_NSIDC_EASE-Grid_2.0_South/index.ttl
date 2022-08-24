@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "-90.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.opengis.net/ont/crs/method_name> "Lambert Azimuthal Equal Area" .
-<http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.opengis.net/ont/crs/scope> "Environmental science - used as basis for EASE grid."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.opengis.net/ont/crs/usage> "Environmental science - used as basis for EASE grid"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.w3.org/2000/01/rdf-schema#label> "US NSIDC EASE-Grid 2.0 South: Lambert Azimuthal Equal Area" .
 <http://www.opengis.net/ont/crs/operation/US_NSIDC_EASE-Grid_2.0_South> <http://www.w3.org/2000/01/rdf-schema#label> "US NSIDC EASE-Grid 2.0 South: Lambert Azimuthal Equal Area" .

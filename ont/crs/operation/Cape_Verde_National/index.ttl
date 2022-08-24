@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "-24.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "128511.2"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.w3.org/2000/01/rdf-schema#comment> "Adopted October 2004."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Cape_Verde_National> <http://www.w3.org/2000/01/rdf-schema#label> "Cape Verde National: Lambert Conic Conformal (2SP)" .

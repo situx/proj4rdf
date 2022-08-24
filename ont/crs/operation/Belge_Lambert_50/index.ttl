@@ -12,7 +12,8 @@
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "5400000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Brussels meridian. If software cannot handle latitude of false origin of 90°N, use latitude of false origin = 50°30'00.0'N with northing at false origin = 131983.890 m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Belge_Lambert_50> <http://www.w3.org/2000/01/rdf-schema#label> "Belge Lambert 50: Lambert Conic Conformal (2SP)" .

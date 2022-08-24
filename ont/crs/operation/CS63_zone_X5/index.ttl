@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "35.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.w3.org/2000/01/rdf-schema#comment> "On the Krassowsky 1940 ellipsoid an alternative but equivalent definition uses latitude of natural origin = 0° and false northing = -9214.692m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/CS63_zone_X5> <http://www.w3.org/2000/01/rdf-schema#label> "CS63 zone X5: Transverse Mercator" .

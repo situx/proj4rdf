@@ -13,7 +13,8 @@
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant B)" .
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/northingAtProjectionCentre> "1452948.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "0.99984"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.w3.org/2000/01/rdf-schema#comment> "See 19956 and 19958 for chains and metres versions. If using Hotine Oblique Mercator (variant A) method (code 9812) FE = FN = 0 ftSe.  Being replaced by metric version (code 19958)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Borneo_Grid__feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Rectified Skew Orthomorphic Borneo Grid (feet): Hotine Oblique Mercator (variant B)" .

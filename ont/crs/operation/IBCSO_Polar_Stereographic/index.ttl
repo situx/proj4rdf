@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.opengis.net/ont/crs/latitudeOfStandardParallel> "-65.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.opengis.net/ont/crs/longitudeOfOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.opengis.net/ont/crs/method_name> "Polar Stereographic (variant B)" .
-<http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.opengis.net/ont/crs/scope> "Hydrography and nautical charting."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.opengis.net/ont/crs/usage> "Hydrography and nautical charting"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/StereographicProjection> .
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for the International Bathymetric Chart of the Southern Ocean."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/IBCSO_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "IBCSO Polar Stereographic: Polar Stereographic (variant B)" .

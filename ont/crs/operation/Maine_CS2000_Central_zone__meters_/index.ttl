@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-69.125"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.99998"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "In Maine Department of Transportation and other State agencies replaces CS27 and SPCS83 from 1/1/2001."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Maine CS2000 Central zone (meters): Transverse Mercator" .

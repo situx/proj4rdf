@@ -13,7 +13,7 @@
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.opengis.net/ont/crs/longitudeOfProjectionCentre> "-86.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.opengis.net/ont/crs/method_name> "Hotine Oblique Mercator (variant A)" .
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.opengis.net/ont/crs/scaleFactorOnInitialLine> "0.9996"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.opengis.net/ont/crs/scope> "State-wide spatial data management."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "If using Hotine Oblique Mercator (variant B) method (code 9815), Ec=499840.252 m, Nc=528600.303 m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Michigan_Oblique_Mercator__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan Oblique Mercator (meters): Hotine Oblique Mercator (variant A)" .

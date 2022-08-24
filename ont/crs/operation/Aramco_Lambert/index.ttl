@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.opengis.net/ont/crs/longitudeOfFalseOrigin> "48.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.opengis.net/ont/crs/scope> "Oil and gas exploration and production."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.opengis.net/ont/crs/usage> "Oil and gas exploration and production"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.w3.org/2000/01/rdf-schema#comment> "Used by Saudi Aramco when area of interest crosses UTM zone boundary. Adopted by partners for Core Venture 1 (South Ghawar) area."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Aramco_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "Aramco Lambert: Lambert Conic Conformal (2SP)" .

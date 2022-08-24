@@ -13,7 +13,7 @@
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.opengis.net/ont/crs/method_name> "Equidistant Cylindrical (Spherical)" .
-<http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.opengis.net/ont/crs/scope> "Graticule coordinates in rectangular Cartesian form."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.opengis.net/ont/crs/usage> "Graticule coordinates in rectangular Cartesian form"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/EquidistantCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin at intersection of equator and prime meridian."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical__Sphere_> <http://www.w3.org/2000/01/rdf-schema#label> "World Equidistant Cylindrical (Sphere): Equidistant Cylindrical (Spherical)" .

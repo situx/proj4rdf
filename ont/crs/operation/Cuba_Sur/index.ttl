@@ -21,7 +21,8 @@
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (2SP)" .
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "229126.9"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9999485"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.w3.org/2000/01/rdf-schema#label> "Cuba Sur: Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/Cuba_Sur> <http://www.w3.org/2000/01/rdf-schema#label> "Cuba Sur: Lambert Conic Conformal (2SP)" .

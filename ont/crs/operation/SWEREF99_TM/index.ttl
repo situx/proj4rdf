@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "15.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9996"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.opengis.net/ont/crs/scope> "Topographic mapping (medium and small scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium and small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.w3.org/2000/01/rdf-schema#comment> "Projection parameters are identical to UTM zone 33N. Unlike UTM zone 33N, the SWREF99 TM is used throughout all Sweden."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SWEREF99_TM> <http://www.w3.org/2000/01/rdf-schema#label> "SWEREF99 TM: Transverse Mercator" .

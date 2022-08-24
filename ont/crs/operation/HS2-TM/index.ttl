@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-1.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.opengis.net/ont/crs/scope> "Engineering survey for HS2 project phases 1 and 2a."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.opengis.net/ont/crs/usage> "Engineering survey for HS2 project phases 1 and 2a"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.w3.org/2000/01/rdf-schema#comment> "In conjunction with transformation HS2TN15 (code 9302) emulates the zero-distortion Snake projection HS2P1+14. Emulation derived at 350,000 locations, RMS position difference is 0.15 mm and max position difference is 0.6 mm; this is considered errorless."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/HS2-TM> <http://www.w3.org/2000/01/rdf-schema#label> "HS2-TM: Transverse Mercator" .

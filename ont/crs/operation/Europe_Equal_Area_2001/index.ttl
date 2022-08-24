@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "52.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "10.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.opengis.net/ont/crs/method_name> "Lambert Azimuthal Equal Area" .
-<http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.opengis.net/ont/crs/scope> "Statistical analysis."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.opengis.net/ont/crs/usage> "Statistical analysis"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.w3.org/2000/01/rdf-schema#comment> "LCC (code 19985) used for conformal mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Europe_Equal_Area_2001> <http://www.w3.org/2000/01/rdf-schema#label> "Europe Equal Area 2001: Lambert Azimuthal Equal Area" .

@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-5.716667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.opengis.net/ont/crs/scope> "Topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.w3.org/2000/01/rdf-schema#label> "St. Helena Local Grid 1971: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/St._Helena_Local_Grid_1971> <http://www.w3.org/2000/01/rdf-schema#label> "St. Helena Local Grid 1971: Transverse Mercator" .

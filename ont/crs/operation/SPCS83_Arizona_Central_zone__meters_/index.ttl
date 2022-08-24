@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-111.9167"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "State law defines origin in International feet. FE = 700000ft. See code 15305 for equivalent non-metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_Central_zone__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "SPCS83 Arizona Central zone (meters): Transverse Mercator" .

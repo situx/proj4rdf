@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "48.03846"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "31.80418"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.opengis.net/ont/crs/scope> "Cadastre."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Ferro meridian."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Gusterberg_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Gusterberg Grid: Cassini-Soldner" .

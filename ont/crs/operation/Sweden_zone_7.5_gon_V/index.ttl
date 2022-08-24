@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "11.30828"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.w3.org/2000/01/rdf-schema#comment> "At the municipal level alternative projections are found defined with different sets of False Northing and Easting, based on 100 km grid squares. This is denoted by the last part of the name.  For example 61:-1 means FN = -6100000 and FE = 100000 m."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Sweden_zone_7.5_gon_V> <http://www.w3.org/2000/01/rdf-schema#label> "Sweden zone 7.5 gon V: Transverse Mercator" .

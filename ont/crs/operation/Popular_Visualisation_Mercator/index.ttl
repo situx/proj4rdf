@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.opengis.net/ont/crs/method_name> "Mercator (1SP) (Spherical)" .
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.opengis.net/ont/crs/scope> "Web mapping and visualisation."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.opengis.net/ont/crs/usage> "Web mapping and visualisation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.w3.org/2000/01/rdf-schema#comment> "Uses spherical development. Compared to ellipsoidal development errors of up to 800 metres may arise."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Popular_Visualisation_Mercator> <http://www.w3.org/2000/01/rdf-schema#label> "Popular Visualisation Mercator: Mercator (1SP) (Spherical)" .

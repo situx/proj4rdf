@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-90.53333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000027"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.opengis.net/ont/crs/scope> "Highway engineering."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.opengis.net/ont/crs/usage> "Highway engineering"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 11 Dubuque-Davenport: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_11_Dubuque-Davenport> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 11 Dubuque-Davenport: Transverse Mercator" .

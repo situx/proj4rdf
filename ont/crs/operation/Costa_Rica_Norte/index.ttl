@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-84.33333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (1SP)" .
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.999957"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/scope> "Engineering survey, topographic mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.w3.org/2000/01/rdf-schema#comment> "Costa Rica recognises a 'common zone' between 9°32'N and 9°56'N where either Costa Rica Norte or Costa Rica Sur Lambert zones may be used."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Costa_Rica_Norte> <http://www.w3.org/2000/01/rdf-schema#label> "Costa Rica Norte: Lambert Conic Conformal (1SP)" .

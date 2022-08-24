@@ -11,7 +11,9 @@
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "105.75"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey, topographic mapping (large scale)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
+<http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.w3.org/2000/01/rdf-schema#label> "Vietnam TM-3 105-45: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Vietnam_TM-3_105-45> <http://www.w3.org/2000/01/rdf-schema#label> "Vietnam TM-3 105-45: Transverse Mercator" .

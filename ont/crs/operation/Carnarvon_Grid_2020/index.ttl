@@ -11,7 +11,8 @@
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "113.6667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.999998"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/scope> "Cadastre, engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
+<http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.w3.org/2000/01/rdf-schema#label> "Carnarvon Grid 2020: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Carnarvon_Grid_2020> <http://www.w3.org/2000/01/rdf-schema#label> "Carnarvon Grid 2020: Transverse Mercator" .

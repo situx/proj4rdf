@@ -14,7 +14,7 @@
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.opengis.net/ont/crs/isGeographic> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.opengis.net/ont/crs/isProjected> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CompoundCRS> .
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.w3.org/2000/01/rdf-schema#label> "ETRS89 / NTM zone 26 + NN2000 height" .
 <http://www.opengis.net/def/crs/EPSG/0/5966> <http://www.w3.org/2000/01/rdf-schema#label> "ETRS89 / NTM zone 26 + NN2000 height" .

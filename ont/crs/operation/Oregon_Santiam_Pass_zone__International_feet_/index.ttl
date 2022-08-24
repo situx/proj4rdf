@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-122.5"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000155"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#comment> "See code 6779 for equivalent metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Santiam Pass zone (International feet): Transverse Mercator" .

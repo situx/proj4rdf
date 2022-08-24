@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-91.91667"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.00002"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.opengis.net/ont/crs/scope> "Highway engineering."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.opengis.net/ont/crs/usage> "Highway engineering"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 13 Fairfield: Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_13_Fairfield> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 13 Fairfield: Transverse Mercator" .

@@ -11,7 +11,7 @@
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-88.63333"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.opengis.net/ont/crs/method_name> "Transverse Mercator" .
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000067"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.opengis.net/ont/crs/scope> "Engineering survey."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaces and emulates WCCS zone. For equivalent non-metric definition see proj code 7389."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/WISCRS_Forest_County__m_> <http://www.w3.org/2000/01/rdf-schema#label> "WISCRS Forest County (m): Transverse Mercator" .

@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "3.680344"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "101.5082"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.opengis.net/ont/crs/method_name> "Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.opengis.net/ont/crs/scope> "Cadastre."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is Bukit Asa. Replaced by GDM2000 Selangor grid (code 19890)."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Selangor_Cassini_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Selangor Cassini Grid: Cassini-Soldner" .

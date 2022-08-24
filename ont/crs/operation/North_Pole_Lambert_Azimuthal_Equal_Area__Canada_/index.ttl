@@ -10,7 +10,7 @@
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin> "90.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin> "-100.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.opengis.net/ont/crs/method_name> "Lambert Azimuthal Equal Area" .
-<http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.opengis.net/ont/crs/scope> "Polar research."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.opengis.net/ont/crs/usage> "Polar research"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.w3.org/2000/01/rdf-schema#comment> "For studies of Canadian area."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Canada_> <http://www.w3.org/2000/01/rdf-schema#label> "North Pole Lambert Azimuthal Equal Area (Canada): Lambert Azimuthal Equal Area" .
