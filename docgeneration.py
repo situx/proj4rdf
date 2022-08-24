@@ -1051,12 +1051,12 @@ imagecarouselfooter="""</div> <a class="carousel-control-prev" href="#carouselEx
   </a></div>"""
 
 imagestemplate="""<div class="{{carousel}}">
-<a href="{{image}}"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
+<a href="{{image}}" target=\"_blank\"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
 </div>
 """
 
 imageswithannotemplate="""<div class="{{carousel}}">
-<a href=\"{{image}}\"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
+<a href=\"{{image}}\" target=\"_blank\"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
 {{svganno}}
 </div>
 """
@@ -1648,7 +1648,7 @@ class OntDocGeneration:
                         object) + "\" target=\"_blank\" href=\"" + str(
                         object) + "\">" + label + "</a>"
             if unitlabel!="":
-                tablecontents+=" [ "+str(unitlabel)+"]"
+                tablecontents+=" <span style=\"font-weight:bold\">["+str(unitlabel)+"]</span>"
             tablecontents+="</span>"
         else:
             if isinstance(object, Literal) and object.datatype != None:
@@ -1944,6 +1944,7 @@ class OntDocGeneration:
                     if image=="<svg width=":
                         continue
                     if "<svg" in image:
+                        print("SVGGGGG: "+str(image))
                         if "<svg>" in image:
                             f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))))
                         else:
