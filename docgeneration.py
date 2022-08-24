@@ -1582,7 +1582,7 @@ class OntDocGeneration:
         #QgsMessageLog.logMessage("Relative Link from Given Depth: " + rellink,"OntdocGeneration", Qgis.Info)
         return rellink
 
-    def searchObjectConnectionsForAggregateData(self,graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label):
+    def searchObjectConnectionsForAggregateData(self,graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label,unitlabel):
         geoprop=False
         incollection=False
         if pred in geopointerproperties:
@@ -1613,8 +1613,8 @@ class OntDocGeneration:
             if str(tup[0]) in unitproperties and isinstance(tup[1],URIRef):
                 foundunit=str(tup[1])
         if foundunit!=None and foundval!=None and label!=None:
-            label+=" "+str(foundval)+" ["+str(self.shortenURI(foundunit))+"]"
-        return {"geojsonrep":geojsonrep,"label":label,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
+            unitlabel+=str(foundval)+" "+str(self.shortenURI(foundunit))
+        return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
     def createHTMLTableValueEntry(self,subject,pred,object,ttlf,tablecontents,graph,baseurl,checkdepth,geojsonrep,foundmedia,imageannos,image3dannos):
@@ -1622,12 +1622,14 @@ class OntDocGeneration:
             if ttlf != None:
                 ttlf.write("<" + str(subject) + "> <" + str(pred) + "> <" + str(object) + "> .\n")
             label = str(self.shortenURI(str(object)))
-            mydata=self.searchObjectConnectionsForAggregateData(graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label)
+            unitlabel=""
+            mydata=self.searchObjectConnectionsForAggregateData(graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label,unitlabel)
             label=mydata["label"]
             geojsonrep=mydata["geojsonrep"]
             foundmedia=mydata["foundmedia"]
             imageannos=mydata["imageannos"]
             image3dannos=mydata["image3dannos"]
+            unitlabel=mydata["unitlabel"]
             if baseurl in str(object) or isinstance(object,BNode):
                 rellink = self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,str(object),True)
                 tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(object) + "\" href=\"" + rellink + "\">"+ label + " <span style=\"color: #666;\">(" + self.namespaceshort + ":" + str(self.shortenURI(str(object))) + ")</span></a></span>"
@@ -1637,11 +1639,14 @@ class OntDocGeneration:
                     tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(
                         object) + "\" target=\"_blank\" href=\"" + str(
                         object) + "\">" + label + " <span style=\"color: #666;\">(" + res[
-                                         "uri"] + ")</span></a></span>"
+                                         "uri"] + ")</span></a>"                                     
                 else:
                     tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(
                         object) + "\" target=\"_blank\" href=\"" + str(
-                        object) + "\">" + label + "</a></span>"
+                        object) + "\">" + label + "</a>"
+                if unitlabel!="":
+                    tablecontents+="["+str(unitlabel)+"]"
+                    tablecontents+="</span>"
         else:
             if isinstance(object, Literal) and object.datatype != None:
                 res = self.replaceNameSpacesInLabel(str(object.datatype))
