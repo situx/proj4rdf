@@ -10,13 +10,22 @@ from shapely.geometry import box
 convertToGML=False
 
 def csAsSVG(csdef):
-    svgstr= """<svg width=\"250\" height=\"250\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    svgstr= """<svg width=\"250\" height=\"250\" viewbox=\"0 0 250 250\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
     if len(csdef.axis_list)>0:
-        svgstr+="""<line x1=\"20\" y1=\"200\" x2\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+"""</text>"""
+        if csdef.axis_list[0].unit_name in units:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
+        else:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
     if len(csdef.axis_list)>1:
-        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+"""</text>"""
-    if len(csdef.axis_list)>2:        
-        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+"""</text>"""    
+        if csdef.axis_list[1].unit_name in units:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(units[csdef.axis_list[1].unit_name])+"</text>"
+        else:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(csdef.axis_list[1].unit_name)+"</text>"
+    if len(csdef.axis_list)>2: 
+        if csdef.axis_list[2].unit_name in units:    
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(units[csdef.axis_list[2].unit_name])+"</text>"    
+        else:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+"</text>"               
     return svgstr.replace("\"","\\\"")+"</svg>"
 
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
@@ -111,12 +120,12 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			elif curcrs.get_geod().sphere:
-				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
 				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			else:
-				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_")
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
 				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
@@ -131,11 +140,13 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+" geocrs:semiMajorAxis "+geoid+"_smj_axis . \n")
 		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a)+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smj_axis om:hasUnit om:metre . \n")
+		ttl.add(geoid+"_smj_axis rdfs:label \"Semi Major Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
 		ttl.add(geoid+" geocrs:semiMinorAxis "+geoid+"_smi_axis . \n")
+		ttl.add(geoid+"_smi_axis rdfs:label \"Semi Minor Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
 		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
-			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
+			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
 		geodcounter+=1
 	if curcrs.coordinate_operation!=None:
