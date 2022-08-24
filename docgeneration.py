@@ -1613,7 +1613,11 @@ class OntDocGeneration:
             if str(tup[0]) in unitproperties and isinstance(tup[1],URIRef):
                 foundunit=str(tup[1])
         if foundunit!=None and foundval!=None and label!=None:
-            unitlabel=str(foundval)+" "+str(self.shortenURI(foundunit))
+            res=self.replaceNameSpacesInLabel(str(foundunit))
+            if res!=None:
+                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\">"+res["uri"]+"</a>"
+            else:
+                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\">"+str(self.shortenURI(foundunit))+"</a>"
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
@@ -1645,7 +1649,7 @@ class OntDocGeneration:
                         object) + "\" target=\"_blank\" href=\"" + str(
                         object) + "\">" + label + "</a>"
             if unitlabel!="":
-                tablecontents+="["+str(unitlabel)+"]"
+                tablecontents+=" [ "+str(unitlabel)+"]"
             tablecontents+="</span>"
         else:
             if isinstance(object, Literal) and object.datatype != None:
