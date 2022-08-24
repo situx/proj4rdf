@@ -1062,8 +1062,7 @@ imageswithannotemplate="""<div class="{{carousel}}">
 """
 
 
-imagestemplatesvg="""
-<div class="{{carousel}}" style="max-width:485px;max-height:500px">
+imagestemplatesvg="""<div class="{{carousel}}" style="max-width:485px;max-height:500px">
 {{image}}
 </div>
 """
@@ -1942,6 +1941,8 @@ class OntDocGeneration:
                         carousel="carousel-item"                  
             else:
                 for image in foundmedia["image"]:
+                    if image=="<svg width=":
+                        continue
                     if "<svg" in image:
                         if "<svg>" in image:
                             f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))))
