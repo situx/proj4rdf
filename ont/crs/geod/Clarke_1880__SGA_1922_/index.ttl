@@ -1,12 +1,12 @@
-<http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
+<http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6378249.2 6356514.996941779"><ellipse rx="6378249.2" ry="6378249.2"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns=" .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/eccentricity> "0.006803489"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/flatteningParameter> "0.00340755"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922__smj_axis> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922__smi_axis> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Geoid> .
-<http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.w3.org/2000/01/rdf-schema#label> "Clarke 1880 (SGA 1922)" .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.w3.org/2000/01/rdf-schema#label> "Clarke 1880 (SGA 1922)" .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://www.w3.org/2004/02/skos/core#definition> "+a=6378249.2 +f=0.0034075499994922396"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/geod/Clarke_1880__SGA_1922_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
