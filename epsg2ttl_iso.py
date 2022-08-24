@@ -9,6 +9,16 @@ from shapely.geometry import box
 
 convertToGML=False
 
+def csAsSVG(csdef):
+    svgstr= """<svg width=\"250\" height=\"250\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    if len(csdef.axis_list)>0:
+        svgstr+="""<line x1=\"20\" y1=\"200\" x2\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"220\" y=\"210\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+"""</text>"""
+    if len(csdef.axis_list)>1:
+        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+"""</text>"""
+    if len(csdef.axis_list)>2:        
+        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+"""</text>"""    
+    return svgstr.replace("\"","\\\"")+"</svg>"
+
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	epsgcode=str(x)
 	wkt=curcrs.to_wkt().replace("\"","'").strip()
@@ -39,10 +49,12 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
 	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
 		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
 		if len(curcrs.coordinate_system.axis_list)==2:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
 		elif len(curcrs.coordinate_system.axis_list)==3:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asSVG \""+str(csAsSVG(curcrs.coordinate_system))+"\"^^xsd:string .\n")
 		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
 		if curcrs.coordinate_system.remarks!=None:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
@@ -116,8 +128,14 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
 		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
-		ttl.add(geoid+" geocrs:semiMajorAxis \""+str(curcrs.get_geod().a)+"\"^^xsd:string . \n")
-		ttl.add(geoid+" geocrs:semiMinorAxis \""+str(curcrs.get_geod().b)+"\"^^xsd:string . \n")
+		ttl.add(geoid+" geocrs:semiMajorAxis "+geoid+"_smj_axis . \n")
+		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a)+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smj_axis om:hasUnit om:metre . \n")
+		ttl.add(geoid+" geocrs:semiMinorAxis "+geoid+"_smi_axis . \n")
+		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
+		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
+			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
 		geodcounter+=1
 	if curcrs.coordinate_operation!=None:
@@ -267,9 +285,9 @@ def parseSolarSystemSatellites(filename,ttlstring):
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["Name"])+"\"@en .\n")
 			if str(row["semi_major_axis"])!="":
-				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_sm_axis .\n")
-				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
-				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis om:hasUnit  om:astronomicalUnit .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_smj_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis om:hasUnit  om:astronomicalUnit .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
 			if str(row["Parent"])!="":
 				starname=row["Parent"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
@@ -302,9 +320,9 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["name"])+"\"@en .\n")
 			if str(row["semi_major_axis"])!="":
-				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_sm_axis .\n")
-				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
-				ttlstring.add("geocrsgeod:"+curname+"_geoid_sm_axis om:hasUnit  om:astronomicalUnit .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_smj_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis om:hasUnit  om:astronomicalUnit .\n")
 			if str(row["eccentricity"])!="":
 				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
 			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:approximates geocrsisbody:"+curname+" .\n")
@@ -349,9 +367,12 @@ coordinatesystem={}
 coordinatesystem["ellipsoidal"]="geocrs:EllipsoidalCS"
 coordinatesystem["cartesian"]="geocrs:CartesianCS"
 coordinatesystem["vertical"]="geocrs:VerticalCS"
-coordinatesystem["ft"]="om:foot"
-coordinatesystem["us-ft"]="om:usfoot"
+coordinatesystem["ordinal"]="geocrs:OrdinalCS"
+coordinatesystem["parametric"]="geocrs:ParametricCS"
+coordinatesystem["spherical"]="geocrs:SphericalCS"
+coordinatesystem["temporal"]="geocrs:TemporalCS"
 spheroids={}
+spheroids["Australian National Spheroid"]="geocrsgeod:AustralianNationalSpheroid"
 spheroids["GRS80"]="geocrsgeod:GRS1980"
 spheroids["GRS 80"]="geocrsgeod:GRS1980"
 spheroids["GRS67"]="geocrsgeod:GRS67"
@@ -364,11 +385,13 @@ spheroids["NWL 9D"]="geocrsgeod:NWL9D"
 spheroids["PZ-90"]="geocrsgeod:PZ90"
 spheroids["Airy 1830"]="geocrsgeod:Airy1830"
 spheroids["Airy Modified 1849"]="geocrsgeod:AiryModified1849"
+spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
+spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
+spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
+spheroids["clrk"]="geocrsgeod:Clarke1866"
 spheroids["intl"]="geocrsgeod:International1924"
 spheroids["aust_SA"]="geocrsgeod:AustralianNationalSpheroid"
-spheroids["Australian National Spheroid"]="geocrsgeod:AustralianNationalSpheroid"
 spheroids["International 1924"]="geocrsgeod:International1924"
-spheroids["clrk"]="geocrsgeod:Clarke1866"
 spheroids["War Office"]="geocrsgeod:WarOffice"
 spheroids["evrst30"]="geocrsgeod:Everest1930"
 spheroids["clrk66"]="geocrsgeod:Clarke1866"
@@ -388,9 +411,6 @@ spheroids["Hough 1960"]="geocrsgeod:Hough1960"
 spheroids["Hughes 1980"]="geocrsgeod:Hughes1980"
 spheroids["Indonesian National Spheroid"]="geocrsgeod:IndonesianNationalSpheroid"
 spheroids["clrk80"]="geocrsgeod:Clarke1880RGS"
-spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
-spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
-spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
 spheroids["clrk80ign"]="geocrsgeod:Clarke1880IGN"
 spheroids["WGS66"]="geocrsgeod:WGS66"
 spheroids["WGS 66"]="geocrsgeod:WGS66"
