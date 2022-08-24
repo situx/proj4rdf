@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6377563.396 6356256.909237285"><ellipse rx="6377563.396" ry="6377563.396"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6377563.396 6356256.909237285" height="485" width="500"><ellipse rx="6377563.396" ry="6377563.396"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/asSVG> "<svg xmlns=" .
 <http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/eccentricity> "0.00667054"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Airy1830> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003340851"^^<http://www.w3.org/2001/XMLSchema#double> .
