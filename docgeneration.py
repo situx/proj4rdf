@@ -1944,9 +1944,9 @@ class OntDocGeneration:
                 for image in foundmedia["image"]:
                     if "<svg" in image:
                         if "<svg>" in image:
-                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))).replace("{{imagetitle}}",str(image)[0:str(image).rfind('.')]))
+                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))))
                         else:
-                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}",str(image)).replace("{{imagetitle}}",str(image)[0:str(image).rfind('.')]))
+                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}",str(image)))
                     else:
                         f.write(imagestemplate.replace("{{carousel}}",carousel).replace("{{image}}",str(image)).replace("{{imagetitle}}",str(image)[0:str(image).rfind('.')]))
                     if len(foundmedia["image"])>3:
