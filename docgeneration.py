@@ -1613,7 +1613,7 @@ class OntDocGeneration:
             if str(tup[0]) in unitproperties and isinstance(tup[1],URIRef):
                 foundunit=str(tup[1])
         if foundunit!=None and foundval!=None and label!=None:
-            unitlabel+=str(foundval)+" "+str(self.shortenURI(foundunit))
+            unitlabel=str(foundval)+" "+str(self.shortenURI(foundunit))
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
