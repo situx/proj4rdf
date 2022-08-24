@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/geod/HD_154088_b_geoid_smj_axis> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/geod/HD_154088_b_geoid_smj_axis> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/astronomicalUnit> .
+<http://www.opengis.net/ont/crs/geod/HD_154088_b_geoid_smj_axis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "0.1316"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/geod/HD_154088_b_geoid_smj_axis> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

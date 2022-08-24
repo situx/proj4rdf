@@ -3,8 +3,8 @@
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/eccentricity> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/flatteningParameter> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/isSphere> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/semiMajorAxis> "6378137.0"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/semiMinorAxis> "6378137.0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere_smj_axis> .
+<http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere_smi_axis> .
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.w3.org/2000/01/rdf-schema#label> "Popular Visualisation Sphere" .
 <http://www.opengis.net/ont/crs/geod/Popular_Visualisation_Sphere> <http://www.w3.org/2000/01/rdf-schema#label> "Popular Visualisation Sphere" .

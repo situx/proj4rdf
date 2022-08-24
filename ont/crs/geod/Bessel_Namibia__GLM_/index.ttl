@@ -3,8 +3,8 @@
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/eccentricity> "0.006674372"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003342773"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/semiMajorAxis> "6377483.865280419"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/semiMinorAxis> "6356165.383245807"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM__smj_axis> .
+<http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM__smi_axis> .
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Geoid> .
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.w3.org/2000/01/rdf-schema#label> "Bessel Namibia (GLM)" .
 <http://www.opengis.net/ont/crs/geod/Bessel_Namibia__GLM_> <http://www.w3.org/2000/01/rdf-schema#label> "Bessel Namibia (GLM)" .

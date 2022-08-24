@@ -5,8 +5,8 @@
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/inverse_flattening> "297.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/is_semi_minor_computed> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/semiMajorAxis> "6378270.0"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/semiMinorAxis> "6356794.343434343"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/Hough1960_smj_axis> .
+<http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/Hough1960_smi_axis> .
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Ellipsoid> .
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.w3.org/2000/01/rdf-schema#label> "Hough 1960" .
 <http://www.opengis.net/ont/crs/geod/Hough1960> <http://www.w3.org/2000/01/rdf-schema#label> "Hough 1960" .

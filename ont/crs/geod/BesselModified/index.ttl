@@ -5,8 +5,8 @@
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/inverse_flattening> "299.1528"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/is_semi_minor_computed> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/semiMajorAxis> "6377492.018"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/semiMinorAxis> "6356173.508712696"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/BesselModified_smj_axis> .
+<http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/BesselModified_smi_axis> .
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Ellipsoid> .
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.w3.org/2000/01/rdf-schema#label> "Bessel Modified" .
 <http://www.opengis.net/ont/crs/geod/BesselModified> <http://www.w3.org/2000/01/rdf-schema#label> "Bessel Modified" .
