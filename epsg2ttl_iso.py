@@ -10,23 +10,41 @@ from shapely.geometry import box
 convertToGML=False
 
 def csAsSVG(csdef):
-    svgstr= """<svg width=\"250\" height=\"250\" viewbox=\"0 0 250 250\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    svgstr= """<svg width=\"400\" height=\"250\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
     if len(csdef.axis_list)>0:
         if csdef.axis_list[0].unit_name in units:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"180\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
         else:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"180\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
     if len(csdef.axis_list)>1:
         if csdef.axis_list[1].unit_name in units:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(units[csdef.axis_list[1].unit_name])+"</text>"
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(units[csdef.axis_list[1].unit_name])+")</text>"
         else:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(csdef.axis_list[1].unit_name)+"</text>"
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(csdef.axis_list[1].unit_name)+")</text>"
     if len(csdef.axis_list)>2: 
         if csdef.axis_list[2].unit_name in units:    
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(units[csdef.axis_list[2].unit_name])+"</text>"    
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(units[csdef.axis_list[2].unit_name])+")</text>"    
         else:
-            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+"</text>"               
-    return svgstr.replace("\"","\\\"")+"</svg>"
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+")</text>"               
+    return svgstr.replace("\"","'")+"</svg>"
+
+def resolveScope(indid,scopestring):
+    ttl=set()
+    if "," in scopestring:
+        for scp in scopestring.split(","):
+            #print("Scope: "+scp)
+            if scp.lower().strip().replace(".","") in scope:
+                ttl.add(indid+" geocrs:usage "+scope[scp.lower().strip().replace(".","")]+" . \n")
+                ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
+            else:
+                ttl.add(indid+" geocrs:usage \""+str(scp.lower().strip().replace(".",""))+"\"^^xsd:string . \n")
+    else:
+        if scopestring.lower().strip().replace(".","") in scope:
+            ttl.add(indid+" geocrs:usage "+scope[scopestring.lower().strip().replace(".","")]+" . \n")
+            ttl.add(scope[scopestring.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
+        else:
+            ttl.add(indid+" geocrs:usage \""+scopestring.strip().replace(".","")+"\"^^xsd:string . \n")
+    return ttl
 
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	epsgcode=str(x)
@@ -63,11 +81,11 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		#elif len(curcrs.coordinate_system.axis_list)==3:
 		#	ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
 		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asSVG \""+str(csAsSVG(curcrs.coordinate_system))+"\"^^xsd:string .\n")
-		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\"@en . \n")
 		if curcrs.coordinate_system.remarks!=None:
 			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
 		if curcrs.coordinate_system.scope!=None:
-			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:scope \""+str(curcrs.coordinate_system.scope)+"\" . \n")
+			ttl.update(resolveScope("geoepsg:"+epsgcode+"_cs",curcrs.coordinate_system.scope))
 		for axis in curcrs.coordinate_system.axis_list:
 			axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
 			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:axis geocrsaxis:"+axisid+" . \n")
@@ -94,15 +112,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	if curcrs.target_crs!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:targetCRS geoepsg:"+str(curcrs.target_crs.to_epsg())+" . \n")
 	if curcrs.scope!=None:
-		if "," in curcrs.scope:
-			for scp in curcrs.scope.split(","):
-				#print("Scope: "+scp)
-				if scp.lower().strip().replace(".","") in scope:
-					ttl.add("geoepsg:"+epsgcode+" geocrs:usage "+scope[scp.lower().strip().replace(".","")]+" . \n")
-					ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
-				else:
-					ttl.add("geoepsg:"+epsgcode+" geocrs:usage \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
-		ttl.add("geoepsg:"+epsgcode+" geocrs:scope \""+str(curcrs.scope).replace("\"","'")+"\"^^xsd:string . \n")
+		ttl.update(resolveScope("geoepsg:"+epsgcode,curcrs.scope))
 	if curcrs.area_of_use!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
 		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
@@ -145,7 +155,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
-			ttl.add(geoid+" geocrs:asSVG \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"-"+str(curcrs.get_geod().a)+" -"+str(curcrs.get_geod().b)+" "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
+			ttl.add(geoid+" geocrs:asSVG \"<svg viewBox=\\\"-"+str(curcrs.get_geod().a)+" -"+str(curcrs.get_geod().b)+" "+str(curcrs.get_geod().a)+" "+str(curcrs.get_geod().b)+"\\\" height=\\\"485\\\" width=\\\"500\\\"><ellipse rx=\\\""+str(curcrs.get_geod().a)+"\\\" ry=\\\""+str(curcrs.get_geod().a)+"\\\"></ellipse></svg>\"^^xsd:string . \n")
 		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
 		geodcounter+=1
 	if curcrs.coordinate_operation!=None:
@@ -157,7 +167,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
 		if curcrs.coordinate_operation.scope!=None:
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:scope \""+str(curcrs.coordinate_operation.scope).replace("\"","'")+"\"^^xsd:string . \n")
+			ttl.update(resolveScope("geocrsoperation:"+str(coordoperationid),curcrs.coordinate_operation.scope))
 		if curcrs.coordinate_operation.remarks!=None:
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:comment \""+str(curcrs.coordinate_operation.remarks).replace("\"","'").replace("\n","")+"\"^^xsd:string . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:has_ballpark_transformation \""+str(curcrs.coordinate_operation.has_ballpark_transformation)+"\"^^xsd:boolean . \n")
@@ -223,16 +233,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		if curcrs.datum.remarks!=None:
 			ttl.add("geocrsdatum:"+str(datumid)+" rdfs:comment \""+str(curcrs.datum.remarks)+"\"@en . \n")
 		if curcrs.datum.scope!=None:
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:scope \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
-			if "," in curcrs.datum.scope:
-				for scp in curcrs.datum.scope.split(","):
-					#print("Scope: "+scp)
-					if scp.lower().strip().replace(".","") in scope:
-						ttl.add("geocrsdatum:"+str(datumid)+" geocrs:usage "+scope[scp.lower().strip().replace(".","")]+" . \n")
-						ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
-					else:
-						ttl.add("geocrsdatum:"+str(datumid)+" geocrs:usage \""+str(curcrs.datum.scope)+"\"^^xsd:string . \n")
-			#print(str(curcrs.datum.scope))
+			ttl.update(resolveScope("geocrsdatum:"+str(datumid),curcrs.datum.scope))
 		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
 			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipsoid "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
 			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
@@ -249,16 +250,16 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:label \""+curcrs.prime_meridian.name+"\"@en . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:longitude \""+str(curcrs.prime_meridian.longitude)+"\"^^xsd:double . \n")
 			if curcrs.prime_meridian.unit_name in units:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit om:"+units[curcrs.prime_meridian.unit_name]+" . \n")
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit "+units[curcrs.prime_meridian.unit_name]+" . \n")
 				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
 			else:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
 			if curcrs.prime_meridian.remarks!=None:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:comment \""+str(curcrs.prime_meridian.remarks)+"\"@en . \n")
 			if curcrs.prime_meridian.scope!=None:
-				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:scope \""+str(curcrs.prime_meridian.scope)+"\"^^xsd:string . \n")				
+				ttl.update(resolveScope("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ",""),curcrs.prime_meridian.scope))		
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isVertical \""+str(curcrs.is_vertical).lower()+"\"^^xsd:boolean . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isProjected \""+str(curcrs.is_projected).lower()+"\"^^xsd:boolean . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeocentric \""+str(curcrs.is_geocentric).lower()+"\"^^xsd:boolean . \n")
@@ -657,7 +658,7 @@ ttl.add("geocrs:GeoSPARQLSRS rdf:type owl:Ontology .\n")
 ttl.add("geocrs:GeoSPARQLSRS dc:creator wd:Q67624599 .\n")
 ttl.add("geocrs:GeoSPARQLSRS dc:description \"This ontology models spatial reference systems\"@en .\n")
 ttl.add("geocrs:GeoSPARQLSRS rdfs:label \"GeoSPARQL SRS Ontology Draft\"@en .\n")
-ttl.add("owl:versionInfo rdfs:label \"0.1\"^^xsd:double .\n")
+ttl.add("geocrs:GeoSPARQLSRS owl:versionInfo \"0.1\"^^xsd:double .\n")
 ttl.add("prov:Entity rdf:type owl:Class .\n")
 ttl.add("prov:Entity rdfs:label \"entity\"@en .\n")
 ttl.add("geocrs:ReferenceSystem rdf:type owl:Class .\n")
