@@ -416,18 +416,16 @@ function download(){
 }
 
 function rewriteLink(thelink){
-    console.log(thelink)
     if(thelink==null){
         rest=search[document.getElementById('search').value].replace(baseurl,"")
     }else{
+        curlocpath=window.location.href.replace(baseurl,"")
         rest=thelink.replace(baseurl,"")
     }
-    console.log(rest)
     count=0
     if(!indexpage){
-        count=rest.split("/").length
+        count=curlocpath.split("/").length-1
     }
-    console.log(count)
     counter=0
     while(counter<count){
         rest="../"+rest
