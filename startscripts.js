@@ -274,16 +274,23 @@ function download(){
 }
 
 function rewriteLink(thelink){
+    console.log(thelink)
+    console.log(window.location.pathname)
+    console.log(baseurl)
     if(thelink==null){
         rest=search[document.getElementById('search').value].replace(baseurl,"")
     }else{
         curlocpath=window.location.href.replace(baseurl,"")
         rest=thelink.replace(baseurl,"")
     }
+    console.log(rest)
+    console.log(curlocpath)
     count=0
+    console.log(curlocpath.split("/"))
     if(!indexpage){
         count=curlocpath.split("/").length-1
     }
+    console.log(count)
     counter=0
     while(counter<count){
         rest="../"+rest
@@ -570,7 +577,7 @@ function formatHTMLTableForClassRelations(result,nodeicon,nodelabel,nodeid){
         }
     }
     dialogcontent+="</tbody></table>"
-    dialogcontent+="<button id=\"closebutton\" onclick='document.getElementById(\"classrelationdialog\").close()'>Close</button>"
+    dialogcontent+="<button style=\"float:right\" id=\"closebutton\" onclick='document.getElementById(\"classrelationdialog\").close()'>Close</button>"
     return dialogcontent
 }
 
@@ -616,7 +623,7 @@ function formatHTMLTableForResult(result,nodeicon){
         dialogcontent+="</tr>"
     }
     dialogcontent+="</tbody></table>"
-    dialogcontent+="<button id=\"closebutton\" onclick='document.getElementById(\"dataschemadialog\").close()'>Close</button>"
+    dialogcontent+="<button style=\"float:right\" id=\"closebutton\" onclick='document.getElementById(\"dataschemadialog\").close()'>Close</button>"
     return dialogcontent
 }
 
