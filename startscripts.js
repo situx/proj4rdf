@@ -296,9 +296,16 @@ function rewriteLink(thelink){
     }
     console.log(count)
     counter=0
-    while(counter<count){
-        rest="../"+rest
-        counter+=1
+    if (typeof relativedepth !== 'undefined'){
+        while(counter<relativedepth){
+            rest="../"+rest
+            counter+=1
+        }
+    }else{
+        while(counter<count){
+            rest="../"+rest
+            counter+=1
+        }   
     }
     rest+="index.html"
     console.log(rest)
