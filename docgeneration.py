@@ -442,7 +442,7 @@ function rewriteLink(thelink){
         rest="../"+rest
         counter+=1
     }
-    rest+="/index.html"
+    rest+="index.html"
     console.log(rest)
     return rest
 }
