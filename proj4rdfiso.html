@@ -263,28 +263,6 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Calendar - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "AxisDirection - ConceptScheme"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -319,17 +297,6 @@
     ]
   },
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "RangeMeaning - ConceptScheme"
-      }
-    ]
-  },
-  {
     "@id": "http://www.semanticweb.org/timohomburg/ontologies/2022/2/untitled-ontology-35",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -355,6 +322,39 @@
       },
       {
         "@value": "ISO 19111:2019 Referencing by coordinates"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/RangeMeaning",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RangeMeaning - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "AxisDirection - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Calendar - ConceptScheme"
       }
     ]
   },
@@ -1936,6 +1936,9 @@
   <a href="http://www.opengis.net/ont/crs/uSphericalCS">geocrs:uSphericalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
+  <a href="http://www.opengis.net/ont/crs/uCylindricalCS">geocrs:uCylindricalCS</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uOrdinalCS">geocrs:uOrdinalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
@@ -1949,9 +1952,6 @@
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uCartesianCS">geocrs:uCartesianCS</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uCylindricalCS">geocrs:uCylindricalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
