@@ -687,7 +687,12 @@ function setupJSTree(){
         }
     }
     tree["contextmenu"]["items"]=function (node) {
-        return {
+        nodetype=node.type
+        thelinkpart="class"
+        if(nodetype=="instance" || nodetype=="geoinstance"){
+            thelinkpart="instance"
+        }    
+        contextmenu={
             "lookupdefinition": {
                 "separator_before": false,
                 "separator_after": false,
@@ -698,12 +703,12 @@ function setupJSTree(){
                     var win = window.open(newlink, '_blank');
                     win.focus();
                 }
-            }, 
+            },
             "copyuriclipboard":{
                 "separator_before": false,
                 "separator_after": false,
                 "label": "Copy URI to clipboard",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/classlink.png",
+                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
                 "action":function(obj){
                     copyText=node.id
                     navigator.clipboard.writeText(copyText);
@@ -713,7 +718,7 @@ function setupJSTree(){
                 "separator_before": false,
                 "separator_after": false,
                 "label": "Discover class relations",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/classlink.png",
+                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
                 "action":function(obj){
                     console.log("class relations")
                     if(node.type=="class" || node.type=="geoclass" || node.type=="collectionclass"){
@@ -724,7 +729,7 @@ function setupJSTree(){
             "loaddataschema": {
                 "separator_before": false,
                 "separator_after": false,
-                "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/classschema.png",
+                "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/"+node.type+"schema.png",
                 "label": "Load dataschema for class",
                 "action": function (obj) {
                     console.log(node)
@@ -736,8 +741,9 @@ function setupJSTree(){
                         getDataSchemaDialog(node) 
                     }                                         
                 }
-            }
-        };
+            }                
+        }
+        return contextmenu
     }
     $('#jstree').jstree(tree);
     $('#jstree').bind("dblclick.jstree", function (event) {
