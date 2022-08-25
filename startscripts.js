@@ -283,7 +283,7 @@ function rewriteLink(thelink){
         curlocpath=window.location.href.replace(baseurl,"")
         rest=thelink.replace(baseurl,"")
     }
-    if(!(rest.endswith("/"))){
+    if(!(rest.endsWith("/"))){
         rest+="/"
     }
     console.log(rest)
