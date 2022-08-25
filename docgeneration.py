@@ -1919,7 +1919,7 @@ class OntDocGeneration:
             else:
                 myexports=nongeoexports
             if foundlabel != "":
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",checkdepth).replace("{{prefixpath}}", self.prefixnamespace).replace("{{toptitle}}", foundlabel).replace(
+                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{toptitle}}", foundlabel).replace(
                     "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{indexpage}}","false").replace("{{title}}",
                                                                                                 "<a href=\"" + str(
                                                                                                     subject) + "\">" + str(
@@ -1928,7 +1928,7 @@ class OntDocGeneration:
                                                                                                "").replace(
                     "{{scriptfolderpath}}", rellink).replace("{{classtreefolderpath}}", rellink2).replace("{{exports}}",myexports).replace("{{subject}}",str(subject)))
             else:
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",checkdepth).replace("{{prefixpath}}", self.prefixnamespace).replace("{{indexpage}}","false").replace("{{toptitle}}", self.shortenURI(str(subject))).replace(
+                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{indexpage}}","false").replace("{{toptitle}}", self.shortenURI(str(subject))).replace(
                     "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{title}}","<a href=\"" + str(subject) + "\">" + self.shortenURI(str(subject)) + "</a>").replace(
                     "{{baseurl}}", baseurl).replace("{{description}}",
                                                                                                "").replace(
