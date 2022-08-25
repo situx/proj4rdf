@@ -429,8 +429,9 @@ function rewriteLink(thelink){
     console.log(curlocpath)
     count=0
     console.log(curlocpath.split("/"))
+    console.log(rest.split("/"))
     if(!indexpage){
-        count=curlocpath.split("/").length-1
+        count=rest.split("/").length-1
     }
     console.log(count)
     counter=0
