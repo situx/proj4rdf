@@ -425,6 +425,9 @@ function rewriteLink(thelink){
         curlocpath=window.location.href.replace(baseurl,"")
         rest=thelink.replace(baseurl,"")
     }
+    if(!(rest.endswith("/")){
+        rest+="/"
+    }
     console.log(rest)
     console.log(curlocpath)
     count=0
@@ -859,7 +862,7 @@ function setupJSTree(){
             "discoverrelations":{
                 "separator_before": false,
                 "separator_after": false,
-                "label": "Discover class relations",
+                "label": "Discover "+node.type+" relations",
                 "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
                 "action":function(obj){
                     console.log("class relations")
@@ -872,7 +875,7 @@ function setupJSTree(){
                 "separator_before": false,
                 "separator_after": false,
                 "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/"+node.type+"schema.png",
-                "label": "Load dataschema for class",
+                "label": "Load dataschema for "+node.type,
                 "action": function (obj) {
                     console.log(node)
                     console.log(node.id)
