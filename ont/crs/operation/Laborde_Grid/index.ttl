@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/LabordeProjection> .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Paris meridian. See Laborde Grid (Greenwich) (projection code 8440) for equivalent in degrees referenced to Greenwich. Within a few hundred km of origin, may be approximated by Oblique Mercator method - see proj code 19911."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Laborde Grid: Laborde Oblique Mercator" .
-<http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Laborde Grid: Laborde Oblique Mercator" .
+<http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Laborde Grid: Laborde Oblique Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Laborde_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

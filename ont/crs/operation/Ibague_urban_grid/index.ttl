@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ColombiaUrbanProjection> .
-<http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.w3.org/2000/01/rdf-schema#label> "Ibague urban grid: Colombia Urban" .
-<http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.w3.org/2000/01/rdf-schema#label> "Ibague urban grid: Colombia Urban" .
+<http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://www.w3.org/2000/01/rdf-schema#label> "Ibague urban grid: Colombia Urban"@en .
 <http://www.opengis.net/ont/crs/operation/Ibague_urban_grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

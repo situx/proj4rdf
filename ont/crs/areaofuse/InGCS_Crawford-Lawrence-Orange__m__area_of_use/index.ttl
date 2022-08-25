@@ -1,6 +1,5 @@
 <http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://www.opengis.net/ont/crs/extent> "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((-86.24 38.1, -86.24 39, -86.69 39, -86.69 38.1, -86.24 38.1))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
 <http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AreaOfUse> .
-<http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "United States (USA) - Indiana - counties of Crawford, Lawrence and Orange." .
-<http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "United States (USA) - Indiana - counties of Crawford, Lawrence and Orange." .
+<http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://www.w3.org/2000/01/rdf-schema#label> "United States (USA) - Indiana - counties of Crawford, Lawrence and Orange."@en .
 <http://www.opengis.net/ont/crs/areaofuse/InGCS_Crawford-Lawrence-Orange__m__area_of_use> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

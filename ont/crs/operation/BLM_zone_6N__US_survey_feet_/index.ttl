@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.w3.org/2000/01/rdf-schema#comment> "US survey foot form of UTM zone 6N. Sometimes locally referred to as 'UTM zone 6'."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "BLM zone 6N (US survey feet): Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "BLM zone 6N (US survey feet): Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "BLM zone 6N (US survey feet): Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/BLM_zone_6N__US_survey_feet_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

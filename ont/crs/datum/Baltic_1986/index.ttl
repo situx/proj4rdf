@@ -3,6 +3,5 @@
 <http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .
 <http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Baltic 1986" .
-<http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Baltic 1986" .
+<http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Baltic 1986"@en .
 <http://www.opengis.net/ont/crs/datum/Baltic_1986> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

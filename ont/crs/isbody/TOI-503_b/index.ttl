@@ -6,6 +6,5 @@
 <http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.opengis.net/ont/crs/radius> <http://www.opengis.net/ont/crs/isbody/TOI-503_b_radius> .
 <http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/TOI-503> .
 <http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
-<http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.w3.org/2000/01/rdf-schema#label> "TOI-503 b" .
-<http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.w3.org/2000/01/rdf-schema#label> "TOI-503 b" .
+<http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://www.w3.org/2000/01/rdf-schema#label> "TOI-503 b"@en .
 <http://www.opengis.net/ont/crs/isbody/TOI-503_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

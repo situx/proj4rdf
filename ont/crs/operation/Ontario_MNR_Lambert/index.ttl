@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.opengis.net/ont/crs/usage> "Province-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.w3.org/2000/01/rdf-schema#comment> "One of a number of similar projections used by Ontario MNR."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario MNR Lambert: Lambert Conic Conformal (2SP)" .
-<http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario MNR Lambert: Lambert Conic Conformal (2SP)" .
+<http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario MNR Lambert: Lambert Conic Conformal (2SP)"@en .
 <http://www.opengis.net/ont/crs/operation/Ontario_MNR_Lambert> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

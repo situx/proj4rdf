@@ -11,6 +11,5 @@
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.opengis.net/ont/crs/method_name> "Equal Earth" .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.opengis.net/ont/crs/usage> "Very small scale equal-area mapping - Asia-Pacific-centred"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/EqualEarthProjection> .
-<http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.w3.org/2000/01/rdf-schema#label> "Equal Earth Asia-Pacific: Equal Earth" .
-<http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.w3.org/2000/01/rdf-schema#label> "Equal Earth Asia-Pacific: Equal Earth" .
+<http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://www.w3.org/2000/01/rdf-schema#label> "Equal Earth Asia-Pacific: Equal Earth"@en .
 <http://www.opengis.net/ont/crs/operation/Equal_Earth_Asia-Pacific> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

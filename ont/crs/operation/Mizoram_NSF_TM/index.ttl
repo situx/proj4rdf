@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9999821"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.opengis.net/ont/crs/usage> "NNRMS National Spatial Framework (NSF) state resource database of medium resolution earth observation imagery and mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
-<http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.w3.org/2000/01/rdf-schema#label> "Mizoram NSF TM: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.w3.org/2000/01/rdf-schema#label> "Mizoram NSF TM: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://www.w3.org/2000/01/rdf-schema#label> "Mizoram NSF TM: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Mizoram_NSF_TM> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

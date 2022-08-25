@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station GP58 at Institut Haiwan, Kluang. Offset from old grid origin is -14810.562m east, 8758.320m north."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Johor Grid: Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Johor Grid: Cassini-Soldner" .
+<http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Johor Grid: Cassini-Soldner"@en .
 <http://www.opengis.net/ont/crs/operation/Johor_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

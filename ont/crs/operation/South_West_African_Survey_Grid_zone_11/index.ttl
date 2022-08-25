@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.w3.org/2000/01/rdf-schema#comment> "Transformation method sometimes described as 'Gauss conform'."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "South West African Survey Grid zone 11: Transverse Mercator (South Orientated)" .
-<http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "South West African Survey Grid zone 11: Transverse Mercator (South Orientated)" .
+<http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "South West African Survey Grid zone 11: Transverse Mercator (South Orientated)"@en .
 <http://www.opengis.net/ont/crs/operation/South_West_African_Survey_Grid_zone_11> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

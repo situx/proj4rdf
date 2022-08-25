@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
-<http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Florida GDL Albers (meters): Albers Equal Area" .
-<http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Florida GDL Albers (meters): Albers Equal Area" .
+<http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Florida GDL Albers (meters): Albers Equal Area"@en .
 <http://www.opengis.net/ont/crs/operation/Florida_GDL_Albers__meters_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

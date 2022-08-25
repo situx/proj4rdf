@@ -5,6 +5,5 @@
 <http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/HD_20781> .
 <http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.opengis.net/ont/crs/starDistance> "35.4"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
-<http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.w3.org/2000/01/rdf-schema#label> "HD 20781 b" .
-<http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.w3.org/2000/01/rdf-schema#label> "HD 20781 b" .
+<http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://www.w3.org/2000/01/rdf-schema#label> "HD 20781 b"@en .
 <http://www.opengis.net/ont/crs/isbody/HD_20781_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

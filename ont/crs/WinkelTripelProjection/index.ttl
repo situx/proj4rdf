@@ -6,8 +6,7 @@
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.opengis.net/ont/crs/isRelatedTo> <http://www.opengis.net/ont/crs/EquirectangularProjection> .
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2000/01/rdf-schema#label> "winkel tripel projection" .
-<http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2000/01/rdf-schema#label> "winkel tripel projection" .
+<http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2000/01/rdf-schema#label> "winkel tripel projection"@en .
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CompromiseProjection> .
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/PseudoAzimuthalProjection> .
 <http://www.opengis.net/ont/crs/WinkelTripelProjection> <http://www.w3.org/2004/02/skos/core#definition> "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" .

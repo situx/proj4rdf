@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.opengis.net/ont/crs/usage> "Antarctic Digital Database and small scale topographic mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/StereographicProjection> .
 <http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#comment> "Special studies may use a different projection using an alternative longitude of origin. See for example projection code 19993."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctic Polar Stereographic: Polar Stereographic (variant B)" .
-<http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctic Polar Stereographic: Polar Stereographic (variant B)" .
+<http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Antarctic Polar Stereographic: Polar Stereographic (variant B)"@en .
 <http://www.opengis.net/ont/crs/operation/Antarctic_Polar_Stereographic> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

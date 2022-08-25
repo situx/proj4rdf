@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.w3.org/2000/01/rdf-schema#comment> "Grid unit is International feet (note: not US Survey feet)."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Pima County zone 4 Mt. Lemmon (ft): Lambert Conic Conformal (1SP)" .
-<http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Pima County zone 4 Mt. Lemmon (ft): Lambert Conic Conformal (1SP)" .
+<http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://www.w3.org/2000/01/rdf-schema#label> "Pima County zone 4 Mt. Lemmon (ft): Lambert Conic Conformal (1SP)"@en .
 <http://www.opengis.net/ont/crs/operation/Pima_County_zone_4_Mt._Lemmon__ft_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

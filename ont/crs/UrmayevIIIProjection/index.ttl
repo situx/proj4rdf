@@ -2,10 +2,8 @@
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://purl.org/dc/elements/1.1/date> "1947" .
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Urmayev III projection" .
-<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Urmayev III projection" .
+<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Urmayev III projection"@en .
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CompromiseProjection> .
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CylindricalProjection> .
-<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2004/02/skos/core#definition> "Cylindric projection with an appearance similar to the Mercator, but shows the poles" .
-<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2004/02/skos/core#definition> "Cylindric projection with an appearance similar to the Mercator, but shows the poles" .
+<http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://www.w3.org/2004/02/skos/core#definition> "Cylindric projection with an appearance similar to the Mercator, but shows the poles"@en .
 <http://www.opengis.net/ont/crs/UrmayevIIIProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

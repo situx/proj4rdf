@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.opengis.net/ont/crs/usage> "Graticule coordinates in rectangular Cartesian form"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/EquidistantCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin at intersection of equator and prime meridian. See projection code 4086 for spherical development."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.w3.org/2000/01/rdf-schema#label> "World Equidistant Cylindrical: Equidistant Cylindrical" .
-<http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.w3.org/2000/01/rdf-schema#label> "World Equidistant Cylindrical: Equidistant Cylindrical" .
+<http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://www.w3.org/2000/01/rdf-schema#label> "World Equidistant Cylindrical: Equidistant Cylindrical"@en .
 <http://www.opengis.net/ont/crs/operation/World_Equidistant_Cylindrical> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

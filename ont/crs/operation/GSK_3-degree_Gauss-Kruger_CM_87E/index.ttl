@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.w3.org/2000/01/rdf-schema#comment> "GSK 3-degree Gauss-Kruger zone 29N (code 16929) without zone prefix to false easting value."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.w3.org/2000/01/rdf-schema#label> "GSK 3-degree Gauss-Kruger CM 87E: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.w3.org/2000/01/rdf-schema#label> "GSK 3-degree Gauss-Kruger CM 87E: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://www.w3.org/2000/01/rdf-schema#label> "GSK 3-degree Gauss-Kruger CM 87E: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_87E> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

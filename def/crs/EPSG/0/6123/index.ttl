@@ -18,6 +18,5 @@
 <http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.opengis.net/ont/crs/usage> "exploration and development"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.opengis.net/ont/crs/usage> "mapping"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.w3.org/2000/01/rdf-schema#label> "WGS 84 / EPSG Arctic zone 3-23" .
-<http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.w3.org/2000/01/rdf-schema#label> "WGS 84 / EPSG Arctic zone 3-23" .
+<http://www.opengis.net/def/crs/EPSG/0/6123> <http://www.w3.org/2000/01/rdf-schema#label> "WGS 84 / EPSG Arctic zone 3-23"@en .
 <http://www.opengis.net/def/crs/EPSG/0/6123> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

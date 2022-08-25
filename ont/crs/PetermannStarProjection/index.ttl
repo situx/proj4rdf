@@ -1,7 +1,6 @@
 <http://www.opengis.net/ont/crs/PetermannStarProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Petermann Star projection" .
-<http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Petermann Star projection" .
+<http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/2000/01/rdf-schema#label> "Petermann Star projection"@en .
 <http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CompromiseProjection> .
 <http://www.opengis.net/ont/crs/PetermannStarProjection> <http://www.w3.org/2004/02/skos/core#definition> "Pole-centered fusion: joins the Azimuthal Equidistant in central hemisphere to eight lobes with straight edges at 0°N" .
 <http://www.opengis.net/ont/crs/PetermannStarProjection> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

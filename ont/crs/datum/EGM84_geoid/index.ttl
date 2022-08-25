@@ -1,6 +1,5 @@
 <http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .
 <http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: EGM84 geoid" .
-<http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: EGM84 geoid" .
+<http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: EGM84 geoid"@en .
 <http://www.opengis.net/ont/crs/datum/EGM84_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

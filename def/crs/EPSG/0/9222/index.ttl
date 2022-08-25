@@ -16,6 +16,5 @@
 <http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.opengis.net/ont/crs/sourceCRS> <http://www.opengis.net/def/crs/EPSG/0/4148> .
 <http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.opengis.net/ont/crs/usage> "Spatial analysis for the purposes of Natural Capital Accounting"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.w3.org/2000/01/rdf-schema#label> "Hartebeesthoek94 / ZAF BSU Albers 44E" .
-<http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.w3.org/2000/01/rdf-schema#label> "Hartebeesthoek94 / ZAF BSU Albers 44E" .
+<http://www.opengis.net/def/crs/EPSG/0/9222> <http://www.w3.org/2000/01/rdf-schema#label> "Hartebeesthoek94 / ZAF BSU Albers 44E"@en .
 <http://www.opengis.net/def/crs/EPSG/0/9222> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

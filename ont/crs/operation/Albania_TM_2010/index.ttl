@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.w3.org/2000/01/rdf-schema#comment> "Planimetric component of Albanian Geodetic Reference Framework (KRGJSH) 2010. Albania LCC 2010 projection (code 6961) used for mapping at scales of 1:500,000 and smaller."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.w3.org/2000/01/rdf-schema#label> "Albania TM 2010: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.w3.org/2000/01/rdf-schema#label> "Albania TM 2010: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://www.w3.org/2000/01/rdf-schema#label> "Albania TM 2010: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Albania_TM_2010> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/LonLatProjection> .
 <http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Jakarta meridian. Replaced by NEIEZ (code 19905)."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands East Indies Equatorial Zone (Jkt): Mercator (variant A)" .
-<http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands East Indies Equatorial Zone (Jkt): Mercator (variant A)" .
+<http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands East Indies Equatorial Zone (Jkt): Mercator (variant A)"@en .
 <http://www.opengis.net/ont/crs/operation/Netherlands_East_Indies_Equatorial_Zone__Jkt_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

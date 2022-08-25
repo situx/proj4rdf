@@ -1,7 +1,6 @@
 <http://www.opengis.net/ont/crs/GeocentricCRS> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .
-<http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/2000/01/rdf-schema#label> "geocentric coordinate reference system" .
-<http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/2000/01/rdf-schema#label> "geocentric coordinate reference system" .
+<http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/2000/01/rdf-schema#label> "geocentric coordinate reference system"@en .
 <http://www.opengis.net/ont/crs/GeocentricCRS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/CRS> .
 <http://www.opengis.net/ont/crs/GeocentricCRS> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

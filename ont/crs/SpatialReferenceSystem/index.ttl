@@ -1,8 +1,6 @@
 <http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2000/01/rdf-schema#label> "spatial reference system" .
-<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2000/01/rdf-schema#label> "spatial reference system" .
+<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2000/01/rdf-schema#label> "spatial reference system"@en .
 <http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/crs/ReferenceSystem> .
-<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2004/02/skos/core#definition> "System for identifying position in the real world" .
-<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2004/02/skos/core#definition> "System for identifying position in the real world" .
+<http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://www.w3.org/2004/02/skos/core#definition> "System for identifying position in the real world"@en .
 <http://www.opengis.net/ont/crs/SpatialReferenceSystem> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

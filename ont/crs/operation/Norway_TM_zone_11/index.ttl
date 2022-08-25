@@ -18,6 +18,5 @@
 <http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#comment> "UTM used as official map projection. This is an official alternative for construction projects."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "Norway TM zone 11: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "Norway TM zone 11: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://www.w3.org/2000/01/rdf-schema#label> "Norway TM zone 11: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Norway_TM_zone_11> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

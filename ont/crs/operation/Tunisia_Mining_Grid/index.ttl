@@ -12,6 +12,5 @@
 <http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "360.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.opengis.net/ont/crs/usage> "Minerals management (including oil and gas exploration and production)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "The origin of the grid is at 38.81973gN, 7.83445gE of Paris, near Djebel Kebar, at which the grid reference is 270582."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Tunisia Mining Grid: Tunisia Mining Grid" .
-<http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Tunisia Mining Grid: Tunisia Mining Grid" .
+<http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Tunisia Mining Grid: Tunisia Mining Grid"@en .
 <http://www.opengis.net/ont/crs/operation/Tunisia_Mining_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

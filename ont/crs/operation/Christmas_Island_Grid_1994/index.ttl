@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaces CIG85 and CIG92. Replaced by CIG2020."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.w3.org/2000/01/rdf-schema#label> "Christmas Island Grid 1994: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.w3.org/2000/01/rdf-schema#label> "Christmas Island Grid 1994: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://www.w3.org/2000/01/rdf-schema#label> "Christmas Island Grid 1994: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Christmas_Island_Grid_1994> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

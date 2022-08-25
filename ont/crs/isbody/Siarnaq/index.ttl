@@ -3,6 +3,5 @@
 <http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.opengis.net/ont/crs/radius> "20.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/Saturn> .
 <http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Moon> .
-<http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.w3.org/2000/01/rdf-schema#label> "Siarnaq" .
-<http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.w3.org/2000/01/rdf-schema#label> "Siarnaq" .
+<http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://www.w3.org/2000/01/rdf-schema#label> "Siarnaq"@en .
 <http://www.opengis.net/ont/crs/isbody/Siarnaq> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

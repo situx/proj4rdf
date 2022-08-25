@@ -1,6 +1,5 @@
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/metre> .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "6377299.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://www.w3.org/2000/01/rdf-schema#label> "Semi Major Axis of 6356097.550300896" .
-<http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://www.w3.org/2000/01/rdf-schema#label> "Semi Major Axis of 6356097.550300896" .
+<http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://www.w3.org/2000/01/rdf-schema#label> "Semi Major Axis of 6356097.550300896"@en .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1967_Definition__smj_axis> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

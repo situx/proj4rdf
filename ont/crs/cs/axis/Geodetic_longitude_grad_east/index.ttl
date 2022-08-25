@@ -6,6 +6,5 @@
 <http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.opengis.net/ont/crs/unit_code> "9105"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.opengis.net/ont/crs/unit_conversion_factor> "0.01570796"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CoordinateSystemAxis> .
-<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.w3.org/2000/01/rdf-schema#label> "Geodetic longitude (om:degree)" .
-<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.w3.org/2000/01/rdf-schema#label> "Geodetic longitude (om:degree)" .
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://www.w3.org/2000/01/rdf-schema#label> "Geodetic longitude (om:degree)"@en .
 <http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

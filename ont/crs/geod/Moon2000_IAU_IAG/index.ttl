@@ -1,6 +1,6 @@
+<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox="-1737400.0 -1737400.0 1737400.0 1737400.0" height="485" width="500"><ellipse rx="1737400.0" ry="1737400.0"></ellipse></svg>"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox=" .
+<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox='-1737400.0 -1737400.0 1737400.0 1737400.0' height='485' width='500'><ellipse rx='1737400.0' ry='1737400.0'/></svg>" .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/eccentricity> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/flatteningParameter> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/inverse_flattening> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
@@ -9,6 +9,6 @@
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG_smj_axis> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.opengis.net/ont/crs/semiMinorAxis> <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG_smi_axis> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Ellipsoid> .
-<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.w3.org/2000/01/rdf-schema#label> "Moon_2000_IAU_IAG" .
+<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.w3.org/2000/01/rdf-schema#label> "Moon_2000_IAU_IAG"@en .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://www.w3.org/2004/02/skos/core#definition> "+a=1737400 +f=0"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

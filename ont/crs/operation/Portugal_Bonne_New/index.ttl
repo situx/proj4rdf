@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.opengis.net/ont/crs/usage> "000)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.opengis.net/ont/crs/usage> "topographic mapping (1:50"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaces original definition referenced to Lisbon meridian (proj code 19979)."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.w3.org/2000/01/rdf-schema#label> "Portugal Bonne New: Bonne (South Orientated)" .
-<http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.w3.org/2000/01/rdf-schema#label> "Portugal Bonne New: Bonne (South Orientated)" .
+<http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://www.w3.org/2000/01/rdf-schema#label> "Portugal Bonne New: Bonne (South Orientated)"@en .
 <http://www.opengis.net/ont/crs/operation/Portugal_Bonne_New> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

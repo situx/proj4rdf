@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#comment> "If using Hotine Oblique Mercator (variant B) method (code 9815), Ec=442071.300 ft, Nc=1211086.049 ft. See code 6769 for equivalent metric definition."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Coast zone (International feet): Hotine Oblique Mercator (variant A)" .
-<http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Coast zone (International feet): Hotine Oblique Mercator (variant A)" .
+<http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Coast zone (International feet): Hotine Oblique Mercator (variant A)"@en .
 <http://www.opengis.net/ont/crs/operation/Oregon_Coast_zone__International_feet_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -15,6 +15,5 @@
 <http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.opengis.net/ont/crs/sourceCRS> <http://www.opengis.net/def/crs/EPSG/0/4196> .
 <http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/ProjectedCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.w3.org/2000/01/rdf-schema#label> "Ammassalik 1958 / Greenland zone 7 east" .
-<http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.w3.org/2000/01/rdf-schema#label> "Ammassalik 1958 / Greenland zone 7 east" .
+<http://www.opengis.net/def/crs/EPSG/0/2296> <http://www.w3.org/2000/01/rdf-schema#label> "Ammassalik 1958 / Greenland zone 7 east"@en .
 <http://www.opengis.net/def/crs/EPSG/0/2296> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

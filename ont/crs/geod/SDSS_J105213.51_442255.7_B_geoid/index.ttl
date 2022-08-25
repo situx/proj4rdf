@@ -3,6 +3,5 @@
 <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.opengis.net/ont/crs/eccentricity> "0.1399"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.opengis.net/ont/crs/semiMajorAxis> <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid_smj_axis> .
 <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Sphere> .
-<http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for SDSS J105213.51+442255.7 B" .
-<http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for SDSS J105213.51+442255.7 B" .
+<http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://www.w3.org/2000/01/rdf-schema#label> "Geoid for SDSS J105213.51+442255.7 B"@en .
 <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

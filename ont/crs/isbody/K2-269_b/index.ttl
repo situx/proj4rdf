@@ -6,6 +6,5 @@
 <http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/K2-269> .
 <http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.opengis.net/ont/crs/starDistance> "362.07"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
-<http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.w3.org/2000/01/rdf-schema#label> "K2-269 b" .
-<http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.w3.org/2000/01/rdf-schema#label> "K2-269 b" .
+<http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://www.w3.org/2000/01/rdf-schema#label> "K2-269 b"@en .
 <http://www.opengis.net/ont/crs/isbody/K2-269_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

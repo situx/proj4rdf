@@ -3,6 +3,5 @@
 <http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
 <http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.opengis.net/ont/crs/usage> "Not a valid datum"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Not specified (based on Authalic Sphere)" .
-<http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Not specified (based on Authalic Sphere)" .
+<http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: Not specified (based on Authalic Sphere)"@en .
 <http://www.opengis.net/ont/crs/datum/Not_specified__based_on_Authalic_Sphere_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

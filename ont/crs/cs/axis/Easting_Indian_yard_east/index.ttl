@@ -6,6 +6,5 @@
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.opengis.net/ont/crs/unit_code> "9084"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.opengis.net/ont/crs/unit_conversion_factor> "0.9143985"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CoordinateSystemAxis> .
-<http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.w3.org/2000/01/rdf-schema#label> "Easting (Indian yard)" .
-<http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.w3.org/2000/01/rdf-schema#label> "Easting (Indian yard)" .
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://www.w3.org/2000/01/rdf-schema#label> "Easting (Indian yard)"@en .
 <http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

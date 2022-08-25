@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.w3.org/2000/01/rdf-schema#comment> "Adopted by resolution IGAC 471/May 14, 2020. Supports the Spatial Data Infrastructure for Land Administration (IDE-AT) and its GIS applications. Used to fulfill all the requirements of the activities required for the Multipurpose Cadastre."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.w3.org/2000/01/rdf-schema#label> "Colombia Transverse Mercator: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.w3.org/2000/01/rdf-schema#label> "Colombia Transverse Mercator: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://www.w3.org/2000/01/rdf-schema#label> "Colombia Transverse Mercator: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Colombia_Transverse_Mercator> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

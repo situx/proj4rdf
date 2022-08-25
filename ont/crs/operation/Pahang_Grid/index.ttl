@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station GP31 at Sek. Ren. Keb. Kuala Mai, Jerantut. Offset from old grid origin is -7368.228m east, 6485.858m north."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Pahang Grid: Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Pahang Grid: Cassini-Soldner" .
+<http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Pahang Grid: Cassini-Soldner"@en .
 <http://www.opengis.net/ont/crs/operation/Pahang_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

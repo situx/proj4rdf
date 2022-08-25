@@ -3,6 +3,5 @@
 <http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .
 <http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: IGN 2008 LD" .
-<http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: IGN 2008 LD" .
+<http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: IGN 2008 LD"@en .
 <http://www.opengis.net/ont/crs/datum/IGN_2008_LD> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

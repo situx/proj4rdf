@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.opengis.net/ont/crs/usage> "GIS"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Krovak> .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#comment> "Greenwich-based alternative to projection code 5218."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak East North (Greenwich): Krovak (North Orientated)" .
-<http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak East North (Greenwich): Krovak (North Orientated)" .
+<http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak East North (Greenwich): Krovak (North Orientated)"@en .
 <http://www.opengis.net/ont/crs/operation/Krovak_East_North__Greenwich_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

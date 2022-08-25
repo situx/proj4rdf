@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.000027"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.opengis.net/ont/crs/usage> "Highway engineering"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
-<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 9 Newton: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 9 Newton: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://www.w3.org/2000/01/rdf-schema#label> "Iowa regional zone 9 Newton: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Iowa_regional_zone_9_Newton> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

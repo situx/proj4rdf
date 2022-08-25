@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AiryProjection> .
 <http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "With the introduction of OSTN15, the area for the British National Grid has effectively been extended from Britain to cover the adjacent UK Continental Shelf."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "British National Grid: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "British National Grid: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "British National Grid: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/British_National_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

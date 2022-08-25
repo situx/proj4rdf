@@ -12,6 +12,5 @@
 <http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.opengis.net/ont/crs/method_name> "Lambert Conic Conformal (West Orientated)" .
 <http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
-<http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.w3.org/2000/01/rdf-schema#label> "Greenland zone 4 east: Lambert Conic Conformal (West Orientated)" .
-<http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.w3.org/2000/01/rdf-schema#label> "Greenland zone 4 east: Lambert Conic Conformal (West Orientated)" .
+<http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://www.w3.org/2000/01/rdf-schema#label> "Greenland zone 4 east: Lambert Conic Conformal (West Orientated)"@en .
 <http://www.opengis.net/ont/crs/operation/Greenland_zone_4_east> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

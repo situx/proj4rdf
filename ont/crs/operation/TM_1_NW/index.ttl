@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "0.9996"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.opengis.net/ont/crs/usage> "Oil and gas exploration and production"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
-<http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.w3.org/2000/01/rdf-schema#label> "TM 1 NW: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.w3.org/2000/01/rdf-schema#label> "TM 1 NW: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://www.w3.org/2000/01/rdf-schema#label> "TM 1 NW: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/TM_1_NW> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

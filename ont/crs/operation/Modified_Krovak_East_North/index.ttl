@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel> "0.9999"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.opengis.net/ont/crs/usage> "GIS"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Ferro meridian.  Replaces Modified Krovak south-orientated projection (code 5219) for GIS purposes."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak East North: Krovak Modified (North Orientated)" .
-<http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak East North: Krovak Modified (North Orientated)" .
+<http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak East North: Krovak Modified (North Orientated)"@en .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak_East_North> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

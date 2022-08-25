@@ -16,6 +16,5 @@
 <http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.opengis.net/ont/crs/isVertical> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/SpatialReferencing> .
 <http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CompoundCRS> .
-<http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.w3.org/2000/01/rdf-schema#label> "ETRS89 + ODN (Offshore) height" .
-<http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.w3.org/2000/01/rdf-schema#label> "ETRS89 + ODN (Offshore) height" .
+<http://www.opengis.net/def/crs/EPSG/0/9425> <http://www.w3.org/2000/01/rdf-schema#label> "ETRS89 + ODN (Offshore) height"@en .
 <http://www.opengis.net/def/crs/EPSG/0/9425> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

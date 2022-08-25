@@ -2,6 +2,5 @@
 <http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.opengis.net/ont/crs/usage> "geodesy (gnss)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.opengis.net/ont/crs/usage> "oceanography"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalReferenceFrame> .
-<http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: European Vertical Reference Frame 2019 mean tide" .
-<http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: European Vertical Reference Frame 2019 mean tide" .
+<http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://www.w3.org/2000/01/rdf-schema#label> "Datum: European Vertical Reference Frame 2019 mean tide"@en .
 <http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

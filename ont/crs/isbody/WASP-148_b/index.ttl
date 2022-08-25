@@ -7,6 +7,5 @@
 <http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.opengis.net/ont/crs/satelliteOf> <http://www.opengis.net/ont/crs/isbody/WASP-148> .
 <http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.opengis.net/ont/crs/starDistance> "248.1"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/Planet> .
-<http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.w3.org/2000/01/rdf-schema#label> "WASP-148 b" .
-<http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.w3.org/2000/01/rdf-schema#label> "WASP-148 b" .
+<http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://www.w3.org/2000/01/rdf-schema#label> "WASP-148 b"@en .
 <http://www.opengis.net/ont/crs/isbody/WASP-148_b> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

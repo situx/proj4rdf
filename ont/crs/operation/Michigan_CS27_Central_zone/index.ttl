@@ -20,8 +20,6 @@
 <http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
-<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP Michigan)" .
-<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP)" .
-<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP Michigan)" .
-<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP)" .
+<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP Michigan)"@en .
+<http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan CS27 Central zone: Lambert Conic Conformal (2SP)"@en .
 <http://www.opengis.net/ont/crs/operation/Michigan_CS27_Central_zone> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

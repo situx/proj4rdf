@@ -17,6 +17,5 @@
 <http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaces RSO Borneo (proj codes 19956-58) for use with ITRF-based geodetic CRSs. If using Hotine Oblique Mercator (variant B) method (code 9815), Ec=590521.147 m, Nc=442890.861 m."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.w3.org/2000/01/rdf-schema#label> "Borneo RSO: Hotine Oblique Mercator (variant A)" .
-<http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.w3.org/2000/01/rdf-schema#label> "Borneo RSO: Hotine Oblique Mercator (variant A)" .
+<http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://www.w3.org/2000/01/rdf-schema#label> "Borneo RSO: Hotine Oblique Mercator (variant A)"@en .
 <http://www.opengis.net/ont/crs/operation/Borneo_RSO> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

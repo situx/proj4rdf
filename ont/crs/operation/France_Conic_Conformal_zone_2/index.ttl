@@ -16,6 +16,5 @@
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.w3.org/2000/01/rdf-schema#comment> "Compliments Lambert-93. Scale factor ranges between -9 and +7 cm/km. Area of use overlaps adjacent zones."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.w3.org/2000/01/rdf-schema#label> "France Conic Conformal zone 2: Lambert Conic Conformal (2SP)" .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.w3.org/2000/01/rdf-schema#label> "France Conic Conformal zone 2: Lambert Conic Conformal (2SP)" .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://www.w3.org/2000/01/rdf-schema#label> "France Conic Conformal zone 2: Lambert Conic Conformal (2SP)"@en .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_2> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

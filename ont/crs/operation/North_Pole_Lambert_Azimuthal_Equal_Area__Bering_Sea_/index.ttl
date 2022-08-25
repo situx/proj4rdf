@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.opengis.net/ont/crs/usage> "Polar research"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.w3.org/2000/01/rdf-schema#comment> "For studies of Bering Sea area."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.w3.org/2000/01/rdf-schema#label> "North Pole Lambert Azimuthal Equal Area (Bering Sea): Lambert Azimuthal Equal Area" .
-<http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.w3.org/2000/01/rdf-schema#label> "North Pole Lambert Azimuthal Equal Area (Bering Sea): Lambert Azimuthal Equal Area" .
+<http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://www.w3.org/2000/01/rdf-schema#label> "North Pole Lambert Azimuthal Equal Area (Bering Sea): Lambert Azimuthal Equal Area"@en .
 <http://www.opengis.net/ont/crs/operation/North_Pole_Lambert_Azimuthal_Equal_Area__Bering_Sea_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

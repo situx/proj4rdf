@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin is station GP10 at K. Perindustrian Senawang, Seremban. Offset from old grid origin: 3915.790m east, -3292.026m north."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Sembilan and Melaka Grid: Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Sembilan and Melaka Grid: Cassini-Soldner" .
+<http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://www.w3.org/2000/01/rdf-schema#label> "Sembilan and Melaka Grid: Cassini-Soldner"@en .
 <http://www.opengis.net/ont/crs/operation/Sembilan_and_Melaka_Grid> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

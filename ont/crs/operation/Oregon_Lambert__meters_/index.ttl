@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
 <http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial metric definition of projection 15374. This projection is not used in metric form by state agencies. See proj code 15375 for equivalent non-metric definition recommended by Oregon Geographic Information Council (GIC)."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Lambert (meters): Lambert Conic Conformal (2SP)" .
-<http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Lambert (meters): Lambert Conic Conformal (2SP)" .
+<http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://www.w3.org/2000/01/rdf-schema#label> "Oregon Lambert (meters): Lambert Conic Conformal (2SP)"@en .
 <http://www.opengis.net/ont/crs/operation/Oregon_Lambert__meters_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

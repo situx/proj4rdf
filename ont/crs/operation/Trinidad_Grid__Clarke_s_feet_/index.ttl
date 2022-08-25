@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.opengis.net/ont/crs/usage> "Oil and gas exploration and production"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CassiniProjection> .
 <http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.w3.org/2000/01/rdf-schema#comment> "Foot version of EPSG code 19925. Not an official system, but used by some US-based organisations including Amoco Trinidad."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Trinidad Grid (Clarke's feet): Cassini-Soldner" .
-<http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Trinidad Grid (Clarke's feet): Cassini-Soldner" .
+<http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://www.w3.org/2000/01/rdf-schema#label> "Trinidad Grid (Clarke's feet): Cassini-Soldner"@en .
 <http://www.opengis.net/ont/crs/operation/Trinidad_Grid__Clarke_s_feet_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

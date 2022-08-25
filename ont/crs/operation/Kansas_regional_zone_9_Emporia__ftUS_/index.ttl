@@ -13,6 +13,5 @@
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin> "1.00005"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.opengis.net/ont/crs/usage> "Highway engineering"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/CentralCylindricalProjection> .
-<http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.w3.org/2000/01/rdf-schema#label> "Kansas regional zone 9 Emporia (ftUS): Lambert Conic Conformal (1SP)" .
-<http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.w3.org/2000/01/rdf-schema#label> "Kansas regional zone 9 Emporia (ftUS): Lambert Conic Conformal (1SP)" .
+<http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://www.w3.org/2000/01/rdf-schema#label> "Kansas regional zone 9 Emporia (ftUS): Lambert Conic Conformal (1SP)"@en .
 <http://www.opengis.net/ont/crs/operation/Kansas_regional_zone_9_Emporia__ftUS_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

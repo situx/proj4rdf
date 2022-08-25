@@ -12,6 +12,5 @@
 <http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.opengis.net/ont/crs/method_name> "Polar Stereographic (variant B)" .
 <http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (medium and small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/StereographicProjection> .
-<http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Australian Antarctic Polar Stereographic: Polar Stereographic (variant B)" .
-<http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Australian Antarctic Polar Stereographic: Polar Stereographic (variant B)" .
+<http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Australian Antarctic Polar Stereographic: Polar Stereographic (variant B)"@en .
 <http://www.opengis.net/ont/crs/operation/Australian_Antarctic_Polar_Stereographic> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

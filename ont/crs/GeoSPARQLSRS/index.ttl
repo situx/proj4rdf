@@ -1,9 +1,7 @@
 <http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/creator> <http://www.wikidata.org/entity/Q67624599> .
-<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/description> "This ontology models spatial reference systems" .
-<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/description> "This ontology models spatial reference systems" .
+<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/description> "This ontology models spatial reference systems"@en .
 <http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL SRS Ontology Draft" .
-<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL SRS Ontology Draft" .
+<http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL SRS Ontology Draft"@en .
 <http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://www.w3.org/2002/07/owl#versionInfo> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/GeoSPARQLSRS> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

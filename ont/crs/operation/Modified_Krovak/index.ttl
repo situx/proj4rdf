@@ -17,6 +17,5 @@
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.opengis.net/ont/crs/usage> "topographic mapping (large and medium scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.w3.org/2000/01/rdf-schema#comment> "Longitude is referenced to the Ferro meridian."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak: Krovak Modified" .
-<http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak: Krovak Modified" .
+<http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://www.w3.org/2000/01/rdf-schema#label> "Modified Krovak: Krovak Modified"@en .
 <http://www.opengis.net/ont/crs/operation/Modified_Krovak> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

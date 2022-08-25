@@ -11,6 +11,5 @@
 <http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.opengis.net/ont/crs/method_name> "Polar Stereographic (variant C)" .
 <http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.opengis.net/ont/crs/northingAtFalseOrigin> "200000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
-<http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Terre Adelie Polar Stereographic: Polar Stereographic (variant C)" .
-<http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Terre Adelie Polar Stereographic: Polar Stereographic (variant C)" .
+<http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://www.w3.org/2000/01/rdf-schema#label> "Terre Adelie Polar Stereographic: Polar Stereographic (variant C)"@en .
 <http://www.opengis.net/ont/crs/operation/Terre_Adelie_Polar_Stereographic> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

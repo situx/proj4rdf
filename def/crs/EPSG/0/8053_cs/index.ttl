@@ -4,6 +4,5 @@
 <http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.opengis.net/ont/crs/asWKT> "CS[vertical,1],AXIS['depth (D)',down,LENGTHUNIT['US survey foot',0.304800609601219,ID['EPSG',9003]]]" .
 <http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.opengis.net/ont/crs/axis> <http://www.opengis.net/ont/crs/cs/axis/Depth_US_survey_foot_down> .
 <http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/VerticalCS> .
-<http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.w3.org/2000/01/rdf-schema#label> "EPSG:8053 CS: vertical" .
-<http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.w3.org/2000/01/rdf-schema#label> "EPSG:8053 CS: vertical" .
+<http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://www.w3.org/2000/01/rdf-schema#label> "EPSG:8053 CS: vertical"@en .
 <http://www.opengis.net/def/crs/EPSG/0/8053_cs> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

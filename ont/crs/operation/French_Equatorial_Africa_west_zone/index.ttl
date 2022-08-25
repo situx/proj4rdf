@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.opengis.net/ont/crs/usage> "Topographic mapping (small scale)"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaced in 1950 by UTM."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.w3.org/2000/01/rdf-schema#label> "French Equatorial Africa west zone: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.w3.org/2000/01/rdf-schema#label> "French Equatorial Africa west zone: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://www.w3.org/2000/01/rdf-schema#label> "French Equatorial Africa west zone: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/French_Equatorial_Africa_west_zone> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

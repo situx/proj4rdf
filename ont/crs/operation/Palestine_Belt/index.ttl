@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaces Palestine Grid (code 18201). See also Israeli CS (proj code 18203) which has identical parameter values: the difference in coordinates between the Palestine Belt and the Israeli CS caused by their different methods is under 2m within Israel."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.w3.org/2000/01/rdf-schema#label> "Palestine Belt: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.w3.org/2000/01/rdf-schema#label> "Palestine Belt: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://www.w3.org/2000/01/rdf-schema#label> "Palestine Belt: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Palestine_Belt> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

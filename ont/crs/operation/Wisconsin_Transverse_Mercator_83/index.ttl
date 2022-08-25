@@ -14,6 +14,5 @@
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.opengis.net/ont/crs/usage> "State-wide spatial data management"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#comment> "Designed to cover the state in a single zone."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#label> "Wisconsin Transverse Mercator 83: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#label> "Wisconsin Transverse Mercator 83: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://www.w3.org/2000/01/rdf-schema#label> "Wisconsin Transverse Mercator 83: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Wisconsin_Transverse_Mercator_83> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -15,6 +15,5 @@
 <http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.opengis.net/ont/crs/usage> "Obsolete"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
 <http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.w3.org/2000/01/rdf-schema#comment> "Replaced by central and south zones."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan State Plane East zone: Transverse Mercator" .
-<http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan State Plane East zone: Transverse Mercator" .
+<http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://www.w3.org/2000/01/rdf-schema#label> "Michigan State Plane East zone: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Michigan_State_Plane_East_zone> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
