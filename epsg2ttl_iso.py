@@ -29,7 +29,7 @@ def csAsSVG(csdef):
     return svgstr.replace("\"","'")+"</svg>"
 
 def geoidAsSVG(a,b):
-    svgstr="""<svg viewBox=\"0 0 """+str((a*2)+10)+" "+str((b*2)+10)+"""\" height=\"485\" width=\"500\"><ellipse cx=\""""+str(a)+"""\" cy=\""""+str(b)+""" rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
+    svgstr="""<svg viewBox=\"0 0 """+str((a*2)+10)+" "+str((b*2)+10)+"""\" height=\"485\" width=\"500\"><ellipse cx=\""""+str(a)+"""\" cy=\""""+str(b)+"""\" rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
     return svgstr.replace("\"","'")
     
 def resolveScope(indid,scopestring):
@@ -136,23 +136,28 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		#\"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
 	if curcrs.get_geod()!=None:
 		geoid="geocrsgeod:"+str(geodcounter)
+		geoidlabel=""
 		if curcrs.datum.ellipsoid!=None:
 			if curcrs.datum.ellipsoid.name in spheroids:
+				geoidlabel=curcrs.datum.ellipsoid.name
 				geoid=spheroids[curcrs.datum.ellipsoid.name]
 				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			elif curcrs.get_geod().sphere:
+				geoidlabel=curcrs.datum.ellipsoid.name
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
 				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			else:
+				geoidlabel=curcrs.datum.ellipsoid.name
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
 				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 		else:
+			geoidlabel="Geoid "+str(geodcounter)
 			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
 			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
 			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
@@ -163,9 +168,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+" geocrs:semiMajorAxis "+geoid+"_smj_axis . \n")
 		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a).replace(",","")+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smj_axis om:hasUnit om:metre . \n")
-		ttl.add(geoid+"_smj_axis rdfs:label \"Semi Major Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
+		ttl.add(geoid+"_smj_axis rdfs:label \"Semi Major Axis of "+str(geoidlabel)+"\"@en . \n")
 		ttl.add(geoid+" geocrs:semiMinorAxis "+geoid+"_smi_axis . \n")
-		ttl.add(geoid+"_smi_axis rdfs:label \"Semi Minor Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
+		ttl.add(geoid+"_smi_axis rdfs:label \"Semi Minor Axis of "+str(geoidlabel)+"\"@en . \n")
 		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b).replace(",","")+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
@@ -204,12 +209,12 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				print(par.unit_name)
 				if par.unit_name in units:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
 				else:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n")
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                      
 			else:
