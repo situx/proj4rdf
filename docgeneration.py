@@ -1824,9 +1824,11 @@ class OntDocGeneration:
                         foundmedia = res["foundmedia"]
                         imageannos=res["imageannos"]
                         image3dannos=res["image3dannos"]
-                        labelmap[res["label"]]=res["html"]
+                        if res["label"] not in labelmap:
+                            labelmap[res["label"]]=""
+                        labelmap[res["label"]]+="<li>"+str(res["html"])+"</li>"
                     for lab in sorted(labelmap):
-                        tablecontents+="<li>"+str(labelmap[lab])+"</li>"
+                        tablecontents+=str(labelmap[lab])
                     tablecontents+="</ul></td>"
                 else:
                     tablecontents+="<td class=\"wrapword\">"
