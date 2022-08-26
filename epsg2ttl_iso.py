@@ -29,7 +29,8 @@ def csAsSVG(csdef):
     return svgstr.replace("\"","'")+"</svg>"
 
 def geoidAsSVG(a,b):
-    svgstr="""<svg viewBox=\"-"""+str(a)+" -"+str(b)+" "+str(a)+" "+str(b)+"""\" height=\"485\" width=\"500\"><ellipse rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
+    #cx="""+str(a)+""" cy="""+str(b)+"""
+    svgstr="""<svg viewBox=\"0 0 """+str(a*2)+" "+str(b*2)+"""\" height=\"485\" width=\"500\"><ellipse rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
     return svgstr.replace("\"","'")
     
 def resolveScope(indid,scopestring):
@@ -205,11 +206,13 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				if par.unit_name in units:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")                     
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
 				else:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                      
 			else:
 				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" \""+str(par.value)+"\"^^xsd:double . \n")     
 		for grid in curcrs.coordinate_operation.grids:
