@@ -263,17 +263,6 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "CS Extension Ontology"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -282,6 +271,17 @@
       {
         "@language": "en",
         "@value": "Projection Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CS Extension Ontology"
       }
     ]
   },
@@ -589,52 +589,6 @@
                     </span>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="affinecoordinatesystem">
-          <h3>affine coordinate system
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/AffineCoordinateSystem</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
-              </th>
-              <td>
-                <a href="http://www.wikidata.org/entity/Q382510">wd:Q382510</a>
               </td>
             </tr>
           </table>
@@ -5952,7 +5906,10 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
-                <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -10073,6 +10030,73 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="affinecoordinatesystem">
+          <h3>affine coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/AffineCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
+              </th>
+              <td>
+                <a href="http://www.wikidata.org/entity/Q382510">wd:Q382510</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ObliqueCS">geocrs:ObliqueCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CartesianCS">geocrs:CartesianCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="affinecoordinatetransformationoperation">
           <h3>affine coordinate transformation operation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -10733,57 +10757,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="orthogonalcoordinatesystem">
-          <h3>orthogonal coordinate system
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="PlanetStatus">
           <h3>Planet Status
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -11360,6 +11333,69 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/ObliqueStereographicProjection">geocrs:ObliqueStereographicProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="orthogonalcoordinatesystem">
+          <h3>orthogonal coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EllipsoidalCS">geocrs:EllipsoidalCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CartesianCS">geocrs:CartesianCS</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -12829,12 +12865,6 @@
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="http://www.opengis.net/ont/crs/BarycentricCoordinateSystem">geocrs:BarycentricCoordinateSystem</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -12887,6 +12917,12 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/PlanarCS">geocrs:PlanarCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -15853,7 +15889,10 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
-                <a href="http://www.opengis.net/ont/crs/OrthogonalCS">geocrs:OrthogonalCS</a>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -16102,10 +16141,16 @@
               <td>
                 <ul>
                   <li>
-                    <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
                   </li>
                   <li>
-                    <a href="http://www.opengis.net/ont/crs/OrthogonalCS">geocrs:OrthogonalCS</a>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
                   </li>
                 </ul>
               </td>
@@ -17351,9 +17396,6 @@
               <a href="#administrativecode">administrative code</a>
             </li>
             <li>
-              <a href="#affinecoordinatesystem">affine coordinate system</a>
-            </li>
-            <li>
               <a href="#aitoffobliqueprojection">aitoff oblique projection</a>
             </li>
             <li>
@@ -18275,6 +18317,9 @@
               <a href="#winkeltripelprojection">winkel tripel projection</a>
             </li>
             <li>
+              <a href="#affinecoordinatesystem">affine coordinate system</a>
+            </li>
+            <li>
               <a href="#affinecoordinatetransformationoperation">affine coordinate transformation operation</a>
             </li>
             <li>
@@ -18320,9 +18365,6 @@
               <a href="#minimumerrorprojection">minimum error projection</a>
             </li>
             <li>
-              <a href="#orthogonalcoordinatesystem">orthogonal coordinate system</a>
-            </li>
-            <li>
               <a href="#PlanetStatus">Planet Status</a>
             </li>
             <li>
@@ -18357,6 +18399,9 @@
             </li>
             <li>
               <a href="#obliqueprojection">oblique projection</a>
+            </li>
+            <li>
+              <a href="#orthogonalcoordinatesystem">orthogonal coordinate system</a>
             </li>
             <li>
               <a href="#celestialcoordinatesystem">celestial coordinate system</a>
