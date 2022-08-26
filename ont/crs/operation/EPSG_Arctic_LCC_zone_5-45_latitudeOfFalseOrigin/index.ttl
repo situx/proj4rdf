@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_5-45_latitudeOfFalseOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_5-45_latitudeOfFalseOrigin> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_5-45_latitudeOfFalseOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "72.02501"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/operation/EPSG_Arctic_LCC_zone_5-45_latitudeOfFalseOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

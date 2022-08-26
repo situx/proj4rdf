@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_81E_longitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_81E_longitudeOfNaturalOrigin> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
+<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_81E_longitudeOfNaturalOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "81.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/operation/GSK_3-degree_Gauss-Kruger_CM_81E_longitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

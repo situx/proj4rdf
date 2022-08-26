@@ -1,0 +1,4 @@
+<http://www.opengis.net/ont/crs/operation/SPCS83_Massachusetts_Island_zone__meters__latitudeOf1StStandardParallel> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Massachusetts_Island_zone__meters__latitudeOf1StStandardParallel> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Massachusetts_Island_zone__meters__latitudeOf1StStandardParallel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "41.48333"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/operation/SPCS83_Massachusetts_Island_zone__meters__latitudeOf1StStandardParallel> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
