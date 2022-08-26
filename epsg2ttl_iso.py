@@ -29,8 +29,7 @@ def csAsSVG(csdef):
     return svgstr.replace("\"","'")+"</svg>"
 
 def geoidAsSVG(a,b):
-    #cx="""+str(a)+""" cy="""+str(b)+"""
-    svgstr="""<svg viewBox=\"0 0 """+str(a*2)+" "+str(b*2)+"""\" height=\"485\" width=\"500\"><ellipse rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
+    svgstr="""<svg viewBox=\"0 0 """+str((a*2)+10)+" "+str((b*2)+10)+"""\" height=\"485\" width=\"500\"><ellipse cx=\""""+str(a)+"""\" cy=\""""+str(b)+""" rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
     return svgstr.replace("\"","'")
     
 def resolveScope(indid,scopestring):
@@ -162,12 +161,12 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
 		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
 		ttl.add(geoid+" geocrs:semiMajorAxis "+geoid+"_smj_axis . \n")
-		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a)+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a).replace(",","")+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smj_axis om:hasUnit om:metre . \n")
 		ttl.add(geoid+"_smj_axis rdfs:label \"Semi Major Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
 		ttl.add(geoid+" geocrs:semiMinorAxis "+geoid+"_smi_axis . \n")
 		ttl.add(geoid+"_smi_axis rdfs:label \"Semi Minor Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
-		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b)+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b).replace(",","")+"\"^^xsd:double . \n")
 		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
 		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
 			ttl.add(geoid+" geocrs:asSVG \""+str(geoidAsSVG(curcrs.get_geod().a,curcrs.get_geod().b))+"\" . \n")
