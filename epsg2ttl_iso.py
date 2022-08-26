@@ -50,6 +50,16 @@ def resolveScope(indid,scopestring):
             ttl.add(indid+" geocrs:usage \""+scopestring.strip().replace(".","")+"\"^^xsd:string . \n")
     return ttl
 
+def resolveUnit(indid,unitstr,unitlabel=""):
+    if unitstr==None:
+        return ttl
+    if unitstr in units:
+        ttl.add(str(indid)+" om:hasUnit "+units[unitstr]+" . \n")
+        ttl.add(units[unitstr]+" rdf:type om:Unit .\n")	
+    else:
+        ttl.add(str(indid)+" om:hasUnit \""+str(unitstr)+"\" . \n")      
+    return ttl
+
 def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	epsgcode=str(x)
 	wkt=curcrs.to_wkt().replace("\"","'").strip()
@@ -99,7 +109,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_conversion_factor \""+str(axis.unit_conversion_factor)+"\"^^xsd:double . \n")	
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_auth_code \""+str(axis.unit_auth_code)+"\"^^xsd:string . \n")
 			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
-			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")				
+			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")		            
 			if axis.unit_name in units:
 				ttl.add("geocrsaxis:"+axisid+" om:hasUnit "+units[axis.unit_name]+" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
@@ -185,11 +195,23 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		if curcrs.coordinate_operation.towgs84!=None:
 			print(curcrs.coordinate_operation.towgs84)
 		for par in curcrs.coordinate_operation.params:
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdf:type owl:DatatypeProperty . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:range xsd:double . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:domain geocrs:CoordinateOperation . \n") 
-			ttl.add(" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" rdfs:label \""+str(par.name)+"\"@en . \n")				
-			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]+" \""+str(par.value)+"\"^^xsd:double . \n") 
+			opparamname=str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]
+			ttl.add(" geocrs:"+str(opparamname)+" rdf:type owl:DatatypeProperty . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:range xsd:double . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:domain geocrs:CoordinateOperation . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")	
+			if par.unit_name!=None:
+				print(par.unit_name)
+				if par.unit_name in units:
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")                     
+				else:
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n") 
+			else:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" \""+str(par.value)+"\"^^xsd:double . \n")     
 		for grid in curcrs.coordinate_operation.grids:
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:grid geocrsgrid:"+str(grid.name).replace(" ","_")+" . \n")
 			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdf:type geocrs:Grid . \n")
@@ -363,6 +385,7 @@ units["metre"]="om:metre"
 units["grad"]="om:degree"
 units["degree"]="om:degree"
 units["ft"]="om:foot"
+units["US Survey Foot"]="om:foot-USSurvey"
 units["us-ft"]="om:usfoot"
 scope={}
 scope["geodesy"]="geocrs:Geodesy"
