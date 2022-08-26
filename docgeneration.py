@@ -1,2045 +1,1432 @@
-# -*- coding: UTF-8 -*-
-from rdflib import Graph
-from rdflib import URIRef, Literal, BNode
-from rdflib.plugins.sparql import prepareQuery
-import shapely.wkt
-import shapely.geometry
 import os
-import json
-import sys
-
-labelproperties={
-    "http://www.w3.org/2004/02/skos/core#prefLabel":"DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#prefSymbol": "DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#altLabel": "DatatypeProperty",
-    "https://schema.org/name": "DatatypeProperty",
-    "https://schema.org/alternateName": "DatatypeProperty",
-    "http://purl.org/dc/terms/title": "DatatypeProperty",
-    "http://purl.org/dc/elements/1.1/title":"DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#altSymbol": "DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#hiddenLabel": "DatatypeProperty",
-    "http://www.w3.org/2000/01/rdf-schema#label": "DatatypeProperty"
-}
-
-collectionclasses=["http://www.opengis.net/ont/geosparql#FeatureCollection","http://www.opengis.net/ont/geosparql#GeometryCollection","http://www.opengis.net/ont/geosparql#SpatialObjectCollection","http://www.w3.org/2004/02/skos/core#Collection","http://www.w3.org/2004/02/skos/core#OrderedCollection","https://www.w3.org/ns/activitystreams#Collection","https://www.w3.org/ns/activitystreams#OrderedCollection"]
-
-geoliteraltypes=["http://www.opengis.net/ont/geosparql#wktLiteral","http://www.opengis.net/ont/geosparql#gmlLiteral","http://www.opengis.net/ont/geosparql#kmlLiteral","http://www.opengis.net/ont/geosparql#geoJSONLiteral","http://www.opengis.net/ont/geosparql#dggsLiteral"]
-
-collectionrelationproperties={
-    "http://www.w3.org/2000/01/rdf-schema#member":"ObjectProperty",
-    "http://www.w3.org/2004/02/skos/core#member":"ObjectProperty"
-}
-
-invcollectionrelationproperties={
-    "https://www.w3.org/ns/activitystreams#partOf":"ObjectProperty"
-}
-
-valueproperties={
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value":"DatatypeProperty",
-    "http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue":"DatatypeProperty"
-}
-
-unitproperties={
-    "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit":"ObjectProperty",
-    "https://www.w3.org/ns/activitystreams#units":"DatatypeProperty"
-}
-
-commentproperties={
-    "http://www.w3.org/2004/02/skos/core#definition":"DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#note": "DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#scopeNote": "DatatypeProperty",
-    "http://www.w3.org/2004/02/skos/core#historyNote": "DatatypeProperty",
-    "https://schema.org/description":"DatatypeProperty",
-    "http://www.w3.org/2000/01/rdf-schema#comment": "DatatypeProperty",
-    "http://purl.org/dc/terms/description": "DatatypeProperty",
-    "http://purl.org/dc/elements/1.1/description": "DatatypeProperty"
-}
-
-geopointerproperties={
-    "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
-    "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
-    "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
-    "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
-    "http://schema.org/geo": "ObjectProperty",
-    "https://schema.org/geo": "ObjectProperty",
-    "http://geovocab.org/geometry#geometry": "ObjectProperty",
-    "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
-    "http://rdfs.co/juso/geometry": "ObjectProperty"
-}
-
-geolatlonproperties={
-   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
-   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
-   "https://www.w3.org/ns/activitystreams#latitude": "DatatypeProperty",
-   "https://www.w3.org/ns/activitystreams#longitude": "DatatypeProperty",
-   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
-   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
-   "http://schema.org/longitude": "DatatypeProperty",
-   "https://schema.org/longitude": "DatatypeProperty",
-   "http://schema.org/latitude": "DatatypeProperty",
-   "https://schema.org/latitude": "DatatypeProperty",
-}
-
-geoproperties={
-               "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
-               "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
-               "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
-               "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
-               "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
-               "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
-               "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
-               "http://www.georss.org/georss/point": "DatatypeProperty",
-               "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
-               "http://schema.org/geo": "ObjectProperty",
-               "https://schema.org/geo": "ObjectProperty",
-               "http://purl.org/dc/terms/coverage":"DatatypeProperty",
-               "http://purl.org/dc/terms/spatial":"DatatypeProperty",
-               "http://schema.org/polygon": "DatatypeProperty",
-               "https://schema.org/polygon": "DatatypeProperty",
-               "http://geovocab.org/geometry#geometry": "ObjectProperty",
-               "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
-               "http://rdfs.co/juso/geometry": "ObjectProperty",
-               "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
-               "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
-               "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
-               "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
-}
-
-imageextensions=[".apng",".bmp",".cur",".ico",".jpg",".jpeg",".png",".gif",".tif",".svg","<svg"]
-
-meshextensions=[".ply",".nxs",".nxz"]
-
-videoextensions=[".avi",".mp4",".ogv"]
-
-audioextensions=[".aac",".mp3",".mkv",".ogg",".opus",".wav"]
-
-fileextensionmap={
-    ".apng":"image",
-    ".bmp":"image",
-    ".cur":"image",
-    ".ico":"image",
-    ".jpg":"image",
-    ".jpeg":"image",
-    ".png":"image",
-    ".gif":"image",
-    ".tif":"image",
-    ".svg":"image",
-    "<svg":"image",
-    ".ply":"mesh",
-    ".nxs":"mesh",
-    ".nxz":"mesh",
-    ".avi":"video",
-    ".mp4":"video",
-    ".ogv":"video",
-    ".aac":"audio",
-    ".mp3":"audio",
-    ".mkv":"audio",
-    ".ogg":"audio",
-    ".opus":"audio",
-    ".wav":"audio"
-}
-
-
-startscripts = """var namespaces={"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","xsd":"http://www.w3.org/2001/XMLSchema#","geo":"http://www.opengis.net/ont/geosparql#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","owl":"http://www.w3.org/2002/07/owl#","dc":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#"}
-var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
-var geoproperties={
-                   "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
-                   "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
-                   "http://www.georss.org/georss/point": "DatatypeProperty",
-                   "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
-                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
-                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
-                   "http://schema.org/geo": "ObjectProperty",
-                   "http://schema.org/polygon": "DatatypeProperty",
-                   "https://schema.org/geo": "ObjectProperty",
-                   "https://schema.org/polygon": "DatatypeProperty",
-                   "http://geovocab.org/geometry#geometry": "ObjectProperty",
-                   "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
-                   "http://rdfs.co/juso/geometry": "ObjectProperty",
-                   "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
-                   "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
-                   "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
-                   "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
-}
-
-  var baseurl="{{baseurl}}"
-  $( function() {
-    var availableTags = Object.keys(search)
-    $( "#search" ).autocomplete({
-      source: availableTags
-    });
-    console.log(availableTags)
-    setupJSTree()
-  } );
-
-function openNav() {
-  document.getElementById("mySidenav").style.width = "400px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-function exportGeoJSON(){
-    if(typeof(feature) !== "undefined"){
-        saveTextAsFile(JSON.stringify(feature),"geojson")
-    }
-}
-
-function parseWKTStringToJSON(wktstring){
-    wktstring=wktstring.substring(wktstring.lastIndexOf('(')+1,wktstring.lastIndexOf(')')-1)
-    resjson=[]
-    for(coordset of wktstring.split(",")){
-        curobject={}
-        coords=coordset.trim().split(" ")
-        console.log(coordset)
-        console.log(coords)
-        if(coords.length==3){
-            resjson.push({"x":parseFloat(coords[0]),"y":parseFloat(coords[1]),"z":parseFloat(coords[2])})
-        }else{
-            resjson.push({"x":parseFloat(coords[0]),"y":parseFloat(coords[1])})
-        }
-    }
-    console.log(resjson)
-    return resjson
-}
-
-function exportCSV(){
-    rescsv=""
-    if(typeof(feature)!=="undefined"){
-        if("features" in feature){
-           for(feat of feature["features"]){
-                rescsv+="\\""+feat["geometry"]["type"].toUpperCase()+"("
-                feat["geometry"].coordinates.forEach(function(p,i){
-                //	console.log(p)
-                    if(i<feat["geometry"].coordinates.length-1)rescsv =  rescsv + p[0] + ' ' + p[1] + ', ';
-                    else rescsv =  rescsv + p[0] + ' ' + p[1] + ')';
-                })
-                rescsv+=")\\","
-                if("properties" in feat){
-                    if(gottitle==false){
-                       rescsvtitle="\\"the_geom\\","
-                       for(prop in feat["properties"]){
-                          rescsvtitle+="\\""+prop+"\\","
-                       }
-                       rescsvtitle+="\\n"
-                       rescsv=rescsvtitle+rescsv
-                       gottitle=true
-                    }
-                    for(prop in feat["properties"]){
-                        rescsv+="\\""+feat["properties"][prop]+"\\","
-                    }
-                }
-                rescsv+="\\n"
-           }
-        }else{
-            gottitle=false
-            rescsv+="\\""+feature["geometry"]["type"].toUpperCase()+"("
-            feature["geometry"].coordinates.forEach(function(p,i){
-            //	console.log(p)
-                if(i<feature["geometry"].coordinates.length-1)rescsv =  rescsv + p[0] + ' ' + p[1] + ', ';
-                else rescsv =  rescsv + p[0] + ' ' + p[1] + ')';
-            })
-            rescsv+=")\\","
-            if("properties" in feature){
-                if(gottitle==false){
-                   rescsvtitle=""
-                   for(prop in feature["properties"]){
-                      rescsvtitle+="\\""+prop+"\\","
-                   }
-                   rescsvtitle+="\\n"
-                   rescsv=rescsvtitle+rescsv
-                   gottitle=true
-                }
-                for(prop in feature["properties"]){
-                    rescsv+="\\""+feature["properties"][prop]+"\\","
-                }
-            }
-        }
-        saveTextAsFile(rescsv,".csv")
-    }else if(typeof(nongeofeature)!=="undefined"){
-        if("features" in nongeofeature){
-           for(feat of nongeofeature["features"]){
-                if("properties" in feat){
-                    if(gottitle==false){
-                       rescsvtitle="\\"the_geom\\","
-                       for(prop in feat["properties"]){
-                          rescsvtitle+="\\""+prop+"\\","
-                       }
-                       rescsvtitle+="\\n"
-                       rescsv=rescsvtitle+rescsv
-                       gottitle=true
-                    }
-                    for(prop in feat["properties"]){
-                        rescsv+="\\""+feat["properties"][prop]+"\\","
-                    }
-                }
-                rescsv+="\\n"
-           }
-        }else{
-            gottitle=false
-            if("properties" in nongeofeature){
-                if(gottitle==false){
-                   rescsvtitle=""
-                   for(prop in nongeofeature["properties"]){
-                      rescsvtitle+="\\""+prop+"\\","
-                   }
-                   rescsvtitle+="\\n"
-                   rescsv=rescsvtitle+rescsv
-                   gottitle=true
-                }
-                for(prop in nongeofeature["properties"]){
-                    rescsv+="\\""+nongeofeature["properties"][prop]+"\\","
-                }
-            }
-        }
-        saveTextAsFile(rescsv,".csv")
-    }
-}
-
-function setSVGDimensions(){ 
-    $('.svgview').each(function(i, obj) {
-        console.log(obj)
-        console.log($(obj).children().first()[0])
-        maxx=Number.MIN_VALUE
-        maxy=Number.MIN_VALUE
-        minx=Number.MAX_VALUE
-        miny=Number.MAX_VALUE
-        $(obj).children().each(function(i){
-            svgbbox=$(this)[0].getBBox()
-            console.log(svgbbox)
-            if(svgbbox.x+svgbbox.width>maxx){
-                maxx=svgbbox.x+svgbbox.width
-            }
-            if(svgbbox.y+svgbbox.height>maxy){
-                maxy=svgbbox.y+svgbbox.height
-            }
-            if(svgbbox.y<miny){
-                miny=svgbbox.y
-            }
-            if(svgbbox.x<minx){
-                minx=svgbbox.x
-            }
-        });
-        console.log(""+(minx)+" "+(miny-(maxy-miny))+" "+((maxx-minx)+25)+" "+((maxy-miny)+25))
-        newviewport=""+((minx))+" "+(miny)+" "+((maxx-minx)+25)+" "+((maxy-miny)+25)
-        $(obj).attr("viewBox",newviewport)
-        $(obj).attr("width",((maxx-minx))+10)
-        $(obj).attr("height",((maxy-miny)+10))
-        console.log($(obj).hasClass("svgoverlay"))
-        if($(obj).hasClass("svgoverlay")){
-            naturalWidth=$(obj).prev()[0].naturalWidth
-            naturalHeight=$(obj).prev()[0].naturalHeight
-            currentWidth=$(obj).prev()[0].width
-            currentHeight=$(obj).prev()[0].height
-            console.log(naturalWidth+" - "+naturalHeight+" - "+currentWidth+" - "+currentHeight)
-            overlayposX = (currentWidth/naturalWidth) * minx;
-            overlayposY = (currentHeight/naturalHeight) * miny;
-            overlayposWidth = ((currentWidth/naturalWidth) * maxx)-overlayposX;
-            overlayposHeight = ((currentHeight/naturalHeight) * maxy)-overlayposY;
-            console.log(overlayposX+" - "+overlayposY+" - "+overlayposHeight+" - "+overlayposWidth)
-            $(obj).css({top: overlayposY+"px", left:overlayposX+"px", position:"absolute"})
-            $(obj).attr("height",overlayposHeight)
-            $(obj).attr("width",overlayposWidth)
-        }
-    });
-}
-
-function exportWKT(){
-    if(typeof(feature)!=="undefined"){
-        reswkt=""
-        if("features" in feature){
-            for(feat of feature["features"]){
-                reswkt+=feat["geometry"]["type"].toUpperCase()+"("
-                feat["geometry"].coordinates.forEach(function(p,i){
-                //	console.log(p)
-                    if(i<feat["geometry"].coordinates.length-1)reswkt =  reswkt + p[0] + ' ' + p[1] + ', ';
-                    else reswkt =  reswkt + p[0] + ' ' + p[1] + ')';
-                })
-                reswkt+=")\\n"
-            }
-        }else{
-                reswkt+=feature["geometry"]["type"].toUpperCase()+"("
-                feature["geometry"].coordinates.forEach(function(p,i){
-                    if(i<feature["geometry"].coordinates.length-1)reswkt =  reswkt + p[0] + ' ' + p[1] + ', ';
-                    else reswkt =  reswkt + p[0] + ' ' + p[1] + ')';
-                })
-                reswkt+=")\\n"
-        }
-        saveTextAsFile(reswkt,".wkt")
-    }
-}
-
-function downloadFile(filePath){
-    var link=document.createElement('a');
-    link.href = filePath;
-    link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
-    link.click();
-}
-
-function saveTextAsFile(tosave,fileext){
-    var a = document.createElement('a');
-    a.style = "display: none";  
-    var blob= new Blob([tosave], {type:'text/plain'});
-    var url = window.URL.createObjectURL(blob);
-    var filename = "res."+fileext;
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function(){
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);  
-    }, 1000);
-}
-
-function download(){
-    format=$('#format').val()
-    if(format=="geojson"){
-        exportGeoJSON()
-    }else if(format=="ttl"){
-        downloadFile("index.ttl")
-    }else if(format=="json"){
-        downloadFile("index.json")
-    }else if(format=="wkt"){
-        exportWKT()
-    }else if(format=="csv"){
-        exportCSV()
-    }
-}
-
-function rewriteLink(thelink){
-    console.log(thelink)
-    console.log(window.location.pathname)
-    console.log(baseurl)
-    if(thelink==null){
-        rest=search[document.getElementById('search').value].replace(baseurl,"")
-    }else{
-        curlocpath=window.location.href.replace(baseurl,"")
-        rest=thelink.replace(baseurl,"")
-    }
-    if(!(rest.endsWith("/"))){
-        rest+="/"
-    }
-    console.log(rest)
-    console.log(curlocpath)
-    count=0
-    console.log(curlocpath.split("/"))
-    console.log(rest.split("/"))
-    if(!indexpage){
-        count=rest.split("/").length-1
-    }
-    console.log(count)
-    counter=0
-    if (typeof relativedepth !== 'undefined'){
-        while(counter<relativedepth){
-            rest="../"+rest
-            counter+=1
-        }
-    }else{
-        while(counter<count){
-            rest="../"+rest
-            counter+=1
-        }   
-    }
-    rest+="index.html"
-    console.log(rest)
-    return rest
-}
-
-function followLink(thelink=null){
-    rest=rewriteLink(thelink)
-    location.href=rest
-}
-
-function changeDefLink(){
-	$('#formatlink').attr('href',definitionlinks[$('#format').val()]);
-}
-
-function changeDefLink2(){
-	$('#formatlink2').attr('href',definitionlinks[$('#format2').val()]);
-}
-
-var definitionlinks={
-"covjson":"https://covjson.org",
-"csv":"https://tools.ietf.org/html/rfc4180",
-"cipher":"https://neo4j.com/docs/cypher-manual/current/",
-"esrijson":"https://doc.arcgis.com/de/iot/ingest/esrijson.htm",
-"geohash":"http://geohash.org",
-"json":"https://geojson.org",
-"gdf":"https://www.cs.nmsu.edu/~joemsong/software/ChiNet/GDF.pdf",
-"geojsonld":"http://geojson.org/geojson-ld/",
-"geojsonseq":"https://tools.ietf.org/html/rfc8142",
-"geouri":"https://tools.ietf.org/html/rfc5870",
-"gexf":"https://gephi.org/gexf/format/",
-"gml":"https://www.ogc.org/standards/gml",
-"gml2":"https://gephi.org/users/supported-graph-formats/gml-format/",
-"gpx":"https://www.topografix.com/gpx.asp",
-"graphml":"http://graphml.graphdrawing.org",
-"gxl":"http://www.gupro.de/GXL/Introduction/intro.html",
-"hdt":"https://www.w3.org/Submission/2011/03/",
-"hextuples":"https://github.com/ontola/hextuples",
-"html":"https://html.spec.whatwg.org",
-"jsonld":"https://json-ld.org",
-"jsonn":"",
-"jsonp":"http://jsonp.eu",
-"jsonseq":"https://tools.ietf.org/html/rfc7464",
-"kml":"https://www.ogc.org/standards/kml",
-"latlon":"",
-"mapml":"https://maps4html.org/MapML/spec/",
-"mvt":"https://docs.mapbox.com/vector-tiles/reference/",
-"n3":"https://www.w3.org/TeamSubmission/n3/",
-"nq":"https://www.w3.org/TR/n-quads/",
-"nt":"https://www.w3.org/TR/n-triples/",
-"olc":"https://github.com/google/open-location-code/blob/master/docs/specification.md",
-"osm":"https://wiki.openstreetmap.org/wiki/OSM_XML",
-"osmlink":"",
-"rdfxml":"https://www.w3.org/TR/rdf-syntax-grammar/",
-"rdfjson":"https://www.w3.org/TR/rdf-json/",
-"rt":"https://afs.github.io/rdf-thrift/rdf-binary-thrift.html",
-"svg":"https://www.w3.org/TR/SVG11/",
-"tgf":"https://docs.yworks.com/yfiles/doc/developers-guide/tgf.html",
-"tlp":"https://tulip.labri.fr/TulipDrupal/?q=tlp-file-format",
-"trig":"https://www.w3.org/TR/trig/",
-"trix":"https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html",
-"ttl":"https://www.w3.org/TR/turtle/",
-"wkb":"https://www.iso.org/standard/40114.html",
-"wkt":"https://www.iso.org/standard/40114.html",
-"xls":"http://www.openoffice.org/sc/excelfileformat.pdf",
-"xlsx":"http://www.openoffice.org/sc/excelfileformat.pdf",
-"xyz":"https://gdal.org/drivers/raster/xyz.html",
-"yaml":"https://yaml.org"
-}
-
-function shortenURI(uri){
-	prefix=""
-	if(typeof(uri)!="undefined"){
-		for(namespace in namespaces){
-			if(uri.includes(namespaces[namespace])){
-				prefix=namespace+":"
-				break
-			}
-		}
-	}
-	if(typeof(uri)!= "undefined" && uri.includes("#")){
-		return prefix+uri.substring(uri.lastIndexOf('#')+1)
-	}
-	if(typeof(uri)!= "undefined" && uri.includes("/")){
-		return prefix+uri.substring(uri.lastIndexOf("/")+1)
-	}
-	return uri
-}
-
-var presenter = null;
-function setup3dhop(meshurl,meshformat) { 
-  presenter = new Presenter("draw-canvas");  
-  presenter.setScene({
-    meshes: {
-			"mesh_1" : { url: meshurl}
-		},
-		modelInstances : {
-			"model_1" : { 
-				mesh  : "mesh_1",
-				color : [0.8, 0.7, 0.75]
-			}
-		}
-  });
-}
-
-function start3dhop(meshurl,meshformat){
-    init3dhop();
-	setup3dhop(meshurl,meshformat);
-	resizeCanvas(640,480);
-  	moveToolbar(20,20);  
-}
-
-
-let camera, scene, renderer,controls;
-
-function viewGeometry(geometry) {
-  const material = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
-    flatShading: true,
-    vertexColors: THREE.VertexColors,
-    wireframe: false
-  });
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
-}
-
-function initThreeJS(domelement,verts,meshurls) {
-    scene = new THREE.Scene();
-    minz=Number.MAX_VALUE
-    maxz=Number.MIN_VALUE
-    miny=Number.MAX_VALUE
-    maxy=Number.MIN_VALUE
-    minx=Number.MAX_VALUE
-    maxx=Number.MIN_VALUE
-	vertarray=[]
-    console.log(verts)
-    var svgShape = new THREE.Shape();
-    first=true
-    for(vert of verts){
-        if(first){
-            svgShape.moveTo(vert["x"], vert["y"]);
-           first=false
-        }else{
-            svgShape.lineTo(vert["x"], vert["y"]);
-        }
-        vertarray.push(vert["x"])
-        vertarray.push(vert["y"])
-        vertarray.push(vert["z"])
-        if(vert["z"]>maxz){
-            maxz=vert["z"]
-        }
-        if(vert["z"]<minz){
-            minz=vert["z"]
-        }
-        if(vert["y"]>maxy){
-            maxy=vert["y"]
-        }
-        if(vert["y"]<miny){
-            miny=vert["y"]
-        }
-        if(vert["x"]>maxx){
-            maxy=vert["x"]
-        }
-        if(vert["x"]<minx){
-            miny=vert["x"]
-        }
-    }
-    if(meshurls.length>0){
-        var loader = new THREE.PLYLoader();
-        loader.load(meshurls[0], viewGeometry);
-    }
-    camera = new THREE.PerspectiveCamera(90,window.innerWidth / window.innerHeight, 0.1, 150 );
-    scene.add(new THREE.AmbientLight(0x222222));
-    var light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(20, 20, 0);
-    scene.add(light);
-    var axesHelper = new THREE.AxesHelper( Math.max(maxx, maxy, maxz)*4 );
-    scene.add( axesHelper );
-    console.log("Depth: "+(maxz-minz))
-    var extrudedGeometry = new THREE.ExtrudeGeometry(svgShape, {depth: maxz-minz, bevelEnabled: false});
-    extrudedGeometry.computeBoundingBox()
-    centervec=new THREE.Vector3()
-    extrudedGeometry.boundingBox.getCenter(centervec)
-    console.log(centervec)
-    const material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF, wireframe:true } );
-    const mesh = new THREE.Mesh( extrudedGeometry, material );
-    scene.add( mesh );
-    renderer = new THREE.WebGLRenderer( { antialias: false } );
-	renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( 480, 500 );
-    document.getElementById(domelement).appendChild( renderer.domElement );
-	controls = new THREE.OrbitControls( camera, renderer.domElement );
-    controls.target.set( centervec.x,centervec.y,centervec.z );
-    camera.position.x= centervec.x
-    camera.position.y= centervec.y
-    camera.position.z = centervec.z+10;
-    controls.maxDistance= Math.max(maxx, maxy, maxz)*5
-    controls.update();
-    animate()
-}
-
-function animate() {
-    requestAnimationFrame( animate );
-    controls.update();
-    renderer.render( scene, camera );
-}
-
-
-function labelFromURI(uri,label){
-        if(uri.includes("#")){
-        	prefix=uri.substring(0,uri.lastIndexOf('#')-1)
-        	if(label!=null){
-        		return label+" ("+prefix.substring(prefix.lastIndexOf("/")+1)+":"+uri.substring(uri.lastIndexOf('#')+1)+")"
-        	
-        	}else{
-				return uri.substring(uri.lastIndexOf('#')+1)+" ("+prefix.substring(uri.lastIndexOf("/")+1)+":"+uri.substring(uri.lastIndexOf('#')+1)+")"        	
-        	}
-       	}
-        if(uri.includes("/")){
-            prefix=uri.substring(0,uri.lastIndexOf('/')-1)
-            if(label!=null){
-            	return label+" ("+prefix.substring(prefix.lastIndexOf("/")+1)+":"+uri.substring(uri.lastIndexOf('/')+1)+")" 
-            }else{
-        		return uri.substring(uri.lastIndexOf('/')+1)+" ("+prefix.substring(uri.lastIndexOf("/")+1)+":"+uri.substring(uri.lastIndexOf('/')+1)+")"
-            }
-       	}
-        return uri
-}
-
-function formatHTMLTableForClassRelations(result,nodeicon,nodelabel,nodeid){
-    dialogcontent=""
-    if(nodelabel.includes("[")){
-        nodelabel=nodelabel.substring(0,nodelabel.lastIndexOf("[")-1)
-    }
-    dialogcontent="<h3><img src=\\""+nodeicon+"\\" height=\\"25\\" width=\\"25\\" alt=\\"Instance\\"/><a href=\\""+nodeid.replace('/index.json','/index.html')+"\\" target=\\"_blank\\"> "+nodelabel+"</a></h3><table border=1 id=classrelationstable><thead><tr><th>Incoming Concept</th><th>Incoming Relation</th><th>Concept</th><th>Outgoing Relation</th><th>Outgoing Concept</th></tr></thead><tbody>"
-    for(res in result["from"]){
-        for(instance in result["from"][res]){
-            if(instance=="instancecount"){
-                continue;
-            }
-            dialogcontent+="<tr><td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/class.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Class\\"/><a href=\\""+instance+"\\" target=\\"_blank\\">"+shortenURI(instance)+"</a></td>"
-            dialogcontent+="<td><a href=\\""+res+"\\" target=\\"_blank\\">"
-            finished=false
-            for(ns in annotationnamespaces){
-                if(res.includes(annotationnamespaces[ns])){
-                    dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/annotationproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Annotation Property\\"/>"
-                    finished=true
-                }
-            }
-            if(!finished && res in geoproperties && geoproperties[res]=="ObjectProperty"){
-                dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geoobjectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>"
-            }else if(!finished){
-                dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/objectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>"
-            }
-            dialogcontent+=shortenURI(res)+"</a></td>"
-            dialogcontent+="<td><img src=\\""+nodeicon+"\\" height=\\"25\\" width=\\"25\\" alt=\\"Instance\\"/><a href=\\""+nodeid+"\\" target=\\"_blank\\">"+nodelabel+"</a></td><td></td><td></td></tr>"
-        }
-    }
-    for(res in result["to"]){
-        for(instance in result["to"][res]){
-            if(instance=="instancecount"){
-                continue;
-            }
-            dialogcontent+="<tr><td></td><td></td><td><img src=\\""+nodeicon+"\\" height=\\"25\\" width=\\"25\\" alt=\\"Instance\\"/><a href=\\""+nodeid+"\\" target=\\"_blank\\">"+nodelabel+"</a></td>"
-            dialogcontent+="<td><a href=\\""+res+"\\" target=\\"_blank\\">"
-            finished=false
-            for(ns in annotationnamespaces){
-                if(res.includes(annotationnamespaces[ns])){
-                    dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/annotationproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Annotation Property\\"/>"
-                    finished=true
-                }
-            }
-            if(!finished && res in geoproperties && geoproperties[res]=="ObjectProperty"){
-                dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geoobjectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>"
-            }else if(!finished){
-                dialogcontent+="<img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/objectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>"
-            }
-            dialogcontent+=shortenURI(res)+"</a></td>"
-            dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/class.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Class\\"/><a href=\\""+instance+"\\" target=\\"_blank\\">"+shortenURI(instance)+"</a></td></tr>"
-        }
-    }
-    dialogcontent+="</tbody></table>"
-    dialogcontent+="<button style=\\"float:right\\" id=\\"closebutton\\" onclick='document.getElementById(\\"classrelationdialog\\").close()'>Close</button>"
-    return dialogcontent
-}
-
-function formatHTMLTableForResult(result,nodeicon){
-    dialogcontent=""
-    dialogcontent="<h3><img src=\\""+nodeicon+"\\" height=\\"25\\" width=\\"25\\" alt=\\"Instance\\"/><a href=\\""+nodeid.replace('/index.json','/index.html')+"\\" target=\\"_blank\\"> "+nodelabel+"</a></h3><table border=1 id=dataschematable><thead><tr><th>Type</th><th>Relation</th><th>Value</th></tr></thead><tbody>"
-    for(res in result){
-        dialogcontent+="<tr>"
-        if(res in geoproperties && geoproperties[res]=="ObjectProperty"){
-            dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geoobjectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Geo Object Property\\"/>Geo Object Property</td>"
-        }else if((result[res][0]+"").startsWith("http")){
-            dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/objectproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Object Property\\"/>Object Property</td>"
-        }else{
-            finished=false
-            for(ns in annotationnamespaces){
-                if(res.includes(annotationnamespaces[ns])){
-                    dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/annotationproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Annotation Property\\"/>Annotation Property</td>"
-                    finished=true
-                }
-            }
-            if(!finished && res in geoproperties && geoproperties[res]=="DatatypeProperty"){
-                dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geodatatypeproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>Geo Datatype Property</td>"
-            }else if(!finished){
-                dialogcontent+="<td><img src=\\"https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/datatypeproperty.png\\" height=\\"25\\" width=\\"25\\" alt=\\"Datatype Property\\"/>Datatype Property</td>"
-            }
-        }    
-        dialogcontent+="<td><a href=\\""+res+"\\" target=\\"_blank\\">"+shortenURI(res)+"</a></td>"
-        if(Array.isArray(result[res]) && result[res].length>1){
-            dialogcontent+="<td><ul>"
-            for(resitem of result[res]){
-                if((resitem+"").startsWith("http")){
-                    dialogcontent+="<li><a href=\\""+rewriteLink(resitem)+"\\" target=\\"_blank\\">"+shortenURI(resitem)+"</a></li>"
-                }else{
-                    dialogcontent+="<li>"+resitem+"</li>"
-                }
-            }
-            dialogcontent+="</ul></td>"
-        }else if((result[res][0]+"").startsWith("http")){
-            dialogcontent+="<td><a href=\\""+rewriteLink(result[res][0]+"")+"\\" target=\\"_blank\\">"+shortenURI(result[res][0]+"")+"</a></td>"
-        }else{
-            dialogcontent+="<td>"+result[res][0]+"</td>"
-        }
-        dialogcontent+="</tr>"
-    }
-    dialogcontent+="</tbody></table>"
-    dialogcontent+="<button style=\\"float:right\\" id=\\"closebutton\\" onclick='document.getElementById(\\"dataschemadialog\\").close()'>Close</button>"
-    return dialogcontent
-}
-
-function getClassRelationDialog(node){
-     nodeid=rewriteLink(node.id).replace(".html",".json")
-     nodelabel=node.text
-     nodetype=node.type
-     nodeicon=node.icon
-     props={}
-     if("data" in node){
-        props=node.data
-     }
-     console.log(nodetype)
-     if(nodetype=="class" || nodetype=="geoclass" || node.type=="collectionclass"){
-        console.log(props)
-        dialogcontent=formatHTMLTableForClassRelations(props,nodeicon,nodelabel,nodeid)
-        document.getElementById("classrelationdialog").innerHTML=dialogcontent
-        $('#classrelationstable').DataTable();
-        document.getElementById("classrelationdialog").showModal();
-     }
-}
-
-function getDataSchemaDialog(node){
-     nodeid=rewriteLink(node.id).replace(".html",".json")
-     nodelabel=node.text
-     nodetype=node.type
-     nodeicon=node.icon
-     props={}
-     if("data" in node){
-        props=node.data
-     }
-     console.log(nodetype)
-     if(nodetype=="class" || nodetype=="geoclass" || node.type=="collectionclass"){
-        console.log(props)
-        dialogcontent=formatHTMLTableForResult(props["to"],nodeicon)
-        document.getElementById("dataschemadialog").innerHTML=dialogcontent
-        $('#dataschematable').DataTable();
-        document.getElementById("dataschemadialog").showModal();
-     }else{
-         $.getJSON(nodeid, function(result){
-            dialogcontent=formatHTMLTableForResult(result,nodeicon)
-            document.getElementById("dataschemadialog").innerHTML=dialogcontent
-            $('#dataschematable').DataTable();
-            document.getElementById("dataschemadialog").showModal();
-          });
-    }
-}
-
-function setupJSTree(){
-    console.log("setupJSTree")
-    tree["contextmenu"]={}
-    tree["core"]["check_callback"]=true
-    tree["sort"]=function(a, b) {
-        a1 = this.get_node(a);
-        b1 = this.get_node(b);
-        if (a1.icon == b1.icon){
-            return (a1.text > b1.text) ? 1 : -1;
-        } else {
-            return (a1.icon > b1.icon) ? 1 : -1;
-        }
-    }
-    tree["contextmenu"]["items"]=function (node) {
-        nodetype=node.type
-        thelinkpart="class"
-        if(nodetype=="instance" || nodetype=="geoinstance"){
-            thelinkpart="instance"
-        }    
-        contextmenu={
-            "lookupdefinition": {
-                "separator_before": false,
-                "separator_after": false,
-                "label": "Lookup definition",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/searchclass.png",
-                "action": function (obj) {
-                    newlink=rewriteLink(node.id)
-                    var win = window.open(newlink, '_blank');
-                    win.focus();
-                }
-            },
-            "copyuriclipboard":{
-                "separator_before": false,
-                "separator_after": false,
-                "label": "Copy URI to clipboard",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
-                "action":function(obj){
-                    copyText=node.id
-                    navigator.clipboard.writeText(copyText);
-                }    
-            },
-            "discoverrelations":{
-                "separator_before": false,
-                "separator_after": false,
-                "label": "Discover "+node.type+" relations",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
-                "action":function(obj){
-                    console.log("class relations")
-                    if(node.type=="class" || node.type=="geoclass" || node.type=="collectionclass"){
-                        getClassRelationDialog(node)
-                    }
-                }    
-            },
-            "loaddataschema": {
-                "separator_before": false,
-                "separator_after": false,
-                "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/"+node.type+"schema.png",
-                "label": "Load dataschema for "+node.type,
-                "action": function (obj) {
-                    console.log(node)
-                    console.log(node.id)
-                    console.log(baseurl)
-                    if(node.id.includes(baseurl)){
-                        getDataSchemaDialog(node) 
-                    }else if(node.type=="class" || node.type=="geoclass" || node.type=="collectionclass"){
-                        getDataSchemaDialog(node) 
-                    }                                         
-                }
-            }                
-        }
-        return contextmenu
-    }
-    $('#jstree').jstree(tree);
-    $('#jstree').bind("dblclick.jstree", function (event) {
-        var node = $(event.target).closest("li");
-        var data = node[0].id
-        if(data.includes(baseurl)){
-            followLink(data)
-        }else{
-            window.open(data, '_blank');
-        }
-    });
-    var to = false;
-	$('#classsearch').keyup(function () {
-        if(to) { clearTimeout(to); }
-        to = setTimeout(function () {
-            var v = $('#classsearch').val();
-            $('#jstree').jstree(true).search(v,false,true);
-        });
-    });
-}
-"""
-
-stylesheet = """
-html { margin: 0; padding: 0; }
-body { font-family: sans-serif; font-size: 80%; margin: 0; padding: 1.2em 2em; }
-#rdficon { float: right; position: relative; top: -28px; }
-#header { border-bottom: 2px solid #696; margin: 0 0 1.2em; padding: 0 0 0.3em; }
-#footer { border-top: 2px solid #696; margin: 1.2em 0 0; padding: 0.3em 0 0; }
-#homelink { display: inline; }
-#homelink, #homelink a { color: #666; }
-#homelink a { font-weight: bold; text-decoration: none; }
-#homelink a:hover { color: red; text-decoration: underline; }
-h1 { display: inline; font-weight: normal; font-size: 200%; margin: 0; text-align: left; }
-h2 { font-weight: normal; font-size: 124%; margin: 1.2em 0 0.2em; }
-.page-resource-uri { font-size: 116%; margin: 0.2em 0; }
-.page-resource-uri a { color: #666; text-decoration: none; }
-.page-resource-uri a:hover { color: red; text-decoration: underline; }
-img { border: none; }
-table.description { border-collapse: collapse; clear: left; font-size: 100%; margin: 0 0 1em; width: 100%; }
-table.description th { background: white; text-align: left; }
-table.description td, table.description th { line-height: 1.2em; padding: 0.3em 0.5em; vertical-align: top; }
-table.description ul { margin: 0; padding-left: 1.4em; }
-table.description li { list-style-position: outside; list-style-type: square; margin-left: 0; padding-left: 0; }
-table.description .property-column { width: 13em; }
-.ui-autocomplete {
-    max-height: 100px;
-    overflow-y: auto;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
-  }
-.uri { white-space: nowrap; }
-.uri a, a.uri { text-decoration: none; }
-.unbound { color: #888; }
-table.description a small, .metadata-table a small  { font-size: 100%; color: #55a; }
-table.description small, .metadata-table a small  { font-size: 100%; color: #666; }
-table.description .property { white-space: nowrap; padding-right: 1.5em; }
-h1, h2 { color: #810; }
-body { background: #cec; }
-table.description .container > td { background: #c0e2c0; padding: 0.2em 0.8em; }
-table.description .even td { background: #d4f6d4; }
-table.description .odd td { background: #f0fcf0; }
-.image { background: white; float: left; margin: 0 1.5em 1.5em 0; padding: 2px; }
-a.expander { text-decoration: none; }
-
-.metadata-label {
-	font-size: 100%;
-	background: #f0fcf0;
-	padding: 3px;
-}
-
-.metadata-table {
-	font-size: 100%;
-	border-left: 3px solid #f0fcf0;
-	border-bottom: 3px solid #f0fcf0;
-	border-right: 3px solid #f0fcf0;
-	background: #d4f6d4;
-	border-top: 0px solid none;
-	margin: 0px;
-}
-
-.metadata-table td {
-	padding: 3px;
-}
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #FFF;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.sidenav a {
-  text-decoration: none;
-  font-size: 12px;
-  color: #818181;
-  transition: 0.3s;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#jstree {
-	font-size: 12px;
-	background-color:white;
-	z-index: 2;
-}
-
-.jstree-contextmenu {
-z-index: 10;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}"""
-
-htmltemplate = """<html about=\"{{subject}}\"><head><title>{{toptitle}}</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css" />
-<link rel="stylesheet" type="text/css" href="{{stylepath}}"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/TrackballControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/PLYLoader.js"></script>
-<script src="{{scriptfolderpath}}"></script><script src="{{classtreefolderpath}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
-<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-<script src="{{startscriptpath}}"></script>
-</head>
-<div id="mySidenav" class="sidenav" style="overflow:auto;">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
-  Search:<input type="text" id="classsearch"><br/><div id="jstree"></div>
-</div><script>var indexpage={{indexpage}}
-var relativedepth={{relativedepth}}</script>
-<body><div id="header"><h1 id="title">{{title}}</h1></div><div class="page-resource-uri"><a href="{{baseurl}}">{{baseurl}}</a> <b>powered by Static GeoPubby</b> generated using the <a style="color:blue;font-weight:bold" target="_blank" href="https://github.com/sparqlunicorn/sparqlunicornGoesGIS">SPARQLing Unicorn QGIS Plugin</a></div>
-</div><div id="rdficon"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div> <div class="search"><div class="ui-widget">Search: <input id="search" size="50"><button id="gotosearch" onclick="followLink()">Go</button><b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">	
-{{exports}}
-</select><a id="formatlink" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a>&nbsp;
-<button id="downloadButton" onclick="download()">Download</button><br/></div></div><dialog id="classrelationdialog" width="500" height="500" modal="true"></dialog><dialog id="dataschemadialog" width="500" height="500" modal="true"></dialog>
-<div class="container-fluid"><div class="row-fluid" id="main-wrapper">
-"""
-
-
-imagecarouselheader="""<div id="imagecarousel" class="carousel slide" data-ride="carousel"><div class="carousel-inner">"""
-
-imagecarouselfooter="""</div> <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a></div>"""
-
-imagestemplate="""<div class="{{carousel}}">
-<a href="{{image}}" target=\"_blank\"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
-</div>
-"""
-
-imageswithannotemplate="""<div class="{{carousel}}">
-<a href=\"{{image}}\" target=\"_blank\"><img src="{{image}}" style="max-width:485px;max-height:500px" alt="{{image}}" title="{{imagetitle}}" /></a>
-{{svganno}}
-</div>
-"""
-
-
-imagestemplatesvg="""<div class="{{carousel}}" style="max-width:485px;max-height:500px">
-{{image}}
-</div>
-"""
-
-videotemplate="""
-<div class="video">
-<video width="320" height="240" controls>
-  <source src="{{video}}">
-Your browser does not support the video tag.
-</video>
-</div>
-"""
-
-audiotemplate="""
-<div class="audio">
-<audio controls>
-  <source src="{{audio}}">
-Your browser does not support the audio element.
-</audio>
-</div>
-"""
-
-threejstemplate="""
-<div id="threejs" class="threejscontainer" style="max-width:485px;max-height:500px">
-</div>
-<script>$(document).ready(function(){initThreeJS('threejs',parseWKTStringToJSON("{{wktstring}}"),{{meshurls}})})</script>
-"""
-
-image3dtemplate="""<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/stylesheet/3dhop.css"/>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/spidergl.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/corto.em.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/corto.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/presenter.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/nexus.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/ply.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/trackball_sphere.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/trackball_turntable.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/trackball_turntable_pan.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/trackball_pantilt.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/js/init.js"></script>
-<div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
-<div id="toolbar"><img id="home"     title="Home"                  src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/home.png"            /><br/>
-<img id="zoomin"   title="Zoom In"               src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/zoomin.png"          /><br/>
-<img id="zoomout"  title="Zoom Out"              src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/zoomout.png"         /><br/>
-<img id="light_on" title="Disable Light Control" src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/lightcontrol_on.png" style="position:absolute; visibility:hidden;"/>
-<img id="light"    title="Enable Light Control"  src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/lightcontrol.png"    /><br/>
-<img id="full_on"  title="Exit Full Screen"      src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/full_on.png"         style="position:absolute; visibility:hidden;"/>
-<img id="full"     title="Full Screen"           src="https://cdn.jsdelivr.net/gh/cnr-isti-vclab/3DHOP@4.3/minimal/skins/dark/full.png"            />
-</div><canvas id="draw-canvas" style="background-color:white"></canvas></div><script>$(document).ready(function(){
-start3dhop("{{meshurl}}","{{meshformat}}")});</script>"""
-
-nongeoexports="""
-<option value="csv">Comma Separated Values (CSV)</option>
-<option value="geojson">(Geo)JSON</option>
-<option value="json">JSON-LD</option>
-<option value="ttl" selected>Turtle (TTL)</option>
-"""
-
-geoexports="""
-<option value="csv">Comma Separated Values (CSV)</option>
-<option value="geojson">(Geo)JSON</option>
-<!--<option value="geojsonld">GeoJSON-LD</option>
-<option value="geouri">GeoURI</option> 
-<option value="json">JSON-LD</option>
-<option value="kml">Keyhole Markup Language (KML)</option>
-<option value="latlontext">LatLonText</option>
-<option value="mapml">Map Markup Language (MapML)</option>
-<option value="osmlink">OSM Link</option>-->
-<option value="ttl" selected>Turtle (TTL)</option>
-<option value="wkt">Well-Known-Text (WKT)</option>
-<!--<option value="xyz">XYZ ASCII Format (XYZ)</option>-->
-"""
-
-maptemplate="""
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-<script>
-/*** Leaflet.geojsonCSS
- * @author Alexander Burtsev, http://burtsev.me, 2014
- * @license MIT*/
-!function(a){a.L&&L.GeoJSON&&(L.GeoJSON.CSS=L.GeoJSON.extend({initialize:function(a,b){var c=L.extend({},b,{onEachFeature:function(a,c){b&&b.onEachFeature&&b.onEachFeature(a,c);var d=a.style,e=a.popupTemplate;d&&(c instanceof L.Marker?d.icon&&c.setIcon(L.icon(d.icon)):c.setStyle(d)),e&&a.properties&&c.bindPopup(L.Util.template(e,a.properties))}});L.setOptions(this,c),this._layers={},a&&this.addData(a)}}),L.geoJson.css=function(a,b){return new L.GeoJSON.CSS(a,b)})}(window,document);
-</script>
-<div id="map" style="height:500px;z-index: 0;"></div>
-<script>
-var overlayMaps={}
-var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
-	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	});
-	var baseMaps = {
-        "OSM": layer
-	};
-baseMaps["OSM"].addTo(map);
-	L.control.scale({
-	position: 'bottomright',
-	imperial: false
-	}).addTo(map);
-	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
-	var bounds = L.latLngBounds([]);
-	props={}
-	var feature = {{myfeature}};
-	layerr=L.geoJSON.css(feature,{
-	pointToLayer: function(feature, latlng){
-                  var greenIcon = new L.Icon({
-                    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
-                });
-                return L.marker(latlng, {icon: greenIcon});
-    },onEachFeature: function (feature, layer) {
-    var popup="<b>"
-    if("label" in feature && feature.label!=""){
-        popup+="<a href=\\""+feature.id+"\\" class=\\"footeruri\\" target=\\"_blank\\">"+feature.label+"</a></b><br/><ul>"
-    }else{
-        popup+="<a href=\\""+feature.id+"\\" class=\\"footeruri\\" target=\\"_blank\\">"+feature.id.substring(feature.id.lastIndexOf('/')+1)+"</a></b><br/><ul>"
-    }
-    for(prop in feature.properties){
-        popup+="<li>"
-        if(prop.startsWith("http")){
-            popup+="<a href=\\""+prop+"\\" target=\\"_blank\\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a>"
-        }else{
-            popup+=prop
-        }
-        popup+=" : "
-        if(feature.properties[prop].length>1){
-            popup+="<ul>"
-            for(item of feature.properties[prop]){
-                popup+="<li>"
-                if((item+"").startsWith("http")){
-                    popup+="<a href=\\""+item+"\\" target=\\"_blank\\">"+item.substring(item.lastIndexOf('/')+1)+"</a>"
-                }else{
-                    popup+=item
-                }
-                popup+="</li>"           
-            }
-            popup+="</ul>"
-        }else if((feature.properties[prop][0]+"").startsWith("http")){
-            popup+="<a href=\\""+rewriteLink(feature.properties[prop][0])+"\\" target=\\"_blank\\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a>"
-        }else{
-            popup+=feature.properties[prop]
-        }
-        popup+="</li>"
-    }
-    popup+="</ul>"
-    layer.bindPopup(popup)}})
-	layerr.addTo(map)
-    var layerBounds = layerr.getBounds();
-    bounds.extend(layerBounds);
-    map.fitBounds(bounds);
-</script>
-"""
-
-htmlcommenttemplate="""<p class="comment"><b>Description:</b> {{comment}}</p>"""
-
-htmltabletemplate="""
-<table border=1 width=100% class=description><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody>{{tablecontent}}</tbody></table>"""
-
-htmlfooter="""<div id="footer"><div class="container-fluid"><b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">	
-{{exports}}
-</select><a id="formatlink2" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a>&nbsp;
-<button id="downloadButton" onclick="download()">Download</button>{{license}}</div></div></body><script>$(document).ready(function(){setSVGDimensions()})</script></html>"""
-
-licensetemplate=""""""
-
-classtreequery="""PREFIX owl: <http://www.w3.org/2002/07/owl#>\n
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n
-        SELECT DISTINCT ?subject ?label ?supertype\n
-        WHERE {\n
-           { ?individual rdf:type ?subject . } UNION { ?subject rdf:type owl:Class . } .\n
-           OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n
-           OPTIONAL { ?subject rdfs:label ?label. filter(langMatches(lang(?label),\"en\")) }
-           OPTIONAL { ?subject rdfs:label ?label }.\n
-            FILTER (\n
-                (\n
-                ?subject != owl:Class &&\n
-                ?subject != rdf:List &&\n
-                ?subject != rdf:Property &&\n
-                ?subject != rdfs:Class &&\n
-                ?subject != rdfs:Datatype &&\n
-                ?subject != rdfs:ContainerMembershipProperty &&\n
-                ?subject != owl:DatatypeProperty &&\n
-                ?subject != owl:AnnotationProperty &&\n
-                ?subject != owl:Restriction &&\n
-                ?subject != owl:ObjectProperty &&\n
-                ?subject != owl:NamedIndividual &&\n
-                ?subject != owl:Ontology) )\n
-        }"""
-
-class OntDocGeneration:
-
-    def __init__(self, prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,graph,createIndexPages):
-        self.prefixes=prefixes
-        self.prefixnamespace = prefixnamespace
-        self.namespaceshort = prefixnsshort.replace("/","")
-        self.outpath=outpath
-        self.license=license
-        self.licenseuri=None
-        self.labellang=labellang
-        self.createIndexPages=createIndexPages
-        self.graph=graph
-        self.preparedclassquery=prepareQuery(classtreequery)
-        if prefixnamespace==None or prefixnsshort==None or prefixnamespace=="" or prefixnsshort=="":
-            self.namespaceshort = "suni"
-            self.prefixnamespace = "http://purl.org/suni/"
-        if outpath==None:
-            self.outpath = "suni_htmls/"
+import re
+import pyproj
+import csv
+from rdflib import Graph
+from pyproj import CRS
+import urllib.request
+from shapely.geometry import box
+
+convertToGML=False
+
+def csAsSVG(csdef):
+    svgstr= """<svg width=\"400\" height=\"250\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    if len(csdef.axis_list)>0:
+        if csdef.axis_list[0].unit_name in units:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(units[csdef.axis_list[0].unit_name])+")</text>"
         else:
-            self.outpath = self.outpath.replace("\\", "/")
-            if not outpath.endswith("/"):
-                self.outpath += "/"
-        #prefixes["reversed"]["http://purl.org/suni/"] = "suni"
-
-    def processLiteral(self,literal, literaltype, reproject,currentlayergeojson=None,triplestoreconf=None):     
-        #print("Process literal: " + str(literal) + " --- " + str(literaltype))
-        if "wkt" in literaltype.lower(): 
-            crsuri=""
-            if "http" in literal:
-                crsuri=literal[0:literal.rfind('>')].replace("<","")
-                literal=literal[literal.rfind('>')+1:].strip()
-            shapelygeom=shapely.wkt.loads(literal)
-            return json.loads(json.dumps(shapely.geometry.mapping(shapelygeom),indent=2))
-        if "geojson" in literaltype.lower():
-            return literal
-        return {}
-
-
-    def processLicense(self):
-        if self.license==None or self.license=="" or self.license=="No License Statement":
-            return ""
-        if self.license.startswith("CC"):
-            spl=self.license.split(" ")
-            res= """<span style="float:right;margin-left:auto;margin-right:0px;text-align:right">This work is released under <a rel="license" target="_blank" href="http://creativecommons.org/licenses/"""+str(spl[1]).lower()+"/"+str(spl[2])+"""/">
-            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/"""+str(spl[1]).lower()+"""/"""+str(spl[2])+"""/80x15.png"/></a></span>"""
-            self.licenseuri="http://creativecommons.org/licenses/"+str(spl[1]).lower()+"/"+str(spl[2])
-            return res
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"red\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(csdef.axis_list[0].abbrev)+": "+str(csdef.axis_list[0].name)+" ("+str(csdef.axis_list[0].unit_name)+")</text>"      
+    if len(csdef.axis_list)>1:
+        if csdef.axis_list[1].unit_name in units:
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(units[csdef.axis_list[1].unit_name])+")</text>"
         else:
-            return """All rights reserved."""
-
-    def processSubjectPath(self,outpath,paths,path):
-        if "/" in path:
-            addpath = ""
-            for pathelem in path.split("/"):
-                addpath += pathelem + "/"
-                if not os.path.isdir(outpath + addpath):
-                    os.mkdir(outpath + addpath)
-            if outpath + path[0:path.rfind('/')] + "/" not in paths:
-                paths[outpath + path[0:path.rfind('/')] + "/"] = []
-            paths[outpath + path[0:path.rfind('/')] + "/"].append(addpath[0:addpath.rfind('/')])
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"20\" y2=\"20\" stroke=\"green\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"35\" y=\"20\" class=\"small\">"""+str(csdef.axis_list[1].abbrev)+": "+str(csdef.axis_list[1].name)+" ("+str(csdef.axis_list[1].unit_name)+")</text>"
+    if len(csdef.axis_list)>2: 
+        if csdef.axis_list[2].unit_name in units:    
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(units[csdef.axis_list[2].unit_name])+")</text>"    
         else:
-            if not os.path.isdir(outpath + path):
-                os.mkdir(outpath + path)
-            if outpath not in paths:
-                paths[outpath] = []
-            paths[outpath].append(path + "/index.html")
-        if os.path.exists(outpath + path + "/index.ttl"):
-            try:
-                self.graph.parse(outpath + path + "/index.ttl")
-            except Exception as e:
-                print(e)
-        return paths
+            svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+")</text>"               
+    return svgstr.replace("\"","'")+"</svg>"
 
-    def generateOntDocForNameSpace(self, prefixnamespace,dataformat="HTML"):
-        outpath=self.outpath
-        corpusid=self.namespaceshort
-        if not os.path.isdir(outpath):
-            os.mkdir(outpath)
-        labeltouri = {}
-        uritolabel = {}
-        uritotreeitem={}
-        curlicense=self.processLicense()
-        subjectstorender = set()
-        for sub in self.graph.subjects():
-            if prefixnamespace in sub and (isinstance(sub,URIRef) or isinstance(sub,BNode)):
-                subjectstorender.add(sub)
-                for tup in self.graph.predicate_objects(sub):
-                    if str(tup[0]) in labelproperties:
-                        labeltouri[str(tup[1])] = str(sub)
-                        uritolabel[str(sub)] = {"label":str(tup[1])}
-                        break
-        if os.path.exists(outpath + corpusid + '_search.js'):
-            try:
-                with open(outpath + corpusid + '_search.js', 'r', encoding='utf-8') as f:
-                    data = json.loads(f.read().replace("var search=",""))
-                    for key in data:
-                        labeltouri[key]=data[key]
-            except Exception as e:
-                print("Exception occured " + str(e))
-        with open(outpath + corpusid + '_search.js', 'w', encoding='utf-8') as f:
-            f.write("var search=" + json.dumps(labeltouri, indent=2, sort_keys=True))
-            f.close()
-        prevtree=[]
-        if os.path.exists(outpath + corpusid + '_classtree.js'):
-            try:
-                with open(outpath + corpusid + '_classtree.js', 'r', encoding='utf-8') as f:
-                    prevtree = json.loads(f.read().replace("var tree=",""))["core"]["data"]
-            except Exception as e:
-                print("Exception occured " + str(e))
-        classidset=set()
-        tree=self.getClassTree(self.graph, uritolabel,classidset,uritotreeitem)
-        for tr in prevtree:
-            if tr["id"] not in classidset:
-                tree["core"]["data"].append(tr)
-        with open(outpath + "style.css", 'w', encoding='utf-8') as f:
-            f.write(stylesheet)
-            f.close()
-        with open(outpath + "startscripts.js", 'w', encoding='utf-8') as f:
-            f.write(startscripts.replace("{{baseurl}}",prefixnamespace))
-            f.close()
-        pathmap = {}
-        paths = {}
-        postprocessing=Graph()
-        subtorenderlen = len(subjectstorender)
-        subtorencounter = 0
-        for subj in subjectstorender:
-            path = subj.replace(prefixnamespace, "")
-            try:
-                paths=self.processSubjectPath(outpath,paths,path)
-                if os.path.exists(outpath + path+"/index.ttl"):
-                    try:
-                        self.graph.parse(outpath + path+"/index.ttl")
-                    except Exception as e:
-                        print(e)
-                postprocessing=self.createHTML(outpath + path, self.graph.predicate_objects(subj), subj, prefixnamespace, self.graph.subject_predicates(subj),
-                           self.graph,str(corpusid) + "_search.js", str(corpusid) + "_classtree.js",uritotreeitem,curlicense,subjectstorender,postprocessing)
-                subtorencounter += 1
-                if subtorencounter%500==0:
-                    subtorenderlen=len(subjectstorender)+len(postprocessing)
-                print(str(subtorencounter) + "/" + str(subtorenderlen) + " " + str(outpath + path))
-            except Exception as e:
-                print(e)
-            #    #QgsMessageLog.logMessage("Exception occured " + str(e), "OntdocGeneration", Qgis.Info)
-        print("Postprocessing " + str(len(postprocessing)))
-        for subj in postprocessing.subjects():
-            path = str(subj).replace(prefixnamespace, "")
-            paths=self.processSubjectPath(outpath,paths,path)
-            if os.path.exists(outpath + path+"/index.ttl"):
-                try:
-                    self.graph.parse(outpath + path+"/index.ttl")
-                except Exception as e:
-                    print(e)
-            self.createHTML(outpath + path, self.graph.predicate_objects(subj), subj, prefixnamespace, self.graph.subject_predicates(subj),
-                       self.graph,str(corpusid) + "_search.js", str(corpusid) + "_classtree.js",uritotreeitem,curlicense,subjectstorender,postprocessing)
-            subtorencounter += 1
-            if subtorencounter%500==0:
-                subtorenderlen=len(subjectstorender)+len(postprocessing)
-            print(str(subtorencounter) + "/" + str(subtorenderlen) + " " + str(outpath + path))
-        self.assignGeoClassesToTree(tree)
-        with open(outpath + corpusid + "_classtree.js", 'w', encoding='utf-8') as f:
-            f.write("var tree=" + json.dumps(tree, indent=2))
-            f.close()
-        if self.createIndexPages:
-            for path in paths:
-                ttlf = open(path + "index.ttl", "w", encoding="utf-8")
-                checkdepth = self.checkDepthFromPath(path, outpath, path)-1
-                sfilelink=self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + '_search.js',False)
-                classtreelink = self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,corpusid + "_classtree.js",False)
-                stylelink =self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,"style.css",False)
-                scriptlink = self.generateRelativeLinkFromGivenDepth(prefixnamespace, checkdepth, "startscripts.js", False)
-                nslink=prefixnamespace+str(self.getAccessFromBaseURL(str(outpath),str(path)))
-                for sub in self.graph.subjects():
-                    if nslink in sub:
-                        for tup in self.graph.predicate_objects(sub):
-                            if isinstance(tup[1],Literal):
-                                if tup[1].datatype!=None:
-                                    ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\"^^<"+str(tup[1].datatype)+"> .\n")
-                                else:
-                                    ttlf.write("<" + str(sub) + "> <" + str(tup[0]) + "> \"" + str(tup[1]) + "\" .\n")
-                            elif isinstance(tup[1],URIRef):
-                                ttlf.write("<"+str(sub)+"> <"+str(tup[0])+"> <"+str(tup[1])+"> .\n")
-                ttlf.close()
-                indexhtml = htmltemplate.replace("{{baseurl}}", prefixnamespace).replace("{{relativedepth}}",str(checkdepth)).replace("{{toptitle}}","Index page for " + nslink).replace("{{title}}","Index page for " + nslink).replace("{{startscriptpath}}", scriptlink).replace("{{stylepath}}", stylelink)\
-                    .replace("{{classtreefolderpath}}",classtreelink).replace("{{baseurlhtml}}", nslink).replace("{{scriptfolderpath}}", sfilelink).replace("{{exports}}",nongeoexports)
-                if nslink==prefixnamespace:
-                    indexhtml=indexhtml.replace("{{indexpage}}","true")
-                else:
-                    indexhtml = indexhtml.replace("{{indexpage}}", "false")
-                indexhtml+="<p>This page shows information about linked data resources in HTML. Choose the classtree navigation or search to browse the data</p>"
-                indexhtml+="<table class=\"description\" style =\"height: 100%; overflow: auto\" border=1 id=indextable><thead><tr><th>Class</th><th>Number of instances</th><th>Instance Example</th></tr></thead><tbody>"
-                for item in tree["core"]["data"]:
-                    if (item["type"]=="geoclass" or item["type"]=="class" or item["type"]=="featurecollection" or item["type"]=="geocollection") and "instancecount" in item and item["instancecount"]>0:
-                        exitem=None
-                        for item2 in tree["core"]["data"]:
-                            if item2["parent"]==item["id"] and (item2["type"]=="instance" or item2["type"]=="geoinstance") and nslink in item2["id"]:
-                                checkdepth = self.checkDepthFromPath(path, prefixnamespace, item2["id"])-1
-                                exitem="<td><img src=\""+tree["types"][item2["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item2["type"]+"\"/><a href=\""+self.generateRelativeLinkFromGivenDepth(prefixnamespace,checkdepth,str(item2["id"]),True)+"\">"+str(item2["text"])+"</a></td>"
-                                break
-                        if exitem!=None:
-                            indexhtml+="<tr><td><img src=\""+tree["types"][item["type"]]["icon"]+"\" height=\"25\" width=\"25\" alt=\""+item["type"]+"\"/><a href=\""+str(item["id"])+"\" target=\"_blank\">"+str(item["text"])+"</a></td>"
-                            indexhtml+="<td>"+str(item["instancecount"])+"</td>"+exitem+"</tr>"
-                indexhtml += "</tbody></table><script>$('#indextable').DataTable();</script>"
-                indexhtml+=htmlfooter.replace("{{license}}",curlicense).replace("{{exports}}",nongeoexports)
-                print(path)
-                with open(path + "index.html", 'w', encoding='utf-8') as f:
-                    f.write(indexhtml)
-                    f.close()
-
-
-    def getClassTree(self,graph, uritolabel,classidset,uritotreeitem):
-        results = graph.query(self.preparedclassquery)
-        tree = {"plugins": ["search", "sort", "state", "types", "contextmenu"], "search": {"show_only_matches":True}, "types": {
-            "class": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/class.png"},
-            "geoclass": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geoclass.png"},
-            "halfgeoclass": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/halfgeoclass.png"},
-            "collectionclass": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/collectionclass.png"},
-            "geocollection": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geometrycollection.png"},
-            "featurecollection": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/featurecollection.png"},
-            "instance": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/instance.png"},
-            "geoinstance": {"icon": "https://raw.githubusercontent.com/i3mainz/geopubby/master/public/icons/geoinstance.png"}
-        },
-        "core": {"check_callback": True, "data": []}}
-        result = []
-        ress = {}
-        for res in results:
-            print(res)
-            if "_:" not in str(res["subject"]) and str(res["subject"]).startswith("http"):
-                ress[str(res["subject"])] = {"super": res["supertype"], "label": res["label"]}
-        print(ress)
-        for cls in ress:
-            for obj in graph.subjects(URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), URIRef(cls)):
-                res = self.replaceNameSpacesInLabel(str(obj))
-                if str(obj) in uritolabel:
-                    restext= uritolabel[str(obj)]["label"] + " (" + self.shortenURI(str(obj)) + ")"
-                    if res!=None:
-                        restext=uritolabel[str(obj)]["label"] + " (" + res["uri"] + ")"
-                    result.append({"id": str(obj), "parent": cls,
-                                   "type": "instance",
-                                   "text": restext, "data":{}})
-                else:
-                    restext= self.shortenURI(str(obj))
-                    if res!=None:
-                        restext+= " (" + res["uri"] + ")"
-                    result.append({"id": str(obj), "parent": cls,
-                                   "type": "instance",
-                                   "text": restext,"data":{}})
-                uritotreeitem[str(obj)] = result[-1]
-                classidset.add(str(obj))
-            res = self.replaceNameSpacesInLabel(str(cls))
-            if ress[cls]["super"] == None:
-                restext = self.shortenURI(str(cls))
-                if res != None:
-                    restext += " (" + res["uri"] + ")"
-                result.append({"id": cls, "parent": "#",
-                               "type": "class",
-                               "text": restext,"data":{}})
+def geoidAsSVG(a,b):
+    svgstr="""<svg viewBox=\"0 0 """+str((a*2)+10)+" "+str((b*2)+10)+"""\" height=\"485\" width=\"500\"><ellipse cx=\""""+str(a)+"""\" cy=\""""+str(b)+""" rx=\""""+str(a)+"""\" ry=\""""+str(b)+"""\"/></svg>"""
+    return svgstr.replace("\"","'")
+    
+def resolveScope(indid,scopestring):
+    ttl=set()
+    if "," in scopestring:
+        for scp in scopestring.split(","):
+            #print("Scope: "+scp)
+            if scp.lower().strip().replace(".","") in scope:
+                ttl.add(indid+" geocrs:usage "+scope[scp.lower().strip().replace(".","")]+" . \n")
+                ttl.add(scope[scp.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
             else:
-                if "label" in cls and cls["label"] != None:
-                    restext = ress[cls]["label"] + " (" + self.shortenURI(str(cls)) + ")"
-                    if res != None:
-                        restext = ress[cls]["label"] + " (" + res["uri"] + ")"
-                    result.append({"id": cls, "parent": ress[cls]["super"],
-                                   "type": "class",
-                                   "text": restext + ")","data":{}})
-                else:
-                    restext = self.shortenURI(str(cls))
-                    if res != None:
-                        restext += " (" + res["uri"] + ")"
-                    result.append({"id": cls, "parent": ress[cls]["super"],
-                                   "type": "class",
-                                   "text": restext,"data":{}})
-                uritotreeitem[str(cls)] = result[-1]
-            classidset.add(str(cls))
-        tree["core"]["data"] = result
-        return tree
-
-    def assignGeoClassesToTree(self,tree):
-        classlist={}
-        for item in tree["core"]["data"]:
-            if item["type"]=="class":
-                classlist[item["id"]]={"items":0,"geoitems":0,"item":item}
-        for item in tree["core"]["data"]:
-            if item["type"]=="instance" and item["parent"] in classlist:
-                classlist[item["parent"]]["items"]+=1
-            elif (item["type"] == "geoinstance" or item["type"]=="featurecollection" or item["type"]=="geocollection") and item["parent"] in classlist:
-                classlist[item["parent"]]["items"]+=1
-                classlist[item["parent"]]["geoitems"]+=1
-        for item in classlist:
-            if classlist[item]["items"]>0:
-                if classlist[item]["item"]["text"].endswith("]"):
-                    classlist[item]["item"]["text"]=classlist[item]["item"]["text"][0:classlist[item]["item"]["text"].rfind("[")-1]+" ["+str(classlist[item]["items"])+"]"
-                else:
-                    classlist[item]["item"]["text"]=classlist[item]["item"]["text"]+" ["+str(classlist[item]["items"])+"]"
-            if item in collectionclasses:
-                classlist[item]["item"]["type"] = "collectionclass"
-            elif classlist[item]["items"]==classlist[item]["geoitems"] and classlist[item]["items"]>0 and classlist[item]["geoitems"]>0:
-                classlist[item]["item"]["type"]="geoclass"
-            elif classlist[item]["items"]>classlist[item]["geoitems"] and classlist[item]["geoitems"]>0:
-                classlist[item]["item"]["type"]="halfgeoclass"
-            else:
-                classlist[item]["item"]["type"] = "class"
-
-
-    def shortenURI(self,uri):
-        if uri!=None and "#" in uri:
-            return uri[uri.rfind('#')+1:]
-        if uri!=None and "/" in uri:
-            return uri[uri.rfind('/')+1:]
-        return uri
-
-    def replaceNameSpacesInLabel(self,uri):
-        for ns in self.prefixes["reversed"]:
-            if ns in uri:
-                return {"uri": str(self.prefixes["reversed"][ns]) + ":" + str(uri.replace(ns, "")),
-                        "ns": self.prefixes["reversed"][ns]}
-        return None
-
-    def generateRelativeLinkFromGivenDepth(self,baseurl,checkdepth,item,withindex):
-        rellink = str(item).replace(baseurl, "")
-        for i in range(0, checkdepth):
-            rellink = "../" + rellink
-        if withindex:
-            rellink += "/index.html"
-        #QgsMessageLog.logMessage("Relative Link from Given Depth: " + rellink,"OntdocGeneration", Qgis.Info)
-        return rellink
-
-    def searchObjectConnectionsForAggregateData(self,graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label,unitlabel):
-        geoprop=False
-        incollection=False
-        if pred in geopointerproperties:
-            geoprop=True
-        if pred in collectionrelationproperties:
-            incollection=True
-        foundval=None
-        foundunit=None
-        for tup in graph.predicate_objects(object):
-            if str(tup[0]) in labelproperties:
-                label=str(tup[1])
-            if pred=="http://www.w3.org/ns/oa#hasSelector" and tup[0]==URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type") and (tup[1]==URIRef("http://www.w3.org/ns/oa#SvgSelector") or tup[1]==URIRef("http://www.w3.org/ns/oa#WKTSelector")):
-                for svglit in graph.objects(object,URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#value")):
-                    if "<svg" in str(svglit):
-                        imageannos.add(str(svglit))
-                    elif ("POINT" in str(svglit).upper() or "POLYGON" in str(svglit).upper() or "LINESTRING" in str(svglit).upper()):
-                        image3dannos.add(str(svglit))
-            if isinstance(tup[1], Literal) and (str(tup[0]) in geoproperties or str(tup[1].datatype) in geoliteraltypes):
-                geojsonrep = self.processLiteral(str(tup[1]), tup[1].datatype, "")
-            if incollection and "<svg" in str(tup[1]):
-                 foundmedia["image"].add(str(tup[1]))
-            elif incollection and "http" in str(tup[1]):
-                ext="."+''.join(filter(str.isalpha,str(tup[1]).split(".")[-1]))
-                if ext in fileextensionmap:
-                    foundmedia[fileextensionmap[ext]].add(str(tup[1]))
-            if str(tup[0]) in valueproperties and isinstance(tup[1],Literal):
-                foundval=tup[1]
-            if str(tup[0]) in unitproperties and isinstance(tup[1],URIRef):
-                foundunit=str(tup[1])
-        if foundunit!=None and foundval!=None and label!=None:
-            res=self.replaceNameSpacesInLabel(str(foundunit))
-            if res!=None:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+res["uri"]+"</a>"
-            else:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(self.shortenURI(foundunit))+"</a>"
-        return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
-
-
-    def createHTMLTableValueEntry(self,subject,pred,object,ttlf,tablecontents,graph,baseurl,checkdepth,geojsonrep,foundmedia,imageannos,image3dannos):
-        if isinstance(object,URIRef) or isinstance(object,BNode):
-            if ttlf != None:
-                ttlf.write("<" + str(subject) + "> <" + str(pred) + "> <" + str(object) + "> .\n")
-            label = str(self.shortenURI(str(object)))
-            unitlabel=""
-            mydata=self.searchObjectConnectionsForAggregateData(graph,object,pred,geojsonrep,foundmedia,imageannos,image3dannos,label,unitlabel)
-            label=mydata["label"]
-            geojsonrep=mydata["geojsonrep"]
-            foundmedia=mydata["foundmedia"]
-            imageannos=mydata["imageannos"]
-            image3dannos=mydata["image3dannos"]
-            unitlabel=mydata["unitlabel"]
-            if baseurl in str(object) or isinstance(object,BNode):
-                rellink = self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,str(object),True)
-                tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(object) + "\" href=\"" + rellink + "\">"+ label + " <span style=\"color: #666;\">(" + self.namespaceshort + ":" + str(self.shortenURI(str(object))) + ")</span></a>"
-            else:
-                res = self.replaceNameSpacesInLabel(str(object))
-                if res != None:
-                    tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(
-                        object) + "\" target=\"_blank\" href=\"" + str(
-                        object) + "\">" + label + " <span style=\"color: #666;\">(" + res[
-                                         "uri"] + ")</span></a>"                                     
-                else:
-                    tablecontents += "<span><a property=\"" + str(pred) + "\" resource=\"" + str(
-                        object) + "\" target=\"_blank\" href=\"" + str(
-                        object) + "\">" + label + "</a>"
-            if unitlabel!="":
-                tablecontents+=" <span style=\"font-weight:bold\">["+str(unitlabel)+"]</span>"
-            tablecontents+="</span>"
+                ttl.add(indid+" geocrs:usage \""+str(scp.lower().strip().replace(".",""))+"\"^^xsd:string . \n")
+    else:
+        if scopestring.lower().strip().replace(".","") in scope:
+            ttl.add(indid+" geocrs:usage "+scope[scopestring.lower().strip().replace(".","")]+" . \n")
+            ttl.add(scope[scopestring.lower().strip().replace(".","")]+" rdfs:subClassOf geocrs:SRSApplication . \n")
         else:
-            if isinstance(object, Literal) and object.datatype != None:
-                res = self.replaceNameSpacesInLabel(str(object.datatype))
-                if ttlf!=None:
-                    ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\"^^<" + str(
-                    object.datatype) + "> .\n")
-                objstring=str(object).replace("<", "&lt").replace(">", "&gt;")
-                if str(object.datatype)=="http://www.w3.org/2001/XMLSchema#anyURI":
-                    objstring="<a href=\""+str(object)+"\">"+str(object)+"</a>"
-                if res != None:
-                    tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
-                        object).replace("<", "&lt").replace(">", "&gt;").replace("\"", "'") + "\" datatype=\"" + str(
-                        object.datatype) + "\">" + objstring + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"" + str(
-                        object.datatype) + "\">" + res["uri"]+ "</a>)</small></span>"
-                else:
-                    tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
-                        object).replace("<", "&lt").replace(">", "&gt;").replace("\"", "'") + "\" datatype=\"" + str(
-                        object.datatype) + "\">" + objstring + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"" + str(
-                        object.datatype) + "\">" + self.shortenURI(str(object.datatype)) + "</a>)</small></span>"
-                if isinstance(object, Literal) and (str(pred) in geoproperties or str(object.datatype) in geoliteraltypes):
-                    geojsonrep = self.processLiteral(str(object), object.datatype, "")
-            else:
-                if object.language != None:
-                    if ttlf!=None:
-                        ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\"@"+str(object.language)+" .\n")
-                    tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
-                        object).replace("<", "&lt").replace(">", "&gt;").replace("\"","'") + "\" datatype=\"http://www.w3.org/2001/XMLSchema#string\" xml:lang=\"" + str(object.language) + "\">" + str(object).replace("<", "&lt").replace(">", "&gt;") + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\">rdf:langString</a>) (<a href=\"http://www.lexvo.org/page/iso639-1/"+str(object.language)+"\" target=\"_blank\">iso6391:" + str(object.language) + "</a>)</small></span>"
-                else:
-                    if ttlf!=None:
-                        ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\" .\n")
-                    tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
-                        object).replace("<","&lt").replace(">","&gt;").replace("\"","'") + "\" datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + str(object).replace("<","&lt").replace(">","&gt;") + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"http://www.w3.org/2001/XMLSchema#string\">xsd:string</a>)</small></span>"
-        return {"html":tablecontents,"geojson":geojsonrep,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
+            ttl.add(indid+" geocrs:usage \""+scopestring.strip().replace(".","")+"\"^^xsd:string . \n")
+    return ttl
 
-    def formatPredicate(self,tup,baseurl,checkdepth,tablecontents,graph,reverse):
-        label = self.shortenURI(str(tup))
-        for obj in graph.predicate_objects(object):
-            if str(obj[0]) in labelproperties:
-                label = str(obj[1])
-                break
-        tablecontents += "<td class=\"property\">"
-        if reverse:
-            tablecontents+="Is "
-        if baseurl in str(tup):
-            rellink = self.generateRelativeLinkFromGivenDepth(baseurl, checkdepth,str(tup),True)
-            tablecontents += "<span class=\"property-name\"><a class=\"uri\" target=\"_blank\" href=\"" + rellink + "\">" + label + "</a></span>"
-        else:
-            res = self.replaceNameSpacesInLabel(tup)
-            if res != None:
-                tablecontents += "<span class=\"property-name\"><a class=\"uri\" target=\"_blank\" href=\"" + str(
-                    tup) + "\">" + label + " <span style=\"color: #666;\">(" + res[
-                                     "uri"] + ")</span></a></span>"
-            else:
-                tablecontents += "<span class=\"property-name\"><a class=\"uri\" target=\"_blank\" href=\"" + str(
-                    tup[0]) + "\">" + label + "</a></span>"
-        if reverse:
-            tablecontents+=" of"
-        tablecontents += "</td>"
-        return tablecontents
+def resolveUnit(indid,unitstr,unitlabel=""):
+    if unitstr==None:
+        return ttl
+    if unitstr in units:
+        ttl.add(str(indid)+" om:hasUnit "+units[unitstr]+" . \n")
+        ttl.add(units[unitstr]+" rdf:type om:Unit .\n")	
+    else:
+        ttl.add(str(indid)+" om:hasUnit \""+str(unitstr)+"\" . \n")      
+    return ttl
 
-    def checkDepthFromPath(self,savepath,baseurl,subject):
-        if savepath.endswith("/"):
-            checkdepth = subject.replace(baseurl, "").count("/")
-        else:
-            checkdepth = subject.replace(baseurl, "").count("/")
-        checkdepth+=1
-        #print("Checkdepth: " + str(checkdepth))
-        return checkdepth
+def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
+	epsgcode=str(x)
+	wkt=curcrs.to_wkt().replace("\"","'").strip()
+	if crsclass!=None:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type "+crsclass+" .\n")
+	elif "Projected CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:ProjectedCRS .\n")
+	elif "Geographic 2D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Bound CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:BoundCRS .\n")
+	elif "Vertical CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:VerticalCRS .\n")
+	elif "Geocentric CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeocentricCRS .\n")
+	elif "Geographic 3D CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:GeographicCRS .\n")
+	elif "Compound CRS" in curcrs.type_name:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CompoundCRS .\n")
+		for subcrs in curcrs.sub_crs_list:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:includesSRS geoepsg:"+str(subcrs.to_epsg())+" .\n")			
+	else:
+		ttl.add("geoepsg:"+epsgcode+" rdf:type geocrs:CRS .\n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isApplicableTo geocrsisbody:Earth .\n")
+	ttl.add("geoepsg:"+epsgcode+" rdfs:label \""+curcrs.name.strip()+"\"@en .\n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isBound \""+str(curcrs.is_bound).lower()+"\"^^xsd:boolean . \n")
+	if curcrs.coordinate_system!=None and curcrs.coordinate_system.name in coordinatesystem:
+		ttl.add("geoepsg:"+epsgcode+"_cs rdf:type "+coordinatesystem[curcrs.coordinate_system.name]+" . \n")
+		#if len(curcrs.coordinate_system.axis_list)==2:
+		#	ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:PlanarCoordinateSystem . \n")
+		#elif len(curcrs.coordinate_system.axis_list)==3:
+		#	ttl.add("geoepsg:"+epsgcode+"_cs rdf:type geocrs:3DCoordinateSystem . \n")			
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asSVG \""+str(csAsSVG(curcrs.coordinate_system))+"\"^^xsd:string .\n")
+		ttl.add("geoepsg:"+epsgcode+"_cs rdfs:label \"EPSG:"+epsgcode+" CS: "+curcrs.coordinate_system.name+"\"@en . \n")
+		if curcrs.coordinate_system.remarks!=None:
+			ttl.add("geoepsg:"+epsgcode+"_cs rdfs:comment \""+str(curcrs.coordinate_system.remarks)+"\"@en . \n")
+		if curcrs.coordinate_system.scope!=None:
+			ttl.update(resolveScope("geoepsg:"+epsgcode+"_cs",curcrs.coordinate_system.scope))
+		for axis in curcrs.coordinate_system.axis_list:
+			axisid=axis.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.unit_name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")+"_"+axis.direction.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_")
+			ttl.add("geoepsg:"+epsgcode+"_cs geocrs:axis geocrsaxis:"+axisid+" . \n")
+			ttl.add("geocrsaxis:"+axisid+" rdf:type geocrs:CoordinateSystemAxis . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:direction geocrs:"+axis.direction+" . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:axisAbbrev \""+str(axis.abbrev).replace("\"","'")+"\"^^xsd:string . \n")				
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_conversion_factor \""+str(axis.unit_conversion_factor)+"\"^^xsd:double . \n")	
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_auth_code \""+str(axis.unit_auth_code)+"\"^^xsd:string . \n")
+			ttl.add("geocrsaxis:"+axisid+" geocrs:unit_code \""+str(axis.unit_code)+"\"^^xsd:string . \n")					
+			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")		            
+			if axis.unit_name in units:
+				ttl.add("geocrsaxis:"+axisid+" om:hasUnit "+units[axis.unit_name]+" . \n")
+				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
+			else:
+				ttl.add("geocrsaxis:"+axisid+" om:hasUnit \""+axis.unit_name+"\" . \n")
+				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem geoepsg:"+epsgcode+"_cs . \n")		
+	elif curcrs.coordinate_system!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
+	if curcrs.source_crs!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:sourceCRS geoepsg:"+str(curcrs.source_crs.to_epsg())+" . \n")
+	if curcrs.target_crs!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:targetCRS geoepsg:"+str(curcrs.target_crs.to_epsg())+" . \n")
+	if curcrs.scope!=None:
+		ttl.update(resolveScope("geoepsg:"+epsgcode,curcrs.scope))
+	if curcrs.area_of_use!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:area_of_use geoepsg:"+epsgcode+"_area_of_use . \n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" rdfs:label \""+str(curcrs.area_of_use.name).replace("\"","'")+"\"@en .\n")
+		b = box(curcrs.area_of_use.west, curcrs.area_of_use.south, curcrs.area_of_use.east, curcrs.area_of_use.north)
+		ttl.add("geoepsg:"+epsgcode+"_area_of_use"+" geocrs:extent   \"<http://www.opengis.net/def/crs/OGC/1.3/CRS84> "+str(b.wkt)+"\"^^geo:wktLiteral . \n")
+		#\"ENVELOPE("+str(curcrs.area_of_use.west)+" "+str(curcrs.area_of_use.south)+","+str(curcrs.area_of_use.east)+" "+str(curcrs.area_of_use.north)+")\"^^geo:wktLiteral . \n")
+	if curcrs.get_geod()!=None:
+		geoid="geocrsgeod:"+str(geodcounter)
+		if curcrs.datum.ellipsoid!=None:
+			if curcrs.datum.ellipsoid.name in spheroids:
+				geoid=spheroids[curcrs.datum.ellipsoid.name]
+				ttl.add(geoid+" rdf:type geocrs:Ellipsoid . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
+			elif curcrs.get_geod().sphere:
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
+				ttl.add(geoid+" rdf:type geocrs:Sphere . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
+			else:
+				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
+				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
+				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
+				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
+		else:
+			ttl.add("geoepsg:"+epsgcode+" geocrs:ellipsoid geocrsgeod:"+str(geodcounter)+" . \n")
+			ttl.add("geocrsgeod:geod"+str(geodcounter)+" rdf:type geocrs:Geoid . \n")
+			ttl.add(geoid+" rdfs:label \"Geoid "+str(geodcounter)+"\"@en . \n")
+			ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
+		ttl.add(geoid+" skos:definition \""+str(curcrs.get_geod().initstring)+"\"^^xsd:string . \n")
+		ttl.add(geoid+" geocrs:eccentricity \""+str(curcrs.get_geod().es)+"\"^^xsd:double . \n")
+		ttl.add(geoid+" geocrs:isSphere \""+str(curcrs.get_geod().sphere)+"\"^^xsd:boolean . \n")
+		ttl.add(geoid+" geocrs:semiMajorAxis "+geoid+"_smj_axis . \n")
+		ttl.add(geoid+"_smj_axis rdf:value \""+str(curcrs.get_geod().a).replace(",","")+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smj_axis om:hasUnit om:metre . \n")
+		ttl.add(geoid+"_smj_axis rdfs:label \"Semi Major Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
+		ttl.add(geoid+" geocrs:semiMinorAxis "+geoid+"_smi_axis . \n")
+		ttl.add(geoid+"_smi_axis rdfs:label \"Semi Minor Axis of "+str(curcrs.get_geod().b)+"\"@en . \n")
+		ttl.add(geoid+"_smi_axis rdf:value \""+str(curcrs.get_geod().b).replace(",","")+"\"^^xsd:double . \n")
+		ttl.add(geoid+"_smi_axis om:hasUnit om:metre . \n")
+		if curcrs.get_geod().a!=None and curcrs.get_geod().b!=None:
+			ttl.add(geoid+" geocrs:asSVG \""+str(geoidAsSVG(curcrs.get_geod().a,curcrs.get_geod().b))+"\" . \n")
+		ttl.add(geoid+" geocrs:flatteningParameter \""+str(curcrs.get_geod().f)+"\"^^xsd:double . \n")
+		geodcounter+=1
+	if curcrs.coordinate_operation!=None:
+		coordoperationid=curcrs.coordinate_operation.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace(",","_").replace("&","and").strip()
+		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateOperation geocrsoperation:"+str(coordoperationid)+" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:accuracy \""+str(curcrs.coordinate_operation.accuracy)+"\"^^xsd:double . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:method_name \""+str(curcrs.coordinate_operation.method_name)+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
+		if curcrs.coordinate_operation.scope!=None:
+			ttl.update(resolveScope("geocrsoperation:"+str(coordoperationid),curcrs.coordinate_operation.scope))
+		if curcrs.coordinate_operation.remarks!=None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:comment \""+str(curcrs.coordinate_operation.remarks).replace("\"","'").replace("\n","")+"\"^^xsd:string . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:has_ballpark_transformation \""+str(curcrs.coordinate_operation.has_ballpark_transformation)+"\"^^xsd:boolean . \n")
+		if curcrs.coordinate_operation.area_of_use!=None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:area_of_use geocrsaou:"+str(coordoperationid)+"_area_of_use . \n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdf:type geocrs:AreaOfUse .\n")
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use"+" rdfs:label \""+str(curcrs.coordinate_operation.area_of_use.name).replace("\"","'")+"\"@en .\n")
+			b = box(curcrs.coordinate_operation.area_of_use.west, curcrs.coordinate_operation.area_of_use.south, curcrs.coordinate_operation.area_of_use.east, curcrs.coordinate_operation.area_of_use.north)
+			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use geocrs:extent \"<http://www.opengis.net/def/crs/OGC/1.3/CRS84> "+str(b.wkt)+"\"^^geo:wktLiteral . \n")
+			#ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
+		if curcrs.coordinate_operation.towgs84!=None:
+			print(curcrs.coordinate_operation.towgs84)
+		for par in curcrs.coordinate_operation.params:
+			opparamname=str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]
+			ttl.add(" geocrs:"+str(opparamname)+" rdf:type owl:DatatypeProperty . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:range xsd:double . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:domain geocrs:CoordinateOperation . \n") 
+			ttl.add(" geocrs:"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")	
+			if par.unit_name!=None:
+				print(par.unit_name)
+				if par.unit_name in units:
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
+				else:
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value)+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                      
+			else:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" \""+str(par.value)+"\"^^xsd:double . \n")     
+		for grid in curcrs.coordinate_operation.grids:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:grid geocrsgrid:"+str(grid.name).replace(" ","_")+" . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdf:type geocrs:Grid . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.full_name)+"\"@en . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:label \""+str(grid.short_name)+"\"@en . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" geocrs:open_license \""+str(grid.open_license)+"\"^^xsd:boolean . \n")
+			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdfs:comment \""+str(grid.url)+"\"@en . \n")
+		if curcrs.coordinate_operation.operations!=None:
+			for operation in curcrs.coordinate_operation.operations:
+				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:operation \""+str(operation).replace("\n","").replace("\"","'")+"\"^^xsd:string . \n")
+		if curcrs.coordinate_operation.type_name==None:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Conversion":
+			found=False
+			if curcrs.coordinate_operation.to_proj4()!=None:
+				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
+				for prj in projections:
+					if prj in proj4string:
+						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
+						found=True
+						break
+				if not found:
+					print(proj4string)
+					ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:Conversion . \n")
+		elif curcrs.coordinate_operation.type_name=="Transformation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:Transformation . \n")
+		elif curcrs.coordinate_operation.type_name=="Concatenated Operation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:ConcatenatedOperation . \n")
+		elif curcrs.coordinate_operation.type_name=="Other Coordinate Operation":
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:OtherCoordinateOperation . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:label \""+curcrs.coordinate_operation.name+": "+curcrs.coordinate_operation.method_name+"\"@en . \n")
+	if curcrs.datum!=None:
+		datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus").replace("[","_").replace("]","_"))
+		ttl.add("geoepsg:"+epsgcode+" geocrs:datum geocrsdatum:"+str(datumid)+" . \n")
+		if "Geodetic Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:GeodeticReferenceFrame . \n")
+		elif "Dynamic Vertical Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DynamicVerticalReferenceFrame . \n")
+		elif "Vertical Reference Frame" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:VerticalReferenceFrame . \n")
+		else:
+			#print(curcrs.datum.type_name)
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
+		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
+		if curcrs.datum.remarks!=None:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdfs:comment \""+str(curcrs.datum.remarks)+"\"@en . \n")
+		if curcrs.datum.scope!=None:
+			ttl.update(resolveScope("geocrsdatum:"+str(datumid),curcrs.datum.scope))
+		if curcrs.datum.ellipsoid!=None and curcrs.datum.ellipsoid.name in spheroids:
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipsoid "+spheroids[curcrs.datum.ellipsoid.name]+" . \n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:label \""+str(curcrs.datum.ellipsoid.name)+"\"@en . \n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdf:type geocrs:Ellipsoid .\n")	
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:inverse_flattening \""+str(curcrs.datum.ellipsoid.inverse_flattening)+"\"^^xsd:double .\n")			
+			if curcrs.datum.ellipsoid.remarks!=None:
+				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:comment \""+str(curcrs.datum.ellipsoid.remarks)+"\"^^xsd:string .\n")
+			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:is_semi_minor_computed \""+str(curcrs.datum.ellipsoid.is_semi_minor_computed).lower()+"\"^^xsd:boolean .\n")
+		elif curcrs.datum.ellipsoid!=None:	
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n")
+		if curcrs.prime_meridian!=None:
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:primeMeridian geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdf:type geocrs:PrimeMeridian . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:label \""+curcrs.prime_meridian.name+"\"@en . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:longitude \""+str(curcrs.prime_meridian.longitude)+"\"^^xsd:double . \n")
+			if curcrs.prime_meridian.unit_name in units:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit "+units[curcrs.prime_meridian.unit_name]+" . \n")
+				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
+			else:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+			if curcrs.prime_meridian.remarks!=None:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:comment \""+str(curcrs.prime_meridian.remarks)+"\"@en . \n")
+			if curcrs.prime_meridian.scope!=None:
+				ttl.update(resolveScope("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ",""),curcrs.prime_meridian.scope))		
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isVertical \""+str(curcrs.is_vertical).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isProjected \""+str(curcrs.is_projected).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeocentric \""+str(curcrs.is_geocentric).lower()+"\"^^xsd:boolean . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:isGeographic \""+str(curcrs.is_geographic).lower()+"\"^^xsd:boolean . \n")
+	if curcrs.utm_zone!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")	
+	if curcrs.to_proj4()!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
+	if curcrs.to_json()!=None:
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")		
+	if wkt!="":
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
+	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
+	#i+=1
 
-    def getAccessFromBaseURL(self,baseurl,savepath):
-        return savepath.replace(baseurl, "")
+def parseSolarSystemSatellites(filename,ttlstring):
+	with open(filename) as csv_file:
+		csv_reader = csv.DictReader(csv_file)
+		for row in csv_reader:
+			curname=row["Name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_").replace("~","_")
+			if curname=="":
+				continue
+			ttlstring.add("geocrsisbody:"+curname+" rdf:type geocrs:Moon .\n")
+			ttlstring.add("geocrsisbody:"+curname+" rdfs:label \""+str(row["Name"])+"\"@en .\n")
+			if str(row["radius"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius \""+str(row["radius"])+"\"^^xsd:double .\n")
+			if str(row["orbital_period"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:orbital_period geocrsgeod:"+curname+"_geoid_obperiod .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_obperiod rdf:value \""+row["orbital_period"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid om:hasUnit om:day .\n")
+			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:Confirmed .\n")
+			ttlstring.add("geocrs:Confirmed rdf:type geocrs:PlanetStatus .\n")
+			ttlstring.add("geocrs:Confirmed rdfs:label \"Confirmed\"@en .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["Name"])+"\"@en .\n")
+			if str(row["semi_major_axis"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_smj_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis om:hasUnit  om:astronomicalUnit .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:isApplicableTo geocrsisbody:"+curname+" .\n")
+			if str(row["Parent"])!="":
+				starname=row["Parent"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+				if starname!="":
+					ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Planet .\n")
+					ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["Parent"])+"\"@en .\n")	
+					ttlstring.add("geocrsisbody:"+curname+" geocrs:satelliteOf geocrsisbody:"+starname+" .\n")					
 
-    def createHTML(self,savepath, predobjs, subject, baseurl, subpreds, graph, searchfilename, classtreename,uritotreeitem,curlicense,subjectstorender,postprocessing):
-        tablecontents = ""
-        isodd = False
-        geojsonrep=None
-        foundmedia={"audio":set(),"video":set(),"image":set(),"mesh":set()}
-        savepath = savepath.replace("\\", "/")
-        checkdepth=self.checkDepthFromPath(savepath, baseurl, subject)
-        foundlabel = ""
-        imageannos=set()
-        image3dannos=set()
-        predobjmap={}
-        isgeocollection=False
-        comment=None
-        parentclass=None
-        if str(subject) in uritotreeitem and uritotreeitem[str(subject)]["parent"].startswith("http"):
-            parentclass=str(uritotreeitem[str(subject)]["parent"])
-            if parentclass not in uritotreeitem:
-                uritotreeitem[parentclass]={"id": parentclass, "parent": "#",
-                                   "type": "class",
-                                   "text": self.shortenURI(str(parentclass)),"data":{}}
-            uritotreeitem[parentclass]["instancecount"]=0
-        ttlf = open(savepath + "/index.ttl", "w", encoding="utf-8")
-        if parentclass!=None:
-            uritotreeitem[parentclass]["data"]["to"]={}
-            uritotreeitem[parentclass]["data"]["from"]={}
-        for tup in sorted(predobjs,key=lambda tup: tup[0]):
-            if str(tup[0]) not in predobjmap:
-                predobjmap[str(tup[0])]=[]
-            predobjmap[str(tup[0])].append(tup[1])
-            if parentclass!=None and str(tup[0]) not in uritotreeitem[parentclass]["data"]["to"]:
-                uritotreeitem[parentclass]["data"]["to"][str(tup[0])]={}
-                uritotreeitem[parentclass]["data"]["to"][str(tup[0])]["instancecount"] = 0
-            if parentclass!=None:
-                uritotreeitem[parentclass]["data"]["to"][str(tup[0])]["instancecount"]+=1
-                uritotreeitem[parentclass]["instancecount"]+=1
-            if isinstance(tup[1],URIRef):
-                for item in graph.objects(tup[1],URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")):
-                    if parentclass!=None:
-                        if item not in uritotreeitem[parentclass]["data"]["to"][str(tup[0])]:
-                            uritotreeitem[parentclass]["data"]["to"][str(tup[0])][item] = 0
-                        uritotreeitem[parentclass]["data"]["to"][str(tup[0])][item]+=1
-        for tup in sorted(predobjmap):
-            if isodd:
-                tablecontents += "<tr class=\"odd\">"
-            else:
-                tablecontents += "<tr class=\"even\">"
-            if str(tup)=="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" and URIRef("http://www.opengis.net/ont/geosparql#FeatureCollection") in predobjmap[tup]:
-                isgeocollection=True
-                uritotreeitem["http://www.opengis.net/ont/geosparql#FeatureCollection"]["instancecount"] += 1
-            elif str(tup)=="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" and URIRef("http://www.opengis.net/ont/geosparql#GeometryCollection") in predobjmap[tup]:
-                isgeocollection=True
-                uritotreeitem["http://www.opengis.net/ont/geosparql#GeometryCollection"]["instancecount"] += 1
-            tablecontents=self.formatPredicate(tup, baseurl, checkdepth, tablecontents, graph,False)
-            if str(tup) in labelproperties:
-                foundlabel = str(predobjmap[tup][0])
-            if str(tup) in commentproperties:
-                comment = str(predobjmap[tup][0])
-            if len(predobjmap[tup]) > 0:
-                if len(predobjmap[tup])>1:
-                    tablecontents+="<td class=\"wrapword\"><ul>"
-                    for item in predobjmap[tup]:
-                        if ("POINT" in str(item).upper() or "POLYGON" in str(item).upper() or "LINESTRING" in str(item).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
-                            image3dannos.add(str(item))
-                        elif "<svg" in str(item):
-                            foundmedia["image"].add(str(item))
-                        elif "http" in str(item):
-                            if isinstance(item,Literal):
-                                ext = "." + ''.join(filter(str.isalpha, str(item.value).split(".")[-1]))
-                            else:
-                                ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
-                            if ext in fileextensionmap:
-                                foundmedia[fileextensionmap[ext]].add(str(item))
-                        tablecontents+="<li>"
-                        res=self.createHTMLTableValueEntry(subject, tup, item, ttlf, tablecontents, graph,
-                                              baseurl, checkdepth,geojsonrep,foundmedia,imageannos,image3dannos)
-                        tablecontents = res["html"]
-                        geojsonrep = res["geojson"]
-                        foundmedia = res["foundmedia"]
-                        imageannos=res["imageannos"]
-                        image3dannos=res["image3dannos"]
-                        tablecontents += "</li>"
-                    tablecontents+="</ul></td>"
-                else:
-                    tablecontents+="<td class=\"wrapword\">"
-                    if ("POINT" in str(predobjmap[tup]).upper() or "POLYGON" in str(predobjmap[tup]).upper() or "LINESTRING" in str(predobjmap[tup]).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
-                        image3dannos.add(str(predobjmap[tup][0]))
-                    elif "<svg" in str(predobjmap[tup]):
-                        foundmedia["image"].add(str(predobjmap[tup][0]))
-                    elif "http" in str(predobjmap[tup]):
-                        if isinstance(predobjmap[tup],Literal):
-                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0].value).split(".")[-1]))
-                        else:
-                            ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0]).split(".")[-1]))
-                        if ext in fileextensionmap:
-                            foundmedia[fileextensionmap[ext]].add(str(predobjmap[tup][0]))
-                    res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, tablecontents, graph,
-                                              baseurl, checkdepth,geojsonrep,foundmedia,imageannos,image3dannos)
-                    tablecontents=res["html"]
-                    geojsonrep=res["geojson"]
-                    foundmedia = res["foundmedia"]
-                    imageannos=res["imageannos"]
-                    image3dannos=res["image3dannos"]
-                    tablecontents+="</td>"
-            else:
-                tablecontents += "<td class=\"wrapword\"></td>"
-            tablecontents += "</tr>"
-            isodd = not isodd
-        subpredsmap={}
-        for tup in sorted(subpreds,key=lambda tup: tup[0]):
-            if str(tup[1]) not in subpredsmap:
-                subpredsmap[str(tup[1])]=[]
-            subpredsmap[str(tup[1])].append(tup[0])
-            if parentclass!=None and str(tup[1]) not in uritotreeitem[parentclass]["data"]["from"]:
-                uritotreeitem[parentclass]["data"]["from"][str(tup[1])]={}
-                uritotreeitem[parentclass]["data"]["from"][str(tup[1])]["instancecount"] = 0
-            if isinstance(tup[0],URIRef):
-                for item in graph.objects(tup[0],URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")):
-                    if parentclass!=None:
-                        if item not in uritotreeitem[parentclass]["data"]["from"][str(tup[1])]:
-                            uritotreeitem[parentclass]["data"]["from"][str(tup[1])][item] = 0
-                        uritotreeitem[parentclass]["data"]["from"][str(tup[1])][item]+=1
-        for tup in subpredsmap:
-            if isodd:
-                tablecontents += "<tr class=\"odd\">"
-            else:
-                tablecontents += "<tr class=\"even\">"
-            tablecontents=self.formatPredicate(tup, baseurl, checkdepth, tablecontents, graph,True)
-            if len(subpredsmap[tup]) > 0:
-                if len(subpredsmap[tup]) > 1:
-                    tablecontents += "<td class=\"wrapword\"><ul>"
-                    for item in subpredsmap[tup]:
-                        tablecontents += "<li>"
-                        if item not in subjectstorender and baseurl in str(item):
-                            print("Postprocessing: " + str(item)+" - "+str(tup)+" - "+str(subject))
-                            postprocessing.add((item,URIRef(tup),subject))
-                        res = self.createHTMLTableValueEntry(subject, tup, item, None, tablecontents, graph,
-                                                             baseurl, checkdepth, geojsonrep,foundmedia,imageannos,image3dannos)
-                        tablecontents = res["html"]
-                        foundmedia = res["foundmedia"]
-                        imageannos=res["imageannos"]
-                        image3dannos=res["image3dannos"]
-                        tablecontents += "</li>"
-                    tablecontents += "</ul></td>"
-                else:
-                    tablecontents += "<td class=\"wrapword\">"
-                    if subpredsmap[tup][0] not in subjectstorender and baseurl in str(subpredsmap[tup][0]):
-                        print("Postprocessing: " + str(subpredsmap[tup][0]) + " - " + str(tup) + " - " + str(subject))
-                        postprocessing.add((subpredsmap[tup][0], URIRef(tup), subject))
-                    res = self.createHTMLTableValueEntry(subject, tup, subpredsmap[tup][0], None, tablecontents, graph,
-                                                         baseurl, checkdepth, geojsonrep,foundmedia,imageannos,image3dannos)
-                    tablecontents = res["html"]
-                    foundmedia = res["foundmedia"]
-                    imageannos=res["imageannos"]
-                    image3dannos=res["image3dannos"]
-                    tablecontents += "</td>"
-            else:
-                tablecontents += "<td class=\"wrapword\"></td>"
-            tablecontents += "</tr>"
-            isodd = not isodd
-        if self.licenseuri!=None:
-            ttlf.write("<"+str(subject)+"> <http://purl.org/dc/elements/1.1/license> <"+self.licenseuri+"> .\n")
-        ttlf.close()
-        with open(savepath + "/index.json", 'w', encoding='utf-8') as f:
-            f.write(json.dumps(predobjmap))
-            f.close()
-        with open(savepath + "/index.html", 'w', encoding='utf-8') as f:
-            rellink=self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,searchfilename,False)
-            rellink2 = self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,classtreename,False)
-            rellink3 =self.generateRelativeLinkFromGivenDepth(baseurl,checkdepth,"style.css",False)
-            rellink4 = self.generateRelativeLinkFromGivenDepth(baseurl, checkdepth, "startscripts.js", False)
-            if geojsonrep != None:
-                myexports=geoexports
-            else:
-                myexports=nongeoexports
-            if foundlabel != "":
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{toptitle}}", foundlabel).replace(
-                    "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{indexpage}}","false").replace("{{title}}",
-                                                                                                "<a href=\"" + str(
-                                                                                                    subject) + "\">" + str(
-                                                                                                    foundlabel) + "</a>").replace(
-                    "{{baseurl}}", baseurl).replace("{{tablecontent}}", tablecontents).replace("{{description}}",
-                                                                                               "").replace(
-                    "{{scriptfolderpath}}", rellink).replace("{{classtreefolderpath}}", rellink2).replace("{{exports}}",myexports).replace("{{subject}}",str(subject)))
-            else:
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{indexpage}}","false").replace("{{toptitle}}", self.shortenURI(str(subject))).replace(
-                    "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{title}}","<a href=\"" + str(subject) + "\">" + self.shortenURI(str(subject)) + "</a>").replace(
-                    "{{baseurl}}", baseurl).replace("{{description}}",
-                                                                                               "").replace(
-                    "{{scriptfolderpath}}", rellink).replace("{{classtreefolderpath}}", rellink2).replace("{{exports}}",myexports).replace("{{subject}}",str(subject)))
-            if comment!=None:
-                f.write(htmlcommenttemplate.replace("{{comment}}",comment))
-            if len(foundmedia["mesh"])>0 and len(image3dannos)>0:
-                for anno in image3dannos:
-                    if ("POINT" in anno.upper() or "POLYGON" in anno.upper() or "LINESTRING" in anno.upper()):
-                        f.write(threejstemplate.replace("{{wktstring}}",anno).replace("{{meshurls}}",str(list(foundmedia["mesh"]))))
-            elif len(foundmedia["mesh"])>0 and len(image3dannos)==0:
-                print("Found 3D Model: "+str(foundmedia["mesh"]))
-                for curitem in foundmedia["mesh"]:
-                    format="ply"
-                    if ".nxs" in curitem or ".nxz" in curitem:
-                        format="nexus"
-                    f.write(image3dtemplate.replace("{{meshurl}}",curitem).replace("{{meshformat}}",format))
-                    break                
-            elif len(foundmedia["mesh"])==0 and len(image3dannos)>0:
-                for anno in image3dannos:
-                    if ("POINT" in anno.upper() or "POLYGON" in anno.upper() or "LINESTRING" in anno.upper()):
-                        f.write(threejstemplate.replace("{{wktstring}}",anno).replace("{{meshurls}}","[]"))
-            carousel="image"
-            if len(foundmedia["image"])>3:
-                carousel="carousel-item active"
-                f.write(imagecarouselheader)
-            if len(imageannos)>0 and len(foundmedia["image"])>0:
-                for image in foundmedia["image"]:
-                    annostring=""
-                    for anno in imageannos:
-                        annostring+=anno.replace("<svg>","<svg style=\"position: absolute;top: 0;left: 0;\" class=\"svgview svgoverlay\" fill=\"#044B94\" fill-opacity=\"0.4\">")
-                    f.write(imageswithannotemplate.replace("{{carousel}}",carousel+"\" style=\"position: relative;display: inline-block;").replace("{{image}}",str(image)).replace("{{svganno}}",annostring).replace("{{imagetitle}}",str(image)[0:str(image).rfind('.')]))
-                    if len(foundmedia["image"])>3:
-                        carousel="carousel-item"                  
-            else:
-                for image in foundmedia["image"]:
-                    if image=="<svg width=":
-                        continue
-                    if "<svg" in image:
-                        if "<svg>" in image:
-                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))))
-                        else:
-                            f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}",str(image)))
-                    else:
-                        f.write(imagestemplate.replace("{{carousel}}",carousel).replace("{{image}}",str(image)).replace("{{imagetitle}}",str(image)[0:str(image).rfind('.')]))
-                    if len(foundmedia["image"])>3:
-                        carousel="carousel-item"
-            if len(foundmedia["image"])>3:
-                f.write(imagecarouselfooter)
-            for audio in foundmedia["audio"]:
-                f.write(audiotemplate.replace("{{audio}}",str(audio)))
-            for video in foundmedia["video"]:
-                f.write(videotemplate.replace("{{video}}",str(video)))
-            if geojsonrep!=None and not isgeocollection:
-                if str(subject) in uritotreeitem:
-                    uritotreeitem[str(subject)]["type"]="geoinstance"
-                jsonfeat={"type": "Feature", 'id':str(subject),'label':foundlabel, 'properties': predobjmap, "geometry": geojsonrep}
-                f.write(maptemplate.replace("{{myfeature}}",json.dumps(jsonfeat)))
-            elif isgeocollection:
-                featcoll={"type":"FeatureCollection", "id":subject, "features":[]}
-                for memberid in graph.objects(subject,URIRef("http://www.w3.org/2000/01/rdf-schema#member")):
-                    for geoinstance in graph.predicate_objects(memberid):
-                        geojsonrep=None                       
-                        if isinstance(geoinstance[1], Literal) and (str(geoinstance[0]) in geoproperties or str(geoinstance[1].datatype) in geoliteraltypes):
-                            geojsonrep = self.processLiteral(str(geoinstance[1]), geoinstance[1].datatype, "")
-                            uritotreeitem[str(subject)]["type"] = "geocollection"
-                        elif str(geoinstance[0]) in geopointerproperties:
-                            uritotreeitem[str(subject)]["type"] = "featurecollection"
-                            for geotup in graph.predicate_objects(geoinstance[1]):             
-                                if isinstance(geotup[1], Literal) and (str(geotup[0]) in geoproperties or str(geotup[1].datatype) in geoliteraltypes):
-                                    geojsonrep = self.processLiteral(str(geotup[1]), geotup[1].datatype, "")
-                        if geojsonrep!=None:
-                            featcoll["features"].append({"type": "Feature", 'id':str(memberid), 'properties': {}, "geometry": geojsonrep})
-                f.write(maptemplate.replace("{{myfeature}}",json.dumps(featcoll)))
-            f.write(htmltabletemplate.replace("{{tablecontent}}", tablecontents))
-            f.write(htmlfooter.replace("{{exports}}",myexports).replace("{{license}}",curlicense))
-            f.close()
-        return postprocessing
-            
-prefixes={"reversed":{}}
-if os.path.exists('prefixes.json'):
-    with open('prefixes.json', encoding="utf-8") as f:
-        prefixes = json.load(f)
-   
-prefixes["reversed"]["http://purl.org/cuneiform/"]="cunei"
-prefixes["reversed"]["http://purl.org/graphemon/"]="graphemon"
-prefixes["reversed"]["http://www.opengis.net/ont/crs/"]="geocrs"
-prefixes["reversed"]["http://www.ontology-of-units-of-measure.org/resource/om-2/"]="om"
-prefixes["reversed"]["http://purl.org/meshsparql/"]="msp"
-prefixnsshort="cuneidict"
-prefixnamespace="http://purl.org/cuneiform/"
-license="CC BY-SA 4.0"
-outpath="signlist_htmls/"
-labellang="en"
-createIndexPages=True
-if len(sys.argv)<=1:
-    print("No TTL file to process has been given as a parameter")
-    exit()
-if len(sys.argv)>1:
-    filepath=sys.argv[1]
-if len(sys.argv)>2:
-    outpath=sys.argv[2]
-if len(sys.argv)>3:
-    prefixnamespace=sys.argv[3]
-if len(sys.argv)>4:
-    prefixnsshort=sys.argv[4]
-if len(sys.argv)>5:
-    indexp=sys.argv[5]
-    if indexp.lower()=="false":
-        createIndexPages=False
-g = Graph()
-g.parse(filepath)
-docgen=OntDocGeneration(prefixes,prefixnamespace,prefixnsshort,license,labellang,outpath,g,createIndexPages)
-docgen.generateOntDocForNameSpace(prefixnamespace,dataformat="HTML")
+
+def parseAdditionalPlanetarySpheroids(filename,ttlstring):
+	with open(filename) as csv_file:
+		csv_reader = csv.DictReader(csv_file)
+		for row in csv_reader:
+			curname=row["name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+			ttlstring.add("geocrsisbody:"+curname+" rdf:type geocrs:Planet .\n")
+			ttlstring.add("geocrsisbody:"+curname+" rdfs:label \""+str(row["name"])+"\"@en .\n")
+			if str(row["discovered"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" dc:date \""+str(row["discovered"])+"\"^^xsd:date .\n")
+			if str(row["mass"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:mass \""+str(row["mass"])+"\"^^xsd:double .\n")
+			if str(row["orbital_period"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:orbital_period \""+str(row["orbital_period"])+"\"^^xsd:double .\n")
+			if str(row["radius"])!="":
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:radius geocrsisbody:"+curname+"_radius .\n")
+				ttlstring.add("geocrsisbody:"+curname+"_radius rdf:value \""+str(row["radius"])+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsisbody:"+curname+"_radius om:hasUnit om:astronomicalUnit .\n")
+			ttlstring.add("geocrsisbody:"+curname+" geocrs:planet_status geocrs:"+str(row["planet_status"])+" .\n")
+			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdf:type geocrs:PlanetStatus .\n")
+			ttlstring.add("geocrs:"+str(row["planet_status"])+" rdfs:label \""+row["planet_status"]+"\"@en .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdf:type geocrs:Sphere .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid rdfs:label \"Geoid for "+str(row["name"])+"\"@en .\n")
+			if str(row["semi_major_axis"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:semiMajorAxis geocrsgeod:"+curname+"_geoid_smj_axis .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis rdf:value  \""+row["semi_major_axis"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsgeod:"+curname+"_geoid_smj_axis om:hasUnit  om:astronomicalUnit .\n")
+			if str(row["eccentricity"])!="":
+				ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:eccentricity \""+row["eccentricity"]+"\"^^xsd:double .\n")
+			ttlstring.add("geocrsgeod:"+curname+"_geoid geocrs:approximates geocrsisbody:"+curname+" .\n")
+			if str(row["star_name"])!="":
+				starname=row["star_name"].replace(" ","_").replace("+","_").replace(":","_").replace("(","_").replace(")","_").replace("/","_").replace("*","_").replace("'","_")
+				ttlstring.add("geocrsisbody:"+starname+" rdf:type geocrs:Star .\n")
+				ttlstring.add("geocrsisbody:"+starname+" rdfs:label \""+str(row["star_name"])+"\"@en .\n")
+				if str(row["discovered"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" dc:date \""+str(row["discovered"])+"\"^^xsd:date .\n")
+				if str(row["star_mass"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" geocrs:mass \""+row["star_mass"]+"\"^^xsd:double .\n")
+				if str(row["star_radius"])!="":
+					ttlstring.add("geocrsisbody:"+starname+" geocrs:radius \""+row["star_radius"]+"\"^^xsd:double .\n")
+				ttlstring.add("geocrsisbody:"+curname+" geocrs:satelliteOf geocrsisbody:"+starname+" .\n")
+				if str(row["star_distance"])!="":
+					ttlstring.add("geocrsisbody:"+curname+" geocrs:starDistance \""+str(row["star_distance"])+"\"^^xsd:double .\n")
+		return ttlstring
+
+
+units={}
+units["m"]="om:meter"
+units["metre"]="om:metre"
+units["grad"]="om:degree"
+units["degree"]="om:degree"
+units["ft"]="om:foot"
+units["US Survey Foot"]="om:foot-USSurvey"
+units["us-ft"]="om:usfoot"
+scope={}
+scope["geodesy"]="geocrs:Geodesy"
+scope["topographic mapping"]="geocrs:TopographicMap"
+scope["spatial referencing"]="geocrs:SpatialReferencing"
+scope["engineering survey"]="geocrs:EngineeringSurvey"
+scope["satellite survey"]="geocrs:SatelliteSurvey"
+scope["satellite navigation"]="geocrs:SatelliteNvaigation"
+scope["coastal hydrography"]="geocrs:CoastalHydrography"
+scope["offshore engineering"]="geocrs:OffshoreEngineering"
+scope["hydrography"]="geocrs:Hydrography"
+scope["drilling"]="geocrs:Drilling"
+scope["nautical charting"]="geocrs:NauticalChart"
+scope["oil and gas exploration"]="geocrs:OilAndGasExploration"
+scope["cadastre"]="geocrs:CadastreMap"
+coordinatesystem={}
+coordinatesystem["ellipsoidal"]="geocrs:EllipsoidalCS"
+coordinatesystem["cartesian"]="geocrs:CartesianCS"
+coordinatesystem["vertical"]="geocrs:VerticalCS"
+coordinatesystem["ordinal"]="geocrs:OrdinalCS"
+coordinatesystem["parametric"]="geocrs:ParametricCS"
+coordinatesystem["spherical"]="geocrs:SphericalCS"
+coordinatesystem["temporal"]="geocrs:TemporalCS"
+spheroids={}
+spheroids["Australian National Spheroid"]="geocrsgeod:AustralianNationalSpheroid"
+spheroids["GRS80"]="geocrsgeod:GRS1980"
+spheroids["GRS 80"]="geocrsgeod:GRS1980"
+spheroids["GRS67"]="geocrsgeod:GRS67"
+spheroids["GRS 1967"]="geocrsgeod:GRS67"
+spheroids["GRS 1967 Modified"]="geocrsgeod:GRS67Modified"
+spheroids["GRS 67"]="geocrsgeod:GRS67"
+spheroids["GRS1980"]="geocrsgeod:GRS1980"
+spheroids["GRS 1980"]="geocrsgeod:GRS1980"
+spheroids["NWL 9D"]="geocrsgeod:NWL9D"
+spheroids["PZ-90"]="geocrsgeod:PZ90"
+spheroids["Airy 1830"]="geocrsgeod:Airy1830"
+spheroids["Airy Modified 1849"]="geocrsgeod:AiryModified1849"
+spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
+spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
+spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
+spheroids["clrk"]="geocrsgeod:Clarke1866"
+spheroids["intl"]="geocrsgeod:International1924"
+spheroids["aust_SA"]="geocrsgeod:AustralianNationalSpheroid"
+spheroids["International 1924"]="geocrsgeod:International1924"
+spheroids["War Office"]="geocrsgeod:WarOffice"
+spheroids["evrst30"]="geocrsgeod:Everest1930"
+spheroids["clrk66"]="geocrsgeod:Clarke1866"
+spheroids["Plessis 1817"]="geocrsgeod:Plessis1817"
+spheroids["Danish 1876"]="geocrsgeod:Danish1876"
+spheroids["Struve 1860"]="geocrsgeod:Struve1860"
+spheroids["IAG 1975"]="geocrsgeod:IAG1975"
+spheroids["Clarke 1866"]="geocrsgeod:Clarke1866"
+spheroids["Clarke 1858"]="geocrsgeod:Clarke1858"
+spheroids["Clarke 1880"]="geocrsgeod:Clarke1880"
+spheroids["Helmert 1906"]="geocrsgeod:Helmert1906"
+spheroids["Moon_2000_IAU_IAG"]="geocrsgeod:Moon2000_IAU_IAG"
+spheroids["CGCS2000"]="geocrsgeod:CGCS2000"
+spheroids["GSK-2011"]="geocrsgeod:GSK2011"
+spheroids["Zach 1812"]="geocrsgeod:Zach1812"
+spheroids["Hough 1960"]="geocrsgeod:Hough1960"
+spheroids["Hughes 1980"]="geocrsgeod:Hughes1980"
+spheroids["Indonesian National Spheroid"]="geocrsgeod:IndonesianNationalSpheroid"
+spheroids["clrk80"]="geocrsgeod:Clarke1880RGS"
+spheroids["clrk80ign"]="geocrsgeod:Clarke1880IGN"
+spheroids["WGS66"]="geocrsgeod:WGS66"
+spheroids["WGS 66"]="geocrsgeod:WGS66"
+spheroids["WGS72"]="geocrsgeod:WGS72"
+spheroids["WGS 72"]="geocrsgeod:WGS72"
+spheroids["WGS84"]="geocrsgeod:WGS84"
+spheroids["WGS 84"]="geocrsgeod:WGS84"
+spheroids["Krassowsky 1940"]="geocrsgeod:Krassowsky1940"
+spheroids["krass"]="geocrsgeod:Krassowsky1940"
+spheroids["Bessel 1841"]="geocrsgeod:Bessel1841"
+spheroids["bessel"]="geocrsgeod:Bessel1841"
+spheroids["Bessel Modified"]="geocrsgeod:BesselModified"
+projections={}
+projections["adams_ws1"]="geocrs:AdamsWorldInASquareIProjection"
+projections["adams_ws2"]="geocrs:AdamsWorldInASquareIIProjection"
+projections["aea"]="geocrs:AlbersEqualAreaProjection"
+projections["aeqd"]= "geocrs:AzimuthalEquidistantProjection"
+projections["airy"]="geocrs:AiryProjection"
+projections["aitoff"]="geocrs:AitoffProjection"
+projections["poly"]="geocrs:AmericanPolyconicProjection"
+projections["apian"]="geocrs:ApianGlobularIProjection"
+projections["august"]= "geocrs:AugustEpicycloidalProjection"
+projections["bacon"]= "geocrs:BaconGlobularProjection"
+projections["bertin1953"]="geocrs:BertinProjection"
+projections["boggs"]="geocrs:BoggsEumorphicProjection"
+projections["bonne"]="geocrs:BonneProjection"
+projections["cass"]="geocrs:CassiniProjection"
+projections["cc"]="geocrs:CentralCylindricalProjection"
+projections["ccon"]="geocrs:CentralConicProjection"
+projections["cea"]="geocrs:CylindricalEqualArea"
+projections["chamb"]="geocrs:ChamberlinTrimetricProjection"
+projections["comill"]="geocrs:CompactMillerProjection"
+projections["col_urban"]="geocrs:ColombiaUrbanProjection"
+projections["crast"]="geocrs:CrasterParabolicProjection"
+projections["eck1"]="geocrs:Eckert1Projection"
+projections["eck2"]="geocrs:Eckert2Projection"
+projections["eck3"]="geocrs:Eckert3Projection"
+projections["eck4"]="geocrs:Eckert4Projection"
+projections["eck5"]="geocrs:Eckert5Projection"
+projections["eck6"]="geocrs:Eckert6Projection"
+projections["eqc"]="geocrs:EquidistantCylindricalProjection"
+projections["eqdc"]="geocrs:EquidistantConicProjection"
+projections["eqearth"]="geocrs:EqualEarthProjection"
+projections["collg"]="geocrs:CollignonProjection"
+projections["col_urban"]="geocrs:ColombiaUrbanProjection"
+projections["denoy"]="geocrs:DenoyerSemiEllipticalProjection"
+projections["fahey"]="geocrs:FaheyProjection"
+projections["fouc_s"]="geocrs:FoucautSinusoidalProjection"
+projections["gall"]="geocrs:GallStereographicProjection"
+projections["geocent"]="geocrs:Geocentric"
+projections["gins8"]="geocrs:GinzburgVIIIProjection"
+projections["gnom"]="geocrs:GnomonicProjection"
+projections["goode"]="geocrs:GoodeHomolosineProjection"
+projections["guyou"]="geocrs:GuyouProjection"
+projections["hatano"]="geocrs:HatanoAsymmetricalEqualAreaProjection"
+projections["healpix"]="geocrs:HEALPixProjection"
+projections["igh"]="geocrs:InterruptedGoodeHomolosineProjection"
+projections["igh_o"]="geocrs:InterruptedGoodeHomolosineOceanicViewProjection"
+projections["kav5"]="geocrs:PseudoCylindricalProjection"
+projections["kav7"]="geocrs:Kavrayskiy7Projection"
+projections["krovak"]="geocrs:Krovak"
+projections["laea"]="geocrs:LambertAzimuthalEqualArea"
+projections["lagrng"]="geocrs:LagrangeProjection"
+projections["larr"]="geocrs:LarriveeProjection"
+projections["lask"]="geocrs:LaskowskiProjection"
+projections["latlong"]="geocrs:LatLonProjection"
+projections["lcc"]="geocrs:LambertConformalConicProjection"
+projections["leac"]="geocrs:LambertEqualAreaConic"
+projections["labrd"]="geocrs:LabordeProjection"
+projections["longlat"]="geocrs:LonLatProjection"
+projections["loxim"]="geocrs:LoximuthalProjection"
+projections["mbt_s"]="geocrs:McBrydeThomasIProjection"
+projections["mbt_fps"]="geocrs:McBrydeThomasIIProjection"
+projections["mbtfpp"]="geocrs:McBrydeThomasFlatPolarParabolicProjection"
+projections["mbtfpq"]="geocrs:McBrydeThomasFlatPolarQuarticProjection"
+projections["mbtfps"]="geocrs:McBrydeThomasFlatPolarSinusoidalProjection"
+projections["merc"]="geocrs:MercatorProjection"
+projections["mill"]="geocrs:MillerProjection"
+projections["mil_os"]="geocrs:MillerOblatedStereographicProjection"
+projections["murd1"]="geocrs:MurdochIProjection"
+projections["murd2"]="geocrs:MurdochIIProjection"
+projections["murd3"]="geocrs:MurdochIIIProjection"
+projections["natearth"]="geocrs:NaturalEarthProjection"
+projections["natearth2"]="geocrs:NaturalEarth2Projection"
+projections["moll"]="geocrs:MollweideProjection"
+projections["nell"]="geocrs:PseudoCylindricalProjection"
+projections["nell_h"]="geocrs:NellHammerProjection"
+projections["nicol"]="geocrs:NicolosiGlobularProjection"
+projections["ocea"]="geocrs:ObliqueCylindricalEqualAreaProjection"
+projections["omerc"]="geocrs:ObliqueMercatorProjection"
+projections["sterea"]="geocrs:ObliqueStereographicProjection"
+projections["ocea"]="geocrs:ObliqueCylindricalEqualAreaProjection"
+projections["ortel"]="geocrs:OrteliusOvalProjection"
+projections["ortho"]="geocrs:OrthographicProjection"
+projections["patterson"]="geocrs:PattersonCylindricalProjection"
+projections["pconic"]="geocrs:PerspectiveConicProjection"
+projections["poly"]="geocrs:AmericanPolyconicProjection"
+projections["peirce_q"]="geocrs:PeirceQuincuncialProjection"
+projections["putp1"]="geocrs:PutninsP1Projection"
+projections["putp2"]="geocrs:PutninsP2Projection"
+projections["putp3"]="geocrs:PutninsP3Projection"
+projections["putp3p"]="geocrs:PutninsP3'Projection"
+projections["putp4"]="geocrs:PutninsP4Projection"
+projections["putp4p"]="geocrs:PutninsP4'Projection"
+projections["putp5"]="geocrs:PutninsP5Projection"
+projections["putp6"]="geocrs:PutninsP6Projection"
+projections["putp6p"]="geocrs:PutninsP6'Projection"
+projections["qua_aut"]="geocrs:QuarticAuthalicProjection"
+projections["qsc"]="QuadrilateralizedSphericalCubeProjection"
+projections["rpoly"]="geocrs:RectangularPolyconicProjection"
+projections["robin"]="geocrs:RobinsonProjection"
+projections["rouss"]="geocrs:RoussilheProjection"
+projections["rpoly"]="geocrs:RectangularPolyconicProjection"
+projections["stere"]="geocrs:StereographicProjection"
+projections["sinu"]="geocrs:SinusoidalProjection"
+projections["tcea"]="geocrs:TransverseCylindricalEqualAreaProjection"
+projections["tpeqd"]="geocrs:TwoPointEquidistantProjection"
+projections["times"]="geocrs:TheTimesProjection"
+projections["tmerc"]="geocrs:TransverseMercatorProjection"
+projections["utm"]="geocrs:UniversalTransverseMercatorProjection"
+projections["vandg"]="geocrs:VanDerGrintenIProjection"
+projections["vandg2"]="geocrs:VanDerGrintenIIProjection"
+projections["vandg3"]="geocrs:VanDerGrintenIIIProjection"
+projections["vandg4"]="geocrs:VanDerGrintenIVProjection"
+projections["vitk1"]="geocrs:VitkovskyIProjection"
+projections["wintri"]="geocrs:WinkelTripelProjection"
+projections["wag1"]="geocrs:WagnerIProjection"
+projections["wag2"]="geocrs:WagnerIIProjection"
+projections["wag3"]="geocrs:WagnerIIIProjection"
+projections["wag4"]="geocrs:WagnerIVProjection"
+projections["wag5"]="geocrs:WagnerVProjection"
+projections["wag6"]="geocrs:WagnerVIProjection"
+projections["wag7"]="geocrs:WagnerVIIProjection"
+projections["wag8"]="geocrs:WagnerVIIIProjection"
+projections["wag9"]="geocrs:WagnerIXProjection"
+projections["weren"]="geocrs:WerenskioldIProjection"
+
+
+"""
+adams_hemi : Adams Hemisphere in a Square
+affine : Affine transformation
+alsk : Modified Stereographic of Alaska
+axisswap : Axis ordering
+bipc : Bipolar conic of western hemisphere
+calcofi : Cal Coop Ocean Fish Invest Lines/Stations
+cart : Geodetic/cartesian conversions
+defmodel : Deformation model
+deformation : Kinematic grid shift
+euler : Euler
+etmerc : Extended Transverse Mercator
+geoc : Geocentric Latitude
+geogoffset : Geographic Offset
+geos : Geostationary Satellite View
+gn_sinu : General Sinusoidal Series
+gs48 : Modified Stereographic of 48 U.S.
+hammer : Hammer & Eckert-Greifendorff
+rhealpix : rHEALPix
+helmert : 3(6)-, 4(8)- and 7(14)-parameter Helmert shift
+hgridshift : Horizontal grid shift
+horner : Horner polynomial evaluation
+igh_o : Interrupted Goode Homolosine Oceanic View
+imw_p : International Map of the World Polyconic
+isea : Icosahedral Snyder Equal Area
+kav5 : Kavrayskiy V
+lonlat : Lat/long (Geodetic)
+latlon : Lat/long (Geodetic alias)
+lcca : Lambert Conformal Conic Alternative
+lee_os : Lee Oblated Stereographic
+lsat : Space oblique for LANDSAT
+misrsom : Space oblique for MISR
+molobadekas : Molodensky-Badekas transformation
+molodensky : Molodensky transform
+nsper : Near-sided perspective
+nzmg : New Zealand Map Grid
+noop : No operation
+ob_tran : General Oblique Transformation
+oea : Oblated Equal Area
+pipeline : Transformation pipeline manager
+pop : Retrieve coordinate value from pipeline stack
+push : Save coordinate value on pipeline stack
+s2 : S2
+sch : Spherical Cross-track Height
+set : Set coordinate value
+somerc : Swiss. Obl. Mercator
+gstmerc : Gauss-Schreiber Transverse Mercator (aka Gauss-Laborde Reunion)
+tcc : Transverse Central Cylindrical
+tinshift : Triangulation based transformation
+tissot : Tissot
+tobmerc : Tobler-Mercator
+topocentric : Geocentric/Topocentric conversion
+unitconvert : Unit conversion
+ups : Universal Polar Stereographic
+urm5 : Urmaev V
+urmfps : Urmaev Flat-Polar Sinusoidal
+vgridshift : Vertical grid shift
+webmerc : Web Mercator / Pseudo Mercator
+xyzgridshift : Geocentric grid shift
+"""
+#projections["cc"]="geocrs:CylindricalProjection"
+ttl=set()
+ttlnoniso=set()
+ttldata=set()
+ttlprojectionvocab=Graph()
+ttlprojectionvocab.parse("projection_vocabulary/projection_vocabulary.ttl")
+ttlplanetvocab=Graph()
+ttlplanetvocab.parse("planet_vocabulary/planet_vocabulary.ttl")
+srsapplication=Graph()
+srsapplication.parse("srs_application/srs_application.ttl")
+csvocab=Graph()
+csvocab.parse("cs_vocabulary/cs_vocabulary.ttl")
+ttlhead="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
+ttlhead+="@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
+ttlhead+="@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
+ttlhead+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
+ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
+ttlhead+="@prefix prov: <http://www.w3.org/ns/prov-o/> .\n"
+ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
+ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
+ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
+ttlhead+="@prefix geocrsdatum: <http://www.opengis.net/ont/crs/datum/> .\n"
+ttlhead+="@prefix geocrsisbody: <http://www.opengis.net/ont/crs/isbody/> .\n"
+ttlhead+="@prefix geocrsgrid: <http://www.opengis.net/ont/crs/grid/> .\n"
+ttlhead+="@prefix geocrsproj: <http://www.opengis.net/ont/crs/proj/> .\n"
+ttlhead+="@prefix geocrsaxis: <http://www.opengis.net/ont/crs/cs/axis/> .\n"
+ttlhead+="@prefix geocrsgeod: <http://www.opengis.net/ont/crs/geod/> .\n"
+ttlhead+="@prefix geocrsaou: <http://www.opengis.net/ont/crs/areaofuse/> .\n"
+ttlhead+="@prefix geocrsmeridian: <http://www.opengis.net/ont/crs/primeMeridian/> .\n"
+ttlhead+="@prefix geocrsoperation: <http://www.opengis.net/ont/crs/operation/> .\n"
+ttlhead+="@prefix geocs: <http://www.opengis.net/ont/crs/cs/> .\n"
+ttlhead+="@prefix dc: <http://purl.org/dc/elements/1.1/> .\n"
+ttlhead+="@prefix wd: <http://www.wikidata.org/entity/> .\n"
+ttlhead+="@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n"
+ttl.add("geocrs:GeoSPARQLSRS rdf:type owl:Ontology .\n")
+ttl.add("geocrs:GeoSPARQLSRS dc:creator wd:Q67624599 .\n")
+ttl.add("geocrs:GeoSPARQLSRS dc:description \"This ontology models spatial reference systems\"@en .\n")
+ttl.add("geocrs:GeoSPARQLSRS rdfs:label \"GeoSPARQL SRS Ontology Draft\"@en .\n")
+ttl.add("geocrs:GeoSPARQLSRS owl:versionInfo \"0.1\"^^xsd:double .\n")
+ttl.add("prov:Entity rdf:type owl:Class .\n")
+ttl.add("prov:Entity rdfs:label \"entity\"@en .\n")
+ttl.add("geocrs:ReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:ReferenceSystem rdfs:label \"reference system\"@en .\n")
+ttl.add("geocrs:ReferenceSystem skos:definition \"a system that uses a reference to establish a position\"@en .\n")
+ttl.add("geocrs:LinearReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:LinearReferenceSystem rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
+ttl.add("geocrs:LinearReferenceSystem rdfs:label \"linear reference system\"@en .\n")
+ttl.add("geocrs:LinearReferenceSystem skos:definition \"a reference system in which the locations of physical features along a linear element are described in terms of measurements from a fixed point\"@en .\n")
+ttl.add("geocrs:GeocodeSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:GeocodeSystem rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
+ttl.add("geocrs:GeocodeSystem rdfs:label \"geocode system\"@en .\n")
+ttl.add("geocrs:GeocodeSystem skos:definition \"a system that uses a geocode to encode a position\"@en .\n")
+ttl.add("geocrs:TemporalReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalReferenceSystem rdfs:label \"temporal reference system\"@en .\n")
+ttl.add("geocrs:TemporalReferenceSystem skos:definition \"Reference system against which time is measured\"@en .\n")
+ttl.add("geocrs:TemporalReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .\n")
+ttl.add("geocrs:SpatialReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatialReferenceSystem rdfs:label \"spatial reference system\"@en .\n")
+ttl.add("geocrs:SpatialReferenceSystem skos:definition \"System for identifying position in the real world\"@en .\n")
+ttl.add("geocrs:SpatialReferenceSystem rdfs:subClassOf geocrs:ReferenceSystem .\n")
+ttlnoniso.add("geocrs:UnknownSpatialReferenceSystem rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:UnknownSpatialReferenceSystem rdfs:label \"unknown spatial reference system\"@en .\n")
+ttlnoniso.add("geocrs:UnknownSpatialReferenceSystem skos:definition \"A spatial reference system which definition is not known\"@en .\n")
+ttlnoniso.add("geocrs:UnknownSpatialReferenceSystem rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
+ttl.add("geocrs:CoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:CoordinateSystem rdfs:label \"coordinate system\"@en .\n")
+ttl.add("geocrs:CoordinateSystem skos:definition \"non-repeating sequence of coordinate system axes that spans a given coordinate space\"@en .\n")
+ttl.add("geocrs:CoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:StereographicCS rdf:type owl:Class .\n")
+ttl.add("geocrs:StereographicCS rdfs:label \"stereographic coordinate system\"@en .\n")
+ttl.add("geocrs:StereographicCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:CoordinateSystemAxis rdf:type owl:Class .\n")
+ttl.add("geocrs:CoordinateSystemAxis rdfs:label \"coordinate system axis\"@en .\n")
+ttl.add("geocrs:CoordinateSystemAxis skos:definition \"Axis defined by a coordinate system\"@en .\n")
+ttl.add("geocrs:CoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:subClassOf geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis skos:definition \"Axis defined by a temporal coordinate system\"@en .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:label \"temporal coordinate system axis\"@en .\n")
+ttl.add("geocrs:TemporalCoordinateSystemAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:AreaOfUse rdf:type owl:Class .\n")
+ttl.add("geocrs:AreaOfUse rdfs:label \"area of use\"@en .\n")
+ttl.add("geocrs:AreaOfUse skos:definition \"area in which a coordinate operation may be used\"@en .\n")
+ttl.add("geocrs:CartesianCS rdf:type owl:Class .\n")
+ttl.add("geocrs:CartesianCS rdfs:subClassOf geocrs:AffineCS, geocrs:OrthogonalCS .\n")
+ttl.add("geocrs:CartesianCS rdfs:label \"cartesian coordinate system\"@en .\n")
+ttl.add("geocrs:CartesianCS skos:definition \"coordinate system in Euclidean space which gives the position of points relative to n mutually perpendicular straight axes all having the same unit of measure\"@en .\n")
+ttl.add("geocrs:CartesianCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:LinearCS rdf:type owl:Class .\n")
+ttl.add("geocrs:LinearCS rdfs:subClassOf geocrs:1DCS .\n")
+ttl.add("geocrs:LinearCS rdfs:label \"linear coordinate system\"@en .\n")
+ttl.add("geocrs:LinearCS skos:definition \"one-dimensional coordinate system in which a linear feature forms the axis\"@en .\n")
+ttl.add("geocrs:LinearCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GridCS rdf:type owl:Class .\n")
+ttl.add("geocrs:GridCS rdfs:subClassOf geocrs:CS .\n")
+ttl.add("geocrs:GridCS rdfs:label \"grid coordinate system\"@en .\n")
+ttl.add("geocrs:GridCS skos:definition \"A grid coordinate system describes areas with a grid\"@en .\n")
+ttl.add("geocrs:ObliqueCS rdf:type owl:Class .\n")
+ttl.add("geocrs:ObliqueCS rdfs:subClassOf geocrs:AffineCS .\n")
+ttl.add("geocrs:ObliqueCS rdfs:label \"oblique coordinate system\"@en .\n")
+ttl.add("geocrs:ObliqueCS skos:definition \"A plane coordinate system whose axes are not perpendicular\"@en .\n")
+ttl.add("geocrs:EngineeringCS rdf:type owl:Class .\n")
+ttl.add("geocrs:EngineeringCS rdfs:subClassOf geocrs:CS .\n")
+ttl.add("geocrs:EngineeringCS rdfs:label \"engineering coordinate system\"@en .\n")
+ttl.add("geocrs:EngineeringCS skos:definition \"coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system\"@en .\n")
+ttl.add("geocrs:EngineeringCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GeodeticCS rdf:type owl:Class .\n")
+ttl.add("geocrs:GeodeticCS owl:disjointWith geocrs:CompoundCRS .\n")
+ttl.add("geocrs:GeodeticCS rdfs:subClassOf geocrs:CS .\n")
+ttl.add("geocrs:GeodeticCS rdfs:label \"geodetic coordinate system\"@en .\n")
+ttl.add("geocrs:GeodeticCS skos:definition \"coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system\"@en .\n")
+ttl.add("geocrs:GeodeticCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:EllipsoidalCS rdf:type owl:Class .\n")
+ttl.add("geocrs:EllipsoidalCS rdfs:subClassOf geocrs:OrthogonalCS .\n")
+ttl.add("geocrs:EllipsoidalCS rdfs:label \"ellipsoidal coordinate system\"@en .\n")
+ttl.add("geocrs:EllipsoidalCS skos:definition \"two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height\"@en .\n")
+ttl.add("geocrs:EllipsoidalCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:HorizontalCS rdf:type owl:Class .\n")
+ttl.add("geocrs:HorizontalCS rdfs:subClassOf geocrs:CelestialCS .\n")
+ttl.add("geocrs:HorizontalCS rdfs:label \"horizontal coordinate system\"@en .\n")
+ttl.add("geocrs:HorizontalCS skos:definition \"A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane\"@en .\n")
+ttl.add("geocrs:GeographicCS rdf:type owl:Class .\n")
+ttl.add("geocrs:GeographicCoordinateSystem rdfs:subClassOf geocrs:CS .\n")
+ttl.add("geocrs:GeographicCS rdfs:label \"geographic coordinate system\"@en .\n")
+ttl.add("geocrs:OrdinalCS rdf:type owl:Class .\n")
+ttl.add("geocrs:OrdinalCoordinateSystem rdfs:subClassOf geocrs:CS .\n")
+ttl.add("geocrs:OrdinalCS rdfs:label \"ordinal coordinate system\"@en .\n")
+ttl.add("geocrs:OrdinalCS skos:definition \"n-dimensional coordinate system in which every axis uses integers\"@en .\n")
+ttl.add("geocrs:OrdinalCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ProjectedCS rdf:type owl:Class .\n")
+ttl.add("geocrs:ProjectedCoordinateSystem rdfs:subClassOf geocrs:PlanarCS .\n")
+ttl.add("geocrs:ProjectedCS rdfs:label \"projected coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:label \"derived projected coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCoordinateSystem  skos:definition \"coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SphericalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:SphericalCoordinateSystem rdfs:subClassOf geocrs:3DCoordinateSystem .\n")
+ttl.add("geocrs:SphericalCoordinateSystem rdfs:label \"spherical coordinate system\"@en .\n")
+ttl.add("geocrs:SphericalCoordinateSystem skos:definition \"three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates\"@en .\n")
+ttl.add("geocrs:SphericalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem rdfs:subClassOf geocrs:3DCoordinateSystem .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem rdfs:label \"cylindrical coordinate system\"@en .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem skos:definition \"three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate\"@en .\n")
+ttl.add("geocrs:CylindricalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:label \"curvilinear coordinate system\"@en .\n")
+ttl.add("geocrs:CurvilinearCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:PolarCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:PolarCoordinateSystem rdfs:subClassOf geocrs:OrthogonalCoordinateSystem, geocrs:PlanarCoordinateSystem .\n")
+ttl.add("geocrs:PolarCoordinateSystem rdfs:label \"polar coordinate system\"@en .\n")
+ttl.add("geocrs:PolarCoordinateSystem skos:definition \"two-dimensional coordinate system in Euclidean space in which position is specified by one distance coordinate and one angular coordinate\"@en .\n")
+ttl.add("geocrs:PolarCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ParametricCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:ParametricCoordinateSystem rdfs:subClassOf geocrs:1DCoordinateSystem .\n")
+ttl.add("geocrs:ParametricCoordinateSystem rdfs:label \"parametric coordinate system\"@en .\n")
+ttl.add("geocrs:ParametricCoordinateSystem skos:definition \"one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial\"@en .\n")
+ttl.add("geocrs:ParametricCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:VerticalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:VerticalCoordinateSystem rdfs:subClassOf geocrs:1DCoordinateSystem .\n")
+ttl.add("geocrs:VerticalCoordinateSystem rdfs:label \"vertical coordinate system\"@en .\n")
+ttl.add("geocrs:VerticalCoordinateSystem skos:definition \"one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth's gravity field\"@en .\n")
+ttl.add("geocrs:VerticalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalCoordinateSystem rdfs:subClassOf geocrs:1DCoordinateSystem .\n")
+ttl.add("geocrs:TemporalCoordinateSystem rdfs:label \"temporal coordinate system\"@en .\n")
+ttl.add("geocrs:TemporalCoordinateSystem skos:definition \"one-dimensionalcoordinate system where the axis is time\"@en .\n")
+ttl.add("geocrs:TemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:label \"date time temporal coordinate system\"@en .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem skos:definition \"one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.\"@en .\n")
+ttl.add("geocrs:DateTimeTemporalCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalCountCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalCountCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .\n")
+ttl.add("geocrs:TemporalCountCoordinateSystem rdfs:label \"temporal count coordinate system\"@en .\n")
+ttl.add("geocrs:TemporalCountCoordinateSystem skos:definition \"one-dimensional coordinate system used to record time as an integer count\"@en .\n")
+ttl.add("geocrs:TemporalCountCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalMeasureCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalMeasureCoordinateSystem rdfs:subClassOf geocrs:TemporalCoordinateSystem .\n")
+ttl.add("geocrs:TemporalMeasureCoordinateSystem rdfs:label \"temporal measure coordinate system\"@en .\n")
+ttl.add("geocrs:TemporalMeasureCoordinateSystem skos:definition \"one-dimensional coordinate system used to record a time as a real number\"@en .\n")
+ttl.add("geocrs:TemporalMeasureCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CRS rdf:type owl:Class .\n")
+ttl.add("geocrs:CRS rdfs:label \"coordinate reference system\"@en .\n")
+ttl.add("geocrs:CRS rdfs:subClassOf geocrs:SpatialReferenceSystem .\n")
+ttl.add("geocrs:CRS skos:definition \"coordinate system that is related to an object by a datum\"@en .\n")
+ttl.add("geocrs:CRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:AreaCode rdf:type owl:Class .\n")
+ttl.add("geocrs:AreaCode rdfs:label \"area code\"@en .\n")
+ttl.add("geocrs:AreaCode rdfs:subClassOf geocrs:LocalGridReferenceSystem .\n")
+ttl.add("geocrs:AreaCode skos:definition \"a code which describes a certain area for a specific semantic purpose\"@en .\n")
+ttl.add("geocrs:AreaCode skos:example \"ISO country code\"@en .\n")
+ttl.add("geocrs:AreaCode rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:AdministrativeCode rdf:type owl:Class .\n")
+ttl.add("geocrs:AdministrativeCode rdfs:subClassOf geocrs:AreaCode .\n")
+ttl.add("geocrs:AdministrativeCode rdfs:label \"administrative code\"@en .\n")
+ttl.add("geocrs:AdministrativeCode rdfs:subClassOf geocrs:GeocodeSystem .\n")
+ttl.add("geocrs:AdministrativeCode skos:definition \"a code which describes an administrative area\"@en .\n")
+ttl.add("geocrs:AdministrativeCode rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GridReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:GridReferenceSystem rdfs:label \"grid reference system\"@en .\n")
+ttl.add("geocrs:GridReferenceSystem rdfs:subClassOf geocrs:GeocodeSystem .\n")
+ttl.add("geocrs:GridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum\"@en .\n")
+ttl.add("geocrs:GridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:label \"hierarchical grid reference system\"@en .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:subClassOf geocrs:GeocodeSystem .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum\"@en .\n")
+ttl.add("geocrs:HierarchicalGridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GlobalGridReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:GlobalGridReferenceSystem rdfs:label \"global grid reference system\"@en .\n")
+ttl.add("geocrs:GlobalGridReferenceSystem rdfs:subClassOf geocrs:GridReferenceSystem .\n")
+ttl.add("geocrs:GlobalGridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum and is valid on the whole earth\"@en .\n")
+ttl.add("geocrs:GlobalGridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:LocalGridReferenceSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:LocalGridReferenceSystem rdfs:label \"local grid reference system\"@en .\n")
+ttl.add("geocrs:LocalGridReferenceSystem rdfs:subClassOf geocrs:GridReferenceSystem .\n")
+ttl.add("geocrs:LocalGridReferenceSystem skos:definition \"a grid that divides space with precise positions relative to a datum and is valid on a part of the earth\"@en .\n")
+ttl.add("geocrs:LocalGridReferenceSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdfs:label \"local coordinate system\"@en .\n")
+ttl.add("geocrs:LocalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:LocalCoordinateSystem skos:definition \"coordinate system with a point of local reference\"@en .\n")
+ttlnoniso.add("geocrs:SpatialIndex rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:SpatialIndex rdfs:label \"spatial index\"@en .\n")
+ttlnoniso.add("geocrs:SpatialIndex rdfs:subClassOf geocrs:GridReferenceSystem .\n")
+ttlnoniso.add("geocrs:SpatialIndex skos:definition \"a grid that divides space with precise positions relative to a datum and acts as a spatial index\"@en .\n")
+ttlnoniso.add("geocrs:SpatialIndex rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SingleCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SingleCRS rdfs:label \"single coordinate reference system\"@en .\n")
+ttl.add("geocrs:SingleCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:SingleCRS skos:definition \"coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble\"@en .\n")
+ttl.add("geocrs:SingleCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GeographicCRS rdfs:subClassOf geocrs:GeodeticCRS .\n")
+ttl.add("geocrs:GeographicCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:GeographicCRS rdfs:label \"geographic coordinate reference system\"@en .\n")
+ttl.add("geocrs:GeographicCRS skos:definition \"coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system\"@en .\n")
+ttl.add("geocrs:GeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:AffineCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:AffineCoordinateSystem rdf:type owl:Class .\n")
+ttl.add("geocrs:AffineCoordinateSystem owl:equivalentClass wd:Q382510 .\n")
+ttl.add("geocrs:AffineCoordinateSystem rdfs:label \"affine coordinate system\"@en .\n")
+ttl.add("geocrs:AffineCoordinateSystem skos:definition \"coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular\"@en .\n")
+ttl.add("geocrs:AffineCoordinateSystem rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GeodeticCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:GeodeticCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:GeodeticCRS rdfs:label \"geodetic coordinate reference system\"@en .\n")
+ttl.add("geocrs:GeodeticCRS owl:disjointWith geocrs:CartesianCoordinateSystem, geocrs:CompoundCRS, geocrs:EllipsoidalCoordinateSystem .\n")
+ttl.add("geocrs:GeodeticCRS skos:definition \"three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system\"@en .\n")
+ttl.add("geocrs:GeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:CompoundCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:CompoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:CompoundCRS skos:definition \"coordinate reference system using at least two independent coordinate reference systems\"@en .\n")
+ttl.add("geocrs:CompoundCRS rdfs:label \"compound coordinate reference system\"@en .\n")
+ttl.add("geocrs:CompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SpatialCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .\n")
+ttl.add("geocrs:SpatialCompoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatialCompoundCRS skos:definition \"coordinate reference system using a combination of two compatible spatial reference systems\"@en .\n")
+ttl.add("geocrs:SpatialCompoundCRS rdfs:label \"spatial compound coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatialCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SpatioTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .\n")
+ttl.add("geocrs:SpatioTemporalCompoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatioTemporalCompoundCRS skos:definition \"coordinate reference system combining a spatial reference system with at least one temporal reference system\"@en .\n")
+ttl.add("geocrs:SpatioTemporalCompoundCRS rdfs:label \"spatio-temporal compound coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SpatioParametricCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .\n")
+ttl.add("geocrs:SpatioParametricCompoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatioParametricCompoundCRS skos:definition \"A spatio-parametric coordinate reference system is a compound CRS in which one component is a geographic 2D, projected 2D or engineering 2D CRS, supplemented by a parametric CRS to create a three-dimensional CRS\"@en .\n")
+ttl.add("geocrs:SpatioParametricCompoundCRS rdfs:label \"spatio-parametric compound coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioParametricCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdfs:subClassOf geocrs:CompoundCRS .\n")
+ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdfs:label \"spatio-parametric-temporal compound coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioParametricTemporalCompoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:BoundCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:BoundCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:BoundCRS rdfs:label \"bound coordinate reference system\"@en .\n")
+ttl.add("geocrs:BoundCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DynamicCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:DynamicCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DynamicCRS rdfs:label \"dynamic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DynamicCRS skos:definition \"coordinate reference system that has a dynamic reference frame\"@en .\n")
+ttl.add("geocrs:DynamicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:TemporalCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalCRS rdfs:label \"temporal coordinate reference system\"@en .\n")
+ttl.add("geocrs:TemporalCRS skos:definition \"coordinate reference system based on a temporal datum\"@en .\n")
+ttl.add("geocrs:TemporalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ParametricCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:ParametricCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:ParametricCRS rdfs:label \"parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:ParametricCRS skos:definition \"one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial\"@en .\n")
+ttl.add("geocrs:ParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:SpatioParametricCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:SpatioParametricCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:SpatioParametricCRS rdfs:label \"spatio-Parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioParametricCRS skos:definition \"compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:SpatioParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:GeographicCRS .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdfs:label \"derived geographic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedGeographicCRS skos:definition \"coordinate reference system that is defined through the application of a specified coordinate conversion to the coordinates within a previously established coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedGeographicCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:ProjectedCRS .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdfs:label \"derived projected coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCRS skos:definition \"derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:DerivedCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedCRS rdfs:label \"derived coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedCRS skos:definition \"derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS\"@en .\n")
+ttl.add("geocrs:DerivedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:VerticalCRS .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdfs:label \"derived vertical coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedVerticalCRS skos:definition \"derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedVerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdfs:subClassOf geocrs:GeodeticCRS .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdfs:label \"derived geodetic coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedGeodeticCRS skos:definition \"derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedGeodeticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:ParametricCRS .\n")
+ttl.add("geocrs:DerivedParametricCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedParametricCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedParametricCRS rdfs:label \"derived parametric coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedParametricCRS skos:definition \"derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedParametricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:EngineeringCRS .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdfs:label \"derived engineering coordinate reference system\"@en .\n")
+ttl.add("geocrs:DerivedEngineeringCRS skos:definition \"derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class\"@en .\n")
+ttl.add("geocrs:DerivedEngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:EngineeringCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:EngineeringCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:EngineeringCRS skos:definition \"coordinate reference system based on an engineering datum\"@en .\n")
+ttl.add("geocrs:EngineeringCRS rdfs:label \"engineering coordinate reference system\"@en .\n")
+ttl.add("geocrs:EngineeringCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:VerticalCRS rdfs:subClassOf geocrs:SingleCRS .\n")
+ttl.add("geocrs:VerticalCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:VerticalCRS rdfs:label \"vertical coordinate reference system\"@en .\n")
+ttl.add("geocrs:VerticalCRS skos:definition \"one-dimensional coordinate reference system based on a vertical reference frame\"@en .\n")
+ttl.add("geocrs:VerticalCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GeocentricCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:GeocentricCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:GeocentricCRS rdfs:label \"geocentric coordinate reference system\"@en .\n")
+ttl.add("geocrs:GeocentricCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:HorizontalDatum rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:HorizontalDatum rdf:type owl:Class .\n")
+ttl.add("geocrs:HorizontalDatum rdfs:label \"horizontal datum\"@en .\n")
+ttl.add("geocrs:HorizontalDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:GeodeticReferenceFrame rdfs:subClassOf geocrs:HorizontalDatum .\n")
+ttl.add("geocrs:GeodeticReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geocrs:GeodeticReferenceFrame rdfs:label \"geodetic reference frame\"@en .\n")
+ttl.add("geocrs:GeodeticReferenceFrame skos:definition \"reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth\"@en .\n")
+ttl.add("geocrs:GeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DynamicReferenceFrame rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:DynamicReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geocrs:DynamicReferenceFrame rdfs:label \"dynamic reference frame\"@en .\n")
+ttl.add("geocrs:DynamicReferenceFrame skos:definition \"reference frame in which the defining parameters include time evolution\"@en .\n")
+ttl.add("geocrs:DynamicReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:subClassOf geocrs:GeodeticReferenceFrame, geocrs:DynamicReferenceFrame .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:label \"dynamic geodetic reference frame\"@en .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame skos:definition \"geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates\"@en .\n")
+ttl.add("geocrs:DynamicGeodeticReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:subClassOf geocrs:VerticalReferenceFrame, geocrs:DynamicReferenceFrame .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:label \"dynamic vertical reference frame\"@en .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame skos:definition \"vertical reference frame in which some of the defining parameters have time dependency\"@en .\n")
+ttl.add("geocrs:DynamicVerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:VerticalReferenceFrame rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:VerticalReferenceFrame rdf:type owl:Class .\n")
+ttl.add("geocrs:VerticalReferenceFrame rdfs:label \"vertical reference frame\"@en .\n")
+ttl.add("geocrs:VerticalReferenceFrame skos:definition \"reference frame describing the relation of gravity-related heights or depths to the Earth\"@en .\n")
+ttl.add("geocrs:VerticalReferenceFrame rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:StaticCRS rdfs:subClassOf geocrs:CRS .\n")
+ttl.add("geocrs:StaticCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:StaticCRS rdfs:label \"Static coordinate reference system\"@en .\n")
+ttl.add("geocrs:StaticCRS skos:definition \"coordinate reference system that has a static reference frame\"@en .\n")
+ttl.add("geocrs:StaticCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ProjectedCRS rdfs:subClassOf geocrs:DerivedCRS .\n")
+ttl.add("geocrs:ProjectedCRS rdf:type owl:Class .\n")
+ttl.add("geocrs:ProjectedCRS rdfs:label \"projected coordinate reference system\"@en .\n")
+ttl.add("geocrs:ProjectedCRS skos:definition \"coordinate reference system derived from a geographic coordinate reference system by applying a map projection\"@en .\n")
+ttl.add("geocrs:ProjectedCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:Datum rdf:type owl:Class .\n")
+ttl.add("geocrs:Datum owl:equivalentClass wd:Q1502887 .\n")
+ttl.add("geocrs:Datum rdfs:label \"datum\"@en .\n")
+ttl.add("geocrs:Datum skos:definition \"specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system\"@en .\n")
+ttl.add("geocrs:Datum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DatumEnsemble rdf:type owl:Class .\n")
+ttl.add("geocrs:DatumEnsemble rdfs:label \"datum ensemble\"@en .\n")
+ttl.add("geocrs:DatumEnsemble skos:definition \"collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other\"@en .\n")
+ttl.add("geocrs:DatumEnsemble rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:ParametricDatum rdf:type owl:Class .\n")
+ttl.add("geocrs:ParametricDatum rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:ParametricDatum rdfs:label \"parametric datum\"@en .\n")
+ttl.add("geocrs:ParametricDatum skos:definition \"textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth\"@en .\n")
+ttl.add("geocrs:ParametricDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TemporalDatum rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:TemporalDatum rdf:type owl:Class .\n")
+ttl.add("geocrs:TemporalDatum rdfs:label \"temporal datum\"@en .\n")
+ttl.add("geocrs:TemporalDatum skos:definition \"coordinate reference system based on a temporal datum\"@en .\n")
+ttl.add("geocrs:TemporalDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:EngineeringDatum rdfs:subClassOf geocrs:Datum .\n")
+ttl.add("geocrs:EngineeringDatum rdf:type owl:Class .\n")
+ttl.add("geocrs:EngineeringDatum rdfs:label \"engineering datum\"@en .\n")
+ttl.add("geocrs:EngineeringDatum skos:definition \"datum describing the relationship of a coordinate system to a local reference\"@en .\n")
+ttl.add("geocrs:EngineeringDatum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:Ellipsoid rdf:type owl:Class .\n")
+ttl.add("geocrs:Ellipsoid rdfs:subClassOf geocrs:Geoid .\n")
+ttl.add("geocrs:Ellipsoid rdfs:label \"ellipsoid\"@en .\n")
+ttl.add("geocrs:Ellipsoid owl:disjointWith geocrs:PrimeMeridian .\n")
+ttl.add("geocrs:Ellipsoid skos:definition \"reference ellipsoid\"@en .\n")
+ttl.add("geocrs:Ellipsoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:TriaxialEllipsoid rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:TriaxialEllipsoid rdfs:subClassOf geocrs:Ellipsoid.\n")
+ttlnoniso.add("geocrs:TriaxialEllipsoid rdfs:label \"triaxial ellipsoid\"@en .\n")
+ttlnoniso.add("geocrs:TriaxialEllipsoid owl:disjointWith geocrs:PrimeMeridian .\n")
+ttlnoniso.add("geocrs:TriaxialEllipsoid skos:definition \"triaxial reference ellipsoid\"@en .\n")
+ttl.add("geocrs:Sphere rdf:type owl:Class .\n")
+ttl.add("geocrs:Sphere rdfs:subClassOf geocrs:Geoid .\n")
+ttl.add("geocrs:Sphere rdfs:label \"sphere\"@en .\n")
+ttl.add("geocrs:Sphere skos:definition \"reference sphere\"@en .\n")
+ttl.add("geocrs:Sphere rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:Geoid rdf:type owl:Class .\n")
+ttl.add("geocrs:Geoid rdfs:label \"geoid\"@en .\n")
+ttl.add("geocrs:Geoid skos:definition \"equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally\"@en .\n")
+ttl.add("geocrs:Geoid rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:PrimeMeridian rdf:type owl:Class .\n")
+ttl.add("geocrs:PrimeMeridian rdfs:label \"prime meridian\"@en .\n")
+ttl.add("geocrs:PrimeMeridian skos:definition \"meridian from which the longitudes of other meridians are quantified\"@en .\n")
+ttl.add("geocrs:PrimeMeridian rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttlnoniso.add("geocrs:SRSRegistry rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:SRSRegistry rdfs:label \"srs registry\"@en .\n")
+ttlnoniso.add("geocrs:SRSRegistry skos:definition \"A rdf-enabled registry for SRS definitions\"@en .\n")
+ttl.add("geocrs:OperationParameter rdf:type owl:Class .\n")
+ttl.add("geocrs:OperationParameter rdfs:label \"operation parameter\"@en .\n")
+ttl.add("geocrs:OperationParameter skos:definition \"Parameter used by a method to perform some coordinate operation\"@en .\n")
+ttl.add("geocrs:OperationValue rdf:type owl:Class .\n")
+ttl.add("geocrs:OperationValue rdfs:label \"operation value\"@en .\n")
+ttl.add("geocrs:OperationValue skos:definition \"Value of a parameter used by a method to perform some coordinate operation\"@en .\n")
+ttl.add("geocrs:CoordinateOperation rdf:type owl:Class .\n")
+ttl.add("geocrs:CoordinateOperation rdfs:label \"coordinate operation\"@en .\n")
+ttl.add("geocrs:CoordinateOperation skos:definition \"mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch\"@en .\n")
+ttl.add("geocrs:CoordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:2DCoordinateTransformationOperation rdf:type owl:Class .\n")
+ttl.add("geocrs:2DCoordinateTransformationOperation rdfs:subClassOf geocrs:CoordinateTransformationOperation .\n")
+ttl.add("geocrs:2DCoordinateTransformationOperation rdfs:label \"2d coordinate transformation operation\"@en .\n")
+ttl.add("geocrs:2DCoordinateTransformationOperation skos:definition \"Coordinate operation in which the two 2-dimensional coordinate reference systems are based on different datums\"@en .\n")
+ttl.add("geocrs:2DCoordinateTransformationOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:3DCoordinateTransformationOperation rdf:type owl:Class .\n")
+ttl.add("geocrs:3DCoordinateTransformationOperation rdfs:subClassOf geocrs:CoordinateTransformationOperation .\n")
+ttl.add("geocrs:3DCoordinateTransformationOperation rdfs:label \"3d coordinate transformation operation\"@en .\n")
+ttl.add("geocrs:3DCoordinateTransformationOperation skos:definition \"Coordinate operation in which the two 3-dimensional coordinate reference systems are based on different datums\"@en .\n")
+ttl.add("geocrs:3DCoordinateTransformationOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:AffineTransformation rdf:type owl:Class .\n")
+ttl.add("geocrs:AffineTransformation rdfs:subClassOf geocrs:Transformation .\n")
+ttl.add("geocrs:AffineTransformation rdfs:label \"affine coordinate transformation operation\"@en .\n")
+ttl.add("geocrs:ReflectionOperation rdf:type owl:Class .\n")
+ttl.add("geocrs:ReflectionOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttl.add("geocrs:ReflectionOperation rdfs:label \"reflection transformation operation\"@en .\n")
+ttl.add("geocrs:ScaleOperation rdf:type owl:Class .\n")
+ttl.add("geocrs:ScaleOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttl.add("geocrs:ScaleOperation rdfs:label \"scale transformation operation\"@en .\n")
+ttlnoniso.add("geocrs:GeoSPARQLSRS rdf:type owl:Ontology .\n")
+ttlnoniso.add("geocrs:GeoSPARQLSRS dc:creator wd:Q67624599 .\n")
+ttlnoniso.add("geocrs:GeoSPARQLSRS dc:description \"This ontology models spatial reference systems\"@en .\n")
+ttlnoniso.add("geocrs:GeoSPARQLSRS rdfs:label \"GeoSPARQL SRS Ontology Draft NonISO classes\"@en .\n")
+ttlnoniso.add("geocrs:RotationOperation rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:RotationOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttlnoniso.add("geocrs:RotationOperation rdfs:label \"rotation transformation operation\"@en .\n")
+ttlnoniso.add("geocrs:TranslationOperation rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:TranslationOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttlnoniso.add("geocrs:TranslationOperation rdfs:label \"translation transformation operation\"@en .\n")
+ttlnoniso.add("geocrs:IdentityOperation rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:IdentityOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttlnoniso.add("geocrs:IdentityOperation rdfs:label \"identity transformation operation\"@en .\n")
+ttlnoniso.add("geocrs:ShearOperation rdf:type owl:Class .\n")
+ttlnoniso.add("geocrs:ShearOperation rdfs:subClassOf geocrs:AffineTransformation .\n")
+ttlnoniso.add("geocrs:ShearOperation rdfs:label \"shear transformation operation\"@en .\n")
+ttlnoniso.add("geocrs:asProj4 rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:asProj4 rdfs:label \"asProj4\"@en .\n")
+ttlnoniso.add("geocrs:asProj4 skos:definition \"proj4 representation of the CRS\"@en .\n")
+ttlnoniso.add("geocrs:asProj4 rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:asProj4 rdfs:domain geocrs:CRS, geocrs:CoordinateSystem, geocrs:PrimeMeridian .\n")
+ttlnoniso.add("geocrs:asProjJSON rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:asProjJSON rdfs:label \"asProjJSON\"@en .\n")
+ttlnoniso.add("geocrs:asProjJSON skos:definition \"ProjJSON representation of the CRS\"@en .\n")
+ttlnoniso.add("geocrs:asProjJSON rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:asProjJSON rdfs:domain geocrs:CRS, geocrs:CoordinateSystem, geocrs:PrimeMeridian .\n")
+ttlnoniso.add("geocrs:isProjected rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isProjected rdfs:label \"isProjected\"@en .\n")
+ttlnoniso.add("geocrs:isProjected skos:definition \"Indicates if the spatial reference system is projected\"@en .\n")
+ttlnoniso.add("geocrs:isProjected rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isProjected rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:isGeographic rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isGeographic rdfs:label \"isGeographic\"@en .\n")
+ttlnoniso.add("geocrs:isGeographic skos:definition \"Indicates if the spatial reference system is geographic\"@en .\n")
+ttlnoniso.add("geocrs:isGeographic rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isGeographic rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:isBound rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isBound rdfs:label \"isBound\"@en .\n")
+ttlnoniso.add("geocrs:isBound skos:definition \"Indicates if the spatial reference system is bound\"@en .\n")
+ttlnoniso.add("geocrs:isBound rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isBound rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:longitude rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:longitude rdfs:label \"longitude\"@en .\n")
+ttlnoniso.add("geocrs:longitude skos:definition \"Longitude of a prime meridian\"@en .\n")
+ttlnoniso.add("geocrs:longitude rdfs:range xsd:double .\n")
+ttlnoniso.add("geocrs:longitude rdfs:domain geocrs:PrimeMeridian .\n")
+ttlnoniso.add("geocrs:isGeocentric rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isGeocentric rdfs:label \"isGeocentric\"@en .\n")
+ttlnoniso.add("geocrs:isGeocentric skos:definition \"Indicates if the spatial reference system is geocentric\"@en .\n")
+ttlnoniso.add("geocrs:isGeocentric rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isGeocentric rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:isDeprecated rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isDeprecated rdfs:label \"isDeprecated\"@en .\n")
+ttlnoniso.add("geocrs:isDeprecated skos:definition \"Indicates if the spatial reference system is deprecated\"@en .\n")
+ttlnoniso.add("geocrs:isDeprecated rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isDeprecated rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:isVertical rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:isVertical rdfs:label \"isVertical\"@en .\n")
+ttlnoniso.add("geocrs:isVertical skos:definition \"Indicates if the spatial reference system is vertical\"@en .\n")
+ttlnoniso.add("geocrs:isVertical rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:isVertical rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:asWKT rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:asWKT rdfs:label \"asWKT\"@en .\n")
+ttlnoniso.add("geocrs:asWKT rdfs:range geocrs:wktLiteral .\n")
+ttlnoniso.add("geocrs:asWKT skos:definition \"WKT representation of the CRS\"@en .\n")
+ttlnoniso.add("geocrs:asWKT rdfs:domain geocrs:CRS, geocrs:CoordinateSystem, geocrs:PrimeMeridian .\n")
+ttl.add("geocrs:coordinateSystem rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:coordinateSystem rdfs:label \"coordinate system\"@en .\n")
+ttl.add("geocrs:coordinateSystem skos:definition \"Associates a coordinate system with a coordinate reference system\"@en .\n")
+ttl.add("geocrs:coordinateSystem rdfs:domain geocrs:CRS .\n")
+ttl.add("geocrs:coordinateSystem rdfs:range geocrs:SingleCRS .\n")
+ttl.add("geocrs:sourceCRS rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:sourceCRS rdfs:label \"source CRS\"@en .\n")
+ttl.add("geocrs:sourceCRS skos:definition \"The dimension of the coordinate reference system associated with the data used as input of an operation\"@en .\n")
+ttl.add("geocrs:sourceCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:sourceCRS rdfs:domain geocrs:CoordinateOperation .\n")
+ttl.add("geocrs:sourceCRS rdfs:range geocrs:CRS .\n")
+ttl.add("geocrs:targetCRS rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:targetCRS rdfs:label \"target CRS\"@en .\n")
+ttl.add("geocrs:targetCRS skos:definition \"The dimension of the coordinate reference system associated with the data obtained as output of an operation\"@en .\n")
+ttl.add("geocrs:targetCRS rdfs:domain geocrs:CoordinateOperation .\n")
+ttl.add("geocrs:targetCRS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:targetCRS rdfs:range geocrs:CRS .\n")
+ttl.add("geocrs:datum rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:datum rdfs:label \"datum\"@en .\n")
+ttl.add("geocrs:datum skos:definition \"Associates a datum with a coordinate reference system\"@en .\n")
+ttl.add("geocrs:datum rdfs:domain geocrs:CRS .\n")
+ttl.add("geocrs:datum rdfs:domain geocrs:DatumEnsemble .\n")
+ttl.add("geocrs:datum rdfs:range geocrs:Datum, geocrs:SingleCRS .\n")
+ttl.add("geocrs:includesSRS rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:includesSRS rdfs:label \"includes srs\"@en .\n")
+ttl.add("geocrs:includesSRS skos:definition \"Indicates spatial reference systems used by a compound reference system\"@en .\n")
+ttl.add("geocrs:includesSRS rdfs:domain geocrs:CompoundCRS .\n")
+ttl.add("geocrs:includesSRS rdfs:range geocrs:CRS .\n")
+ttlnoniso.add("geocrs:usage rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:usage rdfs:label \"usage\"@en .\n")
+ttlnoniso.add("geocrs:usage skos:definition \"Indicates an application of an SRS for which this datum may be used\"@en .\n")
+ttlnoniso.add("geocrs:usage rdfs:domain geocrs:Datum .\n")
+ttlnoniso.add("geocrs:usage rdfs:range geocrs:SRSApplication .\n")
+ttl.add("geocrs:axis rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:axis rdfs:label \"axis\"@en .\n")
+ttl.add("geocrs:axis skos:definition \"An axis used by some ellipsoidal or cartesian coordinate system\"@en .\n")
+ttl.add("geocrs:axis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:axis rdfs:domain geocrs:CRS .\n")
+ttl.add("geocrs:axis rdfs:range geocrs:CoordinateSystemAxis .\n")
+ttlnoniso.add("geocrs:area_of_use rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:area_of_use rdfs:label \"area of use\"@en .\n")
+ttlnoniso.add("geocrs:area_of_use skos:definition \"Defines an area of use of an operation\"@en .\n")
+ttlnoniso.add("geocrs:area_of_use rdfs:range geocrs:AreaOfUse .\n")
+ttlnoniso.add("geocrs:area_of_use rdfs:domain geocrs:ConcatenatedOperation, geocrs:Conversion, geocrs:Transformation, geocrs:OtherCoordinateOperation, geocrs:CoordinateOperation .\n")
+ttl.add("geocrs:coordinateOperation rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:coordinateOperation rdfs:label \"coordinate operation\"@en .\n")
+ttl.add("geocrs:coordinateOperation skos:definition \"Associates a coordinate operation with a CRS\"@en .\n")
+ttl.add("geocrs:coordinateOperation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:coordinateOperation rdfs:domain geocrs:CRS .\n")
+ttl.add("geocrs:coordinateOperation rdfs:range geocrs:CoordinateOperation .\n")
+ttl.add("geocrs:direction rdf:type owl:ObjectProperty .\n")
+ttl.add("geocrs:direction rdfs:label \"cardinal direction\"@en .\n")
+ttl.add("geocrs:direction skos:definition \"Associates a direction with a datum\"@en .\n")
+ttl.add("geocrs:direction rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:direction rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:direction rdfs:range geocrs:AxisDirection .\n")
+ttlnoniso.add("geocrs:unit_conversion_factor rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:unit_conversion_factor rdfs:label \"unit conversion factor\"@en .\n")
+ttlnoniso.add("geocrs:unit_conversion_factor rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttlnoniso.add("geocrs:unit_conversion_factor rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:isAppliedTo rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:isAppliedTo rdfs:label \"is applied to\"@en .\n")
+ttlnoniso.add("geocrs:isAppliedTo skos:definition \"defines an srs application for which a srs definition has been used\"@en .\n")
+ttlnoniso.add("geocrs:isAppliedTo rdfs:domain geocrs:ReferenceSystem .\n")
+ttlnoniso.add("geocrs:isAppliedTo rdfs:range geocrs:SRSApplication .\n")
+ttlnoniso.add("geocrs:uses rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:uses rdfs:label \"uses\"@en .\n")
+ttlnoniso.add("geocrs:uses skos:definition \"defines an srs application which uses a given projection\"@en .\n")
+ttlnoniso.add("geocrs:uses rdfs:domain geocrs:SRSApplication .\n")
+ttlnoniso.add("geocrs:uses rdfs:range geocrs:Projection .\n")
+ttlnoniso.add("geocrs:isApplicableTo rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:isApplicableTo rdfs:label \"is applicable to\"@en .\n")
+ttlnoniso.add("geocrs:isApplicableTo skos:definition \"defines to which interstellar body the srs is applicable\"@en .\n")
+ttlnoniso.add("geocrs:isApplicableTo rdfs:domain geocrs:SpatialReferenceSystem .\n")
+ttlnoniso.add("geocrs:isApplicableTo rdfs:range geocrs:InterstellarBody .\n")
+ttlnoniso.add("geocrs:approximates rdf:type owl:ObjectProperty .\n")
+ttlnoniso.add("geocrs:approximates rdfs:label \"approximates\"@en .\n")
+ttlnoniso.add("geocrs:approximates skos:definition \"defines an interstellar body which is approximated by the geoid\"@en .\n")
+ttlnoniso.add("geocrs:approximates rdfs:domain geocrs:Geoid .\n")
+ttlnoniso.add("geocrs:approximates rdfs:range geocrs:InterstellarBody .\n")
+ttl.add("geocrs:abbreviation rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:abbreviation rdfs:label \"axis abbreviation\"@en .\n")
+ttl.add("geocrs:abbreviation skos:definition \"The abbreviation used to identify an axis\"@en .\n")
+ttl.add("geocrs:abbreviation rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:abbreviation rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttl.add("geocrs:abbreviation rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:unit_auth_code rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:unit_auth_code rdfs:label \"unit auth code\"@en .\n")
+ttlnoniso.add("geocrs:unit_auth_code rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttlnoniso.add("geocrs:unit_auth_code rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:unit_code rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:unit_code rdfs:label \"unit code\"@en .\n")
+ttlnoniso.add("geocrs:unit_code rdfs:domain geocrs:CoordinateSystemAxis .\n")
+ttlnoniso.add("geocrs:unit_code rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:epsgCode rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:epsgCode rdfs:label \"epsgCode\"@en .\n")
+ttlnoniso.add("geocrs:epsgCode rdfs:domain geocrs:CRS .\n")
+ttlnoniso.add("geocrs:epsgCode rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:accuracy rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:accuracy rdfs:label \"accuracy\"@en .\n")
+ttlnoniso.add("geocrs:accuracy rdfs:domain geocrs:CoordinateOperation .\n")
+ttlnoniso.add("geocrs:accuracy rdfs:range xsd:double .\n")
+ttlnoniso.add("geocrs:eccentricity rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:eccentricity rdfs:label \"eccentricity\"@en .\n")
+ttlnoniso.add("geocrs:eccentricity skos:definition \"deviation of a curve or orbit from circularity\"@en .\n")
+ttlnoniso.add("geocrs:eccentricity rdfs:domain geocrs:Geoid .\n")
+ttlnoniso.add("geocrs:eccentricity rdfs:range xsd:double .\n")
+ttl.add("geocrs:coordinateEpoch rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:label \"coordinate epoch\"@en .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:domain geocrs:DynamicCRS .\n")
+ttl.add("geocrs:coordinateEpoch rdfs:range xsd:double .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdfs:label \"flattening parameter\"@en .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdfs:domain geocrs:Geoid .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdfs:range xsd:double .\n")
+ttl.add("geocrs:semiMajorAxis rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:semiMajorAxis rdfs:label \"semi major axis\"@en .\n")
+ttl.add("geocrs:semiMajorAxis skos:definition \"Indicates the length of the semi major axis of an ellipsoid\"@en .\n")
+ttl.add("geocrs:semiMajorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:semiMajorAxis rdfs:domain geocrs:Geoid .\n")
+ttl.add("geocrs:semiMajorAxis rdfs:range xsd:double .\n")
+ttl.add("geocrs:semiMinorAxis rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:semiMinorAxis rdfs:label \"semi minor axis\"@en .\n")
+ttl.add("geocrs:semiMinorAxis skos:definition \"Indicates the length of the semi minor axis of an ellipsoid\"@en .\n")
+ttl.add("geocrs:semiMinorAxis rdfs:domain geocrs:Geoid .\n")
+ttl.add("geocrs:semiMinorAxis rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:semiMinorAxis rdfs:range xsd:double .\n")
+ttl.add("geocrs:isSphere rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:isSphere rdfs:label \"is sphere\"@en .\n")
+ttl.add("geocrs:isSphere skos:definition \"Indicates whether the ellipsoid is a sphere\"@en .\n")
+ttl.add("geocrs:isSphere rdfs:domain geocrs:Geoid .\n")
+ttl.add("geocrs:isSphere rdfs:range xsd:double .\n")
+ttlnoniso.add("geocrs:extent rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:extent rdfs:label \"extent\"@en .\n")
+ttlnoniso.add("geocrs:extent skos:definition \"The extent of the area of use of a spatial reference system\"@en .\n")
+ttlnoniso.add("geocrs:extent rdfs:domain geocrs:AreaOfUse .\n")
+ttlnoniso.add("geocrs:extent rdfs:range geocrs:wktLiteral .\n")
+ttlnoniso.add("geocrs:utm_zone rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:utm_zone rdfs:label \"utm zone\"@en .\n")
+ttl.add("geocrs:scope rdf:type owl:DatatypeProperty .\n")
+ttl.add("geocrs:scope rdfs:label \"scope\"@en .\n")
+ttl.add("geocrs:scope skos:definition \"the scope of the referring object\"@en .\n")
+ttl.add("geocrs:scope rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:falseNorthing rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:falseNorthing rdfs:label \"false northing\"@en .\n")
+ttlnoniso.add("geocrs:falseNorthing skos:definition \"A value relating to distance north of a standard latitude but with a constant added to make the numbers convenient\"@en .\n")
+ttlnoniso.add("geocrs:falseNorthing rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:falseEasting rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:falseEasting rdfs:label \"false easting\"@en .\n")
+ttlnoniso.add("geocrs:falseEasting skos:definition \"A value relating to distance east of a standard meridian but with a constant added to make the numbers convenient\"@en .\n")
+ttlnoniso.add("geocrs:falseEasting rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdfs:label \"flattening parameter\"@en .\n")
+ttlnoniso.add("geocrs:flatteningParameter rdfs:range xsd:string .\n")
+ttlnoniso.add("geocrs:inverse_flattening rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:inverse_flattening rdfs:label \"inverse flattening\"@en .\n")
+ttlnoniso.add("geocrs:inverse_flattening skos:definition \"Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.)\"@en .\n")
+ttlnoniso.add("geocrs:inverse_flattening rdfs:range xsd:double .\n")
+ttlnoniso.add("geocrs:has_ballpark_transformation rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:has_ballpark_transformation rdfs:label \"has ballpark transformation\"@en .\n")
+ttlnoniso.add("geocrs:has_ballpark_transformation rdfs:range xsd:boolean .\n")
+ttlnoniso.add("geocrs:is_semi_minor_computed rdf:type owl:DatatypeProperty .\n")
+ttlnoniso.add("geocrs:is_semi_minor_computed rdfs:label \"is semi minor computed\"@en .\n")
+ttlnoniso.add("geocrs:is_semi_minor_computed rdfs:range xsd:double .\n")
+geodcounter=1
+graph = Graph()
+graph.parse(data = ttlhead+"".join(ttl), format='turtle')
+graph.serialize(destination='owl/ontology.ttl', format='turtle')
+graph = Graph()
+graph.parse(data = ttlhead+"".join(ttlnoniso), format='turtle')
+graph+=ttlprojectionvocab
+graph+=ttlplanetvocab
+graph+=csvocab
+graph.serialize(destination='owl/ontology_noniso.ttl', format='turtle')
+graph = Graph()
+graph.parse(data = ttlhead+"".join(ttlnoniso), format='turtle')
+graph+=ttlprojectionvocab
+graph+=ttlplanetvocab
+graph+=csvocab
+graph.parse("iso_changed_srsnamespace.ttl",format='turtle')
+graph.serialize(destination='owl/ontology_isobased.ttl', format='turtle')
+
+i=0
+curname=""
+mapp=pyproj.list.get_proj_operations_map()
+ttldata=set()
+parseAdditionalPlanetarySpheroids("exoplanet.eu_catalog.csv",ttldata)
+parseSolarSystemSatellites("solar_system_satellites.csv",ttldata)
+for x in list(range(2000,10000))+list(range(20000,30000)):
+	try:
+		curcrs=CRS.from_epsg(x)
+		print("EPSG: "+str(x))
+	except:
+		continue
+	crsToTTL(ttldata,curcrs,x,geodcounter,None)
+crsToTTL(ttldata,CRS.from_wkt('GEOGCS["GCS_Moon_2000",DATUM["D_Moon_2000",SPHEROID["Moon_2000_IAU_IAG",1737400.0,0.0]],PRIMEM["Moon_Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433]]'),"GCS_Moon",geodcounter,"geocrs:SelenographicCRS")
+f = open("owl/result.nt", "w", encoding="utf-8")
+f.write(ttlhead+"".join(ttl)+"".join(ttldata))
+f.close()
+graph2 = Graph()
+graph2.parse(data = ttlhead+"".join(ttl)+"".join(ttldata), format='n3')
+graph2+=ttlprojectionvocab
+graph2+=ttlplanetvocab
+graph2+=csvocab
+graph2.serialize(destination='owl/result.ttl', format='turtle')
+graph2 = Graph()
+graph2.parse(data = ttlhead+"".join(ttlnoniso)+"".join(ttldata), format='n3')
+graph2+=ttlprojectionvocab
+graph2+=ttlplanetvocab
+graph2+=csvocab
+graph2.parse("iso_changed_srsnamespace.ttl",format='turtle')
+graph2.serialize(destination='owl/result_iso.ttl', format='turtle')
+ttldata=set()
+crsToTTL(ttldata,CRS.from_epsg(7856),7856,geodcounter,None)
+f2=open("owl/epsg7856.ttl","w",encoding="utf-8")
+f2.write(ttlhead
+         #+"".join(ttl)
+         +"".join(ttldata))
+f2.close()
+ttldata=set()
+crsToTTL(ttldata,CRS.from_epsg(32756),32756,geodcounter,None)
+f3=open("owl/epsg32756.ttl","w",encoding="utf-8")
+f3.write(ttlhead
+         #+"".join(ttl)
+         +"".join(ttldata))
+f3.close()
+ttldata=set()
+crsToTTL(ttldata,CRS.from_epsg(8859),8859,geodcounter,None)
+f4=open("owl/epsg8859.ttl","w",encoding="utf-8")
+f4.write(ttlhead
+         #+"".join(ttl)
+         +"".join(ttldata))
+f4.close()
+#f = open("result.ttl", "w", encoding="utf-8")
+#f.write(ttlhead)
+#for line in ttl:
+#	f.write(line)
+#f.close()
+
