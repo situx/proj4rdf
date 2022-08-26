@@ -1459,7 +1459,7 @@ class OntDocGeneration:
                             elif isinstance(tup[1],URIRef):
                                 ttlf.write("<"+str(sub)+"> <"+str(tup[0])+"> <"+str(tup[1])+"> .\n")
                 ttlf.close()
-                indexhtml = htmltemplate.replace("{{baseurl}}", prefixnamespace).replace("{{toptitle}}","Index page for " + nslink).replace("{{title}}","Index page for " + nslink).replace("{{startscriptpath}}", scriptlink).replace("{{stylepath}}", stylelink)\
+                indexhtml = htmltemplate.replace("{{baseurl}}", prefixnamespace).replace("{{relativedepth}}",str(checkdepth)).replace("{{toptitle}}","Index page for " + nslink).replace("{{title}}","Index page for " + nslink).replace("{{startscriptpath}}", scriptlink).replace("{{stylepath}}", stylelink)\
                     .replace("{{classtreefolderpath}}",classtreelink).replace("{{baseurlhtml}}", nslink).replace("{{scriptfolderpath}}", sfilelink).replace("{{exports}}",nongeoexports)
                 if nslink==prefixnamespace:
                     indexhtml=indexhtml.replace("{{indexpage}}","true")
@@ -1636,9 +1636,9 @@ class OntDocGeneration:
         if foundunit!=None and foundval!=None and label!=None:
             res=self.replaceNameSpacesInLabel(str(foundunit))
             if res!=None:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\">"+res["uri"]+"</a>"
+                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+res["uri"]+"</a>"
             else:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\">"+str(self.shortenURI(foundunit))+"</a>"
+                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(self.shortenURI(foundunit))+"</a>"
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
@@ -1968,7 +1968,6 @@ class OntDocGeneration:
                     if image=="<svg width=":
                         continue
                     if "<svg" in image:
-                        print("SVGGGGG: "+str(image))
                         if "<svg>" in image:
                             f.write(imagestemplatesvg.replace("{{carousel}}",carousel).replace("{{image}}", str(image.replace("<svg>","<svg class=\"svgview\">"))))
                         else:
