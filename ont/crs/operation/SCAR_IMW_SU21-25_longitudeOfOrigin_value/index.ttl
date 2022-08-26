@@ -1,0 +1,5 @@
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SU21-25_longitudeOfOrigin_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SU21-25_longitudeOfOrigin_value> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SU21-25_longitudeOfOrigin_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "-45.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SU21-25_longitudeOfOrigin_value> <http://www.w3.org/2000/01/rdf-schema#label> "SCAR IMW SU21-25: Polar Stereographic (variant B): Parameter Longitude of origin" .
+<http://www.opengis.net/ont/crs/operation/SCAR_IMW_SU21-25_longitudeOfOrigin_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

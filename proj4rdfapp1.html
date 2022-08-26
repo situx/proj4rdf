@@ -263,13 +263,14 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "CS Extension Ontology"
+        "@language": "en",
+        "@value": "Projection Ontology"
       }
     ]
   },
@@ -297,6 +298,17 @@
     ]
   },
   {
+    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CS Extension Ontology"
+      }
+    ]
+  },
+  {
     "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -304,18 +316,6 @@
     "https://schema.org/name": [
       {
         "@value": "Planet Ontology"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Projection Ontology"
       }
     ]
   }
@@ -6049,25 +6049,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="operationparameter">
-          <h3>operation parameter
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/OperationParameter</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>Parameter used by a method to perform some coordinate operation</p></td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="operationvalue">
           <h3>operation value
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -11230,6 +11211,76 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="coordinateoperation">
+          <h3>coordinate operationcoordinate operation
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/CoordinateOperation</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/sourceCRS">geocrs:sourceCRS</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/targetCRS">geocrs:targetCRS</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/coordinateOperation">geocrs:coordinateOperation</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Conversion">geocrs:Conversion</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="krovakprojection">
           <h3>krovak projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -14121,226 +14172,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="coordinateoperation">
-          <h3>coordinate operationcoordinate operation
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/CoordinateOperation</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/angleFromRectifiedToSkewGrid">geocrs:angleFromRectifiedToSkewGrid</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/azimuthOfInitialLine">geocrs:azimuthOfInitialLine</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/co-LatitudeOfConeAxis">geocrs:co-LatitudeOfConeAxis</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/eastingAtFalseOrigin">geocrs:eastingAtFalseOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/eastingAtProjectionCentre">geocrs:eastingAtProjectionCentre</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/ellipsoidScalingFactor">geocrs:ellipsoidScalingFactor</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/falseEasting">geocrs:falseEasting</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/falseNorthing">geocrs:falseNorthing</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOf1StStandardParallel">geocrs:latitudeOf1StStandardParallel</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOf2NdStandardParallel">geocrs:latitudeOf2NdStandardParallel</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOfFalseOrigin">geocrs:latitudeOfFalseOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin">geocrs:latitudeOfNaturalOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOfProjectionCentre">geocrs:latitudeOfProjectionCentre</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOfPseudoStandardParallel">geocrs:latitudeOfPseudoStandardParallel</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/latitudeOfStandardParallel">geocrs:latitudeOfStandardParallel</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/longitudeOfFalseOrigin">geocrs:longitudeOfFalseOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin">geocrs:longitudeOfNaturalOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/longitudeOfOrigin">geocrs:longitudeOfOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/longitudeOfProjectionCentre">geocrs:longitudeOfProjectionCentre</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/northingAtFalseOrigin">geocrs:northingAtFalseOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/northingAtProjectionCentre">geocrs:northingAtProjectionCentre</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/projectionPlaneOriginHeight">geocrs:projectionPlaneOriginHeight</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin">geocrs:scaleFactorAtNaturalOrigin</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/scaleFactorOnInitialLine">geocrs:scaleFactorOnInitialLine</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel">geocrs:scaleFactorOnPseudoStandardParallel</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/sourceCRS">geocrs:sourceCRS</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/targetCRS">geocrs:targetCRS</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/coordinateOperation">geocrs:coordinateOperation</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/Conversion">geocrs:Conversion</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="cassiniprojection">
           <h3>cassini projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -16338,6 +16169,25 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="operationparameter">
+          <h3>operation parameter
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/OperationParameter</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Parameter used by a method to perform some coordinate operation</p></td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
@@ -16908,102 +16758,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="AnglefromRectifiedtoSkewGrid">
-          <h3>Angle from Rectified to Skew Grid
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/angleFromRectifiedToSkewGrid</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Azimuthofinitialline">
-          <h3>Azimuth of initial line
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/azimuthOfInitialLine</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Co-latitudeofconeaxis">
-          <h3>Co-latitude of cone axis
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/co-LatitudeOfConeAxis</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="coordinateepoch">
           <h3>coordinate epoch
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -17022,166 +16776,6 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/DynamicCRS">geocrs:DynamicCRS</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Eastingatfalseorigin">
-          <h3>Easting at false origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/eastingAtFalseOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Eastingatprojectioncentre">
-          <h3>Easting at projection centre
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/eastingAtProjectionCentre</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Ellipsoidscalingfactor">
-          <h3>Ellipsoid scaling factor
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/ellipsoidScalingFactor</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Falseeasting">
-          <h3>False easting
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/falseEasting</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Falsenorthing">
-          <h3>False northing
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/falseNorthing</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -17234,358 +16828,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Latitudeof1ststandardparallel">
-          <h3>Latitude of 1st standard parallel
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOf1StStandardParallel</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeof2ndstandardparallel">
-          <h3>Latitude of 2nd standard parallel
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOf2NdStandardParallel</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeoffalseorigin">
-          <h3>Latitude of false origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOfFalseOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeofnaturalorigin">
-          <h3>Latitude of natural origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOfNaturalOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeofprojectioncentre">
-          <h3>Latitude of projection centre
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOfProjectionCentre</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeofpseudostandardparallel">
-          <h3>Latitude of pseudo standard parallel
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOfPseudoStandardParallel</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Latitudeofstandardparallel">
-          <h3>Latitude of standard parallel
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/latitudeOfStandardParallel</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Longitudeoffalseorigin">
-          <h3>Longitude of false origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/longitudeOfFalseOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Longitudeofnaturalorigin">
-          <h3>Longitude of natural origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/longitudeOfNaturalOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Longitudeoforigin">
-          <h3>Longitude of origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/longitudeOfOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Longitudeofprojectioncentre">
-          <h3>Longitude of projection centre
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/longitudeOfProjectionCentre</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="mass">
           <h3>mass
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -17610,70 +16852,6 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Northingatfalseorigin">
-          <h3>Northing at false origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/northingAtFalseOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Northingatprojectioncentre">
-          <h3>Northing at projection centre
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/northingAtProjectionCentre</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -17720,38 +16898,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Projectionplaneoriginheight">
-          <h3>Projection plane origin height
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/projectionPlaneOriginHeight</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="radius">
           <h3>radius
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -17770,102 +16916,6 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Scalefactoratnaturalorigin">
-          <h3>Scale factor at natural origin
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/scaleFactorAtNaturalOrigin</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Scalefactoroninitialline">
-          <h3>Scale factor on initial line
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/scaleFactorOnInitialLine</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="Scalefactoronpseudostandardparallel">
-          <h3>Scale factor on pseudo standard parallel
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/scaleFactorOnPseudoStandardParallel</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -18859,9 +17909,6 @@
               <a href="#octantprojection">octant projection</a>
             </li>
             <li>
-              <a href="#operationparameter">operation parameter</a>
-            </li>
-            <li>
               <a href="#operationvalue">operation value</a>
             </li>
             <li>
@@ -19303,6 +18350,9 @@
               <a href="#temporalcoordinatesystem">temporal coordinate system</a>
             </li>
             <li>
+              <a href="#coordinateoperation">coordinate operationcoordinate operation</a>
+            </li>
+            <li>
               <a href="#krovakprojection">krovak projection</a>
             </li>
             <li>
@@ -19393,9 +18443,6 @@
               <a href="#albersequal-areaprojection">albers equal-area projection</a>
             </li>
             <li>
-              <a href="#coordinateoperation">coordinate operationcoordinate operation</a>
-            </li>
-            <li>
               <a href="#cassiniprojection">cassini projection</a>
             </li>
             <li>
@@ -19470,6 +18517,9 @@
             <li>
               <a href="#areaofuse">area of use</a>
             </li>
+            <li>
+              <a href="#operationparameter">operation parameter</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -19527,94 +18577,19 @@
               <a href="#axisabbreviation">axis abbreviation</a>
             </li>
             <li>
-              <a href="#AnglefromRectifiedtoSkewGrid">Angle from Rectified to Skew Grid</a>
-            </li>
-            <li>
-              <a href="#Azimuthofinitialline">Azimuth of initial line</a>
-            </li>
-            <li>
-              <a href="#Co-latitudeofconeaxis">Co-latitude of cone axis</a>
-            </li>
-            <li>
               <a href="#coordinateepoch">coordinate epoch</a>
-            </li>
-            <li>
-              <a href="#Eastingatfalseorigin">Easting at false origin</a>
-            </li>
-            <li>
-              <a href="#Eastingatprojectioncentre">Easting at projection centre</a>
-            </li>
-            <li>
-              <a href="#Ellipsoidscalingfactor">Ellipsoid scaling factor</a>
-            </li>
-            <li>
-              <a href="#Falseeasting">False easting</a>
-            </li>
-            <li>
-              <a href="#Falsenorthing">False northing</a>
             </li>
             <li>
               <a href="#issphere">is sphere</a>
             </li>
             <li>
-              <a href="#Latitudeof1ststandardparallel">Latitude of 1st standard parallel</a>
-            </li>
-            <li>
-              <a href="#Latitudeof2ndstandardparallel">Latitude of 2nd standard parallel</a>
-            </li>
-            <li>
-              <a href="#Latitudeoffalseorigin">Latitude of false origin</a>
-            </li>
-            <li>
-              <a href="#Latitudeofnaturalorigin">Latitude of natural origin</a>
-            </li>
-            <li>
-              <a href="#Latitudeofprojectioncentre">Latitude of projection centre</a>
-            </li>
-            <li>
-              <a href="#Latitudeofpseudostandardparallel">Latitude of pseudo standard parallel</a>
-            </li>
-            <li>
-              <a href="#Latitudeofstandardparallel">Latitude of standard parallel</a>
-            </li>
-            <li>
-              <a href="#Longitudeoffalseorigin">Longitude of false origin</a>
-            </li>
-            <li>
-              <a href="#Longitudeofnaturalorigin">Longitude of natural origin</a>
-            </li>
-            <li>
-              <a href="#Longitudeoforigin">Longitude of origin</a>
-            </li>
-            <li>
-              <a href="#Longitudeofprojectioncentre">Longitude of projection centre</a>
-            </li>
-            <li>
               <a href="#mass">mass</a>
-            </li>
-            <li>
-              <a href="#Northingatfalseorigin">Northing at false origin</a>
-            </li>
-            <li>
-              <a href="#Northingatprojectioncentre">Northing at projection centre</a>
             </li>
             <li>
               <a href="#orbitalperiod">orbital period</a>
             </li>
             <li>
-              <a href="#Projectionplaneoriginheight">Projection plane origin height</a>
-            </li>
-            <li>
               <a href="#radius">radius</a>
-            </li>
-            <li>
-              <a href="#Scalefactoratnaturalorigin">Scale factor at natural origin</a>
-            </li>
-            <li>
-              <a href="#Scalefactoroninitialline">Scale factor on initial line</a>
-            </li>
-            <li>
-              <a href="#Scalefactoronpseudostandardparallel">Scale factor on pseudo standard parallel</a>
             </li>
             <li>
               <a href="#scope">scope</a>

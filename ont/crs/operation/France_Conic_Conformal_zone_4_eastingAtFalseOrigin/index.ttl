@@ -1,5 +1,6 @@
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/metre> .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "1700000.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "France Conic Conformal zone 4: Lambert Conic Conformal (2SP): Parameter Easting at false origin" .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.opengis.net/ont/crs/usesValue> <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin_value> .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameter> .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameterValue> .
+<http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Easting at false origin"@en .
 <http://www.opengis.net/ont/crs/operation/France_Conic_Conformal_zone_4_eastingAtFalseOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

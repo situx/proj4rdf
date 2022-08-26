@@ -1,5 +1,6 @@
 <http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
-<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "49.5"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.w3.org/2000/01/rdf-schema#label> "Krovak: Krovak: Parameter Latitude of projection centre" .
+<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.opengis.net/ont/crs/usesValue> <http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre_value> .
+<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameter> .
+<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameterValue> .
+<http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://www.w3.org/2000/01/rdf-schema#label> "Latitude of projection centre"@en .
 <http://www.opengis.net/ont/crs/operation/Krovak_latitudeOfProjectionCentre> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

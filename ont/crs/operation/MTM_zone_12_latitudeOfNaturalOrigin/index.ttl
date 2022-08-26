@@ -1,5 +1,6 @@
 <http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
-<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "MTM zone 12: Transverse Mercator: Parameter Latitude of natural origin" .
+<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.opengis.net/ont/crs/usesValue> <http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin_value> .
+<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameter> .
+<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameterValue> .
+<http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Latitude of natural origin"@en .
 <http://www.opengis.net/ont/crs/operation/MTM_zone_12_latitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
