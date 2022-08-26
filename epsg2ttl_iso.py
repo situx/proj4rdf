@@ -201,7 +201,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			print(curcrs.coordinate_operation.towgs84)
 		for par in curcrs.coordinate_operation.params:
 			opparamname=str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]
-			ttl.add("geocrs:"+str(opparamname)+" geocrs:parameter geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:parameter geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
 			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" geocrs:usesValue geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value . \n")
 			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")				
 			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameter . \n") 
