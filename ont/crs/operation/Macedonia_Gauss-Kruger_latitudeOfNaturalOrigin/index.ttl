@@ -1,4 +1,5 @@
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger_latitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger_latitudeOfNaturalOrigin> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger_latitudeOfNaturalOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger_latitudeOfNaturalOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Macedonia Gauss-Kruger: Transverse Mercator: Parameter Latitude of natural origin" .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger_latitudeOfNaturalOrigin> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

@@ -1,6 +1,6 @@
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/approximates> <http://www.opengis.net/ont/crs/isbody/Earth> .
-<http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox='-6377299.151 -6356098.145120132 6377299.151 6356098.145120132' height='485' width='500'><ellipse rx='6377299.151' ry='6356098.145120132'/></svg>" .
+<http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/asSVG> "<svg viewBox='0 0 12754598.302 12712196.290240264' height='485' width='500'><ellipse rx='6377299.151' ry='6356098.145120132'/></svg>" .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/eccentricity> "0.006637846"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/flatteningParameter> "0.003324449"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/geod/Everest_1830_1975_Definition_> <http://www.opengis.net/ont/crs/isSphere> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
