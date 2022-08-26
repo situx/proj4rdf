@@ -1642,7 +1642,9 @@ class OntDocGeneration:
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
-    def createHTMLTableValueEntry(self,subject,pred,object,ttlf,tablecontents,graph,baseurl,checkdepth,geojsonrep,foundmedia,imageannos,image3dannos):
+    def createHTMLTableValueEntry(self,subject,pred,object,ttlf,graph,baseurl,checkdepth,geojsonrep,foundmedia,imageannos,image3dannos):
+        tablecontents=""
+        label=""
         if isinstance(object,URIRef) or isinstance(object,BNode):
             if ttlf != None:
                 ttlf.write("<" + str(subject) + "> <" + str(pred) + "> <" + str(object) + "> .\n")
@@ -1673,6 +1675,7 @@ class OntDocGeneration:
                 tablecontents+=" <span style=\"font-weight:bold\">["+str(unitlabel)+"]</span>"
             tablecontents+="</span>"
         else:
+            label=str(object)
             if isinstance(object, Literal) and object.datatype != None:
                 res = self.replaceNameSpacesInLabel(str(object.datatype))
                 if ttlf!=None:
@@ -1704,7 +1707,7 @@ class OntDocGeneration:
                         ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\" .\n")
                     tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
                         object).replace("<","&lt").replace(">","&gt;").replace("\"","'") + "\" datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + str(object).replace("<","&lt").replace(">","&gt;") + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"http://www.w3.org/2001/XMLSchema#string\">xsd:string</a>)</small></span>"
-        return {"html":tablecontents,"geojson":geojsonrep,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
+        return {"html":tablecontents,"geojson":geojsonrep,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos,"label":label}
 
     def formatPredicate(self,tup,baseurl,checkdepth,tablecontents,graph,reverse):
         label = self.shortenURI(str(tup))
@@ -1744,6 +1747,7 @@ class OntDocGeneration:
     def getAccessFromBaseURL(self,baseurl,savepath):
         return savepath.replace(baseurl, "")
 
+
     def createHTML(self,savepath, predobjs, subject, baseurl, subpreds, graph, searchfilename, classtreename,uritotreeitem,curlicense,subjectstorender,postprocessing):
         tablecontents = ""
         isodd = False
@@ -1758,12 +1762,11 @@ class OntDocGeneration:
         isgeocollection=False
         comment=None
         parentclass=None
+        inverse=False
         if str(subject) in uritotreeitem and uritotreeitem[str(subject)]["parent"].startswith("http"):
             parentclass=str(uritotreeitem[str(subject)]["parent"])
             if parentclass not in uritotreeitem:
-                uritotreeitem[parentclass]={"id": parentclass, "parent": "#",
-                                   "type": "class",
-                                   "text": self.shortenURI(str(parentclass)),"data":{}}
+                uritotreeitem[parentclass]={"id": parentclass, "parent": "#","type": "class","text": self.shortenURI(str(parentclass)),"data":{}}
             uritotreeitem[parentclass]["instancecount"]=0
         ttlf = open(savepath + "/index.ttl", "w", encoding="utf-8")
         if parentclass!=None:
@@ -1796,7 +1799,7 @@ class OntDocGeneration:
             elif str(tup)=="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" and URIRef("http://www.opengis.net/ont/geosparql#GeometryCollection") in predobjmap[tup]:
                 isgeocollection=True
                 uritotreeitem["http://www.opengis.net/ont/geosparql#GeometryCollection"]["instancecount"] += 1
-            tablecontents=self.formatPredicate(tup, baseurl, checkdepth, tablecontents, graph,False)
+            tablecontents=self.formatPredicate(tup, baseurl, checkdepth, tablecontents, graph,inverse)
             if str(tup) in labelproperties:
                 foundlabel = str(predobjmap[tup][0])
             if str(tup) in commentproperties:
@@ -1804,6 +1807,7 @@ class OntDocGeneration:
             if len(predobjmap[tup]) > 0:
                 if len(predobjmap[tup])>1:
                     tablecontents+="<td class=\"wrapword\"><ul>"
+                    labelmap={}
                     for item in predobjmap[tup]:
                         if ("POINT" in str(item).upper() or "POLYGON" in str(item).upper() or "LINESTRING" in str(item).upper()) and tup in valueproperties and "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" in predobjmap and URIRef("http://www.w3.org/ns/oa#WKTSelector") in predobjmap["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]:
                             image3dannos.add(str(item))
@@ -1816,15 +1820,17 @@ class OntDocGeneration:
                                 ext = "." + ''.join(filter(str.isalpha, str(item).split(".")[-1]))                            
                             if ext in fileextensionmap:
                                 foundmedia[fileextensionmap[ext]].add(str(item))
-                        tablecontents+="<li>"
-                        res=self.createHTMLTableValueEntry(subject, tup, item, ttlf, tablecontents, graph,
+                        res=self.createHTMLTableValueEntry(subject, tup, item, ttlf, graph,
                                               baseurl, checkdepth,geojsonrep,foundmedia,imageannos,image3dannos)
-                        tablecontents = res["html"]
                         geojsonrep = res["geojson"]
                         foundmedia = res["foundmedia"]
                         imageannos=res["imageannos"]
                         image3dannos=res["image3dannos"]
-                        tablecontents += "</li>"
+                        if res["label"] not in labelmap:
+                            labelmap[res["label"]]=""
+                        labelmap[res["label"]]+="<li>"+str(res["html"])+"</li>"
+                    for lab in sorted(labelmap):
+                        tablecontents+=str(labelmap[lab])
                     tablecontents+="</ul></td>"
                 else:
                     tablecontents+="<td class=\"wrapword\">"
@@ -1839,9 +1845,9 @@ class OntDocGeneration:
                             ext = "." + ''.join(filter(str.isalpha, str(predobjmap[tup][0]).split(".")[-1]))
                         if ext in fileextensionmap:
                             foundmedia[fileextensionmap[ext]].add(str(predobjmap[tup][0]))
-                    res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, tablecontents, graph,
+                    res=self.createHTMLTableValueEntry(subject, tup, predobjmap[tup][0], ttlf, graph,
                                               baseurl, checkdepth,geojsonrep,foundmedia,imageannos,image3dannos)
-                    tablecontents=res["html"]
+                    tablecontents+=res["html"]
                     geojsonrep=res["geojson"]
                     foundmedia = res["foundmedia"]
                     imageannos=res["imageannos"]
@@ -1874,27 +1880,30 @@ class OntDocGeneration:
             if len(subpredsmap[tup]) > 0:
                 if len(subpredsmap[tup]) > 1:
                     tablecontents += "<td class=\"wrapword\"><ul>"
+                    labelmap={}
                     for item in subpredsmap[tup]:
-                        tablecontents += "<li>"
                         if item not in subjectstorender and baseurl in str(item):
                             print("Postprocessing: " + str(item)+" - "+str(tup)+" - "+str(subject))
                             postprocessing.add((item,URIRef(tup),subject))
-                        res = self.createHTMLTableValueEntry(subject, tup, item, None, tablecontents, graph,
+                        res = self.createHTMLTableValueEntry(subject, tup, item, None, graph,
                                                              baseurl, checkdepth, geojsonrep,foundmedia,imageannos,image3dannos)
-                        tablecontents = res["html"]
                         foundmedia = res["foundmedia"]
                         imageannos=res["imageannos"]
                         image3dannos=res["image3dannos"]
-                        tablecontents += "</li>"
+                        if res["label"] not in labelmap:
+                            labelmap[res["label"]]=""
+                        labelmap[res["label"]]+="<li>"+str(res["html"])+"</li>"
+                    for lab in sorted(labelmap):
+                        tablecontents+=str(labelmap[lab])
                     tablecontents += "</ul></td>"
                 else:
                     tablecontents += "<td class=\"wrapword\">"
                     if subpredsmap[tup][0] not in subjectstorender and baseurl in str(subpredsmap[tup][0]):
                         print("Postprocessing: " + str(subpredsmap[tup][0]) + " - " + str(tup) + " - " + str(subject))
                         postprocessing.add((subpredsmap[tup][0], URIRef(tup), subject))
-                    res = self.createHTMLTableValueEntry(subject, tup, subpredsmap[tup][0], None, tablecontents, graph,
+                    res = self.createHTMLTableValueEntry(subject, tup, subpredsmap[tup][0], None, graph,
                                                          baseurl, checkdepth, geojsonrep,foundmedia,imageannos,image3dannos)
-                    tablecontents = res["html"]
+                    tablecontents += res["html"]
                     foundmedia = res["foundmedia"]
                     imageannos=res["imageannos"]
                     image3dannos=res["image3dannos"]
