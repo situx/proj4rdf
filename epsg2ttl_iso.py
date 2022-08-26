@@ -201,24 +201,25 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			print(curcrs.coordinate_operation.towgs84)
 		for par in curcrs.coordinate_operation.params:
 			opparamname=str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]
-			ttl.add(" geocrs:"+str(opparamname)+" rdf:type owl:DatatypeProperty . \n") 
-			ttl.add(" geocrs:"+str(opparamname)+" rdfs:range xsd:double . \n") 
-			ttl.add(" geocrs:"+str(opparamname)+" rdfs:domain geocrs:CoordinateOperation . \n") 
-			ttl.add(" geocrs:"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")	
+			ttl.add("geocrs:"+str(opparamname)+" geocrs:parameter geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
+			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" geocrs:usesValue geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value . \n")
+			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")				
+			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameter . \n") 
 			if par.unit_name!=None:
 				print(par.unit_name)
 				if par.unit_name in units:
-					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit "+units[par.unit_name]+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value om:hasUnit "+units[par.unit_name]+" . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameterValue . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
 				else:
-					ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                      
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:type geocrs:OperationParameterValue . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value om:hasUnit \""+str(par.unit_name)+"\"^^xsd:string . \n")
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                      
 			else:
-				ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:"+str(opparamname)+" \""+str(par.value)+"\"^^xsd:double . \n")     
+				ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value)+"\"^^xsd:double . \n")  
+				ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameterValue . \n")                 
 		for grid in curcrs.coordinate_operation.grids:
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:grid geocrsgrid:"+str(grid.name).replace(" ","_")+" . \n")
 			ttl.add("geocrsgrid:"+str(grid.name).replace(" ","_")+" rdf:type geocrs:Grid . \n")
