@@ -417,23 +417,39 @@ function download(){
 
 function rewriteLink(thelink){
     console.log(thelink)
+    console.log(window.location.pathname)
+    console.log(baseurl)
     if(thelink==null){
         rest=search[document.getElementById('search').value].replace(baseurl,"")
     }else{
+        curlocpath=window.location.href.replace(baseurl,"")
         rest=thelink.replace(baseurl,"")
     }
+    if(!(rest.endsWith("/"))){
+        rest+="/"
+    }
     console.log(rest)
+    console.log(curlocpath)
     count=0
+    console.log(curlocpath.split("/"))
+    console.log(rest.split("/"))
     if(!indexpage){
-        count=rest.split("/").length
+        count=rest.split("/").length-1
     }
     console.log(count)
     counter=0
-    while(counter<count){
-        rest="../"+rest
-        counter+=1
+    if (typeof relativedepth !== 'undefined'){
+        while(counter<relativedepth){
+            rest="../"+rest
+            counter+=1
+        }
+    }else{
+        while(counter<count){
+            rest="../"+rest
+            counter+=1
+        }   
     }
-    rest+="/index.html"
+    rest+="index.html"
     console.log(rest)
     return rest
 }
@@ -714,7 +730,7 @@ function formatHTMLTableForClassRelations(result,nodeicon,nodelabel,nodeid){
         }
     }
     dialogcontent+="</tbody></table>"
-    dialogcontent+="<button id=\\"closebutton\\" onclick='document.getElementById(\\"classrelationdialog\\").close()'>Close</button>"
+    dialogcontent+="<button style=\\"float:right\\" id=\\"closebutton\\" onclick='document.getElementById(\\"classrelationdialog\\").close()'>Close</button>"
     return dialogcontent
 }
 
@@ -760,7 +776,7 @@ function formatHTMLTableForResult(result,nodeicon){
         dialogcontent+="</tr>"
     }
     dialogcontent+="</tbody></table>"
-    dialogcontent+="<button id=\\"closebutton\\" onclick='document.getElementById(\\"dataschemadialog\\").close()'>Close</button>"
+    dialogcontent+="<button style=\\"float:right\\" id=\\"closebutton\\" onclick='document.getElementById(\\"dataschemadialog\\").close()'>Close</button>"
     return dialogcontent
 }
 
@@ -823,7 +839,12 @@ function setupJSTree(){
         }
     }
     tree["contextmenu"]["items"]=function (node) {
-        return {
+        nodetype=node.type
+        thelinkpart="class"
+        if(nodetype=="instance" || nodetype=="geoinstance"){
+            thelinkpart="instance"
+        }    
+        contextmenu={
             "lookupdefinition": {
                 "separator_before": false,
                 "separator_after": false,
@@ -834,12 +855,12 @@ function setupJSTree(){
                     var win = window.open(newlink, '_blank');
                     win.focus();
                 }
-            }, 
+            },
             "copyuriclipboard":{
                 "separator_before": false,
                 "separator_after": false,
                 "label": "Copy URI to clipboard",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/classlink.png",
+                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
                 "action":function(obj){
                     copyText=node.id
                     navigator.clipboard.writeText(copyText);
@@ -848,8 +869,8 @@ function setupJSTree(){
             "discoverrelations":{
                 "separator_before": false,
                 "separator_after": false,
-                "label": "Discover class relations",
-                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/classlink.png",
+                "label": "Discover "+node.type+" relations",
+                "icon": "https://github.com/i3mainz/geopubby/raw/master/public/icons/"+thelinkpart+"link.png",
                 "action":function(obj){
                     console.log("class relations")
                     if(node.type=="class" || node.type=="geoclass" || node.type=="collectionclass"){
@@ -860,8 +881,8 @@ function setupJSTree(){
             "loaddataschema": {
                 "separator_before": false,
                 "separator_after": false,
-                "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/classschema.png",
-                "label": "Load dataschema for class",
+                "icon":"https://github.com/i3mainz/geopubby/raw/master/public/icons/"+node.type+"schema.png",
+                "label": "Load dataschema for "+node.type,
                 "action": function (obj) {
                     console.log(node)
                     console.log(node.id)
@@ -872,8 +893,9 @@ function setupJSTree(){
                         getDataSchemaDialog(node) 
                     }                                         
                 }
-            }
-        };
+            }                
+        }
+        return contextmenu
     }
     $('#jstree').jstree(tree);
     $('#jstree').bind("dblclick.jstree", function (event) {
@@ -1029,7 +1051,7 @@ htmltemplate = """<html about=\"{{subject}}\"><head><title>{{toptitle}}</title>
   GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
   Search:<input type="text" id="classsearch"><br/><div id="jstree"></div>
 </div><script>var indexpage={{indexpage}}
-var baseurl="{{baseurl}}"</script>
+var relativedepth={{relativedepth}}</script>
 <body><div id="header"><h1 id="title">{{title}}</h1></div><div class="page-resource-uri"><a href="{{baseurl}}">{{baseurl}}</a> <b>powered by Static GeoPubby</b> generated using the <a style="color:blue;font-weight:bold" target="_blank" href="https://github.com/sparqlunicorn/sparqlunicornGoesGIS">SPARQLing Unicorn QGIS Plugin</a></div>
 </div><div id="rdficon"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div> <div class="search"><div class="ui-widget">Search: <input id="search" size="50"><button id="gotosearch" onclick="followLink()">Go</button><b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">	
 {{exports}}
@@ -1672,12 +1694,14 @@ class OntDocGeneration:
                 if isinstance(object, Literal) and (str(pred) in geoproperties or str(object.datatype) in geoliteraltypes):
                     geojsonrep = self.processLiteral(str(object), object.datatype, "")
             else:
-                if ttlf!=None:
-                    ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\" .\n")
                 if object.language != None:
+                    if ttlf!=None:
+                        ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\"@"+str(object.language)+" .\n")
                     tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
                         object).replace("<", "&lt").replace(">", "&gt;").replace("\"","'") + "\" datatype=\"http://www.w3.org/2001/XMLSchema#string\" xml:lang=\"" + str(object.language) + "\">" + str(object).replace("<", "&lt").replace(">", "&gt;") + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\">rdf:langString</a>) (<a href=\"http://www.lexvo.org/page/iso639-1/"+str(object.language)+"\" target=\"_blank\">iso6391:" + str(object.language) + "</a>)</small></span>"
                 else:
+                    if ttlf!=None:
+                        ttlf.write("<" + str(subject) + "> <" + str(pred) + "> \"" + str(object) + "\" .\n")
                     tablecontents += "<span property=\"" + str(pred) + "\" content=\"" + str(
                         object).replace("<","&lt").replace(">","&gt;").replace("\"","'") + "\" datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + str(object).replace("<","&lt").replace(">","&gt;") + " <small>(<a style=\"color: #666;\" target=\"_blank\" href=\"http://www.w3.org/2001/XMLSchema#string\">xsd:string</a>)</small></span>"
         return {"html":tablecontents,"geojson":geojsonrep,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
@@ -1895,7 +1919,7 @@ class OntDocGeneration:
             else:
                 myexports=nongeoexports
             if foundlabel != "":
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{prefixpath}}", self.prefixnamespace).replace("{{toptitle}}", foundlabel).replace(
+                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{toptitle}}", foundlabel).replace(
                     "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{indexpage}}","false").replace("{{title}}",
                                                                                                 "<a href=\"" + str(
                                                                                                     subject) + "\">" + str(
@@ -1904,7 +1928,7 @@ class OntDocGeneration:
                                                                                                "").replace(
                     "{{scriptfolderpath}}", rellink).replace("{{classtreefolderpath}}", rellink2).replace("{{exports}}",myexports).replace("{{subject}}",str(subject)))
             else:
-                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{prefixpath}}", self.prefixnamespace).replace("{{indexpage}}","false").replace("{{toptitle}}", self.shortenURI(str(subject))).replace(
+                f.write(htmltemplate.replace("{{baseurl}}",baseurl).replace("{{relativedepth}}",str(checkdepth)).replace("{{prefixpath}}", self.prefixnamespace).replace("{{indexpage}}","false").replace("{{toptitle}}", self.shortenURI(str(subject))).replace(
                     "{{startscriptpath}}", rellink4).replace("{{stylepath}}", rellink3).replace("{{title}}","<a href=\"" + str(subject) + "\">" + self.shortenURI(str(subject)) + "</a>").replace(
                     "{{baseurl}}", baseurl).replace("{{description}}",
                                                                                                "").replace(
