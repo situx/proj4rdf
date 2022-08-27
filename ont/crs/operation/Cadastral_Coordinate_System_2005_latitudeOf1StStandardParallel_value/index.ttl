@@ -1,5 +1,6 @@
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/degree> .
+<http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameterValue> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "42.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://www.w3.org/2000/01/rdf-schema#label> "Cadastral Coordinate System 2005: Lambert Conic Conformal (2SP): Parameter Latitude of 1st standard parallel" .
 <http://www.opengis.net/ont/crs/operation/Cadastral_Coordinate_System_2005_latitudeOf1StStandardParallel_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
