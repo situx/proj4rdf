@@ -36,6 +36,8 @@ invcollectionrelationproperties={
 
 valueproperties={
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value":"DatatypeProperty",
+    "http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue":"ObjectProperty",
+    "http://www.opengis.net/ont/crs/usesValue":"ObjectProperty",
     "http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue":"DatatypeProperty"
 }
 
@@ -416,9 +418,6 @@ function download(){
 }
 
 function rewriteLink(thelink){
-    console.log(thelink)
-    console.log(window.location.pathname)
-    console.log(baseurl)
     if(thelink==null){
         rest=search[document.getElementById('search').value].replace(baseurl,"")
     }else{
@@ -428,11 +427,7 @@ function rewriteLink(thelink){
     if(!(rest.endsWith("/"))){
         rest+="/"
     }
-    console.log(rest)
-    console.log(curlocpath)
     count=0
-    console.log(curlocpath.split("/"))
-    console.log(rest.split("/"))
     if(!indexpage){
         count=rest.split("/").length-1
     }
@@ -1418,7 +1413,7 @@ class OntDocGeneration:
                     subtorenderlen=len(subjectstorender)+len(postprocessing)
                 print(str(subtorencounter) + "/" + str(subtorenderlen) + " " + str(outpath + path))
             except Exception as e:
-                print(e)
+                print("Create HTML Exception: "+str(e))
             #    #QgsMessageLog.logMessage("Exception occured " + str(e), "OntdocGeneration", Qgis.Info)
         print("Postprocessing " + str(len(postprocessing)))
         for subj in postprocessing.subjects():
@@ -1629,16 +1624,27 @@ class OntDocGeneration:
                 ext="."+''.join(filter(str.isalpha,str(tup[1]).split(".")[-1]))
                 if ext in fileextensionmap:
                     foundmedia[fileextensionmap[ext]].add(str(tup[1]))
-            if str(tup[0]) in valueproperties and isinstance(tup[1],Literal):
-                foundval=tup[1]
-            if str(tup[0]) in unitproperties and isinstance(tup[1],URIRef):
-                foundunit=str(tup[1])
-        if foundunit!=None and foundval!=None and label!=None:
-            res=self.replaceNameSpacesInLabel(str(foundunit))
-            if res!=None:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+res["uri"]+"</a>"
+            if str(tup[0]) in valueproperties:
+                if valueproperties[str(tup[0])]=="DatatypeProperty" and isinstance(tup[1],Literal):
+                    foundval=str(tup[1])
+                else:
+                    for valtup in graph.predicate_objects(tup[1]):
+                        if str(valtup[0]) in unitproperties:
+                            foundunit=str(valtup[1])
+                        if str(valtup[0]) in valueproperties and isinstance(valtup[1],Literal):
+                            foundval=str(valtup[1])
+            if str(tup[0]) in unitproperties:
+                foundunit=tup[1]
+        if foundunit!=None and foundval!=None:
+            res=None
+            if "http" in foundunit:
+                res=self.replaceNameSpacesInLabel(str(foundunit))
+                if res!=None:
+                    unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(res["uri"])+"</a>"
+                else:
+                    unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(self.shortenURI(foundunit))+"</a>"
             else:
-                unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(self.shortenURI(foundunit))+"</a>"
+                unitlabel=str(foundval)+" "+str(foundunit)
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
