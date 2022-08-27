@@ -1,5 +1,5 @@
 <http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://www.opengis.net/ont/crs/ellipse> "Everest 1830 Modified" .
+<http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://www.opengis.net/ont/crs/ellipsoid> <http://www.opengis.net/ont/crs/geod/Everest1830Modified> .
 <http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://www.opengis.net/ont/crs/primeMeridian> <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> .
 <http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/CadastreMap> .
 <http://www.opengis.net/ont/crs/datum/Kertau_1968> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Geodesy> .

@@ -12,7 +12,7 @@
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.opengis.net/ont/crs/parameter> <http://www.opengis.net/ont/crs/operation/NIWA_Albers_latitudeOfFalseOrigin> .
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.opengis.net/ont/crs/parameter> <http://www.opengis.net/ont/crs/operation/NIWA_Albers_longitudeOfFalseOrigin> .
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.opengis.net/ont/crs/parameter> <http://www.opengis.net/ont/crs/operation/NIWA_Albers_northingAtFalseOrigin> .
-<http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.opengis.net/ont/crs/usage> "Oceanography"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/Oceanography> .
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> .
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.w3.org/2000/01/rdf-schema#comment> "See NZCS2000 (projection code 17964) and Mercator 41 (projection code 19843) for spatial referencing and conformal mapping."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/NIWA_Albers> <http://www.w3.org/2000/01/rdf-schema#label> "NIWA Albers: Albers Equal Area"@en .
