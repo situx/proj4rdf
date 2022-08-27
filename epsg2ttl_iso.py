@@ -210,7 +210,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				if par.unit_name in units:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value om:hasUnit "+units[par.unit_name]+" . \n")
-					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameterValue . \n") 
+					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:type geocrs:OperationParameterValue . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
 				else:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:type geocrs:OperationParameterValue . \n") 
