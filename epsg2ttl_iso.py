@@ -152,6 +152,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				ttl.add(geoid+" geocrs:approximates geocrsisbody:Earth . \n")
 			else:
 				geoidlabel=curcrs.datum.ellipsoid.name
+				print("ELLIPSEEE: "+str(curcrs.datum.ellipsoid.name))
 				geoid="geocrsgeod:"+str(curcrs.datum.ellipsoid.name).replace(" ","_").replace("(","_").replace(")","_").replace("__","_")
 				ttl.add(geoid+" rdf:type geocrs:Geoid . \n")
 				ttl.add(geoid+" rdfs:label \""+curcrs.datum.ellipsoid.name+"\"@en . \n")
@@ -197,8 +198,8 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			b = box(curcrs.coordinate_operation.area_of_use.west, curcrs.coordinate_operation.area_of_use.south, curcrs.coordinate_operation.area_of_use.east, curcrs.coordinate_operation.area_of_use.north)
 			ttl.add("geocrsaou:"+str(coordoperationid)+"_area_of_use geocrs:extent \"<http://www.opengis.net/def/crs/OGC/1.3/CRS84> "+str(b.wkt)+"\"^^geo:wktLiteral . \n")
 			#ENVELOPE("+str(curcrs.coordinate_operation.area_of_use.west)+" "+str(curcrs.coordinate_operation.area_of_use.south)+","+str(curcrs.coordinate_operation.area_of_use.east)+" "+str(curcrs.coordinate_operation.area_of_use.north)+")\"^^geocrs:wktLiteral . \n")
-		if curcrs.coordinate_operation.towgs84!=None:
-			print(curcrs.coordinate_operation.towgs84)
+		if curcrs.coordinate_operation.towgs84!=None and curcrs.coordinate_operation.towgs84!=[]:
+			print("TOWGS84: "+str(curcrs.coordinate_operation.towgs84))
 		for par in curcrs.coordinate_operation.params:
 			opparamname=str(par.name)[0].lower()+str(par.name).title().replace(" ","")[1:]
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:parameter geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" . \n")
@@ -206,7 +207,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdfs:label \""+str(par.name)+"\"@en . \n")				
 			ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+" rdf:type geocrs:OperationParameter . \n") 
 			if par.unit_name!=None:
-				print(par.unit_name)
+				#print(par.unit_name)
 				if par.unit_name in units:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value om:hasUnit "+units[par.unit_name]+" . \n")
@@ -389,9 +390,20 @@ def parseAdditionalPlanetarySpheroids(filename,ttlstring):
 
 units={}
 units["m"]="om:meter"
+units["centimetre"]="om:centimetre"
+units["fathom"]="om:fathom-USSurvey"
+units["chain"]="om:chain"
+units["radian"]="om:radian"
 units["metre"]="om:metre"
+units["nautical mile"]="om:nauticalMile-International"
+units["kilometre"]="om:kilometre"
 units["grad"]="om:degree"
+units["gon"]="om:gon"
+units["microradian"]="om:microradian"
+units["yard"]="om:yard-International"
 units["degree"]="om:degree"
+units["metre per second"]="om:metrePerSecond-Time"
+units["year"]="om:year"
 units["ft"]="om:foot"
 units["US Survey Foot"]="om:foot-USSurvey"
 units["us-ft"]="om:usfoot"
@@ -401,11 +413,16 @@ scope["topographic mapping"]="geocrs:TopographicMap"
 scope["spatial referencing"]="geocrs:SpatialReferencing"
 scope["engineering survey"]="geocrs:EngineeringSurvey"
 scope["satellite survey"]="geocrs:SatelliteSurvey"
-scope["satellite navigation"]="geocrs:SatelliteNvaigation"
+scope["satellite navigation"]="geocrs:SatelliteNavigation"
 scope["coastal hydrography"]="geocrs:CoastalHydrography"
 scope["offshore engineering"]="geocrs:OffshoreEngineering"
 scope["hydrography"]="geocrs:Hydrography"
+scope["seismic survey"]="geocrs:SeismicSurvey"
+scope["remote sensing"]="geocrs:RemoteSensing"
+scope["oceanography"]="geocrs:Oceanography"
+scope["forestry"]="geocrs:Forestry"
 scope["drilling"]="geocrs:Drilling"
+scope["marine navigation"]="geocrs:MarineNavigation"
 scope["nautical charting"]="geocrs:NauticalChart"
 scope["oil and gas exploration"]="geocrs:OilAndGasExploration"
 scope["cadastre"]="geocrs:CadastreMap"
@@ -417,8 +434,43 @@ coordinatesystem["ordinal"]="geocrs:OrdinalCS"
 coordinatesystem["parametric"]="geocrs:ParametricCS"
 coordinatesystem["spherical"]="geocrs:SphericalCS"
 coordinatesystem["temporal"]="geocrs:TemporalCS"
+
+
 spheroids={}
+spheroids["Airy 1830"]="geocrsgeod:Airy1830"
+spheroids["Airy Modified 1849"]="geocrsgeod:AiryModified1849"
+spheroids["aust_SA"]="geocrsgeod:AustralianNationalSpheroid"
 spheroids["Australian National Spheroid"]="geocrsgeod:AustralianNationalSpheroid"
+spheroids["Bessel 1841"]="geocrsgeod:Bessel1841"
+spheroids["bess_nam"]="geocrsgeod:Bessel1841"
+spheroids["bessel"]="geocrsgeod:Bessel1841"
+spheroids["Bessel 1841 (Namibia)"]="geocrsgeod:Bessel1841Namibia"
+spheroids["Bessel Modified"]="geocrsgeod:BesselModified"
+spheroids["CGCS2000"]="geocrsgeod:CGCS2000"
+spheroids["Clarke 1866"]="geocrsgeod:Clarke1866"
+spheroids["Clarke 1858"]="geocrsgeod:Clarke1858"
+spheroids["Clarke 1880"]="geocrsgeod:Clarke1880"
+spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
+spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
+spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
+spheroids["clrk"]="geocrsgeod:Clarke1866"
+spheroids["clrk66"]="geocrsgeod:Clarke1866"
+spheroids["clrk80"]="geocrsgeod:Clarke1880RGS"
+spheroids["clrk80ign"]="geocrsgeod:Clarke1880IGN"
+spheroids["Danish 1876"]="geocrsgeod:Danish1876"
+spheroids["engelis"]="geocrsgeod:Engelis1985"
+spheroids["evrst30"]="geocrsgeod:Everest1830"
+spheroids["Everest 1830"]="geocrsgeod:Everest1830"
+spheroids["Everest (1830 Definition)"]="geocrsgeod:Everest1830"
+spheroids["Everest 1830 Modified"]="geocrsgeod:Everest1830Modified"
+spheroids["evrst48"]="geocrsgeod:Everest1948"
+spheroids["Everest 1948"]="geocrsgeod:Everest1948"
+spheroids["evrst56"]="geocrsgeod:Everest1956"
+spheroids["Everest 1956"]="geocrsgeod:Everest1956"
+spheroids["evrst69"]="geocrsgeod:Everest1869"
+spheroids["Everest 1869"]="geocrsgeod:Everest1869"
+spheroids["fschr68"]="geocrsgeod:Fischer1968"
+spheroids["Fischer 1968"]="geocrsgeod:Fischer1968"
 spheroids["GRS80"]="geocrsgeod:GRS1980"
 spheroids["GRS 80"]="geocrsgeod:GRS1980"
 spheroids["GRS67"]="geocrsgeod:GRS67"
@@ -427,48 +479,36 @@ spheroids["GRS 1967 Modified"]="geocrsgeod:GRS67Modified"
 spheroids["GRS 67"]="geocrsgeod:GRS67"
 spheroids["GRS1980"]="geocrsgeod:GRS1980"
 spheroids["GRS 1980"]="geocrsgeod:GRS1980"
-spheroids["NWL 9D"]="geocrsgeod:NWL9D"
-spheroids["PZ-90"]="geocrsgeod:PZ90"
-spheroids["Airy 1830"]="geocrsgeod:Airy1830"
-spheroids["Airy Modified 1849"]="geocrsgeod:AiryModified1849"
-spheroids["Clarke 1880 (Arc)"]="geocrsgeod:Clarke1880ARC"
-spheroids["Clarke 1880 (RGS)"]="geocrsgeod:Clarke1880RGS"
-spheroids["Clarke 1880 (IGN)"]="geocrsgeod:Clarke1880IGN"
-spheroids["clrk"]="geocrsgeod:Clarke1866"
-spheroids["intl"]="geocrsgeod:International1924"
-spheroids["aust_SA"]="geocrsgeod:AustralianNationalSpheroid"
-spheroids["International 1924"]="geocrsgeod:International1924"
-spheroids["War Office"]="geocrsgeod:WarOffice"
-spheroids["evrst30"]="geocrsgeod:Everest1930"
-spheroids["clrk66"]="geocrsgeod:Clarke1866"
-spheroids["Plessis 1817"]="geocrsgeod:Plessis1817"
-spheroids["Danish 1876"]="geocrsgeod:Danish1876"
-spheroids["Struve 1860"]="geocrsgeod:Struve1860"
-spheroids["IAG 1975"]="geocrsgeod:IAG1975"
-spheroids["Clarke 1866"]="geocrsgeod:Clarke1866"
-spheroids["Clarke 1858"]="geocrsgeod:Clarke1858"
-spheroids["Clarke 1880"]="geocrsgeod:Clarke1880"
-spheroids["Helmert 1906"]="geocrsgeod:Helmert1906"
-spheroids["Moon_2000_IAU_IAG"]="geocrsgeod:Moon2000_IAU_IAG"
-spheroids["CGCS2000"]="geocrsgeod:CGCS2000"
 spheroids["GSK-2011"]="geocrsgeod:GSK2011"
-spheroids["Zach 1812"]="geocrsgeod:Zach1812"
+spheroids["Helmert 1906"]="geocrsgeod:Helmert1906"
 spheroids["Hough 1960"]="geocrsgeod:Hough1960"
 spheroids["Hughes 1980"]="geocrsgeod:Hughes1980"
+spheroids["IAG 1975"]="geocrsgeod:IAG1975"
 spheroids["Indonesian National Spheroid"]="geocrsgeod:IndonesianNationalSpheroid"
-spheroids["clrk80"]="geocrsgeod:Clarke1880RGS"
-spheroids["clrk80ign"]="geocrsgeod:Clarke1880IGN"
+spheroids["International 1924"]="geocrsgeod:International1924"
+spheroids["intl"]="geocrsgeod:International1924"
+spheroids["Krassowsky 1940"]="geocrsgeod:Krassowsky1940"
+spheroids["krass"]="geocrsgeod:Krassowsky1940"
+spheroids["kaula"]="geocrsgeod:Kaula1961"
+spheroids["Kaula 1961"]="geocrsgeod:Kaula1961"
+spheroids["lerch"]="geocrsgeod:Lerch1979"
+spheroids["Lerch 1979"]="geocrsgeod:Lerch1979"
+spheroids["Moon_2000_IAU_IAG"]="geocrsgeod:Moon2000_IAU_IAG"
+spheroids["NWL 9D"]="geocrsgeod:NWL9D"
+spheroids["Plessis 1817"]="geocrsgeod:Plessis1817"
+spheroids["PZ-90"]="geocrsgeod:PZ90"
+spheroids["Struve 1860"]="geocrsgeod:Struve1860"
+spheroids["War Office"]="geocrsgeod:WarOffice"
+spheroids["Walbeck"]="geocrsgeod:Walbeck"
+spheroids["walbeck"]="geocrsgeod:Walbeck"
 spheroids["WGS66"]="geocrsgeod:WGS66"
 spheroids["WGS 66"]="geocrsgeod:WGS66"
 spheroids["WGS72"]="geocrsgeod:WGS72"
 spheroids["WGS 72"]="geocrsgeod:WGS72"
 spheroids["WGS84"]="geocrsgeod:WGS84"
 spheroids["WGS 84"]="geocrsgeod:WGS84"
-spheroids["Krassowsky 1940"]="geocrsgeod:Krassowsky1940"
-spheroids["krass"]="geocrsgeod:Krassowsky1940"
-spheroids["Bessel 1841"]="geocrsgeod:Bessel1841"
-spheroids["bessel"]="geocrsgeod:Bessel1841"
-spheroids["Bessel Modified"]="geocrsgeod:BesselModified"
+spheroids["Zach 1812"]="geocrsgeod:Zach1812"
+
 projections={}
 projections["adams_ws1"]="geocrs:AdamsWorldInASquareIProjection"
 projections["adams_ws2"]="geocrs:AdamsWorldInASquareIIProjection"
@@ -1388,7 +1428,7 @@ parseSolarSystemSatellites("solar_system_satellites.csv",ttldata)
 for x in list(range(2000,10000))+list(range(20000,30000)):
 	try:
 		curcrs=CRS.from_epsg(x)
-		print("EPSG: "+str(x))
+		#print("EPSG: "+str(x))
 	except:
 		continue
 	crsToTTL(ttldata,curcrs,x,geodcounter,None)
