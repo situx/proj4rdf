@@ -274,29 +274,6 @@
     ]
   },
   {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Projection Ontology"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Planet Ontology"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -316,6 +293,29 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Projection Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Planet Ontology"
       }
     ]
   }
@@ -6066,6 +6066,17 @@
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
               </th>
               <td><p>n-dimensional coordinate system in which every axis uses integers</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
           </table>
         </div>
@@ -13379,7 +13390,10 @@
                     </span>
                   </li>
                   <li>
-                    <a href="http://www.opengis.net/ont/crs/OrdinalCoordinateSystem">geocrs:OrdinalCoordinateSystem</a>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/OrdinalCS">geocrs:OrdinalCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
                   </li>
                   <li>
                     <span>
