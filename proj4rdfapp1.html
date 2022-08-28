@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Projection Ontology</title>
+    <title>SRS Application Ontology</title>
     <style>
         #pylode {
             position: fixed;
@@ -263,6 +263,29 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Projection Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "SRS Application Ontology"
+      }
+    ]
+  },
+  {
     "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -282,18 +305,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Projection Ontology"
       }
     ]
   },
@@ -325,7 +336,7 @@
   <body>
     <div id="content">
       <div class="section" id="metadata">
-        <h1>CS Extension OntologyGeoSPARQL SRS Ontology DraftPlanet OntologyProjection Ontology</h1>
+        <h1>CS Extension OntologyGeoSPARQL SRS Ontology DraftPlanet OntologyProjection OntologySRS Application Ontology</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -333,7 +344,7 @@
               <strong>IRI</strong>
             </dt>
             <dd>
-              <code>http://www.opengis.net/ont/crs/ProjectionOntology</code>
+              <code>http://www.opengis.net/ont/crs/SRSApplicationOntology</code>
             </dd>
           </div>
           <div>
@@ -346,6 +357,7 @@
                 <li><p>GeoSPARQL SRS Ontology Draft</p></li>
                 <li><p>Planet Ontology</p></li>
                 <li><p>Projection Ontology</p></li>
+                <li><p>SRS Application Ontology</p></li>
               </ul>
             </dd>
           </div>
@@ -3435,6 +3447,36 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="generalreferencemap">
+          <h3>general reference map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/GeneralReferenceMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>general reference map which includes a variety of different information</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="generalverticalperspectiveprojection">
           <h3>general vertical perspective projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -4145,6 +4187,36 @@
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="heatmap">
+          <h3>heat map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/HeatMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A data visualization technique that shows magnitude of a phenomenon as color in two dimensions.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -5783,6 +5855,36 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="nauticalchart">
+          <h3>nautical chart
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/NauticalChart</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A nautical chart is a graphic representation of a sea area and adjacent coastal regions.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="Nell-Hammerprojection">
           <h3>Nell-Hammer projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -6020,25 +6122,6 @@
                   </li>
                 </ul>
               </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="operationvalue">
-          <h3>operation value
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/OperationValue</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>Value of a parameter used by a method to perform some coordinate operation</p></td>
             </tr>
           </table>
         </div>
@@ -8702,6 +8785,36 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="weathermap">
+          <h3>weather map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/WeatherMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map for showing the local direction in which weather systems are moving.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="webmercatorprojection">
           <h3>web mercator projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -9120,6 +9233,36 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/StabiusWernerIIProjection">geocrs:StabiusWernerIIProjection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="chloroplethmap">
+          <h3>chloropleth map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ChloroplethMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable </p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -11214,6 +11357,63 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="thematicmap">
+          <h3>thematic map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ThematicMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map used to highlight a specific phenomenon</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="coordinateoperation">
           <h3>coordinate operationcoordinate operation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -13175,6 +13375,100 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="srsapplication">
+          <h3>srs application
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/SRSApplication</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>an application for which a spatial reference system is used</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/RemoteSensing">geocrs:RemoteSensing</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/CoastalHydrography">geocrs:CoastalHydrography</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/OffshoreEngineering">geocrs:OffshoreEngineering</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/Forestry">geocrs:Forestry</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/SatelliteNavigation">geocrs:SatelliteNavigation</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/Oceanography">geocrs:Oceanography</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/Drilling">geocrs:Drilling</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/OilAndGasExploration">geocrs:OilAndGasExploration</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/Hydrography">geocrs:Hydrography</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/SpatialReferencing">geocrs:SpatialReferencing</a>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/Geodesy">geocrs:Geodesy</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://www.opengis.net/ont/crs/EngineeringSurvey">geocrs:EngineeringSurvey</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="azimuthalprojection">
           <h3>azimuthal projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -13607,6 +13901,81 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="geoid">
+          <h3>geoid
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Geoid</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/isSphere">geocrs:isSphere</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/semiMajorAxis">geocrs:semiMajorAxis</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/semiMinorAxis">geocrs:semiMinorAxis</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Ellipsoid">geocrs:Ellipsoid</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/Sphere">geocrs:Sphere</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="conformalprojection">
           <h3>conformal projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -13752,81 +14121,6 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/MercatorProjection">geocrs:MercatorProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="geoid">
-          <h3>geoid
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/Geoid</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/isSphere">geocrs:isSphere</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/semiMajorAxis">geocrs:semiMajorAxis</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/semiMinorAxis">geocrs:semiMinorAxis</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/Ellipsoid">geocrs:Ellipsoid</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/Sphere">geocrs:Sphere</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -14917,7 +15211,7 @@
                   </li>
                   <li>
                     <span>
-                      <a href="#PutninsP6'projection">ns2:Projection</a>
+                      <a href="http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6'Projection">ns2:Projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -15408,25 +15702,25 @@
                   </li>
                   <li>
                     <span>
-                      <a href="#PutninsP3'projection">ns3:Projection</a>
+                      <a href="http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection">ns3:Projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#PutninsP4'projection">ns4:Projection</a>
+                      <a href="http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP4'Projection">ns4:Projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#PutninsP5'projection">ns5:Projection</a>
+                      <a href="http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5'Projection">ns5:Projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#PutninsP6'projection">ns2:Projection</a>
+                      <a href="http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6'Projection">ns2:Projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -16082,6 +16376,36 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="cadastremap">
+          <h3>cadastre map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/CadastreMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A map displaying a cadastre</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="star">
           <h3>star
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -16100,6 +16424,36 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="topographicmap">
+          <h3>topographic map
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/TopographicMap</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A type of map characterized by large-scale detail and quantitative representation of relief.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -17762,6 +18116,9 @@
               <a href="#gauss-krgerprojection">gauss-krüger projection</a>
             </li>
             <li>
+              <a href="#generalreferencemap">general reference map</a>
+            </li>
+            <li>
               <a href="#generalverticalperspectiveprojection">general vertical perspective projection</a>
             </li>
             <li>
@@ -17838,6 +18195,9 @@
             </li>
             <li>
               <a href="#hatanoasymmetricalequal-areaprojection">hatano asymmetrical equal-area projection</a>
+            </li>
+            <li>
+              <a href="#heatmap">heat map</a>
             </li>
             <li>
               <a href="#herschelconformalconicprojection">herschel conformal conic projection</a>
@@ -18008,6 +18368,9 @@
               <a href="#naturalearthprojection">natural earth projection</a>
             </li>
             <li>
+              <a href="#nauticalchart">nautical chart</a>
+            </li>
+            <li>
               <a href="#Nell-Hammerprojection">Nell-Hammer projection</a>
             </li>
             <li>
@@ -18030,9 +18393,6 @@
             </li>
             <li>
               <a href="#octantprojection">octant projection</a>
-            </li>
-            <li>
-              <a href="#operationvalue">operation value</a>
             </li>
             <li>
               <a href="#ordinalcoordinatesystem">ordinal coordinate system</a>
@@ -18290,6 +18650,9 @@
               <a href="#watermanbutterflyprojection">waterman butterfly projection</a>
             </li>
             <li>
+              <a href="#weathermap">weather map</a>
+            </li>
+            <li>
               <a href="#webmercatorprojection">web mercator projection</a>
             </li>
             <li>
@@ -18327,6 +18690,9 @@
             </li>
             <li>
               <a href="#bonneprojection">bonne projection</a>
+            </li>
+            <li>
+              <a href="#chloroplethmap">chloropleth map</a>
             </li>
             <li>
               <a href="#cordiformprojection">cordiform projection</a>
@@ -18470,6 +18836,9 @@
               <a href="#temporalcoordinatesystem">temporal coordinate system</a>
             </li>
             <li>
+              <a href="#thematicmap">thematic map</a>
+            </li>
+            <li>
               <a href="#coordinateoperation">coordinate operationcoordinate operation</a>
             </li>
             <li>
@@ -18542,6 +18911,9 @@
               <a href="#primemeridian">prime meridian</a>
             </li>
             <li>
+              <a href="#srsapplication">srs application</a>
+            </li>
+            <li>
               <a href="#azimuthalprojection">azimuthal projection</a>
             </li>
             <li>
@@ -18551,10 +18923,10 @@
               <a href="#polyconicprojection">polyconic projection</a>
             </li>
             <li>
-              <a href="#conformalprojection">conformal projection</a>
+              <a href="#geoid">geoid</a>
             </li>
             <li>
-              <a href="#geoid">geoid</a>
+              <a href="#conformalprojection">conformal projection</a>
             </li>
             <li>
               <a href="#projection">projection</a>
@@ -18626,7 +18998,13 @@
               <a href="#mercatorprojection">mercator projection</a>
             </li>
             <li>
+              <a href="#cadastremap">cadastre map</a>
+            </li>
+            <li>
               <a href="#star">star</a>
+            </li>
+            <li>
+              <a href="#topographicmap">topographic map</a>
             </li>
             <li>
               <a href="#projectedcoordinatereferencesystem">projected coordinate reference system</a>
