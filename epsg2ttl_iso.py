@@ -30,11 +30,11 @@ def csAsSVG(csdef):
 
     
 def csAxisAsSVG(axisdef):
-    svgstr= """<svg width=\"400\" height=\"100\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    svgstr= """<svg width=\"400\" height=\"100\" viewbox=\"0 0 275 100\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
     if axisdef.unit_name in units:
-        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"gray\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(axisdef.abbrev)+": "+str(axisdef.name)+" ("+str(units[axisdef.unit_name])+") ("+str(axisdef.direction)+")</text>"
+        svgstr+="""<line x1=\"20\" y1=\"50\" x2=\"200\" y2=\"50\" stroke=\"gray\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(axisdef.abbrev)+": "+str(axisdef.name)+" ("+str(units[axisdef.unit_name])+") ("+str(axisdef.direction)+")</text>"
     else:
-        svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"gray\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(axisdef.abbrev)+": "+str(axisdef.name)+" ("+str(axisdef.unit_name)+") ("+str(axisdef.direction)+")</text>"      
+        svgstr+="""<line x1=\"20\" y1=\"50\" x2=\"200\" y2=\"50\" stroke=\"gray\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(axisdef.abbrev)+": "+str(axisdef.name)+" ("+str(axisdef.unit_name)+") ("+str(axisdef.direction)+")</text>"      
     return svgstr.replace("\"","'")+"</svg>"
 
 def geoidAsSVG(a,b):
@@ -869,10 +869,10 @@ ttl.add("geocrs:VerticalCS rdf:type owl:Class .\n")
 ttl.add("geocrs:VerticalCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:VerticalCS rdfs:label \"vertical coordinate system\"@en .\n")
 ttl.add("geocrs:DerivedProjectedCS rdf:type owl:Class .\n")
-ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:subClassOf geocrs:ProjectedCS .\n")
-ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:label \"derived projected coordinate system\"@en .\n")
-ttl.add("geocrs:DerivedProjectedCoordinateSystem  skos:definition \"coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system\"@en .\n")
-ttl.add("geocrs:DerivedProjectedCoordinateSystem  rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:DerivedProjectedCS  rdfs:subClassOf geocrs:ProjectedCS .\n")
+ttl.add("geocrs:DerivedProjectedCS  rdfs:label \"derived projected coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCS  skos:definition \"coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system\"@en .\n")
+ttl.add("geocrs:DerivedProjectedCS  rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:SphericalCoordinateSystem rdf:type owl:Class .\n")
 ttl.add("geocrs:SphericalCoordinateSystem rdfs:subClassOf geocrs:3DCoordinateSystem .\n")
 ttl.add("geocrs:SphericalCoordinateSystem rdfs:label \"spherical coordinate system\"@en .\n")
