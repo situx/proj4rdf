@@ -1579,6 +1579,8 @@ class OntDocGeneration:
 
 
     def shortenURI(self,uri):
+        if uri.endswith("/"):
+            uri=uri[0:-1]
         if uri!=None and "#" in uri:
             return uri[uri.rfind('#')+1:]
         if uri!=None and "/" in uri:
