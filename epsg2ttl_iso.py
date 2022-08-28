@@ -737,8 +737,8 @@ ttlprojectionvocab=Graph()
 ttlprojectionvocab.parse("projection_vocabulary/projection_vocabulary.ttl")
 ttlplanetvocab=Graph()
 ttlplanetvocab.parse("planet_vocabulary/planet_vocabulary.ttl")
-srsapplication=Graph()
-srsapplication.parse("srs_application/srs_application.ttl")
+srsapplicationvocab=Graph()
+srsapplicationvocab.parse("srs_application/srs_application.ttl")
 csvocab=Graph()
 csvocab.parse("cs_vocabulary/cs_vocabulary.ttl")
 ttlhead="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
@@ -1452,12 +1452,14 @@ graph.parse(data = ttlhead+"".join(ttlnoniso), format='turtle')
 graph+=ttlprojectionvocab
 graph+=ttlplanetvocab
 graph+=csvocab
+graph+=srsapplicationvocab
 graph.serialize(destination='owl/ontology_noniso.ttl', format='turtle')
 graph = Graph()
 graph.parse(data = ttlhead+"".join(ttlnoniso), format='turtle')
 graph+=ttlprojectionvocab
 graph+=ttlplanetvocab
 graph+=csvocab
+graph+=srsapplicationvocab
 graph.parse("iso_changed_srsnamespace.ttl",format='turtle')
 graph.serialize(destination='owl/ontology_isobased.ttl', format='turtle')
 
@@ -1483,12 +1485,14 @@ graph2.parse(data = ttlhead+"".join(ttl)+"".join(ttldata), format='n3')
 graph2+=ttlprojectionvocab
 graph2+=ttlplanetvocab
 graph2+=csvocab
+graph2+=srsapplicationvocab
 graph2.serialize(destination='owl/result.ttl', format='turtle')
 graph2 = Graph()
 graph2.parse(data = ttlhead+"".join(ttlnoniso)+"".join(ttldata), format='n3')
 graph2+=ttlprojectionvocab
 graph2+=ttlplanetvocab
 graph2+=csvocab
+graph2+=srsapplicationvocab
 graph2.parse("iso_changed_srsnamespace.ttl",format='turtle')
 graph2.serialize(destination='owl/result_iso.ttl', format='turtle')
 ttldata=set()
