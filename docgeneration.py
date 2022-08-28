@@ -1298,15 +1298,18 @@ class OntDocGeneration:
 
     def processLiteral(self,literal, literaltype, reproject,currentlayergeojson=None,triplestoreconf=None):     
         #print("Process literal: " + str(literal) + " --- " + str(literaltype))
-        if "wkt" in literaltype.lower(): 
-            crsuri=""
-            if "http" in literal:
-                crsuri=literal[0:literal.rfind('>')].replace("<","")
-                literal=literal[literal.rfind('>')+1:].strip()
-            shapelygeom=shapely.wkt.loads(literal)
-            return json.loads(json.dumps(shapely.geometry.mapping(shapelygeom),indent=2))
-        if "geojson" in literaltype.lower():
-            return literal
+        try:
+            if "wkt" in literaltype.lower(): 
+                crsuri=""
+                if "http" in literal:
+                    crsuri=literal[0:literal.rfind('>')].replace("<","")
+                    literal=literal[literal.rfind('>')+1:].strip()
+                shapelygeom=shapely.wkt.loads(literal)
+                return json.loads(json.dumps(shapely.geometry.mapping(shapelygeom),indent=2))
+            if "geojson" in literaltype.lower():
+                return literal
+        except Exception as e:
+            print(e)
         return {}
 
 
@@ -1645,6 +1648,8 @@ class OntDocGeneration:
                     unitlabel=str(foundval)+" <a href=\""+str(foundunit)+"\" target=\"_blank\">"+str(self.shortenURI(foundunit))+"</a>"
             else:
                 unitlabel=str(foundval)+" "+str(foundunit)
+        if foundunit==None and foundval!=None:
+            unitlabel=str(foundval)
         return {"geojsonrep":geojsonrep,"label":label,"unitlabel":unitlabel,"foundmedia":foundmedia,"imageannos":imageannos,"image3dannos":image3dannos}
 
 
