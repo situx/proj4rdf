@@ -263,14 +263,13 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@language": "en",
-        "@value": "Projection Ontology"
+        "@value": "CS Extension Ontology"
       }
     ]
   },
@@ -282,6 +281,29 @@
     "https://schema.org/name": [
       {
         "@value": "SRS Application Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Planet Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Projection Ontology"
       }
     ]
   },
@@ -305,28 +327,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Planet Ontology"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "CS Extension Ontology"
       }
     ]
   }
@@ -2306,8 +2306,8 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="DerivedProjectedCS">
-          <h3>Derived Projected Cs
+        <div class="property entity" id="derivedprojectedcoordinatesystem">
+          <h3>derived projected coordinate system
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
@@ -2315,6 +2315,31 @@
               <th>IRI</th>
               <td>
                 <code>http://www.opengis.net/ont/crs/DerivedProjectedCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>coordinate system used by a DerivedProjected CRS, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ProjectedCS">geocrs:ProjectedCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -10062,7 +10087,10 @@
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
               </th>
               <td>
-                <a href="http://www.opengis.net/ont/crs/DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/DerivedProjectedCS">geocrs:DerivedProjectedCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -18002,7 +18030,7 @@
               <a href="#derivedprojectedcoordinatereferencesystem">derived projected coordinate reference system</a>
             </li>
             <li>
-              <a href="#DerivedProjectedCS">Derived Projected Cs</a>
+              <a href="#derivedprojectedcoordinatesystem">derived projected coordinate system</a>
             </li>
             <li>
               <a href="#derivedverticalcoordinatereferencesystem">derived vertical coordinate reference system</a>
