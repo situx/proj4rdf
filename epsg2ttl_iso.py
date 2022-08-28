@@ -112,12 +112,13 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsaxis:"+axis.direction+" rdf:type geocrs:AxisDirection . \n")		            
 			if axis.unit_name in units:
 				ttl.add("geocrsaxis:"+axisid+" om:hasUnit "+units[axis.unit_name]+" . \n")
+				ttl.add(units[axis.unit_name]+" rdf:type om:Unit . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(units[axis.unit_name])+")\"@en . \n")						
 			else:
 				ttl.add("geocrsaxis:"+axisid+" om:hasUnit \""+axis.unit_name+"\" . \n")
 				ttl.add("geocrsaxis:"+axisid+" rdfs:label \""+axis.name+" ("+str(axis.unit_name)+")\"@en . \n")	
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asWKT \""+str(curcrs.coordinate_system.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
+		ttl.add("geoepsg:"+epsgcode+"_cs geocrs:asProjJSON \""+str(curcrs.coordinate_system.to_json()).replace("\"","'").replace("\n","")+"\"^^geocrs:projJSONLiteral . \n")
 		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem geoepsg:"+epsgcode+"_cs . \n")		
 	elif curcrs.coordinate_system!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateSystem \""+str(curcrs.coordinate_system)+"\"^^xsd:string . \n")
@@ -183,8 +184,8 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 		ttl.add("geoepsg:"+epsgcode+" geocrs:coordinateOperation geocrsoperation:"+str(coordoperationid)+" . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:accuracy \""+str(curcrs.coordinate_operation.accuracy)+"\"^^xsd:double . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:method_name \""+str(curcrs.coordinate_operation.method_name)+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\" . \n")
-		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\" . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProj4 \""+str(curcrs.coordinate_operation.to_proj4()).strip().replace("\"","'").replace("\n","")+"\"^^geocrs:projLiteral . \n")
+		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asProjJSON \""+str(curcrs.coordinate_operation.to_json()).strip().replace("\"","'").replace("\n","")+"\"^^geocrs:projJSONLiteral . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" geocrs:asWKT \""+str(curcrs.coordinate_operation.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
 		if curcrs.coordinate_operation.scope!=None:
 			ttl.update(resolveScope("geocrsoperation:"+str(coordoperationid),curcrs.coordinate_operation.scope))
@@ -211,6 +212,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				if par.unit_name in units:
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:value \""+str(par.value).replace(",","")+"\"^^xsd:double . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value om:hasUnit "+units[par.unit_name]+" . \n")
+					ttl.add(units[par.unit_name]+" rdf:type om:Unit . \n")
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdf:type geocrs:OperationParameterValue . \n") 
 					ttl.add("geocrsoperation:"+str(coordoperationid)+"_"+str(opparamname)+"_value rdfs:label \""+str(curcrs.coordinate_operation.name)+": "+str(curcrs.coordinate_operation.method_name)+": Parameter "+str(par.name)+"\" . \n")                         
 				else:
@@ -289,8 +291,10 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
 			else:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\" . \n")
-			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\" . \n")
+			if curcrs.prime_meridian.name in meridiansvg:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" foaf:image \""+str(meridiansvg[curcrs.prime_meridian.name])+"\" . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
+			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\"^^geocrs:projJSONLiteral . \n")
 			if curcrs.prime_meridian.remarks!=None:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdfs:comment \""+str(curcrs.prime_meridian.remarks)+"\"@en . \n")
 			if curcrs.prime_meridian.scope!=None:
@@ -434,6 +438,22 @@ coordinatesystem["ordinal"]="geocrs:OrdinalCS"
 coordinatesystem["parametric"]="geocrs:ParametricCS"
 coordinatesystem["spherical"]="geocrs:SphericalCS"
 coordinatesystem["temporal"]="geocrs:TemporalCS"
+meridiansvg={
+    "Athens":"https://situx.github.io/proj4rdf/resources/primemeridian/AthensPrimeMeridian.svg",
+    "Bern":"https://situx.github.io/proj4rdf/resources/primemeridian/BernPrimeMeridian.svg",
+    "Bogota":"https://situx.github.io/proj4rdf/resources/primemeridian/BogotaPrimeMeridian.svg",
+    "Brussels":"https://situx.github.io/proj4rdf/resources/primemeridian/BrusselsPrimeMeridian.svg",
+    "Ferro":"https://situx.github.io/proj4rdf/resources/primemeridian/FerroPrimeMeridian.svg",
+    "Greenwich":"https://situx.github.io/proj4rdf/resources/primemeridian/GreenwichPrimeMeridian.svg",
+    "Jakarta":"https://situx.github.io/proj4rdf/resources/primemeridian/JakartaPrimeMeridian.svg",
+    "Lisbon":"https://situx.github.io/proj4rdf/resources/primemeridian/LisbonPrimeMeridian.svg",
+    "Madrid":"https://situx.github.io/proj4rdf/resources/primemeridian/MadridPrimeMeridian.svg",
+    "Oslo":"https://situx.github.io/proj4rdf/resources/primemeridian/OsloPrimeMeridian.svg",
+    "Paris":"https://situx.github.io/proj4rdf/resources/primemeridian/ParisPrimeMeridian.svg",
+    "Paris":"https://situx.github.io/proj4rdf/resources/primemeridian/ParisRGSMeridian.svg",
+    "Rome":"https://situx.github.io/proj4rdf/resources/primemeridian/RomePrimeMeridian.svg",
+    "Stockholm":"https://situx.github.io/proj4rdf/resources/primemeridian/StockholmPrimeMeridian.svg"
+}
 
 
 spheroids={}
@@ -713,6 +733,7 @@ ttlhead+="@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
 ttlhead+="@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
 ttlhead+="@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n"
 ttlhead+="@prefix prov: <http://www.w3.org/ns/prov-o/> .\n"
+ttlhead+="@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n"
 ttlhead+="@prefix geoepsg: <http://www.opengis.net/def/crs/EPSG/0/> .\n"
 ttlhead+="@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n"
 ttlhead+="@prefix geocrs: <http://www.opengis.net/ont/crs/> .\n"
