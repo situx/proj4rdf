@@ -274,6 +274,18 @@
     ]
   },
   {
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Projection Ontology"
+      }
+    ]
+  },
+  {
     "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -304,18 +316,6 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Projection Ontology"
       }
     ]
   }
@@ -3518,6 +3518,17 @@
                 <code>http://www.opengis.net/ont/crs/GeographicCS</code>
               </td>
             </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
           </table>
         </div>
         <div class="property entity" id="Gilberttwo-worldperspectiveprojection">
@@ -6488,19 +6499,6 @@
                     <a href="http://www.opengis.net/ont/crs/PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="projectedcoordinatesystem">
-          <h3>projected coordinate system
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/ProjectedCS</code>
               </td>
             </tr>
           </table>
@@ -9875,7 +9873,42 @@
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
               </th>
               <td>
-                <a href="http://www.opengis.net/ont/crs/ProjectedCoordinateSystem">geocrs:ProjectedCoordinateSystem</a>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/ProjectedCS">geocrs:ProjectedCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="projectedcoordinatesystem">
+          <h3>projected coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/ProjectedCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/PlanarCS">geocrs:PlanarCS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <a href="http://www.opengis.net/ont/crs/DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a>
               </td>
             </tr>
           </table>
@@ -13316,9 +13349,6 @@
                     </span>
                   </li>
                   <li>
-                    <a href="http://www.opengis.net/ont/crs/DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a>
-                  </li>
-                  <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/EngineeringCS">geocrs:EngineeringCS</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -13331,7 +13361,10 @@
                     </span>
                   </li>
                   <li>
-                    <a href="http://www.opengis.net/ont/crs/GeographicCoordinateSystem">geocrs:GeographicCoordinateSystem</a>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GeographicCS">geocrs:GeographicCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
                   </li>
                   <li>
                     <span>
@@ -13405,6 +13438,12 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/VerticalCS">geocrs:VerticalCS</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -15643,6 +15682,30 @@
               <td>
                 <span>
                   <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="VerticalCS">
+          <h3>vertical coordinate system
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/VerticalCS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -18003,9 +18066,6 @@
               <a href="#polarcoordinatesystem">polar coordinate system</a>
             </li>
             <li>
-              <a href="#projectedcoordinatesystem">projected coordinate system</a>
-            </li>
-            <li>
               <a href="#PutninsP3'projection">Putnins P3' projection</a>
             </li>
             <li>
@@ -18309,6 +18369,9 @@
               <a href="#planarcoordinatesystem">planar coordinate system</a>
             </li>
             <li>
+              <a href="#projectedcoordinatesystem">projected coordinate system</a>
+            </li>
+            <li>
               <a href="#quarticauthalicprojection">quartic authalic projection</a>
             </li>
             <li>
@@ -18523,6 +18586,9 @@
             </li>
             <li>
               <a href="#geocentriccoordinatereferencesystem">geocentric coordinate reference system</a>
+            </li>
+            <li>
+              <a href="#VerticalCS">vertical coordinate system</a>
             </li>
             <li>
               <a href="#verticalcoordinatereferencesystem">vertical coordinate reference system</a>
