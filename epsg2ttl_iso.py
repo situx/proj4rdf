@@ -439,20 +439,20 @@ coordinatesystem["parametric"]="geocrs:ParametricCS"
 coordinatesystem["spherical"]="geocrs:SphericalCS"
 coordinatesystem["temporal"]="geocrs:TemporalCS"
 meridiansvg={
-    "Athens":"https://situx.github.io/proj4rdf/resources/primemeridian/AthensPrimeMeridian.svg",
-    "Bern":"https://situx.github.io/proj4rdf/resources/primemeridian/BernPrimeMeridian.svg",
-    "Bogota":"https://situx.github.io/proj4rdf/resources/primemeridian/BogotaPrimeMeridian.svg",
-    "Brussels":"https://situx.github.io/proj4rdf/resources/primemeridian/BrusselsPrimeMeridian.svg",
-    "Ferro":"https://situx.github.io/proj4rdf/resources/primemeridian/FerroPrimeMeridian.svg",
-    "Greenwich":"https://situx.github.io/proj4rdf/resources/primemeridian/GreenwichPrimeMeridian.svg",
-    "Jakarta":"https://situx.github.io/proj4rdf/resources/primemeridian/JakartaPrimeMeridian.svg",
-    "Lisbon":"https://situx.github.io/proj4rdf/resources/primemeridian/LisbonPrimeMeridian.svg",
-    "Madrid":"https://situx.github.io/proj4rdf/resources/primemeridian/MadridPrimeMeridian.svg",
-    "Oslo":"https://situx.github.io/proj4rdf/resources/primemeridian/OsloPrimeMeridian.svg",
-    "Paris":"https://situx.github.io/proj4rdf/resources/primemeridian/ParisPrimeMeridian.svg",
-    "Paris":"https://situx.github.io/proj4rdf/resources/primemeridian/ParisRGSMeridian.svg",
-    "Rome":"https://situx.github.io/proj4rdf/resources/primemeridian/RomePrimeMeridian.svg",
-    "Stockholm":"https://situx.github.io/proj4rdf/resources/primemeridian/StockholmPrimeMeridian.svg"
+    "Athens":"https://situx.github.io/proj4rdf/primemeridians/AthensPrimeMeridian.svg",
+    "Bern":"https://situx.github.io/proj4rdf/primemeridians/BernPrimeMeridian.svg",
+    "Bogota":"https://situx.github.io/proj4rdf/primemeridians/BogotaPrimeMeridian.svg",
+    "Brussels":"https://situx.github.io/proj4rdf/primemeridians/BrusselsPrimeMeridian.svg",
+    "Ferro":"https://situx.github.io/proj4rdf/primemeridians/FerroPrimeMeridian.svg",
+    "Greenwich":"https://situx.github.io/proj4rdf/primemeridians/GreenwichPrimeMeridian.svg",
+    "Jakarta":"https://situx.github.io/proj4rdf/primemeridians/JakartaPrimeMeridian.svg",
+    "Lisbon":"https://situx.github.io/proj4rdf/primemeridians/LisbonPrimeMeridian.svg",
+    "Madrid":"https://situx.github.io/proj4rdf/primemeridians/MadridPrimeMeridian.svg",
+    "Oslo":"https://situx.github.io/proj4rdf/primemeridians/OsloPrimeMeridian.svg",
+    "Paris":"https://situx.github.io/proj4rdf/primemeridians/ParisPrimeMeridian.svg",
+    "Paris":"https://situx.github.io/proj4rdf/primemeridians/ParisRGSMeridian.svg",
+    "Rome":"https://situx.github.io/proj4rdf/primemeridians/RomePrimeMeridian.svg",
+    "Stockholm":"https://situx.github.io/proj4rdf/primemeridians/StockholmPrimeMeridian.svg"
 }
 
 

@@ -150,7 +150,11 @@ function saveTextAsFile(tosave,fileext){
     a.style = "display: none";  
     var blob= new Blob([tosave], {type:'text/plain'});
     var url = window.URL.createObjectURL(blob);
-    var filename = document.getElementById('projselect').value.replace("http://www.opengis.net/ont/crs/","")+"."+fileext;
+	if($('#primemeridian').val()!="None"){
+		var filename = document.getElementById('projselect').value.replace("http://www.opengis.net/ont/crs/","")+"_"+$('#primemeridian option:selected').text()+"PrimeMeridian."+fileext;
+	}else{
+		var filename = document.getElementById('projselect').value.replace("http://www.opengis.net/ont/crs/","")+"."+fileext;
+	}   
     a.href = url;
     a.download = filename;
     document.body.appendChild(a);
@@ -200,12 +204,15 @@ function generateImage(meridian=0){
     var height = 800;
     document.getElementById("projectionview").innerHTML="<canvas width=\""+width+"\" height=\""+height+"\" id=\"svgcanvas\"></canvas>"
 	projection = projections[projtype]
-	
     svg = d3.select("#svgcanvas").node().getContext('2d');
-	var svgcontent = d3.select("projectionview2").append("svg")
-	var path = d3.geo.path()
-      .projection(projection);
-	var geoGenerator = d3.geoPath().projection(projection).context(svg);
+		var svgcontent = d3.select("projectionview2").append("svg")
+	if($('#primemeridian').val()!="None"){
+		var path = d3.geo.path().projection(projection/*.rotate([parseFloat($('#primemeridian').val()),0])*/);
+		var geoGenerator = d3.geoPath().projection(projection/*.rotate([parseFloat($('#primemeridian').val()),0])*/).context(svg);	
+	}else{
+		var path = d3.geo.path().projection(projection);
+		var geoGenerator = d3.geoPath().projection(projection).context(svg);
+	}
     console.log(projtype)	
 	console.log(projection)
 	var graticule = d3.geoGraticule();
@@ -215,20 +222,34 @@ function generateImage(meridian=0){
     lines.exit().remove();
     grat=d3.geoGraticule()
     grat.step([5,5])
-	console.log(grat.lines())
+	linees=grat.lines()
+	linestr={"type": "LineString","coordinates": [[-180,linees[0].coordinates[0][1]],[-180,linees[0].coordinates[1][1]],[-180,linees[0].coordinates[2][1]]]}
     svg.beginPath();
     svg.strokeStyle = '#ccc';
     geoGenerator(graticule());
+	console.log(linestr)
     svg.stroke();
+	if($('#primemeridian').val()!="None"){
+		console.log($('#primemeridian').val())
+		linestr={"type": "LineString","coordinates": [[parseFloat($('#primemeridian').val()),linees[0].coordinates[0][1]],[parseFloat($('#primemeridian').val()),linees[0].coordinates[1][1]],[parseFloat($('#primemeridian').val()),linees[0].coordinates[2][1]]]}
+		svgcontent.insert("path", ".graticule").datum(linestr).attr("style", "stroke:black;strokw-width:5px").attr("d", path);
+		svg.beginPath()
+		svg.strokeStyle="blue"
+		geoGenerator(linestr);
+		svg.stroke()
+	}	
     var url = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
     d3.json(url, function(err, geojson) {
 	  svg.beginPath();
 	  svg.strokeStyle = 'black';
-	  svg.fill = 'black';
-	  
+	  svg.fill = 'black';	  
 	  geoGenerator(geojson)
 	  svg.stroke()
-	  tempsvg="<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
+	  if($('#primemeridian').val()!="None"){
+	    tempsvg="<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\""+path(linestr)+"\" stroke-width=\"3px\" stroke=\"#0000FF\" fill=\"none\"/><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
+	  }else{
+		tempsvg="<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\""+path(graticule())+"\" stroke=\"#ccc\" fill=\"none\"/><path d=\""+path(geojson)+"\"/></svg>"
+	  }
 	  console.log(tempsvg)
 	  document.getElementById("amountofproj").innerHTML=Object.keys(projections).length
 	})
@@ -375,8 +396,15 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/WatermanButterflyProjection">Waterman Butterfly Projection</option>
 <option value="http://www.opengis.net/ont/crs/WiechelProjection">Wiechel Projection</option>
 <option value="http://www.opengis.net/ont/crs/WinkelTripelProjection">Winkel Tripel Projection</option>
-</select><select id="primemeridian"><option value="None">No Prime Meridian</option><option value="23.7163375">Athens</option><option value="7.43958333333333">Bern</option><option value="-74.0809166666667">Bogota</option><option value="4.367975">Brussels</option><option value="-17.6666666666667">Ferro</option><option value="0.0">Greenwich</option><option value="106.807719444444">Jakarta</option><option value="-9.13190611111111">Lisbon</option><option value="-3.687375">Madrid</option><option value="10.7229166666667">Oslo</option><option value="2.5969213">Paris</option><option value="2.33720833333333">Paris RGS</option><option value="12.4523333333333">Rome</option><option value="18.0582777777778">Stockholm</option></select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
-
+</select><select id="primemeridian" onchange="generateImage()"><option value="None">No Prime Meridian</option>
+<option value="23.7163375">Athens</option><option value="7.43958333333333">Bern</option>
+<option value="-74.0809166666667">Bogota</option><option value="4.367975">Brussels</option>
+<option value="-17.6666666666667">Ferro</option><option value="0.0">Greenwich</option>
+<option value="106.807719444444">Jakarta</option><option value="-9.13190611111111">Lisbon</option>
+<option value="-3.687375">Madrid</option><option value="10.7229166666667">Oslo</option>
+<option value="2.5969213">Paris</option><option value="2.33720833333333">Paris RGS</option>
+<option value="12.4523333333333">Rome</option><option value="18.0582777777778">Stockholm</option>
+</select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
 <div id="projectionview"></div><br/>Hello
 <div id="projectionview2"></div>
 <script>
