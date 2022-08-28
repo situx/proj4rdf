@@ -409,6 +409,7 @@ units["centimetre"]="om:centimetre"
 units["fathom"]="om:fathom-USSurvey"
 units["chain"]="om:chain"
 units["radian"]="om:radian"
+units["foot"]="om:foot-International"
 units["metre"]="om:metre"
 units["nautical mile"]="om:nauticalMile-International"
 units["kilometre"]="om:kilometre"
@@ -417,11 +418,13 @@ units["gon"]="om:gon"
 units["microradian"]="om:microradian"
 units["yard"]="om:yard-International"
 units["degree"]="om:degree"
+units["Degree"]="om:degree"
 units["metre per second"]="om:metrePerSecond-Time"
 units["year"]="om:year"
-units["ft"]="om:foot"
+units["ft"]="om:foot-International"
+units["US survey foot"]="om:foot-USSurvey"
 units["US Survey Foot"]="om:foot-USSurvey"
-units["us-ft"]="om:usfoot"
+units["us-ft"]="om:foot-USSurvey"
 scope={}
 scope["geodesy"]="geocrs:Geodesy"
 scope["topographic mapping"]="geocrs:TopographicMap"
@@ -856,6 +859,9 @@ ttl.add("geocrs:OrdinalCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:OrdinalCS rdfs:label \"ordinal coordinate system\"@en .\n")
 ttl.add("geocrs:OrdinalCS skos:definition \"n-dimensional coordinate system in which every axis uses integers\"@en .\n")
 ttl.add("geocrs:OrdinalCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
+ttl.add("geocrs:PlanarCS rdf:type owl:Class .\n")
+ttl.add("geocrs:PlanarCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:PlanarCS rdfs:label \"planar coordinate system\"@en .\n")
 ttl.add("geocrs:ProjectedCS rdf:type owl:Class .\n")
 ttl.add("geocrs:ProjectedCS rdfs:subClassOf geocrs:PlanarCS .\n")
 ttl.add("geocrs:ProjectedCS rdfs:label \"projected coordinate system\"@en .\n")
