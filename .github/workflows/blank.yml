@@ -37,6 +37,7 @@ jobs:
          cp ../index.html .
          cp ../projimggenerator.html .
          mkdir projections/
+         mkdir primemeridians/
          cp ../resources/projection/* projections/
          cp ../resources/primemeridian/* primemeridians/
          cd ..
