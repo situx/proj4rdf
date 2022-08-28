@@ -26,6 +26,8 @@ def csAsSVG(csdef):
             svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(units[csdef.axis_list[2].unit_name])+") ("+str(csdef.axis_list[1].direction)+")</text>"    
         else:
             svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"190\" y2=\"30\" stroke=\"blue\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"210\" y=\"25\" class=\"small\">"""+str(csdef.axis_list[2].abbrev)+": "+str(csdef.axis_list[2].name)+" ("+str(csdef.axis_list[2].unit_name)+") ("+str(csdef.axis_list[1].direction)+")</text>"               
+    return svgstr.replace("\"","'")+"</svg>"
+
     
 def csAxisAsSVG(axisdef):
     svgstr= """<svg width=\"400\" height=\"250\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
@@ -850,7 +852,7 @@ ttl.add("geocrs:GeographicCS rdf:type owl:Class .\n")
 ttl.add("geocrs:GeographicCS rdfs:subClassOf geocrs:CoordinateSystem  .\n")
 ttl.add("geocrs:GeographicCS rdfs:label \"geographic coordinate system\"@en .\n")
 ttl.add("geocrs:OrdinalCS rdf:type owl:Class .\n")
-ttl.add("geocrs:OrdinalCoordinateSystem rdfs:subClassOf geocrs:CoordinateSystem .\n")
+ttl.add("geocrs:OrdinalCS rdfs:subClassOf geocrs:CoordinateSystem .\n")
 ttl.add("geocrs:OrdinalCS rdfs:label \"ordinal coordinate system\"@en .\n")
 ttl.add("geocrs:OrdinalCS skos:definition \"n-dimensional coordinate system in which every axis uses integers\"@en .\n")
 ttl.add("geocrs:OrdinalCS rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
