@@ -30,7 +30,7 @@ def csAsSVG(csdef):
 
     
 def csAxisAsSVG(axisdef):
-    svgstr= """<svg width=\"400\" height=\"250\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
+    svgstr= """<svg width=\"400\" height=\"100\" viewbox=\"0 0 375 220\"><defs><marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\" refX=\"0\" refY=\"2\" orient=\"auto\"><polygon points=\"0 0, 4 2, 0 4\" /></marker></defs>"""
     if axisdef.unit_name in units:
         svgstr+="""<line x1=\"20\" y1=\"200\" x2=\"200\" y2=\"200\" stroke=\"gray\" stroke-width=\"5\" marker-end=\"url(#arrowhead)\"></line><text x=\"110\" y=\"220\" class=\"small\">"""+str(axisdef.abbrev)+": "+str(axisdef.name)+" ("+str(units[axisdef.unit_name])+") ("+str(axisdef.direction)+")</text>"
     else:
@@ -1190,9 +1190,6 @@ ttlnoniso.add("geocrs:SRSRegistry skos:definition \"A rdf-enabled registry for S
 ttl.add("geocrs:OperationParameter rdf:type owl:Class .\n")
 ttl.add("geocrs:OperationParameter rdfs:label \"operation parameter\"@en .\n")
 ttl.add("geocrs:OperationParameter skos:definition \"Parameter used by a method to perform some coordinate operation\"@en .\n")
-ttl.add("geocrs:OperationValue rdf:type owl:Class .\n")
-ttl.add("geocrs:OperationValue rdfs:label \"operation value\"@en .\n")
-ttl.add("geocrs:OperationValue skos:definition \"Value of a parameter used by a method to perform some coordinate operation\"@en .\n")
 ttl.add("geocrs:CoordinateOperation rdf:type owl:Class .\n")
 ttl.add("geocrs:CoordinateOperation rdfs:label \"coordinate operation\"@en .\n")
 ttl.add("geocrs:CoordinateOperation skos:definition \"mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch\"@en .\n")
