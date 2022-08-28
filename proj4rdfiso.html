@@ -263,6 +263,17 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CoordinateDataType - ConceptScheme"
+      }
+    ]
+  },
+  {
     "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -337,13 +348,13 @@
     ]
   },
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "CoordinateDataType - ConceptScheme"
+        "@value": "AxisDirection - ConceptScheme"
       }
     ]
   },
@@ -355,17 +366,6 @@
     "https://schema.org/name": [
       {
         "@value": "RealizationMethod - ConceptScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/AxisDirection",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "AxisDirection - ConceptScheme"
       }
     ]
   }
@@ -1942,6 +1942,9 @@
   <a href="http://www.opengis.net/ont/crs/uAffineCS">geocrs:uAffineCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
+  <a href="http://www.opengis.net/ont/crs/uLinearCS">geocrs:uLinearCS</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uSphericalCS">geocrs:uSphericalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
@@ -1949,9 +1952,6 @@
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uCartesianCS">geocrs:uCartesianCS</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uLinearCS">geocrs:uLinearCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
