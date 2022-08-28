@@ -194,7 +194,7 @@ function setSVGDimensions(obj){
 	return "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\""+newviewport+"\" width=\""+((maxx-minx)+10)+"\" height=\""+((maxy-miny)+10)+"\">"+$('#projectionview2').children().first().html()+"</svg>"
 }
 
-function generateImage(){
+function generateImage(meridian=0){
 	projtype=document.getElementById('projselect').value
     var width = 1200;
     var height = 800;
@@ -208,12 +208,14 @@ function generateImage(){
 	var geoGenerator = d3.geoPath().projection(projection).context(svg);
     console.log(projtype)	
 	console.log(projection)
-		var graticule = d3.geoGraticule();
+	var graticule = d3.geoGraticule();
 	var lines = svgcontent.selectAll('path.graticule').data([graticule()]);
     lines.enter().append('path').classed('graticule', true);
     lines.attr('d', path);
     lines.exit().remove();
-
+    grat=d3.geoGraticule()
+    grat.step([5,5])
+	console.log(grat.lines())
     svg.beginPath();
     svg.strokeStyle = '#ccc';
     geoGenerator(graticule());
@@ -373,7 +375,7 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/WatermanButterflyProjection">Waterman Butterfly Projection</option>
 <option value="http://www.opengis.net/ont/crs/WiechelProjection">Wiechel Projection</option>
 <option value="http://www.opengis.net/ont/crs/WinkelTripelProjection">Winkel Tripel Projection</option>
-</select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
+</select><select id="primemeridian"><option value="None">No Prime Meridian</option><option value="23.7163375">Athens</option><option value="7.43958333333333">Bern</option><option value="-74.0809166666667">Bogota</option><option value="4.367975">Brussels</option><option value="-17.6666666666667">Ferro</option><option value="0.0">Greenwich</option><option value="106.807719444444">Jakarta</option><option value="-9.13190611111111">Lisbon</option><option value="-3.687375">Madrid</option><option value="10.7229166666667">Oslo</option><option value="2.5969213">Paris</option><option value="2.33720833333333">Paris RGS</option><option value="12.4523333333333">Rome</option><option value="18.0582777777778">Stockholm</option></select><button id="downloadButton" onclick="saveSVG()">Download SVG</button>
 
 <div id="projectionview"></div><br/>Hello
 <div id="projectionview2"></div>
