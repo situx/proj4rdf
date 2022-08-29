@@ -252,7 +252,6 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
 				for prj in projections:
 					if prj in proj4string:
-                        print("PROJECTION: "+str(prj))
 						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
 						found=True
 						break
