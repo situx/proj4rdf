@@ -252,6 +252,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				proj4string=curcrs.coordinate_operation.to_proj4().strip().replace("\"","'").replace("\n","")
 				for prj in projections:
 					if prj in proj4string:
+                        print("PROJECTION: "+str(prj))
 						ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type "+projections[prj]+" . \n")
 						found=True
 						break
@@ -274,7 +275,6 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type "+str(datums[curcrs.datum.type_name])+" . \n")
 		elif "Datum Ensemble" in curcrs.datum.type_name:
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DatumEnsemble . \n")
-			print("DATUM ENSEMBLE:::: "+str(curcrs.datum))
 		else:
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
 		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
@@ -303,8 +303,8 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			else:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
 			if curcrs.prime_meridian.unit_conversion_factor!=None:
-                ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unitConversionFactor \""+str(curcrs.prime_meridian.unit_conversion_factor)+"\"^^xsd:double . \n")
-            if curcrs.prime_meridian.name in meridiansvg:
+				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unitConversionFactor \""+str(curcrs.prime_meridian.unit_conversion_factor)+"\"^^xsd:double . \n")
+			if curcrs.prime_meridian.name in meridiansvg:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" foaf:image \""+str(meridiansvg[curcrs.prime_meridian.name])+"\"^^xsd:anyURI . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\"^^geocrs:projJSONLiteral . \n")
