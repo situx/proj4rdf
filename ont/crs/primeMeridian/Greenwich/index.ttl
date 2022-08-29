@@ -3,6 +3,7 @@
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.opengis.net/ont/crs/asProjJSON> "{'$schema':'https://proj.org/schemas/v0.4/projjson.schema.json','type':'PrimeMeridian','name':'Greenwich','longitude':0,'id':{'authority':'EPSG','code':8901}}"^^<http://www.opengis.net/ont/crs/projJSONLiteral> .
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.opengis.net/ont/crs/asWKT> "PRIMEM['Greenwich',0,ANGLEUNIT['degree',0.0174532925199433],ID['EPSG',8901]]"^^<http://www.opengis.net/ont/crs/wktLiteral> .
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.opengis.net/ont/crs/longitude> "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.opengis.net/ont/crs/unitConversionFactor> "0.01745329"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/PrimeMeridian> .
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://www.w3.org/2000/01/rdf-schema#label> "Greenwich"@en .
 <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/primemeridians/GreenwichPrimeMeridian.svg"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
