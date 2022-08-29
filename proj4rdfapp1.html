@@ -263,13 +263,14 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
+    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@value": "SRS Application Ontology"
+        "@language": "en",
+        "@value": "Projection Ontology"
       }
     ]
   },
@@ -281,6 +282,17 @@
     "https://schema.org/name": [
       {
         "@value": "CS Extension Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Planet Ontology"
       }
     ]
   },
@@ -308,25 +320,13 @@
     ]
   },
   {
-    "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
+    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
-        "@language": "en",
-        "@value": "Projection Ontology"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Planet Ontology"
+        "@value": "SRS Application Ontology"
       }
     ]
   }
@@ -2476,54 +2476,6 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/PolyhedralProjection">geocrs:PolyhedralProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="dynamicgeodeticreferenceframe">
-          <h3>dynamic geodetic reference frame
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -9329,44 +9281,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datumensemble">
-          <h3>datum ensemble
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/DatumEnsemble</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="dwarfplanet">
           <h3>dwarf planet
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -10664,13 +10578,13 @@
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a>
+                      <a href="http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a>
+                      <a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -11120,6 +11034,44 @@
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="datumensemble">
+          <h3>datum ensemble
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/DatumEnsemble</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -12040,6 +11992,97 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="datum">
+          <h3>datum
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Datum</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
+              </th>
+              <td>
+                <a href="http://www.wikidata.org/entity/Q1502887">wd:Q1502887</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/EngineeringDatum">geocrs:EngineeringDatum</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/ParametricDatum">geocrs:ParametricDatum</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/TemporalDatum">geocrs:TemporalDatum</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/HorizontalDatum">geocrs:HorizontalDatum</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="derivedcoordinatereferencesystem">
           <h3>derived coordinate reference system
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -12310,97 +12353,6 @@
                   <li>
                     <span>
                       <a href="http://www.opengis.net/ont/crs/TransverseCylindricalEqualAreaProjection">geocrs:TransverseCylindricalEqualAreaProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="datum">
-          <h3>datum
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/Datum</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
-              </th>
-              <td>
-                <a href="http://www.wikidata.org/entity/Q1502887">wd:Q1502887</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/EngineeringDatum">geocrs:EngineeringDatum</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/ParametricDatum">geocrs:ParametricDatum</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/TemporalDatum">geocrs:TemporalDatum</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/HorizontalDatum">geocrs:HorizontalDatum</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -15017,6 +14969,54 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="dynamicgeodeticreferenceframe">
+          <h3>dynamic geodetic reference frame
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="equal-areaprojection">
           <h3>equal-area projection
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -16179,40 +16179,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="centralcylindricalprojection">
-          <h3>central cylindrical projection
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/CentralCylindricalProjection</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="geodeticreferenceframe">
           <h3>geodetic reference frame
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -16258,6 +16224,40 @@
                   <a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="centralcylindricalprojection">
+          <h3>central cylindrical projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/CentralCylindricalProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/CylindricalProjection">geocrs:CylindricalProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/PerspectiveProjection">geocrs:PerspectiveProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
           </table>
@@ -18045,9 +18045,6 @@
               <a href="#dymaxionprojection">dymaxion projection</a>
             </li>
             <li>
-              <a href="#dynamicgeodeticreferenceframe">dynamic geodetic reference frame</a>
-            </li>
-            <li>
               <a href="#EckertIprojection">Eckert I projection</a>
             </li>
             <li>
@@ -18726,9 +18723,6 @@
               <a href="#cordiformprojection">cordiform projection</a>
             </li>
             <li>
-              <a href="#datumensemble">datum ensemble</a>
-            </li>
-            <li>
               <a href="#dwarfplanet">dwarf planet</a>
             </li>
             <li>
@@ -18849,6 +18843,9 @@
               <a href="#3Dcoordinatesystem">3D coordinate system</a>
             </li>
             <li>
+              <a href="#datumensemble">datum ensemble</a>
+            </li>
+            <li>
               <a href="#equalearthprojection">equal earth projection</a>
             </li>
             <li>
@@ -18897,6 +18894,9 @@
               <a href="#pseudo-conicalprojection">pseudo-conical projection</a>
             </li>
             <li>
+              <a href="#datum">datum</a>
+            </li>
+            <li>
               <a href="#derivedcoordinatereferencesystem">derived coordinate reference system</a>
             </li>
             <li>
@@ -18904,9 +18904,6 @@
             </li>
             <li>
               <a href="#cylindricalequalareaprojection">cylindrical equal area projection</a>
-            </li>
-            <li>
-              <a href="#datum">datum</a>
             </li>
             <li>
               <a href="#equidistantprojection">equidistant projection</a>
@@ -18981,6 +18978,9 @@
               <a href="#compromiseprojection">compromise projection</a>
             </li>
             <li>
+              <a href="#dynamicgeodeticreferenceframe">dynamic geodetic reference frame</a>
+            </li>
+            <li>
               <a href="#equal-areaprojection">equal-area projection</a>
             </li>
             <li>
@@ -19011,10 +19011,10 @@
               <a href="#compoundcoordinatereferencesystem">compound coordinate reference system</a>
             </li>
             <li>
-              <a href="#centralcylindricalprojection">central cylindrical projection</a>
+              <a href="#geodeticreferenceframe">geodetic reference frame</a>
             </li>
             <li>
-              <a href="#geodeticreferenceframe">geodetic reference frame</a>
+              <a href="#centralcylindricalprojection">central cylindrical projection</a>
             </li>
             <li>
               <a href="#ellipsoidalcoordinatesystem">ellipsoidal coordinate system</a>
