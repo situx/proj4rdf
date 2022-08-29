@@ -270,14 +270,12 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	if curcrs.datum!=None:
 		datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus").replace("[","_").replace("]","_"))
 		ttl.add("geoepsg:"+epsgcode+" geocrs:datum geocrsdatum:"+str(datumid)+" . \n")
-		if "Geodetic Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:GeodeticReferenceFrame . \n")
-		elif "Dynamic Vertical Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DynamicVerticalReferenceFrame . \n")
-		elif "Vertical Reference Frame" in curcrs.datum.type_name:
-			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:VerticalReferenceFrame . \n")
+		if curcrs.datum.type_name in datums:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type "+str(datums[curcrs.datum.type_name])+" . \n")
+		elif "Datum Ensemble" in curcrs.datum.type_name:
+			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:DatumEnsemble . \n")
+			print("DATUM ENSEMBLE:::: "+str(curcrs.datum))
 		else:
-			#print(curcrs.datum.type_name)
 			ttl.add("geocrsdatum:"+str(datumid)+" rdf:type geocrs:Datum . \n")
 		ttl.add("geocrsdatum:"+str(datumid)+" rdfs:label \"Datum: "+curcrs.datum.name+"\"@en . \n")
 		if curcrs.datum.remarks!=None:
@@ -293,7 +291,7 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" rdfs:comment \""+str(curcrs.datum.ellipsoid.remarks)+"\"^^xsd:string .\n")
 			ttl.add(spheroids[curcrs.datum.ellipsoid.name]+" geocrs:is_semi_minor_computed \""+str(curcrs.datum.ellipsoid.is_semi_minor_computed).lower()+"\"^^xsd:boolean .\n")
 		elif curcrs.datum.ellipsoid!=None:	
-			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n")
+			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:ellipse \""+curcrs.datum.ellipsoid.name+"\" . \n") 
 		if curcrs.prime_meridian!=None:
 			ttl.add("geocrsdatum:"+str(datumid)+" geocrs:primeMeridian geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" rdf:type geocrs:PrimeMeridian . \n")
@@ -304,7 +302,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 				ttl.add(units[curcrs.prime_meridian.unit_name]+" rdf:type om:Unit .\n")	
 			else:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" om:hasUnit \""+str(curcrs.prime_meridian.unit_name)+"\" . \n")
-			if curcrs.prime_meridian.name in meridiansvg:
+			if curcrs.prime_meridian.unit_conversion_factor!=None:
+                ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:unitConversionFactor \""+str(curcrs.prime_meridian.unit_conversion_factor)+"\"^^xsd:double . \n")
+            if curcrs.prime_meridian.name in meridiansvg:
 				ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" foaf:image \""+str(meridiansvg[curcrs.prime_meridian.name])+"\"^^xsd:anyURI . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asWKT \""+str(curcrs.prime_meridian.to_wkt()).replace("\"","'").replace("\n","")+"\"^^geocrs:wktLiteral . \n")
 			ttl.add("geocrsmeridian:"+curcrs.prime_meridian.name.replace(" ","")+" geocrs:asProjJSON \""+str(curcrs.prime_meridian.to_json()).replace("\"","'").replace("\n","")+"\"^^geocrs:projJSONLiteral . \n")
@@ -471,6 +471,16 @@ meridiansvg={
     "Stockholm":"https://situx.github.io/proj4rdf/primemeridians/StockholmPrimeMeridian.svg"
 }
 
+datums={
+     "Dynamic Reference Frame":"geocrs:DynamicReferenceFrame",
+	 "Dynamic Geodetic Reference Frame":"geocrs:DynamicGeodeticReferenceFrame",
+     "Dynamic Vertical Reference Frame":"geocrs:DynamicVerticalReferenceFrame",
+     "Engineering Datum":"geocrs:EngineeringDatum",
+     "Geodetic Reference Frame":"geocrs:GeodeticReferenceFrame",
+     "Parametric Datum":"geocrs:ParametricDatum",
+     "Temporal Datum":"geocrs:TemporalDatum",
+     "Vertical Reference Frame":"geocrs:VerticalReferenceFrame",
+}
 
 spheroids={}
 spheroids["Airy 1830"]="geocrsgeod:Airy1830"
@@ -1140,6 +1150,7 @@ ttl.add("geocrs:Datum rdfs:label \"datum\"@en .\n")
 ttl.add("geocrs:Datum skos:definition \"specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system\"@en .\n")
 ttl.add("geocrs:Datum rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
 ttl.add("geocrs:DatumEnsemble rdf:type owl:Class .\n")
+ttl.add("geocrs:DatumEnsemble rdfs:subClassOf geocrs:Datum .\n")
 ttl.add("geocrs:DatumEnsemble rdfs:label \"datum ensemble\"@en .\n")
 ttl.add("geocrs:DatumEnsemble skos:definition \"collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other\"@en .\n")
 ttl.add("geocrs:DatumEnsemble rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> .\n")
