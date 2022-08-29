@@ -1428,6 +1428,12 @@ geocrs:LittrowProjection rdf:type owl:Class ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LittrowProjection.svg"^^xsd:anyURI .
 
 
+###  http://www.opengis.net/ont/crs/LonLatProjection
+geocrs:LonLatProjection rdf:type owl:Class ;
+                        rdfs:subClassOf geocrs:Projection ;
+                        rdfs:label "longitude latitude projection"@en .
+
+
 ###  http://www.opengis.net/ont/crs/LorgnaProjection
 geocrs:LorgnaProjection rdf:type owl:Class ;
                         rdfs:subClassOf geocrs:AzimuthalProjection ,
@@ -2411,8 +2417,8 @@ geocrs:EquirectangularProjection <http://xmlns.com/foaf/0.1/image> "https://situ
 geocrs:MollweideProjection dc:creator "Karl Brandan Mollweide" ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MollweideProjection.svg"^^xsd:anyURI ;
                            rdfs:label "mollweide projection"@en ;
-                           geocrs:PROJidentifier "moll" ;
                            skos:altLabel "Babinet projection"@en ;
+                           geocrs:PROJidentifier "moll" ;
                            dc:date "1805" .
 
 
@@ -2441,8 +2447,8 @@ geocrs:WinkelSnyderProjection rdfs:label "winkel snyder projection"@en ;
 
 geocrs:WinkelTripelProjection dc:date "1921" ;
                               geocrs:PROJidentifier "wintri" ;
-                              rdfs:label "winkel tripel projection"@en ;
                               skos:definition "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" ;
+                              rdfs:label "winkel tripel projection"@en ;
                               dc:creator "Oswald Winkel" ;
                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WinkelTripelProjection.svg"^^xsd:anyURI .
 
