@@ -264,6 +264,8 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:ConcatenatedOperation . \n")
 		elif curcrs.coordinate_operation.type_name=="Other Coordinate Operation":
 			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:OtherCoordinateOperation . \n")
+		else:
+			ttl.add("geocrsoperation:"+str(coordoperationid)+" rdf:type geocrs:CoordinateOperation . \n")
 		ttl.add("geocrsoperation:"+str(coordoperationid)+" rdfs:label \""+curcrs.coordinate_operation.name+": "+curcrs.coordinate_operation.method_name+"\"@en . \n")
 	if curcrs.datum!=None:
 		datumid=str(curcrs.datum.name.replace(" ","_").replace("(","_").replace(")","_").replace("/","_").replace("'","_").replace("+","_plus").replace("[","_").replace("]","_"))
