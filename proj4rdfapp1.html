@@ -285,17 +285,6 @@
     ]
   },
   {
-    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "SRS Application Ontology"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/ProjectionOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -327,6 +316,17 @@
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "SRS Application Ontology"
       }
     ]
   }
@@ -5124,6 +5124,30 @@
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="latitudelongitudeprojection">
+          <h3>latitude longitude projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/LatLonProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/Projection">geocrs:Projection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -14393,6 +14417,12 @@
                   </li>
                   <li>
                     <span>
+                      <a href="http://www.opengis.net/ont/crs/LatLonProjection">geocrs:LatLonProjection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="http://www.opengis.net/ont/crs/PseudoOrthographicProjection">geocrs:PseudoOrthographicProjection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -16535,6 +16565,41 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="planet">
+          <h3>planet
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/Planet</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="projectedcoordinatereferencesystem">
           <h3>projected coordinate reference system
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -16584,16 +16649,30 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="planet">
-          <h3>planet
+        <div class="property entity" id="sphere">
+          <h3>sphere
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://www.opengis.net/ont/crs/Planet</code>
+                <code>http://www.opengis.net/ont/crs/Sphere</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>reference sphere</p></td>
             </tr>
             <tr>
               <th>
@@ -16601,18 +16680,7 @@
               </th>
               <td>
                 <span>
-                  <a href="http://www.opengis.net/ont/crs/InterstellarBody">geocrs:InterstellarBody</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/DwarfPlanet">geocrs:DwarfPlanet</a>
+                  <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -16663,44 +16731,6 @@
                     </span>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="sphere">
-          <h3>sphere
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.opengis.net/ont/crs/Sphere</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="None. Defined in None">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://docs.opengeospatial.org/as/18-005r4/18-005r4.html">ns1:18-005r4.html</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td><p>reference sphere</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
               </td>
             </tr>
           </table>
@@ -18371,6 +18401,9 @@
               <a href="#laskowskitri-optimalprojection">laskowski tri-optimal projection</a>
             </li>
             <li>
+              <a href="#latitudelongitudeprojection">latitude longitude projection</a>
+            </li>
+            <li>
               <a href="#leeprojection">lee projection</a>
             </li>
             <li>
@@ -19085,16 +19118,16 @@
               <a href="#topographicmap">topographic map</a>
             </li>
             <li>
-              <a href="#projectedcoordinatereferencesystem">projected coordinate reference system</a>
-            </li>
-            <li>
               <a href="#planet">planet</a>
             </li>
             <li>
-              <a href="#cartesiancoordinatesystem">cartesian coordinate system</a>
+              <a href="#projectedcoordinatereferencesystem">projected coordinate reference system</a>
             </li>
             <li>
               <a href="#sphere">sphere</a>
+            </li>
+            <li>
+              <a href="#cartesiancoordinatesystem">cartesian coordinate system</a>
             </li>
             <li>
               <a href="#areaofuse">area of use</a>

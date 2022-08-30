@@ -14,5 +14,6 @@
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/EngineeringSurvey> .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://www.opengis.net/ont/crs/usage> <http://www.opengis.net/ont/crs/TopographicMap> .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/MercatorProjection> .
+<http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://www.w3.org/2000/01/rdf-schema#comment> "A version of this projection with FN reduced by 4000000 is sometimes used for cadastre - see projection code 9911."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://www.w3.org/2000/01/rdf-schema#label> "Macedonia Gauss-Kruger: Transverse Mercator"@en .
 <http://www.opengis.net/ont/crs/operation/Macedonia_Gauss-Kruger> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
