@@ -41,6 +41,8 @@ jobs:
          cp ../resources/projection/* projections/
          cp ../resources/primemeridian/* primemeridians/
          cd ..
+         wget https://raw.githubusercontent.com/sparqlunicorn/sparqlunicornGoesGIS-ontdoc/main/docgeneration.py 
+         wget https://raw.githubusercontent.com/sparqlunicorn/sparqlunicornGoesGIS-ontdoc/main/prefixes.json 
          python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geocrs False
          python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geoepsg False
          cd docs
