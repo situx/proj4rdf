@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/datum/International_Great_Lakes_Datum_1955> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: International Great Lakes Datum 1955"@en ;
+    ns1:usage "Hydrology"^^xsd:string .
+

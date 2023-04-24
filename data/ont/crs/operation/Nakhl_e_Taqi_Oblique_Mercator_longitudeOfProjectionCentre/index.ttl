@@ -1,0 +1,7 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/operation/Nakhl_e_Taqi_Oblique_Mercator_longitudeOfProjectionCentre> a ns1:OperationParameter ;
+    rdfs:label "Longitude of projection centre"@en ;
+    ns1:usesValue <http://www.opengis.net/ont/crs/operation/Nakhl_e_Taqi_Oblique_Mercator_longitudeOfProjectionCentre_value> .
+

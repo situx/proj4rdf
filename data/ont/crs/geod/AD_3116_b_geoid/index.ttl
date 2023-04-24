@@ -1,0 +1,9 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/AD_3116_b_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for AD 3116 b"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/AD_3116_b> ;
+    ns1:eccentricity 1.46e-01 .
+

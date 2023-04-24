@@ -1,0 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://www.opengis.net/ont/crs/axis> a owl:ObjectProperty ;
+    rdfs:label "axis"@en ;
+    rdfs:domain <http://www.opengis.net/ont/crs/CRS> ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:range <http://www.opengis.net/ont/crs/CoordinateSystemAxis> ;
+    skos:definition "An axis used by some ellipsoidal or cartesian coordinate system"@en .
+

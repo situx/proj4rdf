@@ -1,0 +1,7 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/WISE_2005_5424_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for WISE 2005+5424"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/WISE_2005_5424> .
+

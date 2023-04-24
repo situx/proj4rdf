@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/WD_0806-661_B_b_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for WD 0806-661 B b"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/WD_0806-661_B_b> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/WD_0806-661_B_b_geoid_smj_axis> .
+
