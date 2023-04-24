@@ -1,0 +1,9 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/V470_Cam__AB_> a <http://www.opengis.net/ont/crs/Star> ;
+    rdfs:label "V470 Cam (AB)"@en ;
+    dc:date "2013-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
+

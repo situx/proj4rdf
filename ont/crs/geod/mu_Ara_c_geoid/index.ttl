@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/mu_Ara_c_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for mu Ara c"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/mu_Ara_c> ;
+    ns1:eccentricity 1.72e-01 ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/mu_Ara_c_geoid_smj_axis> .
+

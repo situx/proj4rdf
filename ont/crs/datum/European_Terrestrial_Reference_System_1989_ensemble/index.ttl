@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/datum/European_Terrestrial_Reference_System_1989_ensemble> a ns1:DatumEnsemble ;
+    rdfs:label "Datum: European Terrestrial Reference System 1989 ensemble"@en ;
+    ns1:primeMeridian <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> ;
+    ns1:usage ns1:SpatialReferencing .
+

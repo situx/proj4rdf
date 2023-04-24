@@ -1,0 +1,7 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/SDSS_J1411_2009_b_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for SDSS J1411+2009 b"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/SDSS_J1411_2009_b> .
+

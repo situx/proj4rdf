@@ -1,0 +1,8 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/SuperGalacticCS> a owl:Class ;
+    rdfs:label "super galactic coordinate system"@en ;
+    rdfs:subClassOf <http://www.opengis.net/ont/crs/3DCS>,
+        <http://www.opengis.net/ont/crs/CelestialCS> .
+

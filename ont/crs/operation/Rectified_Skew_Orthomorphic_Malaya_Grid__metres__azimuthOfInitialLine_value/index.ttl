@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/operation/Rectified_Skew_Orthomorphic_Malaya_Grid__metres__azimuthOfInitialLine_value> a <http://www.opengis.net/ont/crs/OperationParameterValue> ;
+    rdfs:label "Rectified Skew Orthomorphic Malaya Grid (metres): Hotine Oblique Mercator (variant A): Parameter Azimuth of initial line" ;
+    ns1:hasUnit ns1:degree ;
+    rdf:value 3.230258e+02 .
+

@@ -1,0 +1,8 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/DeakinMinimumErrorProjection> a owl:Class ;
+    rdfs:label "deakin minimum error projection"@en ;
+    rdfs:subClassOf <http://www.opengis.net/ont/crs/EqualAreaProjection>,
+        <http://www.opengis.net/ont/crs/PseudoCylindricalProjection> .
+
