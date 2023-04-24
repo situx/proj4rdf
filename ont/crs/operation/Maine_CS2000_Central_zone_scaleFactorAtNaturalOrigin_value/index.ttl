@@ -1,6 +1,0 @@
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> "unity"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/ont/crs/OperationParameterValue> .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "0.99998"^^<http://www.w3.org/2001/XMLSchema#double> .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://www.w3.org/2000/01/rdf-schema#label> "Maine CS2000 Central zone: Transverse Mercator: Parameter Scale factor at natural origin" .
-<http://www.opengis.net/ont/crs/operation/Maine_CS2000_Central_zone_scaleFactorAtNaturalOrigin_value> <http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by-sa/4.0> .

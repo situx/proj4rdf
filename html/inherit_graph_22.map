@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="30,5,127,32"/>
-<area shape="rect" id="node2" href="$a00533.html" title="Little endian Data output stream." alt="" coords="200,31,359,57"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,56,152,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="13,5,100,32"/>
+<area shape="rect" id="node2" href="$a00529.html" title="Little endian Data input stream." alt="" coords="191,5,339,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,64,108,91"/>
+<area shape="rect" id="node4" href="$a00509.html" title=" " alt="" coords="156,57,375,98"/>
+<area shape="rect" id="node5" href="$a00541.html" title=" " alt="" coords="159,122,371,163"/>
 </map>

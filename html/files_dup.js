@@ -3,10 +3,10 @@ var files_dup =
     [ "AffineTransformation.java", "a00194.html", [
       [ "AffineTransformation", "a00653.html", null ]
     ] ],
-    [ "data/AreaOfValidity.java", "a01874.html", [
+    [ "data/AreaOfValidity.java", "a01870.html", [
       [ "AreaOfValidity", "a00609.html", "a00609" ]
     ] ],
-    [ "functions/srs/AreaOfValidity.java", "a01877.html", [
+    [ "functions/srs/AreaOfValidity.java", "a01873.html", [
       [ "AreaOfValidity", "a00657.html", "a00657" ]
     ] ],
     [ "AsGeoJSON.java", "a00275.html", [
@@ -15,10 +15,10 @@ var files_dup =
     [ "Axis.java", "a00164.html", [
       [ "Axis", "a00613.html", "a00613" ]
     ] ],
-    [ "de/hsmainz/cs/semgis/arqextension/util/CannotEvaluateException.java", "a01880.html", [
+    [ "de/hsmainz/cs/semgis/arqextension/util/CannotEvaluateException.java", "a01876.html", [
       [ "CannotEvaluateException", "a00341.html", null ]
     ] ],
-    [ "org/apache/sis/coverage/grid/CannotEvaluateException.java", "a01883.html", [
+    [ "org/apache/sis/coverage/grid/CannotEvaluateException.java", "a01879.html", [
       [ "CannotEvaluateException", "a00485.html", null ]
     ] ],
     [ "ConcaveHull.java", "a00143.html", [

@@ -12,7 +12,7 @@ var hierarchy =
     [ "Datum", "a00629.html", null ],
     [ "Edge", "a00593.html", null ],
     [ "Ellipsoid", "a00633.html", null ],
-    [ "Exception", "a01873.html", [
+    [ "Exception", "a01869.html", [
       [ "CannotEvaluateException", "a00341.html", null ],
       [ "CannotEvaluateException", "a00485.html", null ]
     ] ],
@@ -57,12 +57,12 @@ var hierarchy =
     [ "WKBRasterConstants", "a00497.html", null ],
     [ "WKBRasterReader", "a00521.html", null ],
     [ "WKBRasterWriter", "a00525.html", null ],
-    [ "WKBDatatype.WKBTextSRS", "a00425.html", null ],
     [ "OSMDatatype.WKBTextSRS", "a00409.html", null ],
+    [ "WKBDatatype.WKBTextSRS", "a00425.html", null ],
     [ "Wrapper", "a00377.html", [
       [ "SpatialWrapper", "a00461.html", [
-        [ "CoverageWrapper", "a00433.html", null ],
-        [ "GeometryWrapper", "a00465.html", null ]
+        [ "GeometryWrapper", "a00465.html", null ],
+        [ "CoverageWrapper", "a00433.html", null ]
       ] ]
     ] ],
     [ "PolyshapeReader.XReader", "a00365.html", null ],
@@ -126,9 +126,9 @@ var hierarchy =
       [ "EqualSRS", "a00677.html", null ],
       [ "GeomToOpenLocationCode", "a00685.html", null ],
       [ "IsEligibleConversion", "a00693.html", null ],
-      [ "SetSRID", "a00705.html", null ],
       [ "SRSURIToGML", "a00741.html", null ],
-      [ "SRSURIToWKT", "a00745.html", null ]
+      [ "SRSURIToWKT", "a00745.html", null ],
+      [ "SetSRID", "a00705.html", null ]
     ] ],
     [ "FunctionBase3", null, [
       [ "ConvertCRS", "a00661.html", null ],
