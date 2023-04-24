@@ -1,0 +1,14 @@
+<map id="ConcaveHull" name="ConcaveHull">
+<area shape="rect" id="node1" title="Computes a concave hull of a Geometry which is a concave Geometry that contains all the points in the..." alt="" coords="907,285,1011,312"/>
+<area shape="rect" id="node2" title=" " alt="" coords="449,17,635,58"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,145,88,172"/>
+<area shape="rect" id="node7" title=" " alt="" coords="455,82,629,123"/>
+<area shape="rect" id="node8" title=" " alt="" coords="315,147,769,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="315,213,769,254"/>
+<area shape="rect" id="node12" title=" " alt="" coords="315,278,769,319"/>
+<area shape="rect" id="node4" title=" " alt="" coords="509,344,575,371"/>
+<area shape="rect" id="node5" title=" " alt="" coords="475,395,609,421"/>
+<area shape="rect" id="node6" title=" " alt="" coords="466,445,618,472"/>
+<area shape="rect" id="node10" title=" " alt="" coords="318,497,766,538"/>
+<area shape="rect" id="node11" title=" " alt="" coords="8,504,85,531"/>
+</map>

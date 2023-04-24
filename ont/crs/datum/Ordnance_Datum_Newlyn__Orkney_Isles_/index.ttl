@@ -1,8 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/datum/Ordnance_Datum_Newlyn__Orkney_Isles_> a ns1:VerticalReferenceFrame ;
-    rdfs:label "Datum: Ordnance Datum Newlyn (Orkney Isles)"@en ;
-    ns1:usage ns1:Geodesy,
-        ns1:TopographicMap .
-

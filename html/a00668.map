@@ -1,0 +1,4 @@
+<map id="EPSGToSRID" name="EPSGToSRID">
+<area shape="rect" id="node1" title="Converts an EPSG code to its SRID representation." alt="" coords="13,80,115,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,123,32"/>
+</map>

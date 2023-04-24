@@ -1,8 +1,0 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.opengis.net/ont/crs/isbody/HD_26161> a <http://www.opengis.net/ont/crs/Star> ;
-    rdfs:label "HD 26161"@en ;
-    dc:date "2021-01-01"^^xsd:date .
-

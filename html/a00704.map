@@ -1,0 +1,4 @@
+<map id="SetSRID" name="SetSRID">
+<area shape="rect" id="node1" title="Set the SRID on a geometry to a particular integer value." alt="" coords="27,80,101,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,123,32"/>
+</map>

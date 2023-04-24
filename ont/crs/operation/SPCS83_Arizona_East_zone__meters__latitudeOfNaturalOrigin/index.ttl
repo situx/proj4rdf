@@ -1,7 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_East_zone__meters__latitudeOfNaturalOrigin> a ns1:OperationParameter ;
-    rdfs:label "Latitude of natural origin"@en ;
-    ns1:usesValue <http://www.opengis.net/ont/crs/operation/SPCS83_Arizona_East_zone__meters__latitudeOfNaturalOrigin_value> .
-

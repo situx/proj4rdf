@@ -1,8 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/geod/TOI-421_c_geoid> a ns1:Sphere ;
-    rdfs:label "Geoid for TOI-421 c"@en ;
-    ns1:approximates <http://www.opengis.net/ont/crs/isbody/TOI-421_c> ;
-    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/TOI-421_c_geoid_smj_axis> .
-

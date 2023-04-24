@@ -1,0 +1,17 @@
+<map id="CoordinateReferenceSystem" name="CoordinateReferenceSystem">
+<area shape="rect" id="node1" title=" " alt="" coords="917,513,1125,540"/>
+<area shape="rect" id="node2" title=" " alt="" coords="9,476,69,503"/>
+<area shape="rect" id="node3" href="$a00625.html" title="Representation of a coordinate system as a part of a SRS." alt="" coords="657,119,800,145"/>
+<area shape="rect" id="node7" href="$a00629.html" title="Representation of a geodetic datum." alt="" coords="695,347,762,373"/>
+<area shape="rect" id="node8" href="$a00633.html" title="Representation of the ellipsoid of a geodetic datum." alt="" coords="335,348,413,375"/>
+<area shape="rect" id="node11" href="$a00637.html" title=" " alt="" coords="315,297,433,324"/>
+<area shape="rect" id="node12" href="$a00617.html" title=" " alt="" coords="649,655,808,681"/>
+<area shape="rect" id="node15" href="$a00609.html" title="Representation of the area of validity of a SRS." alt="" coords="501,568,617,595"/>
+<area shape="rect" id="node4" title=" " alt="" coords="340,5,408,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="279,56,469,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="17,83,62,109"/>
+<area shape="rect" id="node10" title=" " alt="" coords="317,107,431,133"/>
+<area shape="rect" id="node9" title=" " alt="" coords="5,260,73,287"/>
+<area shape="rect" id="node13" title=" " alt="" coords="292,716,456,743"/>
+<area shape="rect" id="node14" title=" " alt="" coords="14,716,65,743"/>
+</map>
