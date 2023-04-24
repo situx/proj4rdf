@@ -3,6 +3,22 @@ name: Ontology Documentation CI
 on: [push]
 
 jobs:
+     
+  ontdocII:
+        uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
+        name: Ontdoc II      
+        with: 
+              rdffilepath: owl/result.ttl docs/  geocrs False
+              docpath: docs/
+              prefixns: http://www.opengis.net/
+              prefixnsshort: geoepsg
+              indexpages: true
+              metadatatable: true
+              createcollections: false
+              createnonNSPages: true
+              createVOWL: true
+              preferredlang: en
+              ghpages: true
   build:
 
     runs-on: ubuntu-latest
@@ -40,12 +56,6 @@ jobs:
          mkdir primemeridians/
          cp ../resources/projection/* projections/
          cp ../resources/primemeridian/* primemeridians/
-         cd ..
-         wget https://raw.githubusercontent.com/sparqlunicorn/sparqlunicornGoesGIS-ontdoc/main/docgeneration.py 
-         wget https://raw.githubusercontent.com/sparqlunicorn/sparqlunicornGoesGIS-ontdoc/main/prefixes.json 
-         python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geocrs False
-         python3 docgeneration.py owl/result.ttl docs/ http://www.opengis.net/ geoepsg False
-         cd docs
          mkdir showcase
          cp -r ../WebContent/* showcase/ 
     - name: Deploy 🚀
