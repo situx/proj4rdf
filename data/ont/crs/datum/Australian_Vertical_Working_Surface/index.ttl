@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/datum/Australian_Vertical_Working_Surface> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: Australian Vertical Working Surface"@en ;
+    ns1:usage ns1:Geodesy,
+        ns1:Hydrography,
+        "transfer of accurate heights over distances greater than 10km"^^xsd:string .
+

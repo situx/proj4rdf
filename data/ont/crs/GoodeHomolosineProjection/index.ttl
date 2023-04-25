@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:GoodeHomolosineProjection a owl:Class ;
+    rdfs:label "goode homolosine projection"@en ;
+    ns1:PROJidentifier "goode" ;
+    rdfs:subClassOf ns1:EqualAreaProjection,
+        ns1:PseudoCylindricalProjection .
+

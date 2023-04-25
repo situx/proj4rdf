@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/datum/St._Kilda> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: St. Kilda"@en ;
+    ns1:usage ns1:Geodesy,
+        ns1:TopographicMap .
+

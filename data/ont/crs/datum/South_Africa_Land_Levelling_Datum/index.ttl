@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/datum/South_Africa_Land_Levelling_Datum> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: South Africa Land Levelling Datum"@en ;
+    ns1:usage ns1:CadastreMap,
+        ns1:EngineeringSurvey,
+        ns1:Geodesy,
+        ns1:TopographicMap .
+

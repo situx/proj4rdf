@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/2MASS_J1450-7841_B_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for 2MASS J1450-7841 B"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/2MASS_J1450-7841_B> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/2MASS_J1450-7841_B_geoid_smj_axis> .
+
