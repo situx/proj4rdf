@@ -1,4 +1,0 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/Oceanography> rdfs:subClassOf <http://www.opengis.net/ont/crs/SRSApplication> .
-

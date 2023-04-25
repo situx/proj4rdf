@@ -1,9 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/datum/Nivellement_General_de_la_France_-_IGN78> a ns1:VerticalReferenceFrame ;
-    rdfs:label "Datum: Nivellement General de la France - IGN78"@en ;
-    ns1:usage ns1:EngineeringSurvey,
-        ns1:Geodesy,
-        ns1:TopographicMap .
-

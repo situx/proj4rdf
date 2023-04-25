@@ -1,9 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.opengis.net/ont/crs/datum/European_Vertical_Reference_Frame_2019_mean_tide> a ns1:VerticalReferenceFrame ;
-    rdfs:label "Datum: European Vertical Reference Frame 2019 mean tide"@en ;
-    ns1:usage ns1:Oceanography,
-        "geodesy (gnss)"^^xsd:string .
-
