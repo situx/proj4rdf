@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/datum/Canadian_Geodetic_Vertical_Datum_of_2013__CGG2013_> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: Canadian Geodetic Vertical Datum of 2013 (CGG2013)"@en ;
+    ns1:usage ns1:Geodesy,
+        ns1:TopographicMap .
+

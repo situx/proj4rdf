@@ -1,0 +1,9 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/WASP-126_c_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for WASP-126 c"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/WASP-126_c> ;
+    ns1:eccentricity 2.5e-02 .
+
