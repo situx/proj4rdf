@@ -1,7 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/operation/InGCS_LaPorte-Pulaski-Starke__ftUS__falseEasting> a ns1:OperationParameter ;
-    rdfs:label "False easting"@en ;
-    ns1:usesValue <http://www.opengis.net/ont/crs/operation/InGCS_LaPorte-Pulaski-Starke__ftUS__falseEasting_value> .
-
