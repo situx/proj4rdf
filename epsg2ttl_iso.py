@@ -318,9 +318,9 @@ def crsToTTL(ttl,curcrs,x,geodcounter,crsclass):
 	if curcrs.utm_zone!=None:
 		ttl.add("geoepsg:"+epsgcode+" geocrs:utm_zone \""+str(curcrs.utm_zone)+"\"^^xsd:string . \n")	
 	if curcrs.to_proj4()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^xsd:string . \n")
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProj4 \""+curcrs.to_proj4().strip().replace("\"","'")+"\"^^geocrs:projLiteral . \n")
 	if curcrs.to_json()!=None:
-		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^xsd:string . \n")		
+		ttl.add("geoepsg:"+epsgcode+" geocrs:asProjJSON \""+curcrs.to_json().strip().replace("\"","'")+"\"^^geocrs:projJSONLiteral . \n")		
 	if wkt!="":
 		ttl.add("geoepsg:"+epsgcode+" geocrs:asWKT \""+wkt+"\"^^geocrs:wktLiteral . \n")
 	ttl.add("geoepsg:"+epsgcode+" geocrs:epsgCode \"EPSG:"+epsgcode+"\"^^xsd:string . \n")		
@@ -436,6 +436,7 @@ scope["satellite navigation"]="geocrs:SatelliteNavigation"
 scope["coastal hydrography"]="geocrs:CoastalHydrography"
 scope["offshore engineering"]="geocrs:OffshoreEngineering"
 scope["hydrography"]="geocrs:Hydrography"
+scope["mapping"]="geocrs:Mapping"
 scope["seismic survey"]="geocrs:SeismicSurvey"
 scope["remote sensing"]="geocrs:RemoteSensing"
 scope["oceanography"]="geocrs:Oceanography"
