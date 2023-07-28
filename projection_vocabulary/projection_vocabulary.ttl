@@ -79,7 +79,7 @@ geocrs:isTransverseProjectionOf rdf:type owl:ObjectProperty ;
 geocrs:A4Projection rdf:type owl:Class ;
                     rdfs:subClassOf geocrs:LenticularProjection ;
                     dc:creator "Bernhard Jenny" ;
-                    dc:date "2008" ;
+                    dc:date "2008"^^xsd:gYear ;
                     rdfs:label "A4 projection"@en .
 
 
@@ -112,7 +112,7 @@ geocrs:AiryProjection rdf:type owl:Class ;
                       rdfs:subClassOf geocrs:AzimuthalProjection ,
                                       geocrs:MinimumErrorProjection ;
                       dc:creator "George Biddell Airy" ;
-                      dc:date "1861" ;
+                      dc:date "1861"^^xsd:gYear ;
                       geocrs:PROJidentifier "airy" ;
                       rdfs:label "airy projection"@en ;
                       <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AiryProjection.svg"^^xsd:anyURI .
@@ -136,7 +136,7 @@ geocrs:AlbersEqualAreaProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:ConicalProjection ,
                                                  geocrs:EqualAreaProjection ;
                                  dc:creator "Heinrich C. Albers" ;
-                                 dc:date "1805" ;
+                                 dc:date "1805"^^xsd:gYear ;
                                  geocrs:PROJidentifier "aea" ;
                                  rdfs:label "albers equal-area projection"@en ;
                                  skos:definition "a conic, equal area map projection that uses two standard parallels"@en ;
@@ -148,7 +148,7 @@ geocrs:AmericanPolyconicProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:CompromiseProjection ,
                                                    geocrs:PseudoConicalProjection ;
                                    dc:creator "Ferdinand Rudolph Hassler" ;
-                                   dc:date "1820" ;
+                                   dc:date "1820"^^xsd:gYear ;
                                    geocrs:PROJidentifier "poly" ;
                                    rdfs:label "american polyconic projection"@en .
 
@@ -181,7 +181,7 @@ geocrs:ArdenCloseProjection rdf:type owl:Class ;
 geocrs:ArmadilloProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:CompromiseProjection ;
                            dc:creator "Erwin J. Raisz" ;
-                           dc:date "1943" ;
+                           dc:date "1943"^^xsd:gYear ;
                            rdfs:label "armadillo projection"@en ;
                            skos:altLabel "Raisz projection"@en ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/ArmadilloProjection.svg"^^xsd:anyURI .
@@ -200,7 +200,7 @@ geocrs:AtlantisProjection rdf:type owl:Class ;
 ###  http://www.opengis.net/ont/crs/AugustEpicycloidalProjection
 geocrs:AugustEpicycloidalProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:ConformalProjection ;
-                                    dc:date "1874" ;
+                                    dc:date "1874"^^xsd:gYear ;
                                     geocrs:PROJidentifier "august" ;
                                     rdfs:label "August Epicycloidal projection"@en ;
                                     <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AugustEpicycloidalProjection.svg"^^xsd:anyURI .
@@ -248,7 +248,7 @@ geocrs:BSAMCylindricalProjection rdf:type owl:Class ;
 geocrs:BaconGlobularProjection rdf:type owl:Class ;
                                rdfs:subClassOf geocrs:GlobularProjection ;
                                dc:creator "Roger Bacon" ;
-                               dc:date "1265" ;
+                               dc:date "1265"^^xsd:gYear ;
                                geocrs:PROJidentifier "bacon" ;
                                rdfs:label "bacon globular projection"@en .
 
@@ -257,7 +257,7 @@ geocrs:BaconGlobularProjection rdf:type owl:Class ;
 geocrs:BakerDinomicProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:CompromiseProjection ;
                               dc:creator "J. G. P. Baker" ;
-                              dc:date "1986" ;
+                              dc:date "1986"^^xsd:gYear ;
                               rdfs:label "baker dinomic projection"@en ;
                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BakerDinomicProjection.svg"^^xsd:anyURI .
 
@@ -266,7 +266,7 @@ geocrs:BakerDinomicProjection rdf:type owl:Class ;
 geocrs:BalthasartProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:CylindricalEqualArea ;
                             dc:creator "M. Balthasart" ;
-                            dc:date "1935" ;
+                            dc:date "1935"^^xsd:gYear ;
                             rdfs:label "balthasart projection"@en ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BalthasartProjection.svg"^^xsd:anyURI .
 
@@ -305,7 +305,7 @@ geocrs:BartholomewProjection rdf:type owl:Class ;
 geocrs:BehrmannProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CylindricalEqualArea ;
                           dc:creator "Walter Behrmann" ;
-                          dc:date "1910" ;
+                          dc:date "1910"^^xsd:gYear ;
                           rdfs:label "behrmann projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BehrmannProjection.svg"^^xsd:anyURI .
 
@@ -346,7 +346,7 @@ geocrs:BoggsEumorphicProjection rdf:type owl:Class ;
 geocrs:BonneProjection rdf:type owl:Class ;
                        rdfs:subClassOf geocrs:EqualAreaProjection ,
                                        geocrs:PseudoConicalProjection ;
-                       dc:date "1500" ;
+                       dc:date "1500"^^xsd:gYear ;
                        geocrs:PROJidentifier "bonne" ;
                        rdfs:label "bonne projection"@en ;
                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BonneProjection.svg"^^xsd:anyURI .
@@ -357,7 +357,7 @@ geocrs:BottomleyProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:EqualAreaProjection ,
                                            geocrs:PseudoConicalProjection ;
                            dc:creator "Henry Bottomley" ;
-                           dc:date "2003" ;
+                           dc:date "2003"^^xsd:gYear ;
                            rdfs:label "bottomley projection"@en ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BottomleyProjection.svg"^^xsd:anyURI .
 
@@ -366,7 +366,7 @@ geocrs:BottomleyProjection rdf:type owl:Class ;
 geocrs:BraunPerspectiveProjection rdf:type owl:Class ;
                                   rdfs:subClassOf geocrs:CylindricalProjection ;
                                   dc:creator "Carl Braun" ;
-                                  dc:date "1867" ;
+                                  dc:date "1867"^^xsd:gYear ;
                                   rdfs:label "Braun perspective projection"@en .
 
 
@@ -408,7 +408,7 @@ geocrs:BromleyProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Robert H. Bromley" ;
-                         dc:date "1965" ;
+                         dc:date "1965"^^xsd:gYear ;
                          rdfs:label "Bromley Projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/BromleyProjection.svg"^^xsd:anyURI .
 
@@ -417,7 +417,7 @@ geocrs:BromleyProjection rdf:type owl:Class ;
 geocrs:CabotProjection rdf:type owl:Class ;
                        rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                        dc:creator "Sebatian Cabot" ;
-                       dc:date "1544" ;
+                       dc:date "1544"^^xsd:gYear ;
                        rdfs:label "cabot projection"@en .
 
 
@@ -426,7 +426,7 @@ geocrs:CahillKeyesProjection rdf:type owl:Class ;
                              rdfs:subClassOf geocrs:CompromiseProjection ,
                                              geocrs:PolyhedralProjection ;
                              dc:creator "Gene Keyes" ;
-                             dc:date "1975" ;
+                             dc:date "1975"^^xsd:gYear ;
                              rdfs:label "cahill-keyes projection"@en ;
                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/CahillKeyesProjection.svg"^^xsd:anyURI .
 
@@ -461,7 +461,7 @@ geocrs:CentralCylindricalProjection rdf:type owl:Class ;
 geocrs:ChamberlinTrimetricProjection rdf:type owl:Class ;
                                      rdfs:subClassOf geocrs:CompromiseProjection ;
                                      dc:creator "Wellman Chamberlin" ;
-                                     dc:date "1946" ;
+                                     dc:date "1946"^^xsd:gYear ;
                                      geocrs:PROJidentifier "chamb" ;
                                      rdfs:label "chamberlin trimetric projection"@en .
 
@@ -470,7 +470,7 @@ geocrs:ChamberlinTrimetricProjection rdf:type owl:Class ;
 geocrs:CiricIProjection rdf:type owl:Class ;
                         rdfs:subClassOf geocrs:LenticularProjection ;
                         dc:creator "Strahinja Ciric" ;
-                        dc:date "2010" ;
+                        dc:date "2010"^^xsd:gYear ;
                         rdfs:label "Ciric I projection"@en .
 
 
@@ -569,7 +569,7 @@ geocrs:CrasterParabolicProjection rdf:type owl:Class ;
 geocrs:CupolaProjection rdf:type owl:Class ;
                         rdfs:subClassOf geocrs:LenticularProjection ;
                         dc:creator "Weia Reinboud" ;
-                        dc:date "2021" ;
+                        dc:date "2021"^^xsd:gYear ;
                         rdfs:label "Cupola projection"@en .
 
 
@@ -606,7 +606,7 @@ geocrs:DedistortProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:CompromiseProjection ,
                                            geocrs:LenticularProjection ;
                            dc:creator "Kalinni Gorzkis" ;
-                           dc:date "2013" ;
+                           dc:date "2013"^^xsd:gYear ;
                            rdfs:label "dedistort projection"@en .
 
 
@@ -622,7 +622,7 @@ geocrs:DietrichKitadaProjection rdf:type owl:Class ;
                                 rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                 geocrs:LenticularProjection ;
                                 dc:creator "Bruno Dietrich" ;
-                                dc:date "1927" ;
+                                dc:date "1927"^^xsd:gYear ;
                                 rdfs:label "Dietrich-Kitada projection"@en .
 
 
@@ -638,7 +638,7 @@ geocrs:DymaxionProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CompromiseProjection ,
                                           geocrs:PolyhedralProjection ;
                           dc:creator "Buckminster Fuller" ;
-                          dc:date "1943" ;
+                          dc:date "1943"^^xsd:gYear ;
                           rdfs:label "dymaxion projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/DymaxionProjection.svg"^^xsd:anyURI .
 
@@ -648,7 +648,7 @@ geocrs:Eckert1Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck1" ;
                          rdfs:label "Eckert I projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert1Projection.svg"^^xsd:anyURI .
@@ -659,7 +659,7 @@ geocrs:Eckert2Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck2" ;
                          rdfs:label "Eckert II projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert2Projection.svg"^^xsd:anyURI .
@@ -670,7 +670,7 @@ geocrs:Eckert3Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck3" ;
                          rdfs:label "Eckert III projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert3Projection.svg"^^xsd:anyURI .
@@ -681,7 +681,7 @@ geocrs:Eckert4Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck4" ;
                          rdfs:label "Eckert IV projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert4Projection.svg"^^xsd:anyURI .
@@ -692,7 +692,7 @@ geocrs:Eckert5Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck5" ;
                          rdfs:label "Eckert V projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert5Projection.svg"^^xsd:anyURI .
@@ -703,7 +703,7 @@ geocrs:Eckert6Projection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Max Eckert-Greifendorff" ;
-                         dc:date "1906" ;
+                         dc:date "1906"^^xsd:gYear ;
                          geocrs:PROJidentifier "eck6" ;
                          rdfs:label "Eckert VI projection"@en ;
                          <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/Eckert6Projection.svg"^^xsd:anyURI .
@@ -773,7 +773,7 @@ geocrs:EquirectangularProjection rdf:type owl:Class ;
 geocrs:FaheyProjection rdf:type owl:Class ;
                        rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                        dc:creator "Lawrence Fahey" ;
-                       dc:date "1975" ;
+                       dc:date "1975"^^xsd:gYear ;
                        geocrs:PROJidentifier "fahey" ;
                        rdfs:label "fahey projection"@en ;
                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/FaheyProjection.svg"^^xsd:anyURI .
@@ -905,7 +905,7 @@ geocrs:GallPetersProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:CylindricalProjection ,
                                             geocrs:EqualAreaProjection ;
                             dc:creator "James Gall" ;
-                            dc:date "1855" ;
+                            dc:date "1855"^^xsd:gYear ;
                             rdfs:label "gall-peters projection"@en ;
                             skos:altLabel "Gall orthographic" ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GallPetersProjection.svg"^^xsd:anyURI .
@@ -917,7 +917,7 @@ geocrs:GallStereographicProjection rdf:type owl:Class ;
                                                    geocrs:CylindricalProjection ,
                                                    geocrs:StereographicProjection ;
                                    dc:creator "James Gall" ;
-                                   dc:date "1855" ;
+                                   dc:date "1855"^^xsd:gYear ;
                                    geocrs:PROJidentifier "gall" ;
                                    rdfs:label "gall stereographic projection"@en ;
                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GallStereographicProjection.svg"^^xsd:anyURI .
@@ -967,7 +967,7 @@ geocrs:GinzburgIProjection rdf:type owl:Class ;
 geocrs:GinzburgIVProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:PolyconicProjection ;
                             dc:creator "G.A. Ginzburg" ;
-                            dc:date "1939" ;
+                            dc:date "1939"^^xsd:gYear ;
                             rdfs:label "Ginzburg IV projection"@en ;
                             skos:altLabel "TsNIIGAiK 1959-1949 Modified Polyconic" ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIVProjection.svg"^^xsd:anyURI .
@@ -977,7 +977,7 @@ geocrs:GinzburgIVProjection rdf:type owl:Class ;
 geocrs:GinzburgIXProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:PolyconicProjection ;
                             dc:creator "G.A. Ginzburg" ;
-                            dc:date "1966" ;
+                            dc:date "1966"^^xsd:gYear ;
                             rdfs:label "Ginzburg IX projection"@en ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgIXProjection.svg"^^xsd:anyURI .
 
@@ -986,7 +986,7 @@ geocrs:GinzburgIXProjection rdf:type owl:Class ;
 geocrs:GinzburgVIIIProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                               dc:creator "G.A. Ginzburg" ;
-                              dc:date "1944" ;
+                              dc:date "1944"^^xsd:gYear ;
                               geocrs:PROJidentifier "gins8"^^xsd:anyURI ;
                               rdfs:label "Ginzburg VIII projection"@en ;
                               skos:altLabel "TsNIIGAiK 1944 Pseudocylindrical" .
@@ -996,7 +996,7 @@ geocrs:GinzburgVIIIProjection rdf:type owl:Class ;
 geocrs:GinzburgVIProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:PolyconicProjection ;
                             dc:creator "G.A. Ginzburg" ;
-                            dc:date "1950" ;
+                            dc:date "1950"^^xsd:gYear ;
                             rdfs:label "Ginzburg VI projection"@en ;
                             skos:altLabel "TsNIIGAiK BSE Modified Polyconic" ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GinzburgVIProjection.svg"^^xsd:anyURI .
@@ -1006,7 +1006,7 @@ geocrs:GinzburgVIProjection rdf:type owl:Class ;
 geocrs:GinzburgVProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:PolyconicProjection ;
                            dc:creator "G.A. Ginzburg" ;
-                           dc:date "1950" ;
+                           dc:date "1950"^^xsd:gYear ;
                            rdfs:label "Ginzburg V projection"@en ;
                            skos:altLabel "TsNIIGAiK 1950 Modified Polyconic" .
 
@@ -1079,7 +1079,7 @@ geocrs:GuyouProjection rdf:type owl:Class ;
                        rdfs:subClassOf geocrs:ConformalProjection ,
                                        geocrs:PolyhedralProjection ;
                        dc:creator "Emile Guyou" ;
-                       dc:date "1887" ;
+                       dc:date "1887"^^xsd:gYear ;
                        geocrs:PROJidentifier "guyou" ;
                        rdfs:label "guyou projection"@en ;
                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/GuyouProjection.svg"^^xsd:anyURI .
@@ -1120,7 +1120,7 @@ geocrs:HatanoAsymmetricalEqualAreaProjection rdf:type owl:Class ;
                                              rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                              geocrs:PseudoCylindricalProjection ;
                                              dc:creator "Masataka Hatano" ;
-                                             dc:date "1972" ;
+                                             dc:date "1972"^^xsd:gYear ;
                                              geocrs:PROJidentifier "hatano" ;
                                              rdfs:label "hatano asymmetrical equal-area projection"@en .
 
@@ -1130,7 +1130,7 @@ geocrs:HerschelConformalConicProjection rdf:type owl:Class ;
                                         rdfs:subClassOf geocrs:ConformalProjection ,
                                                         geocrs:ConicalProjection ;
                                         dc:creator "John F.W. Herschel" ;
-                                        dc:date "1859" ;
+                                        dc:date "1859"^^xsd:gYear ;
                                         rdfs:label "herschel conformal conic projection"@en .
 
 
@@ -1139,7 +1139,7 @@ geocrs:HillEucyclicProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:EqualAreaProjection ,
                                               geocrs:PolyconicProjection ;
                               dc:creator "Karl O. Hill" ;
-                              dc:date "1958" ;
+                              dc:date "1958"^^xsd:gYear ;
                               rdfs:label "hill eucyclic projection"@en ;
                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HillEucyclicProjection.svg"^^xsd:anyURI .
 
@@ -1149,7 +1149,7 @@ geocrs:HoboDyerProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CylindricalProjection ,
                                           geocrs:EqualAreaProjection ;
                           dc:creator "Mick Dyer" ;
-                          dc:date "2002" ;
+                          dc:date "2002"^^xsd:gYear ;
                           rdfs:label "hobo-dyer projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HoboDyerProjection.svg"^^xsd:anyURI .
 
@@ -1158,7 +1158,7 @@ geocrs:HoboDyerProjection rdf:type owl:Class ;
 geocrs:HufnagelIIIProjection rdf:type owl:Class ;
                              rdfs:subClassOf geocrs:HufnagelProjection ;
                              dc:creator "Herbert Hufnagel" ;
-                             dc:date "1989" ;
+                             dc:date "1989"^^xsd:gYear ;
                              rdfs:label "Hufnagel III projection"@en ;
                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HufnagelIIProjection.svg"^^xsd:anyURI .
 
@@ -1167,7 +1167,7 @@ geocrs:HufnagelIIIProjection rdf:type owl:Class ;
 geocrs:HufnagelIIProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:HufnagelProjection ;
                             dc:creator "Herbert Hufnagel" ;
-                            dc:date "1989" ;
+                            dc:date "1989"^^xsd:gYear ;
                             rdfs:label "Hufnagel II projection"@en ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HufnagelIIProjection.svg"^^xsd:anyURI .
 
@@ -1183,7 +1183,7 @@ geocrs:HufnagelIProjection rdf:type owl:Class ;
 geocrs:HufnagelIVProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:HufnagelProjection ;
                             dc:creator "Herbert Hufnagel" ;
-                            dc:date "1989" ;
+                            dc:date "1989"^^xsd:gYear ;
                             rdfs:label "Hufnagel IV projection"@en ;
                             <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/HufnagelVProjection.svg"^^xsd:anyURI .
 
@@ -1307,7 +1307,7 @@ geocrs:KamenetskiyIProjection rdf:type owl:Class ;
 geocrs:KarchenkoShabanovaProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:CompromiseProjection ,
                                                     geocrs:CylindricalProjection ;
-                                    dc:date "1951" ;
+                                    dc:date "1951"^^xsd:gYear ;
                                     rdfs:label "Karchenko-Shabanova projection"@en ;
                                     skos:definition "Cylindric projection with Mercator-like appearance but reduced high-latitude excesses"@en .
 
@@ -1325,7 +1325,7 @@ geocrs:KissProjection rdf:type owl:Class ;
                       rdfs:subClassOf geocrs:EqualAreaProjection ,
                                       geocrs:LenticularProjection ;
                       dc:creator "Daniel Strebe" ;
-                      dc:date "2015" ;
+                      dc:date "2015"^^xsd:gYear ;
                       rdfs:label "kiss projection"@en .
 
 
@@ -1356,7 +1356,7 @@ geocrs:LagrangeProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:ConformalProjection ,
                                           geocrs:PolyconicProjection ;
                           dc:creator "Johann Heinrich Lambert" ;
-                          dc:date "1772" ;
+                          dc:date "1772"^^xsd:gYear ;
                           rdfs:label "lagrange projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LagrangeProjection.svg"^^xsd:anyURI .
 
@@ -1374,7 +1374,7 @@ geocrs:LambertConformalConicProjection rdf:type owl:Class ;
                                        rdfs:subClassOf geocrs:ConformalProjection ,
                                                        geocrs:ConicalProjection ;
                                        dc:creator "Johann Heinrich Lambert" ;
-                                       dc:date "1772" ;
+                                       dc:date "1772"^^xsd:gYear ;
                                        geocrs:PROJidentifier "lcc" ;
                                        rdfs:label "lambert conformal conic projection"@en ;
                                        <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LambertConformalConicProjection.svg"^^xsd:anyURI .
@@ -1400,7 +1400,7 @@ geocrs:LaskowskiProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:MinimumErrorProjection ,
                                            geocrs:PolyconicProjection ;
                            dc:creator "Piotr Laskoswki" ;
-                           dc:date "1991" ;
+                           dc:date "1991"^^xsd:gYear ;
                            geocrs:PROJidentifier "lask" ;
                            rdfs:label "laskowski tri-optimal projection"@en ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LaskowskiProjection.svg"^^xsd:anyURI .
@@ -1525,7 +1525,7 @@ geocrs:MercatorProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:ConformalProjection ,
                                           geocrs:CylindricalProjection ;
                           dc:creator "Gerardus Mercator" ;
-                          dc:date "1569" ;
+                          dc:date "1569"^^xsd:gYear ;
                           geocrs:PROJidentifier "merc" ;
                           rdfs:label "mercator projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MercatorProjection.svg"^^xsd:anyURI .
@@ -1599,7 +1599,7 @@ geocrs:NaturalEarthProjection rdf:type owl:Class ;
                               rdfs:subClassOf geocrs:CompromiseProjection ,
                                               geocrs:PseudoCylindricalProjection ;
                               dc:creator "Tom Patterson" ;
-                              dc:date "2011" ;
+                              dc:date "2011"^^xsd:gYear ;
                               geocrs:PROJidentifier "natearth" ;
                               rdfs:label "natural earth projection"@en ;
                               <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/NaturalEarthProjection.svg"^^xsd:anyURI .
@@ -1618,7 +1618,7 @@ geocrs:NellHammerProjection rdf:type owl:Class ;
 geocrs:NellProjection rdf:type owl:Class ;
                       rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                       dc:creator "Adam Nell" ;
-                      dc:date "1890" ;
+                      dc:date "1890"^^xsd:gYear ;
                       geocrs:PROJidentifier "nell" ;
                       rdfs:label "nell projection"@en .
 
@@ -1630,7 +1630,7 @@ geocrs:NicolosiGlobularProjection rdf:type owl:Class ;
                                                   geocrs:PolyconicProjection ,
                                                   geocrs:PseudoConicalProjection ;
                                   dc:creator "Abū Rayḥān Muḥammad ibn Aḥmad Al-Bīrūnī" ;
-                                  dc:date "1000" ;
+                                  dc:date "1000"^^xsd:gYear ;
                                   geocrs:PROJidentifier "nicol" ;
                                   rdfs:label "nicolosi globular projection"@en ;
                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/NicolosiGlobularProjection.svg"^^xsd:anyURI .
@@ -1693,7 +1693,7 @@ geocrs:OrteliusOvalProjection rdf:type owl:Class ;
                                               geocrs:OvalProjection ,
                                               geocrs:PseudoCylindricalProjection ;
                               dc:creator "Abraham Ortelius" ;
-                              dc:date "1570" ;
+                              dc:date "1570"^^xsd:gYear ;
                               geocrs:PROJidentifier "ortel" ;
                               rdfs:label "ortelius oval projection"@en .
 
@@ -1730,7 +1730,7 @@ geocrs:PavlovProjection rdf:type owl:Class ;
 geocrs:PeirceQuincuncialProjection rdf:type owl:Class ;
                                    rdfs:subClassOf geocrs:ConformalProjection ;
                                    dc:creator "Charles Sanders Peirce" ;
-                                   dc:date "1879" ;
+                                   dc:date "1879"^^xsd:gYear ;
                                    geocrs:PROJidentifier "peirce_q" ;
                                    rdfs:label "peirce quincuncial projection"@en ;
                                    <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/PericeQuincuncialProjection.svg" .
@@ -1813,7 +1813,7 @@ geocrs:PseudoCylindricalProjection rdf:type owl:Class ;
 geocrs:PseudoOrthographicProjection rdf:type owl:Class ;
                                     rdfs:subClassOf geocrs:Projection ;
                                     dc:creator "Daniel Strebe" ;
-                                    dc:date "2016" ;
+                                    dc:date "2016"^^xsd:gYear ;
                                     rdfs:label "Pseudo orthographic projection"@en .
 
 
@@ -1822,7 +1822,7 @@ geocrs:PtolemyIIProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:ArchaicProjection ,
                                            geocrs:PseudoConicalProjection ;
                            dc:creator "Claudius Ptolemy" ;
-                           dc:date "160" ;
+                           dc:date "160"^^xsd:gYear ;
                            rdfs:label "Ptolemy II projection"@en .
 
 
@@ -1830,7 +1830,7 @@ geocrs:PtolemyIIProjection rdf:type owl:Class ;
 geocrs:PtolemyIProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:ArchaicProjection ;
                           dc:creator "Claudius Ptolemy" ;
-                          dc:date "160" ;
+                          dc:date "160"^^xsd:gYear ;
                           rdfs:label "Ptolemy I projection"@en .
 
 
@@ -1921,7 +1921,7 @@ geocrs:RobinsonProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CompromiseProjection ,
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "Arthur H. Robinson" ;
-                          dc:date "1963" ;
+                          dc:date "1963"^^xsd:gYear ;
                           geocrs:PROJidentifier "robin" ;
                           rdfs:label "robinson projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/RobinsonProjection.svg"^^xsd:anyURI .
@@ -1939,7 +1939,7 @@ geocrs:RoussilheProjection rdf:type owl:Class ;
 geocrs:SchjerningIProjection rdf:type owl:Class ;
                              rdfs:subClassOf geocrs:ConicalProjection ;
                              dc:creator "Wilhelm Schjerning" ;
-                             dc:date "1882" ;
+                             dc:date "1882"^^xsd:gYear ;
                              rdfs:label "Schjerning I projection"@en .
 
 
@@ -2005,7 +2005,7 @@ geocrs:Strebe1995Projection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:EqualAreaProjection ,
                                             geocrs:PseudoAzimuthalProjection ;
                             dc:creator "Daniel Strebe" ;
-                            dc:date "1995" ;
+                            dc:date "1995"^^xsd:gYear ;
                             rdfs:label "strebe 1995 projection"@en .
 
 
@@ -2014,7 +2014,7 @@ geocrs:TheTimesProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CompromiseProjection ,
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "John Muir" ;
-                          dc:date "1965" ;
+                          dc:date "1965"^^xsd:gYear ;
                           geocrs:PROJidentifier "times" ;
                           rdfs:label "the times projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/TheTimesProjection.svg"^^xsd:anyURI .
@@ -2079,7 +2079,7 @@ geocrs:TrystanEdwardsProjection rdf:type owl:Class ;
                                 rdfs:subClassOf geocrs:CylindricalProjection ,
                                                 geocrs:EqualAreaProjection ;
                                 dc:creator "Trystan Edwards" ;
-                                dc:date "1953" ;
+                                dc:date "1953"^^xsd:gYear ;
                                 rdfs:label "Trystan Edwards projection"@en ;
                                 <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/TrystanEdwardsProjection.svg"^^xsd:anyURI .
 
@@ -2104,7 +2104,7 @@ geocrs:UrmayevIIIProjection rdf:type owl:Class ;
                             rdfs:subClassOf geocrs:CompromiseProjection ,
                                             geocrs:CylindricalProjection ;
                             dc:creator "N.A. Urmayev" ;
-                            dc:date "1947" ;
+                            dc:date "1947"^^xsd:gYear ;
                             rdfs:label "Urmayev III projection"@en ;
                             skos:definition "Cylindric projection with an appearance similar to the Mercator, but shows the poles"@en .
 
@@ -2168,7 +2168,7 @@ geocrs:WagnerIIIProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:PoleLineProjection ,
                                            geocrs:PseudoCylindricalProjection ;
                            dc:creator "Karlheinz Wagner" ;
-                           dc:date "1932" ;
+                           dc:date "1932"^^xsd:gYear ;
                            geocrs:PROJidentifier "wag3" ;
                            rdfs:label "wagner III projection"@en .
 
@@ -2178,7 +2178,7 @@ geocrs:WagnerIIProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:PoleLineProjection ,
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "Karlheinz Wagner" ;
-                          dc:date "1949" ;
+                          dc:date "1949"^^xsd:gYear ;
                           geocrs:PROJidentifier "wag2" ;
                           rdfs:label "wagner II projection"@en .
 
@@ -2188,7 +2188,7 @@ geocrs:WagnerIProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:EqualAreaProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Karlheinz Wagner" ;
-                         dc:date "1932" ;
+                         dc:date "1932"^^xsd:gYear ;
                          geocrs:PROJidentifier "wag1" ;
                          rdfs:label "wagner I projection"@en ;
                          skos:altLabel "Siemon II projection" ,
@@ -2200,7 +2200,7 @@ geocrs:WagnerIVProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:EqualAreaProjection ,
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "Karlheinz Wagner" ;
-                          dc:date "1932" ;
+                          dc:date "1932"^^xsd:gYear ;
                           geocrs:PROJidentifier "wag4" ;
                           rdfs:label "wagner IV projection"@en ;
                           skos:altLabel "Werenskiold III projection" ;
@@ -2229,7 +2229,7 @@ geocrs:WagnerVIIProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:EqualAreaProjection ,
                                            geocrs:PolyconicProjection ;
                            dc:creator "Karlheinz Wagner" ;
-                           dc:date "1941" ;
+                           dc:date "1941"^^xsd:gYear ;
                            geocrs:PROJidentifier "wag7" ;
                            rdfs:label "wagner VII projection"@en ;
                            <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerVIIProjection.svg"^^xsd:anyURI .
@@ -2240,7 +2240,7 @@ geocrs:WagnerVIProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:PoleLineProjection ,
                                           geocrs:PseudoCylindricalProjection ;
                           dc:creator "Karlheinz Wagner" ;
-                          dc:date "1932" ;
+                          dc:date "1932"^^xsd:gYear ;
                           geocrs:PROJidentifier "wag6" ;
                           rdfs:label "wagner VI projection"@en ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/WagnerVIProjection.svg"^^xsd:anyURI .
@@ -2251,7 +2251,7 @@ geocrs:WagnerVProjection rdf:type owl:Class ;
                          rdfs:subClassOf geocrs:PoleLineProjection ,
                                          geocrs:PseudoCylindricalProjection ;
                          dc:creator "Karlheinz Wagner" ;
-                         dc:date "1949" ;
+                         dc:date "1949"^^xsd:gYear ;
                          geocrs:PROJidentifier "wag5" ;
                          rdfs:label "wagner V projection"@en .
 
@@ -2406,12 +2406,12 @@ geocrs:WinkelTripelProjection rdf:type owl:NamedIndividual ;
 geocrs:AitoffProjection dc:creator "David Aitoff" ;
                         <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/AitoffProjection.svg"^^xsd:anyURI ;
                         rdfs:label "aitoff projection"@en ;
-                        dc:date "1889" ;
+                        dc:date "1889"^^xsd:gYear ;
                         geocrs:PROJidentifier "aitoff" .
 
 
 geocrs:ApianIIProjection skos:altLabel "Apianus II Projection"@en ;
-                         dc:date "1524" ;
+                         dc:date "1524"^^xsd:gYear ;
                          dc:creator "Peter Apian" ;
                          skos:altLabel "Apian 2 Globular Projection"@en ;
                          rdfs:label "apian II projection"@en .
@@ -2437,12 +2437,12 @@ geocrs:SinusoidalProjection <http://xmlns.com/foaf/0.1/image> "https://situx.git
 geocrs:WinkelIIProjection dc:creator "Oswald Winkel" ;
                           geocrs:PROJidentifier "wink2" ;
                           skos:definition "Arithmetic average of the Equirectangular and Apian II projections. Pseudocylindric, equally spaced parallels, elliptical meridians, pole line" ;
-                          dc:date "1921" ;
+                          dc:date "1921"^^xsd:gYear ;
                           rdfs:label "winkel II projection"@en .
 
 
 geocrs:WinkelIProjection geocrs:PROJidentifier "wink1" ;
-                         dc:date "1921" ;
+                         dc:date "1921"^^xsd:gYear ;
                          dc:creator "Oswald Winkel" ;
                          rdfs:label "winkel I projection"@en ;
                          skos:definition "Arithmetic average of the Equirectangular and Sinusoidal projections. Pseudocylindric, equally spaced parallels, sinusoidal meridians, pole line" .
@@ -2452,7 +2452,7 @@ geocrs:WinkelSnyderProjection rdfs:label "winkel snyder projection"@en ;
                               skos:definition "Arithmetic average of the Equirectangular and Mollweide projections" .
 
 
-geocrs:WinkelTripelProjection dc:date "1921" ;
+geocrs:WinkelTripelProjection dc:date "1921"^^xsd:gYear ;
                               geocrs:PROJidentifier "wintri" ;
                               rdfs:label "winkel tripel projection"@en ;
                               skos:definition "Arithmetic average of the equirectangular and Aitoff projections. Polyconic, equally spaced parallels, pole line" ;
