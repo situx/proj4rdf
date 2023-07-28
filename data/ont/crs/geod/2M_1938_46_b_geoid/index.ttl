@@ -1,8 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/geod/2M_1938_46_b_geoid> a ns1:Sphere ;
-    rdfs:label "Geoid for 2M 1938+46 b"@en ;
-    ns1:approximates <http://www.opengis.net/ont/crs/isbody/2M_1938_46_b> ;
-    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/2M_1938_46_b_geoid_smj_axis> .
-
