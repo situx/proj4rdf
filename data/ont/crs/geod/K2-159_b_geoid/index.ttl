@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/K2-159_b_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for K2-159 b"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/K2-159_b> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/K2-159_b_geoid_smj_axis> .
+

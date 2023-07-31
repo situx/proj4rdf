@@ -1,0 +1,8 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/LHS_6176_A> a <http://www.opengis.net/ont/crs/Star> ;
+    rdfs:label "LHS 6176 A"@en ;
+    dc:date "2013-01-01"^^xsd:date .
+

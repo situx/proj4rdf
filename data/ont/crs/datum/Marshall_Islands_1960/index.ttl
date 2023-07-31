@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/datum/Marshall_Islands_1960> a ns1:GeodeticReferenceFrame ;
+    rdfs:label "Datum: Marshall Islands 1960"@en ;
+    ns1:ellipsoid <http://www.opengis.net/ont/crs/geod/Hough1960> ;
+    ns1:primeMeridian <http://www.opengis.net/ont/crs/primeMeridian/Greenwich> ;
+    ns1:usage "Military survey"^^xsd:string .
+

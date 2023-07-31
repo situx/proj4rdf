@@ -1,0 +1,5 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid_obperiod> rdf:value "1,150.69 (r)"^^xsd:double .
+

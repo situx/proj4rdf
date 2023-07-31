@@ -1,0 +1,8 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/def/crs/EPSG/0/4616_area_of_use> a ns1:AreaOfUse ;
+    rdfs:label "Portugal - Selvagens islands (Madeira province) - onshore."@en ;
+    ns1:extent "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON ((-15.79 29.98, -15.79 30.21, -16.11 30.21, -16.11 29.98, -15.79 29.98))"^^geo:wktLiteral .
+

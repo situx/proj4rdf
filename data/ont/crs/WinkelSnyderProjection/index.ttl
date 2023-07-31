@@ -1,0 +1,13 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ns1:WinkelSnyderProjection a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "winkel snyder projection"@en ;
+    ns1:isRelatedTo ns1:EquirectangularProjection,
+        ns1:MollweideProjection ;
+    rdfs:subClassOf ns1:CompromiseProjection ;
+    skos:definition "Arithmetic average of the Equirectangular and Mollweide projections" .
+
