@@ -1,9 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-ns1:InterruptedGoodeHomolosineProjection a owl:Class ;
-    rdfs:label "Interrupted goode homolosine projection" ;
-    ns1:PROJidentifier "igh" ;
-    rdfs:subClassOf ns1:GoodeHomolosineProjection .
-
