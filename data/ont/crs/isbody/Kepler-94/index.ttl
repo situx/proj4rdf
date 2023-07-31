@@ -1,0 +1,11 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/Kepler-94> a ns1:Star ;
+    rdfs:label "Kepler-94"@en ;
+    dc:date "2014-01-01"^^xsd:date ;
+    ns1:mass 8.1e-01 ;
+    ns1:radius 7.6e-01 .
+
