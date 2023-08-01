@@ -1,8 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/geod/Kepler-38__AB__b_geoid> a ns1:Sphere ;
-    rdfs:label "Geoid for Kepler-38 (AB) b"@en ;
-    ns1:approximates <http://www.opengis.net/ont/crs/isbody/Kepler-38__AB__b> ;
-    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/Kepler-38__AB__b_geoid_smj_axis> .
-
