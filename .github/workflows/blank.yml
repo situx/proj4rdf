@@ -11,7 +11,6 @@ jobs:
               version: v017dev 
               rdffilepath: owl/result.ttl docs/  geocrs False
               docpath: docs/
-              deploypath: https://situx.github.io/proj4rdf/data/
               prefixns: http://www.opengis.net/
               prefixnsshort: geoepsg
               indexpages: true
