@@ -1,0 +1,7 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/KMT-2017-BLG-2820_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for KMT-2017-BLG-2820"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/KMT-2017-BLG-2820> .
+
