@@ -1397,6 +1397,8 @@ geocrs:LambertConformalConicProjection rdf:type owl:Class ;
 geocrs:LambertCylindricalEqualAreaProjection rdf:type owl:Class ;
                                              rdfs:subClassOf geocrs:CylindricalEqualArea ;
                                              rdfs:label "Lambert cylindrical equal-area projection" ;
+											 dc:creator "Johann Heinrich Lambert" ;
+										     dc:date "1772"^^xsd:gYear ;
                                              <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LambertCylindricalEqualAreaProjection.svg"^^xsd:anyURI .
 
 
@@ -1404,6 +1406,8 @@ geocrs:LambertCylindricalEqualAreaProjection rdf:type owl:Class ;
 geocrs:LarriveeProjection rdf:type owl:Class ;
                           rdfs:subClassOf geocrs:CompromiseProjection ;
                           geocrs:PROJidentifier "larr" ;
+						  dc:date "1988"^^xsd:gYear ;
+						  dc:creator "Léo Larrivée" ;
                           rdfs:label "larrivee projection" ;
                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LarriveeProjection.svg"^^xsd:anyURI .
 
@@ -1497,6 +1501,7 @@ geocrs:McBrydeThomasFlatPolarParabolicProjection rdf:type owl:Class ;
                                                  rdfs:subClassOf geocrs:PseudoCylindricalProjection ;
                                                  geocrs:PROJidentifier "mbtfpp" ;
                                                  rdfs:label "Mc Bryde-Thomas Flat-Polar Parabolic projection" ;
+												 dc:date "1949"^^xsd:gYear ;
                                                  <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/McBrydeThomasFlatPolarParabolicProjection.svg"^^xsd:anyURI .
 
 
@@ -1513,6 +1518,7 @@ geocrs:McBrydeThomasFlatPolarSinusoidalProjection rdf:type owl:Class ;
                                                   rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                                   geocrs:PseudoCylindricalProjection ;
                                                   geocrs:PROJidentifier "mbtfps" ;
+												  dc:date "1949"^^xsd:gYear ;
                                                   rdfs:label "Mc Bryde-Thomas Flat-Polar Sinusoidal projection" ;
                                                   <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/McBrydeThomasFlatPolarSinusoidalProjection.svg"^^xsd:anyURI .
 
@@ -1522,6 +1528,7 @@ geocrs:McBrydeThomasIIProjection rdf:type owl:Class ;
                                  rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                  geocrs:PseudoCylindricalProjection ;
                                  geocrs:PROJidentifier "mbt_fps" ;
+								 dc:date "1949"^^xsd:gYear ;
                                  rdfs:label "Mc Bryde-Thomas II projection" .
 
 
@@ -1530,6 +1537,7 @@ geocrs:McBrydeThomasIProjection rdf:type owl:Class ;
                                 rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                 geocrs:PseudoCylindricalProjection ;
                                 geocrs:PROJidentifier "mbt_s" ;
+								dc:date "1949"^^xsd:gYear ;
                                 rdfs:label "Mc Bryde-Thomas I projection" .
 
 
@@ -1830,6 +1838,7 @@ geocrs:PseudoOrthographicProjection rdf:type owl:Class ;
                                     rdfs:label "Pseudo orthographic projection"@en .
 
 
+
 ###  http://www.opengis.net/ont/crs/PtolemyIIProjection
 geocrs:PtolemyIIProjection rdf:type owl:Class ;
                            rdfs:subClassOf geocrs:ArchaicProjection ,
@@ -2042,12 +2051,16 @@ geocrs:TiltedPerspectiveProjection rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/ToblerCylindricalIIProjection
 geocrs:ToblerCylindricalIIProjection rdf:type owl:Class ;
+ 									 dc:creator "Waldo Tobler" ;
+									 dc:date "1993"^^xsd:gYear ;
                                      rdfs:subClassOf geocrs:CylindricalProjection ;
                                      rdfs:label "tobler cylindrical II projection"@en .
 
 
 ###  http://www.opengis.net/ont/crs/ToblerCylindricalIProjection
 geocrs:ToblerCylindricalIProjection rdf:type owl:Class ;
+									dc:creator "Waldo Tobler" ;
+									dc:date "1993"^^xsd:gYear ;
                                     rdfs:subClassOf geocrs:CylindricalProjection ;
                                     rdfs:label "tobler cylindrical I projection"@en .
 
@@ -2063,6 +2076,8 @@ geocrs:ToblerG1Projection rdf:type owl:Class ;
 geocrs:ToblerHyperellipticalProjection rdf:type owl:Class ;
                                        rdfs:subClassOf geocrs:EqualAreaProjection ,
                                                        geocrs:PseudoCylindricalProjection ;
+									   dc:creator "Waldo Tobler" ;
+									   dc:date "1973"^^xsd:gYear ;
                                        rdfs:label "tobler hyperelliptical projection"@en .
 
 
@@ -2070,6 +2085,8 @@ geocrs:ToblerHyperellipticalProjection rdf:type owl:Class ;
 geocrs:ToblerWorldInASquareProjection rdf:type owl:Class ;
                                       rdfs:subClassOf geocrs:CylindricalEqualArea ;
                                       rdfs:label "Tobler world in a square projection" ;
+									  dc:creator "Waldo Tobler" ;
+									  dc:date "1993"^^xsd:gYear ;
                                       <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/ToblerWorldInASquareProjection.svg"^^xsd:anyURI .
 
 
