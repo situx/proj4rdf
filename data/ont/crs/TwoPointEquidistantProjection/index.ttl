@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:TwoPointEquidistantProjection a owl:Class ;
+    rdfs:label "two-point equidistance projection"@en ;
+    ns1:PROJidentifier "tpeqd" ;
+    rdfs:subClassOf ns1:AzimuthalProjection,
+        ns1:EquidistantProjection .
+

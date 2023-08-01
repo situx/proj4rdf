@@ -1,0 +1,10 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/HD_20794_e_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for HD 20794 e"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/HD_20794_e> ;
+    ns1:eccentricity 2.9e-01 ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/HD_20794_e_geoid_smj_axis> .
+

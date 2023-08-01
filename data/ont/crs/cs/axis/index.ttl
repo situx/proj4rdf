@@ -1,0 +1,656 @@
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns2: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/cs/axis/Depth_US_survey_foot_down> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Depth (om:foot-USSurvey) (down) "@en ;
+    ns1:hasUnit ns1:foot-USSurvey ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>D: Depth (om:foot-USSurvey) (down)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "D"^^xsd:string ;
+    ns2:direction ns2:down ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9003"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048006e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Depth_foot_down> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Depth (om:foot-International) (down) "@en ;
+    ns1:hasUnit ns1:foot-International ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>D: Depth (om:foot-International) (down)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "D"^^xsd:string ;
+    ns2:direction ns2:down ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9002"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Depth_metre_down> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Depth (om:metre) (down) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>D: Depth (om:metre) (down)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "D"^^xsd:string ;
+    ns2:direction ns2:down ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_British_chain__Benoit_1895_B__east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (British chain (Benoit 1895 B)) (east)"@en ;
+    ns1:hasUnit "British chain (Benoit 1895 B)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (British chain (Benoit 1895 B)) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9062"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011678e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_British_chain__Sears_1922__east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (British chain (Sears 1922)) (east)"@en ;
+    ns1:hasUnit "British chain (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (British chain (Sears 1922)) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9042"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011677e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_British_chain__Sears_1922_truncated__east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (British chain (Sears 1922 truncated)) (east)"@en ;
+    ns1:hasUnit "British chain (Sears 1922 truncated)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (British chain (Sears 1922 truncated)) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9301"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011676e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_British_foot__Sears_1922__east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (British foot (Sears 1922)) (east)"@en ;
+    ns1:hasUnit "British foot (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (British foot (Sears 1922)) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9041"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047995e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_British_yard__Sears_1922__east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (British yard (Sears 1922)) (east)"@en ;
+    ns1:hasUnit "British yard (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (British yard (Sears 1922)) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9040"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143984e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_foot_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (Clarke's foot) (east)"@en ;
+    ns1:hasUnit "Clarke's foot" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (Clarke's foot) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9005"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047973e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_link_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (Clarke's link) (east)"@en ;
+    ns1:hasUnit "Clarke's link" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (Clarke's link) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9039"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011662e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Clarke_s_yard_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (Clarke's yard) (east)"@en ;
+    ns1:hasUnit "Clarke's yard" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (Clarke's yard) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9037"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143918e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Gold_Coast_foot_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (Gold Coast foot) (east)"@en ;
+    ns1:hasUnit "Gold Coast foot" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (Gold Coast foot) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9094"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047997e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_Indian_yard_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (Indian yard) (east)"@en ;
+    ns1:hasUnit "Indian yard" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (Indian yard) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9084"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143985e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_US_survey_foot_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:foot-USSurvey) (east) "@en ;
+    ns1:hasUnit ns1:foot-USSurvey ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:foot-USSurvey) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "X"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9003"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048006e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_foot_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:foot-International) (east) "@en ;
+    ns1:hasUnit ns1:foot-International ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (om:foot-International) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:foot-International) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string,
+        "X"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9002"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_kilometre_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:kilometre) (east) "@en ;
+    ns1:hasUnit ns1:kilometre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:kilometre) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "X"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9036"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+03 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_link_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (link) (east)"@en ;
+    ns1:hasUnit "link" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Easting (link) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Y"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9098"^^xsd:string ;
+    ns2:unit_conversion_factor 2.01168e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_metre_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:metre) (east) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E(X): Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>M: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>none: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>y: Easting (om:metre) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string,
+        "E(X)"^^xsd:string,
+        "M"^^xsd:string,
+        "X"^^xsd:string,
+        "Y"^^xsd:string,
+        "none"^^xsd:string,
+        "y"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_metre_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:metre) (north) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:metre) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string,
+        "X"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Easting_metre_south> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Easting (om:metre) (south) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Easting (om:metre) (south)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Easting (om:metre) (south)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string,
+        "X"^^xsd:string ;
+    ns2:direction ns2:south ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Ellipsoidal_height_metre_up> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Ellipsoidal height (om:metre) (up) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>h: Ellipsoidal height (om:metre) (up)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "h"^^xsd:string ;
+    ns2:direction ns2:up ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_X_metre_geocentricX> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geocentric X (om:metre) (geocentricX) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Geocentric X (om:metre) (geocentricX)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "X"^^xsd:string ;
+    ns2:direction ns2:geocentricX ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Y_metre_geocentricY> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geocentric Y (om:metre) (geocentricY) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Geocentric Y (om:metre) (geocentricY)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Y"^^xsd:string ;
+    ns2:direction ns2:geocentricY ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geocentric_Z_metre_geocentricZ> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geocentric Z (om:metre) (geocentricZ) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Z: Geocentric Z (om:metre) (geocentricZ)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Z"^^xsd:string ;
+    ns2:direction ns2:geocentricZ ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_latitude_degree_minute_second_hemisphere_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic latitude (degree minute second hemisphere) (north)"@en ;
+    ns1:hasUnit "degree minute second hemisphere" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Lat: Geodetic latitude (degree minute second hemisphere) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Lat"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9108"^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_latitude_degree_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic latitude (om:degree) (north) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Lat: Geodetic latitude (om:degree) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Lat"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9122"^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_latitude_grad_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic latitude (om:degree) (north) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Lat: Geodetic latitude (om:degree) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Lat"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9105"^^xsd:string ;
+    ns2:unit_conversion_factor 1.570796e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_degree_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic longitude (om:degree) (east) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Lon: Geodetic longitude (om:degree) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Lon"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9122"^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_degree_minute_second_hemisphere_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic longitude (degree minute second hemisphere) (east)"@en ;
+    ns1:hasUnit "degree minute second hemisphere" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Long: Geodetic longitude (degree minute second hemisphere) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Long"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9108"^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Geodetic_longitude_grad_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Geodetic longitude (om:degree) (east) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Lon: Geodetic longitude (om:degree) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Lon"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9105"^^xsd:string ;
+    ns2:unit_conversion_factor 1.570796e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Gravity-related_height_British_foot__1936__up> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Gravity-related height (British foot (1936)) (up)"@en ;
+    ns1:hasUnit "British foot (1936)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>H: Gravity-related height (British foot (1936)) (up)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "H"^^xsd:string ;
+    ns2:direction ns2:up ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9095"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048007e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Gravity-related_height_US_survey_foot_up> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Gravity-related height (om:foot-USSurvey) (up) "@en ;
+    ns1:hasUnit ns1:foot-USSurvey ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>H: Gravity-related height (om:foot-USSurvey) (up)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "H"^^xsd:string ;
+    ns2:direction ns2:up ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9003"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048006e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Gravity-related_height_foot_up> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Gravity-related height (om:foot-International) (up) "@en ;
+    ns1:hasUnit ns1:foot-International ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>H: Gravity-related height (om:foot-International) (up)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "H"^^xsd:string ;
+    ns2:direction ns2:up ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9002"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Gravity-related_height_metre_up> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Gravity-related height (om:metre) (up) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>H: Gravity-related height (om:metre) (up)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "H"^^xsd:string ;
+    ns2:direction ns2:up ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Latitude_Degree_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Latitude (om:degree) (north) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>lat: Latitude (om:degree) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "lat"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code ""^^xsd:string ;
+    ns2:unit_code ""^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Local_depth_foot_down> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Local depth (om:foot-International) (down) "@en ;
+    ns1:hasUnit ns1:foot-International ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>d: Local depth (om:foot-International) (down)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "d"^^xsd:string ;
+    ns2:direction ns2:down ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9002"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Local_depth_metre_down> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Local depth (om:metre) (down) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>d: Local depth (om:metre) (down)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "d"^^xsd:string ;
+    ns2:direction ns2:down ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Longitude_Degree_east> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Longitude (om:degree) (east) "@en ;
+    ns1:hasUnit ns1:degree ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>lon: Longitude (om:degree) (east)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "lon"^^xsd:string ;
+    ns2:direction ns2:east ;
+    ns2:unit_auth_code ""^^xsd:string ;
+    ns2:unit_code ""^^xsd:string ;
+    ns2:unit_conversion_factor 1.745329e-02 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_chain__Benoit_1895_B__north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (British chain (Benoit 1895 B)) (north)"@en ;
+    ns1:hasUnit "British chain (Benoit 1895 B)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (British chain (Benoit 1895 B)) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9062"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011678e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_chain__Sears_1922__north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (British chain (Sears 1922)) (north)"@en ;
+    ns1:hasUnit "British chain (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (British chain (Sears 1922)) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9042"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011677e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_chain__Sears_1922_truncated__north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (British chain (Sears 1922 truncated)) (north)"@en ;
+    ns1:hasUnit "British chain (Sears 1922 truncated)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (British chain (Sears 1922 truncated)) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9301"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011676e+01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_foot__Sears_1922__north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (British foot (Sears 1922)) (north)"@en ;
+    ns1:hasUnit "British foot (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (British foot (Sears 1922)) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9041"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047995e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_British_yard__Sears_1922__north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (British yard (Sears 1922)) (north)"@en ;
+    ns1:hasUnit "British yard (Sears 1922)" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (British yard (Sears 1922)) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9040"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143984e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Clarke_s_foot_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (Clarke's foot) (north)"@en ;
+    ns1:hasUnit "Clarke's foot" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Clarke's foot) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9005"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047973e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Clarke_s_link_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (Clarke's link) (north)"@en ;
+    ns1:hasUnit "Clarke's link" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Clarke's link) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9039"^^xsd:string ;
+    ns2:unit_conversion_factor 2.011662e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Clarke_s_yard_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (Clarke's yard) (north)"@en ;
+    ns1:hasUnit "Clarke's yard" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Clarke's yard) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9037"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143918e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Gold_Coast_foot_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (Gold Coast foot) (north)"@en ;
+    ns1:hasUnit "Gold Coast foot" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Gold Coast foot) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9094"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047997e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Indian_yard_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (Indian yard) (north)"@en ;
+    ns1:hasUnit "Indian yard" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Indian yard) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9084"^^xsd:string ;
+    ns2:unit_conversion_factor 9.143985e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_US_survey_foot_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (om:foot-USSurvey) (north) "@en ;
+    ns1:hasUnit ns1:foot-USSurvey ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Northing (om:foot-USSurvey) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Y"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9003"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048006e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_foot_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (om:foot-International) (north) "@en ;
+    ns1:hasUnit ns1:foot-International ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (om:foot-International) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Northing (om:foot-International) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string,
+        "Y"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9002"^^xsd:string ;
+    ns2:unit_conversion_factor 3.048e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_kilometre_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (om:kilometre) (north) "@en ;
+    ns1:hasUnit ns1:kilometre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Northing (om:kilometre) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Y"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9036"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+03 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_link_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (link) (north)"@en ;
+    ns1:hasUnit "link" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Northing (link) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "X"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9098"^^xsd:string ;
+    ns2:unit_conversion_factor 2.01168e-01 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_metre_north> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (om:metre) (north) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N(Y): Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>P: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>none: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>x: Northing (om:metre) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string,
+        "N(Y)"^^xsd:string,
+        "P"^^xsd:string,
+        "X"^^xsd:string,
+        "Y"^^xsd:string,
+        "none"^^xsd:string,
+        "x"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_metre_south> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Northing (om:metre) (south) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (om:metre) (south)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Northing (om:metre) (south)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string,
+        "Y"^^xsd:string ;
+    ns2:direction ns2:south ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Southing_German_legal_metre_south> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Southing (German legal metre) (south)"@en ;
+    ns1:hasUnit "German legal metre" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Southing (German legal metre) (south)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "X"^^xsd:string ;
+    ns2:direction ns2:south ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9031"^^xsd:string ;
+    ns2:unit_conversion_factor 1.000014e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Southing_metre_south> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Southing (om:metre) (south) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>P: Southing (om:metre) (south)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Southing (om:metre) (south)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "P"^^xsd:string,
+        "X"^^xsd:string ;
+    ns2:direction ns2:south ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Westing_German_legal_metre_west> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Westing (German legal metre) (west)"@en ;
+    ns1:hasUnit "German legal metre" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Westing (German legal metre) (west)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "Y"^^xsd:string ;
+    ns2:direction ns2:west ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9031"^^xsd:string ;
+    ns2:unit_conversion_factor 1.000014e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/Westing_metre_west> a ns2:CoordinateSystemAxis ;
+    rdfs:label "Westing (om:metre) (west) "@en ;
+    ns1:hasUnit ns1:metre ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>E: Westing (om:metre) (west)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>M: Westing (om:metre) (west)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>W: Westing (om:metre) (west)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>X: Westing (om:metre) (west)</text></svg>"^^ns2:svgLiteral,
+        "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>Y: Westing (om:metre) (west)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "E"^^xsd:string,
+        "M"^^xsd:string,
+        "W"^^xsd:string,
+        "X"^^xsd:string,
+        "Y"^^xsd:string ;
+    ns2:direction ns2:west ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9001"^^xsd:string ;
+    ns2:unit_conversion_factor 1e+00 .
+
+<http://www.opengis.net/ont/crs/cs/axis/down> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: down"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/east> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: east"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/geocentricX> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: geocentricX"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/geocentricY> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: geocentricY"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/geocentricZ> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: geocentricZ"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/north> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: north"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/south> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: south"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/up> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: up"@en .
+
+<http://www.opengis.net/ont/crs/cs/axis/west> a ns2:AxisDirection ;
+    rdfs:label "Axis Direction: west"@en .
+
