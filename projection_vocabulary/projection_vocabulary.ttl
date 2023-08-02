@@ -6,6 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
 @prefix geocrs: <http://www.opengis.net/ont/crs/> .
 @base <http://www.opengis.net/ont/crs/ProjectionOntology> .
 
@@ -544,6 +545,7 @@ geocrs:Conversion rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/crs/CoordinateOperation
 geocrs:CoordinateOperation rdf:type owl:Class ;
+						   rdfs:subClassOf fno:Function ;
                            rdfs:label "coordinate operation" .
 
 
@@ -1434,6 +1436,7 @@ geocrs:LeeProjection rdf:type owl:Class ;
                      rdfs:subClassOf geocrs:ConformalProjection ,
                                      geocrs:PolyhedralProjection ;
                      geocrs:PROJidentifier "lee_os" ;
+					 <https://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/LeeProjection.svg"^^xsd:anyURI ;
                      rdfs:label "lee projection"@en .
 
 
@@ -2457,6 +2460,10 @@ geocrs:MollweideProjection dc:creator "Karl Brandan Mollweide" ;
                            skos:altLabel "Babinet projection"@en ;
                            geocrs:PROJidentifier "moll" ;
                            dc:date "1805"^^xsd:gYear .
+						   
+geocrs:MollweideWagnerProjection rdf:type owl:Class ; rdfs:subClassOf geocrs:EqualAreaProjection ;
+                           <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/MollweideWagnerProjection.svg"^^xsd:anyURI ;
+                           rdfs:label "mollweide-wagner projection"@en .						   
 
 
 geocrs:SinusoidalProjection <http://xmlns.com/foaf/0.1/image> "https://situx.github.io/proj4rdf/projections/SinusoidalProjection.svg"^^xsd:anyURI ;

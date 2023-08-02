@@ -100,6 +100,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/LambertCylindricalEqualAreaProjection": d3.geoCylindricalEqualArea().parallel(0),
 	"http://www.opengis.net/ont/crs/LarriveeProjection": d3.geoLarrivee(),
 	"http://www.opengis.net/ont/crs/LaskowskiProjection": d3.geoLaskowski(),
+	"http://www.opengis.net/ont/crs/LeeProjection":d3.geoModifiedStereographicLee(),
 	"http://www.opengis.net/ont/crs/LittrowProjection": d3.geoLittrow(),
 	"http://www.opengis.net/ont/crs/LoximuthalProjection": d3.geoLoximuthal(),
 	"http://www.opengis.net/ont/crs/MaurerNo73Projection":d3.geoHill().ratio(0),
@@ -110,6 +111,7 @@ var projections={
 	"http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarParabolicProjection": d3.geoMtFlatPolarParabolic(),
 	"http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarSinusoidalProjection": d3.geoMtFlatPolarSinusoidal(),
 	"http://www.opengis.net/ont/crs/MollweideProjection": d3.geoMollweide(),
+	"http://www.opengis.net/ont/crs/MollweideWagnerProjection": d3.geoHufnagel().a(0).b(0).psiMax(60).ratio(2),
 	"http://www.opengis.net/ont/crs/NaturalEarthProjection": d3.geoNaturalEarth1(),
 	"http://www.opengis.net/ont/crs/NaturalEarth2Projection": d3.geoNaturalEarth2(),
 	"http://www.opengis.net/ont/crs/NellHammerProjection": d3.geoNellHammer(),
@@ -358,12 +360,14 @@ Select Projection Type: <select id="projselect" onchange="generateImage()">
 <option value="http://www.opengis.net/ont/crs/LagrangeProjection">Lagrange Projection</option>
 <option value="http://www.opengis.net/ont/crs/LarriveeProjection">Larrivee Projection</option>
 <option value="http://www.opengis.net/ont/crs/LaskowskiProjection">Laskowski Projection</option>
+<option value="http://www.opengis.net/ont/crs/LeeProjection">Lee Oblated Stereographic Projection</option>
 <option value="http://www.opengis.net/ont/crs/LittrowProjection">Littrow Projection</option>
 <option value="http://www.opengis.net/ont/crs/LoximuthalProjection">Loximuthal Projection</option>
 <option value="http://www.opengis.net/ont/crs/MaurerNo73Projection">Maurer No 73 Projection</option>
 <option value="http://www.opengis.net/ont/crs/MercatorProjection">Mercator Projection</option>
 <option value="http://www.opengis.net/ont/crs/MillerProjection">Miller Projection</option>
 <option value="http://www.opengis.net/ont/crs/MollweideProjection">Mollweide Projection</option>
+<option value="http://www.opengis.net/ont/crs/MollweideWagnerProjection">Mollweide-Wagner Projection</option>
 <option value="http://www.opengis.net/ont/crs/NaturalEarthProjection">Natural Earth Projection</option>
 <option value="http://www.opengis.net/ont/crs/NaturalEarth2Projection">Natural Earth II Projection</option>
 <option value="http://www.opengis.net/ont/crs/NellHammerProjection">Nell-Hammer Projection</option>
