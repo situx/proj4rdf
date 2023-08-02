@@ -2529,6 +2529,14 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/function/ontology#Function">fno:Function</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
@@ -3801,6 +3809,12 @@ td {
                   <li>
                     <span>
                       <a href="#PutninsP6'Projection">Putnins P6' projection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.opengis.net/ont/crs/MollweideWagnerProjection">mollweide-wagner projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -11218,6 +11232,30 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="mollweide-wagnerprojection">
+          <h3>mollweide-wagner projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/MollweideWagnerProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">equal-area projection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
@@ -11374,6 +11412,10 @@ td {
           <dt id="dcterms">dcterms</dt>
           <dd>
             <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="fno">fno</dt>
+          <dd>
+            <code>https://w3id.org/function/ontology#</code>
           </dd>
           <dt id="foaf">foaf</dt>
           <dd>
@@ -12301,6 +12343,9 @@ td {
             <li>
               <a href="#PutninsP6'Projection">Putnins P6' projection</a>
             </li>
+            <li>
+              <a href="#mollweide-wagnerprojection">mollweide-wagner projection</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -12357,6 +12402,9 @@ td {
             </li>
             <li>
               <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#fno">fno</a>
             </li>
             <li>
               <a href="#foaf">foaf</a>

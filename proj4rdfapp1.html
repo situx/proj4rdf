@@ -295,28 +295,6 @@ td {
     ]
   },
   {
-    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "CS Extension Ontology"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "SRS Application Ontology"
-      }
-    ]
-  },
-  {
     "@id": "http://www.opengis.net/ont/crs/PlanetOntology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -347,6 +325,28 @@ td {
       {
         "@language": "en",
         "@value": "GeoSPARQL SRS Ontology Draft"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/SRSApplicationOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "SRS Application Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/crs/CSExtensionOntology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CS Extension Ontology"
       }
     ]
   }
@@ -9801,6 +9801,30 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="mollweide-wagnerprojection">
+          <h3>mollweide-wagner projection
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.opengis.net/ont/crs/MollweideWagnerProjection</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.opengis.net/ont/crs/EqualAreaProjection">equal-area projection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="naturalsatellite">
           <h3>natural satellite
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -15453,6 +15477,12 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="http://www.opengis.net/ont/crs/MollweideWagnerProjection">mollweide-wagner projection</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="http://www.opengis.net/ont/crs/QuarticAuthalicProjection">quartic authalic projection</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -18848,6 +18878,9 @@ td {
             </li>
             <li>
               <a href="#mollweideprojection">mollweide projection</a>
+            </li>
+            <li>
+              <a href="#mollweide-wagnerprojection">mollweide-wagner projection</a>
             </li>
             <li>
               <a href="#naturalsatellite">natural satellite</a>
