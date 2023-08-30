@@ -1,0 +1,8 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/geod/NY_Vir__AB__c_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for NY Vir (AB) c"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/NY_Vir__AB__c> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/NY_Vir__AB__c_geoid_smj_axis> .
+
