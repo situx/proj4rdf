@@ -1,7 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/geod/OGLE-GD-ECL-11388_b_geoid> a ns1:Sphere ;
-    rdfs:label "Geoid for OGLE-GD-ECL-11388 b"@en ;
-    ns1:approximates <http://www.opengis.net/ont/crs/isbody/OGLE-GD-ECL-11388_b> .
-
