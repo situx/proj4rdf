@@ -1,0 +1,16 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:NaturalEarthProjection a owl:Class ;
+    rdfs:label "natural earth projection"@en ;
+    dc:creator "Tom Patterson" ;
+    dc:date "2011"^^xsd:gYear ;
+    ns1:PROJidentifier "natearth" ;
+    rdfs:subClassOf ns1:CompromiseProjection,
+        ns1:PseudoCylindricalProjection ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/NaturalEarthProjection.svg"^^xsd:anyURI .
+
