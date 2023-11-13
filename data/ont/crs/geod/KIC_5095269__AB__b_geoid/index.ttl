@@ -1,0 +1,9 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/KIC_5095269__AB__b_geoid> a ns1:Sphere ;
+    rdfs:label "Geoid for KIC 5095269 (AB) b"@en ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/KIC_5095269__AB__b> ;
+    ns1:eccentricity 6.04e-02 .
+
