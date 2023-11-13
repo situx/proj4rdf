@@ -1,7 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/operation/Oregon_Ukiah-Fox_zone__International_feet__longitudeOfNaturalOrigin> a ns1:OperationParameter ;
-    rdfs:label "Longitude of natural origin"@en ;
-    ns1:usesValue <http://www.opengis.net/ont/crs/operation/Oregon_Ukiah-Fox_zone__International_feet__longitudeOfNaturalOrigin_value> .
-

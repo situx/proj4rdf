@@ -283,25 +283,13 @@ td {
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
+    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
-    "https://schema.org/creator": [
-      {
-        "@id": "http://www.wikidata.org/entity/Q67624599"
-      }
-    ],
-    "https://schema.org/description": [
-      {
-        "@language": "en",
-        "@value": "This ontology models spatial reference systems"
-      }
-    ],
     "https://schema.org/name": [
       {
-        "@language": "en",
-        "@value": "GeoSPARQL SRS Ontology Draft NonISO classes"
+        "@value": "Calendar - ConceptScheme"
       }
     ]
   },
@@ -313,6 +301,17 @@ td {
     "https://schema.org/name": [
       {
         "@value": "AxisDirection - ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CoordinateDataType - ConceptScheme"
       }
     ]
   },
@@ -357,24 +356,25 @@ td {
     ]
   },
   {
-    "@id": "http://def.isotc211.org/iso19111/2019/CoordinateSystems/code/CoordinateDataType",
+    "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
-    "https://schema.org/name": [
+    "https://schema.org/creator": [
       {
-        "@value": "CoordinateDataType - ConceptScheme"
+        "@id": "http://www.wikidata.org/entity/Q67624599"
       }
-    ]
-  },
-  {
-    "@id": "http://def.isotc211.org/iso19111/2019/Datums/code/Calendar",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "This ontology models spatial reference systems"
+      }
     ],
     "https://schema.org/name": [
       {
-        "@value": "Calendar - ConceptScheme"
+        "@language": "en",
+        "@value": "GeoSPARQL SRS Ontology Draft NonISO classes"
       }
     ]
   },
@@ -1860,13 +1860,13 @@ td {
   <a href="http://www.opengis.net/ont/crs/uCartesianCS">CartesianCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
+  <a href="http://www.opengis.net/ont/crs/uAffineCS">AffineCS</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uCylindricalCS">CylindricalCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uOrdinalCS">OrdinalCS</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uAffineCS">AffineCS</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uPolarCS">PolarCS</a>
@@ -2065,10 +2065,10 @@ td {
                 <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
               </th>
               <td><span>
-  <a href="http://www.opengis.net/ont/crs/uFormula">Formula</a>
+  <a href="http://www.opengis.net/ont/crs/uFormulaCitation">FormulaCitation</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uFormulaCitation">FormulaCitation</a>
+  <a href="http://www.opengis.net/ont/crs/uFormula">Formula</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
@@ -4708,16 +4708,16 @@ td {
   <a href="http://www.opengis.net/ont/crs/uBooleanValue">BooleanValue</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uIntegerValue">IntegerValue</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uStringValue">StringValue</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="http://www.opengis.net/ont/crs/uValueList">ValueList</a>
+  <a href="http://www.opengis.net/ont/crs/uIntegerValue">IntegerValue</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uValueFileCitation">ValueFileCitation</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
+  <a href="http://www.opengis.net/ont/crs/uValueList">ValueList</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.opengis.net/ont/crs/uValue">Value</a>

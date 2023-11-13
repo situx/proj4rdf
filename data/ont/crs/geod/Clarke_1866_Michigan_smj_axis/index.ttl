@@ -1,9 +1,0 @@
-@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.opengis.net/ont/crs/geod/Clarke_1866_Michigan_smj_axis> rdfs:label "Semi Major Axis of Clarke 1866 Michigan"@en ;
-    ns1:hasUnit ns1:metre ;
-    rdf:value 6.37845e+06 .
-
