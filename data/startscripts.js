@@ -1162,7 +1162,7 @@ function formatHTMLTableForResult(result,nodeicon){
                 if((resitem+"").startsWith("http")){
                     dialogcontent+="<li><a href=\""+rewriteLink(resitem)+"\" target=\"_blank\">"+shortenURI(resitem)+"</a> ["+result[res][resitem]+"]</li>"
                 }else if(resitem!="instancecount"){
-                    dialogcontent+="<li>"+resitem+"</li>"
+                    dialogcontent+="<li>"+result[res][resitem]+"</li>"
                 }
             }
             dialogcontent+="</ul></td>"
