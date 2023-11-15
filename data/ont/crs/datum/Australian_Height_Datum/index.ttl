@@ -1,9 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.opengis.net/ont/crs/datum/Australian_Height_Datum> a ns1:VerticalReferenceFrame ;
-    rdfs:label "Datum: Australian Height Datum"@en ;
-    ns1:usage ns1:CadastreMap,
-        "engineering surveying applications over distances up to 10km"^^xsd:string .
-
