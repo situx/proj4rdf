@@ -1,5 +1,0 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/isbody/Quaoar> a <http://www.opengis.net/ont/crs/Planet> ;
-    rdfs:label "Quaoar"@en .
-

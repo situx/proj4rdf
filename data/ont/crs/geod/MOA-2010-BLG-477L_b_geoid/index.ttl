@@ -1,8 +1,0 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.opengis.net/ont/crs/geod/MOA-2010-BLG-477L_b_geoid> a ns1:Sphere ;
-    rdfs:label "Geoid for MOA-2010-BLG-477L b"@en ;
-    ns1:approximates <http://www.opengis.net/ont/crs/isbody/MOA-2010-BLG-477L_b> ;
-    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/MOA-2010-BLG-477L_b_geoid_smj_axis> .
-
