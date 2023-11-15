@@ -1,0 +1,9 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.opengis.net/ont/crs/datum/Cascais> a ns1:VerticalReferenceFrame ;
+    rdfs:label "Datum: Cascais"@en ;
+    ns1:usage ns1:EngineeringSurvey,
+        ns1:Geodesy,
+        ns1:TopographicMap .
+
