@@ -1,0 +1,3 @@
+
+<http://www.opengis.net/ont/crs/geod/geod1> a <http://www.opengis.net/ont/crs/Geoid> .
+
