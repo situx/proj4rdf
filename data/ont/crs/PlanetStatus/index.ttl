@@ -1,0 +1,4 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://www.opengis.net/ont/crs/PlanetStatus> a owl:Class .
+
