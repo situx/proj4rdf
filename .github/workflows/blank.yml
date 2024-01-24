@@ -7,7 +7,7 @@ jobs:
   ontdocII:
         uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
         name: Ontdoc II      
-        with: 
+        with:  
               version: v017dev 
               rdffilepath: owl/result.ttl docs/  geocrs False
               docpath: docs/
