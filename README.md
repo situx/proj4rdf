@@ -2,7 +2,7 @@
            
 This repository contains the following data:
 * An ontology draft for representing spatial reference systems in RDF
-* A converted dataset of spatial reference systems present in the pyproj4 library in RDF
+* A converted dataset of spatial reference systems present in the pyproj4 library in RDF 
 * A converted set of more than 4000 interstellar geoids for the use for spatial reference systems in RDF
 * An extraction script from pyproj definitions to RDf
 * Initial SHACL rules for the validation of spatial reference systems in RDF
