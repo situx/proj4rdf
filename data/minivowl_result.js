@@ -273,28 +273,168 @@ var minivowlresult={
  ],
  "links": [
   {
-   "source": 47,
-   "target": 28,
-   "valueTo": "parameter",
+   "source": 39,
+   "target": 16,
+   "valueTo": "area_of_use",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
   },
   {
-   "source": 43,
-   "target": 28,
-   "valueTo": "parameter",
+   "source": 33,
+   "target": 16,
+   "valueTo": "area_of_use",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 30,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
   },
   {
    "source": 35,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 42,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 36,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 40,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 44,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 47,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 3,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 41,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 34,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 4,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 43,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 1,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 2,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 5,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 38,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 45,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 31,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 37,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 46,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 30,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 32,
+   "target": 16,
+   "valueTo": "area_of_use",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+  },
+  {
+   "source": 36,
    "target": 28,
    "valueTo": "parameter",
    "propertyTo": "class",
@@ -302,6 +442,27 @@ var minivowlresult={
   },
   {
    "source": 31,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 40,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 44,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 42,
    "target": 28,
    "valueTo": "parameter",
    "propertyTo": "class",
@@ -322,501 +483,221 @@ var minivowlresult={
    "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
-   "source": 41,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
    "source": 46,
    "target": 28,
    "valueTo": "parameter",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 33,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 42,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 44,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 45,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 36,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 34,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 32,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 38,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 40,
-   "target": 28,
-   "valueTo": "parameter",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/parameter"
-  },
-  {
-   "source": 2,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 2,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 3,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 3,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 4,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 4,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 5,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 5,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 13,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 13,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 1,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 1,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 6,
-   "target": 26,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 6,
-   "target": 27,
-   "valueTo": "isApplicableTo",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
-  },
-  {
-   "source": 29,
-   "target": 50,
-   "valueTo": "hasUnit",
-   "propertyTo": "class",
-   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
-  },
-  {
-   "source": 20,
-   "target": 50,
-   "valueTo": "hasUnit",
-   "propertyTo": "class",
-   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
-  },
-  {
-   "source": 48,
-   "target": 50,
-   "valueTo": "hasUnit",
-   "propertyTo": "class",
-   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
-  },
-  {
-   "source": 13,
-   "target": 50,
-   "valueTo": "hasUnit",
-   "propertyTo": "class",
-   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
-  },
-  {
-   "source": 18,
-   "target": 20,
-   "valueTo": "axis",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/axis"
-  },
-  {
-   "source": 19,
-   "target": 20,
-   "valueTo": "axis",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/axis"
-  },
-  {
-   "source": 17,
-   "target": 20,
-   "valueTo": "axis",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/axis"
-  },
-  {
-   "source": 14,
-   "target": 25,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 14,
-   "target": 26,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 24,
-   "target": 25,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 24,
-   "target": 26,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 13,
-   "target": 25,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 13,
-   "target": 26,
-   "valueTo": "approximates",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/approximates"
-  },
-  {
-   "source": 1,
-   "target": 2,
-   "valueTo": "sourceCRS",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/sourceCRS"
-  },
-  {
-   "source": 25,
-   "target": 25,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 25,
-   "target": 26,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 26,
-   "target": 25,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 26,
-   "target": 26,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 27,
-   "target": 25,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 27,
-   "target": 26,
-   "valueTo": "satelliteOf",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
-  },
-  {
-   "source": 43,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 35,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 31,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 39,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 42,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 44,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 45,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 41,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 2,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 4,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 5,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 1,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 38,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 30,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 3,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 37,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
-  },
-  {
-   "source": 40,
-   "target": 16,
-   "valueTo": "area_of_use",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
   },
   {
    "source": 47,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
-   "source": 46,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "source": 30,
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
    "source": 33,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
-   "source": 36,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "source": 38,
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 45,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 43,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 41,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
    "source": 34,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 35,
+   "target": 28,
+   "valueTo": "parameter",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
   },
   {
    "source": 32,
-   "target": 16,
-   "valueTo": "area_of_use",
+   "target": 28,
+   "valueTo": "parameter",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/area_of_use"
+   "uriTo": "http://www.opengis.net/ont/crs/parameter"
+  },
+  {
+   "source": 25,
+   "target": 26,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 25,
+   "target": 25,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 26,
+   "target": 26,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 26,
+   "target": 25,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 27,
+   "target": 26,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 27,
+   "target": 25,
+   "valueTo": "satelliteOf",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/satelliteOf"
+  },
+  {
+   "source": 2,
+   "target": 26,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 2,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 6,
+   "target": 26,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 6,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 13,
+   "target": 26,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 13,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
   },
   {
    "source": 5,
-   "target": 4,
-   "valueTo": "includesSRS",
+   "target": 26,
+   "valueTo": "isApplicableTo",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
   },
   {
    "source": 5,
-   "target": 2,
-   "valueTo": "includesSRS",
+   "target": 27,
+   "valueTo": "isApplicableTo",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
   },
   {
-   "source": 5,
-   "target": 1,
-   "valueTo": "includesSRS",
+   "source": 3,
+   "target": 26,
+   "valueTo": "isApplicableTo",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 3,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 4,
+   "target": 26,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 4,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 1,
+   "target": 26,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
+  },
+  {
+   "source": 1,
+   "target": 27,
+   "valueTo": "isApplicableTo",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/isApplicableTo"
   },
   {
    "source": 28,
@@ -847,6 +728,90 @@ var minivowlresult={
    "uriTo": "http://www.opengis.net/ont/crs/planet_status"
   },
   {
+   "source": 29,
+   "target": 50,
+   "valueTo": "hasUnit",
+   "propertyTo": "class",
+   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
+  },
+  {
+   "source": 48,
+   "target": 50,
+   "valueTo": "hasUnit",
+   "propertyTo": "class",
+   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
+  },
+  {
+   "source": 20,
+   "target": 50,
+   "valueTo": "hasUnit",
+   "propertyTo": "class",
+   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
+  },
+  {
+   "source": 13,
+   "target": 50,
+   "valueTo": "hasUnit",
+   "propertyTo": "class",
+   "uriTo": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit"
+  },
+  {
+   "source": 24,
+   "target": 26,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 24,
+   "target": 25,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 14,
+   "target": 26,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 14,
+   "target": 25,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 13,
+   "target": 26,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 13,
+   "target": 25,
+   "valueTo": "approximates",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/approximates"
+  },
+  {
+   "source": 2,
+   "target": 17,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 2,
+   "target": 19,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
    "source": 2,
    "target": 18,
    "valueTo": "coordinateSystem",
@@ -854,78 +819,15 @@ var minivowlresult={
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
   },
   {
-   "source": 2,
-   "target": 19,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 2,
+   "source": 6,
    "target": 17,
    "valueTo": "coordinateSystem",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
   },
   {
-   "source": 3,
-   "target": 18,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 3,
+   "source": 6,
    "target": 19,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 3,
-   "target": 17,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 4,
-   "target": 18,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 4,
-   "target": 19,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 4,
-   "target": 17,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 1,
-   "target": 18,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 1,
-   "target": 19,
-   "valueTo": "coordinateSystem",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
-  },
-  {
-   "source": 1,
-   "target": 17,
    "valueTo": "coordinateSystem",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
@@ -938,274 +840,134 @@ var minivowlresult={
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
   },
   {
-   "source": 6,
+   "source": 3,
+   "target": 17,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 3,
    "target": 19,
    "valueTo": "coordinateSystem",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
   },
   {
-   "source": 6,
+   "source": 3,
+   "target": 18,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 4,
    "target": 17,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 4,
+   "target": 19,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 4,
+   "target": 18,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 1,
+   "target": 17,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 1,
+   "target": 19,
+   "valueTo": "coordinateSystem",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
+  },
+  {
+   "source": 1,
+   "target": 18,
    "valueTo": "coordinateSystem",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateSystem"
   },
   {
    "source": 49,
-   "target": 48,
-   "valueTo": "primeMeridian",
+   "target": 24,
+   "valueTo": "ellipsoid",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+  },
+  {
+   "source": 2,
+   "target": 24,
+   "valueTo": "ellipsoid",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+  },
+  {
+   "source": 5,
+   "target": 24,
+   "valueTo": "ellipsoid",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
   },
   {
    "source": 21,
-   "target": 48,
-   "valueTo": "primeMeridian",
+   "target": 24,
+   "valueTo": "ellipsoid",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
-  },
-  {
-   "source": 51,
-   "target": 48,
-   "valueTo": "primeMeridian",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
-  },
-  {
-   "source": 2,
-   "target": 49,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 2,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 2,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 2,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 2,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
   },
   {
    "source": 3,
-   "target": 49,
-   "valueTo": "datum",
+   "target": 24,
+   "valueTo": "ellipsoid",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 3,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 3,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 3,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 3,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 4,
-   "target": 49,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 4,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 4,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 4,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 4,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 5,
-   "target": 49,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 5,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 5,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 5,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 5,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
   },
   {
    "source": 1,
-   "target": 49,
-   "valueTo": "datum",
+   "target": 24,
+   "valueTo": "ellipsoid",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
+   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+  },
+  {
+   "source": 17,
+   "target": 20,
+   "valueTo": "axis",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/axis"
+  },
+  {
+   "source": 19,
+   "target": 20,
+   "valueTo": "axis",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/axis"
+  },
+  {
+   "source": 18,
+   "target": 20,
+   "valueTo": "axis",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/axis"
   },
   {
    "source": 1,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 1,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 1,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 1,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 6,
-   "target": 49,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 6,
-   "target": 21,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 6,
-   "target": 22,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 6,
-   "target": 51,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 6,
-   "target": 23,
-   "valueTo": "datum",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/datum"
-  },
-  {
-   "source": 1,
-   "target": 47,
-   "valueTo": "coordinateOperation",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
-  },
-  {
-   "source": 1,
-   "target": 43,
-   "valueTo": "coordinateOperation",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
-  },
-  {
-   "source": 1,
-   "target": 30,
-   "valueTo": "coordinateOperation",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
-  },
-  {
-   "source": 1,
-   "target": 35,
+   "target": 36,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
@@ -1213,6 +975,27 @@ var minivowlresult={
   {
    "source": 1,
    "target": 31,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
+   "target": 40,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
+   "target": 44,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
+   "target": 42,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
@@ -1240,28 +1023,21 @@ var minivowlresult={
   },
   {
    "source": 1,
-   "target": 33,
+   "target": 47,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
   },
   {
    "source": 1,
-   "target": 44,
+   "target": 30,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
   },
   {
    "source": 1,
-   "target": 42,
-   "valueTo": "coordinateOperation",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
-  },
-  {
-   "source": 1,
-   "target": 36,
+   "target": 38,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
@@ -1269,6 +1045,20 @@ var minivowlresult={
   {
    "source": 1,
    "target": 45,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
+   "target": 33,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
+   "target": 43,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
    "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
@@ -1289,6 +1079,13 @@ var minivowlresult={
   },
   {
    "source": 1,
+   "target": 35,
+   "valueTo": "coordinateOperation",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+  },
+  {
+   "source": 1,
    "target": 32,
    "valueTo": "coordinateOperation",
    "propertyTo": "class",
@@ -1296,59 +1093,262 @@ var minivowlresult={
   },
   {
    "source": 1,
-   "target": 38,
-   "valueTo": "coordinateOperation",
+   "target": 2,
+   "valueTo": "sourceCRS",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
-  },
-  {
-   "source": 1,
-   "target": 40,
-   "valueTo": "coordinateOperation",
-   "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/coordinateOperation"
+   "uriTo": "http://www.opengis.net/ont/crs/sourceCRS"
   },
   {
    "source": 2,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "target": 49,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
   },
   {
-   "source": 49,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "source": 2,
+   "target": 51,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
   },
   {
-   "source": 21,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "source": 2,
+   "target": 21,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
   },
   {
-   "source": 3,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "source": 2,
+   "target": 22,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 2,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 6,
+   "target": 49,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 6,
+   "target": 51,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 6,
+   "target": 21,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 6,
+   "target": 22,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 6,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
   },
   {
    "source": 5,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "target": 49,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 5,
+   "target": 51,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 5,
+   "target": 21,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 5,
+   "target": 22,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 5,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 3,
+   "target": 49,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 3,
+   "target": 51,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 3,
+   "target": 21,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 3,
+   "target": 22,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 3,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 4,
+   "target": 49,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 4,
+   "target": 51,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 4,
+   "target": 21,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 4,
+   "target": 22,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 4,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
   },
   {
    "source": 1,
-   "target": 24,
-   "valueTo": "ellipsoid",
+   "target": 49,
+   "valueTo": "datum",
    "propertyTo": "class",
-   "uriTo": "http://www.opengis.net/ont/crs/ellipsoid"
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 1,
+   "target": 51,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 1,
+   "target": 21,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 1,
+   "target": 22,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 1,
+   "target": 23,
+   "valueTo": "datum",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/datum"
+  },
+  {
+   "source": 21,
+   "target": 48,
+   "valueTo": "primeMeridian",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
+  },
+  {
+   "source": 49,
+   "target": 48,
+   "valueTo": "primeMeridian",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
+  },
+  {
+   "source": 51,
+   "target": 48,
+   "valueTo": "primeMeridian",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/primeMeridian"
+  },
+  {
+   "source": 5,
+   "target": 2,
+   "valueTo": "includesSRS",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
+  },
+  {
+   "source": 5,
+   "target": 4,
+   "valueTo": "includesSRS",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
+  },
+  {
+   "source": 5,
+   "target": 1,
+   "valueTo": "includesSRS",
+   "propertyTo": "class",
+   "uriTo": "http://www.opengis.net/ont/crs/includesSRS"
   }
  ]
 }
