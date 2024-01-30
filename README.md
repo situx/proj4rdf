@@ -8,7 +8,7 @@ This repository contains the following data:
 * Initial SHACL rules for the validation of spatial reference systems in RDF
 * Testdata showing how different types of spatial objects can be modeled using the new ontology model
 * Extension of the Apache Jena library for the new ontology model
-     
+      
 ## GeoSPARQL SRS ontology draft 
 
 The GeoSPARQL SRS ontology draft contains classes for the following components of a spatial reference system:
