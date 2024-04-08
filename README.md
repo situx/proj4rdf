@@ -1,6 +1,6 @@
 # Proj4RDF - Representing spatial reference systems in RDF
            
-This repository contains the following data:  
+This repository contains the following data:   
 * An ontology draft for representing spatial reference systems in RDF
 * A converted dataset of spatial reference systems present in the pyproj4 library in RDF 
 * A converted set of more than 4000 interstellar geoids for the use for spatial reference systems in RDF
