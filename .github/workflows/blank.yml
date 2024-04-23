@@ -35,25 +35,25 @@ jobs:
          sudo apt-get install gcc libpq-dev -y
          sudo apt-get install doxygen graphviz -y
          sudo apt-get install python3-venv python3-wheel -y
-         sudo pip3 install pylode --break-system-packages
+         sudo pip3 install wheel pylode==2.13.2
     - name: Create Ontology Documentation 🔧
       run: |
          cd docs
          doxygen Doxyfile
-         python3 -m pylode -o proj4rdfextracted.html ../owl/ontology.ttl
-         python3 -m pylode -o proj4rdfnoniso.html ../owl/ontology_noniso.ttl
-         python3 -m pylode -o proj4rdfiso.html ../owl/ontology_isobased.ttl
-         python3 -m pylode -o rules.html ../owl/rules.ttl
-         python3 -m pylode -o isocrs_shapes.html ../validation/isocrs_shapes.ttl
-         python3 -m pylode -o proj4rdfapp1.html ../owl/result.ttl
-         python3 -m pylode -o moretonisland_epsg7856.html  ../crsdwg_example/crsiso_ontology/moreton_island_epsg7856_merged.ttl
-         python3 -m pylode -o moretonisland_epsg8859.html  ../crsdwg_example/crsiso_ontology/moreton_island_epsg8859_merged.ttl
-         python3 -m pylode -o moretonisland_epsg32756.html ../crsdwg_example/crsiso_ontology/moreton_island_epsg32756_merged.ttl
-         python3 -m pylode -o projvoc.html ../projection_vocabulary/projection_vocabulary.ttl
-         python3 -m pylode -o planetvoc.html ../planet_vocabulary/planet_vocabulary.ttl
-         python3 -m pylode -o gridvoc.html ../dggs_vocabulary/dggs_vocabulary.ttl
-         python3 -m pylode -o csvoc.html ../cs_vocabulary/cs_vocabulary.ttl
-         python3 -m pylode -o srsapplicationvoc.html ../srs_application/srs_application.ttl
+         pylode -o proj4rdfextracted.html -i ../owl/ontology.ttl
+         pylode -o proj4rdfnoniso.html -i ../owl/ontology_noniso.ttl
+         pylode -o proj4rdfiso.html -i ../owl/ontology_isobased.ttl
+         pylode -o rules.html -i ../owl/rules.ttl
+         pylode -o isocrs_shapes.html -i ../validation/isocrs_shapes.ttl
+         pylode -o proj4rdfapp1.html -i ../owl/result.ttl
+         pylode -o moretonisland_epsg7856.html  -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg7856_merged.ttl
+         pylode -o moretonisland_epsg8859.html  -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg8859_merged.ttl
+         pylode -o moretonisland_epsg32756.html -i ../crsdwg_example/crsiso_ontology/moreton_island_epsg32756_merged.ttl
+         pylode -o projvoc.html -i ../projection_vocabulary/projection_vocabulary.ttl
+         pylode -o planetvoc.html -i ../planet_vocabulary/planet_vocabulary.ttl
+         pylode -o gridvoc.html -i ../dggs_vocabulary/dggs_vocabulary.ttl
+         pylode -o csvoc.html -i ../cs_vocabulary/cs_vocabulary.ttl
+         pylode -o srsapplicationvoc.html -i ../srs_application/srs_application.ttl
          cp ../index.html .
          cp ../projimggenerator.html .
          mkdir projections/
