@@ -12,7 +12,7 @@ This repository contains the following data:
 ## GeoSPARQL SRS ontology draft  
 
 The GeoSPARQL SRS ontology draft contains classes for the following components of a spatial reference system:
-* Coordinate Systems
+* Coordinate Systems 
 * Coordinate System Axis
 * Coordinate Operations
 * Area of Use
