@@ -27,8 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: ontdocII
     steps:
-    - uses: actions/checkout@v1
-
+    - uses: actions/checkout@v
     - name: Install dependencies
       run: | 
          sudo apt-get update
@@ -36,7 +35,7 @@ jobs:
          sudo apt-get install gcc libpq-dev -y
          sudo apt-get install doxygen graphviz -y
          sudo apt-get install python3-venv python3-wheel -y
-         sudo pip3 install pylode
+         sudo pip3 install --break-system-packages pylode
     - name: Create Ontology Documentation 🔧
       run: |
          cd docs
