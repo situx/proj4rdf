@@ -39,6 +39,7 @@ jobs:
     - name: Create Ontology Documentation 🔧
       run: |
          cd docs
+         sleep 300
          doxygen Doxyfile
          pylode -o proj4rdfextracted.html -i ../owl/ontology.ttl
          pylode -o proj4rdfnoniso.html -i ../owl/ontology_noniso.ttl
@@ -67,3 +68,4 @@ jobs:
       with:
          BRANCH: gh-pages
          FOLDER: docs/
+         clean: false
