@@ -35,7 +35,7 @@ jobs:
          sudo apt-get install gcc libpq-dev -y
          sudo apt-get install doxygen graphviz -y
          sudo apt-get install python3-venv python3-wheel -y
-         sudo pip3 install --break-system-packages pylode
+         sudo pip3 install pylode --break-system-packages
     - name: Create Ontology Documentation 🔧
       run: |
          cd docs
