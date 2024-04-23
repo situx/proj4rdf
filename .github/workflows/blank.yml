@@ -14,6 +14,7 @@ jobs:
               prefixns: http://www.opengis.net/
               prefixnsshort: geoepsg
               indexpages: true
+              iiif: true
               metadatatable: true
               createcollections: false
               createnonNSPages: true
