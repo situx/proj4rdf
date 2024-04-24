@@ -6,7 +6,7 @@ This repository contains the following data:
 * A converted set of more than 4000 interstellar geoids for the use for spatial reference systems in RDF
 * An extraction script from pyproj definitions to RDf
 * Initial SHACL rules for the validation of spatial reference systems in RDF
-* Testdata showing how different types of spatial objects can be modeled using the new ontology model
+* Testdata showing how different types of spatial objects can be modeled using the new ontology model 
 * Extension of the Apache Jena library for the new ontology model  
             
 ## GeoSPARQL SRS ontology draft      
