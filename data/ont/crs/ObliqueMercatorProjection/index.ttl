@@ -1,0 +1,15 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+ns1:ObliqueMercatorProjection a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "oblique mercator projection"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "omerc" ;
+    rdfs:subClassOf ns1:CylindricalProjection,
+        ns1:MercatorProjection,
+        ns1:ObliqueProjection .
+

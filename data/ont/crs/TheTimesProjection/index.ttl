@@ -1,0 +1,20 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:TheTimesProjection a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "the times projection"@en ;
+    dc:creator "John Muir" ;
+    dc:date "1965"^^xsd:gYear ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "times" ;
+    rdfs:subClassOf ns1:CompromiseProjection,
+        ns1:PseudoCylindricalProjection ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/TheTimesProjection.svg"^^xsd:anyURI .
+

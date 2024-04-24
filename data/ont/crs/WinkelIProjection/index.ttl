@@ -1,0 +1,22 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:WinkelIProjection a owl:Class,
+        owl:NamedIndividual,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "winkel I projection"@en ;
+    dc:creator "Oswald Winkel" ;
+    dc:date "1921"^^xsd:gYear ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "wink1" ;
+    ns1:isRelatedTo ns1:EquirectangularProjection,
+        ns1:SinusoidalProjection ;
+    rdfs:subClassOf ns1:CompromiseProjection ;
+    skos:definition "Arithmetic average of the Equirectangular and Sinusoidal projections. Pseudocylindric, equally spaced parallels, sinusoidal meridians, pole line" .
+

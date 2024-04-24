@@ -1,0 +1,26 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/def/crs/EPSG/0/5713> a ns1:VerticalCRS,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "CGVD28 height"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:area_of_use <http://www.opengis.net/def/crs/EPSG/0/5713_area_of_use> ;
+    ns1:asProj4 "+vunits=m +no_defs +type=crs"^^ns1:projLiteral ;
+    ns1:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'VerticalCRS','name':'CGVD28 height','datum':{'type':'VerticalReferenceFrame','name':'Canadian Geodetic Vertical Datum of 1928'},'coordinate_system':{'subtype':'vertical','axis':[{'name':'Gravity-related height','abbreviation':'H','direction':'up','unit':'metre'}]},'scope':'Geodesy, engineering survey.','area':'Canada - onshore - Alberta; British Columbia; Manitoba south of 57°N; New Brunswick; Northwest Territories south west of a line between 60°N, 110°W and the coast at 132°W; Nova Scotia; Ontario south of 52°N; Prince Edward Island; Quebec - mainland west of 66°W and south of 55°N; Saskatchewan south of 55°N; Yukon.','bbox':{'south_latitude':41.67,'west_longitude':-141.01,'north_latitude':69.8,'east_longitude':-59.73},'id':{'authority':'EPSG','code':5713}}"^^ns1:projJSONLiteral ;
+    ns1:asWKT "VERTCRS['CGVD28 height',VDATUM['Canadian Geodetic Vertical Datum of 1928'],CS[vertical,1],AXIS['gravity-related height (H)',up,LENGTHUNIT['metre',1]],USAGE[SCOPE['Geodesy, engineering survey.'],AREA['Canada - onshore - Alberta; British Columbia; Manitoba south of 57°N; New Brunswick; Northwest Territories south west of a line between 60°N, 110°W and the coast at 132°W; Nova Scotia; Ontario south of 52°N; Prince Edward Island; Quebec - mainland west of 66°W and south of 55°N; Saskatchewan south of 55°N; Yukon.'],BBOX[41.67,-141.01,69.8,-59.73]],ID['EPSG',5713]]"^^ns1:wktLiteral ;
+    ns1:coordinateSystem <http://www.opengis.net/def/crs/EPSG/0/5713_cs> ;
+    ns1:datum <http://www.opengis.net/ont/crs/datum/Canadian_Geodetic_Vertical_Datum_of_1928> ;
+    ns1:epsgCode "EPSG:5713"^^xsd:string ;
+    ns1:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:isBound false ;
+    ns1:isGeocentric false ;
+    ns1:isGeographic false ;
+    ns1:isProjected false ;
+    ns1:isVertical true ;
+    ns1:usage ns1:EngineeringSurvey,
+        ns1:Geodesy .
+

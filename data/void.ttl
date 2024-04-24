@@ -1,0 +1,3060 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vext: <http://ldf.fi/void-ext#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/adms_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/adms# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/brick_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary https://brickschema.org/schema/Brick# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/csvw_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/csvw# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/dc_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/dc/elements/1.1/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/dcam_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/dc/dcam/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/dcat_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/dcat# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/dcmitype_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/dc/dcmitype/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/dcterms_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/dc/terms/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/doap_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://usefulinc.com/ns/doap# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/foaf_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://xmlns.com/foaf/0.1/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/geo_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.opengis.net/ont/geosparql# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/geoepsg_dataset_docs.opengeospatial.org_as_18-005r4_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - 18-005r4"@en ;
+    void:linkPredicate rdfs:isDefinedBy ;
+    void:objectsTarget <http://docs.opengeospatial.org/as/18-005r4/> ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 80 .
+
+<http://www.opengis.net/geoepsg_dataset_www.ontology-of-units-of-measure.org_resource_om-2_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - Ontology of Units of Measurement (om:)"@en ;
+    void:linkPredicate <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> ;
+    void:objectsTarget <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 16872 .
+
+<http://www.opengis.net/geoepsg_dataset_www.w3.org_2000_01_rdf-schema_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - The RDF Schema vocabulary (RDFS) (rdfs:)"@en ;
+    void:linkPredicate rdf:type ;
+    void:objectsTarget rdfs: ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 1 .
+
+<http://www.opengis.net/geoepsg_dataset_www.w3.org_2001_XMLSchema_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - XML Schema (xmls:)"@en ;
+    void:linkPredicate rdfs:range ;
+    void:objectsTarget xsd: ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 10 .
+
+<http://www.opengis.net/geoepsg_dataset_www.w3.org_2002_07_owl_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - Web Ontology Language 2 Vocabulary (owl:)"@en ;
+    void:linkPredicate rdf:type ;
+    void:objectsTarget owl: ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 445 .
+
+<http://www.opengis.net/geoepsg_dataset_www.wikidata.org_entity_> a void:Linkset ;
+    rdfs:label "Linkset: geoepsg_dataset - Wikidata Entities (wde:)"@en ;
+    void:linkPredicate dc:creator,
+        owl:equivalentClass ;
+    void:objectsTarget <http://www.wikidata.org/entity/> ;
+    void:subjectsTarget <http://www.opengis.net/geoepsg_dataset> ;
+    void:triples 1,
+        2 .
+
+<http://www.opengis.net/odrl_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/odrl/2/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/org_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/org# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/owl_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/2002/07/owl# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    voaf:occurrences 890 .
+
+<http://www.opengis.net/prof_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/dx/prof/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/prov_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/prov# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/qb_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/linked-data/cube# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/rdf_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/1999/02/22-rdf-syntax-ns# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/rdfs_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/2000/01/rdf-schema# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    voaf:occurrences 2 .
+
+<http://www.opengis.net/schema_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary https://schema.org/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/sh_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/shacl# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/skos_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/2004/02/skos/core# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/sosa_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/sosa/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/ssn_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/ssn/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/time_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/2006/time# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/vann_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/vocab/vann/ in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/vext_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://ldf.fi/void-ext# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/voaf_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/vocommons/voaf# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/void_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://rdfs.org/ns/void# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/wgs_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary https://www.w3.org/2003/01/geo/wgs84_pos# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/xml_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/XML/1998/namespace in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://www.opengis.net/xsd_geoepsg_dataset_occ> a voaf:DatasetOccurrence ;
+    rdfs:label "Occurrences of vocabulary http://www.w3.org/2001/XMLSchema# in geoepsg_dataset" ;
+    voaf:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    voaf:occurrences 20 .
+
+<https://github.com/situx/proj4rdf> a adms:AssetRepository ;
+    rdfs:label "Repository for geoepsg_dataset"@en ;
+    dcat:accessURL "https://github.com/situx/proj4rdf"^^xsd:anyURI ;
+    dcat:dataset <http://www.opengis.net/geoepsg_dataset> .
+
+<http://dbpedia.org/resource/Location> rdfs:label "Location"@en .
+
+<http://dbpedia.org/resource/OGC_GeoSPARQL> rdfs:label "OGC GeoSPARQL"@en .
+
+<http://dbpedia.org/resource/Time> rdfs:label "Time Data"@en .
+
+vext: a voaf:Vocabulary ;
+    rdfs:label "vext Vocabulary"@en ;
+    vann:preferredNamespacePrefix "vext"^^xsd:string ;
+    vann:preferredNamespaceUri "http://ldf.fi/void-ext#"^^xsd:anyURI ;
+    voaf:usageInDataset vext:_geoepsg_dataset_occ .
+
+dcam: a voaf:Vocabulary ;
+    rdfs:label "dcam Vocabulary"@en ;
+    vann:preferredNamespacePrefix "dcam"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/dc/dcam/"^^xsd:anyURI ;
+    voaf:usageInDataset dcam:_geoepsg_dataset_occ .
+
+dcmitype: a voaf:Vocabulary ;
+    rdfs:label "dcmitype Vocabulary"@en ;
+    vann:preferredNamespacePrefix "dcmitype"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/dc/dcmitype/"^^xsd:anyURI ;
+    voaf:usageInDataset dcmitype:_geoepsg_dataset_occ .
+
+dc: a voaf:Vocabulary ;
+    rdfs:label "dc Vocabulary"@en ;
+    vann:preferredNamespacePrefix "dc"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/dc/elements/1.1/"^^xsd:anyURI ;
+    voaf:usageInDataset dc:_geoepsg_dataset_occ .
+
+dcterms: a voaf:Vocabulary ;
+    rdfs:label "dcterms Vocabulary"@en ;
+    vann:preferredNamespacePrefix "dcterms"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/dc/terms/"^^xsd:anyURI ;
+    voaf:usageInDataset dcterms:_geoepsg_dataset_occ .
+
+qb: a voaf:Vocabulary ;
+    rdfs:label "qb Vocabulary"@en ;
+    vann:preferredNamespacePrefix "qb"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/linked-data/cube#"^^xsd:anyURI ;
+    voaf:usageInDataset qb:_geoepsg_dataset_occ .
+
+vann: a voaf:Vocabulary ;
+    rdfs:label "vann Vocabulary"@en ;
+    vann:preferredNamespacePrefix "vann"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/vocab/vann/"^^xsd:anyURI ;
+    voaf:usageInDataset vann:_geoepsg_dataset_occ .
+
+voaf: a voaf:Vocabulary ;
+    rdfs:label "voaf Vocabulary"@en ;
+    vann:preferredNamespacePrefix "voaf"^^xsd:string ;
+    vann:preferredNamespaceUri "http://purl.org/vocommons/voaf#"^^xsd:anyURI ;
+    voaf:usageInDataset voaf:_geoepsg_dataset_occ .
+
+void: a voaf:Vocabulary ;
+    rdfs:label "Vocabulary of Interlinked Datasets (VoID)"@en ;
+    vann:preferredNamespacePrefix "void"^^xsd:string ;
+    vann:preferredNamespaceUri "http://rdfs.org/ns/void#"^^xsd:anyURI ;
+    voaf:usageInDataset void:_geoepsg_dataset_occ .
+
+doap: a voaf:Vocabulary ;
+    rdfs:label "doap Vocabulary"@en ;
+    vann:preferredNamespacePrefix "doap"^^xsd:string ;
+    vann:preferredNamespaceUri "http://usefulinc.com/ns/doap#"^^xsd:anyURI ;
+    voaf:usageInDataset doap:_geoepsg_dataset_occ .
+
+<http://www.opengis.net/geoepsg_dataset_1DCS> a void:Dataset ;
+    rdfs:label "Class Partition: 1DCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/1DCS> .
+
+<http://www.opengis.net/geoepsg_dataset_1DCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: 1DCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/1DCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_2DCoordinateTransformationOperation> a void:Dataset ;
+    rdfs:label "Class Partition: 2DCoordinateTransformationOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/2DCoordinateTransformationOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_3DCS> a void:Dataset ;
+    rdfs:label "Class Partition: 3DCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/3DCS> .
+
+<http://www.opengis.net/geoepsg_dataset_3DCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: 3DCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/3DCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_3DCoordinateTransformationOperation> a void:Dataset ;
+    rdfs:label "Class Partition: 3DCoordinateTransformationOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/3DCoordinateTransformationOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_A4Projection> a void:Dataset ;
+    rdfs:label "Class Partition: A4Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/A4Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_AdamsProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AdamsProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AdamsProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AdamsWorldInASquareIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AdamsWorldInASquareIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AdamsWorldInASquareIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AdamsWorldInASquareIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AdamsWorldInASquareIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AdamsWorldInASquareIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AdministrativeCode> a void:Dataset ;
+    rdfs:label "Class Partition: AdministrativeCode"@en ;
+    void:class <http://www.opengis.net/ont/crs/AdministrativeCode> .
+
+<http://www.opengis.net/geoepsg_dataset_AffineCS> a void:Dataset ;
+    rdfs:label "Class Partition: AffineCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/AffineCS> .
+
+<http://www.opengis.net/geoepsg_dataset_AffineTransformation> a void:Dataset ;
+    rdfs:label "Class Partition: AffineTransformation"@en ;
+    void:class <http://www.opengis.net/ont/crs/AffineTransformation> .
+
+<http://www.opengis.net/geoepsg_dataset_AiryProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AiryProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AiryProjection> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_AitoffObliqueProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AitoffObliqueProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AitoffObliqueProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AitoffProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AitoffProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AitoffProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AlbersEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AlbersEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AlbersEqualAreaProjection> ;
+    void:entities 28 .
+
+<http://www.opengis.net/geoepsg_dataset_AmericanPolyconicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AmericanPolyconicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AmericanPolyconicProjection> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_ApianGlobularIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ApianGlobularIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ApianGlobularIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ApianIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ApianIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ApianIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ArchaicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ArchaicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ArchaicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ArdenCloseProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ArdenCloseProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ArdenCloseProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AreaCode> a void:Dataset ;
+    rdfs:label "Class Partition: AreaCode"@en ;
+    void:class <http://www.opengis.net/ont/crs/AreaCode> .
+
+<http://www.opengis.net/geoepsg_dataset_AreaOfUse> a void:Dataset ;
+    rdfs:label "Class Partition: AreaOfUse"@en ;
+    void:class <http://www.opengis.net/ont/crs/AreaOfUse> ;
+    void:entities 8494 .
+
+<http://www.opengis.net/geoepsg_dataset_ArmadilloProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ArmadilloProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ArmadilloProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ArtificialSatellite> a void:Dataset ;
+    rdfs:label "Class Partition: ArtificialSatellite"@en ;
+    void:class <http://www.opengis.net/ont/crs/ArtificialSatellite> .
+
+<http://www.opengis.net/geoepsg_dataset_Asteroid> a void:Dataset ;
+    rdfs:label "Class Partition: Asteroid"@en ;
+    void:class <http://www.opengis.net/ont/crs/Asteroid> .
+
+<http://www.opengis.net/geoepsg_dataset_AtlantisProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AtlantisProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AtlantisProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AugustEpicycloidalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AugustEpicycloidalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AugustEpicycloidalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AuthaGraphProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AuthaGraphProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AuthaGraphProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AxisDirection> a void:Dataset ;
+    rdfs:label "Class Partition: AxisDirection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AxisDirection> ;
+    void:entities 9 .
+
+<http://www.opengis.net/geoepsg_dataset_AzimuthalEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AzimuthalEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AzimuthalEqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_AzimuthalEquidistantProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AzimuthalEquidistantProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AzimuthalEquidistantProjection> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_AzimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: AzimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/AzimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BSAMCylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BSAMCylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BSAMCylindricalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BaconGlobularProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BaconGlobularProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BaconGlobularProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BakerDinomicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BakerDinomicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BakerDinomicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BalthasartProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BalthasartProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BalthasartProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BaranyiIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BaranyiIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BaranyiIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BaranyiIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BaranyiIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BaranyiIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BaranyiIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BaranyiIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BaranyiIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BaranyiIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BaranyiIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BaranyiIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BartholomewProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BartholomewProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BartholomewProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BarycentricCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: BarycentricCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/BarycentricCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_BehrmannProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BehrmannProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BehrmannProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BerghausStarProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BerghausStarProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BerghausStarProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BertinProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BertinProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BertinProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BipolarObliqueConicConformalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BipolarObliqueConicConformalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BipolarObliqueConicConformalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BoggsEumorphicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BoggsEumorphicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BoggsEumorphicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BonneProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BonneProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BonneProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BottomleyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BottomleyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BottomleyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: BoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/BoundCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_BraunPerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BraunPerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BraunPerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BraunStereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BraunStereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BraunStereographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BreusingGeometricProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BreusingGeometricProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BreusingGeometricProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BreusingHarmonicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BreusingHarmonicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BreusingHarmonicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BriesemeisterProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BriesemeisterProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BriesemeisterProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_BromleyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: BromleyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/BromleyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CRS> a void:Dataset ;
+    rdfs:label "Class Partition: CRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/CRS> .
+
+<http://www.opengis.net/geoepsg_dataset_CabotProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CabotProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CabotProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CadastreMap> a void:Dataset ;
+    rdfs:label "Class Partition: CadastreMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/CadastreMap> .
+
+<http://www.opengis.net/geoepsg_dataset_CahillKeyesProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CahillKeyesProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CahillKeyesProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CartesianCS> a void:Dataset ;
+    rdfs:label "Class Partition: CartesianCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/CartesianCS> ;
+    void:entities 4879 .
+
+<http://www.opengis.net/geoepsg_dataset_CassiniProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CassiniProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CassiniProjection> ;
+    void:entities 30 .
+
+<http://www.opengis.net/geoepsg_dataset_CelestialCS> a void:Dataset ;
+    rdfs:label "Class Partition: CelestialCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/CelestialCS> .
+
+<http://www.opengis.net/geoepsg_dataset_CentralConicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CentralConicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CentralConicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CentralCylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CentralCylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CentralCylindricalProjection> ;
+    void:entities 579 .
+
+<http://www.opengis.net/geoepsg_dataset_ChamberlinTrimetricProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ChamberlinTrimetricProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ChamberlinTrimetricProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ChloroplethMap> a void:Dataset ;
+    rdfs:label "Class Partition: ChloroplethMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/ChloroplethMap> .
+
+<http://www.opengis.net/geoepsg_dataset_CiricIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CiricIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CiricIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CollignonButterflyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CollignonButterflyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CollignonButterflyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CollignonProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CollignonProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CollignonProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ColombiaUrbanProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ColombiaUrbanProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ColombiaUrbanProjection> ;
+    void:entities 32 .
+
+<http://www.opengis.net/geoepsg_dataset_Comet> a void:Dataset ;
+    rdfs:label "Class Partition: Comet"@en ;
+    void:class <http://www.opengis.net/ont/crs/Comet> .
+
+<http://www.opengis.net/geoepsg_dataset_CompactMillerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CompactMillerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CompactMillerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CompoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: CompoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/CompoundCRS> ;
+    void:entities 356 .
+
+<http://www.opengis.net/geoepsg_dataset_CompromiseProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CompromiseProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CompromiseProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ConformalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ConformalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ConformalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ConicalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: ConicalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/ConicalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_ConicalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ConicalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ConicalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Conversion> a void:Dataset ;
+    rdfs:label "Class Partition: Conversion"@en ;
+    void:class <http://www.opengis.net/ont/crs/Conversion> ;
+    void:entities 1 .
+
+<http://www.opengis.net/geoepsg_dataset_CoordinateOperation> a void:Dataset ;
+    rdfs:label "Class Partition: CoordinateOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/CoordinateOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_CoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: CoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/CoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_CoordinateSystemAxis> a void:Dataset ;
+    rdfs:label "Class Partition: CoordinateSystemAxis"@en ;
+    void:class <http://www.opengis.net/ont/crs/CoordinateSystemAxis> ;
+    void:entities 58 .
+
+<http://www.opengis.net/geoepsg_dataset_CoordinateTransformationOperation> a void:Dataset ;
+    rdfs:label "Class Partition: CoordinateTransformationOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/CoordinateTransformationOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_CordiformProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CordiformProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CordiformProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CoxConformalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CoxConformalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CoxConformalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CraigRetroazimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CraigRetroazimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CraigRetroazimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CrasterParabolicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CrasterParabolicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CrasterParabolicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CupolaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CupolaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CupolaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CurvilinearCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: CurvilinearCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_CylindricalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: CylindricalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/CylindricalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_CylindricalEqualArea> a void:Dataset ;
+    rdfs:label "Class Partition: CylindricalEqualArea"@en ;
+    void:class <http://www.opengis.net/ont/crs/CylindricalEqualArea> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_CylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CylindricalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_CylindricalStereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: CylindricalStereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/CylindricalStereographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DateTimeTemporalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: DateTimeTemporalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/DateTimeTemporalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_Datum> a void:Dataset ;
+    rdfs:label "Class Partition: Datum"@en ;
+    void:class <http://www.opengis.net/ont/crs/Datum> .
+
+<http://www.opengis.net/geoepsg_dataset_DatumEnsemble> a void:Dataset ;
+    rdfs:label "Class Partition: DatumEnsemble"@en ;
+    void:class <http://www.opengis.net/ont/crs/DatumEnsemble> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_DeakinMinimumErrorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DeakinMinimumErrorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DeakinMinimumErrorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DedistortProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DedistortProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DedistortProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DenoyerSemiEllipticalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DenoyerSemiEllipticalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DenoyerSemiEllipticalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedEngineeringCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedEngineeringCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedEngineeringCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedGeodeticCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedGeodeticCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedGeodeticCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedGeographicCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedGeographicCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedGeographicCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedParametricCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedParametricCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedParametricCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedProjectedCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedProjectedCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedProjectedCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedProjectedCS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedProjectedCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedProjectedCS> .
+
+<http://www.opengis.net/geoepsg_dataset_DerivedVerticalCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DerivedVerticalCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DerivedVerticalCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DietrichKitadaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DietrichKitadaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DietrichKitadaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DodecahedralProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DodecahedralProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DodecahedralProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DwarfPlanet> a void:Dataset ;
+    rdfs:label "Class Partition: DwarfPlanet"@en ;
+    void:class <http://www.opengis.net/ont/crs/DwarfPlanet> .
+
+<http://www.opengis.net/geoepsg_dataset_DymaxionProjection> a void:Dataset ;
+    rdfs:label "Class Partition: DymaxionProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/DymaxionProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_DynamicCRS> a void:Dataset ;
+    rdfs:label "Class Partition: DynamicCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/DynamicCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_DynamicGeodeticReferenceFrame> a void:Dataset ;
+    rdfs:label "Class Partition: DynamicGeodeticReferenceFrame"@en ;
+    void:class <http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame> ;
+    void:entities 52 .
+
+<http://www.opengis.net/geoepsg_dataset_DynamicReferenceFrame> a void:Dataset ;
+    rdfs:label "Class Partition: DynamicReferenceFrame"@en ;
+    void:class <http://www.opengis.net/ont/crs/DynamicReferenceFrame> .
+
+<http://www.opengis.net/geoepsg_dataset_DynamicVerticalReferenceFrame> a void:Dataset ;
+    rdfs:label "Class Partition: DynamicVerticalReferenceFrame"@en ;
+    void:class <http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert1Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert1Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert1Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert2Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert2Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert2Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert3Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert3Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert3Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert4Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert4Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert4Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert5Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert5Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert5Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_Eckert6Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Eckert6Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Eckert6Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_EclipticCS> a void:Dataset ;
+    rdfs:label "Class Partition: EclipticCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/EclipticCS> .
+
+<http://www.opengis.net/geoepsg_dataset_EisenlohrProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EisenlohrProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EisenlohrProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Ellipsoid> a void:Dataset ;
+    rdfs:label "Class Partition: Ellipsoid"@en ;
+    void:class <http://www.opengis.net/ont/crs/Ellipsoid> ;
+    void:entities 35 .
+
+<http://www.opengis.net/geoepsg_dataset_EllipsoidalCS> a void:Dataset ;
+    rdfs:label "Class Partition: EllipsoidalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/EllipsoidalCS> ;
+    void:entities 836 .
+
+<http://www.opengis.net/geoepsg_dataset_EngineeringCRS> a void:Dataset ;
+    rdfs:label "Class Partition: EngineeringCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/EngineeringCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_EngineeringCS> a void:Dataset ;
+    rdfs:label "Class Partition: EngineeringCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/EngineeringCS> .
+
+<http://www.opengis.net/geoepsg_dataset_EngineeringDatum> a void:Dataset ;
+    rdfs:label "Class Partition: EngineeringDatum"@en ;
+    void:class <http://www.opengis.net/ont/crs/EngineeringDatum> .
+
+<http://www.opengis.net/geoepsg_dataset_Entity> a void:Dataset ;
+    rdfs:label "Class Partition: Entity"@en ;
+    void:class <http://www.w3.org/ns/prov-o/Entity> .
+
+<http://www.opengis.net/geoepsg_dataset_EqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_EqualEarthProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EqualEarthProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EqualEarthProjection> ;
+    void:entities 3 .
+
+<http://www.opengis.net/geoepsg_dataset_EquallySpacedParallelsProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EquallySpacedParallelsProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquallySpacedParallelsProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_EquatorialCS> a void:Dataset ;
+    rdfs:label "Class Partition: EquatorialCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquatorialCS> .
+
+<http://www.opengis.net/geoepsg_dataset_EquidistantConicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EquidistantConicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquidistantConicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_EquidistantCylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EquidistantCylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquidistantCylindricalProjection> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_EquidistantProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EquidistantProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquidistantProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_EquirectangularProjection> a void:Dataset ;
+    rdfs:label "Class Partition: EquirectangularProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/EquirectangularProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FaheyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FaheyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FaheyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FairgrieveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FairgrieveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FairgrieveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FoucautProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FoucautProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FoucautProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FoucautSinusoidalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FoucautSinusoidalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FoucautSinusoidalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FournierGlobularIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FournierGlobularIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FournierGlobularIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FournierIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FournierIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FournierIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaIXProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaIXProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaIXProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaVIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaVIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaVIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaXIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaXIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaXIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaXIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaXIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaXIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_FranculaXIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: FranculaXIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/FranculaXIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GS50Projection> a void:Dataset ;
+    rdfs:label "Class Partition: GS50Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GS50Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_GalacticCS> a void:Dataset ;
+    rdfs:label "Class Partition: GalacticCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GalacticCS> .
+
+<http://www.opengis.net/geoepsg_dataset_GallIsographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GallIsographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GallIsographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GallPetersProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GallPetersProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GallPetersProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GallStereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GallStereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GallStereographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GaussKruegerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GaussKruegerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GaussKruegerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GeneralReferenceMap> a void:Dataset ;
+    rdfs:label "Class Partition: GeneralReferenceMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeneralReferenceMap> .
+
+<http://www.opengis.net/geoepsg_dataset_GeneralVerticalPerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GeneralVerticalPerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeneralVerticalPerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GeocentricCRS> a void:Dataset ;
+    rdfs:label "Class Partition: GeocentricCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeocentricCRS> ;
+    void:entities 229 .
+
+<http://www.opengis.net/geoepsg_dataset_GeocodeSystem> a void:Dataset ;
+    rdfs:label "Class Partition: GeocodeSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeocodeSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_GeodeticCRS> a void:Dataset ;
+    rdfs:label "Class Partition: GeodeticCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeodeticCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_GeodeticCS> a void:Dataset ;
+    rdfs:label "Class Partition: GeodeticCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeodeticCS> .
+
+<http://www.opengis.net/geoepsg_dataset_GeodeticReferenceFrame> a void:Dataset ;
+    rdfs:label "Class Partition: GeodeticReferenceFrame"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeodeticReferenceFrame> ;
+    void:entities 534 .
+
+<http://www.opengis.net/geoepsg_dataset_GeographicCRS> a void:Dataset ;
+    rdfs:label "Class Partition: GeographicCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeographicCRS> ;
+    void:entities 835 .
+
+<http://www.opengis.net/geoepsg_dataset_GeographicCS> a void:Dataset ;
+    rdfs:label "Class Partition: GeographicCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GeographicCS> .
+
+<http://www.opengis.net/geoepsg_dataset_Geoid> a void:Dataset ;
+    rdfs:label "Class Partition: Geoid"@en ;
+    void:class <http://www.opengis.net/ont/crs/Geoid> ;
+    void:entities 15 .
+
+<http://www.opengis.net/geoepsg_dataset_GilbertTwoWorldPerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GilbertTwoWorldPerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GilbertTwoWorldPerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GingeryProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GingeryProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GingeryProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgIXProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgIXProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgIXProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgVIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgVIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgVIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgVIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgVIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgVIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GinzburgVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GinzburgVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GinzburgVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GlobalGridReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: GlobalGridReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/GlobalGridReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_GlobularProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GlobularProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GlobularProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GnomonicButterflyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GnomonicButterflyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GnomonicButterflyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GnomonicCubedSphereProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GnomonicCubedSphereProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GnomonicCubedSphereProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GnomonicIcosahedronProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GnomonicIcosahedronProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GnomonicIcosahedronProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GnomonicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GnomonicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GnomonicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GoodeHomolosineProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GoodeHomolosineProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GoodeHomolosineProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GottWagnerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GottWagnerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GottWagnerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GridCS> a void:Dataset ;
+    rdfs:label "Class Partition: GridCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/GridCS> .
+
+<http://www.opengis.net/geoepsg_dataset_GridReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: GridReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/GridReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_GringortenProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GringortenProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GringortenProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GringortenQuincuncialProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GringortenQuincuncialProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GringortenQuincuncialProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_GuyouProjection> a void:Dataset ;
+    rdfs:label "Class Partition: GuyouProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/GuyouProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HEALPixProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HEALPixProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HEALPixProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HammerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HammerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HammerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HammerRetroazimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HammerRetroazimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HammerRetroazimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HamusoidalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HamusoidalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HamusoidalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HatanoAsymmetricalEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HatanoAsymmetricalEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HatanoAsymmetricalEqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HeatMap> a void:Dataset ;
+    rdfs:label "Class Partition: HeatMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/HeatMap> .
+
+<http://www.opengis.net/geoepsg_dataset_HerschelConformalConicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HerschelConformalConicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HerschelConformalConicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HexagonalCS> a void:Dataset ;
+    rdfs:label "Class Partition: HexagonalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/HexagonalCS> .
+
+<http://www.opengis.net/geoepsg_dataset_HierarchicalGridReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: HierarchicalGridReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/HierarchicalGridReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_HillEucyclicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HillEucyclicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HillEucyclicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HoboDyerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HoboDyerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HoboDyerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HomogeneousCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: HomogeneousCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/HomogeneousCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_HorizontalCS> a void:Dataset ;
+    rdfs:label "Class Partition: HorizontalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/HorizontalCS> .
+
+<http://www.opengis.net/geoepsg_dataset_HorizontalDatum> a void:Dataset ;
+    rdfs:label "Class Partition: HorizontalDatum"@en ;
+    void:class <http://www.opengis.net/ont/crs/HorizontalDatum> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelIXProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelIXProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelIXProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelVIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelVIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelVIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelVIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelVIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelVIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelVIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelVIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelVIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelXIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelXIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelXIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelXIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelXIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelXIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_HufnagelXProjection> a void:Dataset ;
+    rdfs:label "Class Partition: HufnagelXProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/HufnagelXProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_IcosahedralProjection> a void:Dataset ;
+    rdfs:label "Class Partition: IcosahedralProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/IcosahedralProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_InterruptedGoodeHomolosineOceanicViewProjection> a void:Dataset ;
+    rdfs:label "Class Partition: InterruptedGoodeHomolosineOceanicViewProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineOceanicViewProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_InterruptedGoodeHomolosineProjection> a void:Dataset ;
+    rdfs:label "Class Partition: InterruptedGoodeHomolosineProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/InterruptedGoodeHomolosineProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_InterruptedQuarticAuthalicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: InterruptedQuarticAuthalicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/InterruptedQuarticAuthalicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_InterstellarBody> a void:Dataset ;
+    rdfs:label "Class Partition: InterstellarBody"@en ;
+    void:class <http://www.opengis.net/ont/crs/InterstellarBody> .
+
+<http://www.opengis.net/geoepsg_dataset_JamesAzimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: JamesAzimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/JamesAzimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_KamenetskiyIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: KamenetskiyIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/KamenetskiyIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_KarchenkoShabanovaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: KarchenkoShabanovaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/KarchenkoShabanovaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Kavrayskiy7Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Kavrayskiy7Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Kavrayskiy7Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_KissProjection> a void:Dataset ;
+    rdfs:label "Class Partition: KissProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/KissProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Krovak> a void:Dataset ;
+    rdfs:label "Class Partition: Krovak"@en ;
+    void:class <http://www.opengis.net/ont/crs/Krovak> ;
+    void:entities 4 .
+
+<http://www.opengis.net/geoepsg_dataset_LaHireProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LaHireProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LaHireProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LabordeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LabordeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LabordeProjection> ;
+    void:entities 2 .
+
+<http://www.opengis.net/geoepsg_dataset_LagrangeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LagrangeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LagrangeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LambertAzimuthalEqualArea> a void:Dataset ;
+    rdfs:label "Class Partition: LambertAzimuthalEqualArea"@en ;
+    void:class <http://www.opengis.net/ont/crs/LambertAzimuthalEqualArea> .
+
+<http://www.opengis.net/geoepsg_dataset_LambertConformalConicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LambertConformalConicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LambertConformalConicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LambertCylindricalEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LambertCylindricalEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LambertCylindricalEqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LarriveeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LarriveeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LarriveeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LaskowskiProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LaskowskiProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LaskowskiProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LatLonProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LatLonProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LatLonProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LeeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LeeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LeeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LenticularProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LenticularProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LenticularProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LinearCS> a void:Dataset ;
+    rdfs:label "Class Partition: LinearCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/LinearCS> .
+
+<http://www.opengis.net/geoepsg_dataset_LinearReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: LinearReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/LinearReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_LittrowProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LittrowProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LittrowProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LocalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: LocalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/LocalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_LocalGridReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: LocalGridReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/LocalGridReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_LonLatProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LonLatProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LonLatProjection> ;
+    void:entities 16 .
+
+<http://www.opengis.net/geoepsg_dataset_LorgnaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LorgnaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LorgnaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LowryProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LowryProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LowryProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_LoximuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: LoximuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/LoximuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MaurerNo73Projection> a void:Dataset ;
+    rdfs:label "Class Partition: MaurerNo73Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MaurerNo73Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_MayrProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MayrProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MayrProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarParabolicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: McBrydeThomasFlatPolarParabolicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarParabolicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarQuarticProjection> a void:Dataset ;
+    rdfs:label "Class Partition: McBrydeThomasFlatPolarQuarticProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarQuarticProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarSinusoidalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: McBrydeThomasFlatPolarSinusoidalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/McBrydeThomasFlatPolarSinusoidalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_McBrydeThomasIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: McBrydeThomasIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/McBrydeThomasIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_McBrydeThomasIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: McBrydeThomasIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/McBrydeThomasIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MercatorProjection> ;
+    void:entities 1258 .
+
+<http://www.opengis.net/geoepsg_dataset_MillerOblatedStereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MillerOblatedStereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MillerOblatedStereographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MillerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MillerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MillerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MinimumErrorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MinimumErrorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MinimumErrorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MollweideProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MollweideProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MollweideProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MollweideWagnerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MollweideWagnerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MollweideWagnerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Moon> a void:Dataset ;
+    rdfs:label "Class Partition: Moon"@en ;
+    void:class <http://www.opengis.net/ont/crs/Moon> ;
+    void:entities 218 .
+
+<http://www.opengis.net/geoepsg_dataset_MurdochIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MurdochIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MurdochIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MurdochIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MurdochIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MurdochIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MurdochIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MurdochIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MurdochIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_MyrahedalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: MyrahedalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/MyrahedalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_NaturalEarth2Projection> a void:Dataset ;
+    rdfs:label "Class Partition: NaturalEarth2Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NaturalEarth2Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_NaturalEarthProjection> a void:Dataset ;
+    rdfs:label "Class Partition: NaturalEarthProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NaturalEarthProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_NaturalSatellite> a void:Dataset ;
+    rdfs:label "Class Partition: NaturalSatellite"@en ;
+    void:class <http://www.opengis.net/ont/crs/NaturalSatellite> .
+
+<http://www.opengis.net/geoepsg_dataset_NauticalChart> a void:Dataset ;
+    rdfs:label "Class Partition: NauticalChart"@en ;
+    void:class <http://www.opengis.net/ont/crs/NauticalChart> .
+
+<http://www.opengis.net/geoepsg_dataset_NellHammerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: NellHammerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NellHammerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_NellProjection> a void:Dataset ;
+    rdfs:label "Class Partition: NellProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NellProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_NicolosiGlobularProjection> a void:Dataset ;
+    rdfs:label "Class Partition: NicolosiGlobularProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NicolosiGlobularProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_NordicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: NordicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/NordicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliqueCS> a void:Dataset ;
+    rdfs:label "Class Partition: ObliqueCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliqueCS> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliqueCylindricalEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ObliqueCylindricalEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliqueCylindricalEqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliqueMercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ObliqueMercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliqueMercatorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliquePlateCarreeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ObliquePlateCarreeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliquePlateCarreeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliqueProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ObliqueProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliqueProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ObliqueStereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ObliqueStereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ObliqueStereographicProjection> ;
+    void:entities 14 .
+
+<http://www.opengis.net/geoepsg_dataset_OctantProjection> a void:Dataset ;
+    rdfs:label "Class Partition: OctantProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/OctantProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_OperationParameter> a void:Dataset ;
+    rdfs:label "Class Partition: OperationParameter"@en ;
+    void:class <http://www.opengis.net/ont/crs/OperationParameter> ;
+    void:entities 11291 .
+
+<http://www.opengis.net/geoepsg_dataset_OperationParameterValue> a void:Dataset ;
+    rdfs:label "Class Partition: OperationParameterValue"@en ;
+    void:class <http://www.opengis.net/ont/crs/OperationParameterValue> ;
+    void:entities 11291 .
+
+<http://www.opengis.net/geoepsg_dataset_OrdinalCS> a void:Dataset ;
+    rdfs:label "Class Partition: OrdinalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/OrdinalCS> .
+
+<http://www.opengis.net/geoepsg_dataset_OrteliusOvalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: OrteliusOvalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/OrteliusOvalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_OrthogonalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: OrthogonalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_OrthographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: OrthographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/OrthographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_OvalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: OvalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/OvalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PROJidentifier> a void:Dataset ;
+    rdfs:label "Property Partition: PROJidentifier"@en ;
+    void:property <http://www.opengis.net/ont/crs/PROJidentifier> ;
+    void:triples 112 .
+
+<http://www.opengis.net/geoepsg_dataset_ParametricCRS> a void:Dataset ;
+    rdfs:label "Class Partition: ParametricCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/ParametricCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_ParametricCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: ParametricCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/ParametricCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_ParametricDatum> a void:Dataset ;
+    rdfs:label "Class Partition: ParametricDatum"@en ;
+    void:class <http://www.opengis.net/ont/crs/ParametricDatum> .
+
+<http://www.opengis.net/geoepsg_dataset_PattersonCylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PattersonCylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PattersonCylindricalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PavlovProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PavlovProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PavlovProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PeirceQuincuncialProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PeirceQuincuncialProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PeirceQuincuncialProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PerifocalCS> a void:Dataset ;
+    rdfs:label "Class Partition: PerifocalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/PerifocalCS> .
+
+<http://www.opengis.net/geoepsg_dataset_PerifocalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: PerifocalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/PerifocalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_PerspectiveConicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PerspectiveConicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PerspectiveConicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PetermannStarProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PetermannStarProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PetermannStarProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PlanarCS> a void:Dataset ;
+    rdfs:label "Class Partition: PlanarCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/PlanarCS> .
+
+<http://www.opengis.net/geoepsg_dataset_PlanarCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: PlanarCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/PlanarCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_Planet> a void:Dataset ;
+    rdfs:label "Class Partition: Planet"@en ;
+    void:class <http://www.opengis.net/ont/crs/Planet> ;
+    void:entities 4767 .
+
+<http://www.opengis.net/geoepsg_dataset_PlanetStatus> a void:Dataset ;
+    rdfs:label "Class Partition: PlanetStatus"@en ;
+    void:class <http://www.opengis.net/ont/crs/PlanetStatus> ;
+    void:entities 1 .
+
+<http://www.opengis.net/geoepsg_dataset_PlateCarreeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PlateCarreeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PlateCarreeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Plutoid> a void:Dataset ;
+    rdfs:label "Class Partition: Plutoid"@en ;
+    void:class <http://www.opengis.net/ont/crs/Plutoid> .
+
+<http://www.opengis.net/geoepsg_dataset_PolarCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: PolarCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/PolarCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_PoleLineProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PoleLineProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PoleLineProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PolyconicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PolyconicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PolyconicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PolyhedralProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PolyhedralProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PolyhedralProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PrimeMeridian> a void:Dataset ;
+    rdfs:label "Class Partition: PrimeMeridian"@en ;
+    void:class <http://www.opengis.net/ont/crs/PrimeMeridian> ;
+    void:entities 15 .
+
+<http://www.opengis.net/geoepsg_dataset_ProjectedCRS> a void:Dataset ;
+    rdfs:label "Class Partition: ProjectedCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectedCRS> ;
+    void:entities 4650 .
+
+<http://www.opengis.net/geoepsg_dataset_ProjectedCS> a void:Dataset ;
+    rdfs:label "Class Partition: ProjectedCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectedCS> .
+
+<http://www.opengis.net/geoepsg_dataset_Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PseudoAzimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PseudoAzimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PseudoAzimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PseudoConicalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PseudoConicalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PseudoConicalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PseudoCylindricalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PseudoCylindricalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PseudoCylindricalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PseudoOrthographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PseudoOrthographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PseudoOrthographicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PtolemyIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PtolemyIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PtolemyIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PtolemyIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: PtolemyIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PtolemyIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP1Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP1Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PutninsP1Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP2Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP2Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PutninsP2Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP3'Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP3'Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP3'Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP3Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP3Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PutninsP3Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP4'Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP4'Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP4'Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP5'Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP5'Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP5'Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP5Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP5Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PutninsP5Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP6'Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP6'Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ProjectionOntology#PutninsP6'Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_PutninsP6Projection> a void:Dataset ;
+    rdfs:label "Class Partition: PutninsP6Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/PutninsP6Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_QuadrilateralizedSphericalCubeProjection> a void:Dataset ;
+    rdfs:label "Class Partition: QuadrilateralizedSphericalCubeProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/QuadrilateralizedSphericalCubeProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_QuarticAuthalicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: QuarticAuthalicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/QuarticAuthalicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_RectangularPolyconicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: RectangularPolyconicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/RectangularPolyconicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: ReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/ReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_ReflectionOperation> a void:Dataset ;
+    rdfs:label "Class Partition: ReflectionOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/ReflectionOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_RetroazimuthalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: RetroazimuthalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/RetroazimuthalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_RobinsonProjection> a void:Dataset ;
+    rdfs:label "Class Partition: RobinsonProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/RobinsonProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_RoussilheProjection> a void:Dataset ;
+    rdfs:label "Class Partition: RoussilheProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/RoussilheProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_SRSApplication> a void:Dataset ;
+    rdfs:label "Class Partition: SRSApplication"@en ;
+    void:class <http://www.opengis.net/ont/crs/SRSApplication> .
+
+<http://www.opengis.net/geoepsg_dataset_ScaleOperation> a void:Dataset ;
+    rdfs:label "Class Partition: ScaleOperation"@en ;
+    void:class <http://www.opengis.net/ont/crs/ScaleOperation> .
+
+<http://www.opengis.net/geoepsg_dataset_SchjerningIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: SchjerningIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/SchjerningIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_SelenographicCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SelenographicCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SelenographicCRS> ;
+    void:entities 1 .
+
+<http://www.opengis.net/geoepsg_dataset_SingleCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SingleCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SingleCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_SinusoidalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: SinusoidalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/SinusoidalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_SkewCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: SkewCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/SkewCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_SmythEqualSurfaceProjection> a void:Dataset ;
+    rdfs:label "Class Partition: SmythEqualSurfaceProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/SmythEqualSurfaceProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_SpaceObliqueMercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: SpaceObliqueMercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpaceObliqueMercatorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatialCompoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SpatialCompoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatialCompoundCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatialReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: SpatialReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatialReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatioParametricCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SpatioParametricCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatioParametricCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatioParametricCompoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SpatioParametricCompoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatioParametricCompoundCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatioParametricTemporalCompoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SpatioParametricTemporalCompoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatioParametricTemporalCompoundCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_SpatioTemporalCompoundCRS> a void:Dataset ;
+    rdfs:label "Class Partition: SpatioTemporalCompoundCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpatioTemporalCompoundCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_Sphere> a void:Dataset ;
+    rdfs:label "Class Partition: Sphere"@en ;
+    void:class <http://www.opengis.net/ont/crs/Sphere> ;
+    void:entities 4975 .
+
+<http://www.opengis.net/geoepsg_dataset_SphericalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: SphericalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/SphericalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_SpilhausOceanicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: SpilhausOceanicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/SpilhausOceanicProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_StabiusWernerIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: StabiusWernerIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/StabiusWernerIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_StabiusWernerIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: StabiusWernerIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/StabiusWernerIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_StabiusWernerIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: StabiusWernerIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/StabiusWernerIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Star> a void:Dataset ;
+    rdfs:label "Class Partition: Star"@en ;
+    void:class <http://www.opengis.net/ont/crs/Star> ;
+    void:entities 3515 .
+
+<http://www.opengis.net/geoepsg_dataset_StaticCRS> a void:Dataset ;
+    rdfs:label "Class Partition: StaticCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/StaticCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_StereographicCS> a void:Dataset ;
+    rdfs:label "Class Partition: StereographicCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/StereographicCS> .
+
+<http://www.opengis.net/geoepsg_dataset_StereographicProjection> a void:Dataset ;
+    rdfs:label "Class Partition: StereographicProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/StereographicProjection> ;
+    void:entities 35 .
+
+<http://www.opengis.net/geoepsg_dataset_Strebe1995Projection> a void:Dataset ;
+    rdfs:label "Class Partition: Strebe1995Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/Strebe1995Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_SuperGalacticCS> a void:Dataset ;
+    rdfs:label "Class Partition: SuperGalacticCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/SuperGalacticCS> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalCRS> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalCRS> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalCoordinateSystemAxis> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalCoordinateSystemAxis"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalCoordinateSystemAxis> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalCountCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalCountCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalCountCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalDatum> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalDatum"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalDatum> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalMeasureCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalMeasureCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalMeasureCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_TemporalReferenceSystem> a void:Dataset ;
+    rdfs:label "Class Partition: TemporalReferenceSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/TemporalReferenceSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_TheTimesProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TheTimesProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TheTimesProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ThematicMap> a void:Dataset ;
+    rdfs:label "Class Partition: ThematicMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/ThematicMap> .
+
+<http://www.opengis.net/geoepsg_dataset_TiltedPerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TiltedPerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TiltedPerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ToblerCylindricalIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ToblerCylindricalIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ToblerCylindricalIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ToblerCylindricalIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ToblerCylindricalIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ToblerCylindricalIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ToblerG1Projection> a void:Dataset ;
+    rdfs:label "Class Partition: ToblerG1Projection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ToblerG1Projection> .
+
+<http://www.opengis.net/geoepsg_dataset_ToblerHyperellipticalProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ToblerHyperellipticalProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ToblerHyperellipticalProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_ToblerWorldInASquareProjection> a void:Dataset ;
+    rdfs:label "Class Partition: ToblerWorldInASquareProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/ToblerWorldInASquareProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_TopographicMap> a void:Dataset ;
+    rdfs:label "Class Partition: TopographicMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/TopographicMap> .
+
+<http://www.opengis.net/geoepsg_dataset_Transformation> a void:Dataset ;
+    rdfs:label "Class Partition: Transformation"@en ;
+    void:class <http://www.opengis.net/ont/crs/Transformation> .
+
+<http://www.opengis.net/geoepsg_dataset_TransverseCylindricalEqualAreaProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TransverseCylindricalEqualAreaProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TransverseCylindricalEqualAreaProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_TransverseMercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TransverseMercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TransverseMercatorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_TrystanEdwardsProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TrystanEdwardsProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TrystanEdwardsProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_TwoPointEquidistantProjection> a void:Dataset ;
+    rdfs:label "Class Partition: TwoPointEquidistantProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/TwoPointEquidistantProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_Unit> a void:Dataset ;
+    rdfs:label "Class Partition: Unit"@en ;
+    void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> .
+
+<http://www.opengis.net/geoepsg_dataset_UniversalTransverseMercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: UniversalTransverseMercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/UniversalTransverseMercatorProjection> ;
+    void:entities 137 .
+
+<http://www.opengis.net/geoepsg_dataset_UrmayevIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: UrmayevIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/UrmayevIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VanDerGrintenIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VanDerGrintenIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VanDerGrintenIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VanDerGrintenIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VanDerGrintenIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VanDerGrintenIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VanDerGrintenIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VanDerGrintenIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VanDerGrintenIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VanDerGrintenIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VanDerGrintenIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VanDerGrintenIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VerticalCRS> a void:Dataset ;
+    rdfs:label "Class Partition: VerticalCRS"@en ;
+    void:class <http://www.opengis.net/ont/crs/VerticalCRS> ;
+    void:entities 252 .
+
+<http://www.opengis.net/geoepsg_dataset_VerticalCS> a void:Dataset ;
+    rdfs:label "Class Partition: VerticalCS"@en ;
+    void:class <http://www.opengis.net/ont/crs/VerticalCS> ;
+    void:entities 252 .
+
+<http://www.opengis.net/geoepsg_dataset_VerticalCoordinateSystem> a void:Dataset ;
+    rdfs:label "Class Partition: VerticalCoordinateSystem"@en ;
+    void:class <http://www.opengis.net/ont/crs/VerticalCoordinateSystem> .
+
+<http://www.opengis.net/geoepsg_dataset_VerticalPerspectiveProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VerticalPerspectiveProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VerticalPerspectiveProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_VerticalReferenceFrame> a void:Dataset ;
+    rdfs:label "Class Partition: VerticalReferenceFrame"@en ;
+    void:class <http://www.opengis.net/ont/crs/VerticalReferenceFrame> ;
+    void:entities 226 .
+
+<http://www.opengis.net/geoepsg_dataset_VitkovskyIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: VitkovskyIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/VitkovskyIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerIVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerIVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerIVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerIXProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerIXProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerIXProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerVIIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerVIIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerVIIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerVIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerVIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerVIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerVIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerVIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerVIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WagnerVProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WagnerVProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WagnerVProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WatermanButterflyProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WatermanButterflyProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WatermanButterflyProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WeatherMap> a void:Dataset ;
+    rdfs:label "Class Partition: WeatherMap"@en ;
+    void:class <http://www.opengis.net/ont/crs/WeatherMap> .
+
+<http://www.opengis.net/geoepsg_dataset_WebMercatorProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WebMercatorProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WebMercatorProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WerenskioldIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WerenskioldIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WerenskioldIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WernerProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WernerProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WernerProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WiechelProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WiechelProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WiechelProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WinkelIIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WinkelIIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WinkelIIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WinkelIProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WinkelIProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WinkelIProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WinkelSnyderProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WinkelSnyderProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WinkelSnyderProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_WinkelTripelProjection> a void:Dataset ;
+    rdfs:label "Class Partition: WinkelTripelProjection"@en ;
+    void:class <http://www.opengis.net/ont/crs/WinkelTripelProjection> .
+
+<http://www.opengis.net/geoepsg_dataset_accuracy> a void:Dataset ;
+    rdfs:label "Property Partition: accuracy"@en ;
+    void:property <http://www.opengis.net/ont/crs/accuracy> ;
+    void:triples 2172 .
+
+<http://www.opengis.net/geoepsg_dataset_altLabel> a void:Dataset ;
+    rdfs:label "Property Partition: altLabel"@en ;
+    void:property skos:altLabel ;
+    void:triples 15 .
+
+<http://www.opengis.net/geoepsg_dataset_approximates> a void:Dataset ;
+    rdfs:label "Property Partition: approximates"@en ;
+    void:property <http://www.opengis.net/ont/crs/approximates> ;
+    void:triples 4807 .
+
+<http://www.opengis.net/geoepsg_dataset_area_of_use> a void:Dataset ;
+    rdfs:label "Property Partition: area_of_use"@en ;
+    void:property <http://www.opengis.net/ont/crs/area_of_use> ;
+    void:triples 8494 .
+
+<http://www.opengis.net/geoepsg_dataset_asProj4> a void:Dataset ;
+    rdfs:label "Property Partition: asProj4"@en ;
+    void:property <http://www.opengis.net/ont/crs/asProj4> ;
+    void:triples 9060 .
+
+<http://www.opengis.net/geoepsg_dataset_asProjJSON> a void:Dataset ;
+    rdfs:label "Property Partition: asProjJSON"@en ;
+    void:property <http://www.opengis.net/ont/crs/asProjJSON> ;
+    void:triples 14532 .
+
+<http://www.opengis.net/geoepsg_dataset_asSVG> a void:Dataset ;
+    rdfs:label "Property Partition: asSVG"@en ;
+    void:property <http://www.opengis.net/ont/crs/asSVG> ;
+    void:triples 6103 .
+
+<http://www.opengis.net/geoepsg_dataset_asWKT> a void:Dataset ;
+    rdfs:label "Property Partition: asWKT"@en ;
+    void:property <http://www.opengis.net/ont/crs/asWKT> ;
+    void:triples 14532 .
+
+<http://www.opengis.net/geoepsg_dataset_axis> a void:Dataset ;
+    rdfs:label "Property Partition: axis"@en ;
+    void:property <http://www.opengis.net/ont/crs/axis> ;
+    void:triples 12140 .
+
+<http://www.opengis.net/geoepsg_dataset_axisAbbrev> a void:Dataset ;
+    rdfs:label "Property Partition: axisAbbrev"@en ;
+    void:property <http://www.opengis.net/ont/crs/axisAbbrev> ;
+    void:triples 80 .
+
+<http://www.opengis.net/geoepsg_dataset_comment> a void:Dataset ;
+    rdfs:label "Property Partition: comment"@en ;
+    void:property rdfs:comment ;
+    void:triples 1559 .
+
+<http://www.opengis.net/geoepsg_dataset_coordinateOperation> a void:Dataset ;
+    rdfs:label "Property Partition: coordinateOperation"@en ;
+    void:property <http://www.opengis.net/ont/crs/coordinateOperation> ;
+    void:triples 4650 .
+
+<http://www.opengis.net/geoepsg_dataset_coordinateSystem> a void:Dataset ;
+    rdfs:label "Property Partition: coordinateSystem"@en ;
+    void:property <http://www.opengis.net/ont/crs/coordinateSystem> ;
+    void:triples 5967 .
+
+<http://www.opengis.net/geoepsg_dataset_creator> a void:Dataset ;
+    rdfs:label "Property Partition: creator"@en ;
+    void:property dc:creator ;
+    void:triples 117 .
+
+<http://www.opengis.net/geoepsg_dataset_date> a void:Dataset ;
+    rdfs:label "Property Partition: date"@en ;
+    void:property dc:date ;
+    void:triples 8598 .
+
+<http://www.opengis.net/geoepsg_dataset_datum> a void:Dataset ;
+    rdfs:label "Property Partition: datum"@en ;
+    void:property <http://www.opengis.net/ont/crs/datum> ;
+    void:triples 6322 .
+
+<http://www.opengis.net/geoepsg_dataset_definition> a void:Dataset ;
+    rdfs:label "Property Partition: definition"@en ;
+    void:property skos:definition ;
+    void:triples 195 .
+
+<http://www.opengis.net/geoepsg_dataset_description> a void:Dataset ;
+    rdfs:label "Property Partition: description"@en ;
+    void:property dc:description ;
+    void:triples 1 .
+
+<http://www.opengis.net/geoepsg_dataset_direction> a void:Dataset ;
+    rdfs:label "Property Partition: direction"@en ;
+    void:property <http://www.opengis.net/ont/crs/direction> ;
+    void:triples 58 .
+
+<http://www.opengis.net/geoepsg_dataset_disjointWith> a void:Dataset ;
+    rdfs:label "Property Partition: disjointWith"@en ;
+    void:property owl:disjointWith ;
+    void:triples 6 .
+
+<http://www.opengis.net/geoepsg_dataset_dist_ttl> a adms:AssetDistribution ;
+    rdfs:label "geoepsg_dataset TTL Distribution"@en ;
+    dcat:downloadURL "https://situx.github.io/proj4rdf/data//index.ttl"^^xsd:anyURI ;
+    dcat:mediaType <http://www.w3.org/ns/formats/Turtle> .
+
+<http://www.opengis.net/geoepsg_dataset_domain> a void:Dataset ;
+    rdfs:label "Property Partition: domain"@en ;
+    void:property rdfs:domain ;
+    void:triples 20 .
+
+<http://www.opengis.net/geoepsg_dataset_eccentricity> a void:Dataset ;
+    rdfs:label "Property Partition: eccentricity"@en ;
+    void:property <http://www.opengis.net/ont/crs/eccentricity> ;
+    void:triples 1941 .
+
+<http://www.opengis.net/geoepsg_dataset_ellipse> a void:Dataset ;
+    rdfs:label "Property Partition: ellipse"@en ;
+    void:property <http://www.opengis.net/ont/crs/ellipse> ;
+    void:triples 35 .
+
+<http://www.opengis.net/geoepsg_dataset_ellipsoid> a void:Dataset ;
+    rdfs:label "Property Partition: ellipsoid"@en ;
+    void:property <http://www.opengis.net/ont/crs/ellipsoid> ;
+    void:triples 1049 .
+
+<http://www.opengis.net/geoepsg_dataset_epsgCode> a void:Dataset ;
+    rdfs:label "Property Partition: epsgCode"@en ;
+    void:property <http://www.opengis.net/ont/crs/epsgCode> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_equivalentClass> a void:Dataset ;
+    rdfs:label "Property Partition: equivalentClass"@en ;
+    void:property owl:equivalentClass ;
+    void:triples 2 .
+
+<http://www.opengis.net/geoepsg_dataset_example> a void:Dataset ;
+    rdfs:label "Property Partition: example"@en ;
+    void:property skos:example ;
+    void:triples 1 .
+
+<http://www.opengis.net/geoepsg_dataset_extent> a void:Dataset ;
+    rdfs:label "Property Partition: extent"@en ;
+    void:property <http://www.opengis.net/ont/crs/extent> ;
+    void:triples 8497 .
+
+<http://www.opengis.net/geoepsg_dataset_flatteningParameter> a void:Dataset ;
+    rdfs:label "Property Partition: flatteningParameter"@en ;
+    void:property <http://www.opengis.net/ont/crs/flatteningParameter> ;
+    void:triples 55 .
+
+<http://www.opengis.net/geoepsg_dataset_hasUnit> a void:Dataset ;
+    rdfs:label "Property Partition: hasUnit"@en ;
+    void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> ;
+    void:triples 18579 .
+
+<http://www.opengis.net/geoepsg_dataset_has_ballpark_transformation> a void:Dataset ;
+    rdfs:label "Property Partition: has_ballpark_transformation"@en ;
+    void:property <http://www.opengis.net/ont/crs/has_ballpark_transformation> ;
+    void:triples 2172 .
+
+<http://www.opengis.net/geoepsg_dataset_image> a void:Dataset ;
+    rdfs:label "Property Partition: image"@en ;
+    void:property foaf:image,
+        <https://xmlns.com/foaf/0.1/image> ;
+    void:triples 1,
+        132 .
+
+<http://www.opengis.net/geoepsg_dataset_includesSRS> a void:Dataset ;
+    rdfs:label "Property Partition: includesSRS"@en ;
+    void:property <http://www.opengis.net/ont/crs/includesSRS> ;
+    void:triples 712 .
+
+<http://www.opengis.net/geoepsg_dataset_inverse_flattening> a void:Dataset ;
+    rdfs:label "Property Partition: inverse_flattening"@en ;
+    void:property <http://www.opengis.net/ont/crs/inverse_flattening> ;
+    void:triples 35 .
+
+<http://www.opengis.net/geoepsg_dataset_isApplicableTo> a void:Dataset ;
+    rdfs:label "Property Partition: isApplicableTo"@en ;
+    void:property <http://www.opengis.net/ont/crs/isApplicableTo> ;
+    void:triples 6541 .
+
+<http://www.opengis.net/geoepsg_dataset_isBound> a void:Dataset ;
+    rdfs:label "Property Partition: isBound"@en ;
+    void:property <http://www.opengis.net/ont/crs/isBound> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_isDefinedBy> a void:Dataset ;
+    rdfs:label "Property Partition: isDefinedBy"@en ;
+    void:property rdfs:isDefinedBy ;
+    void:triples 80 .
+
+<http://www.opengis.net/geoepsg_dataset_isGeocentric> a void:Dataset ;
+    rdfs:label "Property Partition: isGeocentric"@en ;
+    void:property <http://www.opengis.net/ont/crs/isGeocentric> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_isGeographic> a void:Dataset ;
+    rdfs:label "Property Partition: isGeographic"@en ;
+    void:property <http://www.opengis.net/ont/crs/isGeographic> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_isProjected> a void:Dataset ;
+    rdfs:label "Property Partition: isProjected"@en ;
+    void:property <http://www.opengis.net/ont/crs/isProjected> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_isRelatedTo> a void:Dataset ;
+    rdfs:label "Property Partition: isRelatedTo"@en ;
+    void:property <http://www.opengis.net/ont/crs/isRelatedTo> ;
+    void:triples 8 .
+
+<http://www.opengis.net/geoepsg_dataset_isSphere> a void:Dataset ;
+    rdfs:label "Property Partition: isSphere"@en ;
+    void:property <http://www.opengis.net/ont/crs/isSphere> ;
+    void:triples 55 .
+
+<http://www.opengis.net/geoepsg_dataset_isVertical> a void:Dataset ;
+    rdfs:label "Property Partition: isVertical"@en ;
+    void:property <http://www.opengis.net/ont/crs/isVertical> ;
+    void:triples 6323 .
+
+<http://www.opengis.net/geoepsg_dataset_is_semi_minor_computed> a void:Dataset ;
+    rdfs:label "Property Partition: is_semi_minor_computed"@en ;
+    void:property <http://www.opengis.net/ont/crs/is_semi_minor_computed> ;
+    void:triples 35 .
+
+<http://www.opengis.net/geoepsg_dataset_label> a void:Dataset ;
+    rdfs:label "Property Partition: label"@en ;
+    void:property rdfs:label ;
+    void:triples 60529 .
+
+<http://www.opengis.net/geoepsg_dataset_longitude> a void:Dataset ;
+    rdfs:label "Property Partition: longitude"@en ;
+    void:property <http://www.opengis.net/ont/crs/longitude> ;
+    void:triples 15 .
+
+<http://www.opengis.net/geoepsg_dataset_mass> a void:Dataset ;
+    rdfs:label "Property Partition: mass"@en ;
+    void:property <http://www.opengis.net/ont/crs/mass> ;
+    void:triples 4722 .
+
+<http://www.opengis.net/geoepsg_dataset_method_name> a void:Dataset ;
+    rdfs:label "Property Partition: method_name"@en ;
+    void:property <http://www.opengis.net/ont/crs/method_name> ;
+    void:triples 2178 .
+
+<http://www.opengis.net/geoepsg_dataset_orbital_period> a void:Dataset ;
+    rdfs:label "Property Partition: orbital_period"@en ;
+    void:property <http://www.opengis.net/ont/crs/orbital_period> ;
+    void:triples 4689 .
+
+<http://www.opengis.net/geoepsg_dataset_parameter> a void:Dataset ;
+    rdfs:label "Property Partition: parameter"@en ;
+    void:property <http://www.opengis.net/ont/crs/parameter> ;
+    void:triples 11291 .
+
+<http://www.opengis.net/geoepsg_dataset_planet_status> a void:Dataset ;
+    rdfs:label "Property Partition: planet_status"@en ;
+    void:property <http://www.opengis.net/ont/crs/planet_status> ;
+    void:triples 4970 .
+
+<http://www.opengis.net/geoepsg_dataset_primeMeridian> a void:Dataset ;
+    rdfs:label "Property Partition: primeMeridian"@en ;
+    void:property <http://www.opengis.net/ont/crs/primeMeridian> ;
+    void:triples 588 .
+
+<http://www.opengis.net/geoepsg_dataset_radius> a void:Dataset ;
+    rdfs:label "Property Partition: radius"@en ;
+    void:property <http://www.opengis.net/ont/crs/radius> ;
+    void:triples 6743 .
+
+<http://www.opengis.net/geoepsg_dataset_range> a void:Dataset ;
+    rdfs:label "Property Partition: range"@en ;
+    void:property rdfs:range ;
+    void:triples 21 .
+
+<http://www.opengis.net/geoepsg_dataset_satelliteOf> a void:Dataset ;
+    rdfs:label "Property Partition: satelliteOf"@en ;
+    void:property <http://www.opengis.net/ont/crs/satelliteOf> ;
+    void:triples 4912 .
+
+<http://www.opengis.net/geoepsg_dataset_semiMajorAxis> a void:Dataset ;
+    rdfs:label "Property Partition: semiMajorAxis"@en ;
+    void:property <http://www.opengis.net/ont/crs/semiMajorAxis> ;
+    void:triples 3408 .
+
+<http://www.opengis.net/geoepsg_dataset_semiMinorAxis> a void:Dataset ;
+    rdfs:label "Property Partition: semiMinorAxis"@en ;
+    void:property <http://www.opengis.net/ont/crs/semiMinorAxis> ;
+    void:triples 55 .
+
+<http://www.opengis.net/geoepsg_dataset_sourceCRS> a void:Dataset ;
+    rdfs:label "Property Partition: sourceCRS"@en ;
+    void:property <http://www.opengis.net/ont/crs/sourceCRS> ;
+    void:triples 4650 .
+
+<http://www.opengis.net/geoepsg_dataset_starDistance> a void:Dataset ;
+    rdfs:label "Property Partition: starDistance"@en ;
+    void:property <http://www.opengis.net/ont/crs/starDistance> ;
+    void:triples 4480 .
+
+<http://www.opengis.net/geoepsg_dataset_subClassOf> a void:Dataset ;
+    rdfs:label "Property Partition: subClassOf"@en ;
+    void:property rdfs:subClassOf ;
+    void:triples 550 .
+
+<http://www.opengis.net/geoepsg_dataset_type> a void:Dataset ;
+    rdfs:label "Property Partition: type"@en ;
+    void:property rdf:type ;
+    void:triples 60396 .
+
+<http://www.opengis.net/geoepsg_dataset_unitConversionFactor> a void:Dataset ;
+    rdfs:label "Property Partition: unitConversionFactor"@en ;
+    void:property <http://www.opengis.net/ont/crs/unitConversionFactor> ;
+    void:triples 15 .
+
+<http://www.opengis.net/geoepsg_dataset_unit_auth_code> a void:Dataset ;
+    rdfs:label "Property Partition: unit_auth_code"@en ;
+    void:property <http://www.opengis.net/ont/crs/unit_auth_code> ;
+    void:triples 58 .
+
+<http://www.opengis.net/geoepsg_dataset_unit_code> a void:Dataset ;
+    rdfs:label "Property Partition: unit_code"@en ;
+    void:property <http://www.opengis.net/ont/crs/unit_code> ;
+    void:triples 58 .
+
+<http://www.opengis.net/geoepsg_dataset_unit_conversion_factor> a void:Dataset ;
+    rdfs:label "Property Partition: unit_conversion_factor"@en ;
+    void:property <http://www.opengis.net/ont/crs/unit_conversion_factor> ;
+    void:triples 58 .
+
+<http://www.opengis.net/geoepsg_dataset_usage> a void:Dataset ;
+    rdfs:label "Property Partition: usage"@en ;
+    void:property <http://www.opengis.net/ont/crs/usage> ;
+    void:triples 16100 .
+
+<http://www.opengis.net/geoepsg_dataset_uses> a void:Dataset ;
+    rdfs:label "Property Partition: uses"@en ;
+    void:property <http://www.opengis.net/ont/crs/uses> ;
+    void:triples 4 .
+
+<http://www.opengis.net/geoepsg_dataset_usesValue> a void:Dataset ;
+    rdfs:label "Property Partition: usesValue"@en ;
+    void:property <http://www.opengis.net/ont/crs/usesValue> ;
+    void:triples 11291 .
+
+<http://www.opengis.net/geoepsg_dataset_utm_zone> a void:Dataset ;
+    rdfs:label "Property Partition: utm_zone"@en ;
+    void:property <http://www.opengis.net/ont/crs/utm_zone> ;
+    void:triples 704 .
+
+<http://www.opengis.net/geoepsg_dataset_value> a void:Dataset ;
+    rdfs:label "Property Partition: value"@en ;
+    void:property rdf:value ;
+    void:triples 18544 .
+
+<http://www.opengis.net/geoepsg_dataset_versionInfo> a void:Dataset ;
+    rdfs:label "Property Partition: versionInfo"@en ;
+    void:property owl:versionInfo ;
+    void:triples 1 .
+
+geo: a voaf:Vocabulary ;
+    rdfs:label "The GeoSPARQL Ontology"@en ;
+    vann:preferredNamespacePrefix "geo"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.opengis.net/ont/geosparql#"^^xsd:anyURI ;
+    voaf:usageInDataset geo:_geoepsg_dataset_occ .
+
+rdf: a voaf:Vocabulary ;
+    rdfs:label "The RDF Concepts Vocabulary (RDF)"@en ;
+    vann:preferredNamespacePrefix "rdf"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+    voaf:usageInDataset rdf:_geoepsg_dataset_occ .
+
+skos: a voaf:Vocabulary ;
+    rdfs:label "skos Vocabulary"@en ;
+    vann:preferredNamespacePrefix "skos"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
+    voaf:usageInDataset skos:_geoepsg_dataset_occ .
+
+time: a voaf:Vocabulary ;
+    rdfs:label "time Vocabulary"@en ;
+    vann:preferredNamespacePrefix "time"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2006/time#"^^xsd:anyURI ;
+    voaf:usageInDataset time:_geoepsg_dataset_occ .
+
+xml: a voaf:Vocabulary ;
+    rdfs:label "xml Vocabulary"@en ;
+    vann:preferredNamespacePrefix "xml"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/XML/1998/namespace"^^xsd:anyURI ;
+    voaf:usageInDataset xml:_geoepsg_dataset_occ .
+
+adms: a voaf:Vocabulary ;
+    rdfs:label "adms Vocabulary"@en ;
+    vann:preferredNamespacePrefix "adms"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/adms#"^^xsd:anyURI ;
+    voaf:usageInDataset adms:_geoepsg_dataset_occ .
+
+csvw: a voaf:Vocabulary ;
+    rdfs:label "csvw Vocabulary"@en ;
+    vann:preferredNamespacePrefix "csvw"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/csvw#"^^xsd:anyURI ;
+    voaf:usageInDataset csvw:_geoepsg_dataset_occ .
+
+dcat: a voaf:Vocabulary ;
+    rdfs:label "DCAT Vocabulary"@en ;
+    vann:preferredNamespacePrefix "dcat"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/dcat#"^^xsd:anyURI ;
+    voaf:usageInDataset dcat:_geoepsg_dataset_occ .
+
+prof: a voaf:Vocabulary ;
+    rdfs:label "prof Vocabulary"@en ;
+    vann:preferredNamespacePrefix "prof"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/dx/prof/"^^xsd:anyURI ;
+    voaf:usageInDataset prof:_geoepsg_dataset_occ .
+
+odrl: a voaf:Vocabulary ;
+    rdfs:label "odrl Vocabulary"@en ;
+    vann:preferredNamespacePrefix "odrl"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/odrl/2/"^^xsd:anyURI ;
+    voaf:usageInDataset odrl:_geoepsg_dataset_occ .
+
+org: a voaf:Vocabulary ;
+    rdfs:label "org Vocabulary"@en ;
+    vann:preferredNamespacePrefix "org"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/org#"^^xsd:anyURI ;
+    voaf:usageInDataset org:_geoepsg_dataset_occ .
+
+prov: a voaf:Vocabulary ;
+    rdfs:label "W3C Provenance Ontology"@en ;
+    vann:preferredNamespacePrefix "prov"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
+    voaf:usageInDataset prov:_geoepsg_dataset_occ .
+
+sh: a voaf:Vocabulary ;
+    rdfs:label "Shapes Constraint Language (SHACL)"@en ;
+    vann:preferredNamespacePrefix "sh"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
+    voaf:usageInDataset sh:_geoepsg_dataset_occ .
+
+sosa: a voaf:Vocabulary ;
+    rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA) Ontology"@en ;
+    vann:preferredNamespacePrefix "sosa"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/sosa/"^^xsd:anyURI ;
+    voaf:usageInDataset sosa:_geoepsg_dataset_occ .
+
+ssn: a voaf:Vocabulary ;
+    rdfs:label "ssn Vocabulary"@en ;
+    vann:preferredNamespacePrefix "ssn"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/ssn/"^^xsd:anyURI ;
+    voaf:usageInDataset ssn:_geoepsg_dataset_occ .
+
+<http://www.wikidata.org/entity/Q121810372> rdfs:label "geospatial data"@en .
+
+foaf: a voaf:Vocabulary ;
+    rdfs:label "Friend Of A Friend Ontology"@en ;
+    vann:preferredNamespacePrefix "foaf"^^xsd:string ;
+    vann:preferredNamespaceUri "http://xmlns.com/foaf/0.1/"^^xsd:anyURI ;
+    voaf:usageInDataset foaf:_geoepsg_dataset_occ .
+
+foaf:Person rdfs:label "Person"@en .
+
+brick: a voaf:Vocabulary ;
+    rdfs:label "brick Vocabulary"@en ;
+    vann:preferredNamespacePrefix "brick"^^xsd:string ;
+    vann:preferredNamespaceUri "https://brickschema.org/schema/Brick#"^^xsd:anyURI ;
+    voaf:usageInDataset brick:_geoepsg_dataset_occ .
+
+schema: a voaf:Vocabulary ;
+    rdfs:label "schema Vocabulary"@en ;
+    vann:preferredNamespacePrefix "schema"^^xsd:string ;
+    vann:preferredNamespaceUri "https://schema.org/"^^xsd:anyURI ;
+    voaf:usageInDataset schema:_geoepsg_dataset_occ .
+
+wgs: a voaf:Vocabulary ;
+    rdfs:label "wgs Vocabulary"@en ;
+    vann:preferredNamespacePrefix "wgs"^^xsd:string ;
+    vann:preferredNamespaceUri "https://www.w3.org/2003/01/geo/wgs84_pos#"^^xsd:anyURI ;
+    voaf:usageInDataset wgs:_geoepsg_dataset_occ .
+
+rdfs: a voaf:Vocabulary ;
+    rdfs:label "The RDF Schema vocabulary (RDFS)"@en ;
+    vann:preferredNamespacePrefix "rdfs"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+    voaf:usageInDataset rdfs:_geoepsg_dataset_occ .
+
+xsd: a voaf:Vocabulary ;
+    rdfs:label "XML Schema"@en ;
+    vann:preferredNamespacePrefix "xsd"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
+    voaf:usageInDataset xsd:_geoepsg_dataset_occ .
+
+owl: a voaf:Vocabulary ;
+    rdfs:label "Web Ontology Language 2 Vocabulary"@en ;
+    vann:preferredNamespacePrefix "owl"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
+    voaf:usageInDataset owl:_geoepsg_dataset_occ .
+
+<http://www.opengis.net/geoepsg_dataset> a void:Dataset,
+        adms:Asset ;
+    rdfs:label "geoepsg_dataset"@en ;
+    vext:averageLiteralLength 156 ;
+    vext:averageObjectIRILength 51 ;
+    vext:averagePropertyIRILength 42 ;
+    vext:averageSubjectIRILength 65 ;
+    vext:datatypes 11 ;
+    vext:distinctBlankNodes 0 ;
+    vext:distinctIRIReferences 214492 ;
+    vext:distinctLiterals 90092 ;
+    vext:distinctRDFNodes 304584 ;
+    vext:languages 1 ;
+    vext:propertyClasses 0 ;
+    dc:language <http://www.lexvo.org/page/iso639-1/en> ;
+    dcterms:modified "2024-04-24T21:21:07"^^xsd:dateTime ;
+    dcterms:subject <http://dbpedia.org/resource/Location>,
+        <http://dbpedia.org/resource/OGC_GeoSPARQL>,
+        <http://dbpedia.org/resource/Time>,
+        <http://www.wikidata.org/entity/Q121810372>,
+        foaf:Person ;
+    dcterms:title "geoepsg_dataset"@en ;
+    vann:preferredNamespacePrefix "geoepsg"^^xsd:string ;
+    vann:preferredNamespaceUri "http://www.opengis.net/"^^xsd:anyURI ;
+    void:classPartition <http://www.opengis.net/geoepsg_dataset_1DCS>,
+        <http://www.opengis.net/geoepsg_dataset_1DCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_2DCoordinateTransformationOperation>,
+        <http://www.opengis.net/geoepsg_dataset_3DCS>,
+        <http://www.opengis.net/geoepsg_dataset_3DCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_3DCoordinateTransformationOperation>,
+        <http://www.opengis.net/geoepsg_dataset_A4Projection>,
+        <http://www.opengis.net/geoepsg_dataset_AdamsProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AdamsWorldInASquareIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AdamsWorldInASquareIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AdministrativeCode>,
+        <http://www.opengis.net/geoepsg_dataset_AffineCS>,
+        <http://www.opengis.net/geoepsg_dataset_AffineTransformation>,
+        <http://www.opengis.net/geoepsg_dataset_AiryProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AitoffObliqueProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AitoffProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AlbersEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AmericanPolyconicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ApianGlobularIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ApianIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ArchaicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ArdenCloseProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AreaCode>,
+        <http://www.opengis.net/geoepsg_dataset_AreaOfUse>,
+        <http://www.opengis.net/geoepsg_dataset_ArmadilloProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ArtificialSatellite>,
+        <http://www.opengis.net/geoepsg_dataset_Asteroid>,
+        <http://www.opengis.net/geoepsg_dataset_AtlantisProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AugustEpicycloidalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AuthaGraphProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AxisDirection>,
+        <http://www.opengis.net/geoepsg_dataset_AzimuthalEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AzimuthalEquidistantProjection>,
+        <http://www.opengis.net/geoepsg_dataset_AzimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BSAMCylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BaconGlobularProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BakerDinomicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BalthasartProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BaranyiIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BaranyiIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BaranyiIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BaranyiIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BartholomewProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BarycentricCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_BehrmannProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BerghausStarProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BertinProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BipolarObliqueConicConformalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BoggsEumorphicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BonneProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BottomleyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_BraunPerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BraunStereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BreusingGeometricProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BreusingHarmonicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BriesemeisterProjection>,
+        <http://www.opengis.net/geoepsg_dataset_BromleyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CRS>,
+        <http://www.opengis.net/geoepsg_dataset_CabotProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CadastreMap>,
+        <http://www.opengis.net/geoepsg_dataset_CahillKeyesProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CartesianCS>,
+        <http://www.opengis.net/geoepsg_dataset_CassiniProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CelestialCS>,
+        <http://www.opengis.net/geoepsg_dataset_CentralConicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CentralCylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ChamberlinTrimetricProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ChloroplethMap>,
+        <http://www.opengis.net/geoepsg_dataset_CiricIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CollignonButterflyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CollignonProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ColombiaUrbanProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Comet>,
+        <http://www.opengis.net/geoepsg_dataset_CompactMillerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CompoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_CompromiseProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ConformalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ConicalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_ConicalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Conversion>,
+        <http://www.opengis.net/geoepsg_dataset_CoordinateOperation>,
+        <http://www.opengis.net/geoepsg_dataset_CoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_CoordinateSystemAxis>,
+        <http://www.opengis.net/geoepsg_dataset_CoordinateTransformationOperation>,
+        <http://www.opengis.net/geoepsg_dataset_CordiformProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CoxConformalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CraigRetroazimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CrasterParabolicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CupolaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CurvilinearCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_CylindricalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_CylindricalEqualArea>,
+        <http://www.opengis.net/geoepsg_dataset_CylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_CylindricalStereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DateTimeTemporalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_Datum>,
+        <http://www.opengis.net/geoepsg_dataset_DatumEnsemble>,
+        <http://www.opengis.net/geoepsg_dataset_DeakinMinimumErrorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DedistortProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DenoyerSemiEllipticalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedEngineeringCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedGeodeticCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedGeographicCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedParametricCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedProjectedCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedProjectedCS>,
+        <http://www.opengis.net/geoepsg_dataset_DerivedVerticalCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DietrichKitadaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DodecahedralProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DwarfPlanet>,
+        <http://www.opengis.net/geoepsg_dataset_DymaxionProjection>,
+        <http://www.opengis.net/geoepsg_dataset_DynamicCRS>,
+        <http://www.opengis.net/geoepsg_dataset_DynamicGeodeticReferenceFrame>,
+        <http://www.opengis.net/geoepsg_dataset_DynamicReferenceFrame>,
+        <http://www.opengis.net/geoepsg_dataset_DynamicVerticalReferenceFrame>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert1Projection>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert2Projection>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert3Projection>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert4Projection>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert5Projection>,
+        <http://www.opengis.net/geoepsg_dataset_Eckert6Projection>,
+        <http://www.opengis.net/geoepsg_dataset_EclipticCS>,
+        <http://www.opengis.net/geoepsg_dataset_EisenlohrProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Ellipsoid>,
+        <http://www.opengis.net/geoepsg_dataset_EllipsoidalCS>,
+        <http://www.opengis.net/geoepsg_dataset_EngineeringCRS>,
+        <http://www.opengis.net/geoepsg_dataset_EngineeringCS>,
+        <http://www.opengis.net/geoepsg_dataset_EngineeringDatum>,
+        <http://www.opengis.net/geoepsg_dataset_Entity>,
+        <http://www.opengis.net/geoepsg_dataset_EqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EqualEarthProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EquallySpacedParallelsProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EquatorialCS>,
+        <http://www.opengis.net/geoepsg_dataset_EquidistantConicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EquidistantCylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EquidistantProjection>,
+        <http://www.opengis.net/geoepsg_dataset_EquirectangularProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FaheyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FairgrieveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FoucautProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FoucautSinusoidalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FournierGlobularIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FournierIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaIXProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaVIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaXIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaXIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_FranculaXIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GS50Projection>,
+        <http://www.opengis.net/geoepsg_dataset_GalacticCS>,
+        <http://www.opengis.net/geoepsg_dataset_GallIsographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GallPetersProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GallStereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GaussKruegerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GeneralReferenceMap>,
+        <http://www.opengis.net/geoepsg_dataset_GeneralVerticalPerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GeocentricCRS>,
+        <http://www.opengis.net/geoepsg_dataset_GeocodeSystem>,
+        <http://www.opengis.net/geoepsg_dataset_GeodeticCRS>,
+        <http://www.opengis.net/geoepsg_dataset_GeodeticCS>,
+        <http://www.opengis.net/geoepsg_dataset_GeodeticReferenceFrame>,
+        <http://www.opengis.net/geoepsg_dataset_GeographicCRS>,
+        <http://www.opengis.net/geoepsg_dataset_GeographicCS>,
+        <http://www.opengis.net/geoepsg_dataset_Geoid>,
+        <http://www.opengis.net/geoepsg_dataset_GilbertTwoWorldPerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GingeryProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgIXProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgVIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgVIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GinzburgVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GlobalGridReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_GlobularProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GnomonicButterflyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GnomonicCubedSphereProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GnomonicIcosahedronProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GnomonicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GoodeHomolosineProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GottWagnerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GridCS>,
+        <http://www.opengis.net/geoepsg_dataset_GridReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_GringortenProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GringortenQuincuncialProjection>,
+        <http://www.opengis.net/geoepsg_dataset_GuyouProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HEALPixProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HammerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HammerRetroazimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HamusoidalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HatanoAsymmetricalEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HeatMap>,
+        <http://www.opengis.net/geoepsg_dataset_HerschelConformalConicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HexagonalCS>,
+        <http://www.opengis.net/geoepsg_dataset_HierarchicalGridReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_HillEucyclicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HoboDyerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HomogeneousCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_HorizontalCS>,
+        <http://www.opengis.net/geoepsg_dataset_HorizontalDatum>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelIXProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelVIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelVIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelVIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelXIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelXIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_HufnagelXProjection>,
+        <http://www.opengis.net/geoepsg_dataset_IcosahedralProjection>,
+        <http://www.opengis.net/geoepsg_dataset_InterruptedGoodeHomolosineOceanicViewProjection>,
+        <http://www.opengis.net/geoepsg_dataset_InterruptedGoodeHomolosineProjection>,
+        <http://www.opengis.net/geoepsg_dataset_InterruptedQuarticAuthalicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_InterstellarBody>,
+        <http://www.opengis.net/geoepsg_dataset_JamesAzimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_KamenetskiyIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_KarchenkoShabanovaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Kavrayskiy7Projection>,
+        <http://www.opengis.net/geoepsg_dataset_KissProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Krovak>,
+        <http://www.opengis.net/geoepsg_dataset_LaHireProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LabordeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LagrangeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LambertAzimuthalEqualArea>,
+        <http://www.opengis.net/geoepsg_dataset_LambertConformalConicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LambertCylindricalEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LarriveeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LaskowskiProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LatLonProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LeeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LenticularProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LinearCS>,
+        <http://www.opengis.net/geoepsg_dataset_LinearReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_LittrowProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LocalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_LocalGridReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_LonLatProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LorgnaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LowryProjection>,
+        <http://www.opengis.net/geoepsg_dataset_LoximuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MaurerNo73Projection>,
+        <http://www.opengis.net/geoepsg_dataset_MayrProjection>,
+        <http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarParabolicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarQuarticProjection>,
+        <http://www.opengis.net/geoepsg_dataset_McBrydeThomasFlatPolarSinusoidalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_McBrydeThomasIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_McBrydeThomasIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MillerOblatedStereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MillerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MinimumErrorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MollweideProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MollweideWagnerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Moon>,
+        <http://www.opengis.net/geoepsg_dataset_MurdochIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MurdochIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MurdochIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_MyrahedalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_NaturalEarth2Projection>,
+        <http://www.opengis.net/geoepsg_dataset_NaturalEarthProjection>,
+        <http://www.opengis.net/geoepsg_dataset_NaturalSatellite>,
+        <http://www.opengis.net/geoepsg_dataset_NauticalChart>,
+        <http://www.opengis.net/geoepsg_dataset_NellHammerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_NellProjection>,
+        <http://www.opengis.net/geoepsg_dataset_NicolosiGlobularProjection>,
+        <http://www.opengis.net/geoepsg_dataset_NordicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ObliqueCS>,
+        <http://www.opengis.net/geoepsg_dataset_ObliqueCylindricalEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ObliqueMercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ObliquePlateCarreeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ObliqueProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ObliqueStereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_OctantProjection>,
+        <http://www.opengis.net/geoepsg_dataset_OperationParameter>,
+        <http://www.opengis.net/geoepsg_dataset_OperationParameterValue>,
+        <http://www.opengis.net/geoepsg_dataset_OrdinalCS>,
+        <http://www.opengis.net/geoepsg_dataset_OrteliusOvalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_OrthogonalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_OrthographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_OvalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ParametricCRS>,
+        <http://www.opengis.net/geoepsg_dataset_ParametricCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_ParametricDatum>,
+        <http://www.opengis.net/geoepsg_dataset_PattersonCylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PavlovProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PeirceQuincuncialProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PerifocalCS>,
+        <http://www.opengis.net/geoepsg_dataset_PerifocalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_PerspectiveConicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PetermannStarProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PlanarCS>,
+        <http://www.opengis.net/geoepsg_dataset_PlanarCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_Planet>,
+        <http://www.opengis.net/geoepsg_dataset_PlanetStatus>,
+        <http://www.opengis.net/geoepsg_dataset_PlateCarreeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Plutoid>,
+        <http://www.opengis.net/geoepsg_dataset_PolarCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_PoleLineProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PolyconicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PolyhedralProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PrimeMeridian>,
+        <http://www.opengis.net/geoepsg_dataset_ProjectedCRS>,
+        <http://www.opengis.net/geoepsg_dataset_ProjectedCS>,
+        <http://www.opengis.net/geoepsg_dataset_Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PseudoAzimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PseudoConicalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PseudoCylindricalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PseudoOrthographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PtolemyIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PtolemyIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP1Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP2Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP3'Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP3Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP4'Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP5'Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP5Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP6'Projection>,
+        <http://www.opengis.net/geoepsg_dataset_PutninsP6Projection>,
+        <http://www.opengis.net/geoepsg_dataset_QuadrilateralizedSphericalCubeProjection>,
+        <http://www.opengis.net/geoepsg_dataset_QuarticAuthalicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_RectangularPolyconicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_ReflectionOperation>,
+        <http://www.opengis.net/geoepsg_dataset_RetroazimuthalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_RobinsonProjection>,
+        <http://www.opengis.net/geoepsg_dataset_RoussilheProjection>,
+        <http://www.opengis.net/geoepsg_dataset_SRSApplication>,
+        <http://www.opengis.net/geoepsg_dataset_ScaleOperation>,
+        <http://www.opengis.net/geoepsg_dataset_SchjerningIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_SelenographicCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SingleCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SinusoidalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_SkewCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_SmythEqualSurfaceProjection>,
+        <http://www.opengis.net/geoepsg_dataset_SpaceObliqueMercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_SpatialCompoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SpatialReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_SpatioParametricCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SpatioParametricCompoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SpatioParametricTemporalCompoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_SpatioTemporalCompoundCRS>,
+        <http://www.opengis.net/geoepsg_dataset_Sphere>,
+        <http://www.opengis.net/geoepsg_dataset_SphericalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_SpilhausOceanicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_StabiusWernerIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_StabiusWernerIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_StabiusWernerIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Star>,
+        <http://www.opengis.net/geoepsg_dataset_StaticCRS>,
+        <http://www.opengis.net/geoepsg_dataset_StereographicCS>,
+        <http://www.opengis.net/geoepsg_dataset_StereographicProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Strebe1995Projection>,
+        <http://www.opengis.net/geoepsg_dataset_SuperGalacticCS>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalCRS>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalCoordinateSystemAxis>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalCountCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalDatum>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalMeasureCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_TemporalReferenceSystem>,
+        <http://www.opengis.net/geoepsg_dataset_TheTimesProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ThematicMap>,
+        <http://www.opengis.net/geoepsg_dataset_TiltedPerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ToblerCylindricalIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ToblerCylindricalIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ToblerG1Projection>,
+        <http://www.opengis.net/geoepsg_dataset_ToblerHyperellipticalProjection>,
+        <http://www.opengis.net/geoepsg_dataset_ToblerWorldInASquareProjection>,
+        <http://www.opengis.net/geoepsg_dataset_TopographicMap>,
+        <http://www.opengis.net/geoepsg_dataset_Transformation>,
+        <http://www.opengis.net/geoepsg_dataset_TransverseCylindricalEqualAreaProjection>,
+        <http://www.opengis.net/geoepsg_dataset_TransverseMercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_TrystanEdwardsProjection>,
+        <http://www.opengis.net/geoepsg_dataset_TwoPointEquidistantProjection>,
+        <http://www.opengis.net/geoepsg_dataset_Unit>,
+        <http://www.opengis.net/geoepsg_dataset_UniversalTransverseMercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_UrmayevIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VanDerGrintenIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VanDerGrintenIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VanDerGrintenIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VanDerGrintenIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VerticalCRS>,
+        <http://www.opengis.net/geoepsg_dataset_VerticalCS>,
+        <http://www.opengis.net/geoepsg_dataset_VerticalCoordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_VerticalPerspectiveProjection>,
+        <http://www.opengis.net/geoepsg_dataset_VerticalReferenceFrame>,
+        <http://www.opengis.net/geoepsg_dataset_VitkovskyIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerIVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerIXProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerVIIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerVIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerVIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WagnerVProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WatermanButterflyProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WeatherMap>,
+        <http://www.opengis.net/geoepsg_dataset_WebMercatorProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WerenskioldIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WernerProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WiechelProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WinkelIIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WinkelIProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WinkelSnyderProjection>,
+        <http://www.opengis.net/geoepsg_dataset_WinkelTripelProjection> ;
+    void:classes 417 ;
+    void:dataDump <https://situx.github.io/proj4rdf/data//index.ttl> ;
+    void:distinctObjects 146798 ;
+    void:distinctSubjects 67621 ;
+    void:entities 67611 ;
+    void:feature <http://www.w3.org/ns/formats/RDFa>,
+        <http://www.w3.org/ns/formats/Turtle> ;
+    void:properties 73 ;
+    void:propertyPartition <http://www.opengis.net/geoepsg_dataset_PROJidentifier>,
+        <http://www.opengis.net/geoepsg_dataset_accuracy>,
+        <http://www.opengis.net/geoepsg_dataset_altLabel>,
+        <http://www.opengis.net/geoepsg_dataset_approximates>,
+        <http://www.opengis.net/geoepsg_dataset_area_of_use>,
+        <http://www.opengis.net/geoepsg_dataset_asProj4>,
+        <http://www.opengis.net/geoepsg_dataset_asProjJSON>,
+        <http://www.opengis.net/geoepsg_dataset_asSVG>,
+        <http://www.opengis.net/geoepsg_dataset_asWKT>,
+        <http://www.opengis.net/geoepsg_dataset_axis>,
+        <http://www.opengis.net/geoepsg_dataset_axisAbbrev>,
+        <http://www.opengis.net/geoepsg_dataset_comment>,
+        <http://www.opengis.net/geoepsg_dataset_coordinateOperation>,
+        <http://www.opengis.net/geoepsg_dataset_coordinateSystem>,
+        <http://www.opengis.net/geoepsg_dataset_creator>,
+        <http://www.opengis.net/geoepsg_dataset_date>,
+        <http://www.opengis.net/geoepsg_dataset_datum>,
+        <http://www.opengis.net/geoepsg_dataset_definition>,
+        <http://www.opengis.net/geoepsg_dataset_description>,
+        <http://www.opengis.net/geoepsg_dataset_direction>,
+        <http://www.opengis.net/geoepsg_dataset_disjointWith>,
+        <http://www.opengis.net/geoepsg_dataset_domain>,
+        <http://www.opengis.net/geoepsg_dataset_eccentricity>,
+        <http://www.opengis.net/geoepsg_dataset_ellipse>,
+        <http://www.opengis.net/geoepsg_dataset_ellipsoid>,
+        <http://www.opengis.net/geoepsg_dataset_epsgCode>,
+        <http://www.opengis.net/geoepsg_dataset_equivalentClass>,
+        <http://www.opengis.net/geoepsg_dataset_example>,
+        <http://www.opengis.net/geoepsg_dataset_extent>,
+        <http://www.opengis.net/geoepsg_dataset_flatteningParameter>,
+        <http://www.opengis.net/geoepsg_dataset_hasUnit>,
+        <http://www.opengis.net/geoepsg_dataset_has_ballpark_transformation>,
+        <http://www.opengis.net/geoepsg_dataset_image>,
+        <http://www.opengis.net/geoepsg_dataset_includesSRS>,
+        <http://www.opengis.net/geoepsg_dataset_inverse_flattening>,
+        <http://www.opengis.net/geoepsg_dataset_isApplicableTo>,
+        <http://www.opengis.net/geoepsg_dataset_isBound>,
+        <http://www.opengis.net/geoepsg_dataset_isDefinedBy>,
+        <http://www.opengis.net/geoepsg_dataset_isGeocentric>,
+        <http://www.opengis.net/geoepsg_dataset_isGeographic>,
+        <http://www.opengis.net/geoepsg_dataset_isProjected>,
+        <http://www.opengis.net/geoepsg_dataset_isRelatedTo>,
+        <http://www.opengis.net/geoepsg_dataset_isSphere>,
+        <http://www.opengis.net/geoepsg_dataset_isVertical>,
+        <http://www.opengis.net/geoepsg_dataset_is_semi_minor_computed>,
+        <http://www.opengis.net/geoepsg_dataset_label>,
+        <http://www.opengis.net/geoepsg_dataset_longitude>,
+        <http://www.opengis.net/geoepsg_dataset_mass>,
+        <http://www.opengis.net/geoepsg_dataset_method_name>,
+        <http://www.opengis.net/geoepsg_dataset_orbital_period>,
+        <http://www.opengis.net/geoepsg_dataset_parameter>,
+        <http://www.opengis.net/geoepsg_dataset_planet_status>,
+        <http://www.opengis.net/geoepsg_dataset_primeMeridian>,
+        <http://www.opengis.net/geoepsg_dataset_radius>,
+        <http://www.opengis.net/geoepsg_dataset_range>,
+        <http://www.opengis.net/geoepsg_dataset_satelliteOf>,
+        <http://www.opengis.net/geoepsg_dataset_semiMajorAxis>,
+        <http://www.opengis.net/geoepsg_dataset_semiMinorAxis>,
+        <http://www.opengis.net/geoepsg_dataset_sourceCRS>,
+        <http://www.opengis.net/geoepsg_dataset_starDistance>,
+        <http://www.opengis.net/geoepsg_dataset_subClassOf>,
+        <http://www.opengis.net/geoepsg_dataset_type>,
+        <http://www.opengis.net/geoepsg_dataset_unitConversionFactor>,
+        <http://www.opengis.net/geoepsg_dataset_unit_auth_code>,
+        <http://www.opengis.net/geoepsg_dataset_unit_code>,
+        <http://www.opengis.net/geoepsg_dataset_unit_conversion_factor>,
+        <http://www.opengis.net/geoepsg_dataset_usage>,
+        <http://www.opengis.net/geoepsg_dataset_uses>,
+        <http://www.opengis.net/geoepsg_dataset_usesValue>,
+        <http://www.opengis.net/geoepsg_dataset_utm_zone>,
+        <http://www.opengis.net/geoepsg_dataset_value>,
+        <http://www.opengis.net/geoepsg_dataset_versionInfo> ;
+    void:triples 466048 ;
+    void:uriSpace "http://www.opengis.net/"^^xsd:string ;
+    void:vocabulary vext:,
+        dcam:,
+        dcmitype:,
+        dc:,
+        dcterms:,
+        qb:,
+        vann:,
+        voaf:,
+        void:,
+        doap:,
+        geo:,
+        rdf:,
+        rdfs:,
+        xsd:,
+        owl:,
+        skos:,
+        time:,
+        xml:,
+        adms:,
+        csvw:,
+        dcat:,
+        prof:,
+        odrl:,
+        org:,
+        prov:,
+        sh:,
+        sosa:,
+        ssn:,
+        foaf:,
+        brick:,
+        schema:,
+        wgs: ;
+    dcat:distribution <http://www.opengis.net/geoepsg_dataset_dist_ttl> ;
+    dcat:keyword "Location"@en,
+        "OGC GeoSPARQL"@en,
+        "Person"@en,
+        "Q121810372"@en,
+        "Time"@en ;
+    dcat:landingPage <https://situx.github.io/proj4rdf/data/> ;
+    foaf:homepage <https://situx.github.io/proj4rdf/data/> ;
+    foaf:page <https://situx.github.io/proj4rdf/data//index.html> .
+

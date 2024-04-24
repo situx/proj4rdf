@@ -1,0 +1,15 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix ns2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/geod/Hydra_geoid> a ns1:Sphere,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Geoid for Hydra"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns2:hasUnit ns2:day ;
+    ns1:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Hydra> ;
+    ns1:orbital_period <http://www.opengis.net/ont/crs/geod/Hydra_geoid_obperiod> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/Hydra_geoid_smj_axis> .
+

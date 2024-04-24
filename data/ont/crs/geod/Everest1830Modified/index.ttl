@@ -1,0 +1,22 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/Everest1830Modified> a ns1:Ellipsoid,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Everest 1830 Modified"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:asSVG "<svg viewBox='0 0 12754618.126 12712216.07798631' height='250' width='400'><ellipse cx='6377304.063' cy='6356103.038993155' rx='6377304.063' ry='6356103.038993155'/></svg>" ;
+    ns1:eccentricity 6.637847e-03 ;
+    ns1:flatteningParameter 3.324449e-03 ;
+    ns1:inverse_flattening 3.008017e+02 ;
+    ns1:isSphere false ;
+    ns1:is_semi_minor_computed true ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/Everest1830Modified_smj_axis> ;
+    ns1:semiMinorAxis <http://www.opengis.net/ont/crs/geod/Everest1830Modified_smi_axis> ;
+    skos:definition "+a=6377304.063 +f=0.003324449296662841"^^xsd:string .
+

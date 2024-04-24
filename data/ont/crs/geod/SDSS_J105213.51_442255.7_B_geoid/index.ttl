@@ -1,0 +1,14 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid> a ns1:Sphere,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Geoid for SDSS J105213.51+442255.7 B"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_B> ;
+    ns1:eccentricity 1.399e-01 ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/SDSS_J105213.51_442255.7_B_geoid_smj_axis> .
+

@@ -1,0 +1,23 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/def/crs/EPSG/0/GCS_Moon> a ns1:SelenographicCRS,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "GCS_Moon_2000"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:asProj4 "+proj=longlat +R=1737400 +no_defs +type=crs"^^ns1:projLiteral ;
+    ns1:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'GeographicCRS','name':'GCS_Moon_2000','datum':{'type':'GeodeticReferenceFrame','name':'D_Moon_2000','ellipsoid':{'name':'Moon_2000_IAU_IAG','radius':1737400},'prime_meridian':{'name':'Moon_Reference_Meridian','longitude':{'value':0,'unit':{'type':'AngularUnit','name':'Degree','conversion_factor':0.0174532925199433}}}},'coordinate_system':{'subtype':'ellipsoidal','axis':[{'name':'Longitude','abbreviation':'lon','direction':'east','unit':{'type':'AngularUnit','name':'Degree','conversion_factor':0.0174532925199433}},{'name':'Latitude','abbreviation':'lat','direction':'north','unit':{'type':'AngularUnit','name':'Degree','conversion_factor':0.0174532925199433}}]}}"^^ns1:projJSONLiteral ;
+    ns1:asWKT "GEOGCRS['GCS_Moon_2000',DATUM['D_Moon_2000',ELLIPSOID['Moon_2000_IAU_IAG',1737400,0,LENGTHUNIT['metre',1,ID['EPSG',9001]]]],PRIMEM['Moon_Reference_Meridian',0,ANGLEUNIT['Degree',0.0174532925199433]],CS[ellipsoidal,2],AXIS['longitude',east,ORDER[1],ANGLEUNIT['Degree',0.0174532925199433]],AXIS['latitude',north,ORDER[2],ANGLEUNIT['Degree',0.0174532925199433]]]"^^ns1:wktLiteral ;
+    ns1:coordinateSystem <http://www.opengis.net/def/crs/EPSG/0/GCS_Moon_cs> ;
+    ns1:datum <http://www.opengis.net/ont/crs/datum/D_Moon_2000> ;
+    ns1:epsgCode "EPSG:GCS_Moon"^^xsd:string ;
+    ns1:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:isBound false ;
+    ns1:isGeocentric false ;
+    ns1:isGeographic true ;
+    ns1:isProjected false ;
+    ns1:isVertical false .
+

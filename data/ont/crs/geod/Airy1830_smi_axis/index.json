@@ -1,0 +1,1 @@
+{"http://rdfs.org/ns/void#inDataset": ["http://www.opengis.net/geoepsg_dataset"], "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": ["http://www.ontology-of-units-of-measure.org/resource/om-2/metre"], "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": ["6356257.0"], "http://www.w3.org/2000/01/rdf-schema#label": ["Semi Minor Axis of Airy 1830"]}

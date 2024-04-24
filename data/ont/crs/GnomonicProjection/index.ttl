@@ -1,0 +1,16 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/GnomonicProjection> a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "gnomonic projection"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    rdfs:subClassOf <http://www.opengis.net/ont/crs/AzimuthalProjection> ;
+    skos:definition "A map projection which displays all great circles as straight lines, resulting in any straight line segment on a gnomonic map showing a geodesic, the shortest route between the segment's two endpoints"@en ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/GnomonicProjection.svg"^^xsd:anyURI .
+

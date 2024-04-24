@@ -1,0 +1,22 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG> a ns1:Ellipsoid,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Moon_2000_IAU_IAG"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:asSVG "<svg viewBox='0 0 3474810.0 3474810.0' height='250' width='400'><ellipse cx='1737400.0' cy='1737400.0' rx='1737400.0' ry='1737400.0'/></svg>" ;
+    ns1:eccentricity 0e+00 ;
+    ns1:flatteningParameter 0e+00 ;
+    ns1:inverse_flattening 0e+00 ;
+    ns1:isSphere true ;
+    ns1:is_semi_minor_computed true ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG_smj_axis> ;
+    ns1:semiMinorAxis <http://www.opengis.net/ont/crs/geod/Moon2000_IAU_IAG_smi_axis> ;
+    skos:definition "+a=1737400 +f=0"^^xsd:string .
+

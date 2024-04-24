@@ -1,0 +1,18 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:NellHammerProjection a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Nell-Hammer projection" ;
+    dc:date "1900"^^xsd:gYear ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "nell_h" ;
+    rdfs:subClassOf ns1:PseudoCylindricalProjection ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/NellHammerProjection.svg"^^xsd:anyURI .
+

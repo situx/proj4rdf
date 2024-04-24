@@ -1,0 +1,15 @@
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns2: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid> a ns2:Sphere,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Geoid for HiÊ»iaka"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:hasUnit ns1:day ;
+    ns2:isApplicableTo <http://www.opengis.net/ont/crs/isbody/HiÊ»iaka> ;
+    ns2:orbital_period <http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid_obperiod> ;
+    ns2:semiMajorAxis <http://www.opengis.net/ont/crs/geod/HiÊ»iaka_geoid_smj_axis> .
+

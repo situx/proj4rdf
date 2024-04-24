@@ -1,0 +1,11 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__meters__latitudeOfNaturalOrigin> a ns1:OperationParameter,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Latitude of natural origin"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:usesValue <http://www.opengis.net/ont/crs/operation/Oregon_Santiam_Pass_zone__meters__latitudeOfNaturalOrigin_value> .
+

@@ -1,0 +1,11 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/geod/WISEA__J083011.95_283716.0_geoid> a ns1:Sphere,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Geoid for WISEA  J083011.95+283716.0"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/WISEA__J083011.95_283716.0> .
+

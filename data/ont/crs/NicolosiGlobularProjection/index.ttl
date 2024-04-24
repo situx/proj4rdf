@@ -1,0 +1,22 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:NicolosiGlobularProjection a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "nicolosi globular projection"@en ;
+    dc:creator "Abū Rayḥān Muḥammad ibn Aḥmad Al-Bīrūnī" ;
+    dc:date "1000"^^xsd:gYear ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "nicol" ;
+    rdfs:subClassOf ns1:CompromiseProjection,
+        ns1:GlobularProjection,
+        ns1:PolyconicProjection,
+        ns1:PseudoConicalProjection ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/NicolosiGlobularProjection.svg"^^xsd:anyURI .
+

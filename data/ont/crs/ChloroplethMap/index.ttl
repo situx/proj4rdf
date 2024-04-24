@@ -1,0 +1,15 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+ns1:ChloroplethMap a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "chloropleth map"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:uses ns1:EqualAreaProjection ;
+    rdfs:subClassOf ns1:ThematicMap ;
+    skos:definition "A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable "@en .
+

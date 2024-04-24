@@ -1,0 +1,23 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:MollweideProjection a owl:Class,
+        owl:NamedIndividual,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "mollweide projection"@en ;
+    dc:creator "Karl Brandan Mollweide" ;
+    dc:date "1805"^^xsd:gYear ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:PROJidentifier "moll" ;
+    rdfs:subClassOf ns1:EqualAreaProjection,
+        ns1:PseudoCylindricalProjection ;
+    skos:altLabel "Babinet projection"@en ;
+    foaf:image "https://situx.github.io/proj4rdf/projections/MollweideProjection.svg"^^xsd:anyURI .
+

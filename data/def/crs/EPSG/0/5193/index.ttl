@@ -1,0 +1,26 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/def/crs/EPSG/0/5193> a ns1:VerticalCRS,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Incheon height"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:area_of_use <http://www.opengis.net/def/crs/EPSG/0/5193_area_of_use> ;
+    ns1:asProj4 "+vunits=m +no_defs +type=crs"^^ns1:projLiteral ;
+    ns1:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'VerticalCRS','name':'Incheon height','datum':{'type':'VerticalReferenceFrame','name':'Incheon'},'coordinate_system':{'subtype':'vertical','axis':[{'name':'Gravity-related height','abbreviation':'H','direction':'up','unit':'metre'}]},'scope':'Geodesy, engineering survey.','area':'Republic of Korea (South Korea) - mainland onshore.','bbox':{'south_latitude':33.96,'west_longitude':125.75,'north_latitude':38.64,'east_longitude':129.65},'id':{'authority':'EPSG','code':5193}}"^^ns1:projJSONLiteral ;
+    ns1:asWKT "VERTCRS['Incheon height',VDATUM['Incheon'],CS[vertical,1],AXIS['gravity-related height (H)',up,LENGTHUNIT['metre',1]],USAGE[SCOPE['Geodesy, engineering survey.'],AREA['Republic of Korea (South Korea) - mainland onshore.'],BBOX[33.96,125.75,38.64,129.65]],ID['EPSG',5193]]"^^ns1:wktLiteral ;
+    ns1:coordinateSystem <http://www.opengis.net/def/crs/EPSG/0/5193_cs> ;
+    ns1:datum <http://www.opengis.net/ont/crs/datum/Incheon> ;
+    ns1:epsgCode "EPSG:5193"^^xsd:string ;
+    ns1:isApplicableTo <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:isBound false ;
+    ns1:isGeocentric false ;
+    ns1:isGeographic false ;
+    ns1:isProjected false ;
+    ns1:isVertical true ;
+    ns1:usage ns1:EngineeringSurvey,
+        ns1:Geodesy .
+

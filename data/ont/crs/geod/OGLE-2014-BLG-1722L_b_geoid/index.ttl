@@ -1,0 +1,12 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/geod/OGLE-2014-BLG-1722L_b_geoid> a ns1:Sphere,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Geoid for OGLE-2014-BLG-1722L b"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/OGLE-2014-BLG-1722L_b> ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/OGLE-2014-BLG-1722L_b_geoid_smj_axis> .
+

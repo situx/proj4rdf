@@ -1,0 +1,18 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/Proxima_Centauri_c> a ns1:Planet,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Proxima Centauri c"@en ;
+    dc:date "2019-01-01"^^xsd:date ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:mass 3e-02 ;
+    ns1:orbital_period 1.928e+03 ;
+    ns1:planet_status ns1:Confirmed ;
+    ns1:satelliteOf <http://www.opengis.net/ont/crs/isbody/Proxima_Centauri> ;
+    ns1:starDistance 1.295e+00 .
+

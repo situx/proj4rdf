@@ -1,0 +1,15 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/Kepler-929> a ns1:Star,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Kepler-929"@en ;
+    dc:date "2016-01-01"^^xsd:date ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:mass 1.01e+00 ;
+    ns1:radius 1.02e+00 .
+

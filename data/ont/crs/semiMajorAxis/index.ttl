@@ -1,0 +1,16 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/semiMajorAxis> a owl:DatatypeProperty,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "semi major axis"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    rdfs:domain <http://www.opengis.net/ont/crs/Geoid> ;
+    rdfs:isDefinedBy <http://docs.opengeospatial.org/as/18-005r4/18-005r4.html> ;
+    rdfs:range xsd:double ;
+    skos:definition "Indicates the length of the semi major axis of an ellipsoid"@en .
+

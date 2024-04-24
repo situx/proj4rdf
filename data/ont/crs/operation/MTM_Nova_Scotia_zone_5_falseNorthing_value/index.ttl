@@ -1,0 +1,14 @@
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/operation/MTM_Nova_Scotia_zone_5_falseNorthing_value> a <http://www.opengis.net/ont/crs/OperationParameterValue>,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "MTM Nova Scotia zone 5: Transverse Mercator: Parameter False northing" ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:hasUnit ns1:metre ;
+    rdf:value 0e+00 .
+

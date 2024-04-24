@@ -1,0 +1,1 @@
+{"http://rdfs.org/ns/void#inDataset": ["http://www.opengis.net/geoepsg_dataset"], "http://www.opengis.net/ont/crs/approximates": ["http://www.opengis.net/ont/crs/isbody/SDSS_J105213.51_442255.7_A"], "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": ["http://www.opengis.net/ont/crs/Sphere"], "http://www.w3.org/2000/01/rdf-schema#label": ["Geoid for SDSS J105213.51+442255.7 A"]}

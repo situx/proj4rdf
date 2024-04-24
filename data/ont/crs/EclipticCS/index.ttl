@@ -1,0 +1,13 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://www.opengis.net/ont/crs/EclipticCS> a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "ecliptic coordinate system"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    rdfs:subClassOf <http://www.opengis.net/ont/crs/CelestialCS> ;
+    skos:definition "An ecliptic coordinate system is used for representing the apparent positions and orbits of solar system objects."@en .
+

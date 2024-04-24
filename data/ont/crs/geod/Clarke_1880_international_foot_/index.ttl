@@ -1,0 +1,20 @@
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/geod/Clarke_1880_international_foot_> a ns1:Geoid,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Clarke 1880 (international foot)"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:approximates <http://www.opengis.net/ont/crs/isbody/Earth> ;
+    ns1:asSVG "<svg viewBox='0 0 12756622.7392 12713153.992' height='250' width='400'><ellipse cx='6378306.3696' cy='6356571.996' rx='6378306.3696' ry='6356571.996'/></svg>" ;
+    ns1:eccentricity 6.803481e-03 ;
+    ns1:flatteningParameter 3.407546e-03 ;
+    ns1:isSphere false ;
+    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/Clarke_1880_international_foot__smj_axis> ;
+    ns1:semiMinorAxis <http://www.opengis.net/ont/crs/geod/Clarke_1880_international_foot__smi_axis> ;
+    skos:definition "+a=6378306.3696 +f=0.00340754619495686"^^xsd:string .
+

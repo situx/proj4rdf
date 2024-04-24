@@ -1,0 +1,19 @@
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns2: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/cs/axis/Northing_Clarke_s_foot_north> a ns2:CoordinateSystemAxis,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Northing (Clarke's foot) (north)"@en ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:hasUnit "Clarke's foot" ;
+    ns2:asSVG "<svg width='400' height='100' viewbox='0 0 275 100'><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='0' refY='2' orient='auto'><polygon points='0 0, 4 2, 0 4' /></marker></defs><line x1='20' y1='50' x2='200' y2='50' stroke='gray' stroke-width='5' marker-end='url(#arrowhead)'></line><text x='30' y='70' class='small'>N: Northing (Clarke's foot) (north)</text></svg>"^^ns2:svgLiteral ;
+    ns2:axisAbbrev "N"^^xsd:string ;
+    ns2:direction ns2:north ;
+    ns2:unit_auth_code "EPSG"^^xsd:string ;
+    ns2:unit_code "9005"^^xsd:string ;
+    ns2:unit_conversion_factor 3.047973e-01 .
+

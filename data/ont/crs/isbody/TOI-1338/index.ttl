@@ -1,0 +1,21 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.opengis.net/ont/crs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/crs/isbody/TOI-1338> a ns1:Planet,
+        ns1:Star,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "TOI-1338"@en ;
+    dc:date "2020-01-01"^^xsd:date ;
+    void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
+    ns1:mass 3.02e+01 ;
+    ns1:orbital_period 9.5141e+01 ;
+    ns1:planet_status ns1:Confirmed ;
+    ns1:radius <http://www.opengis.net/ont/crs/isbody/TOI-1338_radius>,
+        3.1e+00 ;
+    ns1:satelliteOf <http://www.opengis.net/ont/crs/isbody/TOI-1338> ;
+    ns1:starDistance 3.99e+02 .
+
