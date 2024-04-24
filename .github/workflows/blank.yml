@@ -16,7 +16,7 @@ jobs:
               indexpages: true
               iiif: true
               metadatatable: true
-              createcollections: false
+              createcollections: true
               createnonNSPages: true
               createVOWL: false
               preferredlang: en
