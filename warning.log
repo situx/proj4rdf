@@ -1,0 +1,149 @@
+warning: source '../docs/docuCommand.dox' is not a readable file or directory... skipping.
+warning: source '../docs/mainpage.dox' is not a readable file or directory... skipping.
+warning: source '../docs/kdtreedoc.dox' is not a readable file or directory... skipping.
+warning: source '../docs/licences.dox' is not a readable file or directory... skipping.
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/de/hsmainz/cs/semgis/arqextension/util/PolyshapeReader.java:279: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 125, 78)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/de/hsmainz/cs/semgis/arqextension/util/PolyshapeWriter.java:216: warning: Reached end of file while still inside a (nested) comment. Nesting level 1 (probable line reference: 64)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:653: warning: Reached end of file while still inside a (nested) comment. Nesting level 1 (probable line reference: 167)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:62: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:75: warning: unable to resolve link to 'GeometryCollection' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:129: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:78: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:79: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:18: warning: unable to resolve link to 'LineSegment' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:99: warning: argument 'coverage' of command @param is not found in the argument list of CoverageWrapper::CoverageWrapper(GridCoverage geometry, String srsURI, String geometryDatatypeURI, DimensionInfo dimensionInfo)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:104: warning: The following parameter of io.github.galbiston.geosparql_jena.implementation.datatype.raster.CoverageWrapper.CoverageWrapper(GridCoverage geometry, String srsURI, String geometryDatatypeURI, DimensionInfo dimensionInfo) is not documented:
+  parameter 'geometry'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:147: warning: argument 'coverage' of command @param is not found in the argument list of CoverageWrapper::CoverageWrapper(GridCoverage geometry, String geometryDatatypeURI)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:150: warning: The following parameter of io.github.galbiston.geosparql_jena.implementation.datatype.raster.CoverageWrapper.CoverageWrapper(GridCoverage geometry, String geometryDatatypeURI) is not documented:
+  parameter 'geometry'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:594: warning: argument 'coverage' of command @param is not found in the argument list of CoverageWrapper::createCoverage(GridCoverage geometry, String srsURI, String geometryDatatypeURI)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/io/github/galbiston/geosparql_jena/implementation/datatype/raster/CoverageWrapper.java:599: warning: The following parameter of io.github.galbiston.geosparql_jena.implementation.datatype.raster.CoverageWrapper.createCoverage(GridCoverage geometry, String srsURI, String geometryDatatypeURI) is not documented:
+  parameter 'geometry'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/SampleDimensionType.java:120: warning: unable to resolve link to '#values()' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/SampleDimensionType.java:130: warning: unable to resolve link to '#values()' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/SampleDimensionType.java:133: warning: Found unknown command '@linkplain'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/SampleDimensionType.java:133: warning: explicit link request to 'values()' could not be resolved
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/wkb/WKBRasterReader.java:107: warning: The following parameter of org.geotoolkit.coverage.wkb.WKBRasterReader.readCoverage(byte[] data, CRSAuthorityFactory authorityFactory) is not documented:
+  parameter 'authorityFactory'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/geotoolkit/coverage/wkb/WKBRasterReader.java:120: warning: The following parameter of org.geotoolkit.coverage.wkb.WKBRasterReader.readCoverage(final InputStream stream, CRSAuthorityFactory authorityFactory) is not documented:
+  parameter 'authorityFactory'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:28: warning: unable to resolve link to 'WKTReader' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:35: warning: unable to resolve link to 'LinearRing' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:328: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendGeometryCollectionTaggedText(GeometryCollection geometryCollection, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:569: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendGeometryCollectionText(GeometryCollection geometryCollection, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:183: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendGeometryTaggedText(Geometry geometry, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:257: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendLinearRingTaggedText(LinearRing linearRing, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:448: warning: The following parameters of org.locationtech.jtstest.util.io.SVGWriter.appendLineString(LineString lineString, int level, boolean doIndent, Writer writer) are not documented:
+  parameter 'level'
+  parameter 'doIndent'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:244: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendLineStringTaggedText(LineString lineString, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:301: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendMultiLineStringTaggedText(MultiLineString multiLineString, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:526: warning: The following parameters of org.locationtech.jtstest.util.io.SVGWriter.appendMultiLineStringText(MultiLineString multiLineString, int level, boolean indentFirst, Writer writer) are not documented:
+  parameter 'level'
+  parameter 'indentFirst'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:288: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendMultiPointTaggedText(MultiPoint multipoint, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:502: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendMultiPointText(MultiPoint multiPoint, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:315: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendMultiPolygonTaggedText(MultiPolygon multiPolygon, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:548: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendMultiPolygonText(MultiPolygon multiPolygon, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:344: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendPoint(Coordinate coordinate, int level, Writer writer, PrecisionModel precisionModel) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:230: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendPointTaggedText(Coordinate coordinate, int level, Writer writer, PrecisionModel precisionModel) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:270: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.appendPolygon(Polygon polygon, int level, Writer writer) is not documented:
+  parameter 'level'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:464: warning: The following parameters of org.locationtech.jtstest.util.io.SVGWriter.appendPolygonPolygon(Polygon polygon, int level, boolean indentFirst, Writer writer) are not documented:
+  parameter 'level'
+  parameter 'indentFirst'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:396: warning: argument 'lineString' of command @param is not found in the argument list of SVGWriter::appendSequencePath(CoordinateSequence seq, int level, boolean doIndent, Writer writer)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:400: warning: The following parameters of org.locationtech.jtstest.util.io.SVGWriter.appendSequencePath(CoordinateSequence seq, int level, boolean doIndent, Writer writer) are not documented:
+  parameter 'seq'
+  parameter 'level'
+  parameter 'doIndent'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:104: warning: Unsupported xml/html tag <Geometry> found
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:124: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.write(Geometry geometry, Writer writer) is not documented:
+  parameter 'writer'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:134: warning: Unsupported xml/html tag <Geometry> found
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:165: warning: The following parameters of org.locationtech.jtstest.util.io.SVGWriter.writeFormatted(Geometry geometry, boolean useFormatting, Writer writer) are not documented:
+  parameter 'useFormatting'
+  parameter 'writer'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:155: warning: The following parameter of org.locationtech.jtstest.util.io.SVGWriter.writeFormatted(Geometry geometry, Writer writer) is not documented:
+  parameter 'writer'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:18: warning: unable to resolve link to 'LineSegment' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:78: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:79: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:78: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:79: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:83: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:44: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:18: warning: unable to resolve link to 'LineSegment' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:27: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LocatePoint.java:66: warning: unable to resolve link to 'Coordinate' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:62: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:75: warning: unable to resolve link to 'GeometryCollection' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:129: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:62: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:75: warning: unable to resolve link to 'GeometryCollection' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:129: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:133: warning: unable to resolve link to 'Polygon' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:134: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:134: warning: unable to resolve link to 'Point' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:135: warning: unable to resolve link to 'GeometryCollection' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:111: warning: argument 'geom' of command @param is not found in the argument list of ConcaveHull::transformIntoPointGeometryCollection(GeometryCollection gc)
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:114: warning: The following parameter of org.opensphere.geometry.algorithm.ConcaveHull.transformIntoPointGeometryCollection(GeometryCollection gc) is not documented:
+  parameter 'gc'
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:31: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/opensphere/geometry/algorithm/ConcaveHull.java:32: warning: unable to resolve link to 'Geometry' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jump/algorithm/LengthSubstring.java:9: warning: unable to resolve link to 'LineString' for \link command
+/home/runner/work/proj4rdf/proj4rdf/src/main/java/org/locationtech/jtstest/util/io/SVGWriter.java:23: warning: unable to resolve link to 'Geometry' for \link command

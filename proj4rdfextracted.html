@@ -1,0 +1,4125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GeoSPARQL SRS Ontology Draft</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "http://www.opengis.net/ont/crs/GeoSPARQLSRS",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>This ontology models spatial reference systems</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "GeoSPARQL SRS Ontology Draft"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.13.2</span>
+  </div>
+  <h1>GeoSPARQL SRS Ontology Draft</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>http://www.opengis.net/ont/crs/GeoSPARQLSRS</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    <a href="http://www.wikidata.org/entity/Q67624599">Q67624599</a><br/>
+        </dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="ontology.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>This ontology models spatial reference systems</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+      <li><a href="http://www.opengis.net/ont/crs/1DCS">geocrs:1DCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/2DCoordinateTransformationOperation">geocrs:2DCoordinateTransformationOperation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/3DCoordinateTransformationOperation">geocrs:3DCoordinateTransformationOperation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AdministrativeCode">geocrs:AdministrativeCode</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AffineTransformation">geocrs:AffineTransformation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AreaCode">geocrs:AreaCode</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/AreaOfUse">geocrs:AreaOfUse</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/BoundCRS">geocrs:BoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CartesianCS">geocrs:CartesianCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/CylindricalCoordinateSystem">geocrs:CylindricalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DatumEnsemble">geocrs:DatumEnsemble</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedParametricCRS">geocrs:DerivedParametricCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedProjectedCS">geocrs:DerivedProjectedCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DynamicCRS">geocrs:DynamicCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Ellipsoid">geocrs:Ellipsoid</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EllipsoidalCS">geocrs:EllipsoidalCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EngineeringCRS">geocrs:EngineeringCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EngineeringCS">geocrs:EngineeringCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/EngineeringDatum">geocrs:EngineeringDatum</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeocentricCRS">geocrs:GeocentricCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeocodeSystem">geocrs:GeocodeSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeodeticCRS">geocrs:GeodeticCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeodeticCS">geocrs:GeodeticCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeographicCRS">geocrs:GeographicCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GeographicCS">geocrs:GeographicCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GlobalGridReferenceSystem">geocrs:GlobalGridReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GridCS">geocrs:GridCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/GridReferenceSystem">geocrs:GridReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HexagonalCS">geocrs:HexagonalCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HierarchicalGridReferenceSystem">geocrs:HierarchicalGridReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HomogeneousCoordinateSystem">geocrs:HomogeneousCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HorizontalCS">geocrs:HorizontalCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/HorizontalDatum">geocrs:HorizontalDatum</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LinearCS">geocrs:LinearCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LinearReferenceSystem">geocrs:LinearReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LocalCoordinateSystem">geocrs:LocalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ObliqueCS">geocrs:ObliqueCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OperationParameter">geocrs:OperationParameter</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OperationValue">geocrs:OperationValue</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OrdinalCS">geocrs:OrdinalCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ParametricCRS">geocrs:ParametricCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ParametricCoordinateSystem">geocrs:ParametricCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ParametricDatum">geocrs:ParametricDatum</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PerifocalCS">geocrs:PerifocalCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PlanarCS">geocrs:PlanarCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/PrimeMeridian">geocrs:PrimeMeridian</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ProjectedCS">geocrs:ProjectedCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ReferenceSystem">geocrs:ReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ReflectionOperation">geocrs:ReflectionOperation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ScaleOperation">geocrs:ScaleOperation</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SkewCoordinateSystem">geocrs:SkewCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpatialCompoundCRS">geocrs:SpatialCompoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpatioParametricCRS">geocrs:SpatioParametricCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpatioParametricCompoundCRS">geocrs:SpatioParametricCompoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpatioParametricTemporalCompoundCRS">geocrs:SpatioParametricTemporalCompoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SpatioTemporalCompoundCRS">geocrs:SpatioTemporalCompoundCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/Sphere">geocrs:Sphere</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/SphericalCoordinateSystem">geocrs:SphericalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/StaticCRS">geocrs:StaticCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/StereographicCS">geocrs:StereographicCS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalCRS">geocrs:TemporalCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystemAxis">geocrs:TemporalCoordinateSystemAxis</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalDatum">geocrs:TemporalDatum</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TemporalReferenceSystem">geocrs:TemporalReferenceSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/TriaxialEllipsoid">geocrs:TriaxialEllipsoid</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/VerticalCRS">geocrs:VerticalCRS</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/VerticalCoordinateSystem">geocrs:VerticalCoordinateSystem</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a></li>
+      <li><a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a></li>
+      <li><a href="http://www.w3.org/ns/prov-o/Entity">prov1:Entity</a></li>
+    </ul>
+    <div class="entity class" id="1Dcoordinatesystem">
+        <h3>
+          1D coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#1Dcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/1DCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>non-repeating sequence of coordinate system axes that spans a given coordinate space in one dimension</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/LinearCS">geocrs:LinearCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="2dcoordinatetransformationoperation">
+        <h3>
+          2d coordinate transformation operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#2dcoordinatetransformationoperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/2DCoordinateTransformationOperation</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Coordinate operation in which the two 2-dimensional coordinate reference systems are based on different datums</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="3Dcoordinatesystem">
+        <h3>
+          3D coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#3Dcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/3DCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>non-repeating sequence of coordinate system axes that spans a given coordinate space in three dimensions</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="3dcoordinatetransformationoperation">
+        <h3>
+          3d coordinate transformation operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#3dcoordinatetransformationoperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/3DCoordinateTransformationOperation</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Coordinate operation in which the two 3-dimensional coordinate reference systems are based on different datums</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateTransformationOperation">geocrs:CoordinateTransformationOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="administrativecode">
+        <h3>
+          administrative code<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#administrativecode" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AdministrativeCode</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a code which describes an administrative area</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AreaCode">geocrs:AreaCode</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="affinecoordinatesystem">
+        <h3>
+          affine coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#affinecoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AffineCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system in Euclidean space with straight axes that are not necessarily mutually perpendicular</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="affinecoordinatetransformationoperation">
+        <h3>
+          affine coordinate transformation operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#affinecoordinatetransformationoperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AffineTransformation</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Transformation">geocrs:Transformation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ScaleOperation">geocrs:ScaleOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ReflectionOperation">geocrs:ReflectionOperation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="areacode">
+        <h3>
+          area code<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#areacode" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AreaCode</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a code which describes a certain area for a specific semantic purpose</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example(s)</th>
+                <td>
+                    <pre>ISO country code</pre><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AdministrativeCode">geocrs:AdministrativeCode</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="areaofuse">
+        <h3>
+          area of use<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#areaofuse" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/AreaOfUse</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>area in which a coordinate operation may be used</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="boundcoordinatereferencesystem">
+        <h3>
+          bound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#boundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/BoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="coordinatereferencesystem">
+        <h3>
+          coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#coordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system that is related to an object by a datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DynamicCRS">geocrs:DynamicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeocentricCRS">geocrs:GeocentricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SpatioParametricCRS">geocrs:SpatioParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/BoundCRS">geocrs:BoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/StaticCRS">geocrs:StaticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/axis">geocrs:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/includesSRS">geocrs:includesSRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/sourceCRS">geocrs:sourceCRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/targetCRS">geocrs:targetCRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cadastremap">
+        <h3>
+          cadastre map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cadastremap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CadastreMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A map displaying a cadastre</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cartesiancoordinatesystem">
+        <h3>
+          cartesian coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cartesiancoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CartesianCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system in Euclidean space which gives the position of points relative to n mutually perpendicular straight axes all having the same unit of measure</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/OrthogonalCS">geocrs:OrthogonalCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="celestialcoordinatesystem">
+        <h3>
+          celestial coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#celestialcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CelestialCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a coordinate system for specifying positions of celestial objects relative to physical reference points</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/HorizontalCS">geocrs:HorizontalCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="chloroplethmap">
+        <h3>
+          chloropleth map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#chloroplethmap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ChloroplethMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A thematic map in which is a set of pre-defined areas is colored in proportion to a statistical variable </p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="compoundcoordinatereferencesystem">
+        <h3>
+          compound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#compoundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CompoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system using at least two independent coordinate reference systems</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SpatioTemporalCompoundCRS">geocrs:SpatioTemporalCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SpatioParametricTemporalCompoundCRS">geocrs:SpatioParametricTemporalCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SpatioParametricCompoundCRS">geocrs:SpatioParametricCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SpatialCompoundCRS">geocrs:SpatialCompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/includesSRS">geocrs:includesSRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="conicalcoordinatesystem">
+        <h3>
+          conical coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#conicalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ConicalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An conical coordinate system is a three-dimensional orthogonal coordinate system consisting of concentric spheres (described by their radius r) and by two families of perpendicular cones, aligned along the z- and x-axes, respectively</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="CoordinateOperation">
+        <h3>
+          coordinate operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#CoordinateOperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CoordinateOperation</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>mathematical operation (a) on coordinates that transforms or converts them from one coordinate reference system to another coordinate reference system, or (b) that decribes the change of coordinate values within one coordinate reference system due to the motion of the point between one coordinate epoch and another coordinate epoch</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/sourceCRS">geocrs:sourceCRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/targetCRS">geocrs:targetCRS</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/coordinateOperation">geocrs:coordinateOperation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="CoordinateSystem">
+        <h3>
+          coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#CoordinateSystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>non-repeating sequence of coordinate system axes that spans a given coordinate space</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/3DCS">geocrs:3DCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/1DCS">geocrs:1DCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AffineCoordinateSystem">geocrs:AffineCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HomogeneousCoordinateSystem">geocrs:HomogeneousCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PlanarCS">geocrs:PlanarCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/StereographicCS">geocrs:StereographicCS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/LocalCoordinateSystem">geocrs:LocalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedProjectedCoordinateSystem">geocrs:DerivedProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="coordinatesystemaxis">
+        <h3>
+          coordinate system axis<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#coordinatesystemaxis" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CoordinateSystemAxis</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Axis defined by a coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystemAxis">geocrs:TemporalCoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/direction">geocrs:direction</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/abbreviation">geocrs:abbreviation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/axis">geocrs:axis</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="curvilinearcoordinatesystem">
+        <h3>
+          curvilinear coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#curvilinearcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/SkewCoordinateSystem">geocrs:SkewCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="cylindricalcoordinatesystem">
+        <h3>
+          cylindrical coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#cylindricalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/CylindricalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>three-dimensional coordinate system in Euclidean space in which position is specified by two linear coordinates and one angular coordinate</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="datetimetemporalcoordinatesystem">
+        <h3>
+          date time temporal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#datetimetemporalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DateTimeTemporalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system used to record time in dateTime representation as defined in ISO 8601.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Datum">
+        <h3>
+          datum<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Datum" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Datum</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>specification of the relationship of a coordinate system to an object, thus creating a coordinate reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/HorizontalDatum">geocrs:HorizontalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EngineeringDatum">geocrs:EngineeringDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TemporalDatum">geocrs:TemporalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ParametricDatum">geocrs:ParametricDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="datumensemble">
+        <h3>
+          datum ensemble<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#datumensemble" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DatumEnsemble</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>collection of two or more geodetic or vertical reference frames (or if not geodetic or vertical reference frame, a collection of two or more datums) which for all but the highest accuracy requirements may be considered to be insignificantly different from each other</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedcoordinatereferencesystem">
+        <h3>
+          derived coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedengineeringcoordinatereferencesystem">
+        <h3>
+          derived engineering coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedengineeringcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedEngineeringCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has an engineering coordinate reference system as its base CRS, thereby inheriting an engineering datum, and is associated with one of the coordinate system types within the engineeringCS class</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedgeodeticcoordinatereferencesystem">
+        <h3>
+          derived geodetic coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedgeodeticcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedGeodeticCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has either a geodetic or a geographic coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, and associated with a 3D Cartesian or spherical coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedgeographiccoordinatereferencesystem">
+        <h3>
+          derived geographic coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedgeographiccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedGeographicCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system that is defined through the application of a specified coordinate conversion to the coordinates within a previously established coordinate reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedparametriccoordinatereferencesystem">
+        <h3>
+          derived parametric coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedparametriccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedParametricCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has a parametric coordinate reference system as its base CRS, thereby inheriting a parametric datum, and a parametric coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedprojectedcoordinatereferencesystem">
+        <h3>
+          derived projected coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedprojectedcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedProjectedCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has a projected coordinate reference system as its base CRS, thereby inheriting a geodetic reference frame, but also inheriting the distortion characteristics of the base projected CRS</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ProjectedCRS">geocrs:ProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="DerivedProjectedCS">
+        <h3>
+          DerivedProjectedCS<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#DerivedProjectedCS" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedProjectedCS</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="derivedverticalcoordinatereferencesystem">
+        <h3>
+          derived vertical coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#derivedverticalcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DerivedVerticalCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>derived coordinate reference system which has a vertical coordinate reference system as its base CRS, thereby inheriting a vertical reference frame, and a vertical coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dynamiccoordinatereferencesystem">
+        <h3>
+          dynamic coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#dynamiccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DynamicCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system that has a dynamic reference frame</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/coordinateEpoch">geocrs:coordinateEpoch</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dynamicgeodeticreferenceframe">
+        <h3>
+          dynamic geodetic reference frame<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#dynamicgeodeticreferenceframe" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>geodetic reference frame in which some of the parameters describe time evolution of defining station coordinates</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dynamicreferenceframe">
+        <h3>
+          dynamic reference frame<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#dynamicreferenceframe" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DynamicReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference frame in which the defining parameters include time evolution</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dynamicverticalreferenceframe">
+        <h3>
+          dynamic vertical reference frame<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#dynamicverticalreferenceframe" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>vertical reference frame in which some of the defining parameters have time dependency</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicReferenceFrame">geocrs:DynamicReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/VerticalReferenceFrame">geocrs:VerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ellipsoid">
+        <h3>
+          ellipsoid<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#ellipsoid" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Ellipsoid</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference ellipsoid</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TriaxialEllipsoid">geocrs:TriaxialEllipsoid</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ellipsoidalcoordinatesystem">
+        <h3>
+          ellipsoidal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#ellipsoidalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EllipsoidalCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>two- or three-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude, and (in the three-dimensional case) ellipsoidal height</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/OrthogonalCS">geocrs:OrthogonalCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="engineeringcoordinatereferencesystem">
+        <h3>
+          engineering coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#engineeringcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EngineeringCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system based on an engineering datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedEngineeringCRS">geocrs:DerivedEngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="engineeringcoordinatesystem">
+        <h3>
+          engineering coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#engineeringcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EngineeringCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system used by an engineering coordinate reference system, one of an affine coordinate system, a Cartesian coordinate system, a cylindrical coordinate system, a linear coordinate sytem, an ordinal coordinate system, a polar coordinate system or a spherical coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="engineeringdatum">
+        <h3>
+          engineering datum<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#engineeringdatum" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/EngineeringDatum</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>datum describing the relationship of a coordinate system to a local reference</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="generalreferencemap">
+        <h3>
+          general reference map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#generalreferencemap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeneralReferenceMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>general reference map which includes a variety of different information</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geocentriccoordinatereferencesystem">
+        <h3>
+          geocentric coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geocentriccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeocentricCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geocodesystem">
+        <h3>
+          geocode system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geocodesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeocodeSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a system that uses a geocode to encode a position</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GridReferenceSystem">geocrs:GridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/AdministrativeCode">geocrs:AdministrativeCode</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HierarchicalGridReferenceSystem">geocrs:HierarchicalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geodeticcoordinatereferencesystem">
+        <h3>
+          geodetic coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geodeticcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeodeticCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>three-dimensional coordinate reference system based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeographicCRS">geocrs:GeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedGeodeticCRS">geocrs:DerivedGeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geodeticcoordinatesystem">
+        <h3>
+          geodetic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geodeticcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeodeticCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system used by a Geodetic CRS, one of a Cartesian coordinate system or a spherical coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geodeticreferenceframe">
+        <h3>
+          geodetic reference frame<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geodeticreferenceframe" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeodeticReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference frame describing the relationship of a two- or three-dimensional coordinate system to the Earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/HorizontalDatum">geocrs:HorizontalDatum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicGeodeticReferenceFrame">geocrs:DynamicGeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geographiccoordinatereferencesystem">
+        <h3>
+          geographic coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geographiccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeographicCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedGeographicCRS">geocrs:DerivedGeographicCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geographiccoordinatesystem">
+        <h3>
+          geographic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geographiccoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GeographicCS</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="geoid">
+        <h3>
+          geoid<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#geoid" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Geoid</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>equipotential surface of the Earth’s gravity field which is perpendicular to the direction of gravity and which best fits mean sea level either locally, regionally or globally</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Ellipsoid">geocrs:Ellipsoid</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/Sphere">geocrs:Sphere</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/semiMajorAxis">geocrs:semiMajorAxis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/isSphere">geocrs:isSphere</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/semiMinorAxis">geocrs:semiMinorAxis</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="globalgridreferencesystem">
+        <h3>
+          global grid reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#globalgridreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GlobalGridReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a grid that divides space with precise positions relative to a datum and is valid on the whole earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GridReferenceSystem">geocrs:GridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gridcoordinatesystem">
+        <h3>
+          grid coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gridcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GridCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A grid coordinate system describes areas with a grid</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CS">geocrs:CS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/HexagonalCS">geocrs:HexagonalCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="gridreferencesystem">
+        <h3>
+          grid reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#gridreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/GridReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a grid that divides space with precise positions relative to a datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/LocalGridReferenceSystem">geocrs:LocalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GlobalGridReferenceSystem">geocrs:GlobalGridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="heatmap">
+        <h3>
+          heat map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#heatmap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HeatMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A data visualization technique that shows magnitude of a phenomenon as color in two dimensions.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="hexagonalcoordinatesystem">
+        <h3>
+          hexagonal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#hexagonalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HexagonalCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A hexagonal coordinate system describes areas with a hexagonal lattice</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GridCS">geocrs:GridCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="hierarchicalgridreferencesystem">
+        <h3>
+          hierarchical grid reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#hierarchicalgridreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HierarchicalGridReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a grid that divides space with precise positions relative to a datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeocodeSystem">geocrs:GeocodeSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="homogeneouscoordinatesystem">
+        <h3>
+          homogeneous coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#homogeneouscoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HomogeneousCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="horizontalcoordinatesystem">
+        <h3>
+          horizontal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#horizontalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HorizontalCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A horizontal coordinate system is a celestial coordinate system that uses the observer's local horizon as the fundamental plane</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CelestialCS">geocrs:CelestialCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="horizontaldatum">
+        <h3>
+          horizontal datum<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#horizontaldatum" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/HorizontalDatum</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GeodeticReferenceFrame">geocrs:GeodeticReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="linearcoordinatesystem">
+        <h3>
+          linear coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#linearcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LinearCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system in which a linear feature forms the axis</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/1DCS">geocrs:1DCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="linearreferencesystem">
+        <h3>
+          linear reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#linearreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LinearReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a reference system in which the locations of physical features along a linear element are described in terms of measurements from a fixed point</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SpatialReferenceSystem">geocrs:SpatialReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="localcoordinatesystem">
+        <h3>
+          local coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#localcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LocalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate system with a point of local reference</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="localgridreferencesystem">
+        <h3>
+          local grid reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#localgridreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/LocalGridReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a grid that divides space with precise positions relative to a datum and is valid on a part of the earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/GridReferenceSystem">geocrs:GridReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AreaCode">geocrs:AreaCode</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="nauticalchart">
+        <h3>
+          nautical chart<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#nauticalchart" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/NauticalChart</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A nautical chart is a graphic representation of a sea area and adjacent coastal regions.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="obliquecoordinatesystem">
+        <h3>
+          oblique coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#obliquecoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ObliqueCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A plane coordinate system whose axes are not perpendicular</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AffineCS">geocrs:AffineCS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="operationparameter">
+        <h3>
+          operation parameter<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#operationparameter" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OperationParameter</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Parameter used by a method to perform some coordinate operation</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="operationvalue">
+        <h3>
+          operation value<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#operationvalue" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OperationValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Value of a parameter used by a method to perform some coordinate operation</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ordinalcoordinatesystem">
+        <h3>
+          ordinal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#ordinalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OrdinalCS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>n-dimensional coordinate system in which every axis uses integers</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="orthogonalcoordinatesystem">
+        <h3>
+          orthogonal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#orthogonalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An orthogonal coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at right angles</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ConicalCoordinateSystem">geocrs:ConicalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/PolarCoordinateSystem">geocrs:PolarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="parametriccoordinatereferencesystem">
+        <h3>
+          parametric coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#parametriccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ParametricCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedParametricCRS">geocrs:DerivedParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="parametriccoordinatesystem">
+        <h3>
+          parametric coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#parametriccoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ParametricCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system where the axis units are parameter values which are not inherently spatial</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="parametricdatum">
+        <h3>
+          parametric datum<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#parametricdatum" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ParametricDatum</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>textual description and/or a set of parameters identifying a particular reference surface used as the origin of a parametric coordinate system, including its position with respect to the Earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="perifocalcoordinatesystem">
+        <h3>
+          perifocal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#perifocalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PerifocalCS</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="planarcoordinatesystem">
+        <h3>
+          planar coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#planarcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PlanarCS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A two-dimensional measurement system that locates features on a plane based on their distance from an origin (0,0) along two perpendicular axes</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ProjectedCoordinateSystem">geocrs:ProjectedCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="polarcoordinatesystem">
+        <h3>
+          polar coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#polarcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PolarCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>two-dimensional coordinate system in Euclidean space in which position is specified by one distance coordinate and one angular coordinate</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/PlanarCoordinateSystem">geocrs:PlanarCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/OrthogonalCoordinateSystem">geocrs:OrthogonalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="primemeridian">
+        <h3>
+          prime meridian<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#primemeridian" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/PrimeMeridian</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>meridian from which the longitudes of other meridians are quantified</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="projectedcoordinatereferencesystem">
+        <h3>
+          projected coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#projectedcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ProjectedCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system derived from a geographic coordinate reference system by applying a map projection</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedProjectedCRS">geocrs:DerivedProjectedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="projectedcoordinatesystem">
+        <h3>
+          projected coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#projectedcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ProjectedCS</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="referencesystem">
+        <h3>
+          reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#referencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a system that uses a reference to establish a position</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalReferenceSystem">geocrs:TemporalReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="reflectiontransformationoperation">
+        <h3>
+          reflection transformation operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#reflectiontransformationoperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ReflectionOperation</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AffineTransformation">geocrs:AffineTransformation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="srsapplication">
+        <h3>
+          srs application<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#srsapplication" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SRSApplication</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>an application for which a spatial reference system is used</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TopographicMap">geocrs:TopographicMap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/CadastreMap">geocrs:CadastreMap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeneralReferenceMap">geocrs:GeneralReferenceMap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/NauticalChart">geocrs:NauticalChart</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="scaletransformationoperation">
+        <h3>
+          scale transformation operation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#scaletransformationoperation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ScaleOperation</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AffineTransformation">geocrs:AffineTransformation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="singlecoordinatereferencesystem">
+        <h3>
+          single coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#singlecoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SingleCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system consisting of one coordinate system and either one datum or one datum ensemble</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/VerticalCRS">geocrs:VerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ParametricCRS">geocrs:ParametricCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCRS">geocrs:TemporalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DerivedCRS">geocrs:DerivedCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/EngineeringCRS">geocrs:EngineeringCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/GeodeticCRS">geocrs:GeodeticCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/coordinateSystem">geocrs:coordinateSystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/datum">geocrs:datum</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="skewcoordinatesystem">
+        <h3>
+          skew coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#skewcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SkewCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A skew coordinate system is a system of curvilinear coordinates in which each family of surfaces intersects the others at angles other than right angles</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CurvilinearCoordinateSystem">geocrs:CurvilinearCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spatialcompoundcoordinatereferencesystem">
+        <h3>
+          spatial compound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spatialcompoundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpatialCompoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system using a combination of two compatible spatial reference systems</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spatio-Parametriccoordinatereferencesystem">
+        <h3>
+          spatio-Parametric coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spatio-Parametriccoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpatioParametricCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>compound coordinate reference system in which one constituent coordinate reference system is a spatial coordinate reference system and one is a parametric coordinate reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spatio-parametriccompoundcoordinatereferencesystem">
+        <h3>
+          spatio-parametric compound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spatio-parametriccompoundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpatioParametricCompoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A spatio-parametric coordinate reference system is a compound CRS in which one component is a geographic 2D, projected 2D or engineering 2D CRS, supplemented by a parametric CRS to create a three-dimensional CRS</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spatio-parametric-temporalcompoundcoordinatereferencesystem">
+        <h3>
+          spatio-parametric-temporal compound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spatio-parametric-temporalcompoundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpatioParametricTemporalCompoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="spatio-temporalcompoundcoordinatereferencesystem">
+        <h3>
+          spatio-temporal compound coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#spatio-temporalcompoundcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SpatioTemporalCompoundCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system combining a spatial reference system with at least one temporal reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="sphere">
+        <h3>
+          sphere<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#sphere" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/Sphere</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference sphere</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="sphericalcoordinatesystem">
+        <h3>
+          spherical coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#sphericalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/SphericalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>three-dimensional coordinate system in Euclidean space with one distance measured from the origin and two angular coordinates</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/3DCoordinateSystem">geocrs:3DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Staticcoordinatereferencesystem">
+        <h3>
+          Static coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Staticcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/StaticCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system that has a static reference frame</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="stereographiccoordinatesystem">
+        <h3>
+          stereographic coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#stereographiccoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/StereographicCS</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystem">geocrs:CoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalcoordinatereferencesystem">
+        <h3>
+          temporal coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system based on a temporal datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalcoordinatesystem">
+        <h3>
+          temporal coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensionalcoordinate system where the axis is time</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCountCoordinateSystem">geocrs:TemporalCountCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/TemporalMeasureCoordinateSystem">geocrs:TemporalMeasureCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/DateTimeTemporalCoordinateSystem">geocrs:DateTimeTemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalcoordinatesystemaxis">
+        <h3>
+          temporal coordinate system axis<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalcoordinatesystemaxis" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalCoordinateSystemAxis</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Axis defined by a temporal coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalcountcoordinatesystem">
+        <h3>
+          temporal count coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalcountcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalCountCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system used to record time as an integer count</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporaldatum">
+        <h3>
+          temporal datum<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporaldatum" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalDatum</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>coordinate reference system based on a temporal datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalmeasurecoordinatesystem">
+        <h3>
+          temporal measure coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalmeasurecoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalMeasureCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system used to record a time as a real number</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/TemporalCoordinateSystem">geocrs:TemporalCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="temporalreferencesystem">
+        <h3>
+          temporal reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#temporalreferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TemporalReferenceSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Reference system against which time is measured</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ReferenceSystem">geocrs:ReferenceSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="thematicmap">
+        <h3>
+          thematic map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#thematicmap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/ThematicMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A map used to highlight a specific phenomenon</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/WeatherMap">geocrs:WeatherMap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/ChloroplethMap">geocrs:ChloroplethMap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/crs/HeatMap">geocrs:HeatMap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="topographicmap">
+        <h3>
+          topographic map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#topographicmap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TopographicMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A type of map characterized by large-scale detail and quantitative representation of relief.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SRSApplication">geocrs:SRSApplication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="triaxialellipsoid">
+        <h3>
+          triaxial ellipsoid<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#triaxialellipsoid" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/TriaxialEllipsoid</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>triaxial reference ellipsoid</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Ellipsoid">geocrs:Ellipsoid</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="verticalcoordinatereferencesystem">
+        <h3>
+          vertical coordinate reference system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#verticalcoordinatereferencesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/VerticalCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate reference system based on a vertical reference frame</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DerivedVerticalCRS">geocrs:DerivedVerticalCRS</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="verticalcoordinatesystem">
+        <h3>
+          vertical coordinate system<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#verticalcoordinatesystem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/VerticalCoordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>one-dimensional coordinate system used to record the heights or depths of points, usually dependent on the Earth's gravity field</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/1DCoordinateSystem">geocrs:1DCoordinateSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="verticalreferenceframe">
+        <h3>
+          vertical reference frame<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#verticalreferenceframe" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/VerticalReferenceFrame</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference frame describing the relation of gravity-related heights or depths to the Earth</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicVerticalReferenceFrame">geocrs:DynamicVerticalReferenceFrame</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="weathermap">
+        <h3>
+          weather map<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#weathermap" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/WeatherMap</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A map for showing the local direction in which weather systems are moving.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/ThematicMap">geocrs:ThematicMap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Entity">
+        <h3>
+          Entity<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Entity" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/prov-o/Entity</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#axis">axis</a></li>
+        <li><a href="#coordinateoperation">coordinate operation</a></li>
+        <li><a href="#coordinatesystem">coordinate system</a></li>
+        <li><a href="#datum">datum</a></li>
+        <li><a href="#cardinaldirection">cardinal direction</a></li>
+        <li><a href="#includessrs">includes srs</a></li>
+        <li><a href="#sourceCRS">source CRS</a></li>
+        <li><a href="#targetCRS">target CRS</a></li>
+    </ul>
+    <div class="entity property" id="axis">
+        <h3>axis<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#axis" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/axis</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An axis used by some ellipsoidal or cartesian coordinate system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="coordinateoperation">
+        <h3>coordinate operation<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#coordinateoperation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/coordinateOperation</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Associates a coordinate operation with a CRS</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="coordinatesystem">
+        <h3>coordinate system<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#coordinatesystem" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/coordinateSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Associates a coordinate system with a coordinate reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="datum">
+        <h3>datum<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#datum" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/datum</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Associates a datum with a coordinate reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/crs/DatumEnsemble">geocrs:DatumEnsemble</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Datum">geocrs:Datum</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.opengis.net/ont/crs/SingleCRS">geocrs:SingleCRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="cardinaldirection">
+        <h3>cardinal direction<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#cardinaldirection" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/direction</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Associates a direction with a datum</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/AxisDirection">geocrs:AxisDirection</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="includessrs">
+        <h3>includes srs<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#includessrs" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/includesSRS</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates spatial reference systems used by a compound reference system</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CompoundCRS">geocrs:CompoundCRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sourceCRS">
+        <h3>source CRS<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#sourceCRS" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/sourceCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The dimension of the coordinate reference system associated with the data used as input of an operation</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="targetCRS">
+        <h3>target CRS<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#targetCRS" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/targetCRS</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The dimension of the coordinate reference system associated with the data obtained as output of an operation</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateOperation">geocrs:CoordinateOperation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CRS">geocrs:CRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#axisabbreviation">axis abbreviation</a></li>
+        <li><a href="#coordinateepoch">coordinate epoch</a></li>
+        <li><a href="#issphere">is sphere</a></li>
+        <li><a href="#scope">scope</a></li>
+        <li><a href="#semimajoraxis">semi major axis</a></li>
+        <li><a href="#semiminoraxis">semi minor axis</a></li>
+    </ul>
+    <div class="entity property" id="axisabbreviation">
+        <h3>axis abbreviation<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#axisabbreviation" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/abbreviation</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The abbreviation used to identify an axis</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/CoordinateSystemAxis">geocrs:CoordinateSystemAxis</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="coordinateepoch">
+        <h3>coordinate epoch<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#coordinateepoch" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/coordinateEpoch</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/DynamicCRS">geocrs:DynamicCRS</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="issphere">
+        <h3>is sphere<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#issphere" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/isSphere</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates whether the ellipsoid is a sphere</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="scope">
+        <h3>scope<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#scope" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/scope</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>the scope of the referring object</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="semimajoraxis">
+        <h3>semi major axis<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#semimajoraxis" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/semiMajorAxis</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates the length of the semi major axis of an ellipsoid</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="semiminoraxis">
+        <h3>semi minor axis<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#semiminoraxis" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/crs/semiMinorAxis</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://docs.opengeospatial.org/as/18-005r4/18-005r4.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates the length of the semi minor axis of an ellipsoid</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/crs/Geoid">geocrs:Geoid</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>default (:)</dt>
+        <dd><code>http://www.opengis.net/ont/crs/GeoSPARQLSRS</code></dd>
+        <dt>brick</dt>
+        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
+        <dt>csvw</dt>
+        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dcam</dt>
+        <dd><code>http://purl.org/dc/dcam/</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcmitype</dt>
+        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>doap</dt>
+        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>geocrs</dt>
+        <dd><code>http://www.opengis.net/ont/crs/</code></dd>
+        <dt>odrl</dt>
+        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
+        <dt>org</dt>
+        <dd><code>http://www.w3.org/ns/org#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prof</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>prov1</dt>
+        <dd><code>http://www.w3.org/ns/prov-o/</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>time</dt>
+        <dd><code>http://www.w3.org/2006/time#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>void</dt>
+        <dd><code>http://rdfs.org/ns/void#</code></dd>
+        <dt>wd</dt>
+        <dd><code>http://www.wikidata.org/entity/</code></dd>
+        <dt>wgs</dt>
+        <dd><code>https://www.w3.org/2003/01/geo/wgs84_pos#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">ap</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
