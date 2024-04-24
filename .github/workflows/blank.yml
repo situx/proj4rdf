@@ -9,7 +9,7 @@ jobs:
         name: Ontdoc II      
         with:  
               version: v018 
-              rdffilepath: owl/result.ttl docs/  geocrs False 
+              rdffilepath: owl/result.ttl
               docpath: docs/
               prefixns: http://www.opengis.net/
               prefixnsshort: geoepsg
