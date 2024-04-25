@@ -1,17 +1,17 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix ns2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns2: <http://www.opengis.net/ont/crs/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.opengis.net/ont/crs/primeMeridian/Moon_Reference_Meridian> a ns1:PrimeMeridian,
+<http://www.opengis.net/ont/crs/primeMeridian/Moon_Reference_Meridian> a ns2:PrimeMeridian,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Moon_Reference_Meridian"@en ;
     void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
-    ns2:hasUnit ns2:degree ;
-    ns1:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'PrimeMeridian','name':'Moon_Reference_Meridian','longitude':{'value':0,'unit':{'type':'AngularUnit','name':'Degree','conversion_factor':0.0174532925199433}}}"^^ns1:projJSONLiteral ;
-    ns1:asWKT "PRIMEM['Moon_Reference_Meridian',0,ANGLEUNIT['Degree',0.0174532925199433]]"^^ns1:wktLiteral ;
-    ns1:longitude 0e+00 ;
-    ns1:unitConversionFactor 1.745329e-02 .
+    ns1:hasUnit ns1:degree ;
+    ns2:asProjJSON "{'$schema':'https://proj.org/schemas/v0.2/projjson.schema.json','type':'PrimeMeridian','name':'Moon_Reference_Meridian','longitude':{'value':0,'unit':{'type':'AngularUnit','name':'Degree','conversion_factor':0.0174532925199433}}}"^^ns2:projJSONLiteral ;
+    ns2:asWKT "PRIMEM['Moon_Reference_Meridian',0,ANGLEUNIT['Degree',0.0174532925199433]]"^^ns2:wktLiteral ;
+    ns2:longitude 0e+00 ;
+    ns2:unitConversionFactor 1.745329e-02 .
 
