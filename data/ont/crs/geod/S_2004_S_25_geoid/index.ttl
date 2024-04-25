@@ -1,15 +1,15 @@
-@prefix ns1: <http://www.opengis.net/ont/crs/> .
-@prefix ns2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns1: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ns2: <http://www.opengis.net/ont/crs/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 
-<http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid> a ns1:Sphere,
+<http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid> a ns2:Sphere,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Geoid for S/2004 S 25"@en ;
     void:inDataset <http://www.opengis.net/geoepsg_dataset> ;
-    ns2:hasUnit ns2:day ;
-    ns1:isApplicableTo <http://www.opengis.net/ont/crs/isbody/S_2004_S_25> ;
-    ns1:orbital_period <http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid_obperiod> ;
-    ns1:semiMajorAxis <http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid_smj_axis> .
+    ns1:hasUnit ns1:day ;
+    ns2:isApplicableTo <http://www.opengis.net/ont/crs/isbody/S_2004_S_25> ;
+    ns2:orbital_period <http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid_obperiod> ;
+    ns2:semiMajorAxis <http://www.opengis.net/ont/crs/geod/S_2004_S_25_geoid_smj_axis> .
 
