@@ -281,10 +281,6 @@ doap: a voaf:Vocabulary ;
     rdfs:label "Class Partition: 1DCS"@en ;
     void:class <http://www.opengis.net/ont/crs/1DCS> .
 
-<http://www.opengis.net/geoepsg_dataset_1DCoordinateSystem> a void:Dataset ;
-    rdfs:label "Class Partition: 1DCoordinateSystem"@en ;
-    void:class <http://www.opengis.net/ont/crs/1DCoordinateSystem> .
-
 <http://www.opengis.net/geoepsg_dataset_2DCoordinateTransformationOperation> a void:Dataset ;
     rdfs:label "Class Partition: 2DCoordinateTransformationOperation"@en ;
     void:class <http://www.opengis.net/ont/crs/2DCoordinateTransformationOperation> .
@@ -292,10 +288,6 @@ doap: a voaf:Vocabulary ;
 <http://www.opengis.net/geoepsg_dataset_3DCS> a void:Dataset ;
     rdfs:label "Class Partition: 3DCS"@en ;
     void:class <http://www.opengis.net/ont/crs/3DCS> .
-
-<http://www.opengis.net/geoepsg_dataset_3DCoordinateSystem> a void:Dataset ;
-    rdfs:label "Class Partition: 3DCoordinateSystem"@en ;
-    void:class <http://www.opengis.net/ont/crs/3DCoordinateSystem> .
 
 <http://www.opengis.net/geoepsg_dataset_3DCoordinateTransformationOperation> a void:Dataset ;
     rdfs:label "Class Partition: 3DCoordinateTransformationOperation"@en ;
@@ -625,10 +617,6 @@ doap: a voaf:Vocabulary ;
     rdfs:label "Class Partition: CoordinateSystemAxis"@en ;
     void:class <http://www.opengis.net/ont/crs/CoordinateSystemAxis> ;
     void:entities 58 .
-
-<http://www.opengis.net/geoepsg_dataset_CoordinateTransformationOperation> a void:Dataset ;
-    rdfs:label "Class Partition: CoordinateTransformationOperation"@en ;
-    void:class <http://www.opengis.net/ont/crs/CoordinateTransformationOperation> .
 
 <http://www.opengis.net/geoepsg_dataset_CordiformProjection> a void:Dataset ;
     rdfs:label "Class Partition: CordiformProjection"@en ;
@@ -1519,10 +1507,6 @@ doap: a voaf:Vocabulary ;
     rdfs:label "Class Partition: PlanarCS"@en ;
     void:class <http://www.opengis.net/ont/crs/PlanarCS> .
 
-<http://www.opengis.net/geoepsg_dataset_PlanarCoordinateSystem> a void:Dataset ;
-    rdfs:label "Class Partition: PlanarCoordinateSystem"@en ;
-    void:class <http://www.opengis.net/ont/crs/PlanarCoordinateSystem> .
-
 <http://www.opengis.net/geoepsg_dataset_Planet> a void:Dataset ;
     rdfs:label "Class Partition: Planet"@en ;
     void:class <http://www.opengis.net/ont/crs/Planet> ;
@@ -1842,10 +1826,6 @@ doap: a voaf:Vocabulary ;
 <http://www.opengis.net/geoepsg_dataset_TopographicMap> a void:Dataset ;
     rdfs:label "Class Partition: TopographicMap"@en ;
     void:class <http://www.opengis.net/ont/crs/TopographicMap> .
-
-<http://www.opengis.net/geoepsg_dataset_Transformation> a void:Dataset ;
-    rdfs:label "Class Partition: Transformation"@en ;
-    void:class <http://www.opengis.net/ont/crs/Transformation> .
 
 <http://www.opengis.net/geoepsg_dataset_TransverseCylindricalEqualAreaProjection> a void:Dataset ;
     rdfs:label "Class Partition: TransverseCylindricalEqualAreaProjection"@en ;
@@ -2496,19 +2476,19 @@ owl: a voaf:Vocabulary ;
 <http://www.opengis.net/geoepsg_dataset> a void:Dataset,
         adms:Asset ;
     rdfs:label "geoepsg_dataset"@en ;
-    vext:averageLiteralLength 156 ;
-    vext:averageObjectIRILength 51 ;
+    vext:averageLiteralLength 0 ;
+    vext:averageObjectIRILength 99 ;
     vext:averagePropertyIRILength 42 ;
     vext:averageSubjectIRILength 65 ;
-    vext:datatypes 11 ;
+    vext:datatypes 0 ;
     vext:distinctBlankNodes 0 ;
     vext:distinctIRIReferences 214492 ;
-    vext:distinctLiterals 90092 ;
-    vext:distinctRDFNodes 304584 ;
-    vext:languages 1 ;
+    vext:distinctLiterals 0 ;
+    vext:distinctRDFNodes 214492 ;
+    vext:languages 0 ;
     vext:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2024-04-25T00:12:34"^^xsd:dateTime ;
+    dcterms:modified "2024-04-25T12:34:44"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -2518,10 +2498,8 @@ owl: a voaf:Vocabulary ;
     vann:preferredNamespacePrefix "geoepsg"^^xsd:string ;
     vann:preferredNamespaceUri "http://www.opengis.net/"^^xsd:anyURI ;
     void:classPartition <http://www.opengis.net/geoepsg_dataset_1DCS>,
-        <http://www.opengis.net/geoepsg_dataset_1DCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_2DCoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_3DCS>,
-        <http://www.opengis.net/geoepsg_dataset_3DCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_3DCoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_A4Projection>,
         <http://www.opengis.net/geoepsg_dataset_AdamsProjection>,
@@ -2601,7 +2579,6 @@ owl: a voaf:Vocabulary ;
         <http://www.opengis.net/geoepsg_dataset_CoordinateOperation>,
         <http://www.opengis.net/geoepsg_dataset_CoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_CoordinateSystemAxis>,
-        <http://www.opengis.net/geoepsg_dataset_CoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_CordiformProjection>,
         <http://www.opengis.net/geoepsg_dataset_CoxConformalProjection>,
         <http://www.opengis.net/geoepsg_dataset_CraigRetroazimuthalProjection>,
@@ -2818,7 +2795,6 @@ owl: a voaf:Vocabulary ;
         <http://www.opengis.net/geoepsg_dataset_PerspectiveProjection>,
         <http://www.opengis.net/geoepsg_dataset_PetermannStarProjection>,
         <http://www.opengis.net/geoepsg_dataset_PlanarCS>,
-        <http://www.opengis.net/geoepsg_dataset_PlanarCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_Planet>,
         <http://www.opengis.net/geoepsg_dataset_PlanetStatus>,
         <http://www.opengis.net/geoepsg_dataset_PlateCarreeProjection>,
@@ -2897,7 +2873,6 @@ owl: a voaf:Vocabulary ;
         <http://www.opengis.net/geoepsg_dataset_ToblerHyperellipticalProjection>,
         <http://www.opengis.net/geoepsg_dataset_ToblerWorldInASquareProjection>,
         <http://www.opengis.net/geoepsg_dataset_TopographicMap>,
-        <http://www.opengis.net/geoepsg_dataset_Transformation>,
         <http://www.opengis.net/geoepsg_dataset_TransverseCylindricalEqualAreaProjection>,
         <http://www.opengis.net/geoepsg_dataset_TransverseMercatorProjection>,
         <http://www.opengis.net/geoepsg_dataset_TrystanEdwardsProjection>,
@@ -2934,7 +2909,7 @@ owl: a voaf:Vocabulary ;
         <http://www.opengis.net/geoepsg_dataset_WinkelIProjection>,
         <http://www.opengis.net/geoepsg_dataset_WinkelSnyderProjection>,
         <http://www.opengis.net/geoepsg_dataset_WinkelTripelProjection> ;
-    void:classes 417 ;
+    void:classes 412 ;
     void:dataDump <https://situx.github.io/proj4rdf/data//index.ttl> ;
     void:distinctObjects 146798 ;
     void:distinctSubjects 67621 ;

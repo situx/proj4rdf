@@ -34,19 +34,19 @@
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "geoepsg_dataset"@en ;
-    ns1:averageLiteralLength 156 ;
-    ns1:averageObjectIRILength 51 ;
+    ns1:averageLiteralLength 0 ;
+    ns1:averageObjectIRILength 99 ;
     ns1:averagePropertyIRILength 42 ;
     ns1:averageSubjectIRILength 65 ;
-    ns1:datatypes 11 ;
+    ns1:datatypes 0 ;
     ns1:distinctBlankNodes 0 ;
     ns1:distinctIRIReferences 214492 ;
-    ns1:distinctLiterals 90092 ;
-    ns1:distinctRDFNodes 304584 ;
-    ns1:languages 1 ;
+    ns1:distinctLiterals 0 ;
+    ns1:distinctRDFNodes 214492 ;
+    ns1:languages 0 ;
     ns1:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2024-04-25T00:12:34"^^xsd:dateTime ;
+    dcterms:modified "2024-04-25T12:34:44"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -56,10 +56,8 @@
     vann:preferredNamespacePrefix "geoepsg"^^xsd:string ;
     vann:preferredNamespaceUri "http://www.opengis.net/"^^xsd:anyURI ;
     void:classPartition <http://www.opengis.net/geoepsg_dataset_1DCS>,
-        <http://www.opengis.net/geoepsg_dataset_1DCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_2DCoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_3DCS>,
-        <http://www.opengis.net/geoepsg_dataset_3DCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_3DCoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_A4Projection>,
         <http://www.opengis.net/geoepsg_dataset_AdamsProjection>,
@@ -139,7 +137,6 @@
         <http://www.opengis.net/geoepsg_dataset_CoordinateOperation>,
         <http://www.opengis.net/geoepsg_dataset_CoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_CoordinateSystemAxis>,
-        <http://www.opengis.net/geoepsg_dataset_CoordinateTransformationOperation>,
         <http://www.opengis.net/geoepsg_dataset_CordiformProjection>,
         <http://www.opengis.net/geoepsg_dataset_CoxConformalProjection>,
         <http://www.opengis.net/geoepsg_dataset_CraigRetroazimuthalProjection>,
@@ -356,7 +353,6 @@
         <http://www.opengis.net/geoepsg_dataset_PerspectiveProjection>,
         <http://www.opengis.net/geoepsg_dataset_PetermannStarProjection>,
         <http://www.opengis.net/geoepsg_dataset_PlanarCS>,
-        <http://www.opengis.net/geoepsg_dataset_PlanarCoordinateSystem>,
         <http://www.opengis.net/geoepsg_dataset_Planet>,
         <http://www.opengis.net/geoepsg_dataset_PlanetStatus>,
         <http://www.opengis.net/geoepsg_dataset_PlateCarreeProjection>,
@@ -435,7 +431,6 @@
         <http://www.opengis.net/geoepsg_dataset_ToblerHyperellipticalProjection>,
         <http://www.opengis.net/geoepsg_dataset_ToblerWorldInASquareProjection>,
         <http://www.opengis.net/geoepsg_dataset_TopographicMap>,
-        <http://www.opengis.net/geoepsg_dataset_Transformation>,
         <http://www.opengis.net/geoepsg_dataset_TransverseCylindricalEqualAreaProjection>,
         <http://www.opengis.net/geoepsg_dataset_TransverseMercatorProjection>,
         <http://www.opengis.net/geoepsg_dataset_TrystanEdwardsProjection>,
@@ -472,7 +467,7 @@
         <http://www.opengis.net/geoepsg_dataset_WinkelIProjection>,
         <http://www.opengis.net/geoepsg_dataset_WinkelSnyderProjection>,
         <http://www.opengis.net/geoepsg_dataset_WinkelTripelProjection> ;
-    void:classes 417 ;
+    void:classes 412 ;
     void:dataDump <https://situx.github.io/proj4rdf/data//index.ttl> ;
     void:distinctObjects 146798 ;
     void:distinctSubjects 67621 ;
