@@ -16,7 +16,7 @@ The GeoSPARQL SRS ontology draft contains classes for the following components o
 * Coordinate System Axis
 * Coordinate Operations
 * Area of Use
-* Datum types
+* Datum types 
 * Geoid
 * Spatial reference system appplications
 * Spatial reference system registry
