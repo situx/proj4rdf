@@ -4816,31 +4816,37 @@ function geometryToGeoJSON(geomtype,coordinates){
             case "linearring":
             case "polygon":
                 res["geometry"]["type"]="Polygon"
-		res["geometry"]["coordinates"]="[["
-		break;
+				res["geometry"]["coordinates"]="[["
+			break;
             case "envelope":
-            res["geometry"]["type"]="Envelope"
-		res["geometry"]["coordinates"]="["
-		break;
+            	res["geometry"]["type"]="Envelope"
+				res["geometry"]["coordinates"]="["
+			break;
+			case "multipoint":
+				res["geometry"]["type"]="MultiPoint"
+				res["geometry"]["coordinates"]="["
+			break;
             case "linestring":
                 res["geometry"]["type"]="LineString"
-		res["geometry"]["coordinates"]="["
-		break;
+				res["geometry"]["coordinates"]="["
+			break;
             case "point":
                 res["geometry"]["type"]="Point"
-		res["geometry"]["coordinates"]=""
-		break;
+				res["geometry"]["coordinates"]=""
+			break;
 	}
 	splstr=coordinates.toString().split(",")
 	console.log(res)
 	i=0;
-		while(i<splstr.length){
-			res["geometry"]["coordinates"]+="["+splstr[i]+", "+splstr[i+1]+"], "
-			i+=2;
-		}
-        res["geometry"]["coordinates"]=res["geometry"]["coordinates"].substring(0,res["geometry"]["coordinates"].length-2)
-        if(geomtype=="linearring" || geomtype=="polygon"){
+	while(i<splstr.length){
+		res["geometry"]["coordinates"]+="["+splstr[i]+", "+splstr[i+1]+"], "
+		i+=2;
+	}
+	res["geometry"]["coordinates"]=res["geometry"]["coordinates"].substring(0,res["geometry"]["coordinates"].length-2)
+	if(geomtype=="linearring" || geomtype=="polygon"){
 		res["geometry"]["coordinates"]+="]]"
+	}else if(geomtype=="linestring" || geomtype=="envelope" || geomtype=="multipoint"){
+		res["geometry"]["coordinates"]+="]"
 	}else{
 		res["geometry"]["coordinates"]+=""
 	}

@@ -93,15 +93,15 @@ function parseWKTStringToJSON(wktstring){
     for(coordset of wktstring.split(",")){
         curobject={}
         coords=coordset.trim().split(" ")
-        console.log(coordset)
-        console.log(coords)
+        //console.log(coordset)
+        //console.log(coords)
         if(coords.length==3){
             resjson.push({"x":parseFloat(coords[0]),"y":parseFloat(coords[1]),"z":parseFloat(coords[2])})
         }else{
             resjson.push({"x":parseFloat(coords[0]),"y":parseFloat(coords[1])})
         }
     }
-    console.log(resjson)
+    //console.log(resjson)
     return resjson
 }
 
@@ -568,8 +568,8 @@ function exportTGFGDF(sepchar,format){
 
 function setSVGDimensions(){
     $('svg').each(function(i, obj) {
-        console.log(obj)
-        console.log($(obj).children().first()[0])
+        //console.log(obj)
+        //console.log($(obj).children().first()[0])
         if($(obj).attr("viewBox") || $(obj).attr("width") || $(obj).attr("height")){
             return
         }
@@ -579,7 +579,7 @@ function setSVGDimensions(){
         miny=Number.MAX_VALUE
         $(obj).children().each(function(i){
             svgbbox=$(this)[0].getBBox()
-            console.log(svgbbox)
+            //console.log(svgbbox)
             if(svgbbox.x+svgbbox.width>maxx){
                 maxx=svgbbox.x+svgbbox.width
             }
@@ -593,23 +593,23 @@ function setSVGDimensions(){
                 minx=svgbbox.x
             }
         });
-        console.log(""+(minx)+" "+(miny-(maxy-miny))+" "+((maxx-minx)+25)+" "+((maxy-miny)+25))
+        //console.log(""+(minx)+" "+(miny-(maxy-miny))+" "+((maxx-minx)+25)+" "+((maxy-miny)+25))
         newviewport=""+((minx))+" "+(miny)+" "+((maxx-minx)+25)+" "+((maxy-miny)+25)
         $(obj).attr("viewBox",newviewport)
         $(obj).attr("width",((maxx-minx))+10)
         $(obj).attr("height",((maxy-miny)+10))
-        console.log($(obj).hasClass("svgoverlay"))
+        //console.log($(obj).hasClass("svgoverlay"))
         if($(obj).hasClass("svgoverlay")){
             naturalWidth=$(obj).prev().children('img')[0].naturalWidth
             naturalHeight=$(obj).prev().children('img')[0].naturalHeight
             currentWidth=$(obj).prev().children('img')[0].width
             currentHeight=$(obj).prev().children('img')[0].height
-            console.log(naturalWidth+" - "+naturalHeight+" - "+currentWidth+" - "+currentHeight)
+            //console.log(naturalWidth+" - "+naturalHeight+" - "+currentWidth+" - "+currentHeight)
             overlayposX = (currentWidth/naturalWidth) * minx;
             overlayposY = (currentHeight/naturalHeight) * miny;
             overlayposWidth = ((currentWidth/naturalWidth) * maxx)-overlayposX;
             overlayposHeight = ((currentHeight/naturalHeight) * maxy)-overlayposY;
-            console.log(overlayposX+" - "+overlayposY+" - "+overlayposHeight+" - "+overlayposWidth)
+            //console.log(overlayposX+" - "+overlayposY+" - "+overlayposHeight+" - "+overlayposWidth)
             $(obj).css({top: overlayposY+"px", left:overlayposX+"px", position:"absolute"})
             $(obj).attr("height",overlayposHeight)
             $(obj).attr("width",overlayposWidth)
@@ -770,7 +770,7 @@ function rewriteLink(thelink){
     if(!indexpage){
         count=rest.split("/").length-1
     }
-    console.log(count)
+    //console.log(count)
     counter=0
     if (typeof relativedepth !== 'undefined'){
         while(counter<relativedepth){
@@ -788,7 +788,7 @@ function rewriteLink(thelink){
 	if(!rest.includes("nonns_") && !rest.endsWith(".html")){
 		rest+="index.html"
 	}
-    console.log(rest)
+    //console.log(rest)
     return rest
 }
 
@@ -991,10 +991,10 @@ function prepareAnnotationFromJSON(verts,annotations){
             miny=vert["y"]
         }
         if(vert["x"]>maxx){
-            maxy=vert["x"]
+            maxx=vert["x"]
         }
         if(vert["x"]<minx){
-            miny=vert["x"]
+            minx=vert["x"]
         }
     }
 	var extrudedGeometry = new THREE.ExtrudeGeometry(svgShape, {depth: Math.abs(maxz-minz), bevelEnabled: false});
@@ -1045,6 +1045,36 @@ function fitCameraToSelection(camera, controls, selection, fitOffset = 1.2) {
   controls.update();
 }
 
+function addFloatingButtonToMap(mapObject, textForButton, onClickFunction, elementID='mapButton1') {
+        // Create the button element with basic dom manipulation
+        let buttonElement = document.createElement("button");
+        buttonElement.id=elementID
+
+        // Set the innertext and class of the button
+        buttonElement.innerHTML = textForButton;
+        buttonElement.className = 'leaflet-floating-button';
+
+        // Add this leaflet control
+        var buttonControl = L.Control.extend({
+          options: {
+            // if you wish to edit the position of the button, change the position here and also make the corresponding changes in the css attached below
+            position: 'bottomright'
+          },
+
+          onAdd: function () {
+            var container = L.DomUtil.create('div');
+            container.appendChild(buttonElement);
+            return container;
+          }
+        });
+
+        // Add the control to the mapObject
+        mapObject.addControl(new buttonControl());
+
+        // The user defined on click action added to the button
+        buttonElement.onclick = onClickFunction;
+}
+
 function initThreeJS(domelement,verts,meshurls) {
     scene = new THREE.Scene();
     minz=Number.MAX_VALUE
@@ -1083,7 +1113,9 @@ function initThreeJS(domelement,verts,meshurls) {
                     color: 0xffffff,
                     flatShading: true,
                     vertexColors: THREE.VertexColors,
-                    wireframe: false
+                    wireframe: false,
+  					emissive: new THREE.Color(1, 1, 1),
+  					emissiveIntensity: 0.8
                 });
                 const mesh = new THREE.Mesh(object, material);
                 objects.add(mesh);
@@ -1231,7 +1263,7 @@ function labelFromURI(uri,label){
 
 function formatHTMLTableForPropertyRelations(propuri,result,propicon){
     dialogcontent="<h3><img src=\""+propicon+"\" height=\"25\" width=\"25\" alt=\"Instance\"/><a href=\""+propuri.replace('/index.json','/index.html')+"\" target=\"_blank\"> "+shortenURI(propuri)+"</a></h3><table border=1 id=classrelationstable><thead><tr><th>Incoming Concept</th><th>Relation</th><th>Outgoing Concept</th></tr></thead><tbody>"
-    console.log(result)
+    //console.log(result)
     if("from" in result) {
         for (instance in result["from"]) {
 //
@@ -1332,9 +1364,9 @@ function formatHTMLTableForResult(result,nodeicon,nodetype){
     dialogcontent=""
     dialogcontent="<h3><img src=\""+nodeicon+"\" height=\"25\" width=\"25\" alt=\"Instance\"/><a href=\""+nodeid.replace('/index.json','/index.html')+"\" target=\"_blank\"> "+nodelabel+"</a></h3><table border=1 id=dataschematable><thead><tr><th>Type</th><th>Relation</th><th>Value</th></tr></thead><tbody>"
     for(res in result){
-        console.log(result)
+        /*console.log(result)
         console.log(result[res])
-        console.log(result[res].size)
+        console.log(result[res].size)*/
         dialogcontent+="<tr>"
         detpropicon=""
         if(res in geoproperties && geoproperties[res]=="ObjectProperty"){
@@ -1533,9 +1565,9 @@ function setupJSTree(){
                 "icon": iconprefix+node.type+"schema.png",
                 "label": "Load dataschema for "+node.type,
                 "action": function (obj) {
-                    console.log(node)
+                    /*console.log(node)
                     console.log(node.id)
-                    console.log(baseurl)
+                    console.log(baseurl)*/
                     if(node.id.includes(baseurl)){
                         getDataSchemaDialog(node)
                     }else if(node.type=="class" || node.type=="halfgeoclass" || node.type=="geoclass" || node.type=="collectionclass"){
@@ -1551,8 +1583,8 @@ function setupJSTree(){
         var node = $(event.target).closest("li");
         var data = node[0].id
         if(data.includes(baseurl)){
-            console.log(node[0].id)
-            console.log(normalizeNodeId(node[0]))
+            //console.log(node[0].id)
+            //console.log(normalizeNodeId(node[0]))
             followLink(normalizeNodeId(node[0]))
         }else{
             window.open(data, '_blank');
@@ -1589,20 +1621,91 @@ function toggleFullScreen(elementid,threejs=false) {
 }
 
 function restyleLayer(propertyName,geojsonLayer) {
-    geojsonLayer.eachLayer(function(featureInstanceLayer) {
-        propertyValue = featureInstanceLayer.feature.properties[propertyName];
-
-        // Your function that determines a fill color for a particular
-        // property name and value.
-        var myFillColor = getColor(propertyName, propertyValue);
-
-        featureInstanceLayer.setStyle({
-            fillColor: myFillColor,
-            fillOpacity: 0.8,
-            weight: 0.5
-        });
+    //geojsonLayer.eachLayer(function(featureInstanceLayer) {
+    propertyValue = geojsonLayer["features"][0]["properties"][propertyName];
+    rangesByAttribute=createColorRangeByAttribute(propertyName,geojsonLayer)
+    //console.log(rangesByAttribute)
+    document.getElementById("legend").innerHTML=rangestoLegendHTML(rangesByAttribute)
+    // Your function that determines a fill color for a particular
+    // property name and value.
+    //console.log(layerr)
+    layerr.eachLayer(function(layer) {
+        //console.log(layer)
+        thecolor=getColor(layer.feature, propertyName, layer.feature.properties[propertyName], rangesByAttribute)
+        //console.log(thecolor)
+        if( layer instanceof L.Marker ) {
+            //console.log("Is Marker")
+            layer.setIcon(L.divIcon({
+                className: "my-custom-pin",
+                iconAnchor: [0, 24],
+                labelAnchor: [-6, 0],
+                popupAnchor: [0, -36],
+                html: "<span id=\"feature\" style=\"background-color: "+thecolor+";width: 1.5rem;height: 1.5rem;display: block;left: -1rem;top: 0rem;position: relative;border-radius: 3rem 3rem 0;transform: rotate(45deg);border: 1px solid #FFFFFF;\"></span>"
+            }))
+        }else{
+            //console.log("No Marker")
+            layer.setStyle({
+                fillColor: thecolor,
+                color: thecolor,
+                fillOpacity:0.8,
+                weight:2
+            })
+        }
     });
 }
+
+
+function rangestoLegendHTML(rangesByAttribute){
+    result="<table style=\"border: 1px solid;background-color:#d3d3d3\">"
+    //console.log(rangesByAttribute)
+    for(rang in rangesByAttribute){
+        //console.log(rang)
+        for(therange of rangesByAttribute[rang]){
+             result+="<tr><td><span style=\"width: 20px;height: 20px;border: 5px solid rgba(0, 0, 0, .2);background-color:"+therange["color"]+"\"></span>"
+            if("min" in therange && "max" in therange){
+                result+=therange["min"]+" <b>-</b> "+therange["max"]
+            }else{
+                result+=therange["label"]
+            }
+            result+="</td>"
+        }
+
+    }
+    //console.log(result)
+    result+="</table>"
+    return result
+}
+
+colors=["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]
+
+function getColor(feature,propertyName,propertyValue,rangesByAttribute){
+    if(propertyName=="None"){
+        return "#000000"
+    }
+    if(!isNaN(propertyValue) && propertyName in rangesByAttribute){
+        propNum=Number(propertyValue)
+        for(therange of rangesByAttribute[propertyName]){
+            if("min" in therange && "max" in therange){
+                if(propNum>=therange["min"] && propNum<=therange["max"]){
+                    //console.log("COLOR FOUND: "+propertyValue+" ["+therange["min"]+","+therange["max"]+"]: "+therange["color"])
+                    return therange["color"];
+                }
+            }
+        }
+    }else{
+        if(propertyName in rangesByAttribute) {
+            for (rang of rangesByAttribute[propertyName]) {
+                if (rang["label"] == propertyValue) {
+                    return rang["color"]
+                }
+            }
+        }
+    }
+    return "#000000"
+}
+
+
+
 
 function createColorRangeByAttribute(propertyName,geojsonlayer){
     var valueset={}
@@ -1610,9 +1713,10 @@ function createColorRangeByAttribute(propertyName,geojsonlayer){
     var amountofrelevantitems=0
     var stringitems=0
     var numberitems=0
-    var amountofitems=geojsonlayer.size()
+    //var amountofitems=geojsonlayer.size()
     var maxColors=8
-    for(feat of geojsonlayer){
+    rangesByAttribute={}
+    for(feat of geojsonlayer["features"]){
         if(propertyName in feat["properties"]){
             if(!(feat["properties"][propertyName] in valueset)){
                 valueset[feat["properties"][propertyName]]=0
@@ -1638,20 +1742,33 @@ function createColorRangeByAttribute(propertyName,geojsonlayer){
             valueset["undefined"]+=1
         }
     }
+    rangesByAttribute[propertyName]=[]
     if(numberitems===amountofrelevantitems){
         myrange=maxamount-minamount
         myrangesteps=myrange/maxColors
         curstep=minamount
+        stepcounter=0
         while(curstep<maxamount){
             curstepstr=(curstep+"")
-            rangesByAttribute[propertyName]={cursteps:{"min":curstep,"max":curstep+myrangesteps,"label":"["+curstep+"-"+curstep+myrangesteps+"]"}}
+            rangesByAttribute[propertyName].push({"min":curstep,"max":curstep+myrangesteps,"label":"["+curstep+" - "+(curstep+myrangesteps)+"]","color":colors[stepcounter%12]})
             curstep+=myrangesteps
+            stepcounter+=1
         }
     }else if(stringitems<amountofrelevantitems){
-
-    }else if(stringitems===amountofrelevantitems){
-
+        stepcounter=0
+        for(item in valueset){
+            rangesByAttribute[propertyName].push({"label":item,"color":colors[stepcounter%12]})
+            stepcounter+=1
+        }
+    }else{
+        stepcounter=0
+        for(item in valueset){
+            rangesByAttribute[propertyName].push({"label":item,"color":colors[stepcounter%12]})
+            stepcounter+=1
+        }
     }
+    //console.log(rangesByAttribute)
+    return rangesByAttribute
 }
 
 function generateLeafletPopup(feature, layer){
@@ -1664,7 +1781,11 @@ function generateLeafletPopup(feature, layer){
     for(prop in feature.properties){
         popup+="<li>"
         if(prop.startsWith("http")){
-            popup+="<a href=\""+prop+"\" target=\"_blank\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a>"
+            if(prop.includes("#")){
+               popup+="<a href=\""+prop+"\" target=\"_blank\">"+prop.substring(prop.lastIndexOf('#')+1)+"</a>"
+            }else{
+               popup+="<a href=\""+prop+"\" target=\"_blank\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a>"
+            }
         }else{
             popup+=prop
         }
@@ -1674,7 +1795,11 @@ function generateLeafletPopup(feature, layer){
             for(item of feature.properties[prop]){
                 popup+="<li>"
                 if((item+"").startsWith("http")){
-                    popup+="<a href=\""+item+"\" target=\"_blank\">"+item.substring(item.lastIndexOf('/')+1)+"</a>"
+                    if((item+"").includes("#")){
+                        popup+="<a href=\""+item+"\" target=\"_blank\">"+item.substring(item.lastIndexOf('#')+1)+"</a>"
+                    }else{
+                        popup+="<a href=\""+item+"\" target=\"_blank\">"+item.substring(item.lastIndexOf('/')+1)+"</a>"
+                    }
                 }else{
                     popup+=item
                 }
@@ -1682,9 +1807,21 @@ function generateLeafletPopup(feature, layer){
             }
             popup+="</ul>"
         }else if(Array.isArray(feature.properties[prop]) && (feature.properties[prop][0]+"").startsWith("http")){
-            popup+="<a href=\""+rewriteLink(feature.properties[prop][0])+"\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a>"
+            if(feature.properties[prop][0].includes("#")){
+              popup+="<a href=\""+rewriteLink(feature.properties[prop][0])+"\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('#')+1)+"</a>"
+            }else{
+              popup+="<a href=\""+rewriteLink(feature.properties[prop][0])+"\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a>"
+            }
         }else{
-            popup+=feature.properties[prop]+""
+            if((feature.properties[prop]+"").startsWith("http")){
+                    if((feature.properties[prop]+"").includes("#")){
+                        popup+="<a href=\""+(feature.properties[prop]+"")+"\" target=\"_blank\">"+(feature.properties[prop]+"").substring((feature.properties[prop]+"").lastIndexOf('#')+1)+"</a>"
+                    }else{
+                        popup+="<a href=\""+(feature.properties[prop]+"")+"\" target=\"_blank\">"+(feature.properties[prop]+"").substring((feature.properties[prop]+"").lastIndexOf('/')+1)+"</a>"
+                    }
+            }else{
+                popup+=feature.properties[prop]+""
+            }
         }
         popup+="</li>"
     }
@@ -1707,7 +1844,50 @@ function fetchLayersFromList(thelist){
 	return fcolls
 }
 
+function createDropdownOptions(featurecolls){
+    result=new Set()
+    for(coll in featurecolls) {
+        if ("features" in featurecolls[coll]) {
+            for (feat in featurecolls[coll]["features"]) {
+                for (prop in featurecolls[coll]["features"][feat]["properties"]) {
+                    result.add(prop)
+                }
+            }
+        }else if("properties" in featurecolls[coll]){
+            for (prop in coll["properties"]) {
+                 result.add(prop)
+            }
+        }
+    }
+    if(result.size>0) {
+        legendstr="<table>"
+        selectstr = "<select id=\"filterdropdown\"><option value=\"\">None</option>"
+        for (item of Array.from(result).sort()) {
+            if ((item + "").includes("#")) {
+                selectstr += "<option value=\"" + item + "\">" + item.substring(item.lastIndexOf('#') + 1) + "</option>"
+            } else {
+                selectstr += "<option value=\"" + item + "\">" + item.substring(item.lastIndexOf('/') + 1) + "</option>"
+            }
+        }
+        selectstr += "</select><div id=\"legend\"></div>"
+        var legend = L.control({position: 'topright'});
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            div.innerHTML = selectstr;
+            div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+            return div;
+        };
+        legend.addTo(map);
+        document.getElementById("filterdropdown").onchange = function () {
+            restyleLayer(document.getElementById("filterdropdown").value, featurecolls[coll])
+        }
+    }
+}
+
 var centerpoints=[]
+var clustersfrozen=false
+var layerr;
+var markerlist=[]
 
 function setupLeaflet(baselayers,epsg,baseMaps,overlayMaps,map,featurecolls,dateatt="",ajax=true){
 	if(ajax){
@@ -1751,19 +1931,29 @@ function setupLeaflet(baselayers,epsg,baseMaps,overlayMaps,map,featurecolls,date
 	var bounds = L.latLngBounds([]);
     first=true
     counter=1
+    featcounter=0
     for(feature of featurecolls){
         var markercluster = L.markerClusterGroup.layerSupport({})
         if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
             feature=convertGeoJSON(feature,epsgdefs[epsg],null)
         }
+        if("features" in feature){
+            featcounter+=feature["features"].length
+        }else{
+            featcounter+=1
+        }
         layerr=L.geoJSON.css(feature,{
         pointToLayer: function(feature, latlng){
-                      var greenIcon = new L.Icon({
-                        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                        iconSize: [25, 41],iconAnchor: [12, 41], popupAnchor: [1, -34],shadowSize: [41, 41]
-                    });
-                    return L.marker(latlng, {icon: greenIcon});
+            greenIcon=L.divIcon({
+                className: "my-custom-pin",
+                iconAnchor: [0, 24],
+                labelAnchor: [-6, 0],
+                popupAnchor: [0, -36],
+                html: "<span style=\"background-color: black;width: 1.5rem;height: 1.5rem;display: block;left: -1rem;top: 0rem;position: relative;border-radius: 3rem 3rem 0;transform: rotate(45deg);border: 1px solid #FFFFFF;\"></span>"
+            })
+            themarker=L.marker(latlng, {icon: greenIcon});
+            markerlist.push(themarker);
+            return themarker
         },onEachFeature: function (feature, layer) {layer.bindPopup(generateLeafletPopup(feature, layer))}})
         layername="Content "+counter
         if("name" in feature) {
@@ -1782,8 +1972,27 @@ function setupLeaflet(baselayers,epsg,baseMaps,overlayMaps,map,featurecolls,date
         }
         centerpoints.push(layerr.getBounds().getCenter());
     }
-	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map)
-	if(dateatt!=null && dateatt!=""){
+    //createDropdownOptions(featurecolls)
+    addFloatingButtonToMap(map, 'Toggle Clusters', ()=>{
+        if(clustersfrozen){
+            markercluster.enableClustering()
+        }else{
+            markercluster.disableClustering()
+        }
+        clustersfrozen=!clustersfrozen
+    }, 'toggleClusters')
+    layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map)
+	createDropdownOptions(featurecolls)
+    if(featcounter>1 && dateatt!=null && dateatt!="" && dateatt!="[]" && dateatt!=[]){
+        let textbox   = L.Control.extend({
+            onAdd: function() {
+                var text = L.DomUtil.create('div');
+                text.id = "info_text";
+                text.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                return text;
+            }
+        });
+        new textbox({ position: 'bottomleft' }).addTo(map);
 		var sliderControl = L.control.sliderControl({
 			position: "bottomleft",
 			layer: layerr,
@@ -1792,7 +2001,16 @@ function setupLeaflet(baselayers,epsg,baseMaps,overlayMaps,map,featurecolls,date
 			showAllOnStart: true,
 			timeAttribute: dateatt
 		});
+        //console.log(sliderControl.options)
 		map.addControl(sliderControl);
+        sliderControl.options.markers.sort(function (a, b) {
+            try{
+                return (parseFloat(a.feature.properties[dateatt]) > parseFloat(b.feature.properties[dateatt]));
+            }catch(e){
+                return (new Date(a.feature.properties[dateatt]) > new Date(b.feature.properties[dateatt]));
+            }
+
+        });
 		sliderControl.startSlider();
 	}
     markercluster.addTo(map)

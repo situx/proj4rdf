@@ -2496,19 +2496,19 @@ owl: a voaf:Vocabulary ;
 <http://www.opengis.net/geoepsg_dataset> a void:Dataset,
         adms:Asset ;
     rdfs:label "geoepsg_dataset"@en ;
-    vext:averageLiteralLength 0 ;
-    vext:averageObjectIRILength 99 ;
+    vext:averageLiteralLength 156 ;
+    vext:averageObjectIRILength 51 ;
     vext:averagePropertyIRILength 42 ;
     vext:averageSubjectIRILength 65 ;
-    vext:datatypes 0 ;
+    vext:datatypes 11 ;
     vext:distinctBlankNodes 0 ;
     vext:distinctIRIReferences 214492 ;
-    vext:distinctLiterals 0 ;
-    vext:distinctRDFNodes 214492 ;
-    vext:languages 0 ;
+    vext:distinctLiterals 90092 ;
+    vext:distinctRDFNodes 304584 ;
+    vext:languages 1 ;
     vext:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2024-04-25T18:25:07"^^xsd:dateTime ;
+    dcterms:modified "2026-11-10T00:19:59"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -2935,7 +2935,7 @@ owl: a voaf:Vocabulary ;
         <http://www.opengis.net/geoepsg_dataset_WinkelSnyderProjection>,
         <http://www.opengis.net/geoepsg_dataset_WinkelTripelProjection> ;
     void:classes 417 ;
-    void:dataDump <https://situx.github.io/proj4rdf/data//index.ttl> ;
+    void:dataDump "https://situx.github.io/proj4rdf/data//index.ttl"^^xsd:anyURI ;
     void:distinctObjects 146798 ;
     void:distinctSubjects 67621 ;
     void:entities 67611 ;
@@ -3054,7 +3054,7 @@ owl: a voaf:Vocabulary ;
         "Person"@en,
         "Q121810372"@en,
         "Time"@en ;
-    dcat:landingPage <https://situx.github.io/proj4rdf/data/> ;
-    foaf:homepage <https://situx.github.io/proj4rdf/data/> ;
-    foaf:page <https://situx.github.io/proj4rdf/data//index.html> .
+    dcat:landingPage "https://situx.github.io/proj4rdf/data/"^^xsd:anyURI ;
+    foaf:homepage "https://situx.github.io/proj4rdf/data/"^^xsd:anyURI ;
+    foaf:page "https://situx.github.io/proj4rdf/data//index.html"^^xsd:anyURI .
 
